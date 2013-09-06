@@ -148,10 +148,35 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
+      <OutputFile>$(OutDir)$(TargetName)D$(TargetExt)</OutputFile>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName)D.pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(OutDir)$(TargetName)D.map</MapFileName>
     </Link>
     <PreBuildEvent>
-      <Command>xcopy "$(ProjectDir)..\..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\script" "$(ProjectDir)..\..\testeditor\Resources" /e /Y</Command>
+      <Command>xcopy "$(ProjectDir)..\..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\script" "$(ProjectDir)..\..\testeditor\Resources" /e /Y
+xcopy "$(ProjectDir)..\..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\external\libwebsockets\win32\lib\*.*" "$(OutDir)" /e /Y
+</Command>
     </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>if not exist "$(OutDir)..\" mkdir "$(OutDir)"
+
+if not exist "$(ProjectDir)..\Resources" mkdir "$(ProjectDir)..\Resources"
+
+xcopy /Y /Q "$(OutDir)*.dll" "$(ProjectDir)..\Resources"
+
+xcopy /Y /Q "$(OutDir)*.pdb" "$(ProjectDir)..\Resources"
+
+xcopy /Y /Q "$(OutDir)*.map" "$(ProjectDir)..\Resources"
+
+xcopy /Y /Q "$(OutDir)*.exe" "$(ProjectDir)..\Resources"
+
+
+del "$(OutDir)$(TargetName)D$(TargetExt)"
+del "$(OutDir)$(TargetName)D.pdb"
+del "$(OutDir)$(TargetName)D.map"
+</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">
     <Midl>
@@ -191,10 +216,35 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
+      <OutputFile>$(OutDir)$(TargetName)MTD$(TargetExt)</OutputFile>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName)MTD.pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(OutDir)$(TargetName)MTD.map</MapFileName>
     </Link>
     <PreBuildEvent>
-      <Command>xcopy "$(ProjectDir)..\..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\script" "$(ProjectDir)..\..\testeditor\Resources" /e /Y</Command>
+      <Command>xcopy "$(ProjectDir)..\..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\script" "$(ProjectDir)..\..\testeditor\Resources" /e /Y
+xcopy "$(ProjectDir)..\..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\external\libwebsockets\win32\lib\*.*" "$(OutDir)" /e /Y
+</Command>
     </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>if not exist "$(OutDir)..\" mkdir "$(OutDir)"
+
+if not exist "$(ProjectDir)..\Resources" mkdir "$(ProjectDir)..\Resources"
+
+xcopy /Y /Q "$(OutDir)*.dll" "$(ProjectDir)..\Resources"
+
+xcopy /Y /Q "$(OutDir)*.pdb" "$(ProjectDir)..\Resources"
+
+xcopy /Y /Q "$(OutDir)*.map" "$(ProjectDir)..\Resources"
+
+xcopy /Y /Q "$(OutDir)*.exe" "$(ProjectDir)..\Resources"
+
+
+del "$(OutDir)$(TargetName)MTD$(TargetExt)"
+del "$(OutDir)$(TargetName)MTD.pdb"
+del "$(OutDir)$(TargetName)MTD.map"
+</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Midl>
@@ -229,11 +279,39 @@
       <AdditionalIncludeDirectories>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\include;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>libcocos2d.lib;libCocosDenshion.lib;liblua.lib;lua51.lib;libExtensions.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcocos2d.lib;libCocosDenshion.lib;liblua.lib;lua51.lib;libExtensions.lib;websockets.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
+      <OutputFile>$(OutDir)$(TargetName)R$(TargetExt)</OutputFile>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName)R.pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(OutDir)$(TargetName)R.map</MapFileName>
     </Link>
+    <PreBuildEvent>
+      <Command>xcopy "$(ProjectDir)..\..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\script" "$(ProjectDir)..\..\testeditor\Resources" /e /Y
+xcopy "$(ProjectDir)..\..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\external\libwebsockets\win32\lib\*.*" "$(OutDir)" /e /Y
+</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>if not exist "$(OutDir)..\" mkdir "$(OutDir)"
+
+if not exist "$(ProjectDir)..\Resources" mkdir "$(ProjectDir)..\Resources"
+
+xcopy /Y /Q "$(OutDir)*.dll" "$(ProjectDir)..\Resources"
+
+xcopy /Y /Q "$(OutDir)*.pdb" "$(ProjectDir)..\Resources"
+
+xcopy /Y /Q "$(OutDir)*.map" "$(ProjectDir)..\Resources"
+
+xcopy /Y /Q "$(OutDir)*.exe" "$(ProjectDir)..\Resources"
+
+
+del "$(OutDir)$(TargetName)R$(TargetExt)"
+del "$(OutDir)$(TargetName)R.pdb"
+del "$(OutDir)$(TargetName)R.map"
+</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">
     <Midl>
@@ -268,11 +346,39 @@
       <AdditionalIncludeDirectories>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\include;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>libcocos2d.lib;libCocosDenshion.lib;liblua.lib;lua51.lib;libExtensions.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcocos2d.lib;libCocosDenshion.lib;liblua.lib;lua51.lib;libExtensions.lib;websockets.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
+      <OutputFile>$(OutDir)$(TargetName)MTR$(TargetExt)</OutputFile>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName)MTR.pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(OutDir)$(TargetName)MTR.map</MapFileName>
     </Link>
+    <PostBuildEvent>
+      <Command>if not exist "$(OutDir)..\" mkdir "$(OutDir)"
+
+if not exist "$(ProjectDir)..\Resources" mkdir "$(ProjectDir)..\Resources"
+
+xcopy /Y /Q "$(OutDir)*.dll" "$(ProjectDir)..\Resources"
+
+xcopy /Y /Q "$(OutDir)*.pdb" "$(ProjectDir)..\Resources"
+
+xcopy /Y /Q "$(OutDir)*.map" "$(ProjectDir)..\Resources"
+
+xcopy /Y /Q "$(OutDir)*.exe" "$(ProjectDir)..\Resources"
+
+
+del "$(OutDir)$(TargetName)MTR$(TargetExt)"
+del "$(OutDir)$(TargetName)MTR.pdb"
+del "$(OutDir)$(TargetName)MTR.map"
+</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>xcopy "$(ProjectDir)..\..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\script" "$(ProjectDir)..\..\testeditor\Resources" /e /Y
+xcopy "$(ProjectDir)..\..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\external\libwebsockets\win32\lib\*.*" "$(OutDir)" /e /Y
+</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />

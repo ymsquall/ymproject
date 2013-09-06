@@ -156,3 +156,5 @@ $RECYCLE.BIN/
 .DS_Store
 DebugMT.win32
 ReleaseMT.win32
+Debug.win32
+Release.win32
