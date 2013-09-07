@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using clrcocos;
 
 namespace editorcocos
 {
@@ -16,6 +17,8 @@ namespace editorcocos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            CLRccApp pApp = new CLRccApp();
+            pApp.RunApp();
             Application.Run(new MainForm());
         }
     }
