@@ -18,6 +18,12 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Classes\AppDelegate.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Classes\AppDelegate.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{32822B9E-0A88-4CD1-B748-2BF8620C3895}</ProjectGuid>
     <RootNamespace>cocosapp.win32</RootNamespace>
@@ -351,12 +357,6 @@ xcopy "$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alp
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="AppDelegate.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="AppDelegate.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
