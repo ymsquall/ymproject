@@ -22,11 +22,7 @@ namespace clrcocos
 	int CLRccApp::RunApp()
 	{
 		this->CLRApp = new ccEngine::AppDelegate();
-		this->CLRApplication = cocos2d::Application::getInstance();
-		this->CLREGLView = cocos2d::EGLView::getInstance();
-		this->CLREGLView->setViewName("HelloLua");
-		this->CLREGLView->setFrameSize(960, 640);
-		return this->CLRApplication->run();
+		return this->CLRApp->runApp(960, 640, "cocos2d editor");
 		return 0;
 	}
 }
