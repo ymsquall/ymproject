@@ -23,11 +23,8 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 #endif
 
     // create the application instance
-    AppDelegate app;
-    EGLView* eglView = EGLView::getInstance();
-    eglView->setViewName("HelloLua");
-    eglView->setFrameSize(960, 640);
-    int ret = Application::getInstance()->run();
+    ccEngine::AppDelegate app;
+    int ret = app.runApp(960, 640, "test editor");
 
 #ifdef USE_WIN32_CONSOLE
     FreeConsole();

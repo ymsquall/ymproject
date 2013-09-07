@@ -13,6 +13,8 @@ namespace ccEngine
 	{
 		// fixed me
 		//_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF|_CRTDBG_LEAK_CHECK_DF);
+		mEGLViewWidth = 960;
+		mEGLViewHeight = 640;
 	}
 
 	AppDelegate::~AppDelegate()
@@ -28,7 +30,7 @@ namespace ccEngine
 		Director *pDirector = Director::getInstance();
 		pDirector->setOpenGLView(EGLView::getInstance());
     
-		EGLView::getInstance()->setDesignResolutionSize(480, 320, ResolutionPolicy::NO_BORDER);
+		EGLView::getInstance()->setDesignResolutionSize(mEGLViewWidth, mEGLViewHeight, ResolutionPolicy::NO_BORDER);
 
 		// turn on display FPS
 		pDirector->setDisplayStats(true);
@@ -58,5 +60,15 @@ namespace ccEngine
 	{
 		Director::getInstance()->startAnimation();
 		SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
+	}
+
+	int AppDelegate::runApp(int width, int height, const char* title)
+	{
+		mEGLViewWidth = width;
+		mEGLViewHeight = height;
+		EGLView* eglView = EGLView::getInstance();
+		eglView->setViewName(title);
+		eglView->setFrameSize(mEGLViewWidth, mEGLViewHeight);
+		return Application::getInstance()->run();
 	}
 }

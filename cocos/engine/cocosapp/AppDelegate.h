@@ -34,6 +34,12 @@ namespace ccEngine
 		@param  the pointer of the application
 		*/
 		virtual void applicationWillEnterForeground();
+
+		int runApp(int width, int height, const char* title);
+
+	public:
+		int mEGLViewWidth;
+		int mEGLViewHeight;
 	};
 }
 
