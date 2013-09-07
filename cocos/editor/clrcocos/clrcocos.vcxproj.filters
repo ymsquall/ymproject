@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ccextend">
+      <UniqueIdentifier>{8d524233-1a25-40d2-8e14-b1957ba76aa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{0723ed0e-cbcc-4579-b5ff-3c57402322a2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ccextend\CLRccApp.cpp">
+      <Filter>ccextend</Filter>
+    </ClCompile>
+    <ClCompile Include="common\CLRcommon.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ccextend\CLRccApp.h">
+      <Filter>ccextend</Filter>
+    </ClInclude>
+    <ClInclude Include="common\CLRcommon.h">
+      <Filter>common</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
