@@ -158,3 +158,15 @@ DebugMT.win32
 ReleaseMT.win32
 Debug.win32
 Release.win32
+
+glew32.dll
+iconv.dll
+libcurl.dll
+libtiff.dll
+lua51.dll
+testeditorMTD.exe
+testeditorMTD.map
+testeditorR.exe
+testeditorR.map
+websockets.dll
+zlib1.dll
