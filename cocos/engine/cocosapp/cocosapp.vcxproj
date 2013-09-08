@@ -20,9 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\EGLViewDelegate.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\EGLViewDelegate.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{32822B9E-0A88-4CD1-B748-2BF8620C3895}</ProjectGuid>
