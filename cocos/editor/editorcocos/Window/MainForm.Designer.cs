@@ -1,4 +1,4 @@
-﻿namespace editorcocos
+﻿namespace editorcocos.Window
 {
     partial class MainForm
     {
@@ -30,18 +30,21 @@
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(931, 569);
-            this.Name = "Form1";
+            this.IsMdiContainer = true;
+            this.Name = "MainForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
     }
 }
 

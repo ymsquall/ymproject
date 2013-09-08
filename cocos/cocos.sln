@@ -26,6 +26,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editorcocos", "editor\editorcocos\editorcocos.csproj", "{DE4C5F51-7E08-4B5C-82A2-9870D626858E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "clrcocos", "editor\clrcocos\clrcocos.vcxproj", "{5861D791-5333-4AD8-9624-6BE6A29FB45E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{32822B9E-0A88-4CD1-B748-2BF8620C3895} = {32822B9E-0A88-4CD1-B748-2BF8620C3895}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cocosapp", "engine\cocosapp\cocosapp.vcxproj", "{32822B9E-0A88-4CD1-B748-2BF8620C3895}"
 EndProject

@@ -13,8 +13,7 @@ namespace editorcocos
     {
         public static void Proc(Object param)
         {
-            MainForm pMainForm = new MainForm();
-            Application.Run(pMainForm);
+            Application.Run((Window.MainForm)param);
         }
 
         public static Thread SelfThread

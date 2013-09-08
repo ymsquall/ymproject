@@ -14,6 +14,7 @@ namespace clrcocos
 		~CLRccApp(void);
 
 		int RunApp();
+		int RunOneStep();
 
 		property ccEngine::AppDelegate* CLRApp
 		{
@@ -46,6 +47,22 @@ namespace clrcocos
 			cocos2d::EGLView* get() 
 			{
 				return CLRPointPackage<cocos2d::EGLView>::UnPack(mCCEGLView);
+			}
+		}
+
+		property IntPtr CLREGLViewHWnd
+		{
+			IntPtr get()
+			{
+				return (IntPtr)CLRApp->getEGLViewHwnd();
+			}
+		}
+
+		property float CLRAnimInva
+		{
+			float get()
+			{
+				return CLRApp->getAnimationInterval();
 			}
 		}
 

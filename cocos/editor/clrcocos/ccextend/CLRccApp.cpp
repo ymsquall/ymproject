@@ -21,8 +21,13 @@ namespace clrcocos
 
 	int CLRccApp::RunApp()
 	{
-		this->CLRApp = new ccEngine::AppDelegate();
-		return this->CLRApp->runApp(960, 640, "cocos2d editor");
-		return 0;
+		CLRApp = new ccEngine::AppDelegate();
+		return CLRApp->runApp(960, 640, "cocos2d editor");
+	}
+	int CLRccApp::RunOneStep()
+	{
+		if(CLRApp == nullptr)
+			return 0;
+		return CLRApp->runOneStep();
 	}
 }

@@ -36,10 +36,18 @@ namespace ccEngine
 		virtual void applicationWillEnterForeground();
 
 		int runApp(int width, int height, const char* title);
+		int runOneStep();
 
-	public:
+		HWND getEGLViewHwnd();
+		float getAnimationInterval();
+
+	private:
 		int mEGLViewWidth;
 		int mEGLViewHeight;
+		MSG mLastGotMessage;
+		LARGE_INTEGER mMessageFreq;
+		LARGE_INTEGER mMessageLast;
+		LARGE_INTEGER mMessageNow;
 	};
 }
 

@@ -66,6 +66,12 @@
   <ItemGroup>
     <Compile Include="Thread\ccAppProcess.cs" />
     <Compile Include="Thread\FormAppProcess.cs" />
+    <Compile Include="Window\ccEglViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\ccEglViewForm.Designer.cs">
+      <DependentUpon>ccEglViewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Window\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,10 @@
     </Compile>
     <Compile Include="Entry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Common\Win32Import.cs" />
+    <EmbeddedResource Include="Window\ccEglViewForm.resx">
+      <DependentUpon>ccEglViewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Window\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
