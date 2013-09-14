@@ -28,13 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.mElementHost = new System.Windows.Forms.Integration.ElementHost();
             this.SuspendLayout();
+            // 
+            // mElementHost
+            // 
+            this.mElementHost.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mElementHost.Location = new System.Drawing.Point(0, 0);
+            this.mElementHost.Name = "mElementHost";
+            this.mElementHost.Size = new System.Drawing.Size(931, 569);
+            this.mElementHost.TabIndex = 1;
+            this.mElementHost.Text = "elementHost1";
+            this.mElementHost.Child = null;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(931, 569);
+            this.Controls.Add(this.mElementHost);
             this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.Text = "Form1";
@@ -44,6 +56,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Integration.ElementHost mElementHost;
 
     }
 }

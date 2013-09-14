@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Xceed.Wpf.AvalonDock;
+using Xceed.Wpf.AvalonDock.Layout;
+using Xceed.Wpf.AvalonDock.Layout.Serialization;
 using clrcocos;
 
 namespace editorcocos.Window
@@ -24,6 +27,27 @@ namespace editorcocos.Window
         {
             mEglViewForm = new ccEglViewForm();
             mEglViewForm.Show(this);
+            //////////////////////////////////////////////////////////////////////////
+            // test way
+            XmlLayoutSerializer serializer = new XmlLayoutSerializer(mDockingManager);
+            serializer.LayoutSerializationCallback += (s, args) =>
+            {
+                switch (args.Model.ContentId)
+                {
+                    case "toolWindow1":
+                        args.Content = new System.Windows.Controls.TextBlock() { Text = args.Model.ContentId };
+                        break;
+                    default:
+                        args.Content = new System.Windows.Controls.TextBox() { Text = args.Model.ContentId };
+                        break;
+                }
+
+            };
+            serializer.Deserialize(
+                new System.IO.StringReader(
+                Properties.Settings.Default.DefaultLayout));
+            mElementHost.Child = mDockingManager;
+            //////////////////////////////////////////////////////////////////////////
         }
 
         public static CLRccApp ccApp
@@ -33,5 +57,6 @@ namespace editorcocos.Window
         
         private static CLRccApp mCCApp = new CLRccApp();
         private ccEglViewForm mEglViewForm;
+        public static DockingManager mDockingManager = new DockingManager();
     }
 }
