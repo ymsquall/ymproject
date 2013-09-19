@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using cocos.wpf;
+using Fluent;
 
 namespace cocos.wpf
 {
@@ -13,5 +15,9 @@ namespace cocos.wpf
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+        }
     }
 }
