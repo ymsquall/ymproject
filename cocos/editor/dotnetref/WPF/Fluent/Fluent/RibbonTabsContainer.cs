@@ -1,7 +1,7 @@
 #region Copyright and License Information
 // Fluent Ribbon Control Suite
 // http://fluent.codeplex.com/
-// Copyright © Degtyarev Daniel, Rikker Serg. 2009-2010.  All rights reserved.
+// Copyright ?Degtyarev Daniel, Rikker Serg. 2009-2010.  All rights reserved.
 // 
 // Distributed under the terms of the Microsoft Public License (Ms-PL). 
 // The license is available online http://fluent.codeplex.com/license
@@ -59,7 +59,7 @@ namespace Fluent
 
             Size desiredSize = MeasureChildrenDesiredSize(availableSize);
 
-            // Performs steps as described in "2007 MICROSOFT® OFFICE FLUENT™ 
+            // Performs steps as described in "2007 MICROSOFT?OFFICE FLUENT?
             // USER INTERFACE DESIGN GUIDELINES"
 
             // Step 1. Gradually remove empty space to the right of the tabs
