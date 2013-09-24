@@ -13,5 +13,9 @@ namespace cocos.ribbon.mvvm
     /// </summary>
     public partial class App : Application
     {
+        private void OnApplicationStartup(object sender, StartupEventArgs e)
+        {
+            ThemeManager.ChangeTheme(ThemeStyle.Silver);
+        }
     }
 }

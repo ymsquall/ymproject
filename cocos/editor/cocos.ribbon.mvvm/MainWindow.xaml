@@ -1,9 +1,12 @@
-﻿<fr:RibbonWindow x:Class="cocos.ribbon.mvvm.MainWindow"
+﻿<Fluent:RibbonWindow x:Class="cocos.ribbon.mvvm.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:fr="clr-namespace:Fluent;assembly=Fluent"
+        xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         
     </Grid>
-</fr:RibbonWindow>
+</Fluent:RibbonWindow>
