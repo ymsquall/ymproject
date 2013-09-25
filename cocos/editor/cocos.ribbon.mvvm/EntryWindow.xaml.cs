@@ -17,13 +17,27 @@ using Fluent;
 namespace cocos.ribbon.mvvm
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// EntryWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : RibbonWindow
+    public partial class EntryWindow : RibbonWindow
     {
-        public MainWindow()
+        public EntryWindow()
         {
+            mInstacne = this;
+            ThemeManager.init(mInstacne);
+            //ThemeManager.ChangeTheme(ThemeStyle.Black);
             InitializeComponent();
         }
+        ~EntryWindow()
+        {
+            mInstacne = null;
+        }
+
+        public static EntryWindow Instance
+        {
+            get { return mInstacne; }
+        }
+
+        private static EntryWindow mInstacne = null;
     }
 }

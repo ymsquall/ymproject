@@ -77,7 +77,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ThemeManager.cs" />
-    <Page Include="MainWindow.xaml">
+    <Page Include="EntryWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -85,8 +85,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="EntryWindow.xaml.cs">
+      <DependentUpon>EntryWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -122,6 +122,51 @@
       <Project>{5861d791-5333-4ad8-9624-6be6a29fb45e}</Project>
       <Name>clrcocos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Icon\usergroup.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Icon\Copy.png" />
+    <Resource Include="Resource\Icon\Cut.png" />
+    <Resource Include="Resource\Icon\Paste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Icon\BlackTheme.png" />
+    <Resource Include="Resource\Icon\BlueTheme.png" />
+    <Resource Include="Resource\Icon\Bold.png" />
+    <Resource Include="Resource\Icon\Box.png" />
+    <Resource Include="Resource\Icon\ChangeCase.png" />
+    <Resource Include="Resource\Icon\ClearFormatting.png" />
+    <Resource Include="Resource\Icon\Default.png" />
+    <Resource Include="Resource\Icon\DefaultTrayIcon.ico" />
+    <Resource Include="Resource\Icon\document.png" />
+    <Resource Include="Resource\Icon\Exit.png" />
+    <Resource Include="Resource\Icon\FontColor.png" />
+    <Resource Include="Resource\Icon\FormatPainter.png" />
+    <Resource Include="Resource\Icon\GrowFont.png" />
+    <Resource Include="Resource\Icon\Help.png" />
+    <Resource Include="Resource\Icon\Italic.png" />
+    <Resource Include="Resource\Icon\Save.png" />
+    <Resource Include="Resource\Icon\ShrinkFont.png" />
+    <Resource Include="Resource\Icon\SilverTheme.png" />
+    <Resource Include="Resource\Icon\Strikethrough.png" />
+    <Resource Include="Resource\Icon\Subscript.png" />
+    <Resource Include="Resource\Icon\Superscript.png" />
+    <Resource Include="Resource\Icon\Test16.png" />
+    <Resource Include="Resource\Icon\TextEffects.png" />
+    <Resource Include="Resource\Icon\TextHighlightColor.png" />
+    <Resource Include="Resource\Icon\Underline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Icon\PasteFormating.png" />
+    <Resource Include="Resource\Icon\PasteImage.png" />
+    <Resource Include="Resource\Icon\PasteLarge.png" />
+    <Resource Include="Resource\Icon\PasteSourceFormating.png" />
+    <Resource Include="Resource\Icon\PasteText.png" />
+    <Resource Include="Resource\Icon\PasteTextOnly.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -24,13 +24,19 @@ namespace cocos.ribbon.mvvm
     }
     public class ThemeManager
     {
+        public static void init(Window mainWnd)
+        {
+            mMainWindow = mainWnd;
+        }
         public static bool ChangeTheme(ThemeStyle style)
         {
+            if (null == mMainWindow)
+                return false;
             switch (style)
             {
                 case ThemeStyle.Silver:
                     {
-                        Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
+                        mMainWindow.Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
                         {
                             Application.Current.Resources.BeginInit();
                             Application.Current.Resources.MergedDictionaries.RemoveAt(1);
@@ -40,7 +46,7 @@ namespace cocos.ribbon.mvvm
                     }
                     break;
                 case ThemeStyle.Blue:
-                    Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
+                    mMainWindow.Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
                     {
                         Application.Current.Resources.BeginInit();
                         Application.Current.Resources.MergedDictionaries.RemoveAt(1);
@@ -49,7 +55,7 @@ namespace cocos.ribbon.mvvm
                     }));
                     break;
                 case ThemeStyle.Black:
-                    Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
+                    mMainWindow.Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
                     {
                         Application.Current.Resources.BeginInit();
                         Application.Current.Resources.MergedDictionaries.RemoveAt(1);
@@ -58,7 +64,7 @@ namespace cocos.ribbon.mvvm
                     }));
                     break;
                 case ThemeStyle.Grey:
-                    Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
+                    mMainWindow.Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
                     {
                         Application.Current.Resources.BeginInit();
                         Application.Current.Resources.MergedDictionaries.RemoveAt(1);
@@ -67,7 +73,7 @@ namespace cocos.ribbon.mvvm
                     }));
                     break;
                 case ThemeStyle.Metro:
-                    Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
+                    mMainWindow.Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
                     {
                         Application.Current.Resources.BeginInit();
                         Application.Current.Resources.MergedDictionaries.RemoveAt(1);
@@ -76,7 +82,7 @@ namespace cocos.ribbon.mvvm
                     }));
                     break;
                 case ThemeStyle.Generic:
-                    Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
+                    mMainWindow.Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
                     {
                         Application.Current.Resources.BeginInit();
                         Application.Current.Resources.MergedDictionaries.RemoveAt(1);
@@ -91,10 +97,12 @@ namespace cocos.ribbon.mvvm
 
         public static bool ChangeTheme(Xceed.Wpf.AvalonDock.DockingManager dockingManager, ThemeStyle style)
         {
+            if (null == mMainWindow)
+                return false;
             switch (style)
             {
             case ThemeStyle.Silver:
-                Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
+                    mMainWindow.Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
                 {
                     Application.Current.Resources.BeginInit();
                     Application.Current.Resources.MergedDictionaries.RemoveAt(1);
@@ -104,7 +112,7 @@ namespace cocos.ribbon.mvvm
                 dockingManager.Theme = new Xceed.Wpf.AvalonDock.Themes.AeroTheme();
                 break;
             case ThemeStyle.Blue:
-                Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
+                mMainWindow.Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
                 {
                     Application.Current.Resources.BeginInit();
                     Application.Current.Resources.MergedDictionaries.RemoveAt(1);
@@ -114,7 +122,7 @@ namespace cocos.ribbon.mvvm
                 dockingManager.Theme = new Xceed.Wpf.AvalonDock.Themes.VS2010Theme();
                 break;
             case ThemeStyle.Black:
-                Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
+                mMainWindow.Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
                 {
                     Application.Current.Resources.BeginInit();
                     Application.Current.Resources.MergedDictionaries.RemoveAt(1);
@@ -124,7 +132,7 @@ namespace cocos.ribbon.mvvm
                 dockingManager.Theme = new Xceed.Wpf.AvalonDock.Themes.ExpressionDarkTheme();
                 break;
             case ThemeStyle.Grey:
-                Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
+                mMainWindow.Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
                 {
                     Application.Current.Resources.BeginInit();
                     Application.Current.Resources.MergedDictionaries.RemoveAt(1);
@@ -134,7 +142,7 @@ namespace cocos.ribbon.mvvm
                 dockingManager.Theme = new Xceed.Wpf.AvalonDock.Themes.ExpressionLightTheme();
                 break;
             case ThemeStyle.Metro:
-                Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
+                mMainWindow.Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
                 {
                     Application.Current.Resources.BeginInit();
                     Application.Current.Resources.MergedDictionaries.RemoveAt(1);
@@ -144,7 +152,7 @@ namespace cocos.ribbon.mvvm
                 dockingManager.Theme = new Xceed.Wpf.AvalonDock.Themes.MetroTheme();
                 break;
             case ThemeStyle.Generic:
-                Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
+                mMainWindow.Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, (ThreadStart)(() =>
                 {
                     Application.Current.Resources.BeginInit();
                     Application.Current.Resources.MergedDictionaries.RemoveAt(1);
@@ -157,5 +165,7 @@ namespace cocos.ribbon.mvvm
             }
             return true;
         }
+
+        private static Window mMainWindow = null;
     }
 }
