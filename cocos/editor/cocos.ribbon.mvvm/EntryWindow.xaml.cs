@@ -38,6 +38,18 @@ namespace cocos.ribbon.mvvm
             get { return mInstacne; }
         }
 
+        static RoutedCommand new1 = new RoutedCommand("New1", typeof(EntryWindow));
+        static public RoutedCommand New1
+        {
+            get { return new1; }
+        }
+
+        public static RoutedCommand CustomRoutedCommand = new RoutedCommand("lala", typeof(EntryWindow));
+        static public RoutedCommand lala
+        {
+            get { return CustomRoutedCommand; }
+        }
+
         private static EntryWindow mInstacne = null;
     }
 }
