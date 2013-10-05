@@ -19,37 +19,37 @@ namespace cocos.ribbon.mvvm
     /// <summary>
     /// EntryWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class EntryWindow : RibbonWindow
+    public partial class MainWindow : RibbonWindow
     {
-        public EntryWindow()
+        public MainWindow()
         {
             mInstacne = this;
             ThemeManager.init(mInstacne);
             //ThemeManager.ChangeTheme(ThemeStyle.Black);
             InitializeComponent();
         }
-        ~EntryWindow()
+        ~MainWindow()
         {
             mInstacne = null;
         }
 
-        public static EntryWindow Instance
+        public static MainWindow Instance
         {
             get { return mInstacne; }
         }
 
-        static RoutedCommand new1 = new RoutedCommand("New1", typeof(EntryWindow));
+        static RoutedCommand new1 = new RoutedCommand("New1", typeof(MainWindow));
         static public RoutedCommand New1
         {
             get { return new1; }
         }
 
-        public static RoutedCommand CustomRoutedCommand = new RoutedCommand("lala", typeof(EntryWindow));
+        public static RoutedCommand CustomRoutedCommand = new RoutedCommand("lala", typeof(MainWindow));
         static public RoutedCommand lala
         {
             get { return CustomRoutedCommand; }
         }
 
-        private static EntryWindow mInstacne = null;
+        private static MainWindow mInstacne = null;
     }
 }

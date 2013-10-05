@@ -1,4 +1,4 @@
-﻿<Fluent:RibbonWindow x:Class="cocos.ribbon.mvvm.EntryWindow"
+﻿<Fluent:RibbonWindow x:Class="cocos.ribbon.mvvm.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent"
@@ -28,7 +28,7 @@
                         <Fluent:Button Header="Save As" 
                                        Icon="Resource\Icon\Save.png" 
                                        Fluent:KeyTip.Keys="A" 
-                                       Command="{x:Static crm:EntryWindow.New1}" />
+                                       Command="{x:Static crm:MainWindow.New1}" />
                         <Fluent:BackstageTabItem Header="TEST"
                                                  Content="Hello">
 
@@ -223,7 +223,7 @@
                         </Fluent:Gallery>
                         <Fluent:MenuItem Header="Paste Special..."
                                          Fluent:KeyTip.Keys="S"
-                                         Command="{x:Static crm:EntryWindow.CustomRoutedCommand}">
+                                         Command="{x:Static crm:MainWindow.CustomRoutedCommand}">
                             <Fluent:MenuItem.ToolTip>
                                 <Fluent:ScreenTip Title="Paste Special"
                                                   Text="This ScreenTip is attached to menu item" />
