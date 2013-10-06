@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Threading;
 using Fluent;
 
-namespace cocos.ribbon.mvvm
+namespace cocos.ribbon.mvvm.Tools
 {
     public enum ThemeStyle
     {

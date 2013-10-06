@@ -24,7 +24,7 @@ namespace cocos.ribbon.mvvm
         public MainWindow()
         {
             mInstacne = this;
-            ThemeManager.init(mInstacne);
+            Tools.ThemeManager.init(mInstacne);
             //ThemeManager.ChangeTheme(ThemeStyle.Black);
             InitializeComponent();
         }

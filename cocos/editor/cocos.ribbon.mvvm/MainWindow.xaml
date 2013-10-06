@@ -3,11 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent"
         xmlns:AvDock="clr-namespace:Xceed.Wpf.AvalonDock;assembly=Xceed.Wpf.AvalonDock"
-        xmlns:crm="clr-namespace:cocos.ribbon.mvvm"
+        xmlns:AvDockLayout="clr-namespace:Xceed.Wpf.AvalonDock.Layout;assembly=Xceed.Wpf.AvalonDock"
+        xmlns:local="clr-namespace:cocos.ribbon.mvvm"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:System="clr-namespace:System;assembly=mscorlib"
-        Title="EntryWindow" Height="350" Width="525" Icon="/cocos.ribbon.mvvm;component/Resource/Icon/usergroup.ico">
+        Title="EntryWindow" Height="350" Width="525" Icon="pack://application:,,,/cocos.ribbon.mvvm;component/Resource/Icon/usergroup.ico">
     <Grid x:Name="mTopLevelGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -28,7 +29,7 @@
                         <Fluent:Button Header="Save As" 
                                        Icon="Resource\Icon\Save.png" 
                                        Fluent:KeyTip.Keys="A" 
-                                       Command="{x:Static crm:MainWindow.New1}" />
+                                       Command="{x:Static local:MainWindow.New1}" />
                         <Fluent:BackstageTabItem Header="TEST"
                                                  Content="Hello">
 
@@ -223,7 +224,7 @@
                         </Fluent:Gallery>
                         <Fluent:MenuItem Header="Paste Special..."
                                          Fluent:KeyTip.Keys="S"
-                                         Command="{x:Static crm:MainWindow.CustomRoutedCommand}">
+                                         Command="{x:Static local:MainWindow.CustomRoutedCommand}">
                             <Fluent:MenuItem.ToolTip>
                                 <Fluent:ScreenTip Title="Paste Special"
                                                   Text="This ScreenTip is attached to menu item" />
@@ -266,7 +267,10 @@
         </Fluent:Ribbon>
         
         <AvDock:DockingManager Grid.Row ="1" x:Name="mDockingManager">
-            
+            <AvDockLayout:LayoutRoot>
+                <AvDockLayout:LayoutPanel/>
+            </AvDockLayout:LayoutRoot>
+
         </AvDock:DockingManager>
         
         <Fluent:StatusBar Grid.Row ="2" x:Name="mStatusBarPanel">
