@@ -4,11 +4,20 @@
         xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent"
         xmlns:AvDock="clr-namespace:Xceed.Wpf.AvalonDock;assembly=Xceed.Wpf.AvalonDock"
         xmlns:AvDockLayout="clr-namespace:Xceed.Wpf.AvalonDock.Layout;assembly=Xceed.Wpf.AvalonDock"
+        xmlns:AvDockControls="clr-namespace:Xceed.Wpf.AvalonDock.Controls;assembly=Xceed.Wpf.AvalonDock"
         xmlns:local="clr-namespace:cocos.ribbon.mvvm"
+        xmlns:Views="clr-namespace:cocos.ribbon.mvvm.Views"
+		xmlns:ViewModels="clr-namespace:cocos.ribbon.mvvm.ViewModels"
+        xmlns:Converters="clr-namespace:cocos.ribbon.mvvm.Converters"
+        xmlns:Selectors="clr-namespace:cocos.ribbon.mvvm.Selectors"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:System="clr-namespace:System;assembly=mscorlib"
         Title="EntryWindow" Height="350" Width="525" Icon="pack://application:,,,/cocos.ribbon.mvvm;component/Resource/Icon/usergroup.ico">
+    <Fluent:RibbonWindow.DataContext>
+        <ViewModels:MainWindowViewModel/>
+    </Fluent:RibbonWindow.DataContext>
+
     <Grid x:Name="mTopLevelGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -266,11 +275,42 @@
             
         </Fluent:Ribbon>
         
-        <AvDock:DockingManager Grid.Row ="1" x:Name="mDockingManager">
+        <AvDock:DockingManager Grid.Row ="1" x:Name="mDockingManager"
+                AnchorablesSource="{Binding Tools}"  
+				DocumentsSource="{Binding Documents}"
+				ActiveContent="{Binding ActiveDocument, Mode=TwoWay, Converter={x:Static Converters:ActiveDocumentConverter.Instance}}" >
+            <AvDock:DockingManager.LayoutItemContainerStyleSelector>
+                <Selectors:PanelsStyleSelector>
+                    <Selectors:PanelsStyleSelector.ToolStyle>
+                        <Style TargetType="{x:Type AvDockControls:LayoutAnchorableItem}">
+                            <Setter Property="Title" Value="{Binding Model.DisplayName}"/>
+                            <Setter Property="IconSource" Value="{Binding Model.Icon}"/>
+                            <Setter Property="Visibility" Value="{Binding Model.IsVisible, Mode=TwoWay, Converter={x:Static Converters:BoolToVisibilityConverter.Instance}, ConverterParameter={x:Static Visibility.Hidden}}"/>
+                            <Setter Property="ContentId" Value="{Binding Model.ContentId}"/>
+                            <Setter Property="IsSelected" Value="{Binding Model.IsSelected, Mode=TwoWay}"/>
+                            <Setter Property="IsActive" Value="{Binding Model.IsActive, Mode=TwoWay}"/>
+                        </Style>
+                    </Selectors:PanelsStyleSelector.ToolStyle>
+                    <Selectors:PanelsStyleSelector.DocumentStyle>
+                        <Style TargetType="{x:Type AvDockControls:LayoutItem}">
+                            <Setter Property="Title" Value="{Binding Model.DisplayName}"/>
+                            <Setter Property="ToolTip" Value="{Binding Model.DisplayName}"/>
+                            <Setter Property="CloseCommand" Value="{Binding Model.CloseCommand}"/>
+                            <Setter Property="IconSource" Value="{Binding Model.Icon}"/>
+                            <Setter Property="ContentId" Value="{Binding Model.ContentId}"/>
+                            <Setter Property="IsSelected" Value="{Binding Model.IsSelected, Mode=TwoWay}"/>
+                        </Style>
+                    </Selectors:PanelsStyleSelector.DocumentStyle>
+                </Selectors:PanelsStyleSelector>
+            </AvDock:DockingManager.LayoutItemContainerStyleSelector>
+            
             <AvDockLayout:LayoutRoot>
-                <AvDockLayout:LayoutPanel/>
+                <AvDockLayout:LayoutPanel Orientation="Vertical">
+                    <AvDockLayout:LayoutDocumentPane/>
+                    <AvDockLayout:LayoutAnchorablePane Name="ToolsPane" DockHeight="150">
+                    </AvDockLayout:LayoutAnchorablePane>
+                </AvDockLayout:LayoutPanel>
             </AvDockLayout:LayoutRoot>
-
         </AvDock:DockingManager>
         
         <Fluent:StatusBar Grid.Row ="2" x:Name="mStatusBarPanel">

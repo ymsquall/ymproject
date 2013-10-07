@@ -39,19 +39,46 @@ namespace cocos.ribbon.mvvm.Tools
         }
     }
 
-    class ObservableObject : INotifyPropertyChanged
+    public class ObservableObject : INotifyPropertyChanged
     {
+        #region -----------------属性-----------------
+
+        private string _DisplayName;
+        /// <summary>
+        /// Returns the user-friendly name of this object.
+        /// Child classes can set this property to a new value,
+        /// or override it to determine the value on-demand.
+        /// </summary>
+        public virtual string DisplayName
+        {
+            get { return _DisplayName; }
+            protected set
+            {
+                if (_DisplayName != value)
+                {
+                    _DisplayName = value;
+                    RaisePropertyChanged(() => DisplayName);
+                }
+            }
+        }
+
+        #endregion
+
+        #region -----------------方法-----------------
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void RaisePropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
-        //用法：RaisePropertyChanged(() = > PhoneNumber)
+        //用法：RaisePropertyChanged(() => PhoneNumber)
         public void RaisePropertyChanged<T>(Expression<Func<T>> propertyExpression)
         {
             var propertyName = PropertySupport.ExtractPropertyName(propertyExpression);
             this.RaisePropertyChanged(propertyName);
         }
+
+        #endregion
     }
 }
