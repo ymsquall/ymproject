@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace cocos.ribbon.mvvm.ViewModels
 {
-    class SceneViewModel : ccEglViewModel
+    class OutputViewModel : ToolViewModel
     {
-        public SceneViewModel()
-        {
-            DisplayName = "场景";
-        }
+        public OutputViewModel(string title = "输出")
+            : base(title)
+        {}
     }
 }

@@ -17,6 +17,14 @@ namespace cocos.ribbon.mvvm.ViewModels
             SceneViewModel sceneView = new SceneViewModel();
             Documents.Add(sceneView);
             ActiveDocument = sceneView;
+
+            ExplorerViewModel tool1 = new ExplorerViewModel();
+            PropertyViewModel tool2 = new PropertyViewModel();
+            OutputViewModel tool3 = new OutputViewModel();
+            PropertyViewModel tool4 = new PropertyViewModel();
+            Tools.Add(tool1);
+            Tools.Add(tool2);
+            Tools.Add(tool3);
         }
 
         #endregion

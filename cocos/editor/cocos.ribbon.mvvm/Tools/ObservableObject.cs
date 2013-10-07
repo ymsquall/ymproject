@@ -72,7 +72,7 @@ namespace cocos.ribbon.mvvm.Tools
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
-        //用法：RaisePropertyChanged(() => PhoneNumber)
+        //泛型类型转字符串，用法：RaisePropertyChanged(() => Icon)
         public void RaisePropertyChanged<T>(Expression<Func<T>> propertyExpression)
         {
             var propertyName = PropertySupport.ExtractPropertyName(propertyExpression);
