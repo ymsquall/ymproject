@@ -34,6 +34,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cocosapp", "engine\cocosapp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cocos.ribbon.mvvm", "editor\cocos.ribbon.mvvm\cocos.ribbon.mvvm.csproj", "{D441BBEE-659A-4B70-97E5-09A16DCB304E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "enitor.coocs.wpf", "editor\enitor.coocs.wpf\enitor.coocs.wpf.csproj", "{5536861F-302C-4E94-96C5-5107F8D40541}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -270,6 +272,26 @@ Global
 		{D441BBEE-659A-4B70-97E5-09A16DCB304E}.ReleaseMT|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{D441BBEE-659A-4B70-97E5-09A16DCB304E}.ReleaseMT|Mixed Platforms.Build.0 = Release|Any CPU
 		{D441BBEE-659A-4B70-97E5-09A16DCB304E}.ReleaseMT|Win32.ActiveCfg = Release|Any CPU
+		{5536861F-302C-4E94-96C5-5107F8D40541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5536861F-302C-4E94-96C5-5107F8D40541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5536861F-302C-4E94-96C5-5107F8D40541}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5536861F-302C-4E94-96C5-5107F8D40541}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5536861F-302C-4E94-96C5-5107F8D40541}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{5536861F-302C-4E94-96C5-5107F8D40541}.DebugMT|Any CPU.ActiveCfg = Debug|Any CPU
+		{5536861F-302C-4E94-96C5-5107F8D40541}.DebugMT|Any CPU.Build.0 = Debug|Any CPU
+		{5536861F-302C-4E94-96C5-5107F8D40541}.DebugMT|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5536861F-302C-4E94-96C5-5107F8D40541}.DebugMT|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5536861F-302C-4E94-96C5-5107F8D40541}.DebugMT|Win32.ActiveCfg = Debug|Any CPU
+		{5536861F-302C-4E94-96C5-5107F8D40541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5536861F-302C-4E94-96C5-5107F8D40541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5536861F-302C-4E94-96C5-5107F8D40541}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5536861F-302C-4E94-96C5-5107F8D40541}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5536861F-302C-4E94-96C5-5107F8D40541}.Release|Win32.ActiveCfg = Release|Any CPU
+		{5536861F-302C-4E94-96C5-5107F8D40541}.ReleaseMT|Any CPU.ActiveCfg = Release|Any CPU
+		{5536861F-302C-4E94-96C5-5107F8D40541}.ReleaseMT|Any CPU.Build.0 = Release|Any CPU
+		{5536861F-302C-4E94-96C5-5107F8D40541}.ReleaseMT|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5536861F-302C-4E94-96C5-5107F8D40541}.ReleaseMT|Mixed Platforms.Build.0 = Release|Any CPU
+		{5536861F-302C-4E94-96C5-5107F8D40541}.ReleaseMT|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -285,6 +307,7 @@ Global
 		{DE4C5F51-7E08-4B5C-82A2-9870D626858E} = {BD081831-4939-41AA-AB76-530833584E5F}
 		{5861D791-5333-4AD8-9624-6BE6A29FB45E} = {BD081831-4939-41AA-AB76-530833584E5F}
 		{D441BBEE-659A-4B70-97E5-09A16DCB304E} = {BD081831-4939-41AA-AB76-530833584E5F}
+		{5536861F-302C-4E94-96C5-5107F8D40541} = {BD081831-4939-41AA-AB76-530833584E5F}
 		{32822B9E-0A88-4CD1-B748-2BF8620C3895} = {49CFD12B-1FA0-44F2-9A4D-57D06A518649}
 	EndGlobalSection
 EndGlobal

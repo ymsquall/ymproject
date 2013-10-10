@@ -13,7 +13,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:System="clr-namespace:System;assembly=mscorlib"
-        Title="EntryWindow" Height="350" Width="525" Icon="pack://application:,,,/cocos.ribbon.mvvm;component/Resource/Icon/usergroup.ico">
+        Title="EntryWindow" Height="550" Width="725" Icon="pack://application:,,,/cocos.ribbon.mvvm;component/Resource/Icon/usergroup.ico">
     <Fluent:RibbonWindow.DataContext>
         <ViewModels:MainWindowViewModel/>
     </Fluent:RibbonWindow.DataContext>
