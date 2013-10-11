@@ -41,8 +41,12 @@ namespace ccEngine
 		// register lua engine
 		LuaEngine* pEngine = LuaEngine::getInstance();
 		ScriptEngineManager::getInstance()->setScriptEngine(pEngine);
-
-		std::string path = FileUtils::getInstance()->fullPathForFilename("hello.lua");
+		std::string path;
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+		path = FileUtils::getInstance()->fullPathForFilename("luascript/startup.lua");
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+		path = FileUtils::getInstance()->fullPathForFilename("luascript/startup.lua");
+#endif
 		pEngine->executeScriptFile(path.c_str());
 
 		return true;

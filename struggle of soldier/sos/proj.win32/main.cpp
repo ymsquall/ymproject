@@ -24,11 +24,12 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 
     // create the application instance
     ccEngine::AppDelegate app;
-    int ret = app.runApp(960, 640, "test editor");
-	while(ret!=0)
+    int ret = app.runApp(960, 640, "struggle of soldier app");
+	while(true)
 	{
 		app.runOneStep();
 	}
+
 #ifdef USE_WIN32_CONSOLE
     FreeConsole();
 #endif
