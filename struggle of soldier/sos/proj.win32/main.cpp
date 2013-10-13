@@ -26,6 +26,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
     // create the application instance
 	engine::AppDelegate app;
 	ModelManager::point()->initWithAppStart(&app);
+
     int ret = app.runApp(960, 640, "struggle of soldier app");
 	while(true)
 	{
