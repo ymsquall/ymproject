@@ -1,11 +1,432 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Frame">
+    <Filter Include="ContentControl">
       <UniqueIdentifier>{f96ea9e9-5c26-483c-8de6-0d8f24772a44}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Panel">
-      <UniqueIdentifier>{74bb424a-08ee-4fa0-980a-a6fe7a0ffeba}</UniqueIdentifier>
+    <Filter Include="Decorator">
+      <UniqueIdentifier>{035c290a-7f10-496d-b57d-1613426c4217}</UniqueIdentifier>
     </Filter>
+    <Filter Include="HeaderedContentControl">
+      <UniqueIdentifier>{44243791-c2b8-49db-acde-b730c26b26e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HeaderedItemsControl">
+      <UniqueIdentifier>{a986578d-fe0a-4d9d-ba43-b76f0feff52a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ItemsControl">
+      <UniqueIdentifier>{5361436a-2f34-48f8-a9b9-a19208b6fa20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Others">
+      <UniqueIdentifier>{99e36cd3-a39e-4f3a-a552-f03c797bc9dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Panel">
+      <UniqueIdentifier>{48709f75-17ef-42d7-8d15-579c57534ae8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape">
+      <UniqueIdentifier>{540f5e19-ac74-43c5-bf82-5215fdee209d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Text">
+      <UniqueIdentifier>{ee1fe9c4-7c41-4adb-b614-87bf820b186b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Classes\uiview\ContentControl\Button.cpp">
+      <Filter>ContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ContentControl\ButtonBase.cpp">
+      <Filter>ContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ContentControl\CheckBox.cpp">
+      <Filter>ContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ContentControl\ComboBoxItem.cpp">
+      <Filter>ContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ContentControl\ContentControl.cpp">
+      <Filter>ContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ContentControl\Frame.cpp">
+      <Filter>ContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ContentControl\GridViewColumnHeader.cpp">
+      <Filter>ContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ContentControl\GroupItem.cpp">
+      <Filter>ContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ContentControl\Label.cpp">
+      <Filter>ContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ContentControl\ListBoxItem.cpp">
+      <Filter>ContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ContentControl\ListViewItem.cpp">
+      <Filter>ContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ContentControl\NavigationWindow.cpp">
+      <Filter>ContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ContentControl\RadioButton.cpp">
+      <Filter>ContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ContentControl\RepeatButton.cpp">
+      <Filter>ContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ContentControl\ScrollViewer.cpp">
+      <Filter>ContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ContentControl\StatusBarItem.cpp">
+      <Filter>ContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ContentControl\ToggleButton.cpp">
+      <Filter>ContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ContentControl\ToolTip.cpp">
+      <Filter>ContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ContentControl\UserControl.cpp">
+      <Filter>ContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ContentControl\Window.cpp">
+      <Filter>ContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Decorator\AdornerDecorator.cpp">
+      <Filter>Decorator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Decorator\Border.cpp">
+      <Filter>Decorator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Decorator\BulletDecorator.cpp">
+      <Filter>Decorator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Decorator\ButtonChrome.cpp">
+      <Filter>Decorator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Decorator\ClassicBorderDecorator.cpp">
+      <Filter>Decorator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Decorator\Decorator.cpp">
+      <Filter>Decorator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Decorator\InkPresenter.cpp">
+      <Filter>Decorator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Decorator\ListBoxChrome.cpp">
+      <Filter>Decorator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Decorator\SystemDropShadowChrome.cpp">
+      <Filter>Decorator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Decorator\Viewbox.cpp">
+      <Filter>Decorator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\HeaderedContentControl\Expander.cpp">
+      <Filter>HeaderedContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\HeaderedContentControl\GroupBox.cpp">
+      <Filter>HeaderedContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\HeaderedContentControl\HeaderedContentControl.cpp">
+      <Filter>HeaderedContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\HeaderedContentControl\TabItem.cpp">
+      <Filter>HeaderedContentControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\HeaderedItemsControl\HeaderedItemsControl.cpp">
+      <Filter>HeaderedItemsControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\HeaderedItemsControl\MenuItem.cpp">
+      <Filter>HeaderedItemsControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\HeaderedItemsControl\ToolBar.cpp">
+      <Filter>HeaderedItemsControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\HeaderedItemsControl\TreeViewItem.cpp">
+      <Filter>HeaderedItemsControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ItemsControl\ComboBox.cpp">
+      <Filter>ItemsControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ItemsControl\ContextMenu.cpp">
+      <Filter>ItemsControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ItemsControl\ItemsControl.cpp">
+      <Filter>ItemsControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ItemsControl\ListBox.cpp">
+      <Filter>ItemsControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ItemsControl\ListView.cpp">
+      <Filter>ItemsControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ItemsControl\Menu.cpp">
+      <Filter>ItemsControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ItemsControl\MenuBase.cpp">
+      <Filter>ItemsControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ItemsControl\Selector.cpp">
+      <Filter>ItemsControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ItemsControl\StatusBar.cpp">
+      <Filter>ItemsControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ItemsControl\TabControl.cpp">
+      <Filter>ItemsControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\ItemsControl\TreeView.cpp">
+      <Filter>ItemsControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Text\FlowText.cpp">
+      <Filter>Text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Text\TextBlock.cpp">
+      <Filter>Text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Text\TextBox.cpp">
+      <Filter>Text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Others\Adorner.cpp">
+      <Filter>Others</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Panel\Canvas.cpp">
+      <Filter>Panel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Panel\DockPanel.cpp">
+      <Filter>Panel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Panel\Grid.cpp">
+      <Filter>Panel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Panel\Panel.cpp">
+      <Filter>Panel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Panel\StackPanel.cpp">
+      <Filter>Panel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Panel\TabPanel.cpp">
+      <Filter>Panel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Panel\ToolBarOverflowPanel.cpp">
+      <Filter>Panel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Panel\ToolBarPanel.cpp">
+      <Filter>Panel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Panel\UniformGrid.cpp">
+      <Filter>Panel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Panel\VirtualizingPanel.cpp">
+      <Filter>Panel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Panel\VirtualizingStackPanel.cpp">
+      <Filter>Panel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Panel\WrapPanel.cpp">
+      <Filter>Panel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\uiview\Shape\Shape.cpp">
+      <Filter>Shape</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Classes\uiview\ContentControl\Button.h">
+      <Filter>ContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ContentControl\ButtonBase.h">
+      <Filter>ContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ContentControl\CheckBox.h">
+      <Filter>ContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ContentControl\ComboBoxItem.h">
+      <Filter>ContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ContentControl\ContentControl.h">
+      <Filter>ContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ContentControl\Frame.h">
+      <Filter>ContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ContentControl\GridViewColumnHeader.h">
+      <Filter>ContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ContentControl\GroupItem.h">
+      <Filter>ContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ContentControl\Label.h">
+      <Filter>ContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ContentControl\ListBoxItem.h">
+      <Filter>ContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ContentControl\ListViewItem.h">
+      <Filter>ContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ContentControl\NavigationWindow.h">
+      <Filter>ContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ContentControl\RadioButton.h">
+      <Filter>ContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ContentControl\RepeatButton.h">
+      <Filter>ContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ContentControl\ScrollViewer.h">
+      <Filter>ContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ContentControl\StatusBarItem.h">
+      <Filter>ContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ContentControl\ToggleButton.h">
+      <Filter>ContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ContentControl\ToolTip.h">
+      <Filter>ContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ContentControl\UserControl.h">
+      <Filter>ContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ContentControl\Window.h">
+      <Filter>ContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Decorator\AdornerDecorator.h">
+      <Filter>Decorator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Decorator\Border.h">
+      <Filter>Decorator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Decorator\BulletDecorator.h">
+      <Filter>Decorator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Decorator\ButtonChrome.h">
+      <Filter>Decorator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Decorator\ClassicBorderDecorator.h">
+      <Filter>Decorator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Decorator\Decorator.h">
+      <Filter>Decorator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Decorator\InkPresenter.h">
+      <Filter>Decorator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Decorator\ListBoxChrome.h">
+      <Filter>Decorator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Decorator\SystemDropShadowChrome.h">
+      <Filter>Decorator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Decorator\Viewbox.h">
+      <Filter>Decorator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\HeaderedContentControl\Expander.h">
+      <Filter>HeaderedContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\HeaderedContentControl\GroupBox.h">
+      <Filter>HeaderedContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\HeaderedContentControl\HeaderedContentControl.h">
+      <Filter>HeaderedContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\HeaderedContentControl\TabItem.h">
+      <Filter>HeaderedContentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\HeaderedItemsControl\HeaderedItemsControl.h">
+      <Filter>HeaderedItemsControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\HeaderedItemsControl\MenuItem.h">
+      <Filter>HeaderedItemsControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\HeaderedItemsControl\ToolBar.h">
+      <Filter>HeaderedItemsControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\HeaderedItemsControl\TreeViewItem.h">
+      <Filter>HeaderedItemsControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ItemsControl\ComboBox.h">
+      <Filter>ItemsControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ItemsControl\ContextMenu.h">
+      <Filter>ItemsControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ItemsControl\ItemsControl.h">
+      <Filter>ItemsControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ItemsControl\ListBox.h">
+      <Filter>ItemsControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ItemsControl\ListView.h">
+      <Filter>ItemsControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ItemsControl\Menu.h">
+      <Filter>ItemsControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ItemsControl\MenuBase.h">
+      <Filter>ItemsControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ItemsControl\Selector.h">
+      <Filter>ItemsControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ItemsControl\StatusBar.h">
+      <Filter>ItemsControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ItemsControl\TabControl.h">
+      <Filter>ItemsControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\ItemsControl\TreeView.h">
+      <Filter>ItemsControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Text\FlowText.h">
+      <Filter>Text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Text\TextBlock.h">
+      <Filter>Text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Text\TextBox.h">
+      <Filter>Text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Others\Adorner.h">
+      <Filter>Others</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Panel\Canvas.h">
+      <Filter>Panel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Panel\DockPanel.h">
+      <Filter>Panel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Panel\Grid.h">
+      <Filter>Panel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Panel\Panel.h">
+      <Filter>Panel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Panel\StackPanel.h">
+      <Filter>Panel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Panel\TabPanel.h">
+      <Filter>Panel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Panel\ToolBarOverflowPanel.h">
+      <Filter>Panel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Panel\ToolBarPanel.h">
+      <Filter>Panel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Panel\UniformGrid.h">
+      <Filter>Panel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Panel\VirtualizingPanel.h">
+      <Filter>Panel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Panel\VirtualizingStackPanel.h">
+      <Filter>Panel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Panel\WrapPanel.h">
+      <Filter>Panel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\uiview\Shape\Shape.h">
+      <Filter>Shape</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

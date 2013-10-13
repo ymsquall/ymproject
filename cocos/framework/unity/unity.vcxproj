@@ -11,12 +11,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="object.cpp" />
+    <ClInclude Include="..\Classes\unity\factroy.h" />
+    <ClInclude Include="..\Classes\unity\object.h" />
+    <ClInclude Include="..\Classes\unity\singleton.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="factroy.h" />
-    <ClInclude Include="object.h" />
-    <ClInclude Include="singleton.h" />
+    <ClCompile Include="..\Classes\unity\object.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{0434BCEB-591A-4B81-B220-328926D36745}</ProjectGuid>
@@ -47,7 +47,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir>$(Configuration).win32\</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>

@@ -31,6 +31,7 @@ namespace cocos.ribbon.mvvm
         ~MainWindow()
         {
             mInstacne = null;
+            System.Windows.Controls.Panel
         }
 
         public static MainWindow Instance

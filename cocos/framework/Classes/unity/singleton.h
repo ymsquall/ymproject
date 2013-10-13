@@ -7,7 +7,7 @@ namespace unity
 	class SingletonAutoT
 	{
 	public:
-		virtual ~SingletonT()
+		virtual ~SingletonAutoT()
 		{
 			mInstance = NULL;
 		}
@@ -20,7 +20,7 @@ namespace unity
 	private:
 		static T* mInstance;
 	};
-	template<class T> T* SingletonT<T>::mInstance = NULL;
+	template<class T> T* SingletonAutoT<T>::mInstance = NULL;
 
 	template<class T>
 	class SingletonT

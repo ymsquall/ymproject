@@ -2,7 +2,7 @@
 /// <summary>
 /// 仿造c#中的委托
 /// </summary>
-#include "object.h"
+#include "unity/object.h"
 
 namespace framework
 {
@@ -81,13 +81,13 @@ namespace framework
 		}
 		virtual delegate* clone()
 		{
-			return new ThisT<FuncT, SenderT, ParamT>(mFunction);
+			return new ThisT(mFunction);
 		}
 		virtual bool operator==(const delegate& othd)
 		{
 			if(othd.type() != DT_StaticFunciton)
 				return false;
-			const ThisT& rFun = dynamic_cast<const ThisT&>(fun);
+			const ThisT& rFun = dynamic_cast<const ThisT&>(othd);
 			return mFunction == rFun.mFunction;
 		}
 #pragma endregion

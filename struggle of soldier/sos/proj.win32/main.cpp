@@ -1,6 +1,7 @@
 #include "main.h"
-#include "AppDelegate.h"
+#include "application/AppDelegate.h"
 #include "CCEGLView.h"
+#include "ModelManager.h"
 
 USING_NS_CC;
 
@@ -23,12 +24,14 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 #endif
 
     // create the application instance
-    ccEngine::AppDelegate app;
+	engine::AppDelegate app;
+	ModelManager::point()->initWithAppStart(&app);
     int ret = app.runApp(960, 640, "struggle of soldier app");
 	while(true)
 	{
 		app.runOneStep();
 	}
+	ModelManager::point()->release();
 
 #ifdef USE_WIN32_CONSOLE
     FreeConsole();

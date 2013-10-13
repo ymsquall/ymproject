@@ -7,15 +7,33 @@
     <Filter Include="win32">
       <UniqueIdentifier>{917fb40f-fc6d-4ee9-9a20-26debabe41aa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Model">
+      <UniqueIdentifier>{b76a5b4a-31a7-4d30-89cb-a68ebaf74ee2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\View">
+      <UniqueIdentifier>{45a35c90-2fe9-4e3e-b65f-2608e14800ee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\TopLevelView.cpp">
+      <Filter>Classes\View</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ModelManager.cpp">
+      <Filter>Classes\Model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
       <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TopLevelView.h">
+      <Filter>Classes\View</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ModelManager.h">
+      <Filter>Classes\Model</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

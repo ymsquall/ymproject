@@ -16,8 +16,8 @@ namespace framework
 	protected:
 		struct DependencyPropertyChangedEventArgs
 		{
-			unity::object oldValue;
-			unity::object newValue;
+			unity::object* oldValue;
+			unity::object* newValue;
 		};
 		virtual void OnPropertyChanged(DependencyPropertyChangedEventArgs e){}
 	};

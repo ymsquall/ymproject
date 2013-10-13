@@ -19,7 +19,7 @@ namespace framework
 		template <typename RecObjT, typename RecMethodT> EventHandler(const RecObjT& pObj, const RecMethodT& pMemFun)  
 			: mDelegate(new delegate_mm<RecObjT, RecMethodT, SenderT, ParamT>(pObj, pMemFun)){}
 		EventHandler(const EventHandler<SenderT, ParamT>& eventHandler)
-			: m_pDelegate(NULL){ *this = eventHandler; }
+			: mDelegate(NULL){ *this = eventHandler; }
 		virtual ~EventHandler(){ this->clear(); }
 	#pragma endregion
 
@@ -31,7 +31,7 @@ namespace framework
 				mDelegate = eventHandler.mDelegate->clone();
 			return *this;
 		}
-		void operator()(SenderT sender, ParamT param)	// 事件委托调用
+		void operator()(SenderT sender, ParamT param) const	// 事件委托调用
 		{
 			if (mDelegate)
 				(*mDelegate)(sender, param);
@@ -88,12 +88,12 @@ namespace framework
 		typedef EventHandler<SenderT, ParamT> HandlerT;
 	#pragma region 构造器
 		event(){}
-		virtual ~event(){ mHanderArray.removeAll(); }
+		virtual ~event(){ mHanderArray.clear(); }
 	#pragma endregion
 
 	public:
 	#pragma region 运算符
-		void operator()(SenderT sender, ParamT param){ this->fire(sender, param); }	// 重载操作符，触发事件委托
+		virtual void operator()(SenderT sender, ParamT param){ this->fire(sender, param); }	// 重载操作符，触发事件委托
 		event& operator+= (const HandlerT& handler)	// 重载操作符，注册事件处理对象
 		{  
 			this->schedule(handler);  
@@ -106,7 +106,7 @@ namespace framework
 		}
 	#pragma endregion
 
-		void fire(SenderT sender, ParamT param)	// 触发事件委托
+		virtual void fire(SenderT sender, ParamT param)	// 触发事件委托
 		{
 			HandleList handlers;
 			handlers.resize(mHanderArray.size());
@@ -119,7 +119,7 @@ namespace framework
 			}
 		}
 		size_t length(){ return mHanderArray.size(); }	// 获得事件处理者个数
-		const HandlerT& handleAt(const int nIndex)	// 获得特定索引的事件处理者对象
+		const HandlerT& handlerAt(const int nIndex)	// 获得特定索引的事件处理者对象
 		{
 			assert((nIndex >= 0) && (nIndex < (int)mHanderArray.size()));
 			return mHanderArray[nIndex];
@@ -131,27 +131,55 @@ namespace framework
 		virtual void unschedule(const HandlerT& handler)	// 注销事件处理对象
 		{
 			size_t nCount = mHanderArray.size();
-			for(HandleList::iterator = mHanderArray.begin();
+			for(HandleList::iterator it = mHanderArray.begin();
 				it != mHanderArray.end(); ++ it)
 			{
 				HandlerT& eventHandler = *it;
 				if(eventHandler == handler)
 				{
-					mHanderArray.erase(i);
+					mHanderArray.erase(it);
 					return;
 				}
 			}
 		}
-	private:
+	protected:
 		typedef std::vector<HandlerT> HandleList;
 		HandleList mHanderArray;	//事件处理对象列表
 	};
 #pragma endregion
 
-#pragma region 路由事件
-	class RoutedEvent
+#pragma region 路由事件参数基本类型
+	class RoutedEventArgs
 	{
+	public:
+		RoutedEventArgs(){ mClaimed = false; }
+		virtual ~RoutedEventArgs(){}
+		bool mClaimed;	// 是否被消耗
+	};
+#pragma endregion
 
+#pragma region 路由事件实现
+	template<typename SenderT>
+	class RoutedEvent : public event<SenderT, RoutedEventArgs*>
+	{
+	public:
+		typedef event<SenderT, RoutedEventArgs*> SuperT;
+		typedef RoutedEvent<SenderT> ThisT;
+		typedef EventHandler<SenderT, RoutedEventArgs*> HandlerT;
+		virtual void fire(SenderT sender, RoutedEventArgs* param)	// 触发事件委托
+		{
+			HandleList handlers;
+			handlers.resize(mHanderArray.size());
+			//放到另一数组里，以免原数组在调用过程中有变化
+			std::copy(mHanderArray.begin(), mHanderArray.end(), handlers.begin());
+			for(HandleList::const_iterator it = handlers.begin(); it != handlers.end(); ++ it)
+			{
+				const HandlerT& eventHandler = it;
+				eventHandler(sender, param);
+				if(NULL != param && param->mClaimed)
+					break;	// 事件被消耗掉不继续向下传递
+			}
+		}
 	};
 #pragma endregion
 

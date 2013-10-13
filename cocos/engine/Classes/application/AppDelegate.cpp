@@ -7,7 +7,7 @@
 USING_NS_CC;
 using namespace CocosDenshion;
 
-namespace ccEngine
+namespace engine
 {
 	AppDelegate::AppDelegate()
 	{
@@ -57,6 +57,9 @@ namespace ccEngine
 	{
 		Director::getInstance()->stopAnimation();
 		SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+
+		framework::RoutedEventArgs eventArgs;
+		Event_AppDidEnterBackground(this, &eventArgs);
 	}
 
 	// this function will be called when the app is active again
@@ -64,6 +67,9 @@ namespace ccEngine
 	{
 		Director::getInstance()->startAnimation();
 		SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
+
+		framework::RoutedEventArgs eventArgs;
+		Event_AppWillEnterForeground(this, &eventArgs);
 	}
 
 	static void PVRFrameEnableControlWindow(bool bEnable)
@@ -111,13 +117,18 @@ namespace ccEngine
 
 		QueryPerformanceFrequency(&mMessageFreq);
 		QueryPerformanceCounter(&mMessageLast);
-
 		// Initialize instance and cocos2d.
 		if (!applicationDidFinishLaunching())
 		{
 			return 0;
 		}
+
+		framework::RoutedEventArgs eventArgs;
+		Event_AppInitOveredShowingBefore(this, &eventArgs);
+
 		ShowWindow(eglView->getHWnd(), SW_SHOW);
+
+		Event_AppInitOveredShowingAfter(this, &eventArgs);
 		//return Application::getInstance()->run();
 		return 1;
 	}

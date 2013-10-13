@@ -2,13 +2,14 @@
 #define  _APP_DELEGATE_H_
 
 #include "CCApplication.h"
+#include "mvvm/framework.h"
 
 /**
 @brief    The cocos2d Application.
 
 The reason for implement as private inheritance is to hide some interface call by Director.
 */
-namespace ccEngine
+namespace engine
 {
 	class AppDelegate : private cocos2d::Application
 	{
@@ -40,6 +41,12 @@ namespace ccEngine
 
 		HWND getEGLViewHwnd();
 		float getAnimationInterval();
+
+	public:
+		framework::RoutedEvent<AppDelegate*> Event_AppInitOveredShowingBefore;
+		framework::RoutedEvent<AppDelegate*> Event_AppInitOveredShowingAfter;
+		framework::RoutedEvent<AppDelegate*> Event_AppDidEnterBackground;
+		framework::RoutedEvent<AppDelegate*> Event_AppWillEnterForeground;
 
 	private:
 		int mEGLViewWidth;
