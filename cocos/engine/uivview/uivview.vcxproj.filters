@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Frame">
+      <UniqueIdentifier>{f96ea9e9-5c26-483c-8de6-0d8f24772a44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Panel">
+      <UniqueIdentifier>{74bb424a-08ee-4fa0-980a-a6fe7a0ffeba}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
