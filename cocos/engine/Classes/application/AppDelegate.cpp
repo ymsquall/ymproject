@@ -129,10 +129,15 @@ namespace engine
 		ShowWindow(eglView->getHWnd(), SW_SHOW);
 
 		Event_AppInitOveredShowingAfter(this, &eventArgs);
-		//return Application::getInstance()->run();
+        
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 		return 1;
+#elif
+		return Application::getInstance()->run();
+#endif
 	}
-
+    
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 	int AppDelegate::runOneStep()
 	{
 		// Main message proc
@@ -164,13 +169,15 @@ namespace engine
 		}
 		return mLastGotMessage.wParam;
 	}
-
+    
 	HWND AppDelegate::getEGLViewHwnd()
 	{
 		EGLView* eglView = EGLView::getInstance();
 		if(!eglView) return 0;
 		return eglView->getHWnd();
 	}
+#endif
+    
 	float AppDelegate::getAnimationInterval()
 	{
 		if(Director::getInstance() == NULL) return 0.0f;

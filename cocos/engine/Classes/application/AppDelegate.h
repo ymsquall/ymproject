@@ -37,9 +37,11 @@ namespace engine
 		virtual void applicationWillEnterForeground();
 
 		int runApp(int width, int height, const char* title);
+        
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 		int runOneStep();
-
 		HWND getEGLViewHwnd();
+#endif
 		float getAnimationInterval();
 
 	public:
@@ -51,10 +53,13 @@ namespace engine
 	private:
 		int mEGLViewWidth;
 		int mEGLViewHeight;
+        
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 		MSG mLastGotMessage;
 		LARGE_INTEGER mMessageFreq;
 		LARGE_INTEGER mMessageLast;
 		LARGE_INTEGER mMessageNow;
+#endif
 	};
 }
 

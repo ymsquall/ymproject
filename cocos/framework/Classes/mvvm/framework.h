@@ -3,11 +3,11 @@
 
 namespace framework
 {
-	__interface DispatcherObject{};
-	__interface INotifyPropertyChanged
+	class DispatcherObject{};
+	class INotifyPropertyChanged
 	{
 	public:
-		virtual void RaisePropertyChanged(const char* propertyName);
+		virtual void RaisePropertyChanged(const char* propertyName) = 0;
 	};
 
 	// System.Windows.DependencyObject ∏Ωº” Ù–‘

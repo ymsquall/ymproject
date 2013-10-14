@@ -35,6 +35,7 @@ namespace framework
 	class delegate_mm : public delegate<SenderT, ParamT>
 	{
 	public:
+        typedef delegate<SenderT, ParamT> SuperT;
 		typedef delegate_mm<RecObjT, RecMethodT, SenderT, ParamT> ThisT;
 		delegate_mm(const RecObjT& pObj, RecMethodT pMemFn)
 			: mReceiverObject(pObj), mReceiverMemberMethod(pMemFn){}
@@ -45,11 +46,11 @@ namespace framework
 		{
 			((*mReceiverObject).*mReceiverMemberMethod)(sender, param);
 		}
-		virtual delegate* clone()
+		virtual SuperT* clone()
 		{
 			return new ThisT(mReceiverObject, mReceiverMemberMethod);
 		}
-		virtual bool operator==(const delegate& othd)
+		virtual bool operator==(const SuperT& othd)
 		{
 			if(othd.type() != DT_MemberMethod)
 				return false;
@@ -70,6 +71,7 @@ namespace framework
 	class delegate_sf : public delegate<SenderT, ParamT>
 	{
 	public:
+		typedef delegate<SenderT, ParamT> SuperT;
 		typedef delegate_sf<FuncT, SenderT, ParamT> ThisT;
 		delegate_sf(const FuncT& func) : mFunction(func){}
 		virtual ~delegate_sf(){}
@@ -79,11 +81,11 @@ namespace framework
 		{
 			(*mFunction)(sender, param);
 		}
-		virtual delegate* clone()
+		virtual SuperT* clone()
 		{
 			return new ThisT(mFunction);
 		}
-		virtual bool operator==(const delegate& othd)
+		virtual bool operator==(const SuperT& othd)
 		{
 			if(othd.type() != DT_StaticFunciton)
 				return false;

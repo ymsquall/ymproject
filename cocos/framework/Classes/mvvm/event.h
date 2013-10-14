@@ -112,7 +112,7 @@ namespace framework
 			handlers.resize(mHanderArray.size());
 			//放到另一数组里，以免原数组在调用过程中有变化
 			std::copy(mHanderArray.begin(), mHanderArray.end(), handlers.begin());
-			for(HandleList::const_iterator it = handlers.begin(); it != handlers.end(); ++ it)
+			for(typename HandleList::const_iterator it = handlers.begin(); it != handlers.end(); ++ it)
 			{
 				const HandlerT& eventHandler = it;
 				eventHandler(sender, param);
@@ -131,7 +131,7 @@ namespace framework
 		virtual void unschedule(const HandlerT& handler)	// 注销事件处理对象
 		{
 			size_t nCount = mHanderArray.size();
-			for(HandleList::iterator it = mHanderArray.begin();
+			for(typename HandleList::iterator it = mHanderArray.begin();
 				it != mHanderArray.end(); ++ it)
 			{
 				HandlerT& eventHandler = *it;
@@ -168,11 +168,11 @@ namespace framework
 		typedef EventHandler<SenderT, RoutedEventArgs*> HandlerT;
 		virtual void fire(SenderT sender, RoutedEventArgs* param)	// 触发事件委托
 		{
-			HandleList handlers;
-			handlers.resize(mHanderArray.size());
+            typename SuperT::HandleList handlers;
+			handlers.resize(this->mHanderArray.size());
 			//放到另一数组里，以免原数组在调用过程中有变化
-			std::copy(mHanderArray.begin(), mHanderArray.end(), handlers.begin());
-			for(HandleList::const_iterator it = handlers.begin(); it != handlers.end(); ++ it)
+			std::copy(this->mHanderArray.begin(), this->mHanderArray.end(), handlers.begin());
+			for(typename SuperT::HandleList::const_iterator it = handlers.begin(); it != handlers.end(); ++ it)
 			{
 				const HandlerT& eventHandler = it;
 				eventHandler(sender, param);
