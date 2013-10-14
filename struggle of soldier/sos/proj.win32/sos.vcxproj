@@ -377,11 +377,13 @@ xcopy "$(ProjectDir)..\..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\ModelManager.cpp" />
+    <ClCompile Include="..\Classes\RootSceneView.cpp" />
     <ClCompile Include="..\Classes\TopLevelView.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\ModelManager.h" />
+    <ClInclude Include="..\Classes\RootSceneView.h" />
     <ClInclude Include="..\Classes\TopLevelView.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>

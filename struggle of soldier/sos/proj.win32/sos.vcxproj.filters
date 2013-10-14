@@ -24,6 +24,9 @@
     <ClCompile Include="..\Classes\ModelManager.cpp">
       <Filter>Classes\Model</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\RootSceneView.cpp">
+      <Filter>Classes\View</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -34,6 +37,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\ModelManager.h">
       <Filter>Classes\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\RootSceneView.h">
+      <Filter>Classes\View</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

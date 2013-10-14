@@ -15,7 +15,7 @@ public:
 	~ModelManager(void);
 
 	void initWithAppStart(engine::AppDelegate* pApp);
-
+	bool modelLoop();
 	void onAppInitOveredShowingBefore(engine::AppDelegate* pApp, framework::RoutedEventArgs* args);
 	void onAppInitOveredShowingAfter(engine::AppDelegate* pApp, framework::RoutedEventArgs* args);
 };

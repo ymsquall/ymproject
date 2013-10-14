@@ -9,12 +9,16 @@ namespace unity
 	public:
 		virtual ~SingletonAutoT()
 		{
+			CCASSERT(false, "SingletonAutoT can not destructor!");
 			mInstance = NULL;
 		}
 		static T* point()
 		{
 			if(NULL == mInstance)
+			{
 				mInstance = new T();
+				mInstance->retain();
+			}
 			return mInstance;
 		}
 	private:
@@ -28,6 +32,11 @@ namespace unity
 	public:
 		SingletonT()
 		{
+			if(NULL != mInstance)
+			{
+				CCASSERT(false, "SingletonT can not repeat construction!");
+				mInstance->release();
+			}
 			mInstance = this;
 		}
 		virtual ~SingletonT()
