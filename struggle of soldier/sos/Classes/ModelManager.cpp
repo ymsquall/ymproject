@@ -19,8 +19,8 @@ void ModelManager::initWithAppStart(engine::AppDelegate* pApp)
 	Director* pDirector = Director::getInstance();
 	pDirector->setNotificationNode(TopLevelView::point());
 	pDirector->runWithScene(RootSceneView::point());
-	pApp->Event_AppInitOveredShowingBefore += framework::RoutedEvent<engine::AppDelegate*>::HandlerT(this, &ModelManager::onAppInitOveredShowingBefore);
-	pApp->Event_AppInitOveredShowingAfter += framework::RoutedEvent<engine::AppDelegate*>::HandlerT(this, &ModelManager::onAppInitOveredShowingAfter);
+	pApp->Event_AppInitOveredShowingBefore += ROUTEDEVENT_MAKER(engine::AppDelegate*, this, ModelManager::onAppInitOveredShowingBefore);
+	pApp->Event_AppInitOveredShowingAfter += ROUTEDEVENT_MAKER(engine::AppDelegate*, this, ModelManager::onAppInitOveredShowingAfter);
 }
 
 bool ModelManager::modelLoop()
