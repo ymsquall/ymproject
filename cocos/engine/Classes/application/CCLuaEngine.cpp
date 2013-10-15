@@ -55,7 +55,7 @@ bool LuaEngine::init(void)
     _stack = LuaStack::create();
     _stack->retain();
     extendLuaObject();
-    executeScriptFile("luascript/deprecated.lua");
+    executeScriptFile("luascript/cocos2dx/Deprecated.lua");
     return true;
 }
 

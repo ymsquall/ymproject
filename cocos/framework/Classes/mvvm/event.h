@@ -184,3 +184,5 @@ namespace framework
 #pragma endregion
 
 }
+
+#define ROUTEDEVENT_MAKER(senderT, sender, recvFunc) framework::RoutedEvent<senderT>::HandlerT(sender, &recvFunc);
