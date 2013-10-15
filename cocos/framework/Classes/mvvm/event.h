@@ -130,7 +130,7 @@ namespace framework
 		}
 		virtual void unschedule(const HandlerT& handler)	// 注销事件处理对象
 		{
-			size_t nCount = mHanderArray.size();
+			//size_t nCount = mHanderArray.size();
 			for(typename HandleList::iterator it = mHanderArray.begin();
 				it != mHanderArray.end(); ++ it)
 			{

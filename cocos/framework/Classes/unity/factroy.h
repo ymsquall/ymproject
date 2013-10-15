@@ -10,7 +10,7 @@ namespace unity
 		static ObjT* create()
 		{
 			ObjT* pRet = new ObjT();
-			pRet->mObjectType = TypeFactroy::create<TypeT>();
+			pRet->mObjectType = createType<TypeT>();
 			return pRet;
 		}
 
@@ -30,7 +30,7 @@ namespace unity
 		template<class TypeT>
 		static Type* create()
 		{
-			Type* pType = ObjectFactroy<TypeT>::createType();
+			Type* pType = ObjectFactroy::createType<TypeT>();
 			return pType;
 		}
 		static void release(Type* pType)

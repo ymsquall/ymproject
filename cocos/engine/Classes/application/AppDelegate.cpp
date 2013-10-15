@@ -71,7 +71,8 @@ namespace engine
 		framework::RoutedEventArgs eventArgs;
 		Event_AppWillEnterForeground(this, &eventArgs);
 	}
-
+    
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 	static void PVRFrameEnableControlWindow(bool bEnable)
 	{
 		HKEY hKey = 0;
@@ -105,6 +106,7 @@ namespace engine
 
 		RegCloseKey(hKey);
 	}
+#endif
 	int AppDelegate::runApp(int width, int height, const char* title)
 	{
 		mEGLViewWidth = width;
@@ -113,10 +115,12 @@ namespace engine
 		eglView->setViewName(title);
 		eglView->setFrameSize(mEGLViewWidth, mEGLViewHeight);
 		// init main message environment
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 		PVRFrameEnableControlWindow(false);
 
 		QueryPerformanceFrequency(&mMessageFreq);
 		QueryPerformanceCounter(&mMessageLast);
+#endif
 		// Initialize instance and cocos2d.
 		if (!applicationDidFinishLaunching())
 		{
@@ -125,14 +129,15 @@ namespace engine
 
 		framework::RoutedEventArgs eventArgs;
 		Event_AppInitOveredShowingBefore(this, &eventArgs);
-
+        
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 		ShowWindow(eglView->getHWnd(), SW_SHOW);
-
+#endif
 		Event_AppInitOveredShowingAfter(this, &eventArgs);
         
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 		return 1;
-#elif
+#else
 		return Application::getInstance()->run();
 #endif
 	}
