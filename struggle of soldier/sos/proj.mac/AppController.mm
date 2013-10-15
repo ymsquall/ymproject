@@ -23,9 +23,9 @@
  ****************************************************************************/
  
 #import "AppController.h"
-#import "AppDelegate.h"
+#import "application/AppDelegate.h"
 
-static AppDelegate s_sharedApplication;
+static engine::AppDelegate s_sharedApplication;
 
 @implementation AppController
 
