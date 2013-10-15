@@ -61,8 +61,6 @@
 		9276BD45180D256C00B9FE55 /* object.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCC7180D236B00B9FE55 /* object.h */; };
 		9276BD46180D256C00B9FE55 /* event.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCC1180D236B00B9FE55 /* event.h */; };
 		9276BD47180D256C00B9FE55 /* factroy.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCC5180D236B00B9FE55 /* factroy.h */; };
-		92FAA034180D36F4004A8D24 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FAA033180D36F4004A8D24 /* OpenGL.framework */; };
-		92FAA035180D36FC004A8D24 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FAA033180D36F4004A8D24 /* OpenGL.framework */; };
 		92FAA037180D3708004A8D24 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FAA036180D3708004A8D24 /* OpenGLES.framework */; };
 		92FAA038180D3710004A8D24 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FAA036180D3708004A8D24 /* OpenGLES.framework */; };
 /* End PBXBuildFile section */
@@ -107,7 +105,6 @@
 		9276BCDC180D237900B9FE55 /* CCLuaEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCLuaEngine.cpp; sourceTree = "<group>"; };
 		9276BCDD180D237900B9FE55 /* CCLuaEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLuaEngine.h; sourceTree = "<group>"; };
 		9276BD4B180D256C00B9FE55 /* libengine iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libengine iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		92FAA033180D36F4004A8D24 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		92FAA036180D3708004A8D24 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
 		A07A4D641783777C0073F6A7 /* libframework iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libframework iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -117,7 +114,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92FAA034180D36F4004A8D24 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,7 +121,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92FAA035180D36FC004A8D24 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				92FAA036180D3708004A8D24 /* OpenGLES.framework */,
-				92FAA033180D36F4004A8D24 /* OpenGL.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -508,7 +502,7 @@
 				);
 				HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				USER_HEADER_SEARCH_PATHS = "\"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/platform/mac\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/extensions\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/external\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/external/libwebsockets/mac/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/engine/Classes/\" \"$(SRCROOT)/framework/Classes/\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/mac\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/extensions\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/libwebsockets/mac/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
 			};
 			name = Debug;
 		};
@@ -525,7 +519,7 @@
 				);
 				HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				USER_HEADER_SEARCH_PATHS = "\"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/platform/mac\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/extensions\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/external\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/external/libwebsockets/mac/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/engine/Classes/\" \"$(SRCROOT)/framework/Classes/\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/mac\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/extensions\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/libwebsockets/mac/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
 			};
 			name = Release;
 		};
@@ -543,7 +537,7 @@
 				HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "engine Mac";
-				USER_HEADER_SEARCH_PATHS = "\"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/platform/mac\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/extensions\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/external\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/external/libwebsockets/mac/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/engine/Classes/\" \"$(SRCROOT)/framework/Classes/\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/mac\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/extensions\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/libwebsockets/mac/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
 			};
 			name = Debug;
 		};
@@ -561,7 +555,7 @@
 				HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "engine Mac";
-				USER_HEADER_SEARCH_PATHS = "\"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/platform/mac\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/extensions\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/external\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/external/libwebsockets/mac/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/engine/Classes/\" \"$(SRCROOT)/framework/Classes/\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/mac\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/extensions\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/libwebsockets/mac/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
 			};
 			name = Release;
 		};
@@ -581,7 +575,7 @@
 				PRODUCT_NAME = "engine iOS";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "\"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios/Simulation\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/extensions\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/external\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/external/libwebsockets/ios/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/engine/Classes/\" \"$(SRCROOT)/framework/Classes/\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios/Simulation\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/extensions\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/libwebsockets/ios/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
 			};
 			name = Debug;
 		};
@@ -601,7 +595,7 @@
 				PRODUCT_NAME = "engine iOS";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "\"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios/Simulation\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/extensions\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/external\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/external/libwebsockets/ios/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/engine/Classes/\" \"$(SRCROOT)/framework/Classes/\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios/Simulation\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/extensions\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/libwebsockets/ios/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
 			};
 			name = Release;
 		};
@@ -636,7 +630,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "\"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios/Simulation\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/extensions\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/external\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/external/libwebsockets/ios/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/engine/Classes/\" \"$(SRCROOT)/framework/Classes/\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios/Simulation\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/extensions\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/libwebsockets/ios/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
 			};
 			name = Debug;
 		};
@@ -655,7 +649,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "\"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios/Simulation\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/extensions\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/external\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/external/libwebsockets/ios/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"/Users/mingyue/Downloads/work/cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/engine/Classes/\" \"$(SRCROOT)/framework/Classes/\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios/Simulation\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/extensions\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/libwebsockets/ios/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
 			};
 			name = Release;
 		};

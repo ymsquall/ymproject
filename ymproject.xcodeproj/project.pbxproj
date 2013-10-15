@@ -32,8 +32,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		92FAA030180D36C3004A8D24 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FAA02F180D36C3004A8D24 /* OpenGL.framework */; };
-		92FAA031180D36C3004A8D24 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FAA02F180D36C3004A8D24 /* OpenGL.framework */; };
 		92FAA03A180D3737004A8D24 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FAA039180D3737004A8D24 /* OpenGLES.framework */; };
 		92FAA03B180D3737004A8D24 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FAA039180D3737004A8D24 /* OpenGLES.framework */; };
 /* End PBXBuildFile section */
@@ -186,7 +184,6 @@
 		9276BCE8180D23B100B9FE55 /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = "../cocos2d-x-3.0alpha0-pre/cocos2d_libs.xcodeproj"; sourceTree = "<group>"; };
 		92FAA013180D2F59004A8D24 /* struggle of soldier Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "struggle of soldier Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92FAA014180D2F59004A8D24 /* struggle of soldier iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "struggle of soldier iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		92FAA02F180D36C3004A8D24 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		92FAA039180D3737004A8D24 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
@@ -195,7 +192,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92FAA031180D36C3004A8D24 /* OpenGL.framework in Frameworks */,
 				92FAA03B180D3737004A8D24 /* OpenGLES.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,7 +200,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92FAA030180D36C3004A8D24 /* OpenGL.framework in Frameworks */,
 				92FAA03A180D3737004A8D24 /* OpenGLES.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,7 +255,6 @@
 			isa = PBXGroup;
 			children = (
 				92FAA039180D3737004A8D24 /* OpenGLES.framework */,
-				92FAA02F180D36C3004A8D24 /* OpenGL.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
