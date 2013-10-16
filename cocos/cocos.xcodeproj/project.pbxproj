@@ -33,34 +33,44 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		9276BCC9180D236B00B9FE55 /* delegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCC0180D236B00B9FE55 /* delegate.h */; };
-		9276BCCA180D236B00B9FE55 /* delegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCC0180D236B00B9FE55 /* delegate.h */; };
-		9276BCCB180D236B00B9FE55 /* event.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCC1180D236B00B9FE55 /* event.h */; };
-		9276BCCC180D236B00B9FE55 /* event.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCC1180D236B00B9FE55 /* event.h */; };
-		9276BCCD180D236B00B9FE55 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCC2180D236B00B9FE55 /* framework.h */; };
-		9276BCCE180D236B00B9FE55 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCC2180D236B00B9FE55 /* framework.h */; };
-		9276BCCF180D236B00B9FE55 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9276BCC3180D236B00B9FE55 /* Test.cpp */; };
-		9276BCD0180D236B00B9FE55 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9276BCC3180D236B00B9FE55 /* Test.cpp */; };
-		9276BCD1180D236B00B9FE55 /* factroy.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCC5180D236B00B9FE55 /* factroy.h */; };
-		9276BCD2180D236B00B9FE55 /* factroy.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCC5180D236B00B9FE55 /* factroy.h */; };
-		9276BCD3180D236B00B9FE55 /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9276BCC6180D236B00B9FE55 /* object.cpp */; };
-		9276BCD4180D236B00B9FE55 /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9276BCC6180D236B00B9FE55 /* object.cpp */; };
-		9276BCD5180D236B00B9FE55 /* object.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCC7180D236B00B9FE55 /* object.h */; };
-		9276BCD6180D236B00B9FE55 /* object.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCC7180D236B00B9FE55 /* object.h */; };
-		9276BCD7180D236B00B9FE55 /* singleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCC8180D236B00B9FE55 /* singleton.h */; };
-		9276BCD8180D236B00B9FE55 /* singleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCC8180D236B00B9FE55 /* singleton.h */; };
-		9276BCDE180D237900B9FE55 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9276BCDA180D237900B9FE55 /* AppDelegate.cpp */; };
-		9276BCE0180D237900B9FE55 /* AppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCDB180D237900B9FE55 /* AppDelegate.h */; };
-		9276BCE2180D237900B9FE55 /* CCLuaEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9276BCDC180D237900B9FE55 /* CCLuaEngine.cpp */; };
-		9276BCE4180D237900B9FE55 /* CCLuaEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCDD180D237900B9FE55 /* CCLuaEngine.h */; };
-		9276BD3E180D256C00B9FE55 /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9276BCC6180D236B00B9FE55 /* object.cpp */; };
-		9276BD3F180D256C00B9FE55 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9276BCC3180D236B00B9FE55 /* Test.cpp */; };
-		9276BD42180D256C00B9FE55 /* singleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCC8180D236B00B9FE55 /* singleton.h */; };
-		9276BD43180D256C00B9FE55 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCC2180D236B00B9FE55 /* framework.h */; };
-		9276BD44180D256C00B9FE55 /* delegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCC0180D236B00B9FE55 /* delegate.h */; };
-		9276BD45180D256C00B9FE55 /* object.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCC7180D236B00B9FE55 /* object.h */; };
-		9276BD46180D256C00B9FE55 /* event.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCC1180D236B00B9FE55 /* event.h */; };
-		9276BD47180D256C00B9FE55 /* factroy.h in Headers */ = {isa = PBXBuildFile; fileRef = 9276BCC5180D236B00B9FE55 /* factroy.h */; };
+		9204B2F0180E2529002DD158 /* libbox2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9204B2E9180E2529002DD158 /* libbox2d Mac.a */; };
+		9204B2F1180E2529002DD158 /* libchipmunk Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9204B2EA180E2529002DD158 /* libchipmunk Mac.a */; };
+		9204B2F2180E2529002DD158 /* libcocos2dx Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9204B2EB180E2529002DD158 /* libcocos2dx Mac.a */; };
+		9204B2F3180E2529002DD158 /* libcocos2dx-extensions Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9204B2EC180E2529002DD158 /* libcocos2dx-extensions Mac.a */; };
+		9204B2F4180E2529002DD158 /* libCocosDenshion Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9204B2ED180E2529002DD158 /* libCocosDenshion Mac.a */; };
+		9204B2F5180E2529002DD158 /* libjsbindings Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9204B2EE180E2529002DD158 /* libjsbindings Mac.a */; };
+		9204B2F6180E2529002DD158 /* libluabindings Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9204B2EF180E2529002DD158 /* libluabindings Mac.a */; };
+		9204B2F7180E2535002DD158 /* libbox2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9204B2E9180E2529002DD158 /* libbox2d Mac.a */; };
+		9204B2F8180E2535002DD158 /* libchipmunk Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9204B2EA180E2529002DD158 /* libchipmunk Mac.a */; };
+		9204B2F9180E2535002DD158 /* libcocos2dx Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9204B2EB180E2529002DD158 /* libcocos2dx Mac.a */; };
+		9204B2FA180E2535002DD158 /* libcocos2dx-extensions Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9204B2EC180E2529002DD158 /* libcocos2dx-extensions Mac.a */; };
+		9204B2FB180E2535002DD158 /* libCocosDenshion Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9204B2ED180E2529002DD158 /* libCocosDenshion Mac.a */; };
+		9204B2FC180E2535002DD158 /* libjsbindings Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9204B2EE180E2529002DD158 /* libjsbindings Mac.a */; };
+		9204B2FD180E2535002DD158 /* libluabindings Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9204B2EF180E2529002DD158 /* libluabindings Mac.a */; };
+		9204B323180E268D002DD158 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9204B31F180E268D002DD158 /* AppDelegate.cpp */; };
+		9204B324180E268D002DD158 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9204B31F180E268D002DD158 /* AppDelegate.cpp */; };
+		9204B325180E268D002DD158 /* AppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B320180E268D002DD158 /* AppDelegate.h */; };
+		9204B326180E268D002DD158 /* AppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B320180E268D002DD158 /* AppDelegate.h */; };
+		9204B327180E268D002DD158 /* CCLuaEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9204B321180E268D002DD158 /* CCLuaEngine.cpp */; };
+		9204B328180E268D002DD158 /* CCLuaEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9204B321180E268D002DD158 /* CCLuaEngine.cpp */; };
+		9204B329180E268D002DD158 /* CCLuaEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B322180E268D002DD158 /* CCLuaEngine.h */; };
+		9204B32A180E268D002DD158 /* CCLuaEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B322180E268D002DD158 /* CCLuaEngine.h */; };
+		9204B331180E26B5002DD158 /* factroy.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B32D180E26B5002DD158 /* factroy.h */; };
+		9204B332180E26B5002DD158 /* factroy.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B32D180E26B5002DD158 /* factroy.h */; };
+		9204B333180E26B5002DD158 /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9204B32E180E26B5002DD158 /* object.cpp */; };
+		9204B334180E26B5002DD158 /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9204B32E180E26B5002DD158 /* object.cpp */; };
+		9204B335180E26B5002DD158 /* object.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B32F180E26B5002DD158 /* object.h */; };
+		9204B336180E26B5002DD158 /* object.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B32F180E26B5002DD158 /* object.h */; };
+		9204B337180E26B5002DD158 /* singleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B330180E26B5002DD158 /* singleton.h */; };
+		9204B338180E26B5002DD158 /* singleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B330180E26B5002DD158 /* singleton.h */; };
+		9204B33D180E26C0002DD158 /* delegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B339180E26C0002DD158 /* delegate.h */; };
+		9204B33E180E26C0002DD158 /* delegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B339180E26C0002DD158 /* delegate.h */; };
+		9204B33F180E26C0002DD158 /* event.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B33A180E26C0002DD158 /* event.h */; };
+		9204B340180E26C0002DD158 /* event.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B33A180E26C0002DD158 /* event.h */; };
+		9204B341180E26C0002DD158 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B33B180E26C0002DD158 /* framework.h */; };
+		9204B342180E26C0002DD158 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B33B180E26C0002DD158 /* framework.h */; };
+		9204B343180E26C0002DD158 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9204B33C180E26C0002DD158 /* Test.cpp */; };
+		9204B344180E26C0002DD158 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9204B33C180E26C0002DD158 /* Test.cpp */; };
 		92FAA037180D3708004A8D24 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FAA036180D3708004A8D24 /* OpenGLES.framework */; };
 		92FAA038180D3710004A8D24 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FAA036180D3708004A8D24 /* OpenGLES.framework */; };
 /* End PBXBuildFile section */
@@ -91,19 +101,40 @@
 
 /* Begin PBXFileReference section */
 		1551A33F158F2AB200E66CFE /* libframework Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libframework Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9204B2E9180E2529002DD158 /* libbox2d Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libbox2d Mac.a"; path = "../../../../Library/Developer/Xcode/DerivedData/ymproject-anrfhmfxcsksibbvclwbukhrgtpz/Build/Products/Debug/libbox2d Mac.a"; sourceTree = "<group>"; };
+		9204B2EA180E2529002DD158 /* libchipmunk Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libchipmunk Mac.a"; path = "../../../../Library/Developer/Xcode/DerivedData/ymproject-anrfhmfxcsksibbvclwbukhrgtpz/Build/Products/Debug/libchipmunk Mac.a"; sourceTree = "<group>"; };
+		9204B2EB180E2529002DD158 /* libcocos2dx Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2dx Mac.a"; path = "../../../../Library/Developer/Xcode/DerivedData/ymproject-anrfhmfxcsksibbvclwbukhrgtpz/Build/Products/Debug/libcocos2dx Mac.a"; sourceTree = "<group>"; };
+		9204B2EC180E2529002DD158 /* libcocos2dx-extensions Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2dx-extensions Mac.a"; path = "../../../../Library/Developer/Xcode/DerivedData/ymproject-anrfhmfxcsksibbvclwbukhrgtpz/Build/Products/Debug/libcocos2dx-extensions Mac.a"; sourceTree = "<group>"; };
+		9204B2ED180E2529002DD158 /* libCocosDenshion Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libCocosDenshion Mac.a"; path = "../../../../Library/Developer/Xcode/DerivedData/ymproject-anrfhmfxcsksibbvclwbukhrgtpz/Build/Products/Debug/libCocosDenshion Mac.a"; sourceTree = "<group>"; };
+		9204B2EE180E2529002DD158 /* libjsbindings Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libjsbindings Mac.a"; path = "../../../../Library/Developer/Xcode/DerivedData/ymproject-anrfhmfxcsksibbvclwbukhrgtpz/Build/Products/Debug/libjsbindings Mac.a"; sourceTree = "<group>"; };
+		9204B2EF180E2529002DD158 /* libluabindings Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libluabindings Mac.a"; path = "../../../../Library/Developer/Xcode/DerivedData/ymproject-anrfhmfxcsksibbvclwbukhrgtpz/Build/Products/Debug/libluabindings Mac.a"; sourceTree = "<group>"; };
+		9204B2FE180E253F002DD158 /* libbox2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libbox2d iOS.a"; path = "../../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libbox2d iOS.a"; sourceTree = "<group>"; };
+		9204B2FF180E253F002DD158 /* libchipmunk iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libchipmunk iOS.a"; path = "../../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libchipmunk iOS.a"; sourceTree = "<group>"; };
+		9204B300180E253F002DD158 /* libcocos2dx iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2dx iOS.a"; path = "../../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libcocos2dx iOS.a"; sourceTree = "<group>"; };
+		9204B301180E253F002DD158 /* libcocos2dx-extensions iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2dx-extensions iOS.a"; path = "../../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libcocos2dx-extensions iOS.a"; sourceTree = "<group>"; };
+		9204B302180E253F002DD158 /* libCocosDenshion iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libCocosDenshion iOS.a"; path = "../../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libCocosDenshion iOS.a"; sourceTree = "<group>"; };
+		9204B303180E253F002DD158 /* libjsbindings iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libjsbindings iOS.a"; path = "../../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libjsbindings iOS.a"; sourceTree = "<group>"; };
+		9204B304180E253F002DD158 /* libluabindings iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libluabindings iOS.a"; path = "../../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libluabindings iOS.a"; sourceTree = "<group>"; };
+		9204B30C180E254A002DD158 /* libbox2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libbox2d iOS.a"; path = "../../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libbox2d iOS.a"; sourceTree = "<group>"; };
+		9204B30D180E254A002DD158 /* libchipmunk iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libchipmunk iOS.a"; path = "../../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libchipmunk iOS.a"; sourceTree = "<group>"; };
+		9204B30E180E254A002DD158 /* libcocos2dx iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2dx iOS.a"; path = "../../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libcocos2dx iOS.a"; sourceTree = "<group>"; };
+		9204B30F180E254A002DD158 /* libcocos2dx-extensions iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2dx-extensions iOS.a"; path = "../../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libcocos2dx-extensions iOS.a"; sourceTree = "<group>"; };
+		9204B310180E254A002DD158 /* libCocosDenshion iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libCocosDenshion iOS.a"; path = "../../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libCocosDenshion iOS.a"; sourceTree = "<group>"; };
+		9204B311180E254A002DD158 /* libjsbindings iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libjsbindings iOS.a"; path = "../../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libjsbindings iOS.a"; sourceTree = "<group>"; };
+		9204B312180E254A002DD158 /* libluabindings iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libluabindings iOS.a"; path = "../../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libluabindings iOS.a"; sourceTree = "<group>"; };
+		9204B31F180E268D002DD158 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = engine/Classes/application/AppDelegate.cpp; sourceTree = "<group>"; };
+		9204B320180E268D002DD158 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = engine/Classes/application/AppDelegate.h; sourceTree = "<group>"; };
+		9204B321180E268D002DD158 /* CCLuaEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCLuaEngine.cpp; path = engine/Classes/application/CCLuaEngine.cpp; sourceTree = "<group>"; };
+		9204B322180E268D002DD158 /* CCLuaEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCLuaEngine.h; path = engine/Classes/application/CCLuaEngine.h; sourceTree = "<group>"; };
+		9204B32D180E26B5002DD158 /* factroy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = factroy.h; path = framework/Classes/unity/factroy.h; sourceTree = "<group>"; };
+		9204B32E180E26B5002DD158 /* object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = object.cpp; path = framework/Classes/unity/object.cpp; sourceTree = "<group>"; };
+		9204B32F180E26B5002DD158 /* object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = object.h; path = framework/Classes/unity/object.h; sourceTree = "<group>"; };
+		9204B330180E26B5002DD158 /* singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = singleton.h; path = framework/Classes/unity/singleton.h; sourceTree = "<group>"; };
+		9204B339180E26C0002DD158 /* delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = delegate.h; path = framework/Classes/mvvm/delegate.h; sourceTree = "<group>"; };
+		9204B33A180E26C0002DD158 /* event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = event.h; path = framework/Classes/mvvm/event.h; sourceTree = "<group>"; };
+		9204B33B180E26C0002DD158 /* framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = framework.h; path = framework/Classes/mvvm/framework.h; sourceTree = "<group>"; };
+		9204B33C180E26C0002DD158 /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Test.cpp; path = framework/Classes/mvvm/Test.cpp; sourceTree = "<group>"; };
 		9276BCB0180D22F600B9FE55 /* libengine Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libengine Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9276BCC0180D236B00B9FE55 /* delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = delegate.h; sourceTree = "<group>"; };
-		9276BCC1180D236B00B9FE55 /* event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = event.h; sourceTree = "<group>"; };
-		9276BCC2180D236B00B9FE55 /* framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
-		9276BCC3180D236B00B9FE55 /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
-		9276BCC5180D236B00B9FE55 /* factroy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = factroy.h; sourceTree = "<group>"; };
-		9276BCC6180D236B00B9FE55 /* object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = object.cpp; sourceTree = "<group>"; };
-		9276BCC7180D236B00B9FE55 /* object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = object.h; sourceTree = "<group>"; };
-		9276BCC8180D236B00B9FE55 /* singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = singleton.h; sourceTree = "<group>"; };
-		9276BCDA180D237900B9FE55 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
-		9276BCDB180D237900B9FE55 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		9276BCDC180D237900B9FE55 /* CCLuaEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCLuaEngine.cpp; sourceTree = "<group>"; };
-		9276BCDD180D237900B9FE55 /* CCLuaEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLuaEngine.h; sourceTree = "<group>"; };
 		9276BD4B180D256C00B9FE55 /* libengine iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libengine iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92FAA036180D3708004A8D24 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
 		A07A4D641783777C0073F6A7 /* libframework iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libframework iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +145,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9204B2F0180E2529002DD158 /* libbox2d Mac.a in Frameworks */,
+				9204B2F1180E2529002DD158 /* libchipmunk Mac.a in Frameworks */,
+				9204B2F2180E2529002DD158 /* libcocos2dx Mac.a in Frameworks */,
+				9204B2F3180E2529002DD158 /* libcocos2dx-extensions Mac.a in Frameworks */,
+				9204B2F4180E2529002DD158 /* libCocosDenshion Mac.a in Frameworks */,
+				9204B2F5180E2529002DD158 /* libjsbindings Mac.a in Frameworks */,
+				9204B2F6180E2529002DD158 /* libluabindings Mac.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +159,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9204B2F7180E2535002DD158 /* libbox2d Mac.a in Frameworks */,
+				9204B2F8180E2535002DD158 /* libchipmunk Mac.a in Frameworks */,
+				9204B2F9180E2535002DD158 /* libcocos2dx Mac.a in Frameworks */,
+				9204B2FA180E2535002DD158 /* libcocos2dx-extensions Mac.a in Frameworks */,
+				9204B2FB180E2535002DD158 /* libCocosDenshion Mac.a in Frameworks */,
+				9204B2FC180E2535002DD158 /* libjsbindings Mac.a in Frameworks */,
+				9204B2FD180E2535002DD158 /* libluabindings Mac.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,11 +209,44 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9204B31E180E2664002DD158 /* application */ = {
+			isa = PBXGroup;
+			children = (
+				9204B31F180E268D002DD158 /* AppDelegate.cpp */,
+				9204B320180E268D002DD158 /* AppDelegate.h */,
+				9204B321180E268D002DD158 /* CCLuaEngine.cpp */,
+				9204B322180E268D002DD158 /* CCLuaEngine.h */,
+			);
+			name = application;
+			sourceTree = "<group>";
+		};
+		9204B32B180E269C002DD158 /* mvvm */ = {
+			isa = PBXGroup;
+			children = (
+				9204B339180E26C0002DD158 /* delegate.h */,
+				9204B33A180E26C0002DD158 /* event.h */,
+				9204B33B180E26C0002DD158 /* framework.h */,
+				9204B33C180E26C0002DD158 /* Test.cpp */,
+			);
+			name = mvvm;
+			sourceTree = "<group>";
+		};
+		9204B32C180E26A3002DD158 /* unity */ = {
+			isa = PBXGroup;
+			children = (
+				9204B32D180E26B5002DD158 /* factroy.h */,
+				9204B32E180E26B5002DD158 /* object.cpp */,
+				9204B32F180E26B5002DD158 /* object.h */,
+				9204B330180E26B5002DD158 /* singleton.h */,
+			);
+			name = unity;
+			sourceTree = "<group>";
+		};
 		9276BCBD180D234F00B9FE55 /* framework */ = {
 			isa = PBXGroup;
 			children = (
-				9276BCBF180D236B00B9FE55 /* mvvm */,
-				9276BCC4180D236B00B9FE55 /* unity */,
+				9204B32C180E26A3002DD158 /* unity */,
+				9204B32B180E269C002DD158 /* mvvm */,
 			);
 			name = framework;
 			sourceTree = "<group>";
@@ -176,50 +254,35 @@
 		9276BCBE180D235600B9FE55 /* engine */ = {
 			isa = PBXGroup;
 			children = (
-				9276BCD9180D237900B9FE55 /* application */,
+				9204B31E180E2664002DD158 /* application */,
 			);
 			name = engine;
-			sourceTree = "<group>";
-		};
-		9276BCBF180D236B00B9FE55 /* mvvm */ = {
-			isa = PBXGroup;
-			children = (
-				9276BCC0180D236B00B9FE55 /* delegate.h */,
-				9276BCC1180D236B00B9FE55 /* event.h */,
-				9276BCC2180D236B00B9FE55 /* framework.h */,
-				9276BCC3180D236B00B9FE55 /* Test.cpp */,
-			);
-			name = mvvm;
-			path = framework/Classes/mvvm;
-			sourceTree = "<group>";
-		};
-		9276BCC4180D236B00B9FE55 /* unity */ = {
-			isa = PBXGroup;
-			children = (
-				9276BCC5180D236B00B9FE55 /* factroy.h */,
-				9276BCC6180D236B00B9FE55 /* object.cpp */,
-				9276BCC7180D236B00B9FE55 /* object.h */,
-				9276BCC8180D236B00B9FE55 /* singleton.h */,
-			);
-			name = unity;
-			path = framework/Classes/unity;
-			sourceTree = "<group>";
-		};
-		9276BCD9180D237900B9FE55 /* application */ = {
-			isa = PBXGroup;
-			children = (
-				9276BCDA180D237900B9FE55 /* AppDelegate.cpp */,
-				9276BCDB180D237900B9FE55 /* AppDelegate.h */,
-				9276BCDC180D237900B9FE55 /* CCLuaEngine.cpp */,
-				9276BCDD180D237900B9FE55 /* CCLuaEngine.h */,
-			);
-			name = application;
-			path = engine/Classes/application;
 			sourceTree = "<group>";
 		};
 		92FAA032180D36E4004A8D24 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9204B30C180E254A002DD158 /* libbox2d iOS.a */,
+				9204B30D180E254A002DD158 /* libchipmunk iOS.a */,
+				9204B30E180E254A002DD158 /* libcocos2dx iOS.a */,
+				9204B30F180E254A002DD158 /* libcocos2dx-extensions iOS.a */,
+				9204B310180E254A002DD158 /* libCocosDenshion iOS.a */,
+				9204B311180E254A002DD158 /* libjsbindings iOS.a */,
+				9204B312180E254A002DD158 /* libluabindings iOS.a */,
+				9204B2FE180E253F002DD158 /* libbox2d iOS.a */,
+				9204B2FF180E253F002DD158 /* libchipmunk iOS.a */,
+				9204B300180E253F002DD158 /* libcocos2dx iOS.a */,
+				9204B301180E253F002DD158 /* libcocos2dx-extensions iOS.a */,
+				9204B302180E253F002DD158 /* libCocosDenshion iOS.a */,
+				9204B303180E253F002DD158 /* libjsbindings iOS.a */,
+				9204B304180E253F002DD158 /* libluabindings iOS.a */,
+				9204B2E9180E2529002DD158 /* libbox2d Mac.a */,
+				9204B2EA180E2529002DD158 /* libchipmunk Mac.a */,
+				9204B2EB180E2529002DD158 /* libcocos2dx Mac.a */,
+				9204B2EC180E2529002DD158 /* libcocos2dx-extensions Mac.a */,
+				9204B2ED180E2529002DD158 /* libCocosDenshion Mac.a */,
+				9204B2EE180E2529002DD158 /* libjsbindings Mac.a */,
+				9204B2EF180E2529002DD158 /* libluabindings Mac.a */,
 				92FAA036180D3708004A8D24 /* OpenGLES.framework */,
 			);
 			name = Frameworks;
@@ -232,12 +295,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9276BCD7180D236B00B9FE55 /* singleton.h in Headers */,
-				9276BCCD180D236B00B9FE55 /* framework.h in Headers */,
-				9276BCC9180D236B00B9FE55 /* delegate.h in Headers */,
-				9276BCD5180D236B00B9FE55 /* object.h in Headers */,
-				9276BCCB180D236B00B9FE55 /* event.h in Headers */,
-				9276BCD1180D236B00B9FE55 /* factroy.h in Headers */,
+				9204B337180E26B5002DD158 /* singleton.h in Headers */,
+				9204B331180E26B5002DD158 /* factroy.h in Headers */,
+				9204B335180E26B5002DD158 /* object.h in Headers */,
+				9204B341180E26C0002DD158 /* framework.h in Headers */,
+				9204B33D180E26C0002DD158 /* delegate.h in Headers */,
+				9204B33F180E26C0002DD158 /* event.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,8 +308,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9276BCE0180D237900B9FE55 /* AppDelegate.h in Headers */,
-				9276BCE4180D237900B9FE55 /* CCLuaEngine.h in Headers */,
+				9204B325180E268D002DD158 /* AppDelegate.h in Headers */,
+				9204B329180E268D002DD158 /* CCLuaEngine.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,12 +317,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9276BD42180D256C00B9FE55 /* singleton.h in Headers */,
-				9276BD43180D256C00B9FE55 /* framework.h in Headers */,
-				9276BD44180D256C00B9FE55 /* delegate.h in Headers */,
-				9276BD45180D256C00B9FE55 /* object.h in Headers */,
-				9276BD46180D256C00B9FE55 /* event.h in Headers */,
-				9276BD47180D256C00B9FE55 /* factroy.h in Headers */,
+				9204B32A180E268D002DD158 /* CCLuaEngine.h in Headers */,
+				9204B326180E268D002DD158 /* AppDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,12 +326,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9276BCD8180D236B00B9FE55 /* singleton.h in Headers */,
-				9276BCCE180D236B00B9FE55 /* framework.h in Headers */,
-				9276BCCA180D236B00B9FE55 /* delegate.h in Headers */,
-				9276BCD6180D236B00B9FE55 /* object.h in Headers */,
-				9276BCCC180D236B00B9FE55 /* event.h in Headers */,
-				9276BCD2180D236B00B9FE55 /* factroy.h in Headers */,
+				9204B338180E26B5002DD158 /* singleton.h in Headers */,
+				9204B332180E26B5002DD158 /* factroy.h in Headers */,
+				9204B336180E26B5002DD158 /* object.h in Headers */,
+				9204B342180E26C0002DD158 /* framework.h in Headers */,
+				9204B33E180E26C0002DD158 /* delegate.h in Headers */,
+				9204B340180E26C0002DD158 /* event.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,8 +442,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9276BCD3180D236B00B9FE55 /* object.cpp in Sources */,
-				9276BCCF180D236B00B9FE55 /* Test.cpp in Sources */,
+				9204B333180E26B5002DD158 /* object.cpp in Sources */,
+				9204B343180E26C0002DD158 /* Test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,8 +451,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9276BCE2180D237900B9FE55 /* CCLuaEngine.cpp in Sources */,
-				9276BCDE180D237900B9FE55 /* AppDelegate.cpp in Sources */,
+				9204B327180E268D002DD158 /* CCLuaEngine.cpp in Sources */,
+				9204B323180E268D002DD158 /* AppDelegate.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,8 +460,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9276BD3E180D256C00B9FE55 /* object.cpp in Sources */,
-				9276BD3F180D256C00B9FE55 /* Test.cpp in Sources */,
+				9204B328180E268D002DD158 /* CCLuaEngine.cpp in Sources */,
+				9204B324180E268D002DD158 /* AppDelegate.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,8 +469,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9276BCD4180D236B00B9FE55 /* object.cpp in Sources */,
-				9276BCD0180D236B00B9FE55 /* Test.cpp in Sources */,
+				9204B334180E26B5002DD158 /* object.cpp in Sources */,
+				9204B344180E26C0002DD158 /* Test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,7 +560,10 @@
 					CC_KEYBOARD_SUPPORT,
 				);
 				HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/ymproject-anrfhmfxcsksibbvclwbukhrgtpz/Build/Products/Debug",
+				);
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/mac\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/extensions\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/libwebsockets/mac/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
 			};
 			name = Debug;
@@ -518,7 +580,10 @@
 					CC_TARGET_OS_MAC,
 				);
 				HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/ymproject-anrfhmfxcsksibbvclwbukhrgtpz/Build/Products/Debug",
+				);
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/mac\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/extensions\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/libwebsockets/mac/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
 			};
 			name = Release;
@@ -535,7 +600,10 @@
 					CC_KEYBOARD_SUPPORT,
 				);
 				HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/ymproject-anrfhmfxcsksibbvclwbukhrgtpz/Build/Products/Debug",
+				);
 				PRODUCT_NAME = "engine Mac";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/mac\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/extensions\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/libwebsockets/mac/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
 			};
@@ -553,7 +621,10 @@
 					CC_TARGET_OS_MAC,
 				);
 				HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/ymproject-anrfhmfxcsksibbvclwbukhrgtpz/Build/Products/Debug",
+				);
 				PRODUCT_NAME = "engine Mac";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/mac\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/extensions\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/libwebsockets/mac/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
 			};
@@ -563,6 +634,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: song hongyu (6R4L5CKN8Z)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = engine/Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -573,6 +645,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "engine iOS";
+				PROVISIONING_PROFILE = "38EDD0CD-6709-4416-A663-BD7BA3161A2B";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios/Simulation\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/extensions\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/libwebsockets/ios/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
@@ -583,6 +656,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: song hongyu (6R4L5CKN8Z)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = engine/Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -593,6 +667,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "engine iOS";
+				PROVISIONING_PROFILE = "38EDD0CD-6709-4416-A663-BD7BA3161A2B";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios/Simulation\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/extensions\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/libwebsockets/ios/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
@@ -619,6 +694,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: song hongyu (6R4L5CKN8Z)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = framework/Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -628,6 +704,7 @@
 				HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PROVISIONING_PROFILE = "38EDD0CD-6709-4416-A663-BD7BA3161A2B";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios/Simulation\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/extensions\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/libwebsockets/ios/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
@@ -638,6 +715,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: song hongyu (6R4L5CKN8Z)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = framework/Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -647,6 +725,7 @@
 				HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PROVISIONING_PROFILE = "38EDD0CD-6709-4416-A663-BD7BA3161A2B";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios/Simulation\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/extensions\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/libwebsockets/ios/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/cocos2dx_support\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";

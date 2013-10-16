@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9215282E180D482F0062E7B1"
-               BuildableName = "Hello lua iOS copy.app"
+               BuildableName = "struggle of soldier iOS.app"
                BlueprintName = "struggle of soldier iOS"
                ReferencedContainer = "container:ymproject.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9215282E180D482F0062E7B1"
-            BuildableName = "Hello lua iOS copy.app"
+            BuildableName = "struggle of soldier iOS.app"
             BlueprintName = "struggle of soldier iOS"
             ReferencedContainer = "container:ymproject.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9215282E180D482F0062E7B1"
-            BuildableName = "Hello lua iOS copy.app"
+            BuildableName = "struggle of soldier iOS.app"
             BlueprintName = "struggle of soldier iOS"
             ReferencedContainer = "container:ymproject.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9215282E180D482F0062E7B1"
-            BuildableName = "Hello lua iOS copy.app"
+            BuildableName = "struggle of soldier iOS.app"
             BlueprintName = "struggle of soldier iOS"
             ReferencedContainer = "container:ymproject.xcodeproj">
          </BuildableReference>

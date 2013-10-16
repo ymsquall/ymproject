@@ -124,16 +124,6 @@
 			<key>orderHint</key>
 			<integer>41</integer>
 		</dict>
-		<key>build-all-samples Mac.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>18</integer>
-		</dict>
-		<key>build-all-samples iOS.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>30</integer>
-		</dict>
 		<key>struggle of soldier Mac.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
