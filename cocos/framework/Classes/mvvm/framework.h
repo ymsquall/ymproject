@@ -1,5 +1,6 @@
 #pragma once
 #include "event.h"
+#include "unity/property.h"
 
 namespace framework
 {

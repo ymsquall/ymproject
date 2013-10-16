@@ -18,5 +18,4 @@ private:
 
 void cccccccccc()
 {
-
 }
