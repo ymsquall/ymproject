@@ -3,74 +3,113 @@
 
 namespace unity
 {
-
-	class PropertyContainer
-	{
-	};
+	//template<class ConT>
+	//class IPropertyContainer
+	//{
+	//public:
+	//	typedef ValueT (ConT::*GetterFunc)();
+	//};
+	//template<class ValueT, class ConT> typedef ValueT (ConT::*GetterFunc)();
 	
-#define READ_ONLY 1
-#define WRITE_ONLY 2
-#define READ_WRITE 3
-	template<class ValueT, typename PropertyContainer* container, typename char* name>
-	class PropertyTemplaye
+//#define DEFINED_PROPERTY_READ_ONLY(name, type, getter) public: ReadOnlyProperty<type> m#name; \
+//											   public: \
+//											   \
+//											   \
+//#define WRITE_ONLY 2
+//#define READ_WRITE 3
+//	template<class ValueT, typename IPropertyContainer* container, typename char* name>
+//	class PropertyTemplaye
+//	{
+//	public:
+//		PropertyTemplaye(ValueT v)
+//		{
+//			mContainer = container;
+//			mValue = v;
+//			mName = name;
+//		}
+//		
+//	protected:
+//		IPropertyContainer* mContainer;
+//		ValueT mValue;
+//		std::string mName;
+//	};
+
+
+	template<class ValueT, class ConT>
+	class IProperty
+	{
+	protected:
+		typedef ValueT (ConT::*GetterFunc)();
+		typedef void (ConT::*SetterFunc)(const ValueT& v);
+	};
+
+	template<class ValueT, class ConT, typename IProperty<ValueT, ConT>::SetterFunc setter>
+	class Property : public IProperty<ValueT, ConT>
 	{
 	public:
-		PropertyTemplaye(ValueT v)
+		typedef IProperty<ValueT, ConT> SuperT;
+		typedef Property<ValueT, ConT, setter> ThisT;
+
+		Property(ConT* container)
 		{
 			mContainer = container;
-			mValue = v;
-			mName = name;
+			mSetter = setter;
+		}
+		operator ValueT() const
+		{
+			return mValue;
+		}
+
+		void operator = (const ValueT& value)
+		{
+			(mContainer->*mSetter)(value);
+			mValue = value;
+		}
+
+	private:
+		ConT* mContainer;
+		SuperT::SetterFunc mSetter;
+		ValueT mValue;
+	};
+
+	template<class ValueT, class ConT>
+	class PropertyReadOnly : public IProperty<ValueT, ConT>
+	{
+	public:
+		friend typename ConT;
+		typedef IProperty<ValueT, ConT> SuperT;
+		typedef PropertyReadOnly<ValueT, ConT> ThisT;
+
+		operator ValueT() const
+		{
+			return mValue;
 		}
 		
-	protected:
-		PropertyContainer* mContainer;
-		ValueT mValue;
-		std::string mName;
-	};
-
-	template<class ValueT>
-	class Property
-	{
-	public:
-		operator ValueT()
-		{
-			return mTValue;
-		}
-
-		void operator = (const ValueT& value) const
-		{
-			mTValue = value;
-		}
-
 	private:
-		PropertyContainer* mContainer;
 		ValueT mValue;
 	};
 
-	template<class ValueT>
-	class ReadOnlyProperty
+	template<class ValueT, class ConT, typename IProperty<ValueT, ConT>::SetterFunc setter>
+	class PropertyWriteOnly : public IProperty<ValueT, ConT>
 	{
 	public:
-		operator ValueT()
-		{
-			return mTValue;
-		}
-	private:
-		PropertyContainer* mContainer;
-		ValueT mValue;
-	};
+		typedef IProperty<ValueT, ConT> SuperT;
+		typedef PropertyWriteOnly<ValueT, ConT, setter> ThisT;
 
-	template<class ValueT>
-	class WriteOnlyProperty 
-	{
-	public:
-		void operator = (const ValueT& value) const
+		PropertyWriteOnly(ConT* container)
 		{
-			mTValue = value;
+			mContainer = container;
+			mSetter = setter;
+		}
+		void operator = (const ValueT& value)
+		{
+			(mContainer->*mSetter)(value);
+			mValue = value;
 		}
 
 	private:
-		PropertyContainer* mContainer;
+		ConT* mContainer;
+		SuperT::SetterFunc mSetter;
 		ValueT mValue;
 	};
 }

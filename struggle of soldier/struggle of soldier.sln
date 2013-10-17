@@ -38,6 +38,14 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "unity", "..\cocos\framework
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "uivview", "..\cocos\engine\uivview\uivview.vcxproj", "{217E3F50-178F-4030-808C-A9E8C22DB373}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "unittest", "..\unittest\unittest.vcxproj", "{93C1A720-E67F-40D5-B91B-9F2F463795F5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FAE94545-7340-483C-9F28-F7DC9D4B0ED4} = {FAE94545-7340-483C-9F28-F7DC9D4B0ED4}
+		{5CD881B8-A787-4ACB-838C-72AF44C5BFB3} = {5CD881B8-A787-4ACB-838C-72AF44C5BFB3}
+		{0434BCEB-591A-4B81-B220-328926D36745} = {0434BCEB-591A-4B81-B220-328926D36745}
+		{E87AC0EC-4BB2-4180-9FF1-7154F79EC9B7} = {E87AC0EC-4BB2-4180-9FF1-7154F79EC9B7}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -150,6 +158,14 @@ Global
 		{217E3F50-178F-4030-808C-A9E8C22DB373}.Release|Win32.Build.0 = Release|Win32
 		{217E3F50-178F-4030-808C-A9E8C22DB373}.ReleaseMT|Win32.ActiveCfg = Release|Win32
 		{217E3F50-178F-4030-808C-A9E8C22DB373}.ReleaseMT|Win32.Build.0 = Release|Win32
+		{93C1A720-E67F-40D5-B91B-9F2F463795F5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{93C1A720-E67F-40D5-B91B-9F2F463795F5}.Debug|Win32.Build.0 = Debug|Win32
+		{93C1A720-E67F-40D5-B91B-9F2F463795F5}.DebugMT|Win32.ActiveCfg = Debug|Win32
+		{93C1A720-E67F-40D5-B91B-9F2F463795F5}.DebugMT|Win32.Build.0 = Debug|Win32
+		{93C1A720-E67F-40D5-B91B-9F2F463795F5}.Release|Win32.ActiveCfg = Release|Win32
+		{93C1A720-E67F-40D5-B91B-9F2F463795F5}.Release|Win32.Build.0 = Release|Win32
+		{93C1A720-E67F-40D5-B91B-9F2F463795F5}.ReleaseMT|Win32.ActiveCfg = Release|Win32
+		{93C1A720-E67F-40D5-B91B-9F2F463795F5}.ReleaseMT|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
