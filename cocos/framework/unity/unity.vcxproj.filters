@@ -4,6 +4,7 @@
     <ClInclude Include="..\Classes\unity\factroy.h" />
     <ClInclude Include="..\Classes\unity\object.h" />
     <ClInclude Include="..\Classes\unity\singleton.h" />
+    <ClInclude Include="..\Classes\unity\property.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\unity\object.cpp" />

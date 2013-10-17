@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClInclude Include="..\Classes\unity\factroy.h" />
     <ClInclude Include="..\Classes\unity\object.h" />
+    <ClInclude Include="..\Classes\unity\property.h" />
     <ClInclude Include="..\Classes\unity\singleton.h" />
   </ItemGroup>
   <ItemGroup>

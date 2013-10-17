@@ -1,4 +1,5 @@
 #include "framework.h"
+#include "unity/property.h"
 
 using namespace framework;
 
@@ -14,6 +15,13 @@ public:
 
 private:
 	event<aaaa, aaaa>* pDE;
+};
+
+class PropertyTest : unity::PropertyContainer
+{
+public:
+
+	unity::PropertyTemplaye<int, this, "Value"> mValue;
 };
 
 void cccccccccc()
