@@ -47,30 +47,34 @@
 		9204B2FB180E2535002DD158 /* libCocosDenshion Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9204B2ED180E2529002DD158 /* libCocosDenshion Mac.a */; };
 		9204B2FC180E2535002DD158 /* libjsbindings Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9204B2EE180E2529002DD158 /* libjsbindings Mac.a */; };
 		9204B2FD180E2535002DD158 /* libluabindings Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9204B2EF180E2529002DD158 /* libluabindings Mac.a */; };
-		9204B323180E268D002DD158 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9204B31F180E268D002DD158 /* AppDelegate.cpp */; };
-		9204B324180E268D002DD158 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9204B31F180E268D002DD158 /* AppDelegate.cpp */; };
-		9204B325180E268D002DD158 /* AppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B320180E268D002DD158 /* AppDelegate.h */; };
-		9204B326180E268D002DD158 /* AppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B320180E268D002DD158 /* AppDelegate.h */; };
-		9204B327180E268D002DD158 /* CCLuaEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9204B321180E268D002DD158 /* CCLuaEngine.cpp */; };
-		9204B328180E268D002DD158 /* CCLuaEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9204B321180E268D002DD158 /* CCLuaEngine.cpp */; };
-		9204B329180E268D002DD158 /* CCLuaEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B322180E268D002DD158 /* CCLuaEngine.h */; };
-		9204B32A180E268D002DD158 /* CCLuaEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B322180E268D002DD158 /* CCLuaEngine.h */; };
-		9204B331180E26B5002DD158 /* factroy.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B32D180E26B5002DD158 /* factroy.h */; };
-		9204B332180E26B5002DD158 /* factroy.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B32D180E26B5002DD158 /* factroy.h */; };
-		9204B333180E26B5002DD158 /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9204B32E180E26B5002DD158 /* object.cpp */; };
-		9204B334180E26B5002DD158 /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9204B32E180E26B5002DD158 /* object.cpp */; };
-		9204B335180E26B5002DD158 /* object.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B32F180E26B5002DD158 /* object.h */; };
-		9204B336180E26B5002DD158 /* object.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B32F180E26B5002DD158 /* object.h */; };
-		9204B337180E26B5002DD158 /* singleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B330180E26B5002DD158 /* singleton.h */; };
-		9204B338180E26B5002DD158 /* singleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B330180E26B5002DD158 /* singleton.h */; };
-		9204B33D180E26C0002DD158 /* delegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B339180E26C0002DD158 /* delegate.h */; };
-		9204B33E180E26C0002DD158 /* delegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B339180E26C0002DD158 /* delegate.h */; };
-		9204B33F180E26C0002DD158 /* event.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B33A180E26C0002DD158 /* event.h */; };
-		9204B340180E26C0002DD158 /* event.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B33A180E26C0002DD158 /* event.h */; };
-		9204B341180E26C0002DD158 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B33B180E26C0002DD158 /* framework.h */; };
-		9204B342180E26C0002DD158 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9204B33B180E26C0002DD158 /* framework.h */; };
-		9204B343180E26C0002DD158 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9204B33C180E26C0002DD158 /* Test.cpp */; };
-		9204B344180E26C0002DD158 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9204B33C180E26C0002DD158 /* Test.cpp */; };
+		9233B7DB18114A4A0095D07F /* DataContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 9233B7D618114A4A0095D07F /* DataContext.h */; };
+		9233B7DC18114A4A0095D07F /* DataContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 9233B7D618114A4A0095D07F /* DataContext.h */; };
+		9233B7DD18114A4A0095D07F /* delegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9233B7D718114A4A0095D07F /* delegate.h */; };
+		9233B7DE18114A4A0095D07F /* delegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9233B7D718114A4A0095D07F /* delegate.h */; };
+		9233B7DF18114A4A0095D07F /* event.h in Headers */ = {isa = PBXBuildFile; fileRef = 9233B7D818114A4A0095D07F /* event.h */; };
+		9233B7E018114A4A0095D07F /* event.h in Headers */ = {isa = PBXBuildFile; fileRef = 9233B7D818114A4A0095D07F /* event.h */; };
+		9233B7E118114A4A0095D07F /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9233B7D918114A4A0095D07F /* framework.h */; };
+		9233B7E218114A4A0095D07F /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9233B7D918114A4A0095D07F /* framework.h */; };
+		9233B7E318114A4A0095D07F /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9233B7DA18114A4A0095D07F /* Test.cpp */; };
+		9233B7E418114A4A0095D07F /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9233B7DA18114A4A0095D07F /* Test.cpp */; };
+		9233B7EA18114A540095D07F /* factroy.h in Headers */ = {isa = PBXBuildFile; fileRef = 9233B7E518114A540095D07F /* factroy.h */; };
+		9233B7EB18114A540095D07F /* factroy.h in Headers */ = {isa = PBXBuildFile; fileRef = 9233B7E518114A540095D07F /* factroy.h */; };
+		9233B7EC18114A540095D07F /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9233B7E618114A540095D07F /* object.cpp */; };
+		9233B7ED18114A540095D07F /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9233B7E618114A540095D07F /* object.cpp */; };
+		9233B7EE18114A540095D07F /* object.h in Headers */ = {isa = PBXBuildFile; fileRef = 9233B7E718114A540095D07F /* object.h */; };
+		9233B7EF18114A540095D07F /* object.h in Headers */ = {isa = PBXBuildFile; fileRef = 9233B7E718114A540095D07F /* object.h */; };
+		9233B7F018114A540095D07F /* property.h in Headers */ = {isa = PBXBuildFile; fileRef = 9233B7E818114A540095D07F /* property.h */; };
+		9233B7F118114A540095D07F /* property.h in Headers */ = {isa = PBXBuildFile; fileRef = 9233B7E818114A540095D07F /* property.h */; };
+		9233B7F218114A540095D07F /* singleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 9233B7E918114A540095D07F /* singleton.h */; };
+		9233B7F318114A540095D07F /* singleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 9233B7E918114A540095D07F /* singleton.h */; };
+		9233B7F918114A770095D07F /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9233B7F518114A770095D07F /* AppDelegate.cpp */; };
+		9233B7FA18114A770095D07F /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9233B7F518114A770095D07F /* AppDelegate.cpp */; };
+		9233B7FB18114A770095D07F /* AppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9233B7F618114A770095D07F /* AppDelegate.h */; };
+		9233B7FC18114A770095D07F /* AppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9233B7F618114A770095D07F /* AppDelegate.h */; };
+		9233B7FD18114A770095D07F /* CCLuaEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9233B7F718114A770095D07F /* CCLuaEngine.cpp */; };
+		9233B7FE18114A770095D07F /* CCLuaEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9233B7F718114A770095D07F /* CCLuaEngine.cpp */; };
+		9233B7FF18114A770095D07F /* CCLuaEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 9233B7F818114A770095D07F /* CCLuaEngine.h */; };
+		9233B80018114A770095D07F /* CCLuaEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 9233B7F818114A770095D07F /* CCLuaEngine.h */; };
 		92FAA037180D3708004A8D24 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FAA036180D3708004A8D24 /* OpenGLES.framework */; };
 		92FAA038180D3710004A8D24 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FAA036180D3708004A8D24 /* OpenGLES.framework */; };
 /* End PBXBuildFile section */
@@ -122,18 +126,20 @@
 		9204B310180E254A002DD158 /* libCocosDenshion iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libCocosDenshion iOS.a"; path = "../../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libCocosDenshion iOS.a"; sourceTree = "<group>"; };
 		9204B311180E254A002DD158 /* libjsbindings iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libjsbindings iOS.a"; path = "../../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libjsbindings iOS.a"; sourceTree = "<group>"; };
 		9204B312180E254A002DD158 /* libluabindings iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libluabindings iOS.a"; path = "../../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libluabindings iOS.a"; sourceTree = "<group>"; };
-		9204B31F180E268D002DD158 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = engine/Classes/application/AppDelegate.cpp; sourceTree = "<group>"; };
-		9204B320180E268D002DD158 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = engine/Classes/application/AppDelegate.h; sourceTree = "<group>"; };
-		9204B321180E268D002DD158 /* CCLuaEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCLuaEngine.cpp; path = engine/Classes/application/CCLuaEngine.cpp; sourceTree = "<group>"; };
-		9204B322180E268D002DD158 /* CCLuaEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCLuaEngine.h; path = engine/Classes/application/CCLuaEngine.h; sourceTree = "<group>"; };
-		9204B32D180E26B5002DD158 /* factroy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = factroy.h; path = framework/Classes/unity/factroy.h; sourceTree = "<group>"; };
-		9204B32E180E26B5002DD158 /* object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = object.cpp; path = framework/Classes/unity/object.cpp; sourceTree = "<group>"; };
-		9204B32F180E26B5002DD158 /* object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = object.h; path = framework/Classes/unity/object.h; sourceTree = "<group>"; };
-		9204B330180E26B5002DD158 /* singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = singleton.h; path = framework/Classes/unity/singleton.h; sourceTree = "<group>"; };
-		9204B339180E26C0002DD158 /* delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = delegate.h; path = framework/Classes/mvvm/delegate.h; sourceTree = "<group>"; };
-		9204B33A180E26C0002DD158 /* event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = event.h; path = framework/Classes/mvvm/event.h; sourceTree = "<group>"; };
-		9204B33B180E26C0002DD158 /* framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = framework.h; path = framework/Classes/mvvm/framework.h; sourceTree = "<group>"; };
-		9204B33C180E26C0002DD158 /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Test.cpp; path = framework/Classes/mvvm/Test.cpp; sourceTree = "<group>"; };
+		9233B7D618114A4A0095D07F /* DataContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataContext.h; path = framework/Classes/mvvm/DataContext.h; sourceTree = "<group>"; };
+		9233B7D718114A4A0095D07F /* delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = delegate.h; path = framework/Classes/mvvm/delegate.h; sourceTree = "<group>"; };
+		9233B7D818114A4A0095D07F /* event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = event.h; path = framework/Classes/mvvm/event.h; sourceTree = "<group>"; };
+		9233B7D918114A4A0095D07F /* framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = framework.h; path = framework/Classes/mvvm/framework.h; sourceTree = "<group>"; };
+		9233B7DA18114A4A0095D07F /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Test.cpp; path = framework/Classes/mvvm/Test.cpp; sourceTree = "<group>"; };
+		9233B7E518114A540095D07F /* factroy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = factroy.h; path = framework/Classes/unity/factroy.h; sourceTree = "<group>"; };
+		9233B7E618114A540095D07F /* object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = object.cpp; path = framework/Classes/unity/object.cpp; sourceTree = "<group>"; };
+		9233B7E718114A540095D07F /* object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = object.h; path = framework/Classes/unity/object.h; sourceTree = "<group>"; };
+		9233B7E818114A540095D07F /* property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = property.h; path = framework/Classes/unity/property.h; sourceTree = "<group>"; };
+		9233B7E918114A540095D07F /* singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = singleton.h; path = framework/Classes/unity/singleton.h; sourceTree = "<group>"; };
+		9233B7F518114A770095D07F /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = engine/Classes/application/AppDelegate.cpp; sourceTree = "<group>"; };
+		9233B7F618114A770095D07F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = engine/Classes/application/AppDelegate.h; sourceTree = "<group>"; };
+		9233B7F718114A770095D07F /* CCLuaEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCLuaEngine.cpp; path = engine/Classes/application/CCLuaEngine.cpp; sourceTree = "<group>"; };
+		9233B7F818114A770095D07F /* CCLuaEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCLuaEngine.h; path = engine/Classes/application/CCLuaEngine.h; sourceTree = "<group>"; };
 		9276BCB0180D22F600B9FE55 /* libengine Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libengine Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9276BD4B180D256C00B9FE55 /* libengine iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libengine iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92FAA036180D3708004A8D24 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
@@ -191,9 +197,9 @@
 		1551A334158F2AB200E66CFE = {
 			isa = PBXGroup;
 			children = (
+				9233B7951811499A0095D07F /* engine */,
+				9233B794181149970095D07F /* framework */,
 				92FAA032180D36E4004A8D24 /* Frameworks */,
-				9276BCBE180D235600B9FE55 /* engine */,
-				9276BCBD180D234F00B9FE55 /* framework */,
 				1551A340158F2AB200E66CFE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -209,54 +215,56 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9204B31E180E2664002DD158 /* application */ = {
+		9233B794181149970095D07F /* framework */ = {
 			isa = PBXGroup;
 			children = (
-				9204B31F180E268D002DD158 /* AppDelegate.cpp */,
-				9204B320180E268D002DD158 /* AppDelegate.h */,
-				9204B321180E268D002DD158 /* CCLuaEngine.cpp */,
-				9204B322180E268D002DD158 /* CCLuaEngine.h */,
-			);
-			name = application;
-			sourceTree = "<group>";
-		};
-		9204B32B180E269C002DD158 /* mvvm */ = {
-			isa = PBXGroup;
-			children = (
-				9204B339180E26C0002DD158 /* delegate.h */,
-				9204B33A180E26C0002DD158 /* event.h */,
-				9204B33B180E26C0002DD158 /* framework.h */,
-				9204B33C180E26C0002DD158 /* Test.cpp */,
-			);
-			name = mvvm;
-			sourceTree = "<group>";
-		};
-		9204B32C180E26A3002DD158 /* unity */ = {
-			isa = PBXGroup;
-			children = (
-				9204B32D180E26B5002DD158 /* factroy.h */,
-				9204B32E180E26B5002DD158 /* object.cpp */,
-				9204B32F180E26B5002DD158 /* object.h */,
-				9204B330180E26B5002DD158 /* singleton.h */,
-			);
-			name = unity;
-			sourceTree = "<group>";
-		};
-		9276BCBD180D234F00B9FE55 /* framework */ = {
-			isa = PBXGroup;
-			children = (
-				9204B32C180E26A3002DD158 /* unity */,
-				9204B32B180E269C002DD158 /* mvvm */,
+				9233B7D518114A400095D07F /* mvvm */,
+				9233B7C5181149CA0095D07F /* unity */,
 			);
 			name = framework;
 			sourceTree = "<group>";
 		};
-		9276BCBE180D235600B9FE55 /* engine */ = {
+		9233B7951811499A0095D07F /* engine */ = {
 			isa = PBXGroup;
 			children = (
-				9204B31E180E2664002DD158 /* application */,
+				9233B7F418114A5B0095D07F /* application */,
 			);
 			name = engine;
+			sourceTree = "<group>";
+		};
+		9233B7C5181149CA0095D07F /* unity */ = {
+			isa = PBXGroup;
+			children = (
+				9233B7E518114A540095D07F /* factroy.h */,
+				9233B7E618114A540095D07F /* object.cpp */,
+				9233B7E718114A540095D07F /* object.h */,
+				9233B7E818114A540095D07F /* property.h */,
+				9233B7E918114A540095D07F /* singleton.h */,
+			);
+			name = unity;
+			sourceTree = "<group>";
+		};
+		9233B7D518114A400095D07F /* mvvm */ = {
+			isa = PBXGroup;
+			children = (
+				9233B7D618114A4A0095D07F /* DataContext.h */,
+				9233B7D718114A4A0095D07F /* delegate.h */,
+				9233B7D818114A4A0095D07F /* event.h */,
+				9233B7D918114A4A0095D07F /* framework.h */,
+				9233B7DA18114A4A0095D07F /* Test.cpp */,
+			);
+			name = mvvm;
+			sourceTree = "<group>";
+		};
+		9233B7F418114A5B0095D07F /* application */ = {
+			isa = PBXGroup;
+			children = (
+				9233B7F518114A770095D07F /* AppDelegate.cpp */,
+				9233B7F618114A770095D07F /* AppDelegate.h */,
+				9233B7F718114A770095D07F /* CCLuaEngine.cpp */,
+				9233B7F818114A770095D07F /* CCLuaEngine.h */,
+			);
+			name = application;
 			sourceTree = "<group>";
 		};
 		92FAA032180D36E4004A8D24 /* Frameworks */ = {
@@ -295,12 +303,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9204B337180E26B5002DD158 /* singleton.h in Headers */,
-				9204B331180E26B5002DD158 /* factroy.h in Headers */,
-				9204B335180E26B5002DD158 /* object.h in Headers */,
-				9204B341180E26C0002DD158 /* framework.h in Headers */,
-				9204B33D180E26C0002DD158 /* delegate.h in Headers */,
-				9204B33F180E26C0002DD158 /* event.h in Headers */,
+				9233B7F018114A540095D07F /* property.h in Headers */,
+				9233B7EA18114A540095D07F /* factroy.h in Headers */,
+				9233B7EE18114A540095D07F /* object.h in Headers */,
+				9233B7DF18114A4A0095D07F /* event.h in Headers */,
+				9233B7F218114A540095D07F /* singleton.h in Headers */,
+				9233B7DB18114A4A0095D07F /* DataContext.h in Headers */,
+				9233B7DD18114A4A0095D07F /* delegate.h in Headers */,
+				9233B7E118114A4A0095D07F /* framework.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,8 +318,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9204B325180E268D002DD158 /* AppDelegate.h in Headers */,
-				9204B329180E268D002DD158 /* CCLuaEngine.h in Headers */,
+				9233B7FB18114A770095D07F /* AppDelegate.h in Headers */,
+				9233B7FF18114A770095D07F /* CCLuaEngine.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,8 +327,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9204B32A180E268D002DD158 /* CCLuaEngine.h in Headers */,
-				9204B326180E268D002DD158 /* AppDelegate.h in Headers */,
+				9233B7FC18114A770095D07F /* AppDelegate.h in Headers */,
+				9233B80018114A770095D07F /* CCLuaEngine.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,12 +336,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9204B338180E26B5002DD158 /* singleton.h in Headers */,
-				9204B332180E26B5002DD158 /* factroy.h in Headers */,
-				9204B336180E26B5002DD158 /* object.h in Headers */,
-				9204B342180E26C0002DD158 /* framework.h in Headers */,
-				9204B33E180E26C0002DD158 /* delegate.h in Headers */,
-				9204B340180E26C0002DD158 /* event.h in Headers */,
+				9233B7F118114A540095D07F /* property.h in Headers */,
+				9233B7EB18114A540095D07F /* factroy.h in Headers */,
+				9233B7EF18114A540095D07F /* object.h in Headers */,
+				9233B7E018114A4A0095D07F /* event.h in Headers */,
+				9233B7F318114A540095D07F /* singleton.h in Headers */,
+				9233B7DC18114A4A0095D07F /* DataContext.h in Headers */,
+				9233B7DE18114A4A0095D07F /* delegate.h in Headers */,
+				9233B7E218114A4A0095D07F /* framework.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,8 +454,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9204B333180E26B5002DD158 /* object.cpp in Sources */,
-				9204B343180E26C0002DD158 /* Test.cpp in Sources */,
+				9233B7EC18114A540095D07F /* object.cpp in Sources */,
+				9233B7E318114A4A0095D07F /* Test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,8 +463,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9204B327180E268D002DD158 /* CCLuaEngine.cpp in Sources */,
-				9204B323180E268D002DD158 /* AppDelegate.cpp in Sources */,
+				9233B7FD18114A770095D07F /* CCLuaEngine.cpp in Sources */,
+				9233B7F918114A770095D07F /* AppDelegate.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,8 +472,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9204B328180E268D002DD158 /* CCLuaEngine.cpp in Sources */,
-				9204B324180E268D002DD158 /* AppDelegate.cpp in Sources */,
+				9233B7FE18114A770095D07F /* CCLuaEngine.cpp in Sources */,
+				9233B7FA18114A770095D07F /* AppDelegate.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,8 +481,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9204B334180E26B5002DD158 /* object.cpp in Sources */,
-				9204B344180E26C0002DD158 /* Test.cpp in Sources */,
+				9233B7ED18114A540095D07F /* object.cpp in Sources */,
+				9233B7E418114A4A0095D07F /* Test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,7 +565,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = framework/Prefix.pch;
+				GCC_PREFIX_HEADER = framework/Classes/Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_MAC,
@@ -573,7 +585,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = framework/Prefix.pch;
+				GCC_PREFIX_HEADER = framework/Classes/Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_KEYBOARD_SUPPORT,
@@ -593,7 +605,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = engine/Prefix.pch;
+				GCC_PREFIX_HEADER = engine/Classes/Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_MAC,
@@ -614,7 +626,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = engine/Prefix.pch;
+				GCC_PREFIX_HEADER = engine/Classes/Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_KEYBOARD_SUPPORT,
@@ -636,7 +648,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: song hongyu (6R4L5CKN8Z)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = engine/Prefix.pch;
+				GCC_PREFIX_HEADER = engine/Classes/Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
@@ -658,7 +670,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: song hongyu (6R4L5CKN8Z)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = engine/Prefix.pch;
+				GCC_PREFIX_HEADER = engine/Classes/Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
@@ -696,7 +708,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: song hongyu (6R4L5CKN8Z)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = framework/Prefix.pch;
+				GCC_PREFIX_HEADER = framework/Classes/Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
@@ -717,7 +729,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: song hongyu (6R4L5CKN8Z)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = framework/Prefix.pch;
+				GCC_PREFIX_HEADER = framework/Classes/Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,

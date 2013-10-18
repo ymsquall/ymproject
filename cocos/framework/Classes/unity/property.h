@@ -18,7 +18,7 @@ namespace unity
 	class Property : public IProperty<ValueT, ConT>
 	{
 	public:
-		friend typename ConT;
+		friend ConT;
 		typedef IProperty<ValueT, ConT> SuperT;
 		typedef Property<ValueT, ConT, setter> ThisT;
 
@@ -40,7 +40,7 @@ namespace unity
 
 	private:
 		ConT* mContainer;
-		SuperT::SetterFunc mSetter;
+		typename SuperT::SetterFunc mSetter;
 		ValueT mValue;
 	};
 #define PROPERTY_DEFINED(name, type, container, setter) public: unity::Property<type, container, &container::setter> name;
@@ -51,7 +51,7 @@ namespace unity
 	class PropertyReadOnly : public IProperty<ValueT, ConT>
 	{
 	public:
-		friend typename ConT;
+		friend ConT;
 		typedef IProperty<ValueT, ConT> SuperT;
 		typedef PropertyReadOnly<ValueT, ConT, setter> ThisT;
 		
@@ -74,7 +74,7 @@ namespace unity
 
 	private:
 		ConT* mContainer;
-		SuperT::SetterFunc mSetter;
+		typename SuperT::SetterFunc mSetter;
 		ValueT mValue;
 	};
 #define PROPERTY_READONLY_DEFINED(name, type, container, setter) public: unity::PropertyReadOnly<type, container, &container::setter> name;
@@ -85,7 +85,7 @@ namespace unity
 	class PropertyWriteOnly : public IProperty<ValueT, ConT>
 	{
 	public:
-		friend typename ConT;
+		friend ConT;
 		typedef IProperty<ValueT, ConT> SuperT;
 		typedef PropertyWriteOnly<ValueT, ConT, setter> ThisT;
 
@@ -108,7 +108,7 @@ namespace unity
 
 	private:
 		ConT* mContainer;
-		SuperT::SetterFunc mSetter;
+		typename SuperT::SetterFunc mSetter;
 		ValueT mValue;
 	};
 #define PROPERTY_WRITEONLY_DEFINED(name, type, container, setter) public: unity::PropertyWriteOnly<type, container, &container::setter> name;
