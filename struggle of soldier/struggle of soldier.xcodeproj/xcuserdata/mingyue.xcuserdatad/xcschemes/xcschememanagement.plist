@@ -4,125 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Hello cpp Mac.xcscheme</key>
+		<key>build-all-samples Mac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
+		<key>build-all-samples iOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>19</integer>
 		</dict>
-		<key>Hello cpp iOS.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>32</integer>
-		</dict>
-		<key>Hello lua Mac copy.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>42</integer>
-		</dict>
-		<key>Hello lua Mac.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>28</integer>
-		</dict>
-		<key>Hello lua iOS copy.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>43</integer>
-		</dict>
-		<key>Hello lua iOS.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>40</integer>
-		</dict>
-		<key>JS CocosDragon Mac.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>27</integer>
-		</dict>
-		<key>JS CocosDragon iOS.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>39</integer>
-		</dict>
-		<key>JS Crystal Craze Mac.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>26</integer>
-		</dict>
-		<key>JS Crystal Craze iOS.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>38</integer>
-		</dict>
-		<key>JS Moon Warriors Mac.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>25</integer>
-		</dict>
-		<key>JS Moon Warriors iOS.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>37</integer>
-		</dict>
-		<key>JS Watermelon With Me Mac.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>24</integer>
-		</dict>
-		<key>JS Watermelon With Me iOS.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>36</integer>
-		</dict>
-		<key>Simple Game Mac.xcscheme</key>
+		<key>struggle of soldier Mac.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>20</integer>
 		</dict>
-		<key>Simple Game iOS.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>33</integer>
-		</dict>
-		<key>Test JavaScript Mac.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>22</integer>
-		</dict>
-		<key>Test JavaScript Obfuscated Mac.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>23</integer>
-		</dict>
-		<key>Test JavaScript Obfuscated iOS.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>35</integer>
-		</dict>
-		<key>Test JavaScript iOS.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>34</integer>
-		</dict>
-		<key>Test cpp Mac.xcscheme</key>
+		<key>struggle of soldier.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>21</integer>
-		</dict>
-		<key>Test cpp iOS.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>31</integer>
-		</dict>
-		<key>Test lua Mac.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>29</integer>
-		</dict>
-		<key>Test lua iOS.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>41</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -148,16 +48,6 @@
 			<true/>
 		</dict>
 		<key>1D6058900D05DD3D006BFB54</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>92152816180D48120062E7B1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9215282E180D482F0062E7B1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

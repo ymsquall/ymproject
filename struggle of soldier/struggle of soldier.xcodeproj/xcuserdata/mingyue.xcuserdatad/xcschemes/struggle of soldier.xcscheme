@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9215282E180D482F0062E7B1"
-               BuildableName = "struggle of soldier iOS.app"
-               BlueprintName = "struggle of soldier iOS"
-               ReferencedContainer = "container:ymproject.xcodeproj">
+               BlueprintIdentifier = "1A1197B31785363400D62A44"
+               BuildableName = "struggle of soldier.app"
+               BlueprintName = "struggle of soldier"
+               ReferencedContainer = "container:struggle of soldier.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9215282E180D482F0062E7B1"
-            BuildableName = "struggle of soldier iOS.app"
-            BlueprintName = "struggle of soldier iOS"
-            ReferencedContainer = "container:ymproject.xcodeproj">
+            BlueprintIdentifier = "1A1197B31785363400D62A44"
+            BuildableName = "struggle of soldier.app"
+            BlueprintName = "struggle of soldier"
+            ReferencedContainer = "container:struggle of soldier.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -51,10 +51,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9215282E180D482F0062E7B1"
-            BuildableName = "struggle of soldier iOS.app"
-            BlueprintName = "struggle of soldier iOS"
-            ReferencedContainer = "container:ymproject.xcodeproj">
+            BlueprintIdentifier = "1A1197B31785363400D62A44"
+            BuildableName = "struggle of soldier.app"
+            BlueprintName = "struggle of soldier"
+            ReferencedContainer = "container:struggle of soldier.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -69,10 +69,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9215282E180D482F0062E7B1"
-            BuildableName = "struggle of soldier iOS.app"
-            BlueprintName = "struggle of soldier iOS"
-            ReferencedContainer = "container:ymproject.xcodeproj">
+            BlueprintIdentifier = "1A1197B31785363400D62A44"
+            BuildableName = "struggle of soldier.app"
+            BlueprintName = "struggle of soldier"
+            ReferencedContainer = "container:struggle of soldier.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "92152816180D48120062E7B1"
-               BuildableName = "struggle of soldier Mac.app"
-               BlueprintName = "struggle of soldier Mac"
-               ReferencedContainer = "container:ymproject.xcodeproj">
+               BlueprintIdentifier = "A07A517B1783A1CC0073F6A7"
+               BuildableName = "build-all-samples iOS"
+               BlueprintName = "build-all-samples iOS"
+               ReferencedContainer = "container:samples.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,15 +29,6 @@
       buildConfiguration = "Debug">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "92152816180D48120062E7B1"
-            BuildableName = "struggle of soldier Mac.app"
-            BlueprintName = "struggle of soldier Mac"
-            ReferencedContainer = "container:ymproject.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -48,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "92152816180D48120062E7B1"
-            BuildableName = "struggle of soldier Mac.app"
-            BlueprintName = "struggle of soldier Mac"
-            ReferencedContainer = "container:ymproject.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -66,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "92152816180D48120062E7B1"
-            BuildableName = "struggle of soldier Mac.app"
-            BlueprintName = "struggle of soldier Mac"
-            ReferencedContainer = "container:ymproject.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
