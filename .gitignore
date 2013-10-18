@@ -171,3 +171,4 @@ testeditorR.map
 websockets.dll
 zlib1.dll
 .svn
+BuildTemp
