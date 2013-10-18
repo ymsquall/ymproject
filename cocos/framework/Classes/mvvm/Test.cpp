@@ -1,4 +1,5 @@
 #include "framework.h"
+#include "unity/property.h"
 
 using namespace framework;
 
@@ -18,5 +19,4 @@ private:
 
 void cccccccccc()
 {
-
 }
