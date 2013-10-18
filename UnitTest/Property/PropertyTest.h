@@ -1,12 +1,12 @@
 #include "mvvm/framework.h"
 #include "unity/singleton.h"
 
-class PropertyTest : public unity::SingletonAutoT<PropertyTest>
+class PropertyTest : public unity::object
 {
 public:
 	PropertyTest();
 
-	void test();
+	static void test();
 	void setValue2(const int& v);
 
 private:

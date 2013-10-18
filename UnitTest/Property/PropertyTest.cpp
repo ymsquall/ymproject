@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "PropertyTest.h"
 
 PropertyTest::PropertyTest():
