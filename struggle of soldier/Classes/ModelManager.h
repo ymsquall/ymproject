@@ -3,9 +3,14 @@
 #include "unity/singleton.h"
 #include "application/AppDelegate.h"
 
+using namespace framework;
+
 namespace framework
 {
-	class RoutedEventArgs;
+	namespace unity
+	{
+		class RoutedEventArgs;
+	}
 }
 class ModelManager : public unity::object
 					,public unity::SingletonAutoT<ModelManager>
@@ -16,7 +21,7 @@ public:
 
 	void initWithAppStart(engine::AppDelegate* pApp);
 	bool modelLoop();
-	void onAppInitOveredShowingBefore(engine::AppDelegate* pApp, framework::RoutedEventArgs* args);
-	void onAppInitOveredShowingAfter(engine::AppDelegate* pApp, framework::RoutedEventArgs* args);
+	void onAppInitOveredShowingBefore(engine::AppDelegate* pApp, unity::RoutedEventArgs* args);
+	void onAppInitOveredShowingAfter(engine::AppDelegate* pApp, unity::RoutedEventArgs* args);
 };
 

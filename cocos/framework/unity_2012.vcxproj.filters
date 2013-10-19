@@ -6,6 +6,8 @@
     <ClInclude Include="Classes\unity\property.h" />
     <ClInclude Include="Classes\unity\singleton.h" />
     <ClInclude Include="Classes\unity\platform.h" />
+    <ClInclude Include="Classes\unity\delegate.h" />
+    <ClInclude Include="Classes\unity\event.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Classes\unity\object.cpp" />

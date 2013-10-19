@@ -3,8 +3,11 @@
 
 namespace framework
 {
-	class Model : public INotifyPropertyChanged, public unity::object
+	namespace mvvm
 	{
+		class Model : public INotifyPropertyChanged, public unity::object
+		{
 
-	};
-}
+		};
+	}	// namespace mvvm
+}	// namespace framework

@@ -11,6 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Classes\unity\delegate.h" />
+    <ClInclude Include="Classes\unity\event.h" />
     <ClInclude Include="Classes\unity\factroy.h" />
     <ClInclude Include="Classes\unity\object.h" />
     <ClInclude Include="Classes\unity\platform.h" />

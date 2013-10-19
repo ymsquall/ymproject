@@ -1,9 +1,14 @@
 #pragma once
 
-namespace uiview
+namespace engine
 {
-	class Panel
+	namespace uiview
 	{
-
-	};
-}
+		class BulletDecorator
+		{
+		public:
+			BulletDecorator();
+			virtual ~BulletDecorator();
+		};
+	}	// namespace uiview
+}	// namespace engine

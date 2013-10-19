@@ -58,7 +58,7 @@ namespace engine
 		Director::getInstance()->stopAnimation();
 		SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
 
-		framework::RoutedEventArgs eventArgs;
+		framework::unity::RoutedEventArgs eventArgs;
 		Event_AppDidEnterBackground(this, &eventArgs);
 	}
 
@@ -68,7 +68,7 @@ namespace engine
 		Director::getInstance()->startAnimation();
 		SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 
-		framework::RoutedEventArgs eventArgs;
+		framework::unity::RoutedEventArgs eventArgs;
 		Event_AppWillEnterForeground(this, &eventArgs);
 	}
     
@@ -127,7 +127,7 @@ namespace engine
 			return 0;
 		}
 
-		framework::RoutedEventArgs eventArgs;
+		framework::unity::RoutedEventArgs eventArgs;
 		Event_AppInitOveredShowingBefore(this, &eventArgs);
         
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)

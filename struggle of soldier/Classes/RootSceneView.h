@@ -2,6 +2,8 @@
 #include "cocos2d.h"
 #include "unity/singleton.h"
 
+using namespace framework;
+
 class RootSceneView : public cocos2d::Scene
 	, public unity::SingletonAutoT<RootSceneView>
 {

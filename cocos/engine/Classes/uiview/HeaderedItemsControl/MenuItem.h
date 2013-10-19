@@ -1,9 +1,14 @@
 #pragma once
 
-namespace uiview
+namespace engine
 {
-	class Panel
+	namespace uiview
 	{
-
-	};
-}
+		class MenuItem
+		{
+		public:
+			MenuItem();
+			virtual ~MenuItem();
+		};
+	}	// namespace uiview
+}	// namespace engine

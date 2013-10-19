@@ -4,8 +4,11 @@
 
 namespace framework
 {
-	class View : public FrameworkElement
+	namespace mvvm
 	{
+		class View : public FrameworkElement
+		{
 
-	};
-}
+		};
+	}	// namespace mvvm
+}	// namespace framework

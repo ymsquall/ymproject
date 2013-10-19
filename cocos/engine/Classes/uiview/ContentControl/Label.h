@@ -1,9 +1,14 @@
 #pragma once
 
-namespace uiview
+namespace engine
 {
-	class Panel
+	namespace uiview
 	{
-
-	};
-}
+		class Label
+		{
+		public:
+			Label();
+			virtual ~Label();
+		};
+	}	// namespace uiview
+}	// namespace engine

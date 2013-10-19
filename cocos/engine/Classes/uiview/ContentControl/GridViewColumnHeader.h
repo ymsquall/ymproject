@@ -1,9 +1,14 @@
 #pragma once
 
-namespace uiview
+namespace engine
 {
-	class Panel
+	namespace uiview
 	{
-
-	};
-}
+		class GridViewColumnHeader
+		{
+		public:
+			GridViewColumnHeader();
+			virtual ~GridViewColumnHeader();
+		};
+	}	// namespace uiview
+}	// namespace engine

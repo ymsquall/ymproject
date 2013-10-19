@@ -104,4 +104,6 @@ static const Real Real_Zero=0.0f;
 static const Real Real_Half=0.5f;
 static const Real Real_Epsilon=1e-06f;
 
+#include <vector>
+
 #endif	// _UNITY_PLATFORM_H_

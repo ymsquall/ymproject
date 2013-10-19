@@ -1,9 +1,14 @@
 #pragma once
 
-namespace uiview
+namespace engine
 {
-	class Panel
+	namespace uiview
 	{
-
-	};
-}
+		class FlowText
+		{
+		public:
+			FlowText();
+			virtual ~FlowText();
+		};
+	}	// namespace uiview
+}	// namespace engine

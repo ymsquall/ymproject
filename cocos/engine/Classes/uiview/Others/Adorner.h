@@ -1,9 +1,14 @@
 #pragma once
 
-namespace uiview
+namespace engine
 {
-	class Panel
+	namespace uiview
 	{
-
-	};
-}
+		class Adorner
+		{
+		public:
+			Adorner();
+			virtual ~Adorner();
+		};
+	}	// namespace uiview
+}	// namespace engine

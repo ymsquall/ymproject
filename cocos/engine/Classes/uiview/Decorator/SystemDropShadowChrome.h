@@ -1,9 +1,14 @@
 #pragma once
 
-namespace uiview
+namespace engine
 {
-	class Panel
+	namespace uiview
 	{
-
-	};
-}
+		class SystemDropShadowChrome
+		{
+		public:
+			SystemDropShadowChrome();
+			virtual ~SystemDropShadowChrome();
+		};
+	}	// namespace uiview
+}	// namespace engine

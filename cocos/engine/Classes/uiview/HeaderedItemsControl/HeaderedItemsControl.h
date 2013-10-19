@@ -1,9 +1,14 @@
 #pragma once
 
-namespace uiview
+namespace engine
 {
-	class Panel
+	namespace uiview
 	{
-
-	};
-}
+		class HeaderedItemsControl
+		{
+		public:
+			HeaderedItemsControl();
+			virtual ~HeaderedItemsControl();
+		};
+	}	// namespace uiview
+}	// namespace engine

@@ -1,42 +1,45 @@
 #pragma once
 
-namespace unity
+namespace framework
 {
-	class Type;
-	class ObjectFactroy
+	namespace unity
 	{
-	public:
-		template<class ObjT, class TypeT>
-		static ObjT* create()
+		class Type;
+		class ObjectFactroy
 		{
-			ObjT* pRet = new ObjT();
-			pRet->mObjectType = createType<TypeT>();
-			return pRet;
-		}
+		public:
+			template<class ObjT, class TypeT>
+			static ObjT* create()
+			{
+				ObjT* pRet = new ObjT();
+				pRet->mObjectType = createType<TypeT>();
+				return pRet;
+			}
 
-	private:
-		friend class TypeFactroy;
-		template<class TypeT>
-		static Type* createType()
-		{
-			Type* pRet = new TypeT();
-			return pRet;
-		}
-	};
+		private:
+			friend class TypeFactroy;
+			template<class TypeT>
+			static Type* createType()
+			{
+				Type* pRet = new TypeT();
+				return pRet;
+			}
+		};
 
-	class TypeFactroy
-	{
-	public:
-		template<class TypeT>
-		static Type* create()
+		class TypeFactroy
 		{
-			Type* pType = ObjectFactroy::createType<TypeT>();
-			return pType;
-		}
-		static void release(Type* pType)
-		{
-			if(NULL != pType)
-				delete pType;
-		}
-	};
-}
+		public:
+			template<class TypeT>
+			static Type* create()
+			{
+				Type* pType = ObjectFactroy::createType<TypeT>();
+				return pType;
+			}
+			static void release(Type* pType)
+			{
+				if(NULL != pType)
+					delete pType;
+			}
+		};
+	}	// namespace unity
+}	// namespace framework

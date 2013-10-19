@@ -12,8 +12,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Classes\mvvm\DataContext.h" />
-    <ClInclude Include="Classes\mvvm\delegate.h" />
-    <ClInclude Include="Classes\mvvm\event.h" />
     <ClInclude Include="Classes\mvvm\framework.h" />
     <ClInclude Include="Classes\mvvm\interface.h" />
     <ClInclude Include="Classes\mvvm\model.h" />

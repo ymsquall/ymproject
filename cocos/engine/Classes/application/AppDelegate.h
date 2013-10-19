@@ -45,10 +45,10 @@ namespace engine
 		float getAnimationInterval();
 
 	public:
-		framework::RoutedEvent<AppDelegate*> Event_AppInitOveredShowingBefore;
-		framework::RoutedEvent<AppDelegate*> Event_AppInitOveredShowingAfter;
-		framework::RoutedEvent<AppDelegate*> Event_AppDidEnterBackground;
-		framework::RoutedEvent<AppDelegate*> Event_AppWillEnterForeground;
+		framework::unity::RoutedEvent<AppDelegate*> Event_AppInitOveredShowingBefore;
+		framework::unity::RoutedEvent<AppDelegate*> Event_AppInitOveredShowingAfter;
+		framework::unity::RoutedEvent<AppDelegate*> Event_AppDidEnterBackground;
+		framework::unity::RoutedEvent<AppDelegate*> Event_AppWillEnterForeground;
 
 	private:
 		int mEGLViewWidth;

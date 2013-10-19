@@ -1,6 +1,8 @@
 #include "mvvm/framework.h"
 #include "unity/singleton.h"
 
+using namespace framework;
+
 class PropertyTest : public unity::object
 {
 public:

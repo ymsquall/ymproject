@@ -1,9 +1,14 @@
 #pragma once
 
-namespace uiview
+namespace engine
 {
-	class Panel
+	namespace uiview
 	{
-
-	};
-}
+		class Expander
+		{
+		public:
+			Expander();
+			virtual ~Expander();
+		};
+	}	// namespace uiview
+}	// namespace engine

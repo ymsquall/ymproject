@@ -1,54 +1,57 @@
 #pragma once
 #include "object.h"
 
-namespace unity
+namespace framework
 {
-	template<class T>
-	class SingletonAutoT
+	namespace unity
 	{
-	public:
-		virtual ~SingletonAutoT()
+		template<class T>
+		class SingletonAutoT
 		{
-			CCASSERT(false, "SingletonAutoT can not destructor!");
-			mInstance = NULL;
-		}
-		static T* point()
-		{
-			if(NULL == mInstance)
+		public:
+			virtual ~SingletonAutoT()
 			{
-				mInstance = new T();
-				mInstance->retain();
+				CCASSERT(false, "SingletonAutoT can not destructor!");
+				mInstance = NULL;
 			}
-			return mInstance;
-		}
-	private:
-		static T* mInstance;
-	};
-	template<class T> T* SingletonAutoT<T>::mInstance = NULL;
+			static T* point()
+			{
+				if(NULL == mInstance)
+				{
+					mInstance = new T();
+					mInstance->retain();
+				}
+				return mInstance;
+			}
+		private:
+			static T* mInstance;
+		};
+		template<class T> T* SingletonAutoT<T>::mInstance = NULL;
 
-	template<class T>
-	class SingletonT
-	{
-	public:
-		SingletonT()
+		template<class T>
+		class SingletonT
 		{
-			if(NULL != mInstance)
+		public:
+			SingletonT()
 			{
-				CCASSERT(false, "SingletonT can not repeat construction!");
-				mInstance->release();
+				if(NULL != mInstance)
+				{
+					CCASSERT(false, "SingletonT can not repeat construction!");
+					mInstance->release();
+				}
+				mInstance = this;
 			}
-			mInstance = this;
-		}
-		virtual ~SingletonT()
-		{
-			mInstance = NULL;
-		}
-		static T* point()
-		{
-			return mInstance;
-		}
-	private:
-		static T* mInstance;
-	};
-	template<class T> T* SingletonT<T>::mInstance = NULL;
-}
+			virtual ~SingletonT()
+			{
+				mInstance = NULL;
+			}
+			static T* point()
+			{
+				return mInstance;
+			}
+		private:
+			static T* mInstance;
+		};
+		template<class T> T* SingletonT<T>::mInstance = NULL;
+	} // namespace unity
+}	// namespace framework

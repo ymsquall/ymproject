@@ -1,9 +1,14 @@
 #pragma once
 
-namespace uiview
+namespace engine
 {
-	class Panel
+	namespace uiview
 	{
-
-	};
-}
+		class UniformGrid
+		{
+		public:
+			UniformGrid();
+			virtual ~UniformGrid();
+		};
+	}	// namespace uiview
+}	// namespace engine

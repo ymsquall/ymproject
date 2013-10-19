@@ -3,8 +3,11 @@
 
 namespace framework
 {
-	class ViewModel
+	namespace mvvm
 	{
+		class ViewModel
+		{
 
-	};
-}
+		};
+	}	// namespace mvvm
+}	// namespace framework

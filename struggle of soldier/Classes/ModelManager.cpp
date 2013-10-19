@@ -28,11 +28,11 @@ bool ModelManager::modelLoop()
 	return true;
 }
 
-void ModelManager::onAppInitOveredShowingBefore(engine::AppDelegate* pApp, framework::RoutedEventArgs* args)
+void ModelManager::onAppInitOveredShowingBefore(engine::AppDelegate* pApp, unity::RoutedEventArgs* args)
 {
 
 }
-void ModelManager::onAppInitOveredShowingAfter(engine::AppDelegate* pApp, framework::RoutedEventArgs* args)
+void ModelManager::onAppInitOveredShowingAfter(engine::AppDelegate* pApp, unity::RoutedEventArgs* args)
 {
 
 }

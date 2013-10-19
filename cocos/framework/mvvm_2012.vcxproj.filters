@@ -2,8 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClInclude Include="Classes\mvvm\DataContext.h" />
-    <ClInclude Include="Classes\mvvm\delegate.h" />
-    <ClInclude Include="Classes\mvvm\event.h" />
     <ClInclude Include="Classes\mvvm\framework.h" />
     <ClInclude Include="Classes\mvvm\model.h" />
     <ClInclude Include="Classes\mvvm\view.h" />

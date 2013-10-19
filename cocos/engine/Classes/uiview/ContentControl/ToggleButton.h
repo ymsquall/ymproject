@@ -1,9 +1,14 @@
 #pragma once
 
-namespace uiview
+namespace engine
 {
-	class Panel
+	namespace uiview
 	{
-
-	};
-}
+		class ToggleButton
+		{
+		public:
+			ToggleButton();
+			virtual ~ToggleButton();
+		};
+	}	// namespace uiview
+}	// namespace engine

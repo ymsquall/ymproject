@@ -1,9 +1,14 @@
 #pragma once
 
-namespace uiview
+namespace engine
 {
-	class Panel
+	namespace uiview
 	{
-
-	};
-}
+		class ScrollViewer
+		{
+		public:
+			ScrollViewer();
+			virtual ~ScrollViewer();
+		};
+	}	// namespace uiview
+}	// namespace engine
