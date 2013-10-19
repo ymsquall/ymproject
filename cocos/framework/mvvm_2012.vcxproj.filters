@@ -5,8 +5,12 @@
     <ClInclude Include="Classes\mvvm\delegate.h" />
     <ClInclude Include="Classes\mvvm\event.h" />
     <ClInclude Include="Classes\mvvm\framework.h" />
+    <ClInclude Include="Classes\mvvm\model.h" />
+    <ClInclude Include="Classes\mvvm\view.h" />
+    <ClInclude Include="Classes\mvvm\viewmdoel.h" />
+    <ClInclude Include="Classes\mvvm\interface.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Classes\mvvm\Test.cpp" />
+    <ClCompile Include="Classes\mvvm\interface.cpp" />
   </ItemGroup>
 </Project>

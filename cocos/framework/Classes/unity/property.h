@@ -47,18 +47,22 @@ namespace unity
 #pragma endregion
 	
 #pragma region 只读属性，只能通过容器对象成员函数给予负值，真有用吗？
-	template<class ValueT, class ConT, typename IProperty<ValueT, ConT>::SetterFunc setter>
+	template<class ValueT, class ConT/*, typename IProperty<ValueT, ConT>::SetterFunc setter*/>
 	class PropertyReadOnly : public IProperty<ValueT, ConT>
 	{
 	public:
 		friend ConT;
 		typedef IProperty<ValueT, ConT> SuperT;
-		typedef PropertyReadOnly<ValueT, ConT, setter> ThisT;
+		typedef PropertyReadOnly<ValueT, ConT/*, setter*/> ThisT;
 		
+		PropertyReadOnly()
+		{
+			mContainer = NULL;
+		}
 		PropertyReadOnly(ConT* container)
 		{
 			mContainer = container;
-			mSetter = setter;
+			//mSetter = setter;
 		}
 		operator ValueT() const
 		{
@@ -68,16 +72,16 @@ namespace unity
 	private:
 		void operator = (const ValueT& value)
 		{
-			(mContainer->*mSetter)(value);
+			//(mContainer->*mSetter)(value);
 			mValue = value;
 		}
 
 	private:
 		ConT* mContainer;
-		typename SuperT::SetterFunc mSetter;
+		//typename SuperT::SetterFunc mSetter;
 		ValueT mValue;
 	};
-#define PROPERTY_READONLY_DEFINED(name, type, container, setter) public: unity::PropertyReadOnly<type, container, &container::setter> name;
+#define PROPERTY_READONLY_DEFINED(name, type, container/*, setter*/) public: unity::PropertyReadOnly<type, container/*, &container::setter*/> name;
 #pragma endregion
 	
 #pragma region 只写属性，估计比只读属性更没用！
