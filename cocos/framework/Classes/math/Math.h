@@ -1,11 +1,14 @@
 #pragma once
+
 #include "Math_Common.h"
+
 #ifdef min
 #	undef min
 #endif
 #ifdef max
 #	undef max
 #endif
+
 namespace framework
 {
 	namespace math

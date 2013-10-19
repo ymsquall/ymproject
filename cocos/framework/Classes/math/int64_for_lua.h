@@ -1,7 +1,7 @@
 #pragma once
-#include "../UtilityLibrary_Common.h"
 
-#include <iostream>
+#include "Math_Common.h"
+
 namespace framework
 {
 	namespace math

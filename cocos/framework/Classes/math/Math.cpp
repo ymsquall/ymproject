@@ -35,7 +35,6 @@ THE SOFTWARE.
 #include "AxisAlignedBox.h"
 #include "Plane.h"
 
-
 namespace framework
 {
 	namespace math
@@ -64,8 +63,8 @@ namespace framework
 			mTrigTableSize = trigTableSize;
 			mTrigTableFactor = mTrigTableSize / Math::TWO_PI;
 
-			mSinTable = UTILITY_ALLOC_T(Real, mTrigTableSize);
-			mTanTable = UTILITY_ALLOC_T(Real, mTrigTableSize);
+			mSinTable = new Real[mTrigTableSize];
+			mTanTable = new Real[mTrigTableSize];
 
 			buildTrigTables();
 		}
@@ -73,8 +72,8 @@ namespace framework
 		//-----------------------------------------------------------------------
 		Math::~Math()
 		{
-			UTILITY_FREE(mSinTable);
-			UTILITY_FREE(mTanTable);
+			delete []mSinTable;
+			delete []mTanTable;
 		}
 
 		//-----------------------------------------------------------------------
@@ -343,7 +342,7 @@ namespace framework
 			if (Math::Abs(denom) < std::numeric_limits<Real>::epsilon())
 			{
 				// Parallel
-				return std::pair<bool, Real>(false, 0);
+				return std::pair<bool, Real>(false, Real_Zero);
 			}
 			else
 			{
@@ -355,10 +354,10 @@ namespace framework
 		}
 		//-----------------------------------------------------------------------
 		std::pair<bool, Real> Math::intersects(const Ray& ray, 
-			const vector<Plane>::type& planes, bool normalIsOutside)
+			const std::vector<Plane>& planes, bool normalIsOutside)
 		{
-			list<Plane>::type planesList;
-			for (vector<Plane>::type::const_iterator i = planes.begin(); i != planes.end(); ++i)
+			std::list<Plane> planesList;
+			for (std::vector<Plane>::const_iterator i = planes.begin(); i != planes.end(); ++i)
 			{
 				planesList.push_back(*i);
 			}
@@ -366,9 +365,9 @@ namespace framework
 		}
 		//-----------------------------------------------------------------------
 		std::pair<bool, Real> Math::intersects(const Ray& ray, 
-			const list<Plane>::type& planes, bool normalIsOutside)
+			const std::list<Plane>& planes, bool normalIsOutside)
 		{
-			list<Plane>::type::const_iterator planeit, planeitend;
+			std::list<Plane>::const_iterator planeit, planeitend;
 			planeitend = planes.end();
 			bool allInside = true;
 			std::pair<bool, Real> ret;
@@ -459,7 +458,7 @@ namespace framework
 			// Check origin inside first
 			if (rayorig.squaredLength() <= radius*radius && discardInside)
 			{
-				return std::pair<bool, Real>(true, 0);
+				return std::pair<bool, Real>(true, Real_Zero);
 			}
 
 			// Mmm, quadratics
@@ -474,7 +473,7 @@ namespace framework
 			if (d < 0)
 			{
 				// No intersection
-				return std::pair<bool, Real>(false, 0);
+				return std::pair<bool, Real>(false, Real_Zero);
 			}
 			else
 			{
@@ -492,8 +491,8 @@ namespace framework
 		//-----------------------------------------------------------------------
 		std::pair<bool, Real> Math::intersects(const Ray& ray, const AxisAlignedBox& box)
 		{
-			if (box.isNull()) return std::pair<bool, Real>(false, 0);
-			if (box.isInfinite()) return std::pair<bool, Real>(true, 0);
+			if (box.isNull()) return std::pair<bool, Real>(false, Real_Zero);
+			if (box.isInfinite()) return std::pair<bool, Real>(true, Real_Zero);
 
 			Real lowt = 0.0f;
 			Real t;
@@ -507,7 +506,7 @@ namespace framework
 			// Check origin inside first
 			if ( rayorig > min && rayorig < max )
 			{
-				return std::pair<bool, Real>(true, 0);
+				return std::pair<bool, Real>(true, Real_Zero);
 			}
 
 			// Check each face in turn, only check closest 3
@@ -721,18 +720,18 @@ namespace framework
 				if (denom > + std::numeric_limits<Real>::epsilon())
 				{
 					if (!negativeSide)
-						return std::pair<bool, Real>(false, 0);
+						return std::pair<bool, Real>(false, Real_Zero);
 				}
 				else if (denom < - std::numeric_limits<Real>::epsilon())
 				{
 					if (!positiveSide)
-						return std::pair<bool, Real>(false, 0);
+						return std::pair<bool, Real>(false, Real_Zero);
 				}
 				else
 				{
 					// Parallel or triangle area is close to zero when
 					// the plane normal not normalised.
-					return std::pair<bool, Real>(false, 0);
+					return std::pair<bool, Real>(false, Real_Zero);
 				}
 
 				t = normal.dotProduct(a - ray.getOrigin()) / denom;
@@ -740,7 +739,7 @@ namespace framework
 				if (t < 0)
 				{
 					// Intersection is behind origin
-					return std::pair<bool, Real>(false, 0);
+					return std::pair<bool, Real>(false, Real_Zero);
 				}
 			}
 
@@ -787,12 +786,12 @@ namespace framework
 				if (area > 0)
 				{
 					if (alpha < tolerance || beta < tolerance || alpha+beta > area-tolerance)
-						return std::pair<bool, Real>(false, 0);
+						return std::pair<bool, Real>(false, Real_Zero);
 				}
 				else
 				{
 					if (alpha > tolerance || beta > tolerance || alpha+beta < area-tolerance)
-						return std::pair<bool, Real>(false, 0);
+						return std::pair<bool, Real>(false, Real_Zero);
 				}
 			}
 

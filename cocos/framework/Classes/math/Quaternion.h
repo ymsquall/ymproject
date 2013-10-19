@@ -15,6 +15,7 @@
 
 #include "Math_Common.h"
 #include "Math.h"
+
 namespace framework
 {
 	namespace math

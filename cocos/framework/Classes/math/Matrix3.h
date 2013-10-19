@@ -1,6 +1,6 @@
 #pragma once
-#include "Math_Common.h"
 
+#include "Math_Common.h"
 #include "Vector3.h"
 
 // NB All code adapted from Wild Magic 0.2 Matrix math (free source code)

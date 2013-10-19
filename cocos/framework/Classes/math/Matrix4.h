@@ -1,8 +1,6 @@
 #pragma once
-
 // Precompiler options
 #include "Math_Common.h"
-
 #include "Vector3.h"
 #include "Matrix3.h"
 #include "Vector4.h"

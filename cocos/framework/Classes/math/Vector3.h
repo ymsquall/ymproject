@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Math_Common.h"
 #include "Math.h"
 #include "Quaternion.h"

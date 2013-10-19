@@ -19,7 +19,7 @@ namespace framework
 		class MATH_API PlaneBoundedVolume
 		{
 		public:
-			typedef vector<Plane>::type PlaneList;
+			typedef std::vector<Plane> PlaneList;
 			/// Publicly accessible plane list, you can modify this direct
 			PlaneList planes;
 			Plane::Side outside;
@@ -94,7 +94,7 @@ namespace framework
 			}
 
 		};
-		typedef vector<PlaneBoundedVolume>::type PlaneBoundedVolumeList;
+		typedef std::vector<PlaneBoundedVolume> PlaneBoundedVolumeList;
 	}	// namespace math
 }	// namespace framework
 #pragma warning(pop)

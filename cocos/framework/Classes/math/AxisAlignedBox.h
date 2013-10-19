@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Math_Common.h"
-
 #include "Vector3.h"
 #include "Matrix4.h"
 
@@ -105,7 +104,7 @@ namespace framework
 			{
 				if (mpCorners)
 				{
-					UTILITY_FREE(mpCorners);
+					delete []mpCorners;
 				}
 			}
 
@@ -275,7 +274,7 @@ namespace framework
 				//   around face (looking onto the face)
 				// Only for optimization/compatibility.
 				if (!mpCorners)
-					mpCorners = UTILITY_ALLOC_T(Vector3, 8);
+					mpCorners = new Vector3[8];
 
 				mpCorners[0] = mMinimum;
 				mpCorners[1].x = mMinimum.x; mpCorners[1].y = mMaximum.y; mpCorners[1].z = mMinimum.z;

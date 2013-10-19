@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Math_Common.h"
 #include "Vector3.h"
 
@@ -114,6 +115,6 @@ namespace framework
 
 			MATH_API friend std::ostream& operator<< (std::ostream& o, const Plane& p);
 		};
-		typedef vector<Plane>::type PlaneList;
+		typedef std::vector<Plane> PlaneList;
 	}	// namespace math
 }	// namespace framework
