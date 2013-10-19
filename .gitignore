@@ -172,3 +172,8 @@ websockets.dll
 zlib1.dll
 .svn
 BuildTemp
+
+UnitTestD.exe
+UnitTestD.map
+sosD.exe
+sosD.map
