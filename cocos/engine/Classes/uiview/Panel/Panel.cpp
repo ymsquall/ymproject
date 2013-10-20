@@ -12,5 +12,10 @@ namespace engine
 		Panel::~Panel()
 		{
 		}
+
+		bool Panel::initForMvvm()
+		{
+			return true;
+		}
 	}	// namespace uiview
 }	// namespace engine

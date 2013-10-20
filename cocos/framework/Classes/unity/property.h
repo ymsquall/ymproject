@@ -182,8 +182,8 @@ namespace framework
 #define PROPERTY_DEFINED_NOVALUE(name, type, container, setter, getter) public: framework::unity::PropertyNoValue<type, container, &container::setter, &container::getter> name;
 
 #pragma region 为了将一些现成的虚方法导出为属性，目前只能用这种挫方法
-#define PROPERTY_DEFINED_NOVALUE_VIRTUAL(name, type, container, setter, getter) \
-	protected: void setter##_novirtual(const type& v){ setter(v); } \
-					const type& getter##_novirtual() const { return getter(); } \
-	public: framework::unity::PropertyNoValue<type, container, &container::setter##_novirtual, &container::getter##_novirtual> name;
+#define PROPERTY_DEFINED_NOVALUE_VIRTUAL(name, type, container, super, setter, getter) \
+	protected: void setter(const type& v){ super::setter(v); } \
+	protected: const type& getter() const{ return super::getter(); } \
+	public: framework::unity::PropertyNoValue<type, container, &container::setter, &container::getter> name;
 #pragma endregion

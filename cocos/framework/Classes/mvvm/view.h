@@ -1,14 +1,26 @@
 #pragma once
-#include "unity/object.h"
 #include "interface.h"
 
 namespace framework
 {
 	namespace mvvm
 	{
-		class View : public FrameworkElement, public unity::object
+		template<class T, class SuperT>
+		class View : public SuperT, public FrameworkElement
 		{
 		public:
+			static T* createView(bool autoRelease = true)
+			{
+				T* pRet = new T();
+				if(pRet->init() && pRet->initForMvvm())
+				{
+					if(autoRelease)
+						pRet->autorelease();
+					return pRet;
+				}
+				delete pRet;
+				return NULL;
+			}
 		};
 	}	// namespace mvvm
 }	// namespace framework

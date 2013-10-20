@@ -17,11 +17,13 @@ void RootSceneView::onEnterTransitionDidFinish()
 	cocos2d::Scene::onEnterTransitionDidFinish();
 	this->scheduleUpdate();
 	// test
+	uiview::Panel* pRootPanel = uiview::Panel::createView();
+	cocos2d::Size panelSize = pRootPanel->Size;
+	pRootPanel->Position = cocos2d::CCPoint(panelSize.width / 2.0f, panelSize.height / 2.0f);
 	cocos2d::Size thisSize = cocos2d::Director::getInstance()->getVisibleSize();
 	cocos2d::Sprite* pBgPic = cocos2d::Sprite::create("picture/background/3285-1.png");
-	pBgPic->setPosition(cocos2d::ccp(thisSize.width/2.0f, thisSize.height/2.0f));
-	pBgPic->setContentSize(thisSize);
-	this->addChild(pBgPic);
+	pRootPanel->addChild(pBgPic);
+	this->addChild(pRootPanel);
 }
 
 void RootSceneView::onExit()

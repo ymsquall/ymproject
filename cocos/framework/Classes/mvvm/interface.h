@@ -32,7 +32,7 @@ namespace framework
 		{
 		public:
 			Visual();
-			~Visual(){}
+			virtual ~Visual(){}
 
 			PROPERTY_READONLY_DEFINED(VisualParent, DependencyObject*, Visual);
 			PROPERTY_READONLY_DEFINED(VisualChildrenCount, size_t, Visual);
@@ -49,13 +49,19 @@ namespace framework
 		class UIElement : public Visual
 		{
 		public:
-			void RaiseEvent(unity::object* e);
+			UIElement(){}
+			virtual ~UIElement(){}
+			void RaiseEvent(unity::object* e){}
 		};
 		class Model;
 		//System.Windows.FrameworkElement
 		class FrameworkElement : public UIElement
 		{
 		public:
+			FrameworkElement(){}
+			virtual ~FrameworkElement(){}
+
+			virtual bool initForMvvm();
 
 		protected:
 			Model* mDataContext;

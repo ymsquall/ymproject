@@ -33,5 +33,10 @@ namespace framework
 			}
 			VisualChildrenCount = mVisualChilden.size();
 		}
+
+		bool FrameworkElement::initForMvvm()
+		{
+			return false;
+		}
 	}	// namespace mvvm
 }	// namespace framework

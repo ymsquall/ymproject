@@ -1,8 +1,10 @@
 #pragma once
 #include "cocos2d.h"
 #include "unity/singleton.h"
+#include "uiview/Panel/Panel.h"
 
 using namespace framework;
+using namespace engine;
 
 class RootSceneView : public cocos2d::Scene
 	, public unity::SingletonAutoT<RootSceneView>
