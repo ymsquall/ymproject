@@ -137,6 +137,18 @@ namespace framework
 				return *this;
 			}
 
+			inline Vector2& operator = ( const cocos2d::Point& pt)
+			{
+				x = pt.x;
+				y = pt.y;
+
+				return *this;
+			}
+			operator cocos2d::Point() const
+			{
+				return cocos2d::Point(x,y);
+			}
+
 			inline bool operator == ( const Vector2& rkVector ) const
 			{
 				return ( x == rkVector.x && y == rkVector.y );

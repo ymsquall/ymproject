@@ -3,6 +3,7 @@
 #include "unity/object.h"
 #include "unity/property.h"
 #include "unity/event.h"
+#include "dependency.h"
 
 namespace framework
 {
@@ -25,18 +26,7 @@ namespace framework
 			}
 		};
 
-		class DispatcherObject{};
-		// System.Windows.DependencyObject ∏Ωº” Ù–‘
-		class DependencyObject : public DispatcherObject
-		{
-		protected:
-			struct DependencyPropertyChangedEventArgs
-			{
-				unity::object* oldValue;
-				unity::object* newValue;
-			};
-			virtual void OnPropertyChanged(DependencyPropertyChangedEventArgs e){}
-		};
+		
 		// System.Windows.Media.Visual
 		class Visual : public DependencyObject
 		{
@@ -61,13 +51,14 @@ namespace framework
 		public:
 			void RaiseEvent(unity::object* e);
 		};
+		class Model;
 		//System.Windows.FrameworkElement
 		class FrameworkElement : public UIElement
 		{
 		public:
 
 		protected:
-			unity::object* mDataContext;
+			Model* mDataContext;
 			DependencyObject* mParent;
 		};
 	}	// namespace mvvm

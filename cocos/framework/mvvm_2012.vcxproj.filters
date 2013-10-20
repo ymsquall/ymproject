@@ -7,6 +7,7 @@
     <ClInclude Include="Classes\mvvm\view.h" />
     <ClInclude Include="Classes\mvvm\viewmdoel.h" />
     <ClInclude Include="Classes\mvvm\interface.h" />
+    <ClInclude Include="Classes\mvvm\dependency.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Classes\mvvm\interface.cpp" />

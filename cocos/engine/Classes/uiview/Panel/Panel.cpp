@@ -4,7 +4,9 @@ namespace engine
 {
 	namespace uiview
 	{
-		Panel::Panel()
+		Panel::Panel():
+			Position(this),
+			Size(this)
 		{
 		}
 		Panel::~Panel()
