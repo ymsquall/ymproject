@@ -8,6 +8,7 @@
     <ClInclude Include="Classes\unity\platform.h" />
     <ClInclude Include="Classes\unity\delegate.h" />
     <ClInclude Include="Classes\unity\event.h" />
+    <ClInclude Include="Classes\unity\rtti.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Classes\unity\object.cpp" />

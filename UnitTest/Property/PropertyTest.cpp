@@ -46,11 +46,6 @@ static void staticTest()
 }
 void PropertyTest::test()
 {
-	size_t size1 = sizeof(mvvm::DispatcherObject);
-	size_t size2 = sizeof(mvvm::DependencyObject);
-	size_t size3 = sizeof(mvvm::DependencyProperty<int>);
-	size_t size4 = sizeof(mvvm::DependencyPropertyImpl<int, 0>);
-	size_t size5 = sizeof(unity::Property<int>);
 	PropertyTest test;
 	test.Value1 = 444;
 	test.Value2 = 555;

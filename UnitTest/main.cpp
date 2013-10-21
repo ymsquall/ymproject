@@ -1,13 +1,16 @@
 #include "main.h"
 #include "application/AppDelegate.h"
+#include "unity/rtti.h"
 #include "CCEGLView.h"
 #include "Property/PropertyTest.h"
+#include "RTTI/RTTITest.h"
 
 USING_NS_CC;
 
 // uncomment below line, open debug console
 #define USE_WIN32_CONSOLE
 
+extern const char temp[];
 int APIENTRY _tWinMain(HINSTANCE hInstance,
                        HINSTANCE hPrevInstance,
                        LPTSTR    lpCmdLine,
@@ -27,6 +30,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 	engine::AppDelegate app;
 
 	PropertyTest::test();
+	RTTITest::test();
 
     int ret = app.runApp(960, 640, "unit test");
 	while(true)

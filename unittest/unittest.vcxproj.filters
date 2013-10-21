@@ -5,16 +5,25 @@
       <Filter>Property</Filter>
     </ClInclude>
     <ClInclude Include="main.h" />
+    <ClInclude Include="RTTI\RTTITest.h">
+      <Filter>RTTI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Property\PropertyTest.cpp">
       <Filter>Property</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="RTTI\RTTITest.cpp">
+      <Filter>RTTI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Property">
       <UniqueIdentifier>{d1c770cf-9aa9-4426-ac36-3bdcdba07d01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RTTI">
+      <UniqueIdentifier>{d59a9a19-60a9-491f-b1c4-cd5ae06d408d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

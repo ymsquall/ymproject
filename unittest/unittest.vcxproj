@@ -21,10 +21,12 @@
   <ItemGroup>
     <ClInclude Include="main.h" />
     <ClInclude Include="Property\PropertyTest.h" />
+    <ClInclude Include="RTTI\RTTITest.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Property\PropertyTest.cpp" />
+    <ClCompile Include="RTTI\RTTITest.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{157348EB-B1A6-4B87-8F56-AAEA1C361827}</ProjectGuid>
