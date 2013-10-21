@@ -3,6 +3,7 @@
 #include "unity/singleton.h"
 #include "application/AppDelegate.h"
 
+using namespace cocos2d;
 using namespace framework;
 
 namespace framework
@@ -23,5 +24,12 @@ public:
 	bool modelLoop();
 	void onAppInitOveredShowingBefore(engine::AppDelegate* pApp, unity::RoutedEventArgs* args);
 	void onAppInitOveredShowingAfter(engine::AppDelegate* pApp, unity::RoutedEventArgs* args);
-};
 
+private:
+	bool calculateDeltaTime();
+
+private:
+	struct timeval* mLastUpdate;
+	float mDeltaTime;
+	bool mNextDeltaTimeZero;
+};

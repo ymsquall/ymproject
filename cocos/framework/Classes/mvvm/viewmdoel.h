@@ -5,7 +5,7 @@ namespace framework
 {
 	namespace mvvm
 	{
-		class ViewModel
+		class IViewModel
 		{
 
 		};

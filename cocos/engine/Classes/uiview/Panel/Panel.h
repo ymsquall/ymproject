@@ -5,7 +5,7 @@ namespace engine
 {
 	namespace uiview
 	{
-		class Panel : public framework::mvvm::View<Panel, cocos2d::Layer>
+		class Panel : public framework::mvvm::IView<Panel, cocos2d::Layer>
 		{
 		public:
 			Panel();

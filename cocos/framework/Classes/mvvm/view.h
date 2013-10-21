@@ -6,7 +6,7 @@ namespace framework
 	namespace mvvm
 	{
 		template<class T, class SuperT>
-		class View : public SuperT, public FrameworkElement
+		class IView : public SuperT, public FrameworkElement
 		{
 		public:
 			static T* createView(bool autoRelease = true)

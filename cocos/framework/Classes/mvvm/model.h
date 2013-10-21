@@ -5,7 +5,7 @@ namespace framework
 {
 	namespace mvvm
 	{
-		class Model : public INotifyPropertyChanged, public unity::object
+		class IModel : public INotifyPropertyChanged, public unity::object
 		{
 
 		};
