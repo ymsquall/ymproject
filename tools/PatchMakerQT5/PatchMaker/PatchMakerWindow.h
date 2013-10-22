@@ -16,15 +16,10 @@ public:
     explicit PatchMakerWindow(QWidget *parent = 0);
     ~PatchMakerWindow();
 
-
-signals:
-   void showAboutDlg1(int);
-
 public slots:
     void onOpenAboutDialog();
     void onAboutDialogResult(bool ok);
-
-private:
+    void onBrowseBtnClicked();
     
 private:
     Ui::PatchMakerWindow *ui;
