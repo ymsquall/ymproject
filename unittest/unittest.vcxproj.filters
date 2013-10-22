@@ -8,6 +8,9 @@
     <ClInclude Include="RTTI\RTTITest.h">
       <Filter>RTTI</Filter>
     </ClInclude>
+    <ClInclude Include="Mvvm\ModelTest.h">
+      <Filter>Mvvm</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Property\PropertyTest.cpp">
@@ -17,6 +20,9 @@
     <ClCompile Include="RTTI\RTTITest.cpp">
       <Filter>RTTI</Filter>
     </ClCompile>
+    <ClCompile Include="Mvvm\ModelTest.cpp">
+      <Filter>Mvvm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Property">
@@ -24,6 +30,9 @@
     </Filter>
     <Filter Include="RTTI">
       <UniqueIdentifier>{d59a9a19-60a9-491f-b1c4-cd5ae06d408d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mvvm">
+      <UniqueIdentifier>{a9c64c67-0ef8-4ac7-8782-d15c8b0b6d45}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

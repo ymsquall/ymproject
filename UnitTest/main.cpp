@@ -4,6 +4,7 @@
 #include "CCEGLView.h"
 #include "Property/PropertyTest.h"
 #include "RTTI/RTTITest.h"
+#include "Mvvm/ModelTest.h"
 
 USING_NS_CC;
 
@@ -31,6 +32,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 
 	PropertyTest::test();
 	RTTITest::test();
+	TestModel::test();
 
     int ret = app.runApp(960, 640, "unit test");
 	while(true)

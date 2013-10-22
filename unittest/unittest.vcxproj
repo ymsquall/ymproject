@@ -20,11 +20,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h" />
+    <ClInclude Include="Mvvm\ModelTest.h" />
     <ClInclude Include="Property\PropertyTest.h" />
     <ClInclude Include="RTTI\RTTITest.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mvvm\ModelTest.cpp" />
     <ClCompile Include="Property\PropertyTest.cpp" />
     <ClCompile Include="RTTI\RTTITest.cpp" />
   </ItemGroup>

@@ -2,11 +2,11 @@
 #include <string>
 #include "platform.h"
 
+#pragma pack(push,1)
 namespace framework
 {
 	namespace unity
 	{
-#pragma pack(push,1)
 		template<class EnumT, typename EnumT value>
 		class IEnumRTTI
 		{
@@ -31,21 +31,47 @@ namespace framework
 		总而言之，使用字符串做模板参数的限制太大，很难写，抛弃该想法
 		转而使用固定长度模板参数以节省下使用char*的4字节开销
 		*/
-		template<typename const size_t length>
 		class IAsciiRTTI
 		{
 		public:
 			IAsciiRTTI(const char* type)
 			{
+				size_t length = strlen(type);
+				mStrType = new char[length+1];
 				memcpy(mStrType, type, length * sizeof(char));
 				mStrType[length] = '\0';
 			}
-			virtual ~IAsciiRTTI(){}
-			virtual const char* eType(){ return mStrType; }
+			virtual ~IAsciiRTTI()
+			{
+				delete []mStrType;
+			}
+			virtual const char* sType(){ return mStrType; }
+
+		private:
+			char* mStrType;
+		};
+		// 最省内存的字符串动态类型
+		template<typename const size_t length>
+		class IAsciiFixedRTTI
+		{
+		public:
+			IAsciiFixedRTTI(const char* type)
+			{
+				memcpy(mStrType, type, length * sizeof(char));
+				mStrType[length] = '\0';
+			}
+			virtual ~IAsciiFixedRTTI(){}
+			virtual const char* sType(){ return mStrType; }
 
 		private:
 			char mStrType[length+1];
 		};
-#pragma pack(pop)
 	}	// namespace unity
 }	// namespace framework
+
+#define MAKER_ENUM1BTRTTI_TYPE(type) framework::unity::IEnumRTTI<uint8, type>
+#define MAKER_ENUM2BTRTTI_TYPE(type) framework::unity::IEnumRTTI<uint16, type>
+#define MAKER_ENUM4BTRTTI_TYPE(type) framework::unity::IEnumRTTI<uint32, type>
+#define MAKER_ASCIIFIXEDRTTI_TYPE(len) framework::unity::IAsciiFixedRTTI<len>
+
+#pragma pack(pop)
