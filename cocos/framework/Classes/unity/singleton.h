@@ -19,7 +19,6 @@ namespace framework
 				if(NULL == mInstance)
 				{
 					mInstance = new T();
-					mInstance->retain();
 				}
 				return mInstance;
 			}

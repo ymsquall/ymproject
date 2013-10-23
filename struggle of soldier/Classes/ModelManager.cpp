@@ -3,6 +3,9 @@
 #include "mvvm/framework.h"
 #include "cocos2d.h"
 #include "RootSceneView.h"
+// Model Impl
+#include "Model_Login.h"
+#include "Model_GameLand.h"
 
 USING_NS_CC;
 
@@ -33,25 +36,10 @@ void ModelManager::initWithAppStart(engine::AppDelegate* pApp)
 	this->initModels();
 }
 
-class LoginModel : public mvvm::ModelBase<(uint16)ModelType::Login, 5>
-{
-public:
-	LoginModel() : mvvm::ModelBase<(uint16)ModelType::Login, 5>(LoginModel::TypeName.c_str())
-	{
-	}
-
-	static unity::object* TypeCreator()
-	{
-		return new LoginModel();
-	}
-
-	static const std::string TypeName;
-};
-const std::string LoginModel::TypeName = "Login";
-
 void ModelManager::initModels()
 {
 	this->addModel<LoginModel>();
+	this->addModel<GameLandModel>();
 }
 
 bool ModelManager::calculateDeltaTime() 
@@ -89,6 +77,12 @@ bool ModelManager::modelLoop()
 {
 	if(!this->calculateDeltaTime())
 		return false;
+
+	for(ModelListV::iterator it = mModelList.begin();
+		it != mModelList.end(); ++ it)
+	{
+		(*it)->update(mDeltaTime);
+	}
 
 	return true;
 }

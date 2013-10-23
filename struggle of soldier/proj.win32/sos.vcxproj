@@ -378,6 +378,8 @@ xcopy "$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alp
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\ModelManager.cpp" />
+    <ClCompile Include="..\Classes\Model_GameLand.cpp" />
+    <ClCompile Include="..\Classes\Model_Login.cpp" />
     <ClCompile Include="..\Classes\RootSceneView.cpp" />
     <ClCompile Include="..\Classes\TopLevelView.cpp" />
     <ClCompile Include="main.cpp" />
@@ -385,6 +387,8 @@ xcopy "$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alp
   <ItemGroup>
     <ClInclude Include="..\Classes\ModelManager.h" />
     <ClInclude Include="..\Classes\ModelTypeDefine.h" />
+    <ClInclude Include="..\Classes\Model_GameLand.h" />
+    <ClInclude Include="..\Classes\Model_Login.h" />
     <ClInclude Include="..\Classes\RootSceneView.h" />
     <ClInclude Include="..\Classes\TopLevelView.h" />
     <ClInclude Include="main.h" />

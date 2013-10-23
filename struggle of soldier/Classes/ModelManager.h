@@ -3,7 +3,6 @@
 #include "unity/singleton.h"
 #include "application/AppDelegate.h"
 #include "mvvm/model.h"
-#include "ModelTypeDefine.h"
 
 using namespace cocos2d;
 using namespace framework;

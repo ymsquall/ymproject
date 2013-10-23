@@ -19,12 +19,15 @@ namespace framework
 			{
 				unity::RoutedEventArgs eventArgs;
 				Event_ModelDestory(this, &eventArgs);
+				this->finalize();
 				delete this;
 			}
 
-			virtual std::string getTypeName() const{ return "IModel"; }
-			virtual uint32 getRTTIType() const{ return -1; }
-
+			virtual std::string getTypeName() const = 0;
+			virtual uint32 getRTTIType() const = 0;
+			virtual bool init() = 0;
+			virtual void finalize() = 0;
+			virtual void update(float dt) = 0;
 		};
 		
 		// 这里使用c++11新特性解决枚举尺寸问题
@@ -181,6 +184,11 @@ namespace framework
 				unity::object* pObject = mModelFactory->createModel(T::TypeName);
 				IModel* pIModel = dynamic_cast<IModel*>(pObject);
 				T* pModel = dynamic_cast<T*>(pObject);
+				if(!pModel->init())
+				{
+					pModel->deleteModel();
+					return;
+				}
 				pModel->Event_ModelDestory += ROUTEDEVENT_MAKER(IModel*, this, IModelManager::onModelDestory);
 				mModelList.push_back(pModel);
 			}

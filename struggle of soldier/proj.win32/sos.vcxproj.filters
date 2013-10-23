@@ -27,6 +27,12 @@
     <ClCompile Include="..\Classes\RootSceneView.cpp">
       <Filter>Classes\View</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Model_Login.cpp">
+      <Filter>Classes\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Model_GameLand.cpp">
+      <Filter>Classes\Model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -42,6 +48,12 @@
       <Filter>Classes\View</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\ModelTypeDefine.h">
+      <Filter>Classes\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model_Login.h">
+      <Filter>Classes\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model_GameLand.h">
       <Filter>Classes\Model</Filter>
     </ClInclude>
   </ItemGroup>
