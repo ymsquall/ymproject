@@ -41,5 +41,8 @@
     <ClInclude Include="..\Classes\RootSceneView.h">
       <Filter>Classes\View</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\ModelTypeDefine.h">
+      <Filter>Classes\Model</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

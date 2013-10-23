@@ -10,7 +10,7 @@ namespace framework
 	{
 	#pragma region 事件处理者
 		template<typename SenderT, typename ParamT>
-		class EventHandler : public unity::object
+		class EventHandler
 		{
 		public:
 		#pragma region 构造器
@@ -65,7 +65,7 @@ namespace framework
 
 	#pragma region 事件接口模板
 		template<typename SenderT, typename ParamT>  
-		struct IEvent : public unity::object
+		struct IEvent
 		{
 			typedef EventHandler<SenderT, ParamT> HandlerT;
 			virtual ~IEvent(){}
@@ -96,9 +96,9 @@ namespace framework
 		#pragma region 运算符
 			virtual void operator()(SenderT sender, ParamT param){ this->fire(sender, param); }	// 重载操作符，触发事件委托
 			event& operator+= (const HandlerT& handler)	// 重载操作符，注册事件处理对象
-			{  
-				this->schedule(handler);  
-				return *this;  
+			{
+				this->schedule(handler);
+				return *this;
 			}
 			event& operator-= (const HandlerT& handler)	// 重载操作符，注销事件处理对象
 			{

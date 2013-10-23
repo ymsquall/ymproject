@@ -40,7 +40,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest", "UnitTest\UnitTe
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "math_2012", "cocos\framework\math_2012.vcxproj", "{1EED7049-A7BF-42DE-8A93-8BAFC73120A3}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "uivview", "cocos\engine\uivview.vcxproj", "{217E3F50-178F-4030-808C-A9E8C22DB373}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "uivview_2012", "cocos\engine\uivview_2012.vcxproj", "{217E3F50-178F-4030-808C-A9E8C22DB373}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

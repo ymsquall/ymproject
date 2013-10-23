@@ -19,7 +19,7 @@ namespace framework
 
 	#pragma region 委托基础类模板
 		template<typename SenderT/*事件发送者类型*/, typename ParamT/*事件参数类型*/>
-		class delegate : public unity::object
+		class delegate
 		{
 		public:
 			virtual ~delegate(){}

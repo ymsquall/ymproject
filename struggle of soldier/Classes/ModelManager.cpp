@@ -8,6 +8,7 @@ USING_NS_CC;
 
 ModelManager::ModelManager(void)
 {
+	mModelFactory = new mvvm::ModelFactoryWithString();
 	mLastUpdate = NULL;
 	mDeltaTime = 0.0f;
 	mNextDeltaTimeZero = false;
@@ -15,6 +16,8 @@ ModelManager::ModelManager(void)
 
 ModelManager::~ModelManager(void)
 {
+	if(NULL != mLastUpdate)
+		delete mLastUpdate;
 }
 
 void ModelManager::initWithAppStart(engine::AppDelegate* pApp)
@@ -26,6 +29,29 @@ void ModelManager::initWithAppStart(engine::AppDelegate* pApp)
 	pApp->Event_AppInitOveredShowingAfter += ROUTEDEVENT_MAKER(engine::AppDelegate*, this, ModelManager::onAppInitOveredShowingAfter);
 
 	mLastUpdate = new struct timeval;
+
+	this->initModels();
+}
+
+class LoginModel : public mvvm::ModelBase<(uint16)ModelType::Login, 5>
+{
+public:
+	LoginModel() : mvvm::ModelBase<(uint16)ModelType::Login, 5>(LoginModel::TypeName.c_str())
+	{
+	}
+
+	static unity::object* TypeCreator()
+	{
+		return new LoginModel();
+	}
+
+	static const std::string TypeName;
+};
+const std::string LoginModel::TypeName = "Login";
+
+void ModelManager::initModels()
+{
+	this->addModel<LoginModel>();
 }
 
 bool ModelManager::calculateDeltaTime() 

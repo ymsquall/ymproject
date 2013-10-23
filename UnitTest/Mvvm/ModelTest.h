@@ -6,15 +6,15 @@
 
 using namespace framework;
 
-enum ModelType
+enum class ModelType : uint16
 {
-	EMTT_Type_Test
+	Test = 1,
 };
 
-class TestModel : public mvvm::IModel<EMTT_Type_Test, 9>
+class TestModel : public mvvm::ModelBase<(uint16)ModelType::Test, 4>
 {
 public:
-	typedef mvvm::IModel<EMTT_Type_Test, 9> SuperT;
+	typedef mvvm::ModelBase<(uint16)ModelType::Test, 4> SuperT;
 	TestModel();
 	
 

@@ -14,10 +14,12 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         PatchMakerWindow.cpp \
-    AboutDialog.cpp
+    AboutDialog.cpp \
+    helper.cpp
 
 HEADERS  += PatchMakerWindow.h \
-    AboutDialog.h
+    AboutDialog.h \
+    helper.h
 
 FORMS    += PatchMakerWindow.ui \
     AboutDialog.ui

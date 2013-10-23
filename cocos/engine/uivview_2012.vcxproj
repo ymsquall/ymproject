@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Classes\uiview\ContentControl\Button.cpp" />
+    <ClCompile Include="Classes\uiview\ContentControl\ButtonBase.cpp" />
+    <ClCompile Include="Classes\uiview\ContentControl\CheckBox.cpp" />
+    <ClCompile Include="Classes\uiview\ContentControl\ComboBoxItem.cpp" />
+    <ClCompile Include="Classes\uiview\ContentControl\ContentControl.cpp" />
+    <ClCompile Include="Classes\uiview\ContentControl\Frame.cpp" />
+    <ClCompile Include="Classes\uiview\ContentControl\GridViewColumnHeader.cpp" />
+    <ClCompile Include="Classes\uiview\ContentControl\GroupItem.cpp" />
+    <ClCompile Include="Classes\uiview\ContentControl\Label.cpp" />
+    <ClCompile Include="Classes\uiview\ContentControl\ListBoxItem.cpp" />
+    <ClCompile Include="Classes\uiview\ContentControl\ListViewItem.cpp" />
+    <ClCompile Include="Classes\uiview\ContentControl\NavigationWindow.cpp" />
+    <ClCompile Include="Classes\uiview\ContentControl\RadioButton.cpp" />
+    <ClCompile Include="Classes\uiview\ContentControl\RepeatButton.cpp" />
+    <ClCompile Include="Classes\uiview\ContentControl\ScrollViewer.cpp" />
+    <ClCompile Include="Classes\uiview\ContentControl\StatusBarItem.cpp" />
+    <ClCompile Include="Classes\uiview\ContentControl\ToggleButton.cpp" />
+    <ClCompile Include="Classes\uiview\ContentControl\ToolTip.cpp" />
+    <ClCompile Include="Classes\uiview\ContentControl\UserControl.cpp" />
+    <ClCompile Include="Classes\uiview\ContentControl\Window.cpp" />
+    <ClCompile Include="Classes\uiview\Decorator\AdornerDecorator.cpp" />
+    <ClCompile Include="Classes\uiview\Decorator\Border.cpp" />
+    <ClCompile Include="Classes\uiview\Decorator\BulletDecorator.cpp" />
+    <ClCompile Include="Classes\uiview\Decorator\ButtonChrome.cpp" />
+    <ClCompile Include="Classes\uiview\Decorator\ClassicBorderDecorator.cpp" />
+    <ClCompile Include="Classes\uiview\Decorator\Decorator.cpp" />
+    <ClCompile Include="Classes\uiview\Decorator\InkPresenter.cpp" />
+    <ClCompile Include="Classes\uiview\Decorator\ListBoxChrome.cpp" />
+    <ClCompile Include="Classes\uiview\Decorator\SystemDropShadowChrome.cpp" />
+    <ClCompile Include="Classes\uiview\Decorator\Viewbox.cpp" />
+    <ClCompile Include="Classes\uiview\HeaderedContentControl\Expander.cpp" />
+    <ClCompile Include="Classes\uiview\HeaderedContentControl\GroupBox.cpp" />
+    <ClCompile Include="Classes\uiview\HeaderedContentControl\HeaderedContentControl.cpp" />
+    <ClCompile Include="Classes\uiview\HeaderedContentControl\TabItem.cpp" />
+    <ClCompile Include="Classes\uiview\HeaderedItemsControl\HeaderedItemsControl.cpp" />
+    <ClCompile Include="Classes\uiview\HeaderedItemsControl\MenuItem.cpp" />
+    <ClCompile Include="Classes\uiview\HeaderedItemsControl\ToolBar.cpp" />
+    <ClCompile Include="Classes\uiview\HeaderedItemsControl\TreeViewItem.cpp" />
+    <ClCompile Include="Classes\uiview\ItemsControl\ComboBox.cpp" />
+    <ClCompile Include="Classes\uiview\ItemsControl\ContextMenu.cpp" />
+    <ClCompile Include="Classes\uiview\ItemsControl\ItemsControl.cpp" />
+    <ClCompile Include="Classes\uiview\ItemsControl\ListBox.cpp" />
+    <ClCompile Include="Classes\uiview\ItemsControl\ListView.cpp" />
+    <ClCompile Include="Classes\uiview\ItemsControl\Menu.cpp" />
+    <ClCompile Include="Classes\uiview\ItemsControl\MenuBase.cpp" />
+    <ClCompile Include="Classes\uiview\ItemsControl\Selector.cpp" />
+    <ClCompile Include="Classes\uiview\ItemsControl\StatusBar.cpp" />
+    <ClCompile Include="Classes\uiview\ItemsControl\TabControl.cpp" />
+    <ClCompile Include="Classes\uiview\ItemsControl\TreeView.cpp" />
+    <ClCompile Include="Classes\uiview\Others\Adorner.cpp" />
+    <ClCompile Include="Classes\uiview\Panel\Canvas.cpp" />
+    <ClCompile Include="Classes\uiview\Panel\DockPanel.cpp" />
+    <ClCompile Include="Classes\uiview\Panel\Grid.cpp" />
+    <ClCompile Include="Classes\uiview\Panel\Panel.cpp" />
+    <ClCompile Include="Classes\uiview\Panel\StackPanel.cpp" />
+    <ClCompile Include="Classes\uiview\Panel\TabPanel.cpp" />
+    <ClCompile Include="Classes\uiview\Panel\ToolBarOverflowPanel.cpp" />
+    <ClCompile Include="Classes\uiview\Panel\ToolBarPanel.cpp" />
+    <ClCompile Include="Classes\uiview\Panel\UniformGrid.cpp" />
+    <ClCompile Include="Classes\uiview\Panel\VirtualizingPanel.cpp" />
+    <ClCompile Include="Classes\uiview\Panel\VirtualizingStackPanel.cpp" />
+    <ClCompile Include="Classes\uiview\Panel\WrapPanel.cpp" />
+    <ClCompile Include="Classes\uiview\Shape\Shape.cpp" />
+    <ClCompile Include="Classes\uiview\Text\FlowText.cpp" />
+    <ClCompile Include="Classes\uiview\Text\TextBlock.cpp" />
+    <ClCompile Include="Classes\uiview\Text\TextBox.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Classes\uiview\ContentControl\Button.h" />
+    <ClInclude Include="Classes\uiview\ContentControl\ButtonBase.h" />
+    <ClInclude Include="Classes\uiview\ContentControl\CheckBox.h" />
+    <ClInclude Include="Classes\uiview\ContentControl\ComboBoxItem.h" />
+    <ClInclude Include="Classes\uiview\ContentControl\ContentControl.h" />
+    <ClInclude Include="Classes\uiview\ContentControl\Frame.h" />
+    <ClInclude Include="Classes\uiview\ContentControl\GridViewColumnHeader.h" />
+    <ClInclude Include="Classes\uiview\ContentControl\GroupItem.h" />
+    <ClInclude Include="Classes\uiview\ContentControl\Label.h" />
+    <ClInclude Include="Classes\uiview\ContentControl\ListBoxItem.h" />
+    <ClInclude Include="Classes\uiview\ContentControl\ListViewItem.h" />
+    <ClInclude Include="Classes\uiview\ContentControl\NavigationWindow.h" />
+    <ClInclude Include="Classes\uiview\ContentControl\RadioButton.h" />
+    <ClInclude Include="Classes\uiview\ContentControl\RepeatButton.h" />
+    <ClInclude Include="Classes\uiview\ContentControl\ScrollViewer.h" />
+    <ClInclude Include="Classes\uiview\ContentControl\StatusBarItem.h" />
+    <ClInclude Include="Classes\uiview\ContentControl\ToggleButton.h" />
+    <ClInclude Include="Classes\uiview\ContentControl\ToolTip.h" />
+    <ClInclude Include="Classes\uiview\ContentControl\UserControl.h" />
+    <ClInclude Include="Classes\uiview\ContentControl\Window.h" />
+    <ClInclude Include="Classes\uiview\Decorator\AdornerDecorator.h" />
+    <ClInclude Include="Classes\uiview\Decorator\Border.h" />
+    <ClInclude Include="Classes\uiview\Decorator\BulletDecorator.h" />
+    <ClInclude Include="Classes\uiview\Decorator\ButtonChrome.h" />
+    <ClInclude Include="Classes\uiview\Decorator\ClassicBorderDecorator.h" />
+    <ClInclude Include="Classes\uiview\Decorator\Decorator.h" />
+    <ClInclude Include="Classes\uiview\Decorator\InkPresenter.h" />
+    <ClInclude Include="Classes\uiview\Decorator\ListBoxChrome.h" />
+    <ClInclude Include="Classes\uiview\Decorator\SystemDropShadowChrome.h" />
+    <ClInclude Include="Classes\uiview\Decorator\Viewbox.h" />
+    <ClInclude Include="Classes\uiview\HeaderedContentControl\Expander.h" />
+    <ClInclude Include="Classes\uiview\HeaderedContentControl\GroupBox.h" />
+    <ClInclude Include="Classes\uiview\HeaderedContentControl\HeaderedContentControl.h" />
+    <ClInclude Include="Classes\uiview\HeaderedContentControl\TabItem.h" />
+    <ClInclude Include="Classes\uiview\HeaderedItemsControl\HeaderedItemsControl.h" />
+    <ClInclude Include="Classes\uiview\HeaderedItemsControl\MenuItem.h" />
+    <ClInclude Include="Classes\uiview\HeaderedItemsControl\ToolBar.h" />
+    <ClInclude Include="Classes\uiview\HeaderedItemsControl\TreeViewItem.h" />
+    <ClInclude Include="Classes\uiview\ItemsControl\ComboBox.h" />
+    <ClInclude Include="Classes\uiview\ItemsControl\ContextMenu.h" />
+    <ClInclude Include="Classes\uiview\ItemsControl\ItemsControl.h" />
+    <ClInclude Include="Classes\uiview\ItemsControl\ListBox.h" />
+    <ClInclude Include="Classes\uiview\ItemsControl\ListView.h" />
+    <ClInclude Include="Classes\uiview\ItemsControl\Menu.h" />
+    <ClInclude Include="Classes\uiview\ItemsControl\MenuBase.h" />
+    <ClInclude Include="Classes\uiview\ItemsControl\Selector.h" />
+    <ClInclude Include="Classes\uiview\ItemsControl\StatusBar.h" />
+    <ClInclude Include="Classes\uiview\ItemsControl\TabControl.h" />
+    <ClInclude Include="Classes\uiview\ItemsControl\TreeView.h" />
+    <ClInclude Include="Classes\uiview\Others\Adorner.h" />
+    <ClInclude Include="Classes\uiview\Panel\Canvas.h" />
+    <ClInclude Include="Classes\uiview\Panel\DockPanel.h" />
+    <ClInclude Include="Classes\uiview\Panel\Grid.h" />
+    <ClInclude Include="Classes\uiview\Panel\Panel.h" />
+    <ClInclude Include="Classes\uiview\Panel\StackPanel.h" />
+    <ClInclude Include="Classes\uiview\Panel\TabPanel.h" />
+    <ClInclude Include="Classes\uiview\Panel\ToolBarOverflowPanel.h" />
+    <ClInclude Include="Classes\uiview\Panel\ToolBarPanel.h" />
+    <ClInclude Include="Classes\uiview\Panel\UniformGrid.h" />
+    <ClInclude Include="Classes\uiview\Panel\VirtualizingPanel.h" />
+    <ClInclude Include="Classes\uiview\Panel\VirtualizingStackPanel.h" />
+    <ClInclude Include="Classes\uiview\Panel\WrapPanel.h" />
+    <ClInclude Include="Classes\uiview\Shape\Shape.h" />
+    <ClInclude Include="Classes\uiview\Text\FlowText.h" />
+    <ClInclude Include="Classes\uiview\Text\TextBlock.h" />
+    <ClInclude Include="Classes\uiview\Text\TextBox.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{217E3F50-178F-4030-808C-A9E8C22DB373}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>uivview</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\$(Configuration).win32\</OutDir>
+    <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <TargetName>ymlibUIView</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_DEBUG;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir).\Classes\;$(ProjectDir)..\framework\Classes;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\cocos2dx_support;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\tolua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\src;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\CocosDenshion\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\extensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

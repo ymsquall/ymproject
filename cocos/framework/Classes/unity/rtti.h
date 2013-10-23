@@ -17,7 +17,7 @@ namespace framework
 			}
 			virtual ~IEnumRTTI(){}
 
-			virtual EnumT eType(){ return mEnumType; }
+			virtual EnumT eType() const{ return mEnumType; }
 
 		private:
 			EnumT mEnumType;
@@ -45,7 +45,7 @@ namespace framework
 			{
 				delete []mStrType;
 			}
-			virtual const char* sType(){ return mStrType; }
+			virtual const char* sType() const{ return mStrType; }
 
 		private:
 			char* mStrType;
@@ -61,7 +61,7 @@ namespace framework
 				mStrType[length] = '\0';
 			}
 			virtual ~IAsciiFixedRTTI(){}
-			virtual const char* sType(){ return mStrType; }
+			virtual const char* sType() const{ return mStrType; }
 
 		private:
 			char mStrType[length+1];

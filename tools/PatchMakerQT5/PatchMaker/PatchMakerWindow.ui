@@ -242,7 +242,7 @@
          </size>
         </property>
         <property name="text">
-         <string>PushButton</string>
+         <string>分析</string>
         </property>
        </widget>
        <widget class="QPushButton" name="pushButton_5">
@@ -259,7 +259,7 @@
          </size>
         </property>
         <property name="text">
-         <string>PushButton</string>
+         <string>比对</string>
         </property>
        </widget>
        <widget class="QPushButton" name="pushButton_6">
@@ -276,17 +276,17 @@
          </size>
         </property>
         <property name="text">
-         <string>PushButton</string>
+         <string>打包</string>
         </property>
        </widget>
       </widget>
       <widget class="QTabWidget" name="mOutputTabBox">
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="tab_1">
         <attribute name="title">
-         <string>Tab 1</string>
+         <string>分析</string>
         </attribute>
         <layout class="QGridLayout" name="gridLayout_2">
          <property name="leftMargin">
@@ -305,13 +305,67 @@
           <number>6</number>
          </property>
          <item row="0" column="0">
-          <widget class="QListView" name="listView_1"/>
+          <widget class="QListView" name="listView_1">
+           <property name="minimumSize">
+            <size>
+             <width>220</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QListView" name="listView_2">
+           <property name="minimumSize">
+            <size>
+             <width>220</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>
        <widget class="QWidget" name="tab_2">
         <attribute name="title">
-         <string>Tab 2</string>
+         <string>比对</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QListView" name="listView_4"/>
+         </item>
+         <item row="0" column="1">
+          <widget class="QListView" name="listView_3"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tab_3">
+        <attribute name="title">
+         <string>打包</string>
         </attribute>
         <layout class="QGridLayout" name="gridLayout_3">
          <property name="leftMargin">
@@ -327,7 +381,7 @@
           <number>0</number>
          </property>
          <item row="0" column="0">
-          <widget class="QListView" name="listView_2"/>
+          <widget class="QListView" name="listView_5"/>
          </item>
         </layout>
        </widget>
@@ -475,7 +529,7 @@
    <sender>pushButton_1</sender>
    <signal>clicked()</signal>
    <receiver>PatchMakerWindow</receiver>
-   <slot>close()</slot>
+   <slot>onBrowseBtn1Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>430</x>
@@ -491,7 +545,7 @@
    <sender>pushButton_6</sender>
    <signal>clicked()</signal>
    <receiver>PatchMakerWindow</receiver>
-   <slot>close()</slot>
+   <slot>onBrowseBtn6Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>397</x>
@@ -507,7 +561,7 @@
    <sender>pushButton_5</sender>
    <signal>clicked()</signal>
    <receiver>PatchMakerWindow</receiver>
-   <slot>close()</slot>
+   <slot>onBrowseBtn5Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>239</x>
@@ -523,7 +577,7 @@
    <sender>pushButton_4</sender>
    <signal>clicked()</signal>
    <receiver>PatchMakerWindow</receiver>
-   <slot>close()</slot>
+   <slot>onBrowseBtn4Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>82</x>
@@ -539,7 +593,7 @@
    <sender>pushButton_3</sender>
    <signal>clicked()</signal>
    <receiver>PatchMakerWindow</receiver>
-   <slot>close()</slot>
+   <slot>onBrowseBtn3Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>430</x>
@@ -555,11 +609,91 @@
    <sender>pushButton_2</sender>
    <signal>clicked()</signal>
    <receiver>PatchMakerWindow</receiver>
-   <slot>close()</slot>
+   <slot>onBrowseBtn2Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>430</x>
      <y>86</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>239</x>
+     <y>159</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_1</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>PatchMakerWindow</receiver>
+   <slot>setWindowTitle(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>239</x>
+     <y>56</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>239</x>
+     <y>159</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_2</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>PatchMakerWindow</receiver>
+   <slot>setStyleSheet(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>239</x>
+     <y>86</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>239</x>
+     <y>159</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_3</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>PatchMakerWindow</receiver>
+   <slot>setWindowTitle(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>239</x>
+     <y>116</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>239</x>
+     <y>159</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listView_1</sender>
+   <signal>indexesMoved(QModelIndexList)</signal>
+   <receiver>PatchMakerWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>123</x>
+     <y>235</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>239</x>
+     <y>159</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listView_2</sender>
+   <signal>indexesMoved(QModelIndexList)</signal>
+   <receiver>PatchMakerWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>354</x>
+     <y>235</y>
     </hint>
     <hint type="destinationlabel">
      <x>239</x>

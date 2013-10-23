@@ -384,6 +384,7 @@ xcopy "$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alp
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\ModelManager.h" />
+    <ClInclude Include="..\Classes\ModelTypeDefine.h" />
     <ClInclude Include="..\Classes\RootSceneView.h" />
     <ClInclude Include="..\Classes\TopLevelView.h" />
     <ClInclude Include="main.h" />
