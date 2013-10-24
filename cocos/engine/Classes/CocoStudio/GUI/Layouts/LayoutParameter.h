@@ -26,6 +26,7 @@
 #define __LAYOUTPARMETER_H__
 
 #include "UILayoutDefine.h"
+#include "CocoStudio.h"
 
 NS_CC_EXT_BEGIN
 

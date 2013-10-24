@@ -27,6 +27,7 @@
 
 #include "cocos2d.h"
 #include "../Layouts/Layout.h"
+#include "CocoStudio.h"
 
 NS_CC_EXT_BEGIN
 /**

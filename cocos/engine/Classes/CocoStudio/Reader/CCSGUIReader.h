@@ -26,7 +26,7 @@
 #define __CCSGUIREADER_H__
 
 #include "../GUI/BaseClasses/UIWidget.h"
-#include "../Json/CSContentJsonDictionary.h"
+#include "CocoStudio.h"
 
 NS_CC_EXT_BEGIN
 

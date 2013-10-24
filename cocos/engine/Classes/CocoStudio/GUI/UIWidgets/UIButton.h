@@ -26,6 +26,7 @@
 #define __UIBUTTON_H__
 
 #include "../BaseClasses/UIWidget.h"
+#include "CocoStudio.h"
 
 NS_CC_EXT_BEGIN
 /**

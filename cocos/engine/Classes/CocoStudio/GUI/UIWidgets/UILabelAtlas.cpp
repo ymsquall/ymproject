@@ -61,7 +61,7 @@ void UICCLabelAtlas::setProperty(const char *string, CCTexture2D *texture, unsig
 
 void UICCLabelAtlas::draw()
 {
-    if (!m_pTextureAtlas)
+    if (!_textureAtlas)
     {
         return;
     }

@@ -82,7 +82,7 @@ void UIHelper::addSpriteFrame(const char *fileName)
     for (int i=0;i<length;i++)
     {
         CCString* file = (CCString*)(arrayTextures->arr[i]);
-        if (strcmp(file->m_sString.c_str(), fileName) == 0)
+        if (strcmp(file->_string.c_str(), fileName) == 0)
         {
             return;
         }
@@ -102,7 +102,7 @@ void UIHelper::removeSpriteFrame(const char *fileName)
     for (int i=0;i<length;i++)
     {
         CCString* file = (CCString*)(arrayTextures->arr[i]);
-        if (strcmp(file->m_sString.c_str(), fileName) == 0)
+        if (strcmp(file->_string.c_str(), fileName) == 0)
         {
             CCSpriteFrameCache::sharedSpriteFrameCache()->removeSpriteFrameByName(fileName);
             m_textureFiles->removeObject(file);
@@ -118,7 +118,7 @@ void UIHelper::removeAllSpriteFrame()
     for (int i=0;i<length;i++)
     {
         CCString* file = (CCString*)(arrayTextures->arr[i]);
-        CCSpriteFrameCache::sharedSpriteFrameCache()->removeSpriteFrameByName(file->m_sString.c_str());
+        CCSpriteFrameCache::sharedSpriteFrameCache()->removeSpriteFrameByName(file->_string.c_str());
     }
     m_textureFiles->removeAllObjects();
 }

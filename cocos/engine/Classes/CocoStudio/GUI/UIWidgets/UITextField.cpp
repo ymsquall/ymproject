@@ -139,7 +139,7 @@ void UICCTextField::insertText(const char * text, int len)
     {
         if (CCTextFieldTTF::getCharCount() > 0)
         {
-            setPasswordText(m_pInputText->c_str());
+            setPasswordText(_inputText->c_str());
         }
     }
 }
@@ -153,7 +153,7 @@ void UICCTextField::deleteBackward()
         // password
         if (m_bPasswordEnabled)
         {
-            setPasswordText(m_pInputText->c_str());
+            setPasswordText(_inputText->c_str());
         }
     }
 }

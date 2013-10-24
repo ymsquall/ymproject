@@ -28,7 +28,7 @@
 #include "cocos2d.h"
 #include "ExtensionMacros.h"
 #include "CCActionFrame.h"
-#include "../Json/CSContentJsonDictionary.h"
+#include "CocoStudio.h"
 
 NS_CC_EXT_BEGIN
 /**

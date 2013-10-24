@@ -25,7 +25,7 @@
 #include "Layout.h"
 #include "../System/UILayer.h"
 #include "../System/UIHelper.h"
-#include "GUI/CCControlExtension/CCScale9Sprite.h"
+#include "CocoStudio.h"
 
 NS_CC_EXT_BEGIN
 
@@ -725,7 +725,7 @@ bool RectClippingNode::init()
     rect[2] = ccp(m_clippingSize.width, m_clippingSize.height);
     rect[3] = ccp(0, m_clippingSize.height);
     
-    ccColor4F green = {0, 1, 0, 1};
+    ccColor4F green(0, 1, 0, 1);
     m_pInnerStencil->drawPolygon(rect, 4, green, 0, green);
     if (CCClippingNode::init(m_pInnerStencil))
     {
@@ -743,7 +743,7 @@ void RectClippingNode::setClippingSize(const cocos2d::CCSize &size)
     rect[1] = ccp(m_clippingSize.width, 0);
     rect[2] = ccp(m_clippingSize.width, m_clippingSize.height);
     rect[3] = ccp(0, m_clippingSize.height);
-    ccColor4F green = {0, 1, 0, 1};
+    ccColor4F green(0, 1, 0, 1);
     m_pInnerStencil->clear();
     m_pInnerStencil->drawPolygon(rect, 4, green, 0, green);
 }

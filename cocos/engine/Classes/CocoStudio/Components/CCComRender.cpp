@@ -36,7 +36,7 @@ CCComRender::CCComRender(void)
 CCComRender::CCComRender(cocos2d::CCNode *node, const char *comName)
 {
     m_pRender = node;
-    m_strName.assign(comName);
+    _name.assign(comName);
 }
 
 CCComRender::~CCComRender(void)
@@ -46,9 +46,9 @@ CCComRender::~CCComRender(void)
 
 void CCComRender::onEnter()
 {
-    if (m_pOwner != NULL)
+    if (_owner != NULL)
     {
-        m_pOwner->addChild(m_pRender);
+        _owner->addChild(m_pRender);
     }
 }
 

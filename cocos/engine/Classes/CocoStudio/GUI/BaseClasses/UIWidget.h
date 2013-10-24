@@ -29,6 +29,7 @@
 #include "ExtensionMacros.h"
 #include "../Layouts/UILayoutDefine.h"
 #include "../Layouts/LayoutParameter.h"
+#include "CocoStudio.h"
 NS_CC_EXT_BEGIN
 
 

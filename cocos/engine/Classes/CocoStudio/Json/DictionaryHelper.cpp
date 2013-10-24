@@ -100,7 +100,7 @@ const char* DictionaryHelper::getStringValue(cocos2d::CCDictionary* root,const c
         return NULL;
     }
     cocos2d::CCString* cstr = (cocos2d::CCString*)(obj);
-    return cstr->m_sString.c_str();
+    return cstr->_string.c_str();
 }
 
 bool DictionaryHelper::getBooleanValue(cocos2d::CCDictionary* root,const char* key)
@@ -156,7 +156,7 @@ const char* DictionaryHelper::objectToStringValue(cocos2d::CCObject *obj)
         return NULL;
     }
     cocos2d::CCString* cstr = (cocos2d::CCString*)(obj);
-    return cstr->m_sString.c_str();
+    return cstr->_string.c_str();
 }
 
 bool DictionaryHelper::objectToBooleanValue(cocos2d::CCObject *obj)

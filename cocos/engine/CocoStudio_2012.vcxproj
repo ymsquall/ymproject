@@ -16,30 +16,7 @@
     <ClCompile Include="Classes\CocoStudio\Action\CCActionManager.cpp" />
     <ClCompile Include="Classes\CocoStudio\Action\CCActionNode.cpp" />
     <ClCompile Include="Classes\CocoStudio\Action\CCActionObject.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Armature\animation\CCArmatureAnimation.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Armature\animation\CCProcessBase.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Armature\animation\CCTween.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Armature\CCArmature.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Armature\CCBone.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Armature\datas\CCDatas.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Armature\display\CCBatchNode.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Armature\display\CCDecorativeDisplay.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Armature\display\CCDisplayFactory.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Armature\display\CCDisplayManager.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Armature\display\CCSkin.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Armature\physics\CCColliderDetector.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Armature\utils\CCArmatureDataManager.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Armature\utils\CCArmatureDefine.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Armature\utils\CCDataReaderHelper.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Armature\utils\CCSpriteFrameCacheHelper.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Armature\utils\CCTransformHelp.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Armature\utils\CCTweenFunction.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Armature\utils\CCUtilMath.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Components\CCComAttribute.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Components\CCComAudio.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Components\CCComController.cpp" />
     <ClCompile Include="Classes\CocoStudio\Components\CCComRender.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Components\CCInputDelegate.cpp" />
     <ClCompile Include="Classes\CocoStudio\GUI\BaseClasses\UIRootWidget.cpp" />
     <ClCompile Include="Classes\CocoStudio\GUI\BaseClasses\UIWidget.cpp" />
     <ClCompile Include="Classes\CocoStudio\GUI\Layouts\Layout.cpp" />
@@ -63,7 +40,6 @@
     <ClCompile Include="Classes\CocoStudio\GUI\UIWidgets\UISlider.cpp" />
     <ClCompile Include="Classes\CocoStudio\GUI\UIWidgets\UISwitch.cpp" />
     <ClCompile Include="Classes\CocoStudio\GUI\UIWidgets\UITextField.cpp" />
-    <ClCompile Include="Classes\CocoStudio\Json\CSContentJsonDictionary.cpp" />
     <ClCompile Include="Classes\CocoStudio\Json\DictionaryHelper.cpp" />
     <ClCompile Include="Classes\CocoStudio\Json\lib_json\json_reader.cpp" />
     <ClCompile Include="Classes\CocoStudio\Json\lib_json\json_value.cpp" />
@@ -77,32 +53,8 @@
     <ClInclude Include="Classes\CocoStudio\Action\CCActionManager.h" />
     <ClInclude Include="Classes\CocoStudio\Action\CCActionNode.h" />
     <ClInclude Include="Classes\CocoStudio\Action\CCActionObject.h" />
-    <ClInclude Include="Classes\CocoStudio\Armature\animation\CCArmatureAnimation.h" />
-    <ClInclude Include="Classes\CocoStudio\Armature\animation\CCProcessBase.h" />
-    <ClInclude Include="Classes\CocoStudio\Armature\animation\CCTween.h" />
-    <ClInclude Include="Classes\CocoStudio\Armature\CCArmature.h" />
-    <ClInclude Include="Classes\CocoStudio\Armature\CCBone.h" />
-    <ClInclude Include="Classes\CocoStudio\Armature\datas\CCDatas.h" />
-    <ClInclude Include="Classes\CocoStudio\Armature\display\CCBatchNode.h" />
-    <ClInclude Include="Classes\CocoStudio\Armature\display\CCDecorativeDisplay.h" />
-    <ClInclude Include="Classes\CocoStudio\Armature\display\CCDisplayFactory.h" />
-    <ClInclude Include="Classes\CocoStudio\Armature\display\CCDisplayManager.h" />
-    <ClInclude Include="Classes\CocoStudio\Armature\display\CCSkin.h" />
-    <ClInclude Include="Classes\CocoStudio\Armature\external_tool\sigslot.h" />
-    <ClInclude Include="Classes\CocoStudio\Armature\physics\CCColliderDetector.h" />
-    <ClInclude Include="Classes\CocoStudio\Armature\utils\CCArmatureDataManager.h" />
-    <ClInclude Include="Classes\CocoStudio\Armature\utils\CCArmatureDefine.h" />
-    <ClInclude Include="Classes\CocoStudio\Armature\utils\CCDataReaderHelper.h" />
-    <ClInclude Include="Classes\CocoStudio\Armature\utils\CCSpriteFrameCacheHelper.h" />
-    <ClInclude Include="Classes\CocoStudio\Armature\utils\CCTransformHelp.h" />
-    <ClInclude Include="Classes\CocoStudio\Armature\utils\CCTweenFunction.h" />
-    <ClInclude Include="Classes\CocoStudio\Armature\utils\CCUtilMath.h" />
     <ClInclude Include="Classes\CocoStudio\CocoStudio.h" />
-    <ClInclude Include="Classes\CocoStudio\Components\CCComAttribute.h" />
-    <ClInclude Include="Classes\CocoStudio\Components\CCComAudio.h" />
-    <ClInclude Include="Classes\CocoStudio\Components\CCComController.h" />
     <ClInclude Include="Classes\CocoStudio\Components\CCComRender.h" />
-    <ClInclude Include="Classes\CocoStudio\Components\CCInputDelegate.h" />
     <ClInclude Include="Classes\CocoStudio\GUI\BaseClasses\UIRootWidget.h" />
     <ClInclude Include="Classes\CocoStudio\GUI\BaseClasses\UIWidget.h" />
     <ClInclude Include="Classes\CocoStudio\GUI\Layouts\Layout.h" />
@@ -128,7 +80,6 @@
     <ClInclude Include="Classes\CocoStudio\GUI\UIWidgets\UISlider.h" />
     <ClInclude Include="Classes\CocoStudio\GUI\UIWidgets\UISwitch.h" />
     <ClInclude Include="Classes\CocoStudio\GUI\UIWidgets\UITextField.h" />
-    <ClInclude Include="Classes\CocoStudio\Json\CSContentJsonDictionary.h" />
     <ClInclude Include="Classes\CocoStudio\Json\DictionaryHelper.h" />
     <ClInclude Include="Classes\CocoStudio\Json\lib_json\autolink.h" />
     <ClInclude Include="Classes\CocoStudio\Json\lib_json\config.h" />
@@ -194,7 +145,7 @@
       <SDLCheck>
       </SDLCheck>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir).\Classes\CocoStudio;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\cocos2dx_support;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\tolua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\src;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\CocosDenshion\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\extensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir).\Classes\;$(ProjectDir).\Classes\CocoStudio;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\cocos2dx_support;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\tolua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\src;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\CocosDenshion\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\extensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>

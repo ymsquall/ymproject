@@ -4,9 +4,6 @@
     <Filter Include="Action">
       <UniqueIdentifier>{b6440ca8-c73f-4d5a-b081-a9655c7a0648}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Armature">
-      <UniqueIdentifier>{a59b0d6c-dfae-44cf-8cb5-f3176318d0ac}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Components">
       <UniqueIdentifier>{4fda2008-96f6-4e0a-bb4b-5f94e9618153}</UniqueIdentifier>
     </Filter>
@@ -18,24 +15,6 @@
     </Filter>
     <Filter Include="Reader">
       <UniqueIdentifier>{504e6443-77a1-4615-bca1-10db612a9bbe}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Armature\animation">
-      <UniqueIdentifier>{fb9a691b-6d10-4a9f-b6de-450b6e1563a9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Armature\datas">
-      <UniqueIdentifier>{1be19c3e-a625-4891-bc36-882292551c89}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Armature\display">
-      <UniqueIdentifier>{b125273c-7df1-4502-9672-93ff8feb85fd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Armature\external_tool">
-      <UniqueIdentifier>{84213e81-2578-438b-9989-d3a51fab9c47}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Armature\physics">
-      <UniqueIdentifier>{a2deec44-96e0-4ad7-80f2-a3436ac40232}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Armature\utils">
-      <UniqueIdentifier>{1f89ac4e-b19a-4c89-bc30-0c5d3c9fe083}</UniqueIdentifier>
     </Filter>
     <Filter Include="GUI\BaseClasses">
       <UniqueIdentifier>{ea42b527-b0a1-4a59-a89c-303dea69589e}</UniqueIdentifier>
@@ -75,76 +54,7 @@
     <ClCompile Include="Classes\CocoStudio\Action\CCActionObject.cpp">
       <Filter>Action</Filter>
     </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Armature\CCArmature.cpp">
-      <Filter>Armature</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Armature\CCBone.cpp">
-      <Filter>Armature</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Armature\animation\CCArmatureAnimation.cpp">
-      <Filter>Armature\animation</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Armature\animation\CCProcessBase.cpp">
-      <Filter>Armature\animation</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Armature\animation\CCTween.cpp">
-      <Filter>Armature\animation</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Armature\datas\CCDatas.cpp">
-      <Filter>Armature\datas</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Armature\display\CCBatchNode.cpp">
-      <Filter>Armature\display</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Armature\display\CCDecorativeDisplay.cpp">
-      <Filter>Armature\display</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Armature\display\CCDisplayFactory.cpp">
-      <Filter>Armature\display</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Armature\display\CCDisplayManager.cpp">
-      <Filter>Armature\display</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Armature\display\CCSkin.cpp">
-      <Filter>Armature\display</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Armature\utils\CCArmatureDataManager.cpp">
-      <Filter>Armature\utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Armature\utils\CCArmatureDefine.cpp">
-      <Filter>Armature\utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Armature\utils\CCDataReaderHelper.cpp">
-      <Filter>Armature\utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Armature\utils\CCSpriteFrameCacheHelper.cpp">
-      <Filter>Armature\utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Armature\utils\CCTransformHelp.cpp">
-      <Filter>Armature\utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Armature\utils\CCTweenFunction.cpp">
-      <Filter>Armature\utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Armature\utils\CCUtilMath.cpp">
-      <Filter>Armature\utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Armature\physics\CCColliderDetector.cpp">
-      <Filter>Armature\physics</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Components\CCComAttribute.cpp">
-      <Filter>Components</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Components\CCComAudio.cpp">
-      <Filter>Components</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Components\CCComController.cpp">
-      <Filter>Components</Filter>
-    </ClCompile>
     <ClCompile Include="Classes\CocoStudio\Components\CCComRender.cpp">
-      <Filter>Components</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Components\CCInputDelegate.cpp">
       <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="Classes\CocoStudio\GUI\BaseClasses\UIRootWidget.cpp">
@@ -225,9 +135,6 @@
     <ClCompile Include="Classes\CocoStudio\Json\lib_json\json_writer.cpp">
       <Filter>Json\lib_json</Filter>
     </ClCompile>
-    <ClCompile Include="Classes\CocoStudio\Json\CSContentJsonDictionary.cpp">
-      <Filter>Json</Filter>
-    </ClCompile>
     <ClCompile Include="Classes\CocoStudio\Json\DictionaryHelper.cpp">
       <Filter>Json</Filter>
     </ClCompile>
@@ -254,79 +161,7 @@
     <ClInclude Include="Classes\CocoStudio\Action\CCActionObject.h">
       <Filter>Action</Filter>
     </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Armature\CCArmature.h">
-      <Filter>Armature</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Armature\CCBone.h">
-      <Filter>Armature</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Armature\animation\CCArmatureAnimation.h">
-      <Filter>Armature\animation</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Armature\animation\CCProcessBase.h">
-      <Filter>Armature\animation</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Armature\animation\CCTween.h">
-      <Filter>Armature\animation</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Armature\datas\CCDatas.h">
-      <Filter>Armature\datas</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Armature\display\CCBatchNode.h">
-      <Filter>Armature\display</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Armature\display\CCDecorativeDisplay.h">
-      <Filter>Armature\display</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Armature\display\CCDisplayFactory.h">
-      <Filter>Armature\display</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Armature\display\CCDisplayManager.h">
-      <Filter>Armature\display</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Armature\display\CCSkin.h">
-      <Filter>Armature\display</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Armature\external_tool\sigslot.h">
-      <Filter>Armature\external_tool</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Armature\utils\CCArmatureDataManager.h">
-      <Filter>Armature\utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Armature\utils\CCArmatureDefine.h">
-      <Filter>Armature\utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Armature\utils\CCDataReaderHelper.h">
-      <Filter>Armature\utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Armature\utils\CCSpriteFrameCacheHelper.h">
-      <Filter>Armature\utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Armature\utils\CCTransformHelp.h">
-      <Filter>Armature\utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Armature\utils\CCTweenFunction.h">
-      <Filter>Armature\utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Armature\utils\CCUtilMath.h">
-      <Filter>Armature\utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Armature\physics\CCColliderDetector.h">
-      <Filter>Armature\physics</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Components\CCComAttribute.h">
-      <Filter>Components</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Components\CCComAudio.h">
-      <Filter>Components</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Components\CCComController.h">
-      <Filter>Components</Filter>
-    </ClInclude>
     <ClInclude Include="Classes\CocoStudio\Components\CCComRender.h">
-      <Filter>Components</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Components\CCInputDelegate.h">
       <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="Classes\CocoStudio\GUI\BaseClasses\UIRootWidget.h">
@@ -433,9 +268,6 @@
     </ClInclude>
     <ClInclude Include="Classes\CocoStudio\Json\lib_json\writer.h">
       <Filter>Json\lib_json</Filter>
-    </ClInclude>
-    <ClInclude Include="Classes\CocoStudio\Json\CSContentJsonDictionary.h">
-      <Filter>Json</Filter>
     </ClInclude>
     <ClInclude Include="Classes\CocoStudio\Json\DictionaryHelper.h">
       <Filter>Json</Filter>

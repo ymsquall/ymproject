@@ -23,7 +23,6 @@
  ****************************************************************************/
 
 #include "CCSSceneReader.h"
-#include "cocos-ext.h"
 
 NS_CC_EXT_BEGIN
 
@@ -261,12 +260,12 @@ NS_CC_EXT_BEGIN
 					CC_SAFE_DELETE(subData);
 					CC_SAFE_DELETE_ARRAY(des);
                 }
-                else if(comName != NULL && strcmp(comName, "CCComAudio") == 0)
+                else if(comName != NULL && strcmp(comName, "CCCSComAudio") == 0)
                 {
-					CCComAudio *pAudio = NULL;
+					CCCSComAudio *pAudio = NULL;
 					if (nResType == 0)
 					{
-						pAudio = CCComAudio::create();
+						pAudio = CCCSComAudio::create();
 					}
 					else
 					{
@@ -275,12 +274,12 @@ NS_CC_EXT_BEGIN
                     pAudio->preloadEffect(pPath.c_str());
                     gb->addComponent(pAudio);
                 }
-                else if(comName != NULL && strcmp(comName, "CCComAttribute") == 0)
+                else if(comName != NULL && strcmp(comName, "CCCSComAttribute") == 0)
                 {
-                    CCComAttribute *pAttribute = NULL;
+                    CCCSComAttribute *pAttribute = NULL;
 					if (nResType == 0)
 					{
-						pAttribute = CCComAttribute::create();
+						pAttribute = CCCSComAttribute::create();
 						unsigned long size = 0;
 						const char* pData = 0;
 						pData = (char*)(cocos2d::CCFileUtils::sharedFileUtils()->getFileData(pPath.c_str(), "r", &size));
@@ -291,17 +290,17 @@ NS_CC_EXT_BEGIN
 					}
 					else
 					{
-						CCLog("unknown resourcetype on CCComAttribute!");
+						CCLog("unknown resourcetype on CCCSComAttribute!");
 						continue;
 					}
                     gb->addComponent(pAttribute);
                 }
                 else if (comName != NULL && strcmp(comName, "CCBackgroundAudio") == 0)
                 {
-					CCComAudio *pAudio = NULL;
+					CCCSComAudio *pAudio = NULL;
 					if (nResType == 0)
 					{
-						pAudio = CCComAudio::create();
+						pAudio = CCCSComAudio::create();
 					}
 					else
 					{
