@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Classes\CocoStudio\Action\CCActionFrame.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Action\CCActionFrameEasing.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Action\CCActionManager.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Action\CCActionNode.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Action\CCActionObject.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Armature\animation\CCArmatureAnimation.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Armature\animation\CCProcessBase.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Armature\animation\CCTween.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Armature\CCArmature.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Armature\CCBone.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Armature\datas\CCDatas.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Armature\display\CCBatchNode.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Armature\display\CCDecorativeDisplay.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Armature\display\CCDisplayFactory.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Armature\display\CCDisplayManager.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Armature\display\CCSkin.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Armature\physics\CCColliderDetector.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Armature\utils\CCArmatureDataManager.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Armature\utils\CCArmatureDefine.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Armature\utils\CCDataReaderHelper.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Armature\utils\CCSpriteFrameCacheHelper.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Armature\utils\CCTransformHelp.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Armature\utils\CCTweenFunction.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Armature\utils\CCUtilMath.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Components\CCComAttribute.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Components\CCComAudio.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Components\CCComController.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Components\CCComRender.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Components\CCInputDelegate.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\BaseClasses\UIRootWidget.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\BaseClasses\UIWidget.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\Layouts\Layout.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\Layouts\LayoutParameter.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\Layouts\UILayoutDefine.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\System\CocosGUI.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\System\UIHelper.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\System\UIInputManager.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\System\UILayer.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\UIWidgets\ScrollWidget\UIDragPanel.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\UIWidgets\ScrollWidget\UIListView.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\UIWidgets\ScrollWidget\UIPageView.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\UIWidgets\ScrollWidget\UIScrollView.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\UIWidgets\UIButton.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\UIWidgets\UICheckBox.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\UIWidgets\UIImageView.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\UIWidgets\UILabel.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\UIWidgets\UILabelAtlas.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\UIWidgets\UILabelBMFont.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\UIWidgets\UILoadingBar.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\UIWidgets\UISlider.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\UIWidgets\UISwitch.cpp" />
+    <ClCompile Include="Classes\CocoStudio\GUI\UIWidgets\UITextField.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Json\CSContentJsonDictionary.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Json\DictionaryHelper.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Json\lib_json\json_reader.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Json\lib_json\json_value.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Json\lib_json\json_writer.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Reader\CCSGUIReader.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Reader\CCSSceneReader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Classes\CocoStudio\Action\CCActionFrame.h" />
+    <ClInclude Include="Classes\CocoStudio\Action\CCActionFrameEasing.h" />
+    <ClInclude Include="Classes\CocoStudio\Action\CCActionManager.h" />
+    <ClInclude Include="Classes\CocoStudio\Action\CCActionNode.h" />
+    <ClInclude Include="Classes\CocoStudio\Action\CCActionObject.h" />
+    <ClInclude Include="Classes\CocoStudio\Armature\animation\CCArmatureAnimation.h" />
+    <ClInclude Include="Classes\CocoStudio\Armature\animation\CCProcessBase.h" />
+    <ClInclude Include="Classes\CocoStudio\Armature\animation\CCTween.h" />
+    <ClInclude Include="Classes\CocoStudio\Armature\CCArmature.h" />
+    <ClInclude Include="Classes\CocoStudio\Armature\CCBone.h" />
+    <ClInclude Include="Classes\CocoStudio\Armature\datas\CCDatas.h" />
+    <ClInclude Include="Classes\CocoStudio\Armature\display\CCBatchNode.h" />
+    <ClInclude Include="Classes\CocoStudio\Armature\display\CCDecorativeDisplay.h" />
+    <ClInclude Include="Classes\CocoStudio\Armature\display\CCDisplayFactory.h" />
+    <ClInclude Include="Classes\CocoStudio\Armature\display\CCDisplayManager.h" />
+    <ClInclude Include="Classes\CocoStudio\Armature\display\CCSkin.h" />
+    <ClInclude Include="Classes\CocoStudio\Armature\external_tool\sigslot.h" />
+    <ClInclude Include="Classes\CocoStudio\Armature\physics\CCColliderDetector.h" />
+    <ClInclude Include="Classes\CocoStudio\Armature\utils\CCArmatureDataManager.h" />
+    <ClInclude Include="Classes\CocoStudio\Armature\utils\CCArmatureDefine.h" />
+    <ClInclude Include="Classes\CocoStudio\Armature\utils\CCDataReaderHelper.h" />
+    <ClInclude Include="Classes\CocoStudio\Armature\utils\CCSpriteFrameCacheHelper.h" />
+    <ClInclude Include="Classes\CocoStudio\Armature\utils\CCTransformHelp.h" />
+    <ClInclude Include="Classes\CocoStudio\Armature\utils\CCTweenFunction.h" />
+    <ClInclude Include="Classes\CocoStudio\Armature\utils\CCUtilMath.h" />
+    <ClInclude Include="Classes\CocoStudio\CocoStudio.h" />
+    <ClInclude Include="Classes\CocoStudio\Components\CCComAttribute.h" />
+    <ClInclude Include="Classes\CocoStudio\Components\CCComAudio.h" />
+    <ClInclude Include="Classes\CocoStudio\Components\CCComController.h" />
+    <ClInclude Include="Classes\CocoStudio\Components\CCComRender.h" />
+    <ClInclude Include="Classes\CocoStudio\Components\CCInputDelegate.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\BaseClasses\UIRootWidget.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\BaseClasses\UIWidget.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\Layouts\Layout.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\Layouts\LayoutParameter.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\Layouts\UILayoutDefine.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\System\CocosGUI.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\System\UIHelper.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\System\UIInputManager.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\System\UILayer.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\UIWidgets\Compatible\CompatibleClasses.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\UIWidgets\ScrollWidget\UIDragPanel.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\UIWidgets\ScrollWidget\UIListView.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\UIWidgets\ScrollWidget\UIPageView.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\UIWidgets\ScrollWidget\UIScrollInterface.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\UIWidgets\ScrollWidget\UIScrollView.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\UIWidgets\UIButton.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\UIWidgets\UICheckBox.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\UIWidgets\UIImageView.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\UIWidgets\UILabel.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\UIWidgets\UILabelAtlas.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\UIWidgets\UILabelBMFont.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\UIWidgets\UILoadingBar.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\UIWidgets\UISlider.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\UIWidgets\UISwitch.h" />
+    <ClInclude Include="Classes\CocoStudio\GUI\UIWidgets\UITextField.h" />
+    <ClInclude Include="Classes\CocoStudio\Json\CSContentJsonDictionary.h" />
+    <ClInclude Include="Classes\CocoStudio\Json\DictionaryHelper.h" />
+    <ClInclude Include="Classes\CocoStudio\Json\lib_json\autolink.h" />
+    <ClInclude Include="Classes\CocoStudio\Json\lib_json\config.h" />
+    <ClInclude Include="Classes\CocoStudio\Json\lib_json\features.h" />
+    <ClInclude Include="Classes\CocoStudio\Json\lib_json\forwards.h" />
+    <ClInclude Include="Classes\CocoStudio\Json\lib_json\json_batchallocator.h" />
+    <ClInclude Include="Classes\CocoStudio\Json\lib_json\json_lib.h" />
+    <ClInclude Include="Classes\CocoStudio\Json\lib_json\json_tool.h" />
+    <ClInclude Include="Classes\CocoStudio\Json\lib_json\reader.h" />
+    <ClInclude Include="Classes\CocoStudio\Json\lib_json\value.h" />
+    <ClInclude Include="Classes\CocoStudio\Json\lib_json\writer.h" />
+    <ClInclude Include="Classes\CocoStudio\Reader\CCSGUIReader.h" />
+    <ClInclude Include="Classes\CocoStudio\Reader\CCSSceneReader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Classes\CocoStudio\Json\lib_json\json_internalarray.inl" />
+    <None Include="Classes\CocoStudio\Json\lib_json\json_internalmap.inl" />
+    <None Include="Classes\CocoStudio\Json\lib_json\json_valueiterator.inl" />
+    <None Include="Classes\CocoStudio\Json\lib_json\sconscript" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E87AC0EC-4BB2-4180-9FF1-7154F79EC9B7}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>CocoStudio</RootNamespace>
+    <ProjectName>CocoStudio_2012</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\..\$(Configuration).win32\</OutDir>
+    <IntDir>..\..\..\$(Configuration).Build.win32\</IntDir>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_DEBUG;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>
+      </SDLCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(ProjectDir).\Classes\CocoStudio;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\cocos2dx_support;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\tolua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\src;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\CocosDenshion\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\extensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
