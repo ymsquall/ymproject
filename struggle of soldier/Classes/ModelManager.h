@@ -27,15 +27,20 @@ public:
 	void onAppInitOveredShowingBefore(engine::AppDelegate* pApp, unity::RoutedEventArgs* args);
 	void onAppInitOveredShowingAfter(engine::AppDelegate* pApp, unity::RoutedEventArgs* args);
 
-public:
-
 private:
 	void initModels();
 
 	bool calculateDeltaTime();
 
 private:
+	void onEnabledModelDestory(mvvm::IModel* sender, unity::RoutedEventArgs* args);
+	void onModelPropertyChanged(mvvm::INotifyPropertyChanged*, mvvm::NotifyPropertyChangedRoutedEventArgs* args);
+
+private:
+	// timer
 	struct timeval* mLastUpdate;
 	float mDeltaTime;
 	bool mNextDeltaTimeZero;
+
+	ModelListV mEnabledModelList;
 };

@@ -160,14 +160,14 @@ namespace framework
 	#pragma endregion
 
 	#pragma region 路由事件实现
-		template<typename SenderT>
-		class RoutedEvent : public event<SenderT, RoutedEventArgs*>
+		template<typename SenderT, typename ParamT = RoutedEventArgs*>
+		class RoutedEvent : public event<SenderT, ParamT>
 		{
 		public:
-			typedef event<SenderT, RoutedEventArgs*> SuperT;
+			typedef event<SenderT, ParamT> SuperT;
 			typedef RoutedEvent<SenderT> ThisT;
-			typedef EventHandler<SenderT, RoutedEventArgs*> HandlerT;
-			virtual void fire(SenderT sender, RoutedEventArgs* param)	// 触发事件委托
+			typedef EventHandler<SenderT, ParamT> HandlerT;
+			virtual void fire(SenderT sender, ParamT param)	// 触发事件委托
 			{
 				typename SuperT::HandleList handlers;
 				handlers.resize(this->mHanderArray.size());
@@ -187,3 +187,4 @@ namespace framework
 }	// namespace framework
 
 #define ROUTEDEVENT_MAKER(senderT, sender, recvFunc) framework::unity::RoutedEvent<senderT>::HandlerT(sender, &recvFunc);
+#define ROUTEDEVENT_MAKER_PARAM(senderT, paramT, sender, recvFunc) framework::unity::RoutedEvent<senderT, paramT>::HandlerT(sender, &recvFunc);

@@ -16,7 +16,9 @@ class TestModel : public mvvm::ModelBase<(uint16)ModelType::Test, 4>
 public:
 	typedef mvvm::ModelBase<(uint16)ModelType::Test, 4> SuperT;
 	TestModel();
-	
+	virtual bool init(){ return true; }
+	virtual void finalize(){}
+	virtual void update(float dt){}
 
 	static void test();
 

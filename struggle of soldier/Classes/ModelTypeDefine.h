@@ -1,5 +1,7 @@
 #pragma once
 #include "unity/platform.h"
+#include "unity/event.h"
+#include "unity/property.h"
 #include "mvvm/model.h"
 #include "application/CCLuaEngine.h"
 
@@ -17,14 +19,20 @@ enum class ModelType : uint16
 static const size_t ModelNameLength_Login		= 5;	// LoginModel
 static const size_t ModelNameLength_GameLand	= 8;	// GameLandModel
 
+// PropertyChanged NameString
+static const char* ModelPropertyChangedName_Enabled = "Enabled";
+
+class ModelManager;
 template<typename uint16 typeValue, typename size_t rttiLength>
 class ModelImpl : public mvvm::ModelBase<typeValue, rttiLength>
 {
 public:
-	ModelImpl(const char* ascType) : mvvm::ModelBase<typeValue, rttiLength>(ascType)
+	typedef ModelImpl<typeValue, rttiLength> ThisT;
+	ModelImpl(const char* ascType) : mvvm::ModelBase<typeValue, rttiLength>(ascType), Enabled(this)
 	{
 		mLuaEngine = cocos2d::LuaEngine::getInstance();
-		mEnabled = false;
+		mModelManager = NULL;
+		Enabled = false;
 	}
 
 	virtual bool init()
@@ -34,18 +42,14 @@ public:
 
 	virtual void update(float dt)
 	{
-		if(!mEnabled)
+		if(!Enabled)
 			return;
 		this->updateImpl(dt);
 	}
-
-	void enable()
+	void setEnabled(const bool& b)
 	{
-		mEnabled = true;
-	}
-	void disable()
-	{
-		mEnabled = false;
+		if(Enabled != b)
+			this->RaisePropertyChanged(ModelPropertyChangedName_Enabled);
 	}
 
 protected:
@@ -54,7 +58,9 @@ protected:
 
 protected:
 	cocos2d::LuaEngine* mLuaEngine;
-	bool mEnabled;
+	ModelManager* mModelManager;
+	// property
+	PROPERTY_DEFINED_SETTER(Enabled, bool, ThisT, setEnabled);
 };
 
 #define MODEL_TYPECLASS_DECLARE_HEADER(name) class name##Model :  \
@@ -71,11 +77,13 @@ protected:
 			} \
 			virtual bool initImpl(); \
 			virtual void updateImpl(float dt); \
-			virtual void finalize();
+			virtual void finalize(); 
 
 #define MODEL_TYPECLASS_DEFINE_CONSTRUCTOR(name) const std::string name##Model::TypeName = #name; \
-		name##Model::name##Model() : name##Model::SuperT(name##Model::TypeName.c_str())
-
-#define MODEL_TYPECLASS_DEFINE_DECONSTRUCTOR(name) name##Model::~name##Model()
+		name##Model::name##Model() : name##Model::SuperT(name##Model::TypeName.c_str()) \
+		{ \
+			mModelManager = ModelManager::point();
+#define MODEL_TYPECLASS_DEFINE_DECONSTRUCTOR(name) } name##Model::~name##Model() {
+#define MODEL_TYPECLASS_DEFINE_BEGINING }
 
 #define MODEL_TYPECLASS_DECLARE_END };

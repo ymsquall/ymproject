@@ -38,8 +38,42 @@ void ModelManager::initWithAppStart(engine::AppDelegate* pApp)
 
 void ModelManager::initModels()
 {
-	this->addModel<LoginModel>();
-	this->addModel<GameLandModel>();
+	LoginModel* pLoginModel = this->addModel<LoginModel>();
+	if(pLoginModel && pLoginModel->Enabled)
+	{
+		pLoginModel->Event_ModelDestory += ROUTEDEVENT_MAKER(mvvm::IModel*, this, ModelManager::onEnabledModelDestory);
+		pLoginModel->Event_PropertyChanged += ROUTEDEVENT_MAKER_PARAM(mvvm::INotifyPropertyChanged*, 
+			mvvm::NotifyPropertyChangedRoutedEventArgs*, this, ModelManager::onModelPropertyChanged);
+		mEnabledModelList.push_back(pLoginModel);
+	}
+
+	GameLandModel* pGameLandModel = this->addModel<GameLandModel>();
+	if(pGameLandModel && pGameLandModel->Enabled)
+	{
+		pGameLandModel->Event_ModelDestory += ROUTEDEVENT_MAKER(mvvm::IModel*, this, ModelManager::onEnabledModelDestory);
+		pGameLandModel->Event_PropertyChanged += ROUTEDEVENT_MAKER_PARAM(mvvm::INotifyPropertyChanged*, 
+			mvvm::NotifyPropertyChangedRoutedEventArgs*, this, ModelManager::onModelPropertyChanged);
+		mEnabledModelList.push_back(pGameLandModel);
+	}
+}
+
+void ModelManager::onEnabledModelDestory(mvvm::IModel* sender, unity::RoutedEventArgs* args)
+{
+	ModelListV::iterator it = std::find(mEnabledModelList.begin(), mEnabledModelList.end(), sender);
+	if(mEnabledModelList.end() != it)
+		mEnabledModelList.erase(it);
+}
+
+void ModelManager::onModelPropertyChanged(mvvm::INotifyPropertyChanged* sender, mvvm::NotifyPropertyChangedRoutedEventArgs* args)
+{
+	if(ModelPropertyChangedName_Enabled == args->PropertyName)
+	{
+		mvvm::IModel* pModel = dynamic_cast<mvvm::IModel*>(sender);
+		if(NULL != pModel)
+		{
+
+		}
+	}
 }
 
 bool ModelManager::calculateDeltaTime() 
@@ -78,8 +112,8 @@ bool ModelManager::modelLoop()
 	if(!this->calculateDeltaTime())
 		return false;
 
-	for(ModelListV::iterator it = mModelList.begin();
-		it != mModelList.end(); ++ it)
+	for(ModelListV::iterator it = mEnabledModelList.begin();
+		it != mEnabledModelList.end(); ++ it)
 	{
 		(*it)->update(mDeltaTime);
 	}

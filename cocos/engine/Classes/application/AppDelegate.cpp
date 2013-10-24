@@ -2,7 +2,7 @@
 #include "AppDelegate.h"
 #include "SimpleAudioEngine.h"
 #include "script_support/CCScriptSupport.h"
-#include "CCLuaEngine.h"
+#include "application/CCLuaEngine.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;

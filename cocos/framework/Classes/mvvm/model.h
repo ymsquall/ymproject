@@ -178,7 +178,7 @@ namespace framework
 			typedef std::vector<IModel*> ModelListV;
 
 			template<class T>
-			void addModel()
+			T* addModel()
 			{
 				mModelFactory->registerModelCreator(T::TypeName, (unity::__baseReflectFunc)T::TypeCreator);
 				unity::object* pObject = mModelFactory->createModel(T::TypeName);
@@ -187,12 +187,14 @@ namespace framework
 				if(!pModel->init())
 				{
 					pModel->deleteModel();
-					return;
+					return NULL;
 				}
 				pModel->Event_ModelDestory += ROUTEDEVENT_MAKER(IModel*, this, IModelManager::onModelDestory);
 				mModelList.push_back(pModel);
+				return pModel;
 			}
 
+		private:
 			void onModelDestory(IModel* sender, unity::RoutedEventArgs* args)
 			{
 				ModelListV::iterator it = std::find(mModelList.begin(), mModelList.end(), sender);

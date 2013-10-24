@@ -17,12 +17,14 @@ namespace framework
 		class INotifyPropertyChanged
 		{
 		public:
-			unity::RoutedEvent<INotifyPropertyChanged*> PropertyChanged;
+			unity::RoutedEvent<INotifyPropertyChanged*, NotifyPropertyChangedRoutedEventArgs*> Event_PropertyChanged;
+
+		protected:
 			virtual void RaisePropertyChanged(const char* propertyName)
 			{
 				NotifyPropertyChangedRoutedEventArgs args;
 				args.PropertyName = propertyName;
-				PropertyChanged(this, &args);
+				Event_PropertyChanged(this, &args);
 			}
 		};
 

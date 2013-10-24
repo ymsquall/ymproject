@@ -2,6 +2,7 @@
 #include "application/AppDelegate.h"
 #include "CCEGLView.h"
 #include "ModelManager.h"
+#include "Win32MsgProc.h"
 
 USING_NS_CC;
 
@@ -25,6 +26,10 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 
     // create the application instance
 	engine::AppDelegate app;
+
+	EGLView::getInstance()->setAccelerometerKeyHook(&Win32MsgProc::KeyboardMsgProc);
+	EGLView::getInstance()->setWndProc(&Win32MsgProc::WindowsMsgProc);
+
 	ModelManager* pModelMgr = ModelManager::point();
 	pModelMgr->initWithAppStart(&app);
 
