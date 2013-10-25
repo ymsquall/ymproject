@@ -21,8 +21,14 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
  ****************************************************************************/
-
+#include "stdafx.h"
 #include "CCSSceneReader.h"
+#include "CocoStudio/Components/CCComRender.h"
+#include "CocoStudio/Components/CCCSComAudio.h"
+#include "CocoStudio/Components/CCCSComAttribute.h"
+#include "CocoStudio/GUI/System/UILayer.h"
+#include "CocoStudio/GUI/System/UIHelper.h"
+#include "CocoStudio/Json/DictionaryHelper.h"
 
 NS_CC_EXT_BEGIN
 
@@ -51,7 +57,7 @@ NS_CC_EXT_BEGIN
 			  std::string strFileName(pszFileName);
               pData = (char*)(cocos2d::CCFileUtils::sharedFileUtils()->getFileData(pszFileName, "r", &size));
               CC_BREAK_IF(pData == NULL || strcmp(pData, "") == 0);
-              cs::CSJsonDictionary *jsonDict = new cs::CSJsonDictionary();
+              cs::CCCSJsonDictionary *jsonDict = new cs::CCCSJsonDictionary();
               jsonDict->initWithDescription(pData);
               pNode = createObject(jsonDict,NULL);
               CC_SAFE_DELETE(jsonDict);
@@ -60,7 +66,7 @@ NS_CC_EXT_BEGIN
         return pNode;
 	}
 
-	CCNode* CCSSceneReader::createObject(cs::CSJsonDictionary * inputFiles, CCNode* parenet)
+	CCNode* CCSSceneReader::createObject(cs::CCCSJsonDictionary * inputFiles, CCNode* parenet)
     {
         const char *className = inputFiles->getItemStringValue("classname"); 
         if(strcmp(className, "CCNode") == 0)
@@ -81,7 +87,7 @@ NS_CC_EXT_BEGIN
             int count = inputFiles->getArrayItemCount("components");
             for (int i = 0; i < count; i++)
             {
-                cs::CSJsonDictionary * subDict = inputFiles->getSubItemFromArray("components", i);
+                cs::CCCSJsonDictionary * subDict = inputFiles->getSubItemFromArray("components", i);
                 if (!subDict)
 				{
 				   CC_SAFE_DELETE(subDict);
@@ -90,7 +96,7 @@ NS_CC_EXT_BEGIN
                 const char *comName = subDict->getItemStringValue("classname");
 				const char *pComName = subDict->getItemStringValue("name");
                 
-				cs::CSJsonDictionary *fileData = subDict->getSubDictionary("fileData");
+				cs::CCCSJsonDictionary *fileData = subDict->getSubDictionary("fileData");
 				std::string pPath;
                 std::string pPlistFile;
 				int nResType = 0;
@@ -205,14 +211,18 @@ NS_CC_EXT_BEGIN
 					}
                     std::string reDir = pPath;
                     std::string file_path = "";
-                    size_t pos = reDir.find_last_of('/');
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+					size_t pos = reDir.find_last_of('\\');
+#else
+					size_t pos = reDir.find_last_of('/');
+#endif
                     if (pos != std::string::npos)
                     {
                         file_path = reDir.substr(0, pos+1);
                     }
                     unsigned long size = 0;
                     const char *des = (char*)(cocos2d::CCFileUtils::sharedFileUtils()->getFileData(pPath.c_str(),"r" , &size));
-			        cs::CSJsonDictionary *jsonDict = new cs::CSJsonDictionary();
+			        cs::CCCSJsonDictionary *jsonDict = new cs::CCCSJsonDictionary();
 			        jsonDict->initWithDescription(des);
                     if(NULL == des || strcmp(des, "") == 0)
                     {
@@ -220,7 +230,7 @@ NS_CC_EXT_BEGIN
                     }
                     
                     int childrenCount = DICTOOL->getArrayCount_json(jsonDict, "armature_data");
-                    cs::CSJsonDictionary* subData = DICTOOL->getDictionaryFromArray_json(jsonDict, "armature_data", 0);
+                    cs::CCCSJsonDictionary* subData = DICTOOL->getDictionaryFromArray_json(jsonDict, "armature_data", 0);
                     const char *name = DICTOOL->getStringValue_json(subData, "name");
 
                     childrenCount = DICTOOL->getArrayCount_json(jsonDict, "config_file_path");
@@ -238,11 +248,11 @@ NS_CC_EXT_BEGIN
                         textupath += file_path;
                         textupath.append(textureFileName);
 
-                        CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo(textupath.c_str(), plistpath.c_str(), pPath.c_str());
+                        armature::CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo(textupath.c_str(), plistpath.c_str(), pPath.c_str());
                         
                     }
                     
-                    CCArmature *pAr = CCArmature::create(name);
+                    armature::CCArmature *pAr = armature::CCArmature::create(name);
                     CCComRender *pRender = CCComRender::create(pAr, "CCArmature");
                     if (pComName != NULL)
                     {
@@ -341,7 +351,7 @@ NS_CC_EXT_BEGIN
 
             for (int i = 0; i < inputFiles->getArrayItemCount("gameobjects"); i++)
             {
-                cs::CSJsonDictionary * subDict = inputFiles->getSubItemFromArray("gameobjects", i);
+                cs::CCCSJsonDictionary * subDict = inputFiles->getSubItemFromArray("gameobjects", i);
                 if (!subDict)
                 {
                     break;
@@ -357,7 +367,7 @@ NS_CC_EXT_BEGIN
     }
 
 
-    void CCSSceneReader::setPropertyFromJsonDict(cocos2d::CCNode *node, cs::CSJsonDictionary* dict)
+    void CCSSceneReader::setPropertyFromJsonDict(cocos2d::CCNode *node, cs::CCCSJsonDictionary* dict)
     {
 		int x = dict->getItemIntValue("x", 0);
 		int y = dict->getItemIntValue("y", 0);

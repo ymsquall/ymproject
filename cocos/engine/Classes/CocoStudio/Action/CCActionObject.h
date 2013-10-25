@@ -28,7 +28,6 @@
 #include "cocos2d.h"
 #include "ExtensionMacros.h"
 #include "CCActionNode.h"
-#include "CocoStudio.h"
 
 NS_CC_EXT_BEGIN
 /**
@@ -145,7 +144,7 @@ public:
 	void updateToFrameByTime(float fTime);
 
     /*init properties with a json dictionary*/
-    void initWithDictionary(cs::CSJsonDictionary* dic,CCObject* root);
+    void initWithDictionary(cs::CCCSJsonDictionary* dic,CCObject* root);
     
 protected:
 	CCArray* m_ActionNodeList;/*actionnode*/

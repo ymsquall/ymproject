@@ -21,11 +21,10 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
  ****************************************************************************/
-
+#include "stdafx.h"
 #include "Layout.h"
 #include "../System/UILayer.h"
 #include "../System/UIHelper.h"
-#include "CocoStudio.h"
 
 NS_CC_EXT_BEGIN
 

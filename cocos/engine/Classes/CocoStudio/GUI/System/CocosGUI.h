@@ -46,7 +46,6 @@
 #include "../../Reader/CCSGUIReader.h"
 #include "UILayer.h"
 #include "../UIWidgets/Compatible/CompatibleClasses.h"
-#include "CocoStudio.h"
 
 NS_CC_EXT_BEGIN
 

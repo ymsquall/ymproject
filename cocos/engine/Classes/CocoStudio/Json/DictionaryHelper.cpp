@@ -21,7 +21,7 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
  ****************************************************************************/
-
+#include "stdafx.h"
 #include "DictionaryHelper.h"
 
 NS_CC_EXT_BEGIN
@@ -178,16 +178,16 @@ cocos2d::CCArray* DictionaryHelper::objectToCCArray(cocos2d::CCObject *obj)
     return array;
 }
 
-cs::CSJsonDictionary* DictionaryHelper::getSubDictionary_json(cs::CSJsonDictionary* root,const char* key)
+cs::CCCSJsonDictionary* DictionaryHelper::getSubDictionary_json(cs::CCCSJsonDictionary* root,const char* key)
 {
     if (!root)
     {
         return NULL;
     }
-    return root->getSubDictionary(key);
+    return dynamic_cast<cs::CCCSJsonDictionary*>(root->getSubDictionary(key));
 }
 
-int DictionaryHelper::getIntValue_json(cs::CSJsonDictionary* root,const char* key)
+int DictionaryHelper::getIntValue_json(cs::CCCSJsonDictionary* root,const char* key)
 {
     if (!root)
     {
@@ -196,7 +196,7 @@ int DictionaryHelper::getIntValue_json(cs::CSJsonDictionary* root,const char* ke
     return root->getItemIntValue(key, 0);
 }
 
-float DictionaryHelper::getFloatValue_json(cs::CSJsonDictionary* root,const char* key)
+float DictionaryHelper::getFloatValue_json(cs::CCCSJsonDictionary* root,const char* key)
 {
     if (!root)
     {
@@ -205,7 +205,7 @@ float DictionaryHelper::getFloatValue_json(cs::CSJsonDictionary* root,const char
     return root->getItemFloatValue(key, 0.0);
 }
 
-const char* DictionaryHelper::getStringValue_json(cs::CSJsonDictionary* root,const char* key)
+const char* DictionaryHelper::getStringValue_json(cs::CCCSJsonDictionary* root,const char* key)
 {
     if (!root)
     {
@@ -214,7 +214,7 @@ const char* DictionaryHelper::getStringValue_json(cs::CSJsonDictionary* root,con
     return root->getItemStringValue(key);
 }
 
-bool DictionaryHelper::getBooleanValue_json(cs::CSJsonDictionary* root,const char* key)
+bool DictionaryHelper::getBooleanValue_json(cs::CCCSJsonDictionary* root,const char* key)
 {
     if (!root)
     {
@@ -223,7 +223,7 @@ bool DictionaryHelper::getBooleanValue_json(cs::CSJsonDictionary* root,const cha
     return root->getItemBoolvalue(key, false);
 }
 
-int DictionaryHelper::getArrayCount_json(cs::CSJsonDictionary* root,const char* key)
+int DictionaryHelper::getArrayCount_json(cs::CCCSJsonDictionary* root,const char* key)
 {
     if (!root)
     {
@@ -232,7 +232,7 @@ int DictionaryHelper::getArrayCount_json(cs::CSJsonDictionary* root,const char* 
     return root->getArrayItemCount(key);
 }
 
-int DictionaryHelper::getIntValueFromArray_json(cs::CSJsonDictionary* root,const char* arrayKey,int idx)
+int DictionaryHelper::getIntValueFromArray_json(cs::CCCSJsonDictionary* root,const char* arrayKey,int idx)
 {
     if (!root)
     {
@@ -241,7 +241,7 @@ int DictionaryHelper::getIntValueFromArray_json(cs::CSJsonDictionary* root,const
     return root->getIntValueFromArray(arrayKey, idx, 0);
 }
 
-float DictionaryHelper::getFloatValueFromArray_json(cs::CSJsonDictionary* root,const char* arrayKey,int idx)
+float DictionaryHelper::getFloatValueFromArray_json(cs::CCCSJsonDictionary* root,const char* arrayKey,int idx)
 {
     if (!root)
     {
@@ -250,7 +250,7 @@ float DictionaryHelper::getFloatValueFromArray_json(cs::CSJsonDictionary* root,c
     return root->getFloatValueFromArray(arrayKey, idx, 0.0);
 }
 
-bool DictionaryHelper::getBoolValueFromArray_json(cs::CSJsonDictionary* root,const char* arrayKey,int idx)
+bool DictionaryHelper::getBoolValueFromArray_json(cs::CCCSJsonDictionary* root,const char* arrayKey,int idx)
 {
     if (!root)
     {
@@ -259,7 +259,7 @@ bool DictionaryHelper::getBoolValueFromArray_json(cs::CSJsonDictionary* root,con
     return root->getBoolValueFromArray(arrayKey, idx, false);
 }
 
-const char* DictionaryHelper::getStringValueFromArray_json(cs::CSJsonDictionary *root, const char *arrayKey, int idx)
+const char* DictionaryHelper::getStringValueFromArray_json(cs::CCCSJsonDictionary *root, const char *arrayKey, int idx)
 {
     if (!root)
     {
@@ -268,16 +268,16 @@ const char* DictionaryHelper::getStringValueFromArray_json(cs::CSJsonDictionary 
     return root->getStringValueFromArray(arrayKey, idx);
 }
 
-cs::CSJsonDictionary* DictionaryHelper::getDictionaryFromArray_json(cs::CSJsonDictionary* root,const char* arrayKey,int idx)
+cs::CCCSJsonDictionary* DictionaryHelper::getDictionaryFromArray_json(cs::CCCSJsonDictionary* root,const char* arrayKey,int idx)
 {
     if (!root)
     {
         return NULL;
     }
-    return root->getSubItemFromArray(arrayKey, idx);
+    return dynamic_cast<cs::CCCSJsonDictionary*>(root->getSubItemFromArray(arrayKey, idx));
 }
 
-bool DictionaryHelper::checkObjectExist_json(cs::CSJsonDictionary *root, const char *key)
+bool DictionaryHelper::checkObjectExist_json(cs::CCCSJsonDictionary *root, const char *key)
 {
     if (!root)
     {

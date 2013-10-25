@@ -3,6 +3,7 @@
 #include "unity/singleton.h"
 #include "application/AppDelegate.h"
 #include "mvvm/model.h"
+#include "ModelTypeDefine.h"
 
 using namespace cocos2d;
 using namespace framework;
@@ -14,18 +15,20 @@ namespace framework
 		class RoutedEventArgs;
 	}
 }
-class ModelManager : public unity::object
+class ViewModelManager : public unity::object
 					, public mvvm::IModelManager
-					, public unity::SingletonAutoT<ModelManager>
+					, public unity::SingletonAutoT<ViewModelManager>
 {
 public:
-	ModelManager(void);
-	~ModelManager(void);
+	ViewModelManager(void);
+	~ViewModelManager(void);
 
 	void initWithAppStart(engine::AppDelegate* pApp);
 	bool modelLoop();
 	void onAppInitOveredShowingBefore(engine::AppDelegate* pApp, unity::RoutedEventArgs* args);
 	void onAppInitOveredShowingAfter(engine::AppDelegate* pApp, unity::RoutedEventArgs* args);
+
+	void selectModel(ModelType type);
 
 private:
 	void initModels();
@@ -34,7 +37,6 @@ private:
 
 private:
 	void onEnabledModelDestory(mvvm::IModel* sender, unity::RoutedEventArgs* args);
-	void onModelPropertyChanged(mvvm::INotifyPropertyChanged*, mvvm::NotifyPropertyChangedRoutedEventArgs* args);
 
 private:
 	// timer
@@ -43,4 +45,5 @@ private:
 	bool mNextDeltaTimeZero;
 
 	ModelListV mEnabledModelList;
+	unity::FactoryWithString mViewFactory;
 };

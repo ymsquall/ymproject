@@ -21,7 +21,7 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
  ****************************************************************************/
-
+#include "stdafx.h"
 #include "CCActionObject.h"
 #include "../Json//DictionaryHelper.h"
 
@@ -94,7 +94,7 @@ bool ActionObject::isPlaying()
 	return m_bPlaying;
 }
 
-void ActionObject::initWithDictionary(cs::CSJsonDictionary *dic,CCObject* root)
+void ActionObject::initWithDictionary(cs::CCCSJsonDictionary *dic,CCObject* root)
 {
     setName(DICTOOL->getStringValue_json(dic, "name"));
     setLoop(DICTOOL->getBooleanValue_json(dic, "loop"));
@@ -103,7 +103,7 @@ void ActionObject::initWithDictionary(cs::CSJsonDictionary *dic,CCObject* root)
     for (int i=0; i<actionNodeCount; i++) {
         ActionNode* actionNode = new ActionNode();
 		actionNode->autorelease();
-        cs::CSJsonDictionary* actionNodeDic = DICTOOL->getDictionaryFromArray_json(dic, "actionnodelist", i);
+        cs::CCCSJsonDictionary* actionNodeDic = DICTOOL->getDictionaryFromArray_json(dic, "actionnodelist", i);
         actionNode->initWithDictionary(actionNodeDic,root);
 		actionNode->setUnitTime(getUnitTime());
         m_ActionNodeList->addObject(actionNode);

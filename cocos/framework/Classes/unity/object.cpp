@@ -1,5 +1,4 @@
 #include "object.h"
-#include "factroy.h"
 
 namespace framework
 {
@@ -24,7 +23,7 @@ namespace framework
 		}
 		Object::~Object()
 		{
-			TypeFactroy::release(mObjectType);
+			//TypeFactroy::release(mObjectType);
 		}
 		bool Object::Equals(const object* obj) const
 		{

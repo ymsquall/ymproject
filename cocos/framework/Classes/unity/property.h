@@ -58,8 +58,10 @@ namespace framework
 
 			void operator = (const ValueT& value)
 			{
-				(mContainer->*mSetter)(value);
+				ValueT oldValue = mValue;
 				mValue = value;
+				if(oldValue != mValue)
+					(mContainer->*mSetter)(value);
 			}
 
 		private:
@@ -124,8 +126,10 @@ namespace framework
 			virtual ~PropertyWriteOnly(){}
 			void operator = (const ValueT& value)
 			{
-				(mContainer->*mSetter)(value);
+				ValueT oldValue = mValue;
 				mValue = value;
+				if(oldValue != mValue)
+					(mContainer->*mSetter)(value);
 			}
 		
 		private:

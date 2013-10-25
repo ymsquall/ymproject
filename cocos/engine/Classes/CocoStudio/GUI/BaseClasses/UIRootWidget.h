@@ -26,7 +26,6 @@
 #define __UIROOTWIDGET_H__
 
 #include "../Layouts/Layout.h"
-#include "CocoStudio.h"
 
 NS_CC_EXT_BEGIN
 /**

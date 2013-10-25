@@ -14,31 +14,23 @@
 //#include "CocoStudio/Armature/utils/CCTweenFunction.h"
 //#include "CocoStudio/Armature/external_tool/sigslot.h"
 
-#include "Components/CCComAttribute.h"
-#include "Components/CCComAudio.h"
-#include "Components/CCComController.h"
-#include "CocoStudio/Components/CCComRender.h"
+//#include "CocoStudio/Components/CCComRender.h"
 
 #include "CocoStudio/GUI/System/CocosGUI.h"
-
-#include "CCArmature/external_tool/Json/CSContentJsonDictionary.h"
 #include "CocoStudio/Json/DictionaryHelper.h"
-
 #include "CocoStudio/Reader/CCSSceneReader.h"
-
 #include "CocoStudio/Action/CCActionManager.h"
+#include "CocoStudio/Components/CCCSComAttribute.h"
 
-#include "GUI/CCControlExtension/CCScale9Sprite.h"
-#include "CCDeprecated-ext.h"
-
-NS_CC_BEGIN
-
-typedef Color4F ccColor4F;
-
-NS_CC_END
-
-NS_CC_EXT_BEGIN
-
-typedef Scale9Sprite CCScale9Sprite;
-
-NS_CC_EXT_END
+//
+//NS_CC_BEGIN
+//
+//typedef Color4F ccColor4F;
+//
+//NS_CC_END
+//
+//NS_CC_EXT_BEGIN
+//
+//typedef Scale9Sprite CCScale9Sprite;
+//
+//NS_CC_EXT_END

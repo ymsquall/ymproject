@@ -16,7 +16,10 @@
     <ClCompile Include="Classes\CocoStudio\Action\CCActionManager.cpp" />
     <ClCompile Include="Classes\CocoStudio\Action\CCActionNode.cpp" />
     <ClCompile Include="Classes\CocoStudio\Action\CCActionObject.cpp" />
+    <ClCompile Include="Classes\CocoStudio\CCArmature\external_tool\Json\CCCSContentJsonDictionary.cpp" />
     <ClCompile Include="Classes\CocoStudio\Components\CCComRender.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Components\CCCSComAttribute.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Components\CCCSComAudio.cpp" />
     <ClCompile Include="Classes\CocoStudio\GUI\BaseClasses\UIRootWidget.cpp" />
     <ClCompile Include="Classes\CocoStudio\GUI\BaseClasses\UIWidget.cpp" />
     <ClCompile Include="Classes\CocoStudio\GUI\Layouts\Layout.cpp" />
@@ -46,6 +49,7 @@
     <ClCompile Include="Classes\CocoStudio\Json\lib_json\json_writer.cpp" />
     <ClCompile Include="Classes\CocoStudio\Reader\CCSGUIReader.cpp" />
     <ClCompile Include="Classes\CocoStudio\Reader\CCSSceneReader.cpp" />
+    <ClCompile Include="Classes\CocoStudio\stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Classes\CocoStudio\Action\CCActionFrame.h" />
@@ -53,8 +57,11 @@
     <ClInclude Include="Classes\CocoStudio\Action\CCActionManager.h" />
     <ClInclude Include="Classes\CocoStudio\Action\CCActionNode.h" />
     <ClInclude Include="Classes\CocoStudio\Action\CCActionObject.h" />
+    <ClInclude Include="Classes\CocoStudio\CCArmature\external_tool\Json\CCCSContentJsonDictionary.h" />
     <ClInclude Include="Classes\CocoStudio\CocoStudio.h" />
     <ClInclude Include="Classes\CocoStudio\Components\CCComRender.h" />
+    <ClInclude Include="Classes\CocoStudio\Components\CCCSComAttribute.h" />
+    <ClInclude Include="Classes\CocoStudio\Components\CCCSComAudio.h" />
     <ClInclude Include="Classes\CocoStudio\GUI\BaseClasses\UIRootWidget.h" />
     <ClInclude Include="Classes\CocoStudio\GUI\BaseClasses\UIWidget.h" />
     <ClInclude Include="Classes\CocoStudio\GUI\Layouts\Layout.h" />
@@ -93,6 +100,7 @@
     <ClInclude Include="Classes\CocoStudio\Json\lib_json\writer.h" />
     <ClInclude Include="Classes\CocoStudio\Reader\CCSGUIReader.h" />
     <ClInclude Include="Classes\CocoStudio\Reader\CCSSceneReader.h" />
+    <ClInclude Include="Classes\CocoStudio\stdafx.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Classes\CocoStudio\Json\lib_json\json_internalarray.inl" />
@@ -131,21 +139,21 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>..\..\..\$(Configuration).win32\</OutDir>
-    <IntDir>..\..\..\$(Configuration).Build.win32\</IntDir>
+    <OutDir>..\..\$(Configuration).win32\</OutDir>
+    <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <TargetName>libCocoStudio</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_DEBUG;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>
       </SDLCheck>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir).\Classes\;$(ProjectDir).\Classes\CocoStudio;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\cocos2dx_support;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\tolua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\src;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\CocosDenshion\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\extensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir).\Classes\;$(ProjectDir).\Classes\CocoStudio;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\cocos2dx_support;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\tolua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\src;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\CocosDenshion\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\extensions;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>

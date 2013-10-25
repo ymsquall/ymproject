@@ -26,7 +26,6 @@
 #define __UIHELPER_H__
 
 #include "UIInputManager.h"
-#include "CocoStudio.h"
 
 
 #define CCUIHELPER cocos2d::extension::UIHelper::instance()

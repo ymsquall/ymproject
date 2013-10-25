@@ -79,7 +79,7 @@ public:
 	void playActionByName(const char* jsonName,const char* actionName);
     
     /*init properties with json dictionay*/
-    void initWithDictionary(const char* jsonName,cs::CSJsonDictionary* dic,CCObject* root);
+    void initWithDictionary(const char* jsonName,cs::CCCSJsonDictionary* dic,CCObject* root);
 
 	/**
      * Release all actions.

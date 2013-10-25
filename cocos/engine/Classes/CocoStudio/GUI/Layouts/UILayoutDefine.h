@@ -27,7 +27,6 @@
 
 #include "cocos2d.h"
 #include "ExtensionMacros.h"
-#include "CocoStudio.h"
 
 NS_CC_EXT_BEGIN
 /**

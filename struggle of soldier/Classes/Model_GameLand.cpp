@@ -1,5 +1,5 @@
 #include "Model_GameLand.h"
-#include "ModelManager.h"
+#include "ViewModelManager.h"
 
 MODEL_TYPECLASS_DEFINE_CONSTRUCTOR(GameLand)
 	// 构造函数，代码写这里

@@ -1,4 +1,5 @@
 #include "RootSceneView.h"
+#include "ViewModelManager.h"
 
 RootSceneView::RootSceneView(void)
 {
@@ -24,6 +25,8 @@ void RootSceneView::onEnterTransitionDidFinish()
 	cocos2d::Sprite* pBgPic = cocos2d::Sprite::create("picture/background/3285-1.png");
 	pRootPanel->addChild(pBgPic);
 	this->addChild(pRootPanel);
+
+	ViewModelManager::point()->selectModel(ModelType::Login);
 }
 
 void RootSceneView::onExit()

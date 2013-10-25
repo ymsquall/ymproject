@@ -28,7 +28,11 @@
 #include "cocos2d.h"
 #include "cocos-ext.h"
 #include "ExtensionMacros.h"
-#include "CocoStudio.h"
+
+namespace cs
+{
+	class CCCSJsonDictionary;
+}
 
 #define DICTOOL DictionaryHelper::shareHelper()
 
@@ -57,18 +61,18 @@ public:
     bool objectToBooleanValue(cocos2d::CCObject* obj);
     cocos2d::CCArray* objectToCCArray(cocos2d::CCObject* obj);
     
-    cs::CSJsonDictionary* getSubDictionary_json(cs::CSJsonDictionary* root,const char* key);
-    int getIntValue_json(cs::CSJsonDictionary* root,const char* key);
-    float getFloatValue_json(cs::CSJsonDictionary* root,const char* key);
-    const char* getStringValue_json(cs::CSJsonDictionary* root,const char* key);
-    bool getBooleanValue_json(cs::CSJsonDictionary* root,const char* key);
-    int getArrayCount_json(cs::CSJsonDictionary* root,const char* key);
-    int getIntValueFromArray_json(cs::CSJsonDictionary* root,const char* arrayKey,int idx);
-    float getFloatValueFromArray_json(cs::CSJsonDictionary* root,const char* arrayKey,int idx);
-    bool getBoolValueFromArray_json(cs::CSJsonDictionary* root,const char* arrayKey,int idx);
-    const char* getStringValueFromArray_json(cs::CSJsonDictionary* root,const char* arrayKey,int idx);
-    cs::CSJsonDictionary* getDictionaryFromArray_json(cs::CSJsonDictionary* root,const char* arrayKey,int idx);
-    bool checkObjectExist_json(cs::CSJsonDictionary* root,const char* key);
+    cs::CCCSJsonDictionary* getSubDictionary_json(cs::CCCSJsonDictionary* root,const char* key);
+    int getIntValue_json(cs::CCCSJsonDictionary* root,const char* key);
+    float getFloatValue_json(cs::CCCSJsonDictionary* root,const char* key);
+    const char* getStringValue_json(cs::CCCSJsonDictionary* root,const char* key);
+    bool getBooleanValue_json(cs::CCCSJsonDictionary* root,const char* key);
+    int getArrayCount_json(cs::CCCSJsonDictionary* root,const char* key);
+    int getIntValueFromArray_json(cs::CCCSJsonDictionary* root,const char* arrayKey,int idx);
+    float getFloatValueFromArray_json(cs::CCCSJsonDictionary* root,const char* arrayKey,int idx);
+    bool getBoolValueFromArray_json(cs::CCCSJsonDictionary* root,const char* arrayKey,int idx);
+    const char* getStringValueFromArray_json(cs::CCCSJsonDictionary* root,const char* arrayKey,int idx);
+    cs::CCCSJsonDictionary* getDictionaryFromArray_json(cs::CCCSJsonDictionary* root,const char* arrayKey,int idx);
+    bool checkObjectExist_json(cs::CCCSJsonDictionary* root,const char* key);
 };
 
 NS_CC_EXT_END

@@ -42,14 +42,14 @@
     <ClCompile Include="..\Classes\ViewModel_Login.cpp">
       <Filter>Classes\ViewModel</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\ModelManager.cpp">
-      <Filter>Classes\ViewModel</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\RootSceneView.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\TopLevelView.cpp">
       <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ViewModelManager.cpp">
+      <Filter>Classes\ViewModel</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -77,9 +77,6 @@
     <ClInclude Include="..\Classes\ViewModel_Login.h">
       <Filter>Classes\ViewModel</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\ModelManager.h">
-      <Filter>Classes\ViewModel</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\TopLevelView.h">
       <Filter>Classes</Filter>
     </ClInclude>
@@ -87,6 +84,9 @@
       <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\ModelTypeDefine.h">
+      <Filter>Classes\ViewModel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ViewModelManager.h">
       <Filter>Classes\ViewModel</Filter>
     </ClInclude>
   </ItemGroup>

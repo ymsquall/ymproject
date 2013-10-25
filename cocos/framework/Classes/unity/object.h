@@ -12,7 +12,6 @@ namespace framework
 		class Object : public cocos2d::Object
 		{
 		protected:
-			friend class ObjectFactroy;
 			Object();
 			virtual ~Object();
 		public:
@@ -35,10 +34,9 @@ namespace framework
 			Type* mObjectType;
 		};
 
-		class Type : public Object
+		class Type
 		{
 		protected:
-			friend class TypeFactroy;
 			Type();
 			virtual ~Type();
 		public:

@@ -26,7 +26,11 @@
 #define __CCSGUIREADER_H__
 
 #include "../GUI/BaseClasses/UIWidget.h"
-#include "CocoStudio.h"
+
+namespace cs
+{
+	class CCCSJsonDictionary;
+}
 
 NS_CC_EXT_BEGIN
 
@@ -35,6 +39,7 @@ NS_CC_EXT_BEGIN
 *   @js NA
 *   @lua NA
 */
+class UIWidget;
 class CCSGUIReader : CCObject
 {
 public:
@@ -44,30 +49,30 @@ public:
 	static void purgeCCSGUIReader();
     
     UIWidget* widgetFromJsonFile(const char* fileName);
-    UIWidget* widgetFromJsonDictionary(cs::CSJsonDictionary* data);
+    UIWidget* widgetFromJsonDictionary(cs::CCCSJsonDictionary* data);
     
     int getVersionInteger(const char* str);
     
-    void setPropsForWidgetFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options);
-    void setColorPropsForWidgetFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options);
-    void setPropsForButtonFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options);
-    void setPropsForCheckBoxFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options);
-    void setPropsForImageViewFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options);
-    void setPropsForLabelFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options);
-    void setPropsForLabelAtlasFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options);
-    void setPropsForContainerWidgetFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options);
-    void setPropsForPanelFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options);
-    void setPropsForScrollViewFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options);
-    void setPropsForSliderFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options);
-    void setPropsForTextAreaFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options);
-    void setPropsForTextButtonFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options);
-    void setPropsForTextFieldFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options);
-    void setPropsForLoadingBarFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options);
-    void setPropsForImageButtonFromJsonDictionary(UIWidget* widget, cs::CSJsonDictionary* options);
-    void setPropsForListViewFromJsonDictionary(UIWidget* widget, cs::CSJsonDictionary* options);
-    void setPropsForPageViewFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options);
-    void setPropsForLabelBMFontFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options);
-    void setPropsForDragPanelFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options);
+    void setPropsForWidgetFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);
+    void setColorPropsForWidgetFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);
+    void setPropsForButtonFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);
+    void setPropsForCheckBoxFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);
+    void setPropsForImageViewFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);
+    void setPropsForLabelFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);
+    void setPropsForLabelAtlasFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);
+    void setPropsForContainerWidgetFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);
+    void setPropsForPanelFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);
+    void setPropsForScrollViewFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);
+    void setPropsForSliderFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);
+    void setPropsForTextAreaFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);
+    void setPropsForTextButtonFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);
+    void setPropsForTextFieldFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);
+    void setPropsForLoadingBarFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);
+    void setPropsForImageButtonFromJsonDictionary(UIWidget* widget, cs::CCCSJsonDictionary* options);
+    void setPropsForListViewFromJsonDictionary(UIWidget* widget, cs::CCCSJsonDictionary* options);
+    void setPropsForPageViewFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);
+    void setPropsForLabelBMFontFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);
+    void setPropsForDragPanelFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);
     
 protected:
     std::string m_strFilePath;

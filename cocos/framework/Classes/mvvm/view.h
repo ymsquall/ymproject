@@ -1,14 +1,24 @@
 #pragma once
 #include "interface.h"
+#include "unity/platform.h"
+#include "unity/reflection.h"
+#include "unity/rtti.h"
 
 namespace framework
 {
 	namespace mvvm
 	{
-		template<class T, class SuperT>
-		class IView : public SuperT, public FrameworkElement
+		class IView : public FrameworkElement
 		{
 		public:
+			virtual ~IView(){}
+		};
+		
+		template<class T, class SuperT>
+		class ViewBase : public SuperT, public IView
+		{
+		public:
+			typedef ViewBase<T, SuperT> ViewSuperT;
 			static T* createView(bool autoRelease = true)
 			{
 				T* pRet = new T();
@@ -21,6 +31,11 @@ namespace framework
 				delete pRet;
 				return NULL;
 			}
+
+		private:
+			static void create(){}	// 防止外部使用SuperT::create;
 		};
+
+		
 	}	// namespace mvvm
 }	// namespace framework

@@ -7,7 +7,8 @@ namespace framework
 	{
 		class IViewModel
 		{
-
+		public:
+			virtual ~IViewModel(){}
 		};
 	}	// namespace mvvm
 }	// namespace framework

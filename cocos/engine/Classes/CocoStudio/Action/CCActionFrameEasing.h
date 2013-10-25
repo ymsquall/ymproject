@@ -27,33 +27,32 @@
 
 #include "cocos2d.h"
 #include "ExtensionMacros.h"
-#include "../Json/CSContentJsonDictionary.h"
-#include "CocoStudio.h"
+#include "CCArmature/external_tool/Json/CSContentJsonDictionary.h"
 
 NS_CC_EXT_BEGIN
 
-//enum FrameEasingType
-//{
-//	kCCBKeyframeEasingInstant,
-//
-//	kCCBKeyframeEasingLinear,
-//
-//	kCCBKeyframeEasingCubicIn,
-//	kCCBKeyframeEasingCubicOut,
-//	kCCBKeyframeEasingCubicInOut,
-//
-//	kCCBKeyframeEasingElasticIn,
-//	kCCBKeyframeEasingElasticOut,
-//	kCCBKeyframeEasingElasticInOut,
-//
-//	kCCBKeyframeEasingBounceIn,
-//	kCCBKeyframeEasingBounceOut,
-//	kCCBKeyframeEasingBounceInOut,
-//
-//	kCCBKeyframeEasingBackIn,
-//	kCCBKeyframeEasingBackOut,
-//	kCCBKeyframeEasingBackInOut,
-//};
+enum FrameEasingType
+{
+	kCCBCSKeyframeEasingInstant,
+
+	kCCBCSKeyframeEasingLinear,
+
+	kCCBCSKeyframeEasingCubicIn,
+	kCCBCSKeyframeEasingCubicOut,
+	kCCBCSKeyframeEasingCubicInOut,
+
+	kCCBCSKeyframeEasingElasticIn,
+	kCCBCSKeyframeEasingElasticOut,
+	kCCBCSKeyframeEasingElasticInOut,
+
+	kCCBCSKeyframeEasingBounceIn,
+	kCCBCSKeyframeEasingBounceOut,
+	kCCBCSKeyframeEasingBounceInOut,
+
+	kCCBCSKeyframeEasingBackIn,
+	kCCBCSKeyframeEasingBackOut,
+	kCCBCSKeyframeEasingBackInOut,
+};
 /**
 *   @js NA
 *   @lua NA

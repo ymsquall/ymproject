@@ -21,7 +21,7 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
  ****************************************************************************/
-
+#include "stdafx.h"
 #include "../GUI/System/CocosGUI.h"
 #include "../Json/DictionaryHelper.h"
 #include "../Action/CCActionManager.h"
@@ -94,11 +94,11 @@ int CCSGUIReader::getVersionInteger(const char *str)
     /************************/
 }
 
-UIWidget* CCSGUIReader::widgetFromJsonDictionary(cs::CSJsonDictionary* data)
+UIWidget* CCSGUIReader::widgetFromJsonDictionary(cs::CCCSJsonDictionary* data)
 {
     UIWidget* widget = NULL;
     const char* classname = DICTOOL->getStringValue_json(data, "classname");
-    cs::CSJsonDictionary* uiOptions = DICTOOL->getSubDictionary_json(data, "options");
+    cs::CCCSJsonDictionary* uiOptions = DICTOOL->getSubDictionary_json(data, "options");
     if (classname && strcmp(classname, "Button") == 0)
     {
         widget = UIButton::create();
@@ -181,7 +181,7 @@ UIWidget* CCSGUIReader::widgetFromJsonDictionary(cs::CSJsonDictionary* data)
     int childrenCount = DICTOOL->getArrayCount_json(data, "children");
     for (int i=0;i<childrenCount;i++)
     {
-        cs::CSJsonDictionary* subData = DICTOOL->getDictionaryFromArray_json(data, "children", i);
+        cs::CCCSJsonDictionary* subData = DICTOOL->getDictionaryFromArray_json(data, "children", i);
         UIWidget* child = widgetFromJsonDictionary(subData);
         if (child)
         {
@@ -201,7 +201,7 @@ UIWidget* CCSGUIReader::widgetFromJsonFile(const char *fileName)
     m_bOlderVersion = false;
     const char *des = NULL;
     std::string jsonpath;
-    cs::CSJsonDictionary *jsonDict = NULL;
+    cs::CCCSJsonDictionary *jsonDict = NULL;
     jsonpath = CCFileUtils::sharedFileUtils()->fullPathForFilename(fileName);
     
     unsigned long size = 0;
@@ -212,7 +212,7 @@ UIWidget* CCSGUIReader::widgetFromJsonFile(const char *fileName)
 		return NULL;
 	}
 	std::string strDes(des);
-    jsonDict = new cs::CSJsonDictionary();
+    jsonDict = new cs::CCCSJsonDictionary();
     jsonDict->initWithDescription(strDes.c_str());
 
     const char* fileVersion = DICTOOL->getStringValue_json(jsonDict, "version");
@@ -222,7 +222,11 @@ UIWidget* CCSGUIReader::widgetFromJsonFile(const char *fileName)
     }
     
     int texturesCount = DICTOOL->getArrayCount_json(jsonDict, "textures");
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+    int pos = jsonpath.find_last_of('\\');
+#else
     int pos = jsonpath.find_last_of('/');
+#endif
 	m_strFilePath = jsonpath.substr(0,pos+1);
     for (int i=0; i<texturesCount; i++)
     {
@@ -244,7 +248,7 @@ UIWidget* CCSGUIReader::widgetFromJsonFile(const char *fileName)
         CCUIHELPER->setFileDesignWidth(fileDesignWidth);
         CCUIHELPER->setFileDesignHeight(fileDesignHeight);
     }
-    cs::CSJsonDictionary* widgetTree = DICTOOL->getSubDictionary_json(jsonDict, "widgetTree");
+    cs::CCCSJsonDictionary* widgetTree = DICTOOL->getSubDictionary_json(jsonDict, "widgetTree");
     UIWidget* widget = widgetFromJsonDictionary(widgetTree);
     
     /* *********temp********* */
@@ -256,7 +260,7 @@ UIWidget* CCSGUIReader::widgetFromJsonFile(const char *fileName)
     /* ********************** */
     
 //    widget->setFileDesignSize(CCSizeMake(fileDesignWidth, fileDesignHeight));
-    cs::CSJsonDictionary* actions = DICTOOL->getSubDictionary_json(jsonDict, "animation");
+    cs::CCCSJsonDictionary* actions = DICTOOL->getSubDictionary_json(jsonDict, "animation");
     /* *********temp********* */
 //    ActionManager::shareManager()->releaseActions();
     /* ********************** */
@@ -271,7 +275,7 @@ UIWidget* CCSGUIReader::widgetFromJsonFile(const char *fileName)
     return widget;
 }
 
-void CCSGUIReader::setPropsForWidgetFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary *options)
+void CCSGUIReader::setPropsForWidgetFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary *options)
 {
     bool ignoreSizeExsit = DICTOOL->checkObjectExist_json(options, "ignoreSize");
     if (ignoreSizeExsit)
@@ -317,7 +321,7 @@ void CCSGUIReader::setPropsForWidgetFromJsonDictionary(UIWidget*widget,cs::CSJso
     widget->setZOrder(z);
 }
 
-void CCSGUIReader::setColorPropsForWidgetFromJsonDictionary(UIWidget *widget, cs::CSJsonDictionary *options)
+void CCSGUIReader::setColorPropsForWidgetFromJsonDictionary(UIWidget *widget, cs::CCCSJsonDictionary *options)
 {
     bool op = DICTOOL->checkObjectExist_json(options, "opacity");
     if (op)
@@ -342,7 +346,7 @@ void CCSGUIReader::setColorPropsForWidgetFromJsonDictionary(UIWidget *widget, cs
     widget->setFlipY(flipY);
 }
 
-void CCSGUIReader::setPropsForButtonFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options)
+void CCSGUIReader::setPropsForButtonFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options)
 {
     if (m_bOlderVersion)
     {
@@ -408,7 +412,7 @@ void CCSGUIReader::setPropsForButtonFromJsonDictionary(UIWidget*widget,cs::CSJso
         bool scale9Enable = DICTOOL->getBooleanValue_json(options, "scale9Enable");
         button->setScale9Enabled(scale9Enable);
         
-        cs::CSJsonDictionary* normalDic = DICTOOL->getSubDictionary_json(options, "normalData");
+        cs::CCCSJsonDictionary* normalDic = DICTOOL->getSubDictionary_json(options, "normalData");
         int normalType = DICTOOL->getIntValue_json(normalDic, "resourceType");
         switch (normalType)
         {
@@ -430,7 +434,7 @@ void CCSGUIReader::setPropsForButtonFromJsonDictionary(UIWidget*widget,cs::CSJso
                 break;
         }
         CC_SAFE_DELETE(normalDic);
-        cs::CSJsonDictionary* pressedDic = DICTOOL->getSubDictionary_json(options, "pressedData");
+        cs::CCCSJsonDictionary* pressedDic = DICTOOL->getSubDictionary_json(options, "pressedData");
         int pressedType = DICTOOL->getIntValue_json(pressedDic, "resourceType");
         switch (pressedType)
         {
@@ -452,7 +456,7 @@ void CCSGUIReader::setPropsForButtonFromJsonDictionary(UIWidget*widget,cs::CSJso
                 break;
         }
         CC_SAFE_DELETE(pressedDic);
-        cs::CSJsonDictionary* disabledDic = DICTOOL->getSubDictionary_json(options, "disabledData");
+        cs::CCCSJsonDictionary* disabledDic = DICTOOL->getSubDictionary_json(options, "disabledData");
         int disabledType = DICTOOL->getIntValue_json(disabledDic, "resourceType");
         switch (disabledType)
         {
@@ -495,7 +499,7 @@ void CCSGUIReader::setPropsForButtonFromJsonDictionary(UIWidget*widget,cs::CSJso
     }
 }
 
-void CCSGUIReader::setPropsForCheckBoxFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options)
+void CCSGUIReader::setPropsForCheckBoxFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options)
 {
     if (m_bOlderVersion)
     {
@@ -537,7 +541,7 @@ void CCSGUIReader::setPropsForCheckBoxFromJsonDictionary(UIWidget*widget,cs::CSJ
         setPropsForWidgetFromJsonDictionary(widget, options);
         UICheckBox* checkBox = (UICheckBox*)widget;
         
-        cs::CSJsonDictionary* backGroundDic = DICTOOL->getSubDictionary_json(options, "backGroundBoxData");
+        cs::CCCSJsonDictionary* backGroundDic = DICTOOL->getSubDictionary_json(options, "backGroundBoxData");
         int backGroundType = DICTOOL->getIntValue_json(backGroundDic, "resourceType");
         switch (backGroundType)
         {
@@ -560,7 +564,7 @@ void CCSGUIReader::setPropsForCheckBoxFromJsonDictionary(UIWidget*widget,cs::CSJ
         }
         CC_SAFE_DELETE(backGroundDic);
 
-        cs::CSJsonDictionary* backGroundSelectedDic = DICTOOL->getSubDictionary_json(options, "backGroundBoxSelectedData");
+        cs::CCCSJsonDictionary* backGroundSelectedDic = DICTOOL->getSubDictionary_json(options, "backGroundBoxSelectedData");
         int backGroundSelectedType = DICTOOL->getIntValue_json(backGroundSelectedDic, "resourceType");
         switch (backGroundSelectedType)
         {
@@ -583,7 +587,7 @@ void CCSGUIReader::setPropsForCheckBoxFromJsonDictionary(UIWidget*widget,cs::CSJ
         }
         CC_SAFE_DELETE(backGroundSelectedDic);
 
-        cs::CSJsonDictionary* frontCrossDic = DICTOOL->getSubDictionary_json(options, "frontCrossData");
+        cs::CCCSJsonDictionary* frontCrossDic = DICTOOL->getSubDictionary_json(options, "frontCrossData");
         int frontCrossType = DICTOOL->getIntValue_json(frontCrossDic, "resourceType");
         switch (frontCrossType)
         {
@@ -606,7 +610,7 @@ void CCSGUIReader::setPropsForCheckBoxFromJsonDictionary(UIWidget*widget,cs::CSJ
         }
 		CC_SAFE_DELETE(frontCrossDic);
         
-        cs::CSJsonDictionary* backGroundDisabledDic = DICTOOL->getSubDictionary_json(options, "backGroundBoxDisabledData");
+        cs::CCCSJsonDictionary* backGroundDisabledDic = DICTOOL->getSubDictionary_json(options, "backGroundBoxDisabledData");
         int backGroundDisabledType = DICTOOL->getIntValue_json(backGroundDisabledDic, "resourceType");
         switch (backGroundDisabledType)
         {
@@ -629,7 +633,7 @@ void CCSGUIReader::setPropsForCheckBoxFromJsonDictionary(UIWidget*widget,cs::CSJ
         }
 		CC_SAFE_DELETE(backGroundDisabledDic);
         
-        cs::CSJsonDictionary* frontCrossDisabledDic = DICTOOL->getSubDictionary_json(options, "frontCrossDisabledData");
+        cs::CCCSJsonDictionary* frontCrossDisabledDic = DICTOOL->getSubDictionary_json(options, "frontCrossDisabledData");
         int frontCrossDisabledType = DICTOOL->getIntValue_json(frontCrossDisabledDic, "resourceType");
         switch (frontCrossDisabledType)
         {
@@ -656,7 +660,7 @@ void CCSGUIReader::setPropsForCheckBoxFromJsonDictionary(UIWidget*widget,cs::CSJ
     }
 }
 
-void CCSGUIReader::setPropsForImageViewFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options)
+void CCSGUIReader::setPropsForImageViewFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options)
 {
     if (m_bOlderVersion)
     {
@@ -726,7 +730,7 @@ void CCSGUIReader::setPropsForImageViewFromJsonDictionary(UIWidget*widget,cs::CS
         
         UIImageView* imageView = (UIImageView*)widget;
         
-        cs::CSJsonDictionary* imageFileNameDic = DICTOOL->getSubDictionary_json(options, "fileNameData");
+        cs::CCCSJsonDictionary* imageFileNameDic = DICTOOL->getSubDictionary_json(options, "fileNameData");
         int imageFileNameType = DICTOOL->getIntValue_json(imageFileNameDic, "resourceType");
         switch (imageFileNameType)
         {
@@ -785,7 +789,7 @@ void CCSGUIReader::setPropsForImageViewFromJsonDictionary(UIWidget*widget,cs::CS
     }
 }
 
-void CCSGUIReader::setPropsForLabelFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options)
+void CCSGUIReader::setPropsForLabelFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options)
 {
     setPropsForWidgetFromJsonDictionary(widget, options);
     UILabel* label = (UILabel*)widget;
@@ -814,7 +818,7 @@ void CCSGUIReader::setPropsForLabelFromJsonDictionary(UIWidget*widget,cs::CSJson
     setColorPropsForWidgetFromJsonDictionary(widget,options);
 }
 
-void CCSGUIReader::setPropsForLabelAtlasFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options)
+void CCSGUIReader::setPropsForLabelAtlasFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options)
 {
     if (m_bOlderVersion)
     {
@@ -848,7 +852,7 @@ void CCSGUIReader::setPropsForLabelAtlasFromJsonDictionary(UIWidget*widget,cs::C
         if (sv && cmf && iw && ih && scm)
         {
             
-            cs::CSJsonDictionary* cmftDic = DICTOOL->getSubDictionary_json(options, "charMapFileData");
+            cs::CCCSJsonDictionary* cmftDic = DICTOOL->getSubDictionary_json(options, "charMapFileData");
             int cmfType = DICTOOL->getIntValue_json(cmftDic, "resourceType");
             switch (cmfType)
             {
@@ -872,7 +876,7 @@ void CCSGUIReader::setPropsForLabelAtlasFromJsonDictionary(UIWidget*widget,cs::C
     }
 }
 
-void CCSGUIReader::setPropsForContainerWidgetFromJsonDictionary(UIWidget *widget, cs::CSJsonDictionary *options)
+void CCSGUIReader::setPropsForContainerWidgetFromJsonDictionary(UIWidget *widget, cs::CCCSJsonDictionary *options)
 {
     setPropsForWidgetFromJsonDictionary(widget, options);
     UIContainerWidget* containerWidget = (UIContainerWidget*)widget;
@@ -885,7 +889,7 @@ void CCSGUIReader::setPropsForContainerWidgetFromJsonDictionary(UIWidget *widget
     setColorPropsForWidgetFromJsonDictionary(widget,options);
 }
 
-void CCSGUIReader::setPropsForPanelFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options)
+void CCSGUIReader::setPropsForPanelFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options)
 {
     if (m_bOlderVersion)
     {
@@ -988,7 +992,7 @@ void CCSGUIReader::setPropsForPanelFromJsonDictionary(UIWidget*widget,cs::CSJson
 //        panel->setSize(CCSizeMake(w, h));
         
         
-        cs::CSJsonDictionary* imageFileNameDic = DICTOOL->getSubDictionary_json(options, "backGroundImageData");
+        cs::CCCSJsonDictionary* imageFileNameDic = DICTOOL->getSubDictionary_json(options, "backGroundImageData");
         int imageFileNameType = DICTOOL->getIntValue_json(imageFileNameDic, "resourceType");
         switch (imageFileNameType)
         {
@@ -1023,7 +1027,7 @@ void CCSGUIReader::setPropsForPanelFromJsonDictionary(UIWidget*widget,cs::CSJson
     }
 }
 
-void CCSGUIReader::setPropsForScrollViewFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options)
+void CCSGUIReader::setPropsForScrollViewFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options)
 {
     setPropsForPanelFromJsonDictionary(widget, options);
     UIScrollView* scrollView = (UIScrollView*)widget;
@@ -1037,7 +1041,7 @@ void CCSGUIReader::setPropsForScrollViewFromJsonDictionary(UIWidget*widget,cs::C
     setColorPropsForWidgetFromJsonDictionary(widget,options);
 }
 
-void CCSGUIReader::setPropsForSliderFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options)
+void CCSGUIReader::setPropsForSliderFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options)
 {
     if (m_bOlderVersion)
     {
@@ -1129,7 +1133,7 @@ void CCSGUIReader::setPropsForSliderFromJsonDictionary(UIWidget*widget,cs::CSJso
             if (barTextureScale9Enable)
             {
                 
-                cs::CSJsonDictionary* imageFileNameDic = DICTOOL->getSubDictionary_json(options, "barFileNameData");
+                cs::CCCSJsonDictionary* imageFileNameDic = DICTOOL->getSubDictionary_json(options, "barFileNameData");
                 int imageFileType = DICTOOL->getIntValue_json(imageFileNameDic, "resourceType");
                 switch (imageFileType)
                 {
@@ -1156,7 +1160,7 @@ void CCSGUIReader::setPropsForSliderFromJsonDictionary(UIWidget*widget,cs::CSJso
             }
             else
             {
-                cs::CSJsonDictionary* imageFileNameDic = DICTOOL->getSubDictionary_json(options, "barFileNameData");
+                cs::CCCSJsonDictionary* imageFileNameDic = DICTOOL->getSubDictionary_json(options, "barFileNameData");
                 int imageFileType = DICTOOL->getIntValue_json(imageFileNameDic, "resourceType");
                 switch (imageFileType)
                 {
@@ -1200,7 +1204,7 @@ void CCSGUIReader::setPropsForSliderFromJsonDictionary(UIWidget*widget,cs::CSJso
 //            slider->setSlidBallTextures(normalFileName_tp,pressedFileName_tp,disabledFileName_tp);
 //        }
         
-        cs::CSJsonDictionary* normalDic = DICTOOL->getSubDictionary_json(options, "ballNormalData");
+        cs::CCCSJsonDictionary* normalDic = DICTOOL->getSubDictionary_json(options, "ballNormalData");
         int normalType = DICTOOL->getIntValue_json(normalDic, "resourceType");
         switch (normalType)
         {
@@ -1223,7 +1227,7 @@ void CCSGUIReader::setPropsForSliderFromJsonDictionary(UIWidget*widget,cs::CSJso
         }
         CC_SAFE_DELETE(normalDic);
 
-        cs::CSJsonDictionary* pressedDic = DICTOOL->getSubDictionary_json(options, "ballPressedData");
+        cs::CCCSJsonDictionary* pressedDic = DICTOOL->getSubDictionary_json(options, "ballPressedData");
         int pressedType = DICTOOL->getIntValue_json(pressedDic, "resourceType");
         switch (pressedType)
         {
@@ -1246,7 +1250,7 @@ void CCSGUIReader::setPropsForSliderFromJsonDictionary(UIWidget*widget,cs::CSJso
         }
 		CC_SAFE_DELETE(pressedDic);
         
-        cs::CSJsonDictionary* disabledDic = DICTOOL->getSubDictionary_json(options, "ballDisabledData");
+        cs::CCCSJsonDictionary* disabledDic = DICTOOL->getSubDictionary_json(options, "ballDisabledData");
         int disabledType = DICTOOL->getIntValue_json(disabledDic, "resourceType");
         switch (disabledType)
         {
@@ -1271,7 +1275,7 @@ void CCSGUIReader::setPropsForSliderFromJsonDictionary(UIWidget*widget,cs::CSJso
         
         slider->setPercent(DICTOOL->getIntValue_json(options, "percent"));
         
-        cs::CSJsonDictionary* progressBarDic = DICTOOL->getSubDictionary_json(options, "progressBarData");
+        cs::CCCSJsonDictionary* progressBarDic = DICTOOL->getSubDictionary_json(options, "progressBarData");
         int progressBarType = DICTOOL->getIntValue_json(progressBarDic, "resourceType");
         switch (progressBarType)
         {
@@ -1296,7 +1300,7 @@ void CCSGUIReader::setPropsForSliderFromJsonDictionary(UIWidget*widget,cs::CSJso
     }
 }
 
-void CCSGUIReader::setPropsForTextAreaFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options)
+void CCSGUIReader::setPropsForTextAreaFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options)
 {
     setPropsForWidgetFromJsonDictionary(widget, options);
     UITextArea* textArea = (UITextArea*)widget;
@@ -1331,7 +1335,7 @@ void CCSGUIReader::setPropsForTextAreaFromJsonDictionary(UIWidget*widget,cs::CSJ
     setColorPropsForWidgetFromJsonDictionary(widget,options);
 }
 
-void CCSGUIReader::setPropsForTextButtonFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options)
+void CCSGUIReader::setPropsForTextButtonFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options)
 {
     setPropsForButtonFromJsonDictionary(widget, options);
     
@@ -1358,7 +1362,7 @@ void CCSGUIReader::setPropsForTextButtonFromJsonDictionary(UIWidget*widget,cs::C
     setColorPropsForWidgetFromJsonDictionary(widget,options);
 }
 
-void CCSGUIReader::setPropsForTextFieldFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options)
+void CCSGUIReader::setPropsForTextFieldFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options)
 {
     setPropsForWidgetFromJsonDictionary(widget, options);
     UITextField* textField = (UITextField*)widget;
@@ -1408,7 +1412,7 @@ void CCSGUIReader::setPropsForTextFieldFromJsonDictionary(UIWidget*widget,cs::CS
     setColorPropsForWidgetFromJsonDictionary(widget,options);
 }
 
-void CCSGUIReader::setPropsForLoadingBarFromJsonDictionary(UIWidget *widget, cs::CSJsonDictionary *options)
+void CCSGUIReader::setPropsForLoadingBarFromJsonDictionary(UIWidget *widget, cs::CCCSJsonDictionary *options)
 {
     if (m_bOlderVersion)
     {
@@ -1435,7 +1439,7 @@ void CCSGUIReader::setPropsForLoadingBarFromJsonDictionary(UIWidget *widget, cs:
         setPropsForWidgetFromJsonDictionary(widget, options);
         UILoadingBar* loadingBar = (UILoadingBar*)widget;
         
-        cs::CSJsonDictionary* imageFileNameDic = DICTOOL->getSubDictionary_json(options, "textureData");
+        cs::CCCSJsonDictionary* imageFileNameDic = DICTOOL->getSubDictionary_json(options, "textureData");
         int imageFileNameType = DICTOOL->getIntValue_json(imageFileNameDic, "resourceType");
         switch (imageFileNameType)
         {
@@ -1487,18 +1491,18 @@ void CCSGUIReader::setPropsForLoadingBarFromJsonDictionary(UIWidget *widget, cs:
     }
 }
 
-void CCSGUIReader::setPropsForListViewFromJsonDictionary(UIWidget *widget, cs::CSJsonDictionary *options)
+void CCSGUIReader::setPropsForListViewFromJsonDictionary(UIWidget *widget, cs::CCCSJsonDictionary *options)
 {
     setPropsForScrollViewFromJsonDictionary(widget, options);
 }
 
-void CCSGUIReader::setPropsForPageViewFromJsonDictionary(UIWidget*widget,cs::CSJsonDictionary* options)
+void CCSGUIReader::setPropsForPageViewFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options)
 {
     setPropsForPanelFromJsonDictionary(widget, options);
     setColorPropsForWidgetFromJsonDictionary(widget,options);
 }
 
-void CCSGUIReader::setPropsForLabelBMFontFromJsonDictionary(UIWidget *widget, cs::CSJsonDictionary *options)
+void CCSGUIReader::setPropsForLabelBMFontFromJsonDictionary(UIWidget *widget, cs::CCCSJsonDictionary *options)
 {
     if (m_bOlderVersion)
     {
@@ -1524,7 +1528,7 @@ void CCSGUIReader::setPropsForLabelBMFontFromJsonDictionary(UIWidget *widget, cs
         
         UILabelBMFont* labelBMFont = (UILabelBMFont*)widget;
         
-        cs::CSJsonDictionary* cmftDic = DICTOOL->getSubDictionary_json(options, "fileNameData");
+        cs::CCCSJsonDictionary* cmftDic = DICTOOL->getSubDictionary_json(options, "fileNameData");
         int cmfType = DICTOOL->getIntValue_json(cmftDic, "resourceType");
         switch (cmfType)
         {
@@ -1551,7 +1555,7 @@ void CCSGUIReader::setPropsForLabelBMFontFromJsonDictionary(UIWidget *widget, cs
     }
 }
 
-void CCSGUIReader::setPropsForDragPanelFromJsonDictionary(UIWidget *widget, cs::CSJsonDictionary *options)
+void CCSGUIReader::setPropsForDragPanelFromJsonDictionary(UIWidget *widget, cs::CCCSJsonDictionary *options)
 {
     setPropsForPanelFromJsonDictionary(widget, options);
     

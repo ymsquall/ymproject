@@ -30,7 +30,6 @@
 #include "ExtensionMacros.h"
 #include "../BaseClasses/UIRootWidget.h"
 #include "../System/UIInputManager.h"
-#include "CocoStudio.h"
 
 NS_CC_EXT_BEGIN
 

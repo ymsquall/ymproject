@@ -1,7 +1,7 @@
 #include "main.h"
 #include "application/AppDelegate.h"
 #include "CCEGLView.h"
-#include "ModelManager.h"
+#include "ViewModelManager.h"
 #include "Win32MsgProc.h"
 
 USING_NS_CC;
@@ -30,7 +30,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 	EGLView::getInstance()->setAccelerometerKeyHook(&Win32MsgProc::KeyboardMsgProc);
 	EGLView::getInstance()->setWndProc(&Win32MsgProc::WindowsMsgProc);
 
-	ModelManager* pModelMgr = ModelManager::point();
+	ViewModelManager* pModelMgr = ViewModelManager::point();
 	pModelMgr->initWithAppStart(&app);
 
     int ret = app.runApp(960, 640, "struggle of soldier app");
@@ -39,7 +39,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 		pModelMgr->modelLoop();
 		app.runOneStep();
 	}
-	ModelManager::point()->release();
+	ViewModelManager::point()->release();
 
 #ifdef USE_WIN32_CONSOLE
     FreeConsole();

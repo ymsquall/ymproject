@@ -21,7 +21,7 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
  ****************************************************************************/
-
+#include "stdafx.h"
 #include "CCActionManager.h"
 #include "../Json/DictionaryHelper.h"
 
@@ -55,7 +55,7 @@ ActionManager::~ActionManager()
     m_pActionDic->release();
 }
 
-void ActionManager::initWithDictionary(const char* jsonName,cs::CSJsonDictionary *dic,CCObject* root)
+void ActionManager::initWithDictionary(const char* jsonName,cs::CCCSJsonDictionary *dic,CCObject* root)
 {
 	std::string path = jsonName;
 	int pos = path.find_last_of("/");
@@ -66,7 +66,7 @@ void ActionManager::initWithDictionary(const char* jsonName,cs::CSJsonDictionary
     for (int i=0; i<actionCount; i++) {
         ActionObject* action = new ActionObject();
 		action->autorelease();
-        cs::CSJsonDictionary* actionDic = DICTOOL->getDictionaryFromArray_json(dic, "actionlist", i);
+        cs::CCCSJsonDictionary* actionDic = DICTOOL->getDictionaryFromArray_json(dic, "actionlist", i);
         action->initWithDictionary(actionDic,root);
         actionList->addObject(action);
 		CC_SAFE_DELETE(actionDic);

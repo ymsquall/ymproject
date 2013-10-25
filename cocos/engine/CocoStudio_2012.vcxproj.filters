@@ -37,6 +37,15 @@
     <Filter Include="Json\lib_json">
       <UniqueIdentifier>{55895d0f-5b20-4f3a-b4a9-fbe6ae18bc82}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CCArmature">
+      <UniqueIdentifier>{ec73b75d-dbf3-42b6-a230-e54c9e985012}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CCArmature\external_tool">
+      <UniqueIdentifier>{f6068993-a4a6-48d0-8feb-c645c7654c1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CCArmature\external_tool\Json">
+      <UniqueIdentifier>{fd6c0360-eb6e-41e8-ad25-124a182b6f49}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Classes\CocoStudio\Action\CCActionFrame.cpp">
@@ -143,6 +152,16 @@
     </ClCompile>
     <ClCompile Include="Classes\CocoStudio\Reader\CCSSceneReader.cpp">
       <Filter>Reader</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\CocoStudio\stdafx.cpp" />
+    <ClCompile Include="Classes\CocoStudio\Components\CCCSComAttribute.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\CocoStudio\Components\CCCSComAudio.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\CocoStudio\CCArmature\external_tool\Json\CCCSContentJsonDictionary.cpp">
+      <Filter>CCArmature\external_tool\Json</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -279,6 +298,16 @@
       <Filter>Reader</Filter>
     </ClInclude>
     <ClInclude Include="Classes\CocoStudio\CocoStudio.h" />
+    <ClInclude Include="Classes\CocoStudio\stdafx.h" />
+    <ClInclude Include="Classes\CocoStudio\Components\CCCSComAttribute.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\CocoStudio\Components\CCCSComAudio.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\CocoStudio\CCArmature\external_tool\Json\CCCSContentJsonDictionary.h">
+      <Filter>CCArmature\external_tool\Json</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Classes\CocoStudio\Json\lib_json\json_internalarray.inl">

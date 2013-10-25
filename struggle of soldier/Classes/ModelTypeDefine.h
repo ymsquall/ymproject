@@ -22,17 +22,16 @@ static const size_t ModelNameLength_GameLand	= 8;	// GameLandModel
 // PropertyChanged NameString
 static const char* ModelPropertyChangedName_Enabled = "Enabled";
 
-class ModelManager;
+class ViewModelManager;
 template<typename uint16 typeValue, typename size_t rttiLength>
 class ModelImpl : public mvvm::ModelBase<typeValue, rttiLength>
 {
 public:
 	typedef ModelImpl<typeValue, rttiLength> ThisT;
-	ModelImpl(const char* ascType) : mvvm::ModelBase<typeValue, rttiLength>(ascType), Enabled(this)
+	ModelImpl(const char* ascType) : mvvm::ModelBase<typeValue, rttiLength>(ascType)
 	{
 		mLuaEngine = cocos2d::LuaEngine::getInstance();
 		mModelManager = NULL;
-		Enabled = false;
 	}
 
 	virtual bool init()
@@ -46,11 +45,6 @@ public:
 			return;
 		this->updateImpl(dt);
 	}
-	void setEnabled(const bool& b)
-	{
-		if(Enabled != b)
-			this->RaisePropertyChanged(ModelPropertyChangedName_Enabled);
-	}
 
 protected:
 	virtual bool initImpl(){ return false; }
@@ -58,9 +52,7 @@ protected:
 
 protected:
 	cocos2d::LuaEngine* mLuaEngine;
-	ModelManager* mModelManager;
-	// property
-	PROPERTY_DEFINED_SETTER(Enabled, bool, ThisT, setEnabled);
+	ViewModelManager* mModelManager;
 };
 
 #define MODEL_TYPECLASS_DECLARE_HEADER(name) class name##Model :  \
@@ -82,7 +74,7 @@ protected:
 #define MODEL_TYPECLASS_DEFINE_CONSTRUCTOR(name) const std::string name##Model::TypeName = #name; \
 		name##Model::name##Model() : name##Model::SuperT(name##Model::TypeName.c_str()) \
 		{ \
-			mModelManager = ModelManager::point();
+			mModelManager = ViewModelManager::point();
 #define MODEL_TYPECLASS_DEFINE_DECONSTRUCTOR(name) } name##Model::~name##Model() {
 #define MODEL_TYPECLASS_DEFINE_BEGINING }
 

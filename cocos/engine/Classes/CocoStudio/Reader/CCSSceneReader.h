@@ -28,7 +28,6 @@
 #include "cocos2d.h"
 #include "cocos-ext.h"
 #include "ExtensionMacros.h"
-#include "CocoStudio.h"
 
 NS_CC_EXT_BEGIN
 /**
@@ -47,8 +46,8 @@ public:
 	static const char* sceneReaderVersion();
 	cocos2d::CCNode* createNodeWithSceneFile(const char *pszFileName);
 private:
-    cocos2d::CCNode* createObject(cs::CSJsonDictionary * inputFiles, cocos2d::CCNode* parent);
-    void setPropertyFromJsonDict(cocos2d::CCNode *node, cs::CSJsonDictionary* dict);
+    cocos2d::CCNode* createObject(cs::CCCSJsonDictionary * inputFiles, cocos2d::CCNode* parent);
+    void setPropertyFromJsonDict(cocos2d::CCNode *node, cs::CCCSJsonDictionary* dict);
 
 private:
 	static CCSSceneReader* s_sharedReader;

@@ -21,10 +21,10 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
  ****************************************************************************/
-
+#include "stdafx.h"
 #include <math.h>
 #include "CCActionFrameEasing.h"
-#include "../Json/DictionaryHelper.h"
+#include "CocoStudio/Json/DictionaryHelper.h"
 NS_CC_EXT_BEGIN
 
 #ifndef M_PI_X_2
@@ -60,26 +60,26 @@ float ActionFrameEasing::bounceTime(float t)
 
 float ActionFrameEasing::easeValue(float t)
 {
-	if (m_type == kCCBKeyframeEasingInstant)
+	if (m_type == kCCBCSKeyframeEasingInstant)
 	{
 		if (t < 1) return 0;
 		else return 1;
 	}
-	else if (m_type == kCCBKeyframeEasingLinear)
+	else if (m_type == kCCBCSKeyframeEasingLinear)
 	{
 		return t;
 	}
-	else if (m_type == kCCBKeyframeEasingCubicIn)
+	else if (m_type == kCCBCSKeyframeEasingCubicIn)
 	{
 		float rate = m_fValue;
 		return powf(t,rate);
 	}
-	else if (m_type == kCCBKeyframeEasingCubicOut)
+	else if (m_type == kCCBCSKeyframeEasingCubicOut)
 	{
 		float rate = m_fValue;
 		return powf(t,1/rate);
 	}
-	else if (m_type == kCCBKeyframeEasingCubicInOut)
+	else if (m_type == kCCBCSKeyframeEasingCubicInOut)
 	{
 		float rate = m_fValue;
 		t *= 2;
@@ -92,7 +92,7 @@ float ActionFrameEasing::easeValue(float t)
 			return 1.0f - 0.5f * powf(2-t, rate);
 		}
 	}
-	else if (m_type == kCCBKeyframeEasingElasticIn)
+	else if (m_type == kCCBCSKeyframeEasingElasticIn)
 	{
 		float period = m_fValue;
 		float newT = 0;
@@ -106,7 +106,7 @@ float ActionFrameEasing::easeValue(float t)
 		}
 		return newT;
 	}
-	else if (m_type == kCCBKeyframeEasingElasticOut)
+	else if (m_type == kCCBCSKeyframeEasingElasticOut)
 	{
 		float period = m_fValue;
 		float newT = 0;
@@ -119,7 +119,7 @@ float ActionFrameEasing::easeValue(float t)
 		}
 		return newT;
 	}
-	else if (m_type == kCCBKeyframeEasingElasticInOut)
+	else if (m_type == kCCBCSKeyframeEasingElasticInOut)
 	{
 		float period = m_fValue;
 		float newT = 0;
@@ -139,17 +139,17 @@ float ActionFrameEasing::easeValue(float t)
 		}
 		return newT;
 	}
-	else if (m_type == kCCBKeyframeEasingBounceIn)
+	else if (m_type == kCCBCSKeyframeEasingBounceIn)
 	{
 		float newT = 1 - bounceTime(1-t);
 		return newT;
 	}
-	else if (m_type == kCCBKeyframeEasingBounceOut)
+	else if (m_type == kCCBCSKeyframeEasingBounceOut)
 	{
 		float newT = bounceTime(t);
 		return newT;
 	}
-	else if (m_type == kCCBKeyframeEasingBounceInOut)
+	else if (m_type == kCCBCSKeyframeEasingBounceInOut)
 	{
 		float newT = 0;
 		if (t < 0.5) {
@@ -159,18 +159,18 @@ float ActionFrameEasing::easeValue(float t)
 			newT = bounceTime(t * 2 - 1) * 0.5f + 0.5f;
 		return newT;
 	}
-	else if (m_type == kCCBKeyframeEasingBackIn)
+	else if (m_type == kCCBCSKeyframeEasingBackIn)
 	{
 		float overshoot = 1.70158f;
 		return t * t * ((overshoot + 1) * t - overshoot);
 	}
-	else if (m_type == kCCBKeyframeEasingBackOut)
+	else if (m_type == kCCBCSKeyframeEasingBackOut)
 	{
 		float overshoot = 1.70158f;
 		t = t - 1;
 		return t * t * ((overshoot + 1) * t + overshoot) + 1;
 	}
-	else if (m_type == kCCBKeyframeEasingBackInOut)
+	else if (m_type == kCCBCSKeyframeEasingBackInOut)
 	{
 		float overshoot = 1.70158f * 1.525f;
 

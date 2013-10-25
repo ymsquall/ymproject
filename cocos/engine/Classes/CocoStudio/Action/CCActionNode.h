@@ -28,7 +28,6 @@
 #include "cocos2d.h"
 #include "ExtensionMacros.h"
 #include "CCActionFrame.h"
-#include "CocoStudio.h"
 
 NS_CC_EXT_BEGIN
 /**
@@ -151,7 +150,7 @@ public:
 	virtual void stopAction();
 	
     /*init properties with a json dictionary*/
-    virtual void initWithDictionary(cs::CSJsonDictionary* dic,CCObject* root);
+    virtual void initWithDictionary(cs::CCCSJsonDictionary* dic,CCObject* root);
 protected:
 	int currentFrameIndex;
 	int destFrameIndex;
