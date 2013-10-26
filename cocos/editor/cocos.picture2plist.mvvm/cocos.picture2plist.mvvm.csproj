@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D441BBEE-659A-4B70-97E5-09A16DCB304E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>cocos.picture2plist.mvvm</RootNamespace>
+    <AssemblyName>cocos.picture2plist.mvvm</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\tester\testeditor\Resources\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\tester\testeditor\Resources\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Fluent, Version=2.1.0.0, Culture=neutral, PublicKeyToken=3e436e32a8c5546f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dotnetref\DotNet_4.5_WPF_Debug\Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="PropertyTools">
+      <HintPath>..\dotnetref\DotNet_4.5_WPF_Debug\PropertyTools.dll</HintPath>
+    </Reference>
+    <Reference Include="PropertyTools.Wpf">
+      <HintPath>..\dotnetref\DotNet_4.5_WPF_Debug\PropertyTools.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dotnetref\DotNet_4.5_WPF_Debug\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock">
+      <HintPath>..\dotnetref\DotNet_4.0_WPF_Debug\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero">
+      <HintPath>..\dotnetref\DotNet_4.0_WPF_Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Expression">
+      <HintPath>..\dotnetref\DotNet_4.0_WPF_Debug\Xceed.Wpf.AvalonDock.Themes.Expression.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro">
+      <HintPath>..\dotnetref\DotNet_4.0_WPF_Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010">
+      <HintPath>..\dotnetref\DotNet_4.0_WPF_Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Converters\ActiveDocumentConverter.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Factory\Length.cs" />
+    <Compile Include="Factory\LengthConverter.cs" />
+    <Compile Include="Factory\LocalPropertyControlFactory.cs" />
+    <Compile Include="Factory\LocalPropertyItemFactory.cs" />
+    <Compile Include="Factory\UnitUtilities.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CompositeNode.cs" />
+    <Compile Include="Models\MainFileMenuModel.cs" />
+    <Compile Include="Models\Node.cs" />
+    <Compile Include="Selectors\PanelsStyleSelector.cs" />
+    <Compile Include="Tools\DesignHelper.cs" />
+    <Compile Include="Tools\PanelViewModel.cs" />
+    <Compile Include="Tools\ThemeManager.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tools\ObservableObject.cs" />
+    <Compile Include="ViewModels\DocumentViewModel.cs" />
+    <Compile Include="ViewModels\ExplorerViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\NodeViewModel.cs" />
+    <Compile Include="ViewModels\OutputViewModel.cs" />
+    <Compile Include="ViewModels\PropertyViewModel.cs" />
+    <Compile Include="ViewModels\SceneViewModel.cs" />
+    <Compile Include="ViewModels\ToolViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Icon\BlackTheme.png" />
+    <Resource Include="Resource\Icon\BlueTheme.png" />
+    <Resource Include="Resource\Icon\Bold.png" />
+    <Resource Include="Resource\Icon\Box.png" />
+    <Resource Include="Resource\Icon\category.png" />
+    <Resource Include="Resource\Icon\ChangeCase.png" />
+    <Resource Include="Resource\Icon\chart.png" />
+    <Resource Include="Resource\Icon\ClearFormatting.png" />
+    <Resource Include="Resource\Icon\Copy.png" />
+    <Resource Include="Resource\Icon\Cut.png" />
+    <Resource Include="Resource\Icon\Default.png" />
+    <Resource Include="Resource\Icon\DefaultTrayIcon.ico" />
+    <Resource Include="Resource\Icon\document.png" />
+    <Resource Include="Resource\Icon\error.png" />
+    <Resource Include="Resource\Icon\Exit.png" />
+    <Resource Include="Resource\Icon\FontColor.png" />
+    <Resource Include="Resource\Icon\FormatPainter.png" />
+    <Resource Include="Resource\Icon\GrowFont.png" />
+    <Resource Include="Resource\Icon\Help.png" />
+    <Resource Include="Resource\Icon\home.png" />
+    <Resource Include="Resource\Icon\home2.png" />
+    <Resource Include="Resource\Icon\home3.png" />
+    <Resource Include="Resource\Icon\Italic.png" />
+    <Resource Include="Resource\Icon\lightbulb.png" />
+    <Resource Include="Resource\Icon\lightbulb1.png" />
+    <Resource Include="Resource\Icon\Paste.png" />
+    <Resource Include="Resource\Icon\PasteFormating.png" />
+    <Resource Include="Resource\Icon\PasteImage.png" />
+    <Resource Include="Resource\Icon\PasteLarge.png" />
+    <Resource Include="Resource\Icon\PasteSourceFormating.png" />
+    <Resource Include="Resource\Icon\PasteText.png" />
+    <Resource Include="Resource\Icon\PasteTextOnly.png" />
+    <Resource Include="Resource\Icon\Save.png" />
+    <Resource Include="Resource\Icon\ShrinkFont.png" />
+    <Resource Include="Resource\Icon\SilverTheme.png" />
+    <Resource Include="Resource\Icon\Strikethrough.png" />
+    <Resource Include="Resource\Icon\Subscript.png" />
+    <Resource Include="Resource\Icon\Superscript.png" />
+    <Resource Include="Resource\Icon\Test16.png" />
+    <Resource Include="Resource\Icon\TextEffects.png" />
+    <Resource Include="Resource\Icon\TextHighlightColor.png" />
+    <Resource Include="Resource\Icon\Underline.png" />
+    <Resource Include="Resource\Icon\usergroup.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
