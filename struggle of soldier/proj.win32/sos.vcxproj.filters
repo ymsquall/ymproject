@@ -51,6 +51,15 @@
     <ClCompile Include="..\Classes\ViewModelManager.cpp">
       <Filter>Classes\ViewModel</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Model_SelectHero.cpp">
+      <Filter>Classes\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\View_SelectHero.cpp">
+      <Filter>Classes\View</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ViewModel_SelectHero.cpp">
+      <Filter>Classes\ViewModel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -87,6 +96,15 @@
       <Filter>Classes\ViewModel</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\ViewModelManager.h">
+      <Filter>Classes\ViewModel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model_SelectHero.h">
+      <Filter>Classes\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\View_SelectHero.h">
+      <Filter>Classes\View</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ViewModel_SelectHero.h">
       <Filter>Classes\ViewModel</Filter>
     </ClInclude>
   </ItemGroup>

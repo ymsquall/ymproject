@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<UIProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>1.0.2.0</Version>
+  <Name>SelectHeroView</Name>
+  <ProjectDir>Y:\Work\ym.cocos.project\CocoStudioWorkspace\UI\SelectHeroView</ProjectDir>
+  <JsonFileName>SelectHeroView.json</JsonFileName>
+  <Resources>Y:\Work\ym.cocos.project\CocoStudioWorkspace\UI\SelectHeroView\Resources</Resources>
+  <JsonFolder>Y:\Work\ym.cocos.project\CocoStudioWorkspace\UI\SelectHeroView\Json</JsonFolder>
+  <JsonList>
+    <string>SelectHeroView.json</string>
+  </JsonList>
+  <imageFileList>
+    <string>SelectHeroView0.plist</string>
+  </imageFileList>
+  <JsonSuffix>.json</JsonSuffix>
+  <CurrentUIJson>SelectHeroView.json</CurrentUIJson>
+  <CanvasSize>
+    <Width>960</Width>
+    <Height>640</Height>
+  </CanvasSize>
+</UIProject>

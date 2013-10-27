@@ -21,7 +21,7 @@
 #include "CocoStudio/Reader/CCSSceneReader.h"
 #include "CocoStudio/Action/CCActionManager.h"
 #include "CocoStudio/Components/CCCSComAttribute.h"
-
+#include "CocoStudio/GUI/UIWidgets/UITextField.h"
 //
 //NS_CC_BEGIN
 //

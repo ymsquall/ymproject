@@ -5,9 +5,11 @@
 #include "RootSceneView.h"
 // Model Impl
 #include "Model_Login.h"
+#include "Model_SelectHero.h"
 #include "Model_GameLand.h"
 // ViewModel
 #include "ViewModel_Login.h"
+#include "ViewModel_SelectHero.h"
 #include "ViewModel_GameLand.h"
 
 USING_NS_CC;
@@ -30,7 +32,8 @@ void ViewModelManager::initWithAppStart(engine::AppDelegate* pApp)
 {
     CCFileUtils* pFileUtils = CCFileUtils::sharedFileUtils();
     std::vector<std::string> searchPaths;
-	searchPaths.push_back("studioui/login");
+	searchPaths.push_back("studioui/LoginView");
+	searchPaths.push_back("studioui/SelectHeroView");
 	pFileUtils->setSearchPaths(searchPaths);
 
 	Director* pDirector = Director::getInstance();
@@ -55,6 +58,18 @@ void ViewModelManager::initModels()
 		if(pLoginModel->Enabled)
 		{
 			mEnabledModelList.push_back(pLoginModel);
+		}
+	}
+
+	SelectHeroModel* pSelectHeroModel = this->addModel<SelectHeroModel>();
+	if(NULL != pSelectHeroModel)
+	{
+		pSelectHeroModel->Event_PropertyChanged += ROUTEDEVENT_MAKER_PARAM(mvvm::INotifyPropertyChanged*, 
+			mvvm::NotifyPropertyChangedRoutedEventArgs*, SelectHeroViewModel::point(), SelectHeroViewModel::onSelectHeroModelPropertyChanged);
+		pSelectHeroModel->Event_ModelDestory += ROUTEDEVENT_MAKER(mvvm::IModel*, this, ViewModelManager::onEnabledModelDestory);
+		if(pSelectHeroModel->Enabled)
+		{
+			mEnabledModelList.push_back(pSelectHeroModel);
 		}
 	}
 

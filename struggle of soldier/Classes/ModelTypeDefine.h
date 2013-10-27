@@ -12,11 +12,13 @@ enum class ModelType : uint16
 {
 	ZERO	= 0,			// unused
 	Login		= 1,
-	GameLand	= 2,
+	SelectHero	= 2,
+	GameLand	= 3,
 	LIMIT	= 0xffff,		// unused
 };
 
 static const size_t ModelNameLength_Login		= 5;	// LoginModel
+static const size_t ModelNameLength_SelectHero	= 10;	// SelectHeroModel
 static const size_t ModelNameLength_GameLand	= 8;	// GameLandModel
 
 // PropertyChanged NameString

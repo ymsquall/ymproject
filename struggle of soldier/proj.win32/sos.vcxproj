@@ -377,6 +377,7 @@ xcopy "$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alp
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Classes\Model_SelectHero.cpp" />
     <ClCompile Include="..\Classes\ViewModelManager.cpp" />
     <ClCompile Include="..\Classes\Model_GameLand.cpp" />
     <ClCompile Include="..\Classes\Model_Login.cpp" />
@@ -384,12 +385,15 @@ xcopy "$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alp
     <ClCompile Include="..\Classes\TopLevelView.cpp" />
     <ClCompile Include="..\Classes\ViewModel_GameLand.cpp" />
     <ClCompile Include="..\Classes\ViewModel_Login.cpp" />
+    <ClCompile Include="..\Classes\ViewModel_SelectHero.cpp" />
     <ClCompile Include="..\Classes\View_GameLand.cpp" />
     <ClCompile Include="..\Classes\View_Login.cpp" />
+    <ClCompile Include="..\Classes\View_SelectHero.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Win32MsgProc.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Classes\Model_SelectHero.h" />
     <ClInclude Include="..\Classes\ViewModelManager.h" />
     <ClInclude Include="..\Classes\ModelTypeDefine.h" />
     <ClInclude Include="..\Classes\Model_GameLand.h" />
@@ -398,8 +402,10 @@ xcopy "$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alp
     <ClInclude Include="..\Classes\TopLevelView.h" />
     <ClInclude Include="..\Classes\ViewModel_GameLand.h" />
     <ClInclude Include="..\Classes\ViewModel_Login.h" />
+    <ClInclude Include="..\Classes\ViewModel_SelectHero.h" />
     <ClInclude Include="..\Classes\View_GameLand.h" />
     <ClInclude Include="..\Classes\View_Login.h" />
+    <ClInclude Include="..\Classes\View_SelectHero.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Win32MsgProc.h" />
   </ItemGroup>

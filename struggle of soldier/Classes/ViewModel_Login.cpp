@@ -31,8 +31,8 @@ void LoginViewModel::onLoginModelPropertyChanged(mvvm::INotifyPropertyChanged* s
 		{
 			if(NULL != mLoginView)
 			{
-				pRootView->removeChild(pRootView, true);
-				pRootView = NULL;
+				pRootView->removeChild(mLoginView, true);
+				mLoginView = NULL;
 			}
 		}
 	}
