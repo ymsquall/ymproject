@@ -46,6 +46,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\dotnetref\DotNet_4.5_WPF_Debug\System.Windows.Interactivity.dll</HintPath>
@@ -94,9 +95,12 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\CompositeNode.cs" />
+    <Compile Include="Models\LayoutInitializer.cs" />
     <Compile Include="Models\MainFileMenuModel.cs" />
     <Compile Include="Models\Node.cs" />
+    <Compile Include="Models\PlistResModel.cs" />
     <Compile Include="Selectors\PanelsStyleSelector.cs" />
+    <Compile Include="Selectors\PanesTemplateSelector.cs" />
     <Compile Include="Tools\DesignHelper.cs" />
     <Compile Include="Tools\PanelViewModel.cs" />
     <Compile Include="Tools\ThemeManager.cs" />

@@ -95,7 +95,7 @@ namespace cocos.picture2plist.mvvm.ViewModels
             this.Parent = null;
         }
 
-        private Node Node;
+        public Node Node;
 
         private ObservableCollection<NodeViewModel> children;
 
@@ -113,7 +113,7 @@ namespace cocos.picture2plist.mvvm.ViewModels
             if (children == null)
             {
                 children = new ObservableCollection<NodeViewModel>();
-                var cc = this.Node as CompositeNode;
+                var cc = this.Node as PlistResModel;
                 if (cc != null)
                 {
                     foreach (var child in cc.Children)
@@ -196,13 +196,13 @@ namespace cocos.picture2plist.mvvm.ViewModels
 
         public NodeViewModel AddChild()
         {
-            var cn = this.Node as CompositeNode;
+            var cn = this.Node as PlistResModel;
             if (cn == null)
             {
                 return null;
             }
 
-            var newChild = new CompositeNode() { Name = "New node" };
+            var newChild = new PlistResModel() { Name = "New node" };
             cn.Children.Add(newChild);
             var vm = new NodeViewModel(newChild, this);
             this.Children.Add(vm);

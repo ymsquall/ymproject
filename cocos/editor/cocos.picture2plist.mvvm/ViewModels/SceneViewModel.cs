@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using cocos.picture2plist.mvvm.Models;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace cocos.picture2plist.mvvm.ViewModels
 {
@@ -12,9 +15,12 @@ namespace cocos.picture2plist.mvvm.ViewModels
         {
             DisplayName = "plist";
         }
-        public SceneViewModel(string title = "plist")
+        public SceneViewModel(PlistResModel resMedel)
         {
-            DisplayName = title;
+            ResModel = resMedel;
+            DisplayName = ResModel.ResName;
         }
+
+        public PlistResModel ResModel { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿<Fluent:RibbonWindow x:Class="cocos.picture2plist.mvvm.MainWindow"
+﻿<Fluent:RibbonWindow Name ="mMainWindws" x:Class="cocos.picture2plist.mvvm.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent"
@@ -8,6 +8,7 @@
         xmlns:pt="clr-namespace:PropertyTools.Wpf;assembly=PropertyTools.Wpf"
         xmlns:local="clr-namespace:cocos.picture2plist.mvvm"
 		xmlns:ViewModels="clr-namespace:cocos.picture2plist.mvvm.ViewModels"
+		xmlns:Models="clr-namespace:cocos.picture2plist.mvvm.Models"
         xmlns:Converters="clr-namespace:cocos.picture2plist.mvvm.Converters"
         xmlns:Selectors="clr-namespace:cocos.picture2plist.mvvm.Selectors"
         xmlns:Factorys="clr-namespace:cocos.picture2plist.mvvm.Factorys"
@@ -146,7 +147,7 @@
                         <Fluent:Button Header="打开..."
                                        Icon="Resource\Icon\Box.png"
                                        Fluent:KeyTip.Keys="O"
-                                       Click="OnOpenBtnClick" />
+                                       Command="{Binding MainFileMenuCommand.OpenCommand}" />
                         <Fluent:Button Header="保存"
                                        Icon="Resource\Icon\Save.png"
                                        Fluent:KeyTip.Keys="S"
@@ -154,11 +155,17 @@
                         <Fluent:Button Header="另存为..." 
                                        Icon="Resource\Icon\Save.png" 
                                        Fluent:KeyTip.Keys="V" 
-                                       Click="OnSaveAsBtnClick" />
+                                       Command="{Binding MainFileMenuCommand.SaveAsCommand}" />
                         <Fluent:Button Header="保存全部" 
                                        Icon="Resource\Icon\Save.png" 
                                        Fluent:KeyTip.Keys="A" 
-                                       Click="OnSaveAllBtnClick" />
+                                       Command="{Binding MainFileMenuCommand.SaveAllCommand}" />
+                        <Fluent:SeparatorTabItem/>
+                        <Fluent:Button Header="导入资源..." 
+                                       Icon="Resource\Icon\Test16.png" 
+                                       Fluent:KeyTip.Keys="E" 
+                                       Command="{Binding MainFileMenuCommand.ImportResCommand}"
+                                       CommandParameter="{Binding}"/>
                         <Fluent:BackstageTabItem Header="TEST"
                                                  Content="Hello">
                             <Fluent:BackstageTabItem.ContentTemplate>
@@ -169,11 +176,6 @@
                                 </DataTemplate>
                             </Fluent:BackstageTabItem.ContentTemplate>
                         </Fluent:BackstageTabItem>
-                        <Fluent:SeparatorTabItem/>
-                        <Fluent:Button Header="导入资源..." 
-                                       Icon="Resource\Icon\Test16.png" 
-                                       Fluent:KeyTip.Keys="E" 
-                                       Click="OnExportBtnClick" />
                         <Fluent:BackstageTabItem Header="导入..."
                                                  Fluent:KeyTip.Keys="E"
                                                  IsEnabled="True">
@@ -396,6 +398,20 @@
                 AnchorablesSource="{Binding Tools}"  
 				DocumentsSource="{Binding Documents}"
 				ActiveContent="{Binding ActiveDocument, Mode=TwoWay, Converter={x:Static Converters:ActiveDocumentConverter.Instance}}" >
+            <AvDock:DockingManager.LayoutItemTemplateSelector>
+                <Selectors:PanesTemplateSelector>
+                    <Selectors:PanesTemplateSelector.SceneViewTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="{Binding ResModel.PicName}"/>
+                                <TextBlock Text="{Binding ResModel.PlistName}"/>
+                                <TextBox Text="test"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Selectors:PanesTemplateSelector.SceneViewTemplate>
+                </Selectors:PanesTemplateSelector>
+            </AvDock:DockingManager.LayoutItemTemplateSelector>
+            
             <AvDock:DockingManager.LayoutItemContainerStyleSelector>
                 <Selectors:PanelsStyleSelector>
                     <Selectors:PanelsStyleSelector.ToolStyle>
@@ -420,6 +436,9 @@
                     </Selectors:PanelsStyleSelector.DocumentStyle>
                 </Selectors:PanelsStyleSelector>
             </AvDock:DockingManager.LayoutItemContainerStyleSelector>
+            <AvDock:DockingManager.LayoutUpdateStrategy>
+                <Models:LayoutInitializer/>
+            </AvDock:DockingManager.LayoutUpdateStrategy>
             
             <AvDockLayout:LayoutRoot>
                 <AvDockLayout:LayoutPanel Orientation="Vertical">
@@ -432,7 +451,8 @@
                                     Indentation="12" 
                                     HierarchySource="{Binding TreeListRoot}"
                                     BorderThickness="0"
-                                    pt:TreeListBoxDragDropHelper.IsDragSource="True" pt:TreeListBoxDragDropHelper.IsDropTarget="True"/>
+                                    pt:TreeListBoxDragDropHelper.IsDragSource="True" pt:TreeListBoxDragDropHelper.IsDropTarget="True"
+                                    SelectionChanged="PictureList_SelectionChanged"/>
                             </DockPanel>
                         </AvDockLayout:LayoutAnchorable>
                         <AvDockLayout:LayoutAnchorable ContentId="PropretyGrid" Title="属性">

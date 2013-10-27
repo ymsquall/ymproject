@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Fluent;
+using cocos.picture2plist.mvvm.ViewModels;
 
 namespace cocos.picture2plist.mvvm
 {
@@ -27,6 +28,8 @@ namespace cocos.picture2plist.mvvm
             Tools.ThemeManager.init(mInstacne);
             //ThemeManager.ChangeTheme(ThemeStyle.Black);
             InitializeComponent();
+            var mainViewModel = DataContext as MainWindowViewModel;
+            mainViewModel.ParentView = this;
         }
         ~MainWindow()
         {
@@ -36,24 +39,6 @@ namespace cocos.picture2plist.mvvm
         public static MainWindow Instance
         {
             get { return mInstacne; }
-        }
-
-        private void OnOpenBtnClick(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void OnSaveAsBtnClick(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void OnSaveAllBtnClick(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void OnExportBtnClick(object sender, RoutedEventArgs e)
-        {
-
         }
 
         static RoutedCommand new1 = new RoutedCommand("New1", typeof(MainWindow));
@@ -69,5 +54,11 @@ namespace cocos.picture2plist.mvvm
         }
 
         private static MainWindow mInstacne = null;
+
+        private void PictureList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var mainViewModel = DataContext as MainWindowViewModel;
+            mainViewModel.OnTreeListSelectionChanged(sender, e);
+        }
     }
 }

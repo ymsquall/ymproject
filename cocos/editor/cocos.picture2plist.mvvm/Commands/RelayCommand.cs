@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Input;
 
-namespace cocos.picture2plist.mvvm.commands
+namespace cocos.picture2plist.mvvm.Commands
 {
     internal class RelayCommand : ICommand
     {

@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using cocos.picture2plist.mvvm.Models;
 using cocos.picture2plist.mvvm.ViewModels;
+using cocos.picture2plist.mvvm.Commands;
+using System.Windows.Input;
 
 namespace cocos.picture2plist.mvvm.ViewModels
 {
@@ -13,12 +15,12 @@ namespace cocos.picture2plist.mvvm.ViewModels
     {
         public ExplorerViewModel() : base("资源列表")
         {
-            this.Model = new CompositeNode { Name = "Item" };
-            this.AddRecursive(this.Model, 4, 4);
-            this.Title = "TreeListBox (N=" + this.Count + ")";
+            this.Model = new PlistResModel { Name = "Root" };
+            //this.AddRecursive(this.Model, 4, 4);
+            //this.Title = "TreeListBox (N=" + this.Count + ")";
             this.RootModel = new NodeViewModel(this.Model, null);
         }
-        private CompositeNode Model { get; set; }
+        private PlistResModel Model { get; set; }
         public NodeViewModel RootModel { get; set; }
 
         public IEnumerable Root
@@ -41,11 +43,11 @@ namespace cocos.picture2plist.mvvm.ViewModels
 
         public int Count { get; set; }
 
-        private void AddRecursive(CompositeNode model, int n, int levels)
+        private void AddRecursive(PlistResModel model, int n, int levels)
         {
             for (int i = 0; i < n; i++)
             {
-                var m2 = new CompositeNode { Name = model.Name + (char)('A' + i) };
+                var m2 = new PlistResModel { Name = model.Name + (char)('A' + i) };
                 model.Children.Add(m2);
                 this.Count++;
                 if (levels > 0)
