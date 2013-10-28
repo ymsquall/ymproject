@@ -38,7 +38,6 @@ local CCObjectTypes = {
     "UIRootWidget",
     "UIScrollView",
     "UISlider",
-    "UISwitch",
     "UITextField",
     "UIWidget",
 }

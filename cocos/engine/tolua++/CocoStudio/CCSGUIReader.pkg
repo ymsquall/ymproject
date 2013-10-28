@@ -28,7 +28,7 @@ class CCSGUIReader : CCObject
     void setPropsForTextButtonFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);
     void setPropsForTextFieldFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);
     void setPropsForLoadingBarFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);
-    void setPropsForImageButtonFromJsonDictionary(UIWidget* widget, cs::CCCSJsonDictionary* options);
+	//void setPropsForImageButtonFromJsonDictionary(UIWidget* widget, cs::CCCSJsonDictionary* options);
     void setPropsForListViewFromJsonDictionary(UIWidget* widget, cs::CCCSJsonDictionary* options);
     void setPropsForPageViewFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);
     void setPropsForLabelBMFontFromJsonDictionary(UIWidget*widget,cs::CCCSJsonDictionary* options);

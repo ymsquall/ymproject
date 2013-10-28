@@ -87,8 +87,8 @@ class UIDragPanel : public Layout, public UIScrollInterface
     void addBerthToBottomEvent(CCObject* target, SEL_DragPanelBerthToBottomEvent selector);
     bool isBounceEnabled();
     void setBounceEnabled(bool bounce);
-    void setBounceDuratoin(float duration);
-    void setBounceEaseRate(float rate);
+	//void setBounceDuratoin(float duration);
+	//void setBounceEaseRate(float rate);
     void addBounceToLeftBottomEvent(CCObject* target, SEL_DragPanelBounceToLeftBottomEvent selector);
     void addBounceToLeftTopEvent(CCObject* target, SEL_DragPanelBounceToLeftTopEvent selector);
     void addBounceToRightBottomEvent(CCObject* target, SEL_DragPanelBounceToRightBottomEvent selector);

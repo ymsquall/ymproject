@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaExtern
-** Generated automatically by tolua++-1.0.92 on 10/28/13 23:12:24.
+** Generated automatically by tolua++-1.0.92 on 10/28/13 23:52:43.
 */
 
 /****************************************************************************
@@ -176,13 +176,6 @@ static int tolua_collect_cs__CCCSJsonDictionary (lua_State* tolua_S)
     return 0;
 }
 
-static int tolua_collect_UISwitch (lua_State* tolua_S)
-{
- UISwitch* self = (UISwitch*) tolua_tousertype(tolua_S,1,0);
-    Mtolua_delete(self);
-    return 0;
-}
-
 static int tolua_collect_UICCTextField (lua_State* tolua_S)
 {
  UICCTextField* self = (UICCTextField*) tolua_tousertype(tolua_S,1,0);
@@ -315,7 +308,6 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"SEL_DragPanelBerthToLeftBottomEvent");
  tolua_usertype(tolua_S,"CCClippingNode");
  tolua_usertype(tolua_S,"cs::CCCSJsonDictionary");
- tolua_usertype(tolua_S,"UISwitch");
  tolua_usertype(tolua_S,"UICheckBox");
  tolua_usertype(tolua_S,"cocos2d::CCObject");
  tolua_usertype(tolua_S,"LinearLayoutParameter");
@@ -2757,41 +2749,6 @@ static int tolua_LuaExtern_CCSGUIReader_setPropsForLoadingBarFromJsonDictionary0
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'setPropsForLoadingBarFromJsonDictionary'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: setPropsForImageButtonFromJsonDictionary of class  CCSGUIReader */
-#ifndef TOLUA_DISABLE_tolua_LuaExtern_CCSGUIReader_setPropsForImageButtonFromJsonDictionary00
-static int tolua_LuaExtern_CCSGUIReader_setPropsForImageButtonFromJsonDictionary00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"CCSGUIReader",0,&tolua_err) ||
-     !tolua_isusertype(tolua_S,2,"UIWidget",0,&tolua_err) ||
-     !tolua_isusertype(tolua_S,3,"cs::CCCSJsonDictionary",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,4,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  CCSGUIReader* self = (CCSGUIReader*)  tolua_tousertype(tolua_S,1,0);
-  UIWidget* widget = ((UIWidget*)  tolua_tousertype(tolua_S,2,0));
-  cs::CCCSJsonDictionary* options = ((cs::CCCSJsonDictionary*)  tolua_tousertype(tolua_S,3,0));
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setPropsForImageButtonFromJsonDictionary'", NULL);
-#endif
-  {
-   self->setPropsForImageButtonFromJsonDictionary(widget,options);
-  }
- }
- return 0;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'setPropsForImageButtonFromJsonDictionary'.",&tolua_err);
  return 0;
 #endif
 }
@@ -8499,72 +8456,6 @@ static int tolua_LuaExtern_UIDragPanel_setBounceEnabled00(lua_State* tolua_S)
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'setBounceEnabled'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: setBounceDuratoin of class  UIDragPanel */
-#ifndef TOLUA_DISABLE_tolua_LuaExtern_UIDragPanel_setBounceDuratoin00
-static int tolua_LuaExtern_UIDragPanel_setBounceDuratoin00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"UIDragPanel",0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,3,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  UIDragPanel* self = (UIDragPanel*)  tolua_tousertype(tolua_S,1,0);
-  float duration = ((float)  tolua_tonumber(tolua_S,2,0));
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setBounceDuratoin'", NULL);
-#endif
-  {
-   self->setBounceDuratoin(duration);
-  }
- }
- return 0;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'setBounceDuratoin'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: setBounceEaseRate of class  UIDragPanel */
-#ifndef TOLUA_DISABLE_tolua_LuaExtern_UIDragPanel_setBounceEaseRate00
-static int tolua_LuaExtern_UIDragPanel_setBounceEaseRate00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"UIDragPanel",0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,3,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  UIDragPanel* self = (UIDragPanel*)  tolua_tousertype(tolua_S,1,0);
-  float rate = ((float)  tolua_tonumber(tolua_S,2,0));
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setBounceEaseRate'", NULL);
-#endif
-  {
-   self->setBounceEaseRate(rate);
-  }
- }
- return 0;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'setBounceEaseRate'.",&tolua_err);
  return 0;
 #endif
 }
@@ -18197,126 +18088,6 @@ static int tolua_LuaExtern_UISlider_addPercentChangedEvent00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: new of class  UISwitch */
-#ifndef TOLUA_DISABLE_tolua_LuaExtern_UISwitch_new00
-static int tolua_LuaExtern_UISwitch_new00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertable(tolua_S,1,"UISwitch",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  {
-   UISwitch* tolua_ret = (UISwitch*)  Mtolua_new((UISwitch)());
-    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
-    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
-    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"UISwitch");
-  }
- }
- return 1;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: new_local of class  UISwitch */
-#ifndef TOLUA_DISABLE_tolua_LuaExtern_UISwitch_new00_local
-static int tolua_LuaExtern_UISwitch_new00_local(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertable(tolua_S,1,"UISwitch",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  {
-   UISwitch* tolua_ret = (UISwitch*)  Mtolua_new((UISwitch)());
-    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
-    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
-    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"UISwitch");
-    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
-  }
- }
- return 1;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: delete of class  UISwitch */
-#ifndef TOLUA_DISABLE_tolua_LuaExtern_UISwitch_delete00
-static int tolua_LuaExtern_UISwitch_delete00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"UISwitch",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  UISwitch* self = (UISwitch*)  tolua_tousertype(tolua_S,1,0);
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'delete'", NULL);
-#endif
-  Mtolua_delete(self);
- }
- return 0;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'delete'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: create of class  UISwitch */
-#ifndef TOLUA_DISABLE_tolua_LuaExtern_UISwitch_create00
-static int tolua_LuaExtern_UISwitch_create00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertable(tolua_S,1,"UISwitch",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  {
-   UISwitch* tolua_ret = (UISwitch*)  UISwitch::create();
-    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
-    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
-    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"UISwitch");
-  }
- }
- return 1;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'create'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
 /* method: new of class  UICCTextField */
 #ifndef TOLUA_DISABLE_tolua_LuaExtern_UICCTextField_new00
 static int tolua_LuaExtern_UICCTextField_new00(lua_State* tolua_S)
@@ -25675,7 +25446,6 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"setPropsForTextButtonFromJsonDictionary",tolua_LuaExtern_CCSGUIReader_setPropsForTextButtonFromJsonDictionary00);
    tolua_function(tolua_S,"setPropsForTextFieldFromJsonDictionary",tolua_LuaExtern_CCSGUIReader_setPropsForTextFieldFromJsonDictionary00);
    tolua_function(tolua_S,"setPropsForLoadingBarFromJsonDictionary",tolua_LuaExtern_CCSGUIReader_setPropsForLoadingBarFromJsonDictionary00);
-   tolua_function(tolua_S,"setPropsForImageButtonFromJsonDictionary",tolua_LuaExtern_CCSGUIReader_setPropsForImageButtonFromJsonDictionary00);
    tolua_function(tolua_S,"setPropsForListViewFromJsonDictionary",tolua_LuaExtern_CCSGUIReader_setPropsForListViewFromJsonDictionary00);
    tolua_function(tolua_S,"setPropsForPageViewFromJsonDictionary",tolua_LuaExtern_CCSGUIReader_setPropsForPageViewFromJsonDictionary00);
    tolua_function(tolua_S,"setPropsForLabelBMFontFromJsonDictionary",tolua_LuaExtern_CCSGUIReader_setPropsForLabelBMFontFromJsonDictionary00);
@@ -25974,8 +25744,6 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"addBerthToBottomEvent",tolua_LuaExtern_UIDragPanel_addBerthToBottomEvent00);
    tolua_function(tolua_S,"isBounceEnabled",tolua_LuaExtern_UIDragPanel_isBounceEnabled00);
    tolua_function(tolua_S,"setBounceEnabled",tolua_LuaExtern_UIDragPanel_setBounceEnabled00);
-   tolua_function(tolua_S,"setBounceDuratoin",tolua_LuaExtern_UIDragPanel_setBounceDuratoin00);
-   tolua_function(tolua_S,"setBounceEaseRate",tolua_LuaExtern_UIDragPanel_setBounceEaseRate00);
    tolua_function(tolua_S,"addBounceToLeftBottomEvent",tolua_LuaExtern_UIDragPanel_addBounceToLeftBottomEvent00);
    tolua_function(tolua_S,"addBounceToLeftTopEvent",tolua_LuaExtern_UIDragPanel_addBounceToLeftTopEvent00);
    tolua_function(tolua_S,"addBounceToRightBottomEvent",tolua_LuaExtern_UIDragPanel_addBounceToRightBottomEvent00);
@@ -26450,18 +26218,6 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"setScale9Size",tolua_LuaExtern_UISlider_setScale9Size00);
    tolua_function(tolua_S,"setScale9Enable",tolua_LuaExtern_UISlider_setScale9Enable00);
    tolua_function(tolua_S,"addPercentChangedEvent",tolua_LuaExtern_UISlider_addPercentChangedEvent00);
-  tolua_endmodule(tolua_S);
-  #ifdef __cplusplus
-  tolua_cclass(tolua_S,"UISwitch","UISwitch","UIWidget",tolua_collect_UISwitch);
-  #else
-  tolua_cclass(tolua_S,"UISwitch","UISwitch","UIWidget",NULL);
-  #endif
-  tolua_beginmodule(tolua_S,"UISwitch");
-   tolua_function(tolua_S,"new",tolua_LuaExtern_UISwitch_new00);
-   tolua_function(tolua_S,"new_local",tolua_LuaExtern_UISwitch_new00_local);
-   tolua_function(tolua_S,".call",tolua_LuaExtern_UISwitch_new00_local);
-   tolua_function(tolua_S,"delete",tolua_LuaExtern_UISwitch_delete00);
-   tolua_function(tolua_S,"create",tolua_LuaExtern_UISwitch_create00);
   tolua_endmodule(tolua_S);
   #ifdef __cplusplus
   tolua_cclass(tolua_S,"UICCTextField","UICCTextField","CCTextFieldTTF",tolua_collect_UICCTextField);

@@ -38,6 +38,18 @@ CCCSComAudio::~CCCSComAudio(void)
     
 }
 
+CCCSComAudio* CCCSComAudio::create(void)
+{
+	CCCSComAudio* pRet = new CCCSComAudio();
+	if(pRet->init())
+	{
+		pRet->autorelease();
+		return pRet;
+	}
+	CC_SAFE_DELETE(pRet);
+	return NULL;
+}
+
 bool CCCSComAudio::init()
 {
     return true;
