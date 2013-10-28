@@ -34,7 +34,7 @@ NS_CC_EXT_BEGIN
 *   @js NA
 *   @lua NA
 */
-class CCSSceneReader
+class CCSSceneReader : public Object
 {
 public:
 	CCSSceneReader(void);

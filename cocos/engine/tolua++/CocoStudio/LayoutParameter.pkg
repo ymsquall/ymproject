@@ -1,0 +1,39 @@
+typedef enum
+{
+    LAYOUT_PARAMETER_NONE,
+    LAYOUT_PARAMETER_LINEAR,
+    LAYOUT_PARAMETER_RELATIVE
+}LayoutParameterType;
+
+class LayoutParameter : public CCObject
+{
+//public:
+    LayoutParameter();
+    virtual ~LayoutParameter();
+    static LayoutParameter* create();
+    void setMargin(const UIMargin& margin);
+    const UIMargin& getMargin() const;
+    LayoutParameterType getLayoutType() const;
+};
+class LinearLayoutParameter : public LayoutParameter
+{
+//public:
+    LinearLayoutParameter();
+    virtual ~LinearLayoutParameter();
+    static LinearLayoutParameter* create();
+    void setGravity(UILinearGravity gravity);
+    UILinearGravity getGravity() const;
+};
+class RelativeLayoutParameter : public LayoutParameter
+{
+public:
+    RelativeLayoutParameter();
+    virtual ~RelativeLayoutParameter();
+    static RelativeLayoutParameter* create();
+    void setAlign(UIRelativeAlign align);
+    UIRelativeAlign getAlign() const;
+    void setRelativeToWidgetName(const char* name);
+    const char* getRelativeToWidgetName() const;
+    void setRelativeName(const char* name);
+    const char* getRelativeName() const;
+};

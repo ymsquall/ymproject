@@ -1,0 +1,54 @@
+namespace cs {
+
+    typedef enum _ccDicItemType
+    {
+        ccEDIC_TYPENULL = 0,
+        ccEDIC_TYPEINT,
+        ccEDIC_TYPEUINT,
+        ccEDIC_TYPEFLOAT,
+        ccEDIC_TYPESTRING,
+        ccEDIC_TYPEBOOLEN,
+        ccEDIC_TYPEARRAY,
+        ccEDIC_TYPEOBJECT
+    }ccDicItemType;
+
+    class CCCSJsonDictionary
+    {
+    //public:
+        CCCSJsonDictionary();
+        ~CCCSJsonDictionary();
+    //public:
+        void    initWithDescription(const char *pszDescription);
+        void    insertItem(const char *pszKey, int nValue);
+        void    insertItem(const char *pszKey, double fValue);
+        void    insertItem(const char *pszKey, const char * pszValue);
+        void    insertItem(const char *pszKey, CCCSJsonDictionary * subDictionary);
+        void    insertItem(const char *pszKey, bool bValue);
+        bool    deleteItem(const char *pszKey);
+        void    cleanUp();
+        bool    isKeyValidate(const char *pszKey);
+        int             getItemIntValue(const char *pszKey, int nDefaultValue);
+        double          getItemFloatValue(const char *pszKey, double fDefaultValue);
+        const char *    getItemStringValue(const char *pszKey);
+        bool            getItemBoolvalue(const char *pszKey, bool bDefaultValue);
+        CCCSJsonDictionary *   getSubDictionary(const char *pszKey);
+        std::string          getDescription();
+        bool    insertItemToArray(const char *pszArrayKey, int nValue);
+        bool    insertItemToArray(const char *pszArrayKey, double fValue);
+        bool    insertItemToArray(const char *pszArrayKey, const char * pszValue);
+        bool    insertItemToArray(const char *pszArrayKey, CCCSJsonDictionary * subDictionary);
+        int getArrayItemCount(const char *pszArrayKey);
+        int getIntValueFromArray(const char *pszArrayKey, int nIndex, int nDefaultValue);
+        double getFloatValueFromArray(const char *pszArrayKey, int nIndex, double fDefaultValue);
+        bool getBoolValueFromArray(const char *pszArrayKey, int nIndex, bool bDefaultValue);
+        const char * getStringValueFromArray(const char *pszArrayKey, int nIndex);
+        CCCSJsonDictionary *getSubItemFromArray(const char *pszArrayKey, int nIndex);
+        ccDicItemType getItemTypeFromArray(const char *pszArrayKey, int nIndex);
+        int         getItemCount();
+        ccDicItemType getItemType(int nIndex);
+        ccDicItemType getItemType(const char *pszKey);
+        std::vector<std::string> getAllMemberNames();
+    };
+
+}
+

@@ -29,6 +29,8 @@
 #include "LuaScriptHandlerMgr.h"
 #include "GUI/CCControlExtension/CCControl.h"
 #include "LuaOpengl.h"
+#include "LuaCocos2d.h"
+#include "luaext/LuaExtern.h"
 
 NS_CC_BEGIN
 
@@ -615,6 +617,8 @@ void LuaEngine::extendLuaObject()
     extendGLNode(lua_S);
     extendScrollView(lua_S);
     extendDrawNode(lua_S);
+	tolua_Cocos2d_open(lua_S);
+	tolua_LuaExtern_open(lua_S);
     
     _stack->clean();
 }

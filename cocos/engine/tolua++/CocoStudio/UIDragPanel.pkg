@@ -1,0 +1,105 @@
+enum DRAGPANEL_MOVE_TYPE
+{
+    DRAGPANEL_MOVE_TYPE_NONE,
+    DRAGPANEL_MOVE_TYPE_AUTOMOVE,
+    DRAGPANEL_MOVE_TYPE_BOUNCE,
+};
+
+enum DRAGPANEL_BERTH_DIR
+{
+    DRAGPANEL_BERTH_DIR_NONE,
+    DRAGPANEL_BERTH_DIR_LEFTBOTTOM,
+    DRAGPANEL_BERTH_DIR_LFETTOP,
+    DRAGPANEL_BERTH_DIR_RIGHTBOTTOM,
+    DRAGPANEL_BERTH_DIR_RIGHTTOP,
+    DRAGPANEL_BERTH_DIR_LEFT,
+    DRAGPANEL_BERTH_DIR_TOP,
+    DRAGPANEL_BERTH_DIR_RIGHT,
+    DRAGPANEL_BERTH_DIR_BOTTOM,
+};
+
+enum DRAGPANEL_BOUNCE_DIR
+{
+    DRAGPANEL_BOUNCE_DIR_NONE,
+    DRAGPANEL_BOUNCE_DIR_LEFTBOTTOM,
+    DRAGPANEL_BOUNCE_DIR_LEFTTOP,
+    DRAGPANEL_BOUNCE_DIR_RIGHTBOTTOM,
+    DRAGPANEL_BOUNCE_DIR_RIGHTTOP,
+    DRAGPANEL_BOUNCE_DIR_LEFT,
+    DRAGPANEL_BOUNCE_DIR_TOP,
+    DRAGPANEL_BOUNCE_DIR_RIGHT,
+    DRAGPANEL_BOUNCE_DIR_BOTTOM,
+};
+
+typedef enum
+{
+    DRAGPANEL_EVENT_BERTH_LEFTBOTTOM,
+    DRAGPANEL_EVENT_BERTH_LFETTOP,
+    DRAGPANEL_EVENT_BERTH_RIGHTBOTTOM,
+    DRAGPANEL_EVENT_BERTH_RIGHTTOP,
+    DRAGPANEL_EVENT_BERTH_LEFT,
+    DRAGPANEL_EVENT_BERTH_TOP,
+    DRAGPANEL_EVENT_BERTH_RIGHT,
+    DRAGPANEL_EVENT_BERTH_BOTTOM,
+    DRAGPANEL_EVENT_BOUNCE_LEFTBOTTOM,
+    DRAGPANEL_EVENT_BOUNCE_LEFTTOP,
+    DRAGPANEL_EVENT_BOUNCE_RIGHTBOTTOM,
+    DRAGPANEL_EVENT_BOUNCE_RIGHTTOP,
+    DRAGPANEL_EVENT_BOUNCE_LEFT,
+    DRAGPANEL_EVENT_BOUNCE_TOP,
+    DRAGPANEL_EVENT_BOUNCE_RIGHT,
+    DRAGPANEL_EVENT_BOUNCE_BOTTOM,
+}DragPanelEventType;
+
+
+class UIDragPanel : public Layout, public UIScrollInterface
+{
+//public:
+    UIDragPanel();
+    virtual ~UIDragPanel();
+    static UIDragPanel* create();
+    virtual bool onTouchBegan(const CCPoint &touchPoint);
+    virtual void onTouchMoved(const CCPoint &touchPoint);
+    virtual void onTouchEnded(const CCPoint &touchPoint);
+    virtual void onTouchCancelled(const CCPoint &touchPoint);
+    virtual void onTouchLongClicked(const CCPoint &touchPoint);
+    virtual void update(float dt);
+    virtual bool addChild(UIWidget* widget);
+    virtual bool removeChild(UIWidget* child);
+    virtual void removeAllChildren();
+    virtual CCArray* getChildren();
+    const CCSize& getInnerContainerSize() const;
+    void setInnerContainerSize(const CCSize &size);
+    const CCPoint& getInnerContainerPosition() const;
+    void setInnerContainerPosition(const CCPoint& point, bool animated);
+    void setInnerContainerOffset(const CCPoint& offset, bool animated);
+    void setAutoMoveDuration(float duration);
+    void setAutoMoveEaseRate(float rate);
+    bool isBerth();
+    void addEventListener(CCObject* target, SEL_DragPanelEvent selector);
+    void addBerthToLeftBottomEvent(CCObject* target, SEL_DragPanelBerthToLeftBottomEvent selector);
+    void addBerthToLeftTopEvent(CCObject* target, SEL_DragPanelBerthToLeftTopEvent selector);
+    void addBerthToRightBottomEvent(CCObject* target, SEL_DragPanelBerthToRightBottomEvent selector);
+    void addBerthToRightTopEvent(CCObject* target, SEL_DragPanelBerthToRightTopEvent selector);
+    void addBerthToLeftEvent(CCObject* target, SEL_DragPanelBerthToLeftEvent selector);
+    void addBerthToTopEvent(CCObject* target, SEL_DragPanelBerthToTopEvent selector);
+    void addBerthToRightEvent(CCObject* target, SEL_DragPanelBerthToRightEvent selector);
+    void addBerthToBottomEvent(CCObject* target, SEL_DragPanelBerthToBottomEvent selector);
+    bool isBounceEnabled();
+    void setBounceEnabled(bool bounce);
+    void setBounceDuratoin(float duration);
+    void setBounceEaseRate(float rate);
+    void addBounceToLeftBottomEvent(CCObject* target, SEL_DragPanelBounceToLeftBottomEvent selector);
+    void addBounceToLeftTopEvent(CCObject* target, SEL_DragPanelBounceToLeftTopEvent selector);
+    void addBounceToRightBottomEvent(CCObject* target, SEL_DragPanelBounceToRightBottomEvent selector);
+    void addBounceToRightTopEvent(CCObject* target, SEL_DragPanelBounceToRightTopEvent selector);
+    void addBounceToLeftEvent(CCObject* target, SEL_DragPanelBounceToLeftEvent selector);
+    void addBounceToTopEvent(CCObject* target, SEL_DragPanelBounceToTopEvent selector);
+    void addBounceToRightEvent(CCObject* target, SEL_DragPanelBounceToRightEvent selector);
+    void addBounceToBottomEvent(CCObject* target, SEL_DragPanelBounceToBottomEvent selector);
+    Layout* getInnerContainer();
+    virtual void setLayoutType(LayoutType type);
+    virtual LayoutType getLayoutType() const;
+    virtual void doLayout();
+    virtual const char* getDescription() const;
+};

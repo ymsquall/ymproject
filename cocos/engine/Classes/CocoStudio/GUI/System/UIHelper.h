@@ -35,7 +35,7 @@ NS_CC_EXT_BEGIN
 *   @js NA
 *   @lua NA
 */
-class UIHelper
+class UIHelper : public Object
 {
 public:
     /**

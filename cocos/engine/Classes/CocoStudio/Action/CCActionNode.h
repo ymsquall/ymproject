@@ -29,6 +29,11 @@
 #include "ExtensionMacros.h"
 #include "CCActionFrame.h"
 
+namespace cs
+{
+	class CCCSJsonDictionary;
+}
+
 NS_CC_EXT_BEGIN
 /**
 *   @js NA

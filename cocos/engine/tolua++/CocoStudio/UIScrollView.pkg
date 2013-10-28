@@ -1,0 +1,57 @@
+enum SCROLLVIEW_DIR
+{
+    SCROLLVIEW_DIR_NONE,
+    SCROLLVIEW_DIR_VERTICAL,
+    SCROLLVIEW_DIR_HORIZONTAL
+};
+
+enum SCROLLVIEW_MOVE_DIR
+{
+    SCROLLVIEW_MOVE_DIR_NONE,
+    SCROLLVIEW_MOVE_DIR_UP,
+    SCROLLVIEW_MOVE_DIR_DOWN,
+    SCROLLVIEW_MOVE_DIR_LEFT,
+    SCROLLVIEW_MOVE_DIR_RIGHT,
+};
+
+typedef enum
+{
+    SCROLLVIEW_EVENT_SCROLL_TO_TOP,
+    SCROLLVIEW_EVENT_SCROLL_TO_BOTTOM,
+    SCROLLVIEW_EVENT_SCROLL_TO_LEFT,
+    SCROLLVIEW_EVENT_SCROLL_TO_RIGHT,
+}ScrollviewEventType;
+
+class UIScrollView : public Layout , public UIScrollInterface
+{
+//public:
+    UIScrollView();
+    virtual ~UIScrollView();
+    static UIScrollView* create();
+    void setDirection(SCROLLVIEW_DIR dir);
+    SCROLLVIEW_DIR getDirection();
+    Layout* getInnerContainer();
+    void scrollToBottom();
+    void scrollToTop();
+    void setInnerContainerSize(const CCSize &size);
+	const CCSize& getInnerContainerSize() const;
+    void addEventListener(CCObject* target, SEL_ScrollViewEvent selector);
+    void addScrollToTopEvent(CCObject* target, SEL_ScrollToTopEvent selector);
+    void addScrollToBottomEvent(CCObject* target, SEL_ScrollToBottomEvent selector);
+    void addScrollToLeftEvent(CCObject* target, SEL_ScrollToLeftEvent selector);
+    void addScrollToRightEvent(CCObject* target, SEL_ScrollToRightEvent selector);
+    virtual bool addChild(UIWidget* widget);
+    virtual void removeAllChildren();
+	virtual bool removeChild(UIWidget* child);
+    virtual CCArray* getChildren();
+    virtual bool onTouchBegan(const CCPoint &touchPoint);
+    virtual void onTouchMoved(const CCPoint &touchPoint);
+    virtual void onTouchEnded(const CCPoint &touchPoint);
+    virtual void onTouchCancelled(const CCPoint &touchPoint);
+    virtual void onTouchLongClicked(const CCPoint &touchPoint);
+    virtual void update(float dt);
+    virtual void setLayoutType(LayoutType type);
+    virtual LayoutType getLayoutType() const;
+    virtual void doLayout();
+    virtual const char* getDescription() const;
+};

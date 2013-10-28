@@ -1,0 +1,12 @@
+namespace cs
+{
+	class CCCSJsonDictionary;
+}
+
+class CCCSComAttribute : public CCComAttribute
+{
+//public:
+   virtual bool init();
+   static CCCSComAttribute* create(void);
+   cs::CCCSJsonDictionary* getDict();
+};

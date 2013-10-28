@@ -1,0 +1,22 @@
+class ActionNode:public CCObject
+{
+//public:
+    ActionNode();
+    virtual ~ActionNode();
+	void setUnitTime(float fTime);
+	float getUnitTime();
+	void setActionTag(int tag);
+	int getActionTag();
+	void setObject(CCObject* node);
+	CCObject* getObject();
+	void insertFrame(int index, ActionFrame* frame);
+	void addFrame(ActionFrame* frame);
+	void deleteFrame(ActionFrame* frame );
+	void clearAllFrame();
+	int getFirstFrameIndex();
+	int getLastFrameIndex();
+	virtual bool updateActionToTimeLine(float fTime);
+	virtual void playAction(bool bloop);
+	virtual void stopAction();
+    virtual void initWithDictionary(cs::CCCSJsonDictionary* dic,CCObject* root);
+};

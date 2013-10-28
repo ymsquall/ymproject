@@ -16,12 +16,21 @@
 
 //#include "CocoStudio/Components/CCComRender.h"
 
-#include "CocoStudio/GUI/System/CocosGUI.h"
+#include "CocoStudio/Action/CCActionManager.h"
+#include "CocoStudio/Action/CCActionFrameEasing.h"
+#include "CocoStudio/CCArmature/external_tool/Json/CCCSContentJsonDictionary.h"
 #include "CocoStudio/Json/DictionaryHelper.h"
 #include "CocoStudio/Reader/CCSSceneReader.h"
-#include "CocoStudio/Action/CCActionManager.h"
 #include "CocoStudio/Components/CCCSComAttribute.h"
+#include "CocoStudio/Components/CCCSComAudio.h"
+#include "CocoStudio/Components/CCComRender.h"
+#include "CocoStudio/GUI/System/CocosGUI.h"
 #include "CocoStudio/GUI/UIWidgets/UITextField.h"
+#include "CocoStudio/GUI/UIWidgets/UISwitch.h"
+
+//typedef CCCSComAttribute CSComAttribute;
+//typedef CCSGUIReader SGUIReader;
+//typedef CCSSceneReader SSceneReader;
 //
 //NS_CC_BEGIN
 //

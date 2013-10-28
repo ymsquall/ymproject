@@ -1,0 +1,31 @@
+enum FrameEasingType
+{
+	kCCBCSKeyframeEasingInstant,
+
+	kCCBCSKeyframeEasingLinear,
+
+	kCCBCSKeyframeEasingCubicIn,
+	kCCBCSKeyframeEasingCubicOut,
+	kCCBCSKeyframeEasingCubicInOut,
+
+	kCCBCSKeyframeEasingElasticIn,
+	kCCBCSKeyframeEasingElasticOut,
+	kCCBCSKeyframeEasingElasticInOut,
+
+	kCCBCSKeyframeEasingBounceIn,
+	kCCBCSKeyframeEasingBounceOut,
+	kCCBCSKeyframeEasingBounceInOut,
+
+	kCCBCSKeyframeEasingBackIn,
+	kCCBCSKeyframeEasingBackOut,
+	kCCBCSKeyframeEasingBackInOut,
+};
+
+class ActionFrameEasing:public cocos2d::CCObject
+{
+//public:
+    ActionFrameEasing();
+    virtual ~ActionFrameEasing();
+	float bounceTime(float t);
+	float easeValue(float t);
+};

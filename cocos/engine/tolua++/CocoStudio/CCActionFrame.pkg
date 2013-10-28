@@ -1,0 +1,77 @@
+enum FrameType
+{
+	kKeyframeMove = 0,
+	kKeyframeScale,
+	kKeyframeRotate,
+	kKeyframeTint,
+	kKeyframeFade,
+	kKeyframeMax
+};
+
+class ActionFrame:public CCObject
+{
+//public:
+    ActionFrame();
+    virtual ~ActionFrame();
+	void setFrameIndex(int index);
+	int getFrameIndex();
+	void setFrameTime(float fTime);
+	float getFrameTime();
+	void setFrameType(int frameType);
+	int getFrameType();
+	void setEasingType(int easingType);
+	int getEasingType();
+	virtual CCAction* getAction(float fDuration);
+};
+
+class ActionMoveFrame:public ActionFrame
+{
+//public:
+	ActionMoveFrame();
+	virtual ~ActionMoveFrame();
+	void setPosition(CCPoint pos);
+	CCPoint getPosition();
+	virtual CCAction* getAction(float fDuration);
+};
+
+class ActionScaleFrame:public ActionFrame
+{
+//public:
+	ActionScaleFrame();
+	virtual ~ActionScaleFrame();
+	void setScaleX(float scaleX);
+	float getScaleX();
+	void setScaleY(float scaleY);
+	float getScaleY();
+	virtual CCAction* getAction(float fDuration);
+};
+
+class ActionRotationFrame:public ActionFrame
+{
+//public:
+	ActionRotationFrame();
+	virtual ~ActionRotationFrame();
+	void setRotation(float rotation);
+	float getRotation();
+	virtual CCAction* getAction(float fDuration);
+};
+
+class ActionFadeFrame:public ActionFrame
+{
+//public:
+	ActionFadeFrame();
+	virtual ~ActionFadeFrame();
+	void setOpacity(int opacity);
+	int getOpacity();
+	virtual CCAction* getAction(float fDuration);
+};
+
+class ActionTintFrame:public ActionFrame
+{
+//public:
+	ActionTintFrame();
+	virtual ~ActionTintFrame();
+	void setColor(ccColor3B ccolor);
+	ccColor3B getColor();
+	virtual CCAction* getAction(float fDuration);
+};

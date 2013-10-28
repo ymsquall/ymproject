@@ -1,0 +1,11 @@
+class CCSSceneReader
+{
+//public:
+	CCSSceneReader(void);
+	~CCSSceneReader(void);
+//public:
+	static CCSSceneReader* sharedSceneReader();
+	void purgeSceneReader();
+	static const char* sceneReaderVersion();
+	cocos2d::CCNode* createNodeWithSceneFile(const char *pszFileName);
+};

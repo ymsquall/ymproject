@@ -1,0 +1,12 @@
+class ActionManager:public CCObject
+{
+//public:
+    ActionManager();
+    virtual ~ActionManager();
+    static ActionManager* shareManager();
+	static void purgeActionManager();
+	ActionObject* getActionByName(const char* jsonName,const char* actionName);
+	void playActionByName(const char* jsonName,const char* actionName);
+    void initWithDictionary(const char* jsonName,cs::CCCSJsonDictionary* dic,CCObject* root);
+	void releaseActions();
+};

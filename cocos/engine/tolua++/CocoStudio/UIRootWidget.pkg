@@ -1,0 +1,7 @@
+class UIRootWidget : public Layout
+{
+    UIRootWidget();
+    virtual ~UIRootWidget();
+    static UIRootWidget* create();
+    virtual const char* getDescription() const;
+};

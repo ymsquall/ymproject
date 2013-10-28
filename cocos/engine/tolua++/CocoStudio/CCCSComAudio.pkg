@@ -1,0 +1,11 @@
+class CCCSComAudio : public CCComAudio
+{
+//public:
+   virtual bool init();
+   static CCCSComAudio* create(void);
+//public:
+   void setFile(const char* pszFilePath);
+   const char* getFile();
+   void setLoop(bool bLoop);
+   bool isLoop();
+};
