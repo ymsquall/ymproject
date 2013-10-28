@@ -8,6 +8,7 @@
 #include "helper.h"
 #include <QtDebug>
 #include <QScrollBar>
+#include "FileComparison.h"
 
 PatchMakerWindow::PatchMakerWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -16,10 +17,20 @@ PatchMakerWindow::PatchMakerWindow(QWidget *parent) :
     mAboutDlg = NULL;
     ui->setupUi(this);
 
-    QScrollBar* pScrollBar1 = ui->listView_1->verticalScrollBar();
-    QScrollBar* pScrollBar2 = ui->listView_2->verticalScrollBar();
-    QScrollBar* pScrollBar3 = ui->listView_3->verticalScrollBar();
-    QScrollBar* pScrollBar4 = ui->listView_4->verticalScrollBar();
+    QStringList headerText;
+    headerText << "文件名" << "文件MD5码" << "文件状态";
+    ui->tableWidget_1->setColumnCount(3);
+    ui->tableWidget_1->setHorizontalHeaderLabels(headerText);
+    ui->tableWidget_2->setColumnCount(3);
+    ui->tableWidget_2->setHorizontalHeaderLabels(headerText);
+    ui->tableWidget_3->setColumnCount(3);
+    ui->tableWidget_3->setHorizontalHeaderLabels(headerText);
+    ui->tableWidget_4->setColumnCount(3);
+    ui->tableWidget_4->setHorizontalHeaderLabels(headerText);
+    QScrollBar* pScrollBar1 = ui->tableWidget_1->verticalScrollBar();
+    QScrollBar* pScrollBar2 = ui->tableWidget_2->verticalScrollBar();
+    QScrollBar* pScrollBar3 = ui->tableWidget_3->verticalScrollBar();
+    QScrollBar* pScrollBar4 = ui->tableWidget_4->verticalScrollBar();
     QObject::connect(pScrollBar1, SIGNAL(valueChanged(int)), pScrollBar2, SLOT(setValue(int)));
     QObject::connect(pScrollBar2, SIGNAL(valueChanged(int)), pScrollBar1, SLOT(setValue(int)));
     QObject::connect(pScrollBar3, SIGNAL(valueChanged(int)), pScrollBar3, SLOT(setValue(int)));
@@ -70,8 +81,8 @@ void PatchMakerWindow::onBrowseBtn4Clicked()
 {
     mOldVersFileList.clear();
     mNewVersFileList.clear();
-    ui->listView_1->setModel(NULL);
-    ui->listView_2->setModel(NULL);
+    ui->tableWidget_1->clear();
+    ui->tableWidget_2->clear();
     ui->mOutputTabBox->setCurrentIndex(0);
     QDir dir1(mSelDirPath1);
     if(mSelDirPath1 == "" || !dir1.exists())
@@ -85,48 +96,88 @@ void PatchMakerWindow::onBrowseBtn4Clicked()
         qDebug() << "dir[" << mSelDirPath2 << "] dos not exist!";
         return;
     }
-    mOldVersFileList = Helper::getAllFilesInPath(mSelDirPath1);
-    mNewVersFileList = Helper::getAllFilesInPath(mSelDirPath2);
+    FileComparison fileCompObject;
+    const FileCompResultList& fileList = fileCompObject.scanAndComp(mSelDirPath1, mSelDirPath2);
+    ui->tableWidget_1->setRowCount(fileList.size());
+    ui->tableWidget_2->setRowCount(fileList.size());
+    QStringList headerText;
+    headerText << "文件名" << "MD5码" << "文件状态";
+    ui->tableWidget_1->setColumnCount(3);
+    ui->tableWidget_1->setHorizontalHeaderLabels(headerText);
+    ui->tableWidget_2->setColumnCount(3);
+    ui->tableWidget_2->setHorizontalHeaderLabels(headerText);
+    for(int i = 0; i < fileList.size(); ++ i)
     {
-        QStandardItemModel* pItemsModel = new QStandardItemModel(this);
-        for(int i = 0; i < mOldVersFileList.size(); ++ i)
+        QTableWidgetItem* pItem1 = NULL;
+        QTableWidgetItem* pItem2 = NULL;
+        QTableWidgetItem* pItem1Col1 = NULL;
+        QTableWidgetItem* pItem2Col1 = NULL;
+        QTableWidgetItem* pItem1Col2 = NULL;
+        QTableWidgetItem* pItem2Col2 = NULL;
+        if(fileList[i].resultType == FileCompResultType::Removed)
         {
-            QStandardItem* pItem = new QStandardItem(mOldVersFileList[i]);
-            if(i % 2 == 1)
+            pItem1 = new QTableWidgetItem(fileList[i].fileName);
+            pItem2 = new QTableWidgetItem("");
+            pItem1Col2 = new QTableWidgetItem("移除文件");
+            pItem2Col2 = new QTableWidgetItem("移除文件");
+            QLinearGradient linearGrad(QPointF(0, 0), QPointF(200, 200));
+            linearGrad.setColorAt(0, Qt::darkRed);
+            linearGrad.setColorAt(1, Qt::red);
+            QBrush brush(linearGrad);
+            pItem1->setBackground(brush);
+            pItem2->setBackground(brush);
+        }
+        else if(fileList[i].resultType == FileCompResultType::Added)
+        {
+            pItem1 = new QTableWidgetItem("");
+            pItem2 = new QTableWidgetItem(fileList[i].fileName);
+            pItem1Col2 = new QTableWidgetItem("新增文件");
+            pItem2Col2 = new QTableWidgetItem("新增文件");
+            QLinearGradient linearGrad(QPointF(0, 0), QPointF(200, 200));
+            linearGrad.setColorAt(0, Qt::darkGreen);
+            linearGrad.setColorAt(1, Qt::green);
+            QBrush brush(linearGrad);
+            pItem1->setBackground(brush);
+            pItem2->setBackground(brush);
+        }
+        else
+        {
+            pItem1 = new QTableWidgetItem(fileList[i].fileName);
+            pItem2 = new QTableWidgetItem(fileList[i].fileName);
+            pItem1Col1 = new QTableWidgetItem(fileList[i].file1MD5);
+            pItem2Col1 = new QTableWidgetItem(fileList[i].file2MD5);
+            pItem1Col2 = new QTableWidgetItem("文件改动");
+            pItem2Col2 = new QTableWidgetItem("文件改动");
+            if(fileList[i].resultType == FileCompResultType::Modify)
             {
                 QLinearGradient linearGrad(QPointF(0, 0), QPointF(200, 200));
-                linearGrad.setColorAt(0, Qt::darkGreen);
+                linearGrad.setColorAt(0, Qt::darkYellow);
                 linearGrad.setColorAt(1, Qt::yellow);
+                linearGrad.setColorAt(2, Qt::yellow);
                 QBrush brush(linearGrad);
-                pItem->setBackground(brush);
-            }
-            pItemsModel->appendRow(pItem);
-        }
-        ui->listView_1->setModel(pItemsModel);
-    }
-    {
-        QStandardItemModel* pItemsModel = new QStandardItemModel(this);
-        for(int i = 0; i < mNewVersFileList.size(); ++ i)
-        {
-            QStandardItem* pItem = new QStandardItem(mNewVersFileList[i]);
-            if(i % 2 == 1)
-            {
-                QLinearGradient linearGrad(QPointF(0, 0), QPointF(200, 200));
-                linearGrad.setColorAt(0, Qt::darkGreen);
+                pItem1->setBackground(brush);
+                pItem2->setBackground(brush);
+
+                linearGrad.setColorAt(0, Qt::yellow);
                 linearGrad.setColorAt(1, Qt::yellow);
-                QBrush brush(linearGrad);
-                pItem->setBackground(brush);
+                brush = QBrush(linearGrad);
+                pItem1Col1->setBackground(brush);
+                pItem2Col1->setBackground(brush);
             }
-            pItemsModel->appendRow(pItem);
+            ui->tableWidget_1->setItem(i, 1, pItem1Col1);
+            ui->tableWidget_2->setItem(i, 1, pItem2Col1);
         }
-        ui->listView_2->setModel(pItemsModel);
+        ui->tableWidget_1->setItem(i, 0, pItem1);
+        ui->tableWidget_2->setItem(i, 0, pItem2);
+        ui->tableWidget_1->setItem(i, 2, pItem1Col2);
+        ui->tableWidget_2->setItem(i, 2, pItem2Col2);
     }
 }
 
 void PatchMakerWindow::onBrowseBtn5Clicked()
 {
-    ui->listView_3->setModel(NULL);
-    ui->listView_4->setModel(NULL);
+    ui->tableWidget_3->clear();
+    ui->tableWidget_4->clear();
     ui->mOutputTabBox->setCurrentIndex(1);
 }
 

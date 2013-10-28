@@ -4,7 +4,7 @@
 #include <QDir>
 #include <QtDebug>
 
-static void enumFiles(QString path, QStringList& retList)
+static void enumFiles(QString rootPath, QString path, QStringList& retList)
 {
     QDir dir(path);
     dir.setFilter(QDir::Files|QDir::Dirs);
@@ -21,12 +21,13 @@ static void enumFiles(QString path, QStringList& retList)
         if(fileInfos[i].isDir())
         {
             qDebug() << "finded a dir[" << fileName << "], enums";
-            enumFiles(filePath, retList);
+            enumFiles(rootPath, filePath, retList);
         }
         else
         {
-            qDebug() << "finded a file[" << fileName << "], add to list";
+            filePath = filePath.mid(rootPath.size()+1);
             retList << filePath;
+            qDebug() << "finded a file[" << filePath << "], add to list";
         }
     }
 }
@@ -35,7 +36,7 @@ QStringList& Helper::getAllFilesInPath(QString rootPath)
 {
     static QStringList retList;
     retList.clear();
-    enumFiles(rootPath, retList);
+    enumFiles(rootPath, rootPath, retList);
     return retList;
 }
 
@@ -82,6 +83,6 @@ QByteArray Helper::getFileMd5(QString filePath)
      }
 
      localFile.close();
-     QByteArray md5 = ch.result();
+     QByteArray md5 = ch.result().toHex();
      return md5;
 }

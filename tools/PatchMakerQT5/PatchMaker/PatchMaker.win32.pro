@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+CONFIG   += c++11
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -15,11 +16,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         PatchMakerWindow.cpp \
     AboutDialog.cpp \
-    helper.cpp
+    helper.cpp \
+    FileComparison.cpp
 
 HEADERS  += PatchMakerWindow.h \
     AboutDialog.h \
-    helper.h
+    helper.h \
+    FileComparison.h
 
 FORMS    += PatchMakerWindow.ui \
     AboutDialog.ui
