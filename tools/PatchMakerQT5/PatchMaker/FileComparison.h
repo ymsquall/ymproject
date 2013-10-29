@@ -46,6 +46,9 @@ public:
     const FileCompResultList& scanAndComp(const QString& oldPath, const QString& newPath);
     void clear();
 
+    const QString& oldPathName();
+    const QString& newPathName();
+
 private:
     void scanFileWithPath(const QString& oldPath, const QString& newPath);
     const FileCompResultList& comparison();
@@ -57,6 +60,8 @@ public slots:
 private:
     QString mOldRootPath;
     QString mNewRootPath;
+    QString mOldRootFullPath;
+    QString mNewRootFullPath;
     QStringList mOldFileList;
     QStringList mNewFileList;
     FileCompResultList mCompResultList;

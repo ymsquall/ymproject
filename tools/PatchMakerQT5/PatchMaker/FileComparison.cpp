@@ -19,10 +19,24 @@ void FileComparison::clear()
     mCompResultList.clear();
 }
 
+const QString& FileComparison::oldPathName()
+{
+    return mOldRootPath;
+}
+
+const QString& FileComparison::newPathName()
+{
+    return mNewRootPath;
+}
+
 void FileComparison::scanFileWithPath(const QString& oldPath, const QString& newPath)
 {
-    mOldRootPath = oldPath + '/';
-    mNewRootPath = newPath + '/';
+    int pos1 = oldPath.lastIndexOf('/');
+    int pos2 = newPath.lastIndexOf('/');
+    mOldRootPath = oldPath.mid(pos1+1);
+    mNewRootPath = newPath.mid(pos2+1);
+    mOldRootFullPath = oldPath + '/';
+    mNewRootFullPath = newPath + '/';
     mOldFileList = Helper::getAllFilesInPath(oldPath);
     mNewFileList = Helper::getAllFilesInPath(newPath);
 }
@@ -33,12 +47,16 @@ const FileCompResultList& FileComparison::comparison()
     {
         bool finded = false;
         QStringList cloneOldList = mOldFileList;
-        for(int j = 0; j < mNewFileList.size(); ++ j)
+        for(int j = 0; j < mNewFileList.size();)
         {
+            if(mNewFileList[j] == "filelist")
+            {
+                int id = 0;
+            }
             if(mOldFileList[0] == mNewFileList[j])
             {
-                QString name1MD5 = Helper::getFileMd5(mOldRootPath + mOldFileList[0]);
-                QString name2MD5 = Helper::getFileMd5(mNewRootPath + mNewFileList[j]);
+                QString name1MD5 = Helper::getFileMd5(mOldRootFullPath + mOldFileList[0]);
+                QString name2MD5 = Helper::getFileMd5(mNewRootFullPath + mNewFileList[j]);
                 name1MD5 = name1MD5.toUpper();
                 name2MD5 = name2MD5.toUpper();
                 FileCompResultType sameType = FileCompResultType::None;
@@ -61,14 +79,20 @@ const FileCompResultList& FileComparison::comparison()
             }
             if(!addFinded)
             {
-                FileCompResult compResult = FileCompResult{ mNewFileList[j], "", "", FileCompResultType::Added };
+                QString name2MD5 = Helper::getFileMd5(mNewRootFullPath + mNewFileList[j]);
+                name2MD5 = name2MD5.toUpper();
+                FileCompResult compResult = FileCompResult{ mNewFileList[j], "", name2MD5, FileCompResultType::Added };
                 mCompResultList.append(compResult);
                 mNewFileList.removeAt(j);
             }
+            else
+                 ++ j;
         }
         if(!finded)
         {
-            FileCompResult compResult = FileCompResult{ mOldFileList[0], "", "", FileCompResultType::Removed };
+            QString name1MD5 = Helper::getFileMd5(mOldRootFullPath + mOldFileList[0]);
+            name1MD5 = name1MD5.toUpper();
+            FileCompResult compResult = FileCompResult{ mOldFileList[0], name1MD5, "", FileCompResultType::Removed };
             mCompResultList.append(compResult);
         }
         mOldFileList.removeAt(0);

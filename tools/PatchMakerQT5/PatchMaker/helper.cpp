@@ -15,7 +15,7 @@ static void enumFiles(QString rootPath, QString path, QStringList& retList)
         QString filePath = fileInfos[i].filePath();
         if(fileName == "." || fileName == "..")
         {
-            qDebug() << "is not file or dirs[" << fileName << "]!";
+            //qDebug() << "is not file or dirs[" << fileName << "]!";
             continue;
         }
         if(fileInfos[i].isDir())

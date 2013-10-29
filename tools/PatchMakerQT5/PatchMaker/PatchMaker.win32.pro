@@ -6,6 +6,7 @@
 
 QT       += core gui
 CONFIG   += c++11
+LIBS     += -lz
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,12 +18,22 @@ SOURCES += main.cpp\
         PatchMakerWindow.cpp \
     AboutDialog.cpp \
     helper.cpp \
-    FileComparison.cpp
+    FileComparison.cpp \
+    minizip/zip.c \
+    minizip/unzip.c \
+    minizip/ioapi.c \
+    ZipCompress.cpp
 
 HEADERS  += PatchMakerWindow.h \
     AboutDialog.h \
     helper.h \
-    FileComparison.h
+    FileComparison.h \
+    minizip/zip.h \
+    minizip/unzip.h \
+    minizip/ioapi.h \
+    ZipCompress.h
 
 FORMS    += PatchMakerWindow.ui \
     AboutDialog.ui
+
+OTHER_FILES +=

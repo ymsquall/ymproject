@@ -2,6 +2,8 @@
 #define PATCHMAKERWINDOW_H
 
 #include <QMainWindow>
+#include <QTableWidget>
+#include "FileComparison.h"
 
 namespace Ui {
 class PatchMakerWindow;
@@ -33,6 +35,12 @@ public slots:
     void onLineEdit3TextChangen(QString text);
 
 private:
+    void resetTabPage(int tab);
+    void createScanAndMD5TableView(const FileCompResultList& fileList);
+    void createMD5ListFile(const FileCompResultList& fileList, const QString& oldVerStr,
+                           const QString& newVerStr, const char* path="MD5List");
+    void createPatch(const FileCompResultList& fileList, const QString& oldVerStr,
+                     const QString& newVerStr, const char* path="Patch");
     void onSelectDirectory(int btnNum);
     
 private:
@@ -41,8 +49,9 @@ private:
     QString mSelDirPath1;
     QString mSelDirPath2;
     QString mSelDirPath3;
-    QStringList mOldVersFileList;
-    QStringList mNewVersFileList;
+    QString mOldVersionsStr;
+    QString mNewVersionsStr;
+    FileCompResultList mPatchListFile;
 };
 
 #endif // PATCHMAKERWINDOW_H
