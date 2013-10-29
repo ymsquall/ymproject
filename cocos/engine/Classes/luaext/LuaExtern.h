@@ -9,6 +9,7 @@ extern "C" {
 #endif
 
 #include "CocoStudio/CocoStudio.h"
+#include "LuaCocoStudioConversion.h"
 
 TOLUA_API int tolua_LuaExtern_open(lua_State* tolua_S);
 

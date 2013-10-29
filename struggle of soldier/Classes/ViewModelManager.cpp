@@ -169,3 +169,14 @@ void ViewModelManager::onAppInitOveredShowingAfter(engine::AppDelegate* pApp, un
 {
 
 }
+
+void ViewModelManager::reloadLuaScript(const char* luaFile)
+{
+	std::string path;
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+	path = FileUtils::getInstance()->fullPathForFilename(luaFile);
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+	path = FileUtils::getInstance()->fullPathForFilename(luaFile);
+#endif
+	LuaEngine::getInstance()->executeScriptFile(path.c_str());
+}

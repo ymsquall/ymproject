@@ -1,0 +1,5 @@
+class LuaCocoStudioConversion
+{
+	static UIScrollView* getUIScrollViewByName(const char* name, UIWidget* pParent);
+};
+

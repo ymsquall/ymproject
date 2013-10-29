@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaExtern
-** Generated automatically by tolua++-1.0.92 on 10/28/13 23:52:43.
+** Generated automatically by tolua++-1.0.92 on 10/29/13 23:17:35.
 */
 
 /****************************************************************************
@@ -308,6 +308,7 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"SEL_DragPanelBerthToLeftBottomEvent");
  tolua_usertype(tolua_S,"CCClippingNode");
  tolua_usertype(tolua_S,"cs::CCCSJsonDictionary");
+ tolua_usertype(tolua_S,"SEL_SelectEvent");
  tolua_usertype(tolua_S,"UICheckBox");
  tolua_usertype(tolua_S,"cocos2d::CCObject");
  tolua_usertype(tolua_S,"LinearLayoutParameter");
@@ -388,7 +389,7 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"SEL_DragPanelBounceToRightEvent");
  tolua_usertype(tolua_S,"CCObject");
  tolua_usertype(tolua_S,"SEL_DragPanelBounceToLeftEvent");
- tolua_usertype(tolua_S,"SEL_SelectEvent");
+ tolua_usertype(tolua_S,"LuaCocoStudioConversion");
  tolua_usertype(tolua_S,"CCSSceneReader");
 }
 
@@ -25327,6 +25328,40 @@ static int tolua_LuaExtern_GUIRenderer_isEnabled00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: getUIScrollViewByName of class  LuaCocoStudioConversion */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_LuaCocoStudioConversion_getUIScrollViewByName00
+static int tolua_LuaExtern_LuaCocoStudioConversion_getUIScrollViewByName00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"LuaCocoStudioConversion",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,3,"UIWidget",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const char* name = ((const char*)  tolua_tostring(tolua_S,2,0));
+  UIWidget* pParent = ((UIWidget*)  tolua_tousertype(tolua_S,3,0));
+  {
+   UIScrollView* tolua_ret = (UIScrollView*)  LuaCocoStudioConversion::getUIScrollViewByName(name,pParent);
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"UIScrollView");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getUIScrollViewByName'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* Open function */
 TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
 {
@@ -26491,6 +26526,10 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"create",tolua_LuaExtern_GUIRenderer_create00);
    tolua_function(tolua_S,"setEnabled",tolua_LuaExtern_GUIRenderer_setEnabled00);
    tolua_function(tolua_S,"isEnabled",tolua_LuaExtern_GUIRenderer_isEnabled00);
+  tolua_endmodule(tolua_S);
+  tolua_cclass(tolua_S,"LuaCocoStudioConversion","LuaCocoStudioConversion","",NULL);
+  tolua_beginmodule(tolua_S,"LuaCocoStudioConversion");
+   tolua_function(tolua_S,"getUIScrollViewByName",tolua_LuaExtern_LuaCocoStudioConversion_getUIScrollViewByName00);
   tolua_endmodule(tolua_S);
  tolua_endmodule(tolua_S);
  return 1;

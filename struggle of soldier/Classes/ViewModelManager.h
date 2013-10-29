@@ -20,6 +20,7 @@ class ViewModelManager : public unity::object
 					, public unity::SingletonAutoT<ViewModelManager>
 {
 public:
+	static void reloadLuaScript(const char* luaFile);
 	ViewModelManager(void);
 	~ViewModelManager(void);
 

@@ -40,6 +40,7 @@ local CCObjectTypes = {
     "UISlider",
     "UITextField",
     "UIWidget",
+    "LuaCocoStudioConversion",
 }
 
 -- register CCObject types
