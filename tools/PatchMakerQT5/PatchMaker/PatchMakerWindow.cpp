@@ -18,8 +18,8 @@ PatchMakerWindow::PatchMakerWindow(QWidget *parent) :
     ui->setupUi(this);
 
 
-    mSelDirPath1 = "D:/football_manager/ios/PatchMaker/Versions/000001";
-    mSelDirPath2 = "D:/football_manager/ios/PatchMaker/Versions/000002";
+    mSelDirPath1 = "D:/football_manager/ios/PatchMaker/Versions/000002";
+    mSelDirPath2 = "D:/football_manager/ios/PatchMaker/Versions/000003";
     mSelDirPath3 = "D:/football_manager/ios/PatchMaker";
     ui->lineEdit_1->setText(mSelDirPath1);
     ui->lineEdit_2->setText(mSelDirPath2);
@@ -118,6 +118,8 @@ void PatchMakerWindow::onBrowseBtn5Clicked()
 
 void PatchMakerWindow::onBrowseBtn6Clicked()
 {
+    ZipCompress::uncompress("D:/football_manager/ios/PatchMaker/Patch/000002-000003.pak", "D:/football_manager/ios/PatchMaker/Patch/2-3");
+
     this->resetTabPage(3);
     ui->mOutputTabBox->setCurrentIndex(2);
 }
@@ -189,7 +191,7 @@ void PatchMakerWindow::createPatch(const FileCompResultList& fileList, const QSt
     }
     fileListFile.close();
 
-    PackageCompress::compress(tempRootPath.toStdString().c_str(), patchFileName.toStdString().c_str());
+    ZipCompress::compress(tempRootPath.toStdString().c_str(), patchFileName.toStdString().c_str());
 }
 
 void PatchMakerWindow::createMD5ListFile(const FileCompResultList& fileList, const QString& oldVerStr,

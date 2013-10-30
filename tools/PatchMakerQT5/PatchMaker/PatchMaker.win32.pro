@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     minizip/zip.c \
     minizip/unzip.c \
     minizip/ioapi.c \
-    ZipCompress.cpp
+    ZipCompress.cpp \
+    unZip64.cpp
 
 HEADERS  += PatchMakerWindow.h \
     AboutDialog.h \
@@ -31,7 +32,8 @@ HEADERS  += PatchMakerWindow.h \
     minizip/zip.h \
     minizip/unzip.h \
     minizip/ioapi.h \
-    ZipCompress.h
+    ZipCompress.h \
+    unZip64.h
 
 FORMS    += PatchMakerWindow.ui \
     AboutDialog.ui
