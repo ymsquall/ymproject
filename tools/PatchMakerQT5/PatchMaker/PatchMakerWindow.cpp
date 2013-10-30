@@ -161,6 +161,17 @@ void PatchMakerWindow::createPatch(const FileCompResultList& fileList, const QSt
 
     QFile fileListFile(patchFileListFN);
     fileListFile.open(QIODevice::WriteOnly);
+    int newVersNum = newVerStr.toInt();
+    int canPatch = 1;
+    QString canUpdateFileName = newVerRootDir + "/update.full";
+    QFile canUpdateFlag(canUpdateFileName);
+    if(canUpdateFlag.exists())
+    {
+        canPatch = 0;
+    }
+    QString versStatus;
+    versStatus.sprintf("%d\t%d\r\n", newVersNum, canPatch);
+    fileListFile.write(versStatus.toStdString().c_str(), versStatus.size());
     for(int i = 0; i < fileList.size(); ++ i)
     {
         QStringList tmpFileName = fileList[i].fileName.split('/');
@@ -174,6 +185,8 @@ void PatchMakerWindow::createPatch(const FileCompResultList& fileList, const QSt
         QString line = fileList[i].fileName + '\t';
         QString fileSrcName = newVerRootDir + '/' + fileList[i].fileName;
         QString fileDstName = tempRootPath + '/' + fileList[i].fileName;
+        if(canUpdateFileName == fileSrcName)
+            continue;
         if(fileList[i].resultType == FileCompResultType::Modify)
         {
             line.append("m\r\n");
