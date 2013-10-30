@@ -34,6 +34,7 @@ void ViewModelManager::initWithAppStart(engine::AppDelegate* pApp)
     std::vector<std::string> searchPaths;
 	searchPaths.push_back("studioui/LoginView");
 	searchPaths.push_back("studioui/SelectHeroView");
+	searchPaths.push_back("studioui/GameLand");
 	pFileUtils->setSearchPaths(searchPaths);
 
 	Director* pDirector = Director::getInstance();

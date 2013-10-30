@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<UIProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>1.0.2.0</Version>
+  <Name>SOSGameLand</Name>
+  <ProjectDir>Y:\Work\ym.cocos.project\CocoStudioWorkspace\UI\SOSGameLand</ProjectDir>
+  <JsonFileName>SOSGameLand.json</JsonFileName>
+  <Resources>Y:\Work\ym.cocos.project\CocoStudioWorkspace\UI\SOSGameLand\Resources</Resources>
+  <JsonFolder>Y:\Work\ym.cocos.project\CocoStudioWorkspace\UI\SOSGameLand\Json</JsonFolder>
+  <JsonList>
+    <string>SOSGameLand_BG.json</string>
+  </JsonList>
+  <imageFileList />
+  <JsonSuffix>.json</JsonSuffix>
+  <CurrentUIJson>SOSGameLand_BG.json</CurrentUIJson>
+  <CanvasSize>
+    <Width>960</Width>
+    <Height>640</Height>
+  </CanvasSize>
+</UIProject>

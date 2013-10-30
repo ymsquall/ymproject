@@ -8,6 +8,8 @@ using namespace cocos2d::extension;
 GameLandView::GameLandView()
 {
 	mLayout = NULL;
+	mDebugText = NULL;
+	mMapDragPanel = NULL;
 	mBackButton = NULL;
 	mOkButton = NULL;
 	mSelectButton = NULL;
@@ -34,14 +36,17 @@ bool GameLandView::init()
 	mLayout = (cocos2d::extension::Layout*)userdata.value.pointer;
 	this->addWidget(mLayout);
 
-	mBackButton = dynamic_cast<UIButton*>(mLayout->getChildByName("mBackButton"));
-	mOkButton = dynamic_cast<UIButton*>(mLayout->getChildByName("mOkButton"));
-	mSelectButton = dynamic_cast<UIButton*>(mLayout->getChildByName("mSelectButton"));
-	mHeroHeadScrollView = dynamic_cast<UIScrollView*>(mLayout->getChildByName("mHeroHeadScrollView"));
-	mHeroHeadScrollView->setInnerContainerSize(CCSize(1600, 240));
-	mBackButton->addReleaseEvent(this, coco_releaseselector(GameLandView::onBackBtnTouch));
-	mOkButton->addReleaseEvent(this, coco_releaseselector(GameLandView::onOkBtnTouch));
-	mSelectButton->addReleaseEvent(this, coco_releaseselector(GameLandView::onSelectBtnTouch));
+	mDebugText = dynamic_cast<UITextArea*>(mLayout->getChildByName("mDebugText"));
+	mMapDragPanel = dynamic_cast<UIDragPanel*>(mLayout->getChildByName("mMapDragPanel"));
+	mMapDragPanel->addEventListener(this, dragpaneleventselector(GameLandView::onMapPanelDragEvent));
+	//mBackButton = dynamic_cast<UIButton*>(mLayout->getChildByName("mBackButton"));
+	//mOkButton = dynamic_cast<UIButton*>(mLayout->getChildByName("mOkButton"));
+	//mSelectButton = dynamic_cast<UIButton*>(mLayout->getChildByName("mSelectButton"));
+	//mHeroHeadScrollView = dynamic_cast<UIScrollView*>(mLayout->getChildByName("mHeroHeadScrollView"));
+	//mHeroHeadScrollView->setInnerContainerSize(CCSize(1600, 240));
+	//mBackButton->addReleaseEvent(this, coco_releaseselector(GameLandView::onBackBtnTouch));
+	//mOkButton->addReleaseEvent(this, coco_releaseselector(GameLandView::onOkBtnTouch));
+	//mSelectButton->addReleaseEvent(this, coco_releaseselector(GameLandView::onSelectBtnTouch));
 
 	//mHeroHeadScrollView->addChild(pHeadView);
 
@@ -55,12 +60,41 @@ bool GameLandView::initForMvvm()
 
 void GameLandView::update(float dt)
 {
+	CCPoint pos = mMapDragPanel->getInnerContainerPosition();
+	CCString* posText = CCString::createWithFormat("%.02f, %.02f", pos.x, pos.y);
+	mDebugText->setText(posText->getCString());
+
 	ViewSuperT::update(dt);
 }
 
 void GameLandView::onEnterTransitionDidFinish()
 {
 	ViewSuperT::onEnterTransitionDidFinish();
+}
+
+void GameLandView::onMapPanelDragEvent(CCObject* pSender, DragPanelEventType type)
+{
+	switch (type)
+	{
+	case DRAGPANEL_EVENT_BERTH_LEFTBOTTOM:
+		break;
+	case DRAGPANEL_EVENT_BERTH_LFETTOP:
+		break;
+	case DRAGPANEL_EVENT_BERTH_RIGHTBOTTOM:
+		break;
+	case DRAGPANEL_EVENT_BERTH_RIGHTTOP:
+		break;
+	case DRAGPANEL_EVENT_BERTH_LEFT:
+		break;
+	case DRAGPANEL_EVENT_BERTH_TOP:
+		break;
+	case DRAGPANEL_EVENT_BERTH_RIGHT:
+		break;
+	case DRAGPANEL_EVENT_BERTH_BOTTOM:
+		break;
+	default:
+		break;
+	}
 }
 
 void GameLandView::onBackBtnTouch(cocos2d::CCObject* pSender)
