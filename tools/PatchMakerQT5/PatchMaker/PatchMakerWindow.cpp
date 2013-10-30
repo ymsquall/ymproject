@@ -8,6 +8,7 @@
 #include "helper.h"
 #include <QtDebug>
 #include <QScrollBar>
+#include <QGlobal.h>
 #include "ZipCompress.h"
 
 PatchMakerWindow::PatchMakerWindow(QWidget *parent) :
@@ -18,8 +19,8 @@ PatchMakerWindow::PatchMakerWindow(QWidget *parent) :
     ui->setupUi(this);
 
 
-    mSelDirPath1 = "D:/football_manager/ios/PatchMaker/Versions/000002";
-    mSelDirPath2 = "D:/football_manager/ios/PatchMaker/Versions/000003";
+    mSelDirPath1 = "D:/football_manager/ios/PatchMaker/Versions/000004";
+    mSelDirPath2 = "D:/football_manager/ios/PatchMaker/Versions/000005";
     mSelDirPath3 = "D:/football_manager/ios/PatchMaker";
     ui->lineEdit_1->setText(mSelDirPath1);
     ui->lineEdit_2->setText(mSelDirPath2);
@@ -176,6 +177,12 @@ void PatchMakerWindow::createPatch(const FileCompResultList& fileList, const QSt
         if(fileList[i].resultType == FileCompResultType::Modify)
         {
             line.append("m\r\n");
+            QFile dstFileExist(fileDstName);
+            while(dstFileExist.exists())
+            {
+                dstFileExist.remove(fileDstName);
+                dstFileExist.setFileName(fileDstName);
+            }
             QFile::copy(fileSrcName, fileDstName);
         }
         else if(fileList[i].resultType == FileCompResultType::Removed)
@@ -185,6 +192,12 @@ void PatchMakerWindow::createPatch(const FileCompResultList& fileList, const QSt
         else if(fileList[i].resultType == FileCompResultType::Added)
         {
             line.append("a\r\n");
+            QFile dstFileExist(fileDstName);
+            while(dstFileExist.exists())
+            {
+                dstFileExist.remove(fileDstName);
+                dstFileExist.setFileName(fileDstName);
+            }
             QFile::copy(fileSrcName, fileDstName);
         }
         fileListFile.write(line.toStdString().c_str(), line.size());
