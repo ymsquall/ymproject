@@ -19,8 +19,8 @@ PatchMakerWindow::PatchMakerWindow(QWidget *parent) :
     ui->setupUi(this);
 
 
-    mSelDirPath1 = "D:/football_manager/ios/PatchMaker/Versions/000004";
-    mSelDirPath2 = "D:/football_manager/ios/PatchMaker/Versions/000005";
+    mSelDirPath1 = "D:/football_manager/ios/PatchMaker/Versions/000005";
+    mSelDirPath2 = "D:/football_manager/ios/PatchMaker/Versions/000006";
     mSelDirPath3 = "D:/football_manager/ios/PatchMaker";
     ui->lineEdit_1->setText(mSelDirPath1);
     ui->lineEdit_2->setText(mSelDirPath2);
@@ -174,6 +174,8 @@ void PatchMakerWindow::createPatch(const FileCompResultList& fileList, const QSt
     fileListFile.write(versStatus.toStdString().c_str(), versStatus.size());
     for(int i = 0; i < fileList.size(); ++ i)
     {
+        if("filelist" == fileList[i].fileName)
+            continue;
         QStringList tmpFileName = fileList[i].fileName.split('/');
         QString tmpDirName = tempRootPath;
         for(int i = 0; i < tmpFileName.size()-1; ++ i)

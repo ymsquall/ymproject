@@ -1,0 +1,10 @@
+a卡:
+  gpu perf studio
+n卡:
+  nsight
+
+graphics performance analyzer
+PIX
+gdebugger
+
+我是N卡，之前在家下的nsight，但是要装几个环境， 我没搞定，你试试

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<AnimationProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>running</Name>
+  <ProjectDir>Y:\Work\ym.cocos.project\CocoStudioWorkspace\Animation\jibing\running</ProjectDir>
+  <JsonFileName>running.json</JsonFileName>
+  <Resources>Y:\Work\ym.cocos.project\CocoStudioWorkspace\Animation\jibing\running\Resources</Resources>
+  <JsonFolder>Y:\Work\ym.cocos.project\CocoStudioWorkspace\Animation\jibing\running\Json</JsonFolder>
+  <JsonList />
+  <CanvasSize>
+    <Width>0</Width>
+    <Height>0</Height>
+  </CanvasSize>
+  <bBatchImage>false</bBatchImage>
+</AnimationProject>
