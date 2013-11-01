@@ -100,6 +100,7 @@ void PatchMakerWindow::onBrowseBtn4Clicked()
         qDebug() << "dir[" << mSelDirPath3 << "] dos not exist!";
         return;
     }
+    this->setEnabled(false);
     ui->mOutputTabBox->setCurrentIndex(0);
     this->resetTabPage(1);
     FileComparison fileCompObject;
@@ -108,13 +109,16 @@ void PatchMakerWindow::onBrowseBtn4Clicked()
     mOldVersionsStr = fileCompObject.oldPathName();
     mNewVersionsStr = fileCompObject.newPathName();
     this->createMD5ListFile(fileList, mOldVersionsStr, mNewVersionsStr);
+    this->setEnabled(true);
 }
 
 void PatchMakerWindow::onBrowseBtn5Clicked()
 {
+    this->setEnabled(false);
     this->resetTabPage(2);
     ui->mOutputTabBox->setCurrentIndex(1);
     this->createPatch(mPatchListFile, mOldVersionsStr, mNewVersionsStr);
+    this->setEnabled(true);
 }
 
 void PatchMakerWindow::onBrowseBtn6Clicked()
