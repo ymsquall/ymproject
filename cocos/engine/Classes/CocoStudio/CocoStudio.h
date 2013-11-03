@@ -28,6 +28,7 @@
 #include "CocoStudio/GUI/UIWidgets/UITextField.h"
 #include "CocoStudio/GUI/UIWidgets/UISwitch.h"
 #include "CocoStudio/GUI/UIWidgets/ScrollWidget/UIDragPanel.h"
+#include "CCArmature/CCArmature.h"
 
 //typedef CCCSComAttribute CSComAttribute;
 //typedef CCSGUIReader SGUIReader;

@@ -26,10 +26,10 @@
 #include "cocos2d.h"
 #include "cocoa/CCArray.h"
 #include "CCScheduler.h"
-#include "LuaScriptHandlerMgr.h"
+#include "cocos2dx_support/LuaScriptHandlerMgr.h"
 #include "GUI/CCControlExtension/CCControl.h"
-#include "LuaOpengl.h"
-#include "LuaCocos2d.h"
+#include "cocos2dx_support/LuaOpengl.h"
+#include "cocos2dx_support/LuaCocos2d.h"
 #include "luaext/LuaExtern.h"
 
 NS_CC_BEGIN

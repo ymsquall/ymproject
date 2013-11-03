@@ -1,7 +1,37 @@
 #include "Win32MsgProc.h"
+#include "View_GameLand.h"
+
+
+GameLandView* gGameLandView = NULL;
 
 void Win32MsgProc::OnKeyDownMsgProc(WPARAM wParam, LPARAM lParam)
 {
+	if(NULL == gGameLandView)
+		return;
+	static float roat = 0;
+	static float roatX = 0;
+	static float roatY = 0;
+	int roatID = 0;
+	switch(wParam)
+	{
+	case VK_UP: roatX ++; roatID = 1; break;
+	case VK_DOWN: roatX --; roatID = 1; break;
+	case VK_LEFT: roatY --; roatID = 2; break;
+	case VK_RIGHT: roatY ++; roatID = 2; break;
+	case VK_NUMPAD4: roat --; roatID = 3; break;
+	case VK_NUMPAD6: roat ++;  roatID = 3; break;
+	case VK_HOME: roatX = 0.0f; roatY = 0.0f; break;
+	}
+	//for(size_t i = 0; i < gGameLandView->mGridRenderList.size(); ++ i)
+	//{
+	//	//if(roatID == 3)
+	//	//	gGameLandView->mGridRenderList[i]->setRotation(roat);
+	//	gGameLandView->mGridRenderList[i]->setRotationX(roatX);
+	//	gGameLandView->mGridRenderList[i]->setRotationY(roatY);
+	//}
+	//gGameLandView->mGridsParent->setRotation(roat);
+	//gGameLandView->setRotationX(roatX);
+	//gGameLandView->setRotationY(roatY);
 }
 void Win32MsgProc::OnKeyUpMsgProc(WPARAM wParam, LPARAM lParam)
 {
@@ -70,6 +100,15 @@ LRESULT Win32MsgProc::OnMouseMoveWheelMsgProc(UINT message, WPARAM wParam, LPARA
 	case WM_MOUSEMOVE:
 		break;
 	case WM_MOUSEWHEEL:
+		{
+			if(NULL != gGameLandView)
+			{
+				static float scale = 1.0f;
+				short zValue = HIWORD(wParam);
+				float dScale = float(zValue / 120) * 0.01f;
+				gGameLandView->mMapBGImageView->setScale(gGameLandView->mMapBGImageView->getScale() + dScale);
+			}
+		}
 		break;
 	}
 	return 0;

@@ -9,6 +9,7 @@ namespace framework
 {
 	namespace mvvm
 	{
+		class IView;
 		class IModel : public INotifyPropertyChanged,
 					   public unity::object
 		{
@@ -16,6 +17,7 @@ namespace framework
 			IModel() : Enabled(this)
 			{
 				Enabled = false;
+				mBindingTarget = NULL;
 			}
 			// ModelÏú»ÙÊÂ¼þ
 			framework::unity::RoutedEvent<IModel*> Event_ModelDestory;
@@ -38,8 +40,15 @@ namespace framework
 			virtual bool init() = 0;
 			virtual void finalize() = 0;
 			virtual void update(float dt) = 0;
+			virtual void setBindingTarget(IView* view)
+			{
+				mBindingTarget = view;
+			}
 			// property
 			PROPERTY_DEFINED_SETTER(Enabled, bool, IModel, setEnabled);
+
+		protected:
+			IView* mBindingTarget;
 		};
 		
 		template<typename uint16 typeValue, typename size_t rttiLength>

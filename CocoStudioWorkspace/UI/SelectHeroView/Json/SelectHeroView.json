@@ -187,6 +187,54 @@
                   "scale9Height": 34,
                   "scale9Width": 205
                 }
+              },
+              {
+                "classname": "ImageView",
+                "name": null,
+                "children": [],
+                "options": {
+                  "__type": "ComGUIImageViewSurrogate:#EditorCommon.JsonModel.Component.GUI",
+                  "classname": "ImageView",
+                  "name": "ImageView",
+                  "ZOrder": 0,
+                  "actiontag": 35,
+                  "anchorPointX": 0.5,
+                  "anchorPointY": 0.5,
+                  "classType": null,
+                  "colorB": 255,
+                  "colorG": 255,
+                  "colorR": 255,
+                  "flipX": false,
+                  "flipY": false,
+                  "height": 70,
+                  "ignoreSize": true,
+                  "opacity": 255,
+                  "rotation": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "tag": 15,
+                  "touchAble": false,
+                  "useMergedTexture": false,
+                  "visible": false,
+                  "width": 52,
+                  "x": 644,
+                  "xProportion": 0.92,
+                  "y": 73,
+                  "yProportion": 0.1825,
+                  "capInsetsHeight": 0,
+                  "capInsetsWidth": 0,
+                  "capInsetsX": 0,
+                  "capInsetsY": 0,
+                  "fileName": null,
+                  "fileNameData": {
+                    "path": "panel55.png",
+                    "plistFile": null,
+                    "resourceType": 0
+                  },
+                  "scale9Enable": false,
+                  "scale9Height": 70,
+                  "scale9Width": 52
+                }
               }
             ],
             "options": {

@@ -24,6 +24,7 @@ void LoginViewModel::onLoginModelPropertyChanged(mvvm::INotifyPropertyChanged* s
 			if(NULL == mLoginView)
 			{
 				mLoginView = LoginView::createView();
+				mLoginView->setBindingSource(pModel);
 				pRootView->addChild(mLoginView);
 			}
 		}

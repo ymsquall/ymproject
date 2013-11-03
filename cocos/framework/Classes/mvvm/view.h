@@ -3,6 +3,7 @@
 #include "unity/platform.h"
 #include "unity/reflection.h"
 #include "unity/rtti.h"
+#include "model.h"
 
 namespace framework
 {
@@ -18,6 +19,10 @@ namespace framework
 		class ViewBase : public SuperT, public IView
 		{
 		public:
+			ViewBase()
+			{
+				mBindingSource = NULL;
+			}
 			typedef ViewBase<T, SuperT> ViewSuperT;
 			static T* createView(bool autoRelease = true)
 			{
@@ -32,8 +37,17 @@ namespace framework
 				return NULL;
 			}
 
+			virtual void setBindingSource(IModel* binding)
+			{
+				mBindingSource = binding;
+				mBindingSource->setBindingTarget(this);
+			}
+
 		private:
 			static void create(){}	// 防止外部使用SuperT::create;
+
+		protected:
+			IModel* mBindingSource;
 		};
 
 		

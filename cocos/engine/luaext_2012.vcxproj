@@ -1,8 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DebugMT|Win32">
+      <Configuration>DebugMT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseMT|Win32">
+      <Configuration>ReleaseMT</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
@@ -32,12 +40,25 @@
     <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -45,7 +66,13 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
@@ -53,6 +80,22 @@
     <OutDir>..\..\$(Configuration).win32\</OutDir>
     <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <TargetName>ymlibLuaExtern</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">
+    <OutDir>..\..\$(Configuration).win32\</OutDir>
+    <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <TargetName>ymlibLuaExtern</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\$(Configuration).win32\</OutDir>
+    <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
+    <TargetName>ymlibLuaExtern</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">
+    <OutDir>..\..\$(Configuration).win32\</OutDir>
+    <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
     <TargetName>ymlibLuaExtern</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -65,6 +108,24 @@
       <AdditionalIncludeDirectories>$(ProjectDir).\Classes\;$(ProjectDir)..\framework\Classes;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\cocos2dx_support;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\tolua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\src;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\CocosDenshion\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\extensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <DisableSpecificWarnings>4996;4800</DisableSpecificWarnings>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_DEBUG;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir).\Classes\;$(ProjectDir)..\framework\Classes;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\tolua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\src;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\CocosDenshion\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\extensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>4996;4800</DisableSpecificWarnings>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -79,7 +140,28 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;COCOS2D_DEBUG=0;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(ProjectDir).\Classes\;$(ProjectDir)..\framework\Classes;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\cocos2dx_support;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\tolua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\src;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\CocosDenshion\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\extensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;COCOS2D_DEBUG=0;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(ProjectDir).\Classes\;$(ProjectDir)..\framework\Classes;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\tolua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\src;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\CocosDenshion\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\extensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

@@ -21,9 +21,11 @@ void GameLandViewModel::onGameLandModelPropertyChanged(mvvm::INotifyPropertyChan
 		GameLandModel* pModel = dynamic_cast<GameLandModel*>(sender);
 		if(pModel->Enabled)
 		{
+			pModel->loadLandData("hlg");
 			if(NULL == mLandView)
 			{
 				mLandView = GameLandView::createView();
+				mLandView->setBindingSource(pModel);
 				pRootView->addChild(mLandView);
 			}
 		}

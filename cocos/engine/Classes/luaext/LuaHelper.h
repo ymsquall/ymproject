@@ -2,16 +2,16 @@
 
 extern "C" {
 #include "tolua++.h"
-#include "tolua_fix.h"
+#include "cocos2dx_support/tolua_fix.h"
 }
 
 #include <map>
 #include <string>
 #include "lua.h"
 #include "tolua++.h"
-#include "tolua_fix.h"
+#include "cocos2dx_support/tolua_fix.h"
 #include "cocos2d.h"
-#include "CCLuaEngine.h"
+#include "application/CCLuaEngine.h"
 
 using namespace cocos2d;
 
@@ -22,7 +22,7 @@ using namespace cocos2d;
 // lua函数的参数类型
 struct ScriptParamObject
 {
-	enum{ SegmentName_Max_Length = 16, Table_Max_Count = 1024, String_Max_Length = 256 };
+	enum{ SegmentName_Max_Length = 16, Table_Max_Count = 2048, String_Max_Length = 256 };
 	ScriptParamObject();
 	ScriptParamObject(const ScriptParamObject& oth);
 	ScriptParamObject(double v);
@@ -58,7 +58,33 @@ struct ScriptParamObject
 	}value;
 	ScriptTableData tables;	// 表		LUA_TTABLE
 };
-extern const ScriptParamObject* findNodeBySegmentName(const ScriptParamObject* node, const char* name);
+extern const ScriptParamObject* tolua_findNodeBySegmentName(const ScriptParamObject* node, const char* name);
+template<typename T> bool tolua_findNumberValueBySegmentName(const ScriptParamObject* node, const char* name, T& retValue)
+{
+	const ScriptParamObject* pRet = tolua_findNodeBySegmentName(node, name);
+	if((NULL == pRet) || (LUA_TNUMBER != pRet->type))
+		return false;
+	retValue = (T)pRet->value.number;
+	return true;
+}
+template<typename T> bool tolua_findIntegerValueBySegmentName(const ScriptParamObject* node, const char* name, T& retValue)
+{
+	const ScriptParamObject* pRet = tolua_findNodeBySegmentName(node, name);
+	if((NULL == pRet) || (LUA_TINTEGER != pRet->type))
+		return false;
+	retValue = (T)pRet->value.integer
+	return true;
+}
+extern bool tolua_findBooleanValueBySegmentName(const ScriptParamObject* node, const char* name, bool& retValue);
+extern bool tolua_findStringValueBySegmentName(const ScriptParamObject* node, const char* name, std::string& retValue);
+template<typename T> T* tolua_findUserDataBySegmentName(const ScriptParamObject* node, const char* name)
+{
+	const ScriptParamObject* pRet = findNodeBySegmentName(node, name);
+	if((NULL == pRet) || (LUA_TUSERDATA != pRet->type))
+		return NULL;
+	return (T*)pRet->value.pointer;
+}
+extern void* tolua_toUserObject(lua_State *L, int index);
 //////////////////////////////////////////////////////////////////////////
 void tolua_callLuaFunctionWithParam0NoResult(const char* funcName);
 void tolua_callLuaFunctionWithParam1NoResult(const char* funcName, const ScriptParamObject& p1);
@@ -199,6 +225,22 @@ void* callLuaFuncWithUserdataResult(const char* funcName, P1 p1, P2 p2, P3 p3, P
 	return NULL;
 }
 //////////////////////////////////////////////////////////////////////////
+template<class T>
+bool tolua_getGlobalUserData_ByFieldName(lua_State* L, const char* fieldName, T& retValue)
+{
+	lua_getglobal(L, fieldName);
+	if(!lua_isuserdata(L, -1))
+	{
+		return false;
+	}
+	void* pRetValue = tolua_toUserObject(L, -1);
+	if(NULL != pRetValue)
+	{
+		retValue = *((T*)pRetValue);
+		return true;
+	}
+	return false;
+}
 template<class T>
 bool tolua_getLuaNumberValue_ByTable(lua_State* L, const char* fieldName, const char* tableName, T& retValue)
 {

@@ -40,6 +40,8 @@ local CCObjectTypes = {
     "UISlider",
     "UITextField",
     "UIWidget",
+    "Armature",
+    "ArmatureAnimation",
     "LuaCocoStudioConversion",
 }
 
@@ -130,13 +132,14 @@ extern "C" {
 
 #include <map>
 #include <string>
-#include "cocos2d.h"
+#include "LuaExtern.h"
 #include "CCLuaEngine.h"
 #include "SimpleAudioEngine.h"
 #include "cocos-ext.h"
 
 using namespace cocos2d;
 using namespace cocos2d::extension;
+using namespace cocos2d::extension::armature;
 using namespace CocosDenshion;]])
 
       replace([[/* Exported function */

@@ -21,10 +21,15 @@ public:
 
 private:
 	virtual void onEnterTransitionDidFinish();
+	virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+	virtual void ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+	virtual void ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+	virtual void ccTouchCancelled(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
 
 	void onBackBtnTouch(cocos2d::CCObject* pSender);
 	void onOkBtnTouch(cocos2d::CCObject* pSender);
 	void onSelectBtnTouch(cocos2d::CCObject* pSender);
+	void onHeadImageTouch(cocos2d::CCObject* pSender);
 
 private:
 	cocos2d::extension::Layout* mLayout;
@@ -32,5 +37,6 @@ private:
 	cocos2d::extension::UIButton* mOkButton;
 	cocos2d::extension::UIButton* mSelectButton;
 	cocos2d::extension::UIScrollView* mHeroHeadScrollView;
-	HeroHeadList mHeroHeadList;	
+	HeroHeadList mHeroHeadList;
+	int mSelectHeroCount;
 };

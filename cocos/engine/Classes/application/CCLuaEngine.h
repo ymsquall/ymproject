@@ -35,8 +35,8 @@ extern "C" {
 #include "cocoa/CCSet.h"
 #include "base_nodes/CCNode.h"
 #include "script_support/CCScriptSupport.h"
-#include "CCLuaStack.h"
-#include "CCLuaValue.h"
+#include "cocos2dx_support/CCLuaStack.h"
+#include "cocos2dx_support/CCLuaValue.h"
 
 NS_CC_BEGIN
 

@@ -1,0 +1,26 @@
+enum MovementEventType
+{
+	START,
+	COMPLETE,
+	LOOP_COMPLETE
+};
+
+class ArmatureAnimation : public ProcessBase
+{
+//public:
+    static ArmatureAnimation *create(Armature *armature);
+//public:
+    ArmatureAnimation();
+    virtual ~ArmatureAnimation(void);
+    virtual bool init(Armature *armature);
+    virtual void setAnimationScale(float animationScale);
+    void play(const char *animationName, int durationTo = -1, int durationTween = -1,  int loop = -1, int tweenEasing = TWEEN_EASING_MAX);
+    void playByIndex(int animationIndex,  int durationTo = -1, int durationTween = -1,  int loop = -1, int tweenEasing = TWEEN_EASING_MAX);
+    virtual void resume();
+    virtual void stop();
+    int getMovementCount();
+    void update(float dt);
+
+	virtual AnimationData* getAnimationData() const;
+	virtual void setAnimationData(AnimationData* ad);
+};

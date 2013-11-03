@@ -7,6 +7,7 @@
 
 using namespace framework;
 
+typedef struct LandTreeGrid *LandTreeGridPTR;
 class GameLandView : public mvvm::ViewBase<GameLandView, cocos2d::extension::UILayer>
 {
 public:
@@ -21,19 +22,25 @@ public:
 
 private:
 	virtual void onEnterTransitionDidFinish();
+	virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+	virtual void ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+	virtual void ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+	virtual void ccTouchCancelled(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
 
-	void onMapPanelDragEvent(cocos2d::CCObject* pSender, cocos2d::extension::DragPanelEventType type);  
 	void onBackBtnTouch(cocos2d::CCObject* pSender);
-	void onOkBtnTouch(cocos2d::CCObject* pSender);
-	void onSelectBtnTouch(cocos2d::CCObject* pSender);
+	void onMapTouched(cocos2d::CCObject* pSender);
+	void onMapGridTouched(cocos2d::CCObject* pSender);
+	void onMapPanelDragEvent(cocos2d::CCObject* pSender, cocos2d::extension::DragPanelEventType type);
 
-private:
+	void initLandGrid();
+
+public:
 	cocos2d::extension::Layout* mLayout;
+	cocos2d::extension::UIButton* mBackButton;
 	cocos2d::extension::UITextArea* mDebugText;
 	cocos2d::extension::UIDragPanel* mMapDragPanel;
-	cocos2d::extension::UIButton* mBackButton;
-	cocos2d::extension::UIButton* mOkButton;
-	cocos2d::extension::UIButton* mSelectButton;
-	cocos2d::extension::UIScrollView* mHeroHeadScrollView;
-	HeroHeadList mHeroHeadList;	
+	cocos2d::extension::UIImageView* mMapBGImageView;
+	cocos2d::extension::UIWidget* mGridsParent;
+	std::map<cocos2d::extension::UIWidget*, LandTreeGridPTR> mGridRenderList;
+	std::vector<cocos2d::extension::armature::Armature*> mXiaobingAnimList;
 };

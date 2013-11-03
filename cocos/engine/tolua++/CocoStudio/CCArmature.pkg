@@ -1,0 +1,40 @@
+class  Armature : public CCNodeRGBA, public CCBlendProtocol
+{
+//public:
+	static Armature *create();
+	static Armature *create(const char *name);
+	static Armature *create(const char *name, armature::Bone *parentBone);
+//public:
+    Armature();
+    virtual ~Armature(void);
+    virtual bool init();
+    virtual bool init(const char *name);
+	virtual bool init(const char *name, armature::Bone *parentBone);
+    virtual void addBone(armature::Bone *bone, const char* parentName);
+    virtual armature::Bone *getBone(const char *name) const;
+    virtual void changeBoneParent(armature::Bone *bone, const char *parentName);
+    virtual void removeBone(armature::Bone *bone, bool recursion);
+	Dictionary *getBoneDic();
+    armature::Bone *getBoneAtPoint(float x, float y);
+	virtual void updateOffsetPoint();
+	virtual void visit();
+    virtual void update(float dt);
+	virtual void draw();
+	virtual AffineTransform getNodeToParentTransform() const;
+	virtual Rect getBoundingBox() const;
+	inline void setBlendFunc(const BlendFunc& blendFunc);
+	inline const BlendFunc& getBlendFunc(void) const;
+
+	virtual ArmatureAnimation *getAnimation() const;
+	virtual void setAnimation(ArmatureAnimation * arm);
+	virtual ArmatureData *getArmatureData() const;
+	virtual void setArmatureData(ArmatureData * ad);
+	virtual BatchNode *getBatchNode() const;
+	virtual void setBatchNode(BatchNode * bn);
+	virtual const std::string& getName() const;
+	virtual void setName(const std::string& name);
+	virtual TextureAtlas* getTextureAtlas() const;
+	virtual void setTextureAtlas(TextureAtlas* tex);
+	virtual armature::Bone* getParentBone() const;
+	virtual void setParentBone(armature::Bone* tex);
+};

@@ -35,6 +35,8 @@ void ViewModelManager::initWithAppStart(engine::AppDelegate* pApp)
 	searchPaths.push_back("studioui/LoginView");
 	searchPaths.push_back("studioui/SelectHeroView");
 	searchPaths.push_back("studioui/GameLand");
+	searchPaths.push_back("studioui/animation");
+	searchPaths.push_back("studioui/animation/LandGrid");
 	pFileUtils->setSearchPaths(searchPaths);
 
 	Director* pDirector = Director::getInstance();
@@ -44,8 +46,6 @@ void ViewModelManager::initWithAppStart(engine::AppDelegate* pApp)
 	pApp->Event_AppInitOveredShowingAfter += ROUTEDEVENT_MAKER(engine::AppDelegate*, this, ViewModelManager::onAppInitOveredShowingAfter);
 
 	mLastUpdate = new struct timeval;
-
-	this->initModels();
 }
 
 void ViewModelManager::initModels()
@@ -164,7 +164,7 @@ bool ViewModelManager::modelLoop()
 
 void ViewModelManager::onAppInitOveredShowingBefore(engine::AppDelegate* pApp, unity::RoutedEventArgs* args)
 {
-
+	this->initModels();
 }
 void ViewModelManager::onAppInitOveredShowingAfter(engine::AppDelegate* pApp, unity::RoutedEventArgs* args)
 {

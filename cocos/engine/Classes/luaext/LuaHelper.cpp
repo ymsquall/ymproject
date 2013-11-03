@@ -6,7 +6,7 @@ ScriptParamObject::ScriptParamObject()
 	type = LUA_TTABLE;
 	g_ScriptParamObjCount ++;
 }
-ScriptParamObject enumScriptTableParam(const ScriptParamObject& oth)
+static ScriptParamObject enumScriptTableParam(const ScriptParamObject& oth)
 {
 	ScriptParamObject object;
 	object.type = oth.type;
@@ -151,7 +151,7 @@ void ScriptParamObject::operator = (char* v)
 	strcpy(value.string, v);
 	value.string[String_Max_Length] = STRING_END_CHAR;
 }
-const ScriptParamObject* findNodeBySegmentName(const ScriptParamObject* node, const char* name)
+const ScriptParamObject* tolua_findNodeBySegmentName(const ScriptParamObject* node, const char* name)
 {
 	if(!node) return NULL;
 	for(std::map<std::string, ScriptParamObject>::const_iterator it = node->tables.begin();
@@ -162,7 +162,7 @@ const ScriptParamObject* findNodeBySegmentName(const ScriptParamObject* node, co
 		{
 			return &(it->second);
 		}
-		const ScriptParamObject* pRet = findNodeBySegmentName(&(it->second), name);
+		const ScriptParamObject* pRet = tolua_findNodeBySegmentName(&(it->second), name);
 		if(pRet)
 		{
 			return pRet;
@@ -170,7 +170,22 @@ const ScriptParamObject* findNodeBySegmentName(const ScriptParamObject* node, co
 	}
 	return NULL;
 }
-
+bool tolua_findBooleanValueBySegmentName(const ScriptParamObject* node, const char* name, bool& retValue)
+{
+	const ScriptParamObject* pRet = tolua_findNodeBySegmentName(node, name);
+	if((NULL == pRet) || (LUA_TBOOLEAN != pRet->type))
+		return false;
+	retValue = pRet->value.boolean;
+	return true;
+}
+bool tolua_findStringValueBySegmentName(const ScriptParamObject* node, const char* name, std::string& retValue)
+{
+	const ScriptParamObject* pRet = tolua_findNodeBySegmentName(node, name);
+	if((NULL == pRet) || (LUA_TSTRING != pRet->type))
+		return false;
+	retValue = pRet->value.string;
+	return true;
+}
 //这个函数把一个 C 对象指针置入对应的 userdata ，如果是第一次 push 则创建出新的 userdata ，否则复用曾经创建过的。
 //int tolua_pushUserObject(lua_State *L, void* object)
 //{

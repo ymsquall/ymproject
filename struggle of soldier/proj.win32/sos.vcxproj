@@ -25,17 +25,17 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '10.0'">v100</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '11.0'">v110</PlatformToolset>
-    <PlatformToolset Condition="'$(VisualStudioVersion)' == '11.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v110_xp</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '11.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v110</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '10.0'">v100</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '11.0'">v110</PlatformToolset>
-    <PlatformToolset Condition="'$(VisualStudioVersion)' == '11.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v110_xp</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '11.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v110</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -46,10 +46,10 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '10.0'">v100</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '11.0'">v110</PlatformToolset>
-    <PlatformToolset Condition="'$(VisualStudioVersion)' == '11.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v110_xp</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '11.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v110</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -74,15 +74,15 @@
   <PropertyGroup>
     <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\$(Configuration).win32\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">$(SolutionDir)$(Configuration).win32\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">..\..\$(Configuration).win32\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">$(Configuration).win32\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">true</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration).win32\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">$(SolutionDir)$(Configuration).win32\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration).win32\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">$(Configuration).win32\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\$(Configuration).win32\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">..\..\$(Configuration).win32\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">false</LinkIncremental>
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
@@ -100,6 +100,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LibraryPath>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
+    <EmbedManifest>false</EmbedManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">
     <LibraryPath>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
@@ -153,6 +154,7 @@
       <GenerateMapFile>true</GenerateMapFile>
       <MapFileName>$(OutDir)$(TargetName)D.map</MapFileName>
       <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+      <ManifestFile>$(OutDir)$(TargetName).manifest</ManifestFile>
     </Link>
     <PreBuildEvent>
       <Command>
@@ -173,6 +175,9 @@ echo f | xcopy "$(OutDir)$(TargetName).exe" "$(ProjectDir)..\Resources\$(TargetN
 
 </Command>
     </PostBuildEvent>
+    <Manifest>
+      <OutputManifestFile>$(OutDir)$(TargetName).exe.manifest</OutputManifestFile>
+    </Manifest>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">
     <Midl>
@@ -189,7 +194,7 @@ echo f | xcopy "$(OutDir)$(TargetName).exe" "$(ProjectDir)..\Resources\$(TargetN
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\Classes;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\cocos2dx_support;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\lua;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\tolua;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\src;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\include;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\win32;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\CocosDenshion\include;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\extensions;$(ProjectDir)..\..\..\engine\Classes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Classes;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\tolua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\src;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\CocosDenshion\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\extensions;$(ProjectDir)..\..\cocos\engine\Classes;$(ProjectDir)..\..\cocos\framework\Classes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_DEBUG;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -198,7 +203,7 @@ echo f | xcopy "$(OutDir)$(TargetName).exe" "$(ProjectDir)..\Resources\$(TargetN
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
-      <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4996;4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <ResourceCompile>
@@ -207,38 +212,35 @@ echo f | xcopy "$(OutDir)$(TargetName).exe" "$(ProjectDir)..\Resources\$(TargetN
       <AdditionalIncludeDirectories>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\include;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>libcocos2d.lib;libCocosDenshion.lib;liblua.lib;lua51.lib;libExtensions.lib;websockets.lib;cocosapp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ymlibApplication.lib;ymlibMvvm.lib;ymlibUnity.lib;ymlibUIView.lib;ymlibLuaExtern.lib;libcocos2d.lib;libCocosDenshion.lib;libExtensions.lib;libCocoStudio.lib;libBox2D.lib;liblua.lib;lua51.lib;websockets.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
-      <OutputFile>$(OutDir)$(TargetName)MTD$(TargetExt)</OutputFile>
-      <ProgramDatabaseFile>$(OutDir)$(TargetName)MTD.pdb</ProgramDatabaseFile>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
       <GenerateMapFile>true</GenerateMapFile>
-      <MapFileName>$(OutDir)$(TargetName)MTD.map</MapFileName>
+      <MapFileName>$(OutDir)$(TargetName).map</MapFileName>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
     </Link>
     <PreBuildEvent>
-      <Command>xcopy "$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\script" "$(ProjectDir)..\..\testeditor\Resources" /e /Y
-xcopy "$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\external\libwebsockets\win32\lib\*.*" "$(OutDir)" /e /Y
+      <Command>
+if not exist "$(OutDir)..\" mkdir "$(OutDir)"
+
+
+xcopy /Y /D /V "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\external\libwebsockets\win32\lib\*.*" "$(OutDir)"
 </Command>
     </PreBuildEvent>
     <PostBuildEvent>
       <Command>if not exist "$(OutDir)..\" mkdir "$(OutDir)"
-
 if not exist "$(ProjectDir)..\Resources" mkdir "$(ProjectDir)..\Resources"
 
-xcopy /Y /Q "$(OutDir)*.dll" "$(ProjectDir)..\Resources"
+xcopy /Y /D /V "$(OutDir)*.dll" "$(ProjectDir)..\Resources"
+xcopy "$(OutDir)$(TargetName).pdb" "$(ProjectDir)..\Resources"  /Y /D /S /I
+xcopy "$(OutDir)$(TargetName).map" "$(ProjectDir)..\Resources"  /Y /D /S /I
+echo f | xcopy "$(OutDir)$(TargetName).exe" "$(ProjectDir)..\Resources\$(TargetName).exe"  /Y /D /S /I
 
-xcopy /Y /Q "$(OutDir)*.pdb" "$(ProjectDir)..\Resources"
-
-xcopy /Y /Q "$(OutDir)*.map" "$(ProjectDir)..\Resources"
-
-xcopy /Y /Q "$(OutDir)*.exe" "$(ProjectDir)..\Resources"
-
-
-del "$(OutDir)$(TargetName)MTD$(TargetExt)"
-del "$(OutDir)$(TargetName)MTD.pdb"
-del "$(OutDir)$(TargetName)MTD.map"
 </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -256,17 +258,16 @@ del "$(OutDir)$(TargetName)MTD.map"
       <ProxyFileName>testeditor_p.c</ProxyFileName>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\Classes;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\cocos2dx_support;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\lua;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\tolua;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\src;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\include;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\win32;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\CocosDenshion\include;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\extensions;$(ProjectDir)..\..\..\engine\Classes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Classes;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\cocos2dx_support;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\tolua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\src;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\CocosDenshion\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\extensions;$(ProjectDir)..\..\cocos\engine\Classes;$(ProjectDir)..\..\cocos\framework\Classes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ExceptionHandling>
-      </ExceptionHandling>
+      <ExceptionHandling>false</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>
       </DebugInformationFormat>
-      <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4996;4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <ResourceCompile>
@@ -275,38 +276,33 @@ del "$(OutDir)$(TargetName)MTD.map"
       <AdditionalIncludeDirectories>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\include;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>libcocos2d.lib;libCocosDenshion.lib;liblua.lib;lua51.lib;libExtensions.lib;websockets.lib;cocosapp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ymlibApplication.lib;ymlibMvvm.lib;ymlibUnity.lib;ymlibUIView.lib;ymlibLuaExtern.lib;libcocos2d.lib;libCocosDenshion.lib;libExtensions.lib;libCocoStudio.lib;libBox2D.lib;liblua.lib;lua51.lib;websockets.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
-      <OutputFile>$(OutDir)$(TargetName)R$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <ProgramDatabaseFile>$(OutDir)$(TargetName)R.pdb</ProgramDatabaseFile>
       <GenerateMapFile>true</GenerateMapFile>
       <MapFileName>$(OutDir)$(TargetName)R.map</MapFileName>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PreBuildEvent>
-      <Command>xcopy "$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\script" "$(ProjectDir)..\..\testeditor\Resources" /e /Y
-xcopy "$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\external\libwebsockets\win32\lib\*.*" "$(OutDir)" /e /Y
+      <Command>
+if not exist "$(OutDir)..\" mkdir "$(OutDir)"
+
+
+xcopy /Y /D /V "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\external\libwebsockets\win32\lib\*.*" "$(OutDir)"
 </Command>
     </PreBuildEvent>
     <PostBuildEvent>
       <Command>if not exist "$(OutDir)..\" mkdir "$(OutDir)"
-
 if not exist "$(ProjectDir)..\Resources" mkdir "$(ProjectDir)..\Resources"
 
-xcopy /Y /Q "$(OutDir)*.dll" "$(ProjectDir)..\Resources"
-
-xcopy /Y /Q "$(OutDir)*.pdb" "$(ProjectDir)..\Resources"
-
-xcopy /Y /Q "$(OutDir)*.map" "$(ProjectDir)..\Resources"
-
-xcopy /Y /Q "$(OutDir)*.exe" "$(ProjectDir)..\Resources"
-
-
-del "$(OutDir)$(TargetName)R$(TargetExt)"
-del "$(OutDir)$(TargetName)R.pdb"
-del "$(OutDir)$(TargetName)R.map"
-</Command>
+xcopy /Y /D /V "$(OutDir)*.dll" "$(ProjectDir)..\Resources"
+xcopy "$(OutDir)$(TargetName)R.pdb" "$(ProjectDir)..\Resources"  /Y /D /S /I
+xcopy "$(OutDir)$(TargetName)R.map" "$(ProjectDir)..\Resources"  /Y /D /S /I
+echo f | xcopy "$(OutDir)$(TargetName).exe" "$(ProjectDir)..\Resources\$(TargetName)R.exe"  /Y /D /S /I</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">
@@ -323,7 +319,7 @@ del "$(OutDir)$(TargetName)R.map"
       <ProxyFileName>testeditor_p.c</ProxyFileName>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\Classes;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\cocos2dx_support;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\lua;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\tolua;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\src;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\include;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\win32;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\CocosDenshion\include;$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\extensions;$(ProjectDir)..\..\..\engine\Classes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Classes;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\tolua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\src;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\CocosDenshion\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\extensions;$(ProjectDir)..\..\cocos\engine\Classes;$(ProjectDir)..\..\cocos\framework\Classes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>
       </ExceptionHandling>
@@ -333,8 +329,9 @@ del "$(OutDir)$(TargetName)R.map"
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>
       </DebugInformationFormat>
-      <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4996;4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -342,37 +339,35 @@ del "$(OutDir)$(TargetName)R.map"
       <AdditionalIncludeDirectories>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\include;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>libcocos2d.lib;libCocosDenshion.lib;liblua.lib;lua51.lib;libExtensions.lib;websockets.lib;cocosapp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ymlibApplication.lib;ymlibMvvm.lib;ymlibUnity.lib;ymlibUIView.lib;ymlibLuaExtern.lib;libcocos2d.lib;libCocosDenshion.lib;libExtensions.lib;libCocoStudio.lib;libBox2D.lib;liblua.lib;lua51.lib;websockets.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
-      <OutputFile>$(OutDir)$(TargetName)MTR$(TargetExt)</OutputFile>
-      <ProgramDatabaseFile>$(OutDir)$(TargetName)MTR.pdb</ProgramDatabaseFile>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
       <GenerateMapFile>true</GenerateMapFile>
-      <MapFileName>$(OutDir)$(TargetName)MTR.map</MapFileName>
+      <MapFileName>$(OutDir)$(TargetName).map</MapFileName>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
       <Command>if not exist "$(OutDir)..\" mkdir "$(OutDir)"
-
 if not exist "$(ProjectDir)..\Resources" mkdir "$(ProjectDir)..\Resources"
 
-xcopy /Y /Q "$(OutDir)*.dll" "$(ProjectDir)..\Resources"
+xcopy /Y /D /V "$(OutDir)*.dll" "$(ProjectDir)..\Resources"
+xcopy "$(OutDir)$(TargetName).pdb" "$(ProjectDir)..\Resources"  /Y /D /S /I
+xcopy "$(OutDir)$(TargetName).map" "$(ProjectDir)..\Resources"  /Y /D /S /I
+echo f | xcopy "$(OutDir)$(TargetName).exe" "$(ProjectDir)..\Resources\$(TargetName).exe"  /Y /D /S /I
 
-xcopy /Y /Q "$(OutDir)*.pdb" "$(ProjectDir)..\Resources"
-
-xcopy /Y /Q "$(OutDir)*.map" "$(ProjectDir)..\Resources"
-
-xcopy /Y /Q "$(OutDir)*.exe" "$(ProjectDir)..\Resources"
-
-
-del "$(OutDir)$(TargetName)MTR$(TargetExt)"
-del "$(OutDir)$(TargetName)MTR.pdb"
-del "$(OutDir)$(TargetName)MTR.map"
 </Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>xcopy "$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\script" "$(ProjectDir)..\..\testeditor\Resources" /e /Y
-xcopy "$(ProjectDir)..\..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\external\libwebsockets\win32\lib\*.*" "$(OutDir)" /e /Y
+      <Command>
+if not exist "$(OutDir)..\" mkdir "$(OutDir)"
+
+
+xcopy /Y /D /V "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\external\libwebsockets\win32\lib\*.*" "$(OutDir)"
 </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>

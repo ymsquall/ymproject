@@ -24,6 +24,7 @@ void SelectHeroViewModel::onSelectHeroModelPropertyChanged(mvvm::INotifyProperty
 			if(NULL == mHeroView)
 			{
 				mHeroView = SelectHeroView::createView();
+				mHeroView->setBindingSource(pModel);
 				pRootView->addChild(mHeroView);
 			}
 		}

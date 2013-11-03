@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaExtern
-** Generated automatically by tolua++-1.0.92 on 10/29/13 23:17:35.
+** Generated automatically by tolua++-1.0.92 on 11/02/13 16:49:50.
 */
 
 /****************************************************************************
@@ -28,18 +28,19 @@
  ****************************************************************************/
 
 extern "C" {
-#include "tolua_fix.h"
+#include "cocos2dx_support/tolua_fix.h"
 }
 
 #include <map>
 #include <string>
-#include "cocos2d.h"
-#include "CCLuaEngine.h"
+#include "LuaExtern.h"
+#include "application/CCLuaEngine.h"
 #include "SimpleAudioEngine.h"
 #include "cocos-ext.h"
 
 using namespace cocos2d;
 using namespace cocos2d::extension;
+using namespace cocos2d::extension::armature;
 using namespace CocosDenshion;
 
 /* Exported function */
@@ -162,9 +163,23 @@ static int tolua_collect_LayoutParameter (lua_State* tolua_S)
     return 0;
 }
 
+static int tolua_collect_ArmatureAnimation (lua_State* tolua_S)
+{
+ ArmatureAnimation* self = (ArmatureAnimation*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
+
 static int tolua_collect_UISlider (lua_State* tolua_S)
 {
  UISlider* self = (UISlider*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
+
+static int tolua_collect_AffineTransform (lua_State* tolua_S)
+{
+ AffineTransform* self = (AffineTransform*) tolua_tousertype(tolua_S,1,0);
     Mtolua_delete(self);
     return 0;
 }
@@ -225,9 +240,23 @@ static int tolua_collect_Layout (lua_State* tolua_S)
     return 0;
 }
 
+static int tolua_collect_Armature (lua_State* tolua_S)
+{
+ Armature* self = (Armature*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
+
 static int tolua_collect_UIHelper (lua_State* tolua_S)
 {
  UIHelper* self = (UIHelper*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
+
+static int tolua_collect_Rect (lua_State* tolua_S)
+{
+ Rect* self = (Rect*) tolua_tousertype(tolua_S,1,0);
     Mtolua_delete(self);
     return 0;
 }
@@ -296,19 +325,32 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"SEL_DragPanelBerthToRightTopEvent");
  tolua_usertype(tolua_S,"RelativeLayoutParameter");
  tolua_usertype(tolua_S,"SEL_DragPanelBounceToRightBottomEvent");
+ tolua_usertype(tolua_S,"SEL_SelectEvent");
+ tolua_usertype(tolua_S,"AnimationData");
  tolua_usertype(tolua_S,"std::vector<std::string>");
+ tolua_usertype(tolua_S,"ProcessBase");
  tolua_usertype(tolua_S,"UILayer");
  tolua_usertype(tolua_S,"SEL_TextFieldEvent");
+ tolua_usertype(tolua_S,"ArmatureAnimation");
  tolua_usertype(tolua_S,"ccColor3B");
  tolua_usertype(tolua_S,"UIMargin");
  tolua_usertype(tolua_S,"cocos2d::CCComponent");
  tolua_usertype(tolua_S,"SEL_UnSelectEvent");
+ tolua_usertype(tolua_S,"UILabelAtlas");
+ tolua_usertype(tolua_S,"BatchNode");
  tolua_usertype(tolua_S,"SEL_ScrollToBottomEvent");
  tolua_usertype(tolua_S,"CCComAudio");
+ tolua_usertype(tolua_S,"CCVerticalTextAlignment");
  tolua_usertype(tolua_S,"SEL_DragPanelBerthToLeftBottomEvent");
  tolua_usertype(tolua_S,"CCClippingNode");
+ tolua_usertype(tolua_S,"BlendFunc");
+ tolua_usertype(tolua_S,"AffineTransform");
+ tolua_usertype(tolua_S,"Rect");
  tolua_usertype(tolua_S,"cs::CCCSJsonDictionary");
- tolua_usertype(tolua_S,"SEL_SelectEvent");
+ tolua_usertype(tolua_S,"Dictionary");
+ tolua_usertype(tolua_S,"SEL_TextFieldDetachWithIMEEvent");
+ tolua_usertype(tolua_S,"CCBlendProtocol");
+ tolua_usertype(tolua_S,"Armature");
  tolua_usertype(tolua_S,"UICheckBox");
  tolua_usertype(tolua_S,"cocos2d::CCObject");
  tolua_usertype(tolua_S,"LinearLayoutParameter");
@@ -320,7 +362,7 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"GUIRenderer");
  tolua_usertype(tolua_S,"SEL_ScrollToRightEvent");
  tolua_usertype(tolua_S,"CCComRender");
- tolua_usertype(tolua_S,"UILabelAtlas");
+ tolua_usertype(tolua_S,"TextureAtlas");
  tolua_usertype(tolua_S,"SEL_ReleaseEvent");
  tolua_usertype(tolua_S,"UILabelBMFont");
  tolua_usertype(tolua_S,"CCAction");
@@ -341,7 +383,7 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"SEL_TextFieldInsertTextEvent");
  tolua_usertype(tolua_S,"SEL_DragPanelBounceToLeftBottomEvent");
  tolua_usertype(tolua_S,"UILoadingBar");
- tolua_usertype(tolua_S,"SEL_TextFieldDetachWithIMEEvent");
+ tolua_usertype(tolua_S,"armature::Bone");
  tolua_usertype(tolua_S,"SEL_TextFieldAttachWithIMEEvent");
  tolua_usertype(tolua_S,"SEL_PushEvent");
  tolua_usertype(tolua_S,"CCNodeRGBA");
@@ -376,7 +418,7 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"GLubyte");
  tolua_usertype(tolua_S,"CCArray");
  tolua_usertype(tolua_S,"UIImageView");
- tolua_usertype(tolua_S,"CCVerticalTextAlignment");
+ tolua_usertype(tolua_S,"ArmatureData");
  tolua_usertype(tolua_S,"SEL_DragPanelBounceToRightTopEvent");
  tolua_usertype(tolua_S,"UIZoomButton");
  tolua_usertype(tolua_S,"UIInputManager");
@@ -25328,6 +25370,1629 @@ static int tolua_LuaExtern_GUIRenderer_isEnabled00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: create of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_create00
+static int tolua_LuaExtern_Armature_create00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   Armature* tolua_ret = (Armature*)  Armature::create();
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"Armature");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'create'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: create of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_create01
+static int tolua_LuaExtern_Armature_create01(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  const char* name = ((const char*)  tolua_tostring(tolua_S,2,0));
+  {
+   Armature* tolua_ret = (Armature*)  Armature::create(name);
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"Armature");
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_Armature_create00(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: create of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_create02
+static int tolua_LuaExtern_Armature_create02(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,3,"armature::Bone",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  const char* name = ((const char*)  tolua_tostring(tolua_S,2,0));
+  armature::Bone* parentBone = ((armature::Bone*)  tolua_tousertype(tolua_S,3,0));
+  {
+   Armature* tolua_ret = (Armature*)  Armature::create(name,parentBone);
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"Armature");
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_Armature_create01(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_new00
+static int tolua_LuaExtern_Armature_new00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   Armature* tolua_ret = (Armature*)  Mtolua_new((Armature)());
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"Armature");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new_local of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_new00_local
+static int tolua_LuaExtern_Armature_new00_local(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   Armature* tolua_ret = (Armature*)  Mtolua_new((Armature)());
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"Armature");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: delete of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_delete00
+static int tolua_LuaExtern_Armature_delete00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Armature* self = (Armature*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'delete'", NULL);
+#endif
+  Mtolua_delete(self);
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'delete'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: init of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_init00
+static int tolua_LuaExtern_Armature_init00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Armature* self = (Armature*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'init'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->init();
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'init'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: init of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_init01
+static int tolua_LuaExtern_Armature_init01(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  Armature* self = (Armature*)  tolua_tousertype(tolua_S,1,0);
+  const char* name = ((const char*)  tolua_tostring(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'init'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->init(name);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_Armature_init00(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: init of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_init02
+static int tolua_LuaExtern_Armature_init02(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,3,"armature::Bone",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  Armature* self = (Armature*)  tolua_tousertype(tolua_S,1,0);
+  const char* name = ((const char*)  tolua_tostring(tolua_S,2,0));
+  armature::Bone* parentBone = ((armature::Bone*)  tolua_tousertype(tolua_S,3,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'init'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->init(name,parentBone);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_Armature_init01(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: addBone of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_addBone00
+static int tolua_LuaExtern_Armature_addBone00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"armature::Bone",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Armature* self = (Armature*)  tolua_tousertype(tolua_S,1,0);
+  armature::Bone* bone = ((armature::Bone*)  tolua_tousertype(tolua_S,2,0));
+  const char* parentName = ((const char*)  tolua_tostring(tolua_S,3,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'addBone'", NULL);
+#endif
+  {
+   self->addBone(bone,parentName);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'addBone'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getBone of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_getBone00
+static int tolua_LuaExtern_Armature_getBone00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const Armature",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const Armature* self = (const Armature*)  tolua_tousertype(tolua_S,1,0);
+  const char* name = ((const char*)  tolua_tostring(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getBone'", NULL);
+#endif
+  {
+   armature::Bone* tolua_ret = (armature::Bone*)  self->getBone(name);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"armature::Bone");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getBone'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: changeBoneParent of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_changeBoneParent00
+static int tolua_LuaExtern_Armature_changeBoneParent00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"armature::Bone",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Armature* self = (Armature*)  tolua_tousertype(tolua_S,1,0);
+  armature::Bone* bone = ((armature::Bone*)  tolua_tousertype(tolua_S,2,0));
+  const char* parentName = ((const char*)  tolua_tostring(tolua_S,3,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'changeBoneParent'", NULL);
+#endif
+  {
+   self->changeBoneParent(bone,parentName);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'changeBoneParent'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: removeBone of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_removeBone00
+static int tolua_LuaExtern_Armature_removeBone00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"armature::Bone",0,&tolua_err) ||
+     !tolua_isboolean(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Armature* self = (Armature*)  tolua_tousertype(tolua_S,1,0);
+  armature::Bone* bone = ((armature::Bone*)  tolua_tousertype(tolua_S,2,0));
+  bool recursion = ((bool)  tolua_toboolean(tolua_S,3,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'removeBone'", NULL);
+#endif
+  {
+   self->removeBone(bone,recursion);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'removeBone'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getBoneDic of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_getBoneDic00
+static int tolua_LuaExtern_Armature_getBoneDic00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Armature* self = (Armature*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getBoneDic'", NULL);
+#endif
+  {
+   Dictionary* tolua_ret = (Dictionary*)  self->getBoneDic();
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"Dictionary");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getBoneDic'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getBoneAtPoint of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_getBoneAtPoint00
+static int tolua_LuaExtern_Armature_getBoneAtPoint00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Armature* self = (Armature*)  tolua_tousertype(tolua_S,1,0);
+  float x = ((float)  tolua_tonumber(tolua_S,2,0));
+  float y = ((float)  tolua_tonumber(tolua_S,3,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getBoneAtPoint'", NULL);
+#endif
+  {
+   armature::Bone* tolua_ret = (armature::Bone*)  self->getBoneAtPoint(x,y);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"armature::Bone");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getBoneAtPoint'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: updateOffsetPoint of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_updateOffsetPoint00
+static int tolua_LuaExtern_Armature_updateOffsetPoint00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Armature* self = (Armature*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'updateOffsetPoint'", NULL);
+#endif
+  {
+   self->updateOffsetPoint();
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'updateOffsetPoint'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: visit of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_visit00
+static int tolua_LuaExtern_Armature_visit00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Armature* self = (Armature*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'visit'", NULL);
+#endif
+  {
+   self->visit();
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'visit'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: update of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_update00
+static int tolua_LuaExtern_Armature_update00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Armature* self = (Armature*)  tolua_tousertype(tolua_S,1,0);
+  float dt = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'update'", NULL);
+#endif
+  {
+   self->update(dt);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'update'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: draw of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_draw00
+static int tolua_LuaExtern_Armature_draw00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Armature* self = (Armature*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'draw'", NULL);
+#endif
+  {
+   self->draw();
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'draw'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getNodeToParentTransform of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_getNodeToParentTransform00
+static int tolua_LuaExtern_Armature_getNodeToParentTransform00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const Armature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const Armature* self = (const Armature*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getNodeToParentTransform'", NULL);
+#endif
+  {
+   AffineTransform tolua_ret = (AffineTransform)  self->getNodeToParentTransform();
+   {
+#ifdef __cplusplus
+    void* tolua_obj = Mtolua_new((AffineTransform)(tolua_ret));
+     tolua_pushusertype(tolua_S,tolua_obj,"AffineTransform");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#else
+    void* tolua_obj = tolua_copy(tolua_S,(void*)&tolua_ret,sizeof(AffineTransform));
+     tolua_pushusertype(tolua_S,tolua_obj,"AffineTransform");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#endif
+   }
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getNodeToParentTransform'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getBoundingBox of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_getBoundingBox00
+static int tolua_LuaExtern_Armature_getBoundingBox00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const Armature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const Armature* self = (const Armature*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getBoundingBox'", NULL);
+#endif
+  {
+   Rect tolua_ret = (Rect)  self->getBoundingBox();
+   {
+#ifdef __cplusplus
+    void* tolua_obj = Mtolua_new((Rect)(tolua_ret));
+     tolua_pushusertype(tolua_S,tolua_obj,"Rect");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#else
+    void* tolua_obj = tolua_copy(tolua_S,(void*)&tolua_ret,sizeof(Rect));
+     tolua_pushusertype(tolua_S,tolua_obj,"Rect");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#endif
+   }
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getBoundingBox'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setBlendFunc of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_setBlendFunc00
+static int tolua_LuaExtern_Armature_setBlendFunc00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Armature",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const BlendFunc",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Armature* self = (Armature*)  tolua_tousertype(tolua_S,1,0);
+  const BlendFunc* blendFunc = ((const BlendFunc*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setBlendFunc'", NULL);
+#endif
+  {
+   self->setBlendFunc(*blendFunc);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setBlendFunc'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getBlendFunc of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_getBlendFunc00
+static int tolua_LuaExtern_Armature_getBlendFunc00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const Armature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const Armature* self = (const Armature*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getBlendFunc'", NULL);
+#endif
+  {
+   const BlendFunc& tolua_ret = (const BlendFunc&)  self->getBlendFunc();
+    tolua_pushusertype(tolua_S,(void*)&tolua_ret,"const BlendFunc");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getBlendFunc'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getAnimation of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_getAnimation00
+static int tolua_LuaExtern_Armature_getAnimation00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const Armature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const Armature* self = (const Armature*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getAnimation'", NULL);
+#endif
+  {
+   ArmatureAnimation* tolua_ret = (ArmatureAnimation*)  self->getAnimation();
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"ArmatureAnimation");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getAnimation'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setAnimation of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_setAnimation00
+static int tolua_LuaExtern_Armature_setAnimation00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"ArmatureAnimation",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Armature* self = (Armature*)  tolua_tousertype(tolua_S,1,0);
+  ArmatureAnimation* arm = ((ArmatureAnimation*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setAnimation'", NULL);
+#endif
+  {
+   self->setAnimation(arm);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setAnimation'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getArmatureData of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_getArmatureData00
+static int tolua_LuaExtern_Armature_getArmatureData00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const Armature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const Armature* self = (const Armature*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getArmatureData'", NULL);
+#endif
+  {
+   ArmatureData* tolua_ret = (ArmatureData*)  self->getArmatureData();
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"ArmatureData");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getArmatureData'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setArmatureData of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_setArmatureData00
+static int tolua_LuaExtern_Armature_setArmatureData00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"ArmatureData",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Armature* self = (Armature*)  tolua_tousertype(tolua_S,1,0);
+  ArmatureData* ad = ((ArmatureData*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setArmatureData'", NULL);
+#endif
+  {
+   self->setArmatureData(ad);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setArmatureData'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getBatchNode of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_getBatchNode00
+static int tolua_LuaExtern_Armature_getBatchNode00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const Armature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const Armature* self = (const Armature*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getBatchNode'", NULL);
+#endif
+  {
+   BatchNode* tolua_ret = (BatchNode*)  self->getBatchNode();
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"BatchNode");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getBatchNode'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setBatchNode of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_setBatchNode00
+static int tolua_LuaExtern_Armature_setBatchNode00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"BatchNode",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Armature* self = (Armature*)  tolua_tousertype(tolua_S,1,0);
+  BatchNode* bn = ((BatchNode*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setBatchNode'", NULL);
+#endif
+  {
+   self->setBatchNode(bn);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setBatchNode'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getName of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_getName00
+static int tolua_LuaExtern_Armature_getName00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const Armature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const Armature* self = (const Armature*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getName'", NULL);
+#endif
+  {
+   const std::string tolua_ret = (const std::string)  self->getName();
+   tolua_pushcppstring(tolua_S,(const char*)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getName'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setName of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_setName00
+static int tolua_LuaExtern_Armature_setName00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_iscppstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Armature* self = (Armature*)  tolua_tousertype(tolua_S,1,0);
+  const std::string name = ((const std::string)  tolua_tocppstring(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setName'", NULL);
+#endif
+  {
+   self->setName(name);
+   tolua_pushcppstring(tolua_S,(const char*)name);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setName'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getTextureAtlas of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_getTextureAtlas00
+static int tolua_LuaExtern_Armature_getTextureAtlas00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const Armature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const Armature* self = (const Armature*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getTextureAtlas'", NULL);
+#endif
+  {
+   TextureAtlas* tolua_ret = (TextureAtlas*)  self->getTextureAtlas();
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"TextureAtlas");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getTextureAtlas'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setTextureAtlas of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_setTextureAtlas00
+static int tolua_LuaExtern_Armature_setTextureAtlas00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"TextureAtlas",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Armature* self = (Armature*)  tolua_tousertype(tolua_S,1,0);
+  TextureAtlas* tex = ((TextureAtlas*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setTextureAtlas'", NULL);
+#endif
+  {
+   self->setTextureAtlas(tex);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setTextureAtlas'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getParentBone of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_getParentBone00
+static int tolua_LuaExtern_Armature_getParentBone00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const Armature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const Armature* self = (const Armature*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getParentBone'", NULL);
+#endif
+  {
+   armature::Bone* tolua_ret = (armature::Bone*)  self->getParentBone();
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"armature::Bone");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getParentBone'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setParentBone of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_Armature_setParentBone00
+static int tolua_LuaExtern_Armature_setParentBone00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Armature",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"armature::Bone",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Armature* self = (Armature*)  tolua_tousertype(tolua_S,1,0);
+  armature::Bone* tex = ((armature::Bone*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setParentBone'", NULL);
+#endif
+  {
+   self->setParentBone(tex);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setParentBone'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* get function: __CCBlendProtocol__ of class  Armature */
+#ifndef TOLUA_DISABLE_tolua_get_Armature___CCBlendProtocol__
+static int tolua_get_Armature___CCBlendProtocol__(lua_State* tolua_S)
+{
+  Armature* self = (Armature*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in accessing variable '__CCBlendProtocol__'",NULL);
+#endif
+#ifdef __cplusplus
+   tolua_pushusertype(tolua_S,(void*)static_cast<CCBlendProtocol*>(self), "CCBlendProtocol");
+#else
+   tolua_pushusertype(tolua_S,(void*)((CCBlendProtocol*)self), "CCBlendProtocol");
+#endif
+ return 1;
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: create of class  ArmatureAnimation */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_ArmatureAnimation_create00
+static int tolua_LuaExtern_ArmatureAnimation_create00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"ArmatureAnimation",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"Armature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Armature* armature = ((Armature*)  tolua_tousertype(tolua_S,2,0));
+  {
+   ArmatureAnimation* tolua_ret = (ArmatureAnimation*)  ArmatureAnimation::create(armature);
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"ArmatureAnimation");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'create'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new of class  ArmatureAnimation */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_ArmatureAnimation_new00
+static int tolua_LuaExtern_ArmatureAnimation_new00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"ArmatureAnimation",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   ArmatureAnimation* tolua_ret = (ArmatureAnimation*)  Mtolua_new((ArmatureAnimation)());
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"ArmatureAnimation");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new_local of class  ArmatureAnimation */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_ArmatureAnimation_new00_local
+static int tolua_LuaExtern_ArmatureAnimation_new00_local(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"ArmatureAnimation",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   ArmatureAnimation* tolua_ret = (ArmatureAnimation*)  Mtolua_new((ArmatureAnimation)());
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"ArmatureAnimation");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: delete of class  ArmatureAnimation */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_ArmatureAnimation_delete00
+static int tolua_LuaExtern_ArmatureAnimation_delete00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"ArmatureAnimation",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  ArmatureAnimation* self = (ArmatureAnimation*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'delete'", NULL);
+#endif
+  Mtolua_delete(self);
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'delete'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: init of class  ArmatureAnimation */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_ArmatureAnimation_init00
+static int tolua_LuaExtern_ArmatureAnimation_init00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"ArmatureAnimation",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"Armature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  ArmatureAnimation* self = (ArmatureAnimation*)  tolua_tousertype(tolua_S,1,0);
+  Armature* armature = ((Armature*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'init'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->init(armature);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'init'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setAnimationScale of class  ArmatureAnimation */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_ArmatureAnimation_setAnimationScale00
+static int tolua_LuaExtern_ArmatureAnimation_setAnimationScale00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"ArmatureAnimation",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  ArmatureAnimation* self = (ArmatureAnimation*)  tolua_tousertype(tolua_S,1,0);
+  float animationScale = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setAnimationScale'", NULL);
+#endif
+  {
+   self->setAnimationScale(animationScale);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setAnimationScale'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: play of class  ArmatureAnimation */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_ArmatureAnimation_play00
+static int tolua_LuaExtern_ArmatureAnimation_play00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"ArmatureAnimation",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,1,&tolua_err) ||
+     !tolua_isnumber(tolua_S,4,1,&tolua_err) ||
+     !tolua_isnumber(tolua_S,5,1,&tolua_err) ||
+     !tolua_isnumber(tolua_S,6,1,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,7,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  ArmatureAnimation* self = (ArmatureAnimation*)  tolua_tousertype(tolua_S,1,0);
+  const char* animationName = ((const char*)  tolua_tostring(tolua_S,2,0));
+  int durationTo = ((int)  tolua_tonumber(tolua_S,3,-1));
+  int durationTween = ((int)  tolua_tonumber(tolua_S,4,-1));
+  int loop = ((int)  tolua_tonumber(tolua_S,5,-1));
+  int tweenEasing = ((int)  tolua_tonumber(tolua_S,6,TWEEN_EASING_MAX));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'play'", NULL);
+#endif
+  {
+   self->play(animationName,durationTo,durationTween,loop,tweenEasing);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'play'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: playByIndex of class  ArmatureAnimation */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_ArmatureAnimation_playByIndex00
+static int tolua_LuaExtern_ArmatureAnimation_playByIndex00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"ArmatureAnimation",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,1,&tolua_err) ||
+     !tolua_isnumber(tolua_S,4,1,&tolua_err) ||
+     !tolua_isnumber(tolua_S,5,1,&tolua_err) ||
+     !tolua_isnumber(tolua_S,6,1,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,7,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  ArmatureAnimation* self = (ArmatureAnimation*)  tolua_tousertype(tolua_S,1,0);
+  int animationIndex = ((int)  tolua_tonumber(tolua_S,2,0));
+  int durationTo = ((int)  tolua_tonumber(tolua_S,3,-1));
+  int durationTween = ((int)  tolua_tonumber(tolua_S,4,-1));
+  int loop = ((int)  tolua_tonumber(tolua_S,5,-1));
+  int tweenEasing = ((int)  tolua_tonumber(tolua_S,6,TWEEN_EASING_MAX));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'playByIndex'", NULL);
+#endif
+  {
+   self->playByIndex(animationIndex,durationTo,durationTween,loop,tweenEasing);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'playByIndex'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: resume of class  ArmatureAnimation */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_ArmatureAnimation_resume00
+static int tolua_LuaExtern_ArmatureAnimation_resume00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"ArmatureAnimation",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  ArmatureAnimation* self = (ArmatureAnimation*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'resume'", NULL);
+#endif
+  {
+   self->resume();
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'resume'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: stop of class  ArmatureAnimation */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_ArmatureAnimation_stop00
+static int tolua_LuaExtern_ArmatureAnimation_stop00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"ArmatureAnimation",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  ArmatureAnimation* self = (ArmatureAnimation*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'stop'", NULL);
+#endif
+  {
+   self->stop();
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'stop'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getMovementCount of class  ArmatureAnimation */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_ArmatureAnimation_getMovementCount00
+static int tolua_LuaExtern_ArmatureAnimation_getMovementCount00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"ArmatureAnimation",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  ArmatureAnimation* self = (ArmatureAnimation*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getMovementCount'", NULL);
+#endif
+  {
+   int tolua_ret = (int)  self->getMovementCount();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getMovementCount'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: update of class  ArmatureAnimation */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_ArmatureAnimation_update00
+static int tolua_LuaExtern_ArmatureAnimation_update00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"ArmatureAnimation",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  ArmatureAnimation* self = (ArmatureAnimation*)  tolua_tousertype(tolua_S,1,0);
+  float dt = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'update'", NULL);
+#endif
+  {
+   self->update(dt);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'update'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getAnimationData of class  ArmatureAnimation */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_ArmatureAnimation_getAnimationData00
+static int tolua_LuaExtern_ArmatureAnimation_getAnimationData00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const ArmatureAnimation",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const ArmatureAnimation* self = (const ArmatureAnimation*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getAnimationData'", NULL);
+#endif
+  {
+   AnimationData* tolua_ret = (AnimationData*)  self->getAnimationData();
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"AnimationData");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getAnimationData'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setAnimationData of class  ArmatureAnimation */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_ArmatureAnimation_setAnimationData00
+static int tolua_LuaExtern_ArmatureAnimation_setAnimationData00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"ArmatureAnimation",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"AnimationData",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  ArmatureAnimation* self = (ArmatureAnimation*)  tolua_tousertype(tolua_S,1,0);
+  AnimationData* ad = ((AnimationData*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setAnimationData'", NULL);
+#endif
+  {
+   self->setAnimationData(ad);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setAnimationData'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: getUIScrollViewByName of class  LuaCocoStudioConversion */
 #ifndef TOLUA_DISABLE_tolua_LuaExtern_LuaCocoStudioConversion_getUIScrollViewByName00
 static int tolua_LuaExtern_LuaCocoStudioConversion_getUIScrollViewByName00(lua_State* tolua_S)
@@ -26526,6 +28191,75 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"create",tolua_LuaExtern_GUIRenderer_create00);
    tolua_function(tolua_S,"setEnabled",tolua_LuaExtern_GUIRenderer_setEnabled00);
    tolua_function(tolua_S,"isEnabled",tolua_LuaExtern_GUIRenderer_isEnabled00);
+  tolua_endmodule(tolua_S);
+  #ifdef __cplusplus
+  tolua_cclass(tolua_S,"Armature","Armature","CCNodeRGBA",tolua_collect_Armature);
+  #else
+  tolua_cclass(tolua_S,"Armature","Armature","CCNodeRGBA",NULL);
+  #endif
+  tolua_beginmodule(tolua_S,"Armature");
+   tolua_function(tolua_S,"create",tolua_LuaExtern_Armature_create00);
+   tolua_function(tolua_S,"create",tolua_LuaExtern_Armature_create01);
+   tolua_function(tolua_S,"create",tolua_LuaExtern_Armature_create02);
+   tolua_function(tolua_S,"new",tolua_LuaExtern_Armature_new00);
+   tolua_function(tolua_S,"new_local",tolua_LuaExtern_Armature_new00_local);
+   tolua_function(tolua_S,".call",tolua_LuaExtern_Armature_new00_local);
+   tolua_function(tolua_S,"delete",tolua_LuaExtern_Armature_delete00);
+   tolua_function(tolua_S,"init",tolua_LuaExtern_Armature_init00);
+   tolua_function(tolua_S,"init",tolua_LuaExtern_Armature_init01);
+   tolua_function(tolua_S,"init",tolua_LuaExtern_Armature_init02);
+   tolua_function(tolua_S,"addBone",tolua_LuaExtern_Armature_addBone00);
+   tolua_function(tolua_S,"getBone",tolua_LuaExtern_Armature_getBone00);
+   tolua_function(tolua_S,"changeBoneParent",tolua_LuaExtern_Armature_changeBoneParent00);
+   tolua_function(tolua_S,"removeBone",tolua_LuaExtern_Armature_removeBone00);
+   tolua_function(tolua_S,"getBoneDic",tolua_LuaExtern_Armature_getBoneDic00);
+   tolua_function(tolua_S,"getBoneAtPoint",tolua_LuaExtern_Armature_getBoneAtPoint00);
+   tolua_function(tolua_S,"updateOffsetPoint",tolua_LuaExtern_Armature_updateOffsetPoint00);
+   tolua_function(tolua_S,"visit",tolua_LuaExtern_Armature_visit00);
+   tolua_function(tolua_S,"update",tolua_LuaExtern_Armature_update00);
+   tolua_function(tolua_S,"draw",tolua_LuaExtern_Armature_draw00);
+   tolua_function(tolua_S,"getNodeToParentTransform",tolua_LuaExtern_Armature_getNodeToParentTransform00);
+   tolua_function(tolua_S,"getBoundingBox",tolua_LuaExtern_Armature_getBoundingBox00);
+   tolua_function(tolua_S,"setBlendFunc",tolua_LuaExtern_Armature_setBlendFunc00);
+   tolua_function(tolua_S,"getBlendFunc",tolua_LuaExtern_Armature_getBlendFunc00);
+   tolua_function(tolua_S,"getAnimation",tolua_LuaExtern_Armature_getAnimation00);
+   tolua_function(tolua_S,"setAnimation",tolua_LuaExtern_Armature_setAnimation00);
+   tolua_function(tolua_S,"getArmatureData",tolua_LuaExtern_Armature_getArmatureData00);
+   tolua_function(tolua_S,"setArmatureData",tolua_LuaExtern_Armature_setArmatureData00);
+   tolua_function(tolua_S,"getBatchNode",tolua_LuaExtern_Armature_getBatchNode00);
+   tolua_function(tolua_S,"setBatchNode",tolua_LuaExtern_Armature_setBatchNode00);
+   tolua_function(tolua_S,"getName",tolua_LuaExtern_Armature_getName00);
+   tolua_function(tolua_S,"setName",tolua_LuaExtern_Armature_setName00);
+   tolua_function(tolua_S,"getTextureAtlas",tolua_LuaExtern_Armature_getTextureAtlas00);
+   tolua_function(tolua_S,"setTextureAtlas",tolua_LuaExtern_Armature_setTextureAtlas00);
+   tolua_function(tolua_S,"getParentBone",tolua_LuaExtern_Armature_getParentBone00);
+   tolua_function(tolua_S,"setParentBone",tolua_LuaExtern_Armature_setParentBone00);
+   tolua_variable(tolua_S,"__CCBlendProtocol__",tolua_get_Armature___CCBlendProtocol__,NULL);
+  tolua_endmodule(tolua_S);
+  tolua_constant(tolua_S,"START",START);
+  tolua_constant(tolua_S,"COMPLETE",COMPLETE);
+  tolua_constant(tolua_S,"LOOP_COMPLETE",LOOP_COMPLETE);
+  #ifdef __cplusplus
+  tolua_cclass(tolua_S,"ArmatureAnimation","ArmatureAnimation","ProcessBase",tolua_collect_ArmatureAnimation);
+  #else
+  tolua_cclass(tolua_S,"ArmatureAnimation","ArmatureAnimation","ProcessBase",NULL);
+  #endif
+  tolua_beginmodule(tolua_S,"ArmatureAnimation");
+   tolua_function(tolua_S,"create",tolua_LuaExtern_ArmatureAnimation_create00);
+   tolua_function(tolua_S,"new",tolua_LuaExtern_ArmatureAnimation_new00);
+   tolua_function(tolua_S,"new_local",tolua_LuaExtern_ArmatureAnimation_new00_local);
+   tolua_function(tolua_S,".call",tolua_LuaExtern_ArmatureAnimation_new00_local);
+   tolua_function(tolua_S,"delete",tolua_LuaExtern_ArmatureAnimation_delete00);
+   tolua_function(tolua_S,"init",tolua_LuaExtern_ArmatureAnimation_init00);
+   tolua_function(tolua_S,"setAnimationScale",tolua_LuaExtern_ArmatureAnimation_setAnimationScale00);
+   tolua_function(tolua_S,"play",tolua_LuaExtern_ArmatureAnimation_play00);
+   tolua_function(tolua_S,"playByIndex",tolua_LuaExtern_ArmatureAnimation_playByIndex00);
+   tolua_function(tolua_S,"resume",tolua_LuaExtern_ArmatureAnimation_resume00);
+   tolua_function(tolua_S,"stop",tolua_LuaExtern_ArmatureAnimation_stop00);
+   tolua_function(tolua_S,"getMovementCount",tolua_LuaExtern_ArmatureAnimation_getMovementCount00);
+   tolua_function(tolua_S,"update",tolua_LuaExtern_ArmatureAnimation_update00);
+   tolua_function(tolua_S,"getAnimationData",tolua_LuaExtern_ArmatureAnimation_getAnimationData00);
+   tolua_function(tolua_S,"setAnimationData",tolua_LuaExtern_ArmatureAnimation_setAnimationData00);
   tolua_endmodule(tolua_S);
   tolua_cclass(tolua_S,"LuaCocoStudioConversion","LuaCocoStudioConversion","",NULL);
   tolua_beginmodule(tolua_S,"LuaCocoStudioConversion");
