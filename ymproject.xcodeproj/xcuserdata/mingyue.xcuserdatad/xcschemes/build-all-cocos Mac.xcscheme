@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A035ACBB1782469700987F6C"
-               BuildableName = "build-all-samples Mac"
-               BlueprintName = "build-all-samples Mac"
-               ReferencedContainer = "container:samples.xcodeproj">
+               BlueprintIdentifier = "A03F2E8E178141C1006731B9"
+               BuildableName = "build-all-cocos Mac"
+               BlueprintName = "build-all-cocos Mac"
+               ReferencedContainer = "container:cocos/cocos.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

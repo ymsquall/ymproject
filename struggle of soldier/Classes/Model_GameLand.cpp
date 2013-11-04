@@ -52,13 +52,12 @@ bool GameLandModel::loadLandData(const std::string& landName)
 		return false;
 	int count = mLandGridRows*mLandGridColumns;
 	mLandGridList.resize(count);
-	char index[10];
 	for(int i = 1; i <= count; ++ i)
 	{
 		mLandGridList[i-1] = NULL;
-		itoa(i, index, 10);
+        CCString* pIndex = CCString::createWithFormat("%d", i);
 		int8 flag = 0;
-		if(!tolua_findNumberValueBySegmentName(pLanGridsData, index, flag))
+		if(!tolua_findNumberValueBySegmentName(pLanGridsData, pIndex->getCString(), flag))
 			return false;
 		if(flag != 0)
 		{

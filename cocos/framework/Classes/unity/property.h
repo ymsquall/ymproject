@@ -9,7 +9,8 @@ namespace framework
 		template<class ValueT, class ConT>
 		class IProperty
 		{
-		protected:
+		//protected:
+        public:
 			typedef const ValueT& (ConT::*GetterFunc)() const;
 			typedef void (ConT::*SetterFunc)(const ValueT& v);
 		};

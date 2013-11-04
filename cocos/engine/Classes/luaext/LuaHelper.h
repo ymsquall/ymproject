@@ -72,14 +72,14 @@ template<typename T> bool tolua_findIntegerValueBySegmentName(const ScriptParamO
 	const ScriptParamObject* pRet = tolua_findNodeBySegmentName(node, name);
 	if((NULL == pRet) || (LUA_TINTEGER != pRet->type))
 		return false;
-	retValue = (T)pRet->value.integer
+	retValue = (T)pRet->value.integer;
 	return true;
 }
 extern bool tolua_findBooleanValueBySegmentName(const ScriptParamObject* node, const char* name, bool& retValue);
 extern bool tolua_findStringValueBySegmentName(const ScriptParamObject* node, const char* name, std::string& retValue);
 template<typename T> T* tolua_findUserDataBySegmentName(const ScriptParamObject* node, const char* name)
 {
-	const ScriptParamObject* pRet = findNodeBySegmentName(node, name);
+	const ScriptParamObject* pRet = tolua_findNodeBySegmentName(node, name);
 	if((NULL == pRet) || (LUA_TUSERDATA != pRet->type))
 		return NULL;
 	return (T*)pRet->value.pointer;

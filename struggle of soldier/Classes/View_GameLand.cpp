@@ -5,7 +5,7 @@
 #include "CCArmature/utils/CCArmatureDataManager.h"
 #include "CCArmature/CCArmature.h"
 
-extern GameLandView* gGameLandView;
+static GameLandView* gGameLandView;
 
 using namespace cocos2d;
 using namespace cocos2d::extension;

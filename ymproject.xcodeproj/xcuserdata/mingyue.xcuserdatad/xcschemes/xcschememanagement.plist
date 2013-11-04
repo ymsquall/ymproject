@@ -124,6 +124,31 @@
 			<key>orderHint</key>
 			<integer>41</integer>
 		</dict>
+		<key>build-all-cocos Mac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>build-all-cocos iOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>struggle of soldier 2.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>struggle of soldier Mac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>struggle of soldier.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -158,6 +183,16 @@
 			<true/>
 		</dict>
 		<key>9215282E180D482F0062E7B1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>924EB545182757A700B6782F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>924EB565182757A700B6782F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -7,8 +7,6 @@ namespace framework
 {
 	namespace math
 	{
-		#define MATH_API
-
 		class Degree;
 		class Radian;
 		class Vector2;
@@ -25,6 +23,8 @@ namespace framework
 		class AxisAlignedBox;
 	}	// namespace math
 }	// namespace framework
+
+#define MATH_API
 
 #include <iostream>
 #include <vector>

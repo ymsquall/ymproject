@@ -37,7 +37,7 @@ namespace framework
 			virtual void operator = (const ValueT& value) = 0;
 		};
 		// 
-		template<class ValueT, typename ValueT defaultV>
+		template<class ValueT, ValueT defaultV>
 		class DependencyPropertyImpl : public DependencyProperty<ValueT>,
 										public unity::Property<ValueT>
 		{

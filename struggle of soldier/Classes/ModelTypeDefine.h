@@ -25,7 +25,7 @@ static const size_t ModelNameLength_GameLand	= 8;	// GameLandModel
 static const char* ModelPropertyChangedName_Enabled = "Enabled";
 
 class ViewModelManager;
-template<typename uint16 typeValue, typename size_t rttiLength>
+template<uint16 typeValue, size_t rttiLength>
 class ModelImpl : public mvvm::ModelBase<typeValue, rttiLength>
 {
 public:
@@ -43,7 +43,7 @@ public:
 
 	virtual void update(float dt)
 	{
-		if(!Enabled)
+		if(!mvvm::ModelBase<typeValue, rttiLength>::Enabled)
 			return;
 		this->updateImpl(dt);
 	}

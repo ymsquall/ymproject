@@ -7,7 +7,7 @@ namespace framework
 {
 	namespace unity
 	{
-		template<class EnumT, typename EnumT value>
+		template<class EnumT, EnumT value>
 		class IEnumRTTI
 		{
 		public:
@@ -51,7 +51,7 @@ namespace framework
 			char* mStrType;
 		};
 		// 最省内存的字符串动态类型
-		template<typename const size_t length>
+		template<const size_t length>
 		class IAsciiFixedRTTI
 		{
 		public:

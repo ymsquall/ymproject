@@ -51,14 +51,14 @@ namespace framework
 			IView* mBindingTarget;
 		};
 		
-		template<typename uint16 typeValue, typename size_t rttiLength>
+		template<uint16 typeValue, size_t rttiLength>
 		class ModelBase : public MAKER_ENUM2BTRTTI_TYPE(typeValue),
 						  public MAKER_ASCIIFIXEDRTTI_TYPE(rttiLength),
 						  public IModel
 		{
 		public:
 			ModelBase(const char* ascType) :
-				IAsciiFixedRTTI<rttiLength>(ascType)
+				unity::IAsciiFixedRTTI<rttiLength>(ascType)
 			{
 			}
 			virtual std::string getTypeName() const

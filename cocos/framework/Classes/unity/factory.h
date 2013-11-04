@@ -85,7 +85,7 @@ namespace framework
 			typedef ReflectionWithEnum<EnumT> SuperT;
 			FactoryWithEnum()
 			{
-				mModelCreator = new SuperT();
+				mCreator = new SuperT();
 			}
 			virtual FactoryType getType(){ return FactoryType::Enum; }
 

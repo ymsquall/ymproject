@@ -99,7 +99,7 @@ namespace framework
 			virtual object* reflectImpl(uint32 enumType)
 			{
 				EnumT key = static_cast<EnumT>(enumType);
-				BaseReflectTable::iterator it = mReflectionList.find(key);
+				typename BaseReflectTable::iterator it = mReflectionList.find(key);
 				if(mReflectionList.end() == it)
 					return NULL;
 				return it->second();
