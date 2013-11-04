@@ -1,12 +1,12 @@
 -- avoid memory leak
 collectgarbage("setpause", 100)
 collectgarbage("setstepmul", 5000)
-require "luaScript/luautility"
-require "luaScript/toolkit"
+require "luascript/luautility"
+require "luascript/toolkit"
 
 
-require "luaScript/models/gamelandmodel"
-require "luaScript/views/helper"
-require "luaScript/views/selecthero"
-require "luaScript/views/gameland"
+require "luascript/models/gamelandmodel"
+require "luascript/views/helper"
+require "luascript/views/selecthero"
+require "luascript/views/gameland"
 ----------------

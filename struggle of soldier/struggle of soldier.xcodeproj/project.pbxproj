@@ -82,12 +82,12 @@
 		924EAFC818273AB000B6782F /* ViewModel_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAFAF18273AB000B6782F /* ViewModel_SelectHero.cpp */; };
 		924EAFC918273AB000B6782F /* ViewModelManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAFB118273AB000B6782F /* ViewModelManager.cpp */; };
 		924EAFCA18273AB000B6782F /* ViewModelManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAFB118273AB000B6782F /* ViewModelManager.cpp */; };
-		924EBA9118275CD900B6782F /* luascript in Resources */ = {isa = PBXBuildFile; fileRef = 924EBA8E18275CD900B6782F /* luascript */; };
-		924EBA9218275CD900B6782F /* luascript in Resources */ = {isa = PBXBuildFile; fileRef = 924EBA8E18275CD900B6782F /* luascript */; };
-		924EBA9318275CD900B6782F /* picture in Resources */ = {isa = PBXBuildFile; fileRef = 924EBA8F18275CD900B6782F /* picture */; };
-		924EBA9418275CD900B6782F /* picture in Resources */ = {isa = PBXBuildFile; fileRef = 924EBA8F18275CD900B6782F /* picture */; };
-		924EBA9518275CD900B6782F /* studioui in Resources */ = {isa = PBXBuildFile; fileRef = 924EBA9018275CD900B6782F /* studioui */; };
-		924EBA9618275CD900B6782F /* studioui in Resources */ = {isa = PBXBuildFile; fileRef = 924EBA9018275CD900B6782F /* studioui */; };
+		9296429B18279488007B4D7A /* luascript in Resources */ = {isa = PBXBuildFile; fileRef = 9296429818279488007B4D7A /* luascript */; };
+		9296429C18279488007B4D7A /* luascript in Resources */ = {isa = PBXBuildFile; fileRef = 9296429818279488007B4D7A /* luascript */; };
+		9296429D18279488007B4D7A /* picture in Resources */ = {isa = PBXBuildFile; fileRef = 9296429918279488007B4D7A /* picture */; };
+		9296429E18279488007B4D7A /* picture in Resources */ = {isa = PBXBuildFile; fileRef = 9296429918279488007B4D7A /* picture */; };
+		9296429F18279488007B4D7A /* studioui in Resources */ = {isa = PBXBuildFile; fileRef = 9296429A18279488007B4D7A /* studioui */; };
+		929642A018279488007B4D7A /* studioui in Resources */ = {isa = PBXBuildFile; fileRef = 9296429A18279488007B4D7A /* studioui */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -302,9 +302,9 @@
 		924EAFB218273AB000B6782F /* ViewModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModelManager.h; sourceTree = "<group>"; };
 		924EB5A9182758B200B6782F /* cocos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos.xcodeproj; path = ../cocos/cocos.xcodeproj; sourceTree = "<group>"; };
 		924EB5BA182758C400B6782F /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = "../../cocos2d-x-3.0alpha0-pre/cocos2d_libs.xcodeproj"; sourceTree = "<group>"; };
-		924EBA8E18275CD900B6782F /* luascript */ = {isa = PBXFileReference; lastKnownFileType = folder; name = luascript; path = Resources/luascript; sourceTree = "<group>"; };
-		924EBA8F18275CD900B6782F /* picture */ = {isa = PBXFileReference; lastKnownFileType = folder; name = picture; path = Resources/picture; sourceTree = "<group>"; };
-		924EBA9018275CD900B6782F /* studioui */ = {isa = PBXFileReference; lastKnownFileType = folder; name = studioui; path = Resources/studioui; sourceTree = "<group>"; };
+		9296429818279488007B4D7A /* luascript */ = {isa = PBXFileReference; lastKnownFileType = folder; path = luascript; sourceTree = "<group>"; };
+		9296429918279488007B4D7A /* picture */ = {isa = PBXFileReference; lastKnownFileType = folder; path = picture; sourceTree = "<group>"; };
+		9296429A18279488007B4D7A /* studioui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = studioui; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -373,7 +373,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				924EBA8D18275CC100B6782F /* Resources */,
+				924EBACA182773AA00B6782F /* Resources */,
 				924EB5BA182758C400B6782F /* cocos2d_libs.xcodeproj */,
 				924EB5A9182758B200B6782F /* cocos.xcodeproj */,
 				924EAF9918273AB000B6782F /* Classes */,
@@ -524,14 +524,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		924EBA8D18275CC100B6782F /* Resources */ = {
+		924EBACA182773AA00B6782F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				924EBA8E18275CD900B6782F /* luascript */,
-				924EBA8F18275CD900B6782F /* picture */,
-				924EBA9018275CD900B6782F /* studioui */,
+				9296429818279488007B4D7A /* luascript */,
+				9296429918279488007B4D7A /* picture */,
+				9296429A18279488007B4D7A /* studioui */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -744,11 +744,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				924EBA9218275CD900B6782F /* luascript in Resources */,
+				9296429C18279488007B4D7A /* luascript in Resources */,
 				9233B86F181152B90095D07F /* Icon-144.png in Resources */,
 				9233B86C181152B90095D07F /* Icon-57.png in Resources */,
-				924EBA9418275CD900B6782F /* picture in Resources */,
-				924EBA9618275CD900B6782F /* studioui in Resources */,
+				9296429E18279488007B4D7A /* picture in Resources */,
+				929642A018279488007B4D7A /* studioui in Resources */,
 				9233B86E181152B90095D07F /* Icon-114.png in Resources */,
 				9233B86D181152B90095D07F /* Icon-72.png in Resources */,
 				9233B86B181152B90095D07F /* Default@2x.png in Resources */,
@@ -761,11 +761,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				924EBA9118275CD900B6782F /* luascript in Resources */,
+				9296429B18279488007B4D7A /* luascript in Resources */,
 				9233B87B181152C70095D07F /* Icon.icns in Resources */,
 				9233B8BF181159A80095D07F /* en.lproj in Resources */,
-				924EBA9318275CD900B6782F /* picture in Resources */,
-				924EBA9518275CD900B6782F /* studioui in Resources */,
+				9296429D18279488007B4D7A /* picture in Resources */,
+				9296429F18279488007B4D7A /* studioui in Resources */,
 				9233B87C181152C70095D07F /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
