@@ -48,7 +48,10 @@ namespace engine
 		path = FileUtils::getInstance()->fullPathForFilename("luascript/startup.lua");
 #endif
 		pEngine->executeScriptFile(path.c_str());
-
+        
+		framework::unity::RoutedEventArgs eventArgs;
+		Event_AppInitOveredShowingBefore(this, &eventArgs);
+        
 		return true;
 	}
 
@@ -126,20 +129,14 @@ namespace engine
 		{
 			return 0;
 		}
-
-		framework::unity::RoutedEventArgs eventArgs;
-		Event_AppInitOveredShowingBefore(this, &eventArgs);
-        
+       
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 		ShowWindow(eglView->getHWnd(), SW_SHOW);
 #endif
+		framework::unity::RoutedEventArgs eventArgs;
 		Event_AppInitOveredShowingAfter(this, &eventArgs);
         
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 		return 1;
-#else
-		return Application::getInstance()->run();
-#endif
 	}
     
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)

@@ -28,6 +28,7 @@
 #import "application/AppDelegate.h"
 
 #import "RootViewController.h"
+#import "../Classes/ViewModelManager.h"
 
 @implementation AppController
 
@@ -72,6 +73,10 @@ static engine::AppDelegate s_sharedApplication;
 
     [[UIApplication sharedApplication] setStatusBarHidden: YES];
     
+    ViewModelManager* pViewModelMgr = ViewModelManager::point();
+    pViewModelMgr->initWithAppStart(&s_sharedApplication);
+    //s_sharedApplication.runApp(960, 640, "struggle of soldier app");
+    cocos2d::CCDirector::sharedDirector()->getScheduler()->scheduleSelector(schedule_selector(ViewModelManager::modelLoop),  pViewModelMgr, 0.0f, false);
     cocos2d::Application::getInstance()->run();
     return YES;
 }

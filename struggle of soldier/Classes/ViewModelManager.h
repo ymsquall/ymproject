@@ -25,7 +25,7 @@ public:
 	~ViewModelManager(void);
 
 	void initWithAppStart(engine::AppDelegate* pApp);
-	bool modelLoop();
+	void modelLoop(float dt);
 	void onAppInitOveredShowingBefore(engine::AppDelegate* pApp, unity::RoutedEventArgs* args);
 	void onAppInitOveredShowingAfter(engine::AppDelegate* pApp, unity::RoutedEventArgs* args);
 

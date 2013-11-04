@@ -55,7 +55,7 @@ bool GameLandView::init()
 	ViewModelManager::reloadLuaScript("luascript/views/gameland.lua");
 
 	//ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/LandGrid/flash0.png", "studioui/animation/LandGrid/flash0.plist", "studioui/animation/LandGrid/flash.json");
-	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/archer_walk.png", "studioui/animation/archer_walk.plist", "studioui/animation/archer_6x6_walk.json");
+	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/archer_walk.png", "studioui/animation/archer_walk.plist", "studioui/animation/archer_6x6_walk.Json");
 
 	cocos2d::Size thisSize = this->getContentSize();
 	ScriptParamObject userdata = callLuaFuncWithUserdataResult("LUALoadGameLandView", thisSize.width, thisSize.height);

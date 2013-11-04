@@ -36,7 +36,6 @@ void ViewModelManager::initWithAppStart(engine::AppDelegate* pApp)
 	searchPaths.push_back("studioui/SelectHeroView");
 	searchPaths.push_back("studioui/GameLand");
 	searchPaths.push_back("studioui/animation");
-	searchPaths.push_back("studioui/animation/LandGrid");
 	pFileUtils->setSearchPaths(searchPaths);
 
 	Director* pDirector = Director::getInstance();
@@ -148,18 +147,16 @@ bool ViewModelManager::calculateDeltaTime()
 
 	return true;
 }
-bool ViewModelManager::modelLoop()
+void ViewModelManager::modelLoop(float dt)
 {
 	if(!this->calculateDeltaTime())
-		return false;
+		return;
 
 	for(ModelListV::iterator it = mEnabledModelList.begin();
 		it != mEnabledModelList.end(); ++ it)
 	{
 		(*it)->update(mDeltaTime);
 	}
-
-	return true;
 }
 
 void ViewModelManager::onAppInitOveredShowingBefore(engine::AppDelegate* pApp, unity::RoutedEventArgs* args)
