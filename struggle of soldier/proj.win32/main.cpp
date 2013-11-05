@@ -36,7 +36,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
     int ret = app.runApp(960, 640, "struggle of soldier app");
 	while(true)
 	{
-		pModelMgr->modelLoop();
+		pModelMgr->modelLoop(0);
 		app.runOneStep();
 	}
 	ViewModelManager::point()->release();

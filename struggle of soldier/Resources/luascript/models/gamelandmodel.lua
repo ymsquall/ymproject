@@ -1,4 +1,4 @@
-_LUALandGridSize = CCSize(130, 130)
+_LUALandGridSize = CCSize(130, 65)
 _LUALandGrids = {}
 _LUALandGrids['hlg'] =
 {

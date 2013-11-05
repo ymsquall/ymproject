@@ -2,7 +2,7 @@
 #include "View_GameLand.h"
 
 
-GameLandView* gGameLandView = NULL;
+extern GameLandView* gGameLandView;
 
 void Win32MsgProc::OnKeyDownMsgProc(WPARAM wParam, LPARAM lParam)
 {

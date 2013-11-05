@@ -76,7 +76,8 @@ bool GameLandModel::loadLandData(const std::string& landName)
 		}
 	}
 	CCPoint helfOff(LandTreeGrid::Size.width/2.0f, LandTreeGrid::Size.height/2.0f);
-	float lineWidth = LandTreeGrid::Size.width * sqrtf(2.0f) / 2.0f;
+	//float lineWidth = sqrtf(helfOff.x*helfOff.x + helfOff.y*helfOff.y);
+	//float helfLineWidth = lineWidth / 2.0f;
 	CCPoint offsetPos(mLandGridColumns * helfOff.x / 2.0f, mLandGridRows * (helfOff.y + helfOff.y/2.0f));
 	for(int j = 0; j < mLandGridColumns; ++ j)
 	{
@@ -88,7 +89,6 @@ bool GameLandModel::loadLandData(const std::string& landName)
 			int topIndex = (i - 1) * mLandGridColumns + j;
 			int bottomIndex = (i + 1) * mLandGridColumns + j;
 			int ltIndex = -1, lbIndex, rtIndex, rbIndex;
-			//float rowOff = j * LandTreeGrid::Size.width + helfOff.x;
 			float rowOff = j * helfOff.x;
 			float colOff = (mLandGridRows - 1) * LandTreeGrid::Size.height - i * helfOff.y + j * helfOff.y;
 			if((j % 2) == 0)
@@ -109,15 +109,6 @@ bool GameLandModel::loadLandData(const std::string& landName)
 				mLandGridList[nowIndex]->center = ccp(i * helfOff.x + rowOff - offsetPos.x - helfOff.x/2.0f, 
 					colOff + helfOff.y - offsetPos.y + helfOff.y/2.0f);
 			}
-			//ltIndex = (i + 2) * mLandGridColumns + (j - 1);
-			//lbIndex = (i + 1) * mLandGridColumns + (j - 1);
-			//rtIndex = (i - 1) * mLandGridColumns + (j + 1);
-			//rbIndex = i * mLandGridColumns + (j + 1);
-
-			//ltIndex = i * mLandGridColumns + (j - 1);
-			//lbIndex = (i + 1) * mLandGridColumns + (j - 1);
-			//rtIndex = (i - 2) * mLandGridColumns + (j + 1);
-			//rbIndex = (i - 1) * mLandGridColumns + (j + 1);
 			if(j == 0)
 			{
 				ltIndex = -1;

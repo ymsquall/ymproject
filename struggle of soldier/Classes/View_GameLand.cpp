@@ -5,7 +5,7 @@
 #include "CCArmature/utils/CCArmatureDataManager.h"
 #include "CCArmature/CCArmature.h"
 
-static GameLandView* gGameLandView;
+GameLandView* gGameLandView = NULL;
 
 using namespace cocos2d;
 using namespace cocos2d::extension;
@@ -112,7 +112,7 @@ void GameLandView::initLandGrid()
 				continue;
 			CCSize bkSize = mMapBGImageView->getSize();
 			CCPoint realPos = ccpSub(pGrid->center, ccp(bkSize.width/2.0f-2.0f, bkSize.height/2.0f));
-			ScriptParamObject userdata = callLuaFuncWithUserdataResult("LUACreateUIImageView", "picture/land/gridgrey45.png", realPos.x, realPos.y);
+			ScriptParamObject userdata = callLuaFuncWithUserdataResult("LUACreateUIImageView", "picture/land/grid25d1.png", realPos.x, realPos.y);
 			if(userdata.type != LUA_TUSERDATA || NULL == userdata.value.pointer)
 				continue;
 			UIImageView* pGridImage = (UIImageView*)userdata.value.pointer;
