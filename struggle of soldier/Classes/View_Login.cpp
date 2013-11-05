@@ -21,7 +21,7 @@ bool LoginView::init()
 {
 	if(!ViewSuperT::init())
 		return false;
-	
+    
     this->scheduleUpdate();
 	
 	cocos2d::Size thisSize = this->getContentSize();

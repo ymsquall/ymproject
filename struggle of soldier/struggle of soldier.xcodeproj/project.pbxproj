@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		922789801828F15A00106F88 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9227897F1828F15A00106F88 /* Info.plist */; };
 		9233B868181152B90095D07F /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9233B85C181152B90095D07F /* AppController.mm */; };
 		9233B869181152B90095D07F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9233B85D181152B90095D07F /* Default-568h@2x.png */; };
 		9233B86A181152B90095D07F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9233B85E181152B90095D07F /* Default.png */; };
@@ -94,7 +93,6 @@
 /* Begin PBXFileReference section */
 		1A1197D71785363400D62A44 /* struggle of soldier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "struggle of soldier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A6FB56B17854FE400CDF010 /* struggle of soldier Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "struggle of soldier Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9227897F1828F15A00106F88 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = proj.ios/Info.plist; sourceTree = "<group>"; };
 		9233B85B181152B90095D07F /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = proj.ios/AppController.h; sourceTree = "<group>"; };
 		9233B85C181152B90095D07F /* AppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppController.mm; path = proj.ios/AppController.mm; sourceTree = "<group>"; };
 		9233B85D181152B90095D07F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "proj.ios/Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -268,7 +266,6 @@
 		9233B85A181152A80095D07F /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				9227897F1828F15A00106F88 /* Info.plist */,
 				9233B85B181152B90095D07F /* AppController.h */,
 				9233B85C181152B90095D07F /* AppController.mm */,
 				9233B85D181152B90095D07F /* Default-568h@2x.png */,
@@ -447,7 +444,6 @@
 				9233B86E181152B90095D07F /* Icon-114.png in Resources */,
 				9233B86D181152B90095D07F /* Icon-72.png in Resources */,
 				9233B86B181152B90095D07F /* Default@2x.png in Resources */,
-				922789801828F15A00106F88 /* Info.plist in Resources */,
 				9233B869181152B90095D07F /* Default-568h@2x.png in Resources */,
 				9233B86A181152B90095D07F /* Default.png in Resources */,
 			);
