@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>8EDBCD78-4D62-4F67-886C-AF30CE6DA6D9</string>
+	<string>95DE2986-014C-4403-BEB7-D30AB3A98FDB</string>
 	<key>IDESourceControlProjectName</key>
-	<string>sos</string>
+	<string>ymproject</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>1880C917-2415-473E-8FBD-9848F6C4ADDF</key>
+		<key>0598E270-9E25-4DA7-84C5-73FD9A1C74F4</key>
 		<string>https://github.com/ymsquall/ymproject.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>struggle of soldier/sos/proj.ios/sos.xcodeproj/project.xcworkspace</string>
+	<string>ymproject.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>1880C917-2415-473E-8FBD-9848F6C4ADDF</key>
-		<string>../../../../..</string>
+		<key>0598E270-9E25-4DA7-84C5-73FD9A1C74F4</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/ymsquall/ymproject.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>1880C917-2415-473E-8FBD-9848F6C4ADDF</string>
+	<string>0598E270-9E25-4DA7-84C5-73FD9A1C74F4</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>1880C917-2415-473E-8FBD-9848F6C4ADDF</string>
+			<string>0598E270-9E25-4DA7-84C5-73FD9A1C74F4</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ymproject</string>
 		</dict>
