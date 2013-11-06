@@ -39,6 +39,7 @@ public:
 	cocos2d::extension::UIButton* mBackButton;
 	cocos2d::extension::UITextArea* mDebugText;
 	cocos2d::extension::UIDragPanel* mMapDragPanel;
+	cocos2d::extension::UIPanel* mMapBGPanel;
 	cocos2d::extension::UIImageView* mMapBGImageView;
 	cocos2d::extension::UIWidget* mGridsParent;
 	std::map<cocos2d::extension::UIWidget*, LandTreeGridPTR> mGridRenderList;

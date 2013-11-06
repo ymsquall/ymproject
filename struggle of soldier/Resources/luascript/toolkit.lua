@@ -17,15 +17,14 @@ function LUAGetDisplayOffPos()
 		index = 1
 	elseif __LUADeviceWinSize.width > 960 and __LUADeviceWinSize.width <=1200 and __LUADeviceWinSize.height <= 640 then	--iphone5 1136 X 640
 		index = 2
-		offPos.setPoint(90,0)
+		offPos = CCPoint(90,0)
 	elseif __LUADeviceWinSize.width > 960 and __LUADeviceWinSize.width <=1200 and __LUADeviceWinSize.height > 640 and __LUADeviceWinSize.height < 800 then	--iPad 1024 x 768
 		index = 3
-		offPos.setPoint(36,128/2)
+		offPos = CCPoint(36,128/2)
 	elseif __LUADeviceWinSize.width  >= 2000 and __LUADeviceWinSize.height >= 1500 then
 		index = 4
-		offPos.setPoint(2048/2-960/2,1536/2-640/2);
+		offPos = CCPoint(2048/2-960/2,1536/2-640/2);
 	end
-	print(offPos.width, offPos.height, index)
 	return offPos,index
 end
 

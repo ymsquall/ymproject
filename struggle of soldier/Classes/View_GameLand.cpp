@@ -23,6 +23,7 @@ GameLandView::GameLandView()
 	mLayout = NULL;
 	mDebugText = NULL;
 	mMapDragPanel = NULL;
+	mMapBGPanel = NULL;
 	mMapBGImageView = NULL;
 	gGameLandView = this;
 	gpLastSelectGrid = NULL;
@@ -68,7 +69,20 @@ bool GameLandView::init()
 	mBackButton = dynamic_cast<UIButton*>(mLayout->getChildByName("mBackButton"));
 	mDebugText = dynamic_cast<UITextArea*>(mLayout->getChildByName("mDebugText"));
 	mMapDragPanel = dynamic_cast<UIDragPanel*>(mLayout->getChildByName("mMapDragPanel"));
+	mMapBGPanel = dynamic_cast<UIPanel*>(mLayout->getChildByName("mMapBGPanel"));
 	mMapBGImageView = dynamic_cast<UIImageView*>(mLayout->getChildByName("mMapBGImageView"));
+
+	cocos2d::Size viewSize = cocos2d::Director::getInstance()->getVisibleSize();
+	mMapDragPanel->setSize(viewSize);
+
+	lua_State* L = LuaEngine::getInstance()->getLuaStack()->getLuaState();
+	CCPoint displayOffPos(0, 0);
+	if(tolua_getGlobalUserData_ByFieldName(L, "__LUADeviceOffsetPos", displayOffPos))
+	{
+		CCPoint offPos(-displayOffPos.x, -displayOffPos.y);
+		mMapDragPanel->setPosition(offPos);
+		mBackButton->setPosition(offPos);
+	}
 	mBackButton->addReleaseEvent(this, coco_releaseselector(GameLandView::onBackBtnTouch));
 	mMapBGImageView->addReleaseEvent(this, coco_releaseselector(GameLandView::onMapTouched));
 	mMapDragPanel->addEventListener(this, dragpaneleventselector(GameLandView::onMapPanelDragEvent));

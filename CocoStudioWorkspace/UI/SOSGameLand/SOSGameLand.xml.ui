@@ -11,7 +11,7 @@
   </JsonList>
   <imageFileList />
   <JsonSuffix>.json</JsonSuffix>
-  <CurrentUIJson>SOSGameLand_BG.json</CurrentUIJson>
+  <CurrentUIJson />
   <CanvasSize>
     <Width>960</Width>
     <Height>640</Height>
