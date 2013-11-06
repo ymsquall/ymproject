@@ -12,7 +12,7 @@ LandTreeGrid::LandTreeGrid()
 	top = NULL;
 	bottom = NULL;
 	gridView = NULL;
-	testShowBing = false;
+	testShowNumber = 0;
 }
 
 LandTreeGrid::~LandTreeGrid()
@@ -63,8 +63,7 @@ bool GameLandModel::loadLandData(const std::string& landName)
 		{
 			if(NULL == mLandGridList[i-1])
 				mLandGridList[i-1] = new LandTreeGrid();
-			if(flag == 2)
-				mLandGridList[i-1]->testShowBing = true;
+			mLandGridList[i-1]->testShowNumber = flag;
 		}
 		else if(flag == 0)
 		{

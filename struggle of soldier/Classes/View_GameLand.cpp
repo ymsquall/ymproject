@@ -55,8 +55,10 @@ bool GameLandView::init()
 	ViewModelManager::reloadLuaScript("luascript/views/helper.lua");
 	ViewModelManager::reloadLuaScript("luascript/views/gameland.lua");
 
-	//ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/LandGrid/flash0.png", "studioui/animation/LandGrid/flash0.plist", "studioui/animation/LandGrid/flash.json");
-	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/archer_walk.png", "studioui/animation/archer_walk.plist", "studioui/animation/archer_6x6_walk.json");
+	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/saber_righttop0.png", "studioui/animation/saber_righttop0.plist", "studioui/animation/saber_leftbottom.json");
+	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/saber_righttop0.png", "studioui/animation/saber_righttop0.plist", "studioui/animation/saber_righttop.json");
+	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/rider_righttop0.png", "studioui/animation/rider_righttop0.plist", "studioui/animation/rider_leftbottom.json");
+	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/rider_righttop0.png", "studioui/animation/rider_righttop0.plist", "studioui/animation/rider_righttop.json");
 
 	cocos2d::Size thisSize = this->getContentSize();
 	ScriptParamObject userdata = callLuaFuncWithUserdataResult("LUALoadGameLandView", thisSize.width, thisSize.height);
@@ -126,7 +128,7 @@ void GameLandView::initLandGrid()
 				continue;
 			CCSize bkSize = mMapBGImageView->getSize();
 			CCPoint realPos = ccpSub(pGrid->center, ccp(bkSize.width/2.0f-2.0f, bkSize.height/2.0f));
-			ScriptParamObject userdata = callLuaFuncWithUserdataResult("LUACreateUIImageView", "picture/land/grid25d1.png", realPos.x, realPos.y);
+			ScriptParamObject userdata = callLuaFuncWithUserdataResult("LUACreateUIImageView", "picture/land/grid25d.png", realPos.x, realPos.y);
 			if(userdata.type != LUA_TUSERDATA || NULL == userdata.value.pointer)
 				continue;
 			UIImageView* pGridImage = (UIImageView*)userdata.value.pointer;
@@ -135,12 +137,33 @@ void GameLandView::initLandGrid()
 			pGrid->gridView = pGridImage;
 			pGridImage->addReleaseEvent(this, coco_releaseselector(GameLandView::onMapGridTouched));
 
-			if(pGrid->testShowBing)
+			Armature* pAnim = NULL;
+			if(2 == pGrid->testShowNumber)
 			{
-				ScriptParamObject userdata1 = callLuaFuncWithUserdataResult("LUACreateAndPlayArmature", "archer_6x6_walk", 0, realPos.x, realPos.y, 1.0, 1.0f);
-				if(userdata1.type != LUA_TUSERDATA || NULL == userdata1.value.pointer)
-					continue;
-				Armature* pAnim = (Armature*)userdata1.value.pointer;
+				ScriptParamObject userdata1 = callLuaFuncWithUserdataResult("LUACreateAndPlayArmature", "saber_righttop", 0, realPos.x, realPos.y, 1.0, 0.65f);
+				if(userdata1.type == LUA_TUSERDATA && NULL != userdata1.value.pointer)
+					pAnim = (Armature*)userdata1.value.pointer;
+			}
+			else if(3 == pGrid->testShowNumber)
+			{
+				ScriptParamObject userdata1 = callLuaFuncWithUserdataResult("LUACreateAndPlayArmature", "saber_leftbottom", 0, realPos.x, realPos.y, 1.0, 0.65f);
+				if(userdata1.type == LUA_TUSERDATA && NULL != userdata1.value.pointer)
+					pAnim = (Armature*)userdata1.value.pointer;
+			}
+			else if(4 == pGrid->testShowNumber)
+			{
+				ScriptParamObject userdata1 = callLuaFuncWithUserdataResult("LUACreateAndPlayArmature", "rider_righttop", 0, realPos.x, realPos.y, 1.0, 0.65f);
+				if(userdata1.type == LUA_TUSERDATA && NULL != userdata1.value.pointer)
+					pAnim = (Armature*)userdata1.value.pointer;
+			}
+			else if(5 == pGrid->testShowNumber)
+			{
+				ScriptParamObject userdata1 = callLuaFuncWithUserdataResult("LUACreateAndPlayArmature", "rider_leftbottom", 0, realPos.x, realPos.y, 1.0, 0.65f);
+				if(userdata1.type == LUA_TUSERDATA && NULL != userdata1.value.pointer)
+					pAnim = (Armature*)userdata1.value.pointer;
+			}
+			if(NULL != pAnim)
+			{
 				mMapBGImageView->addRenderer(pAnim, 1);
 				mXiaobingAnimList.push_back(pAnim);
 			}

@@ -18,7 +18,7 @@ typedef struct LandTreeGrid
 	LandTreeGrid* top;
 	LandTreeGrid* bottom;
 	CCObject* gridView;
-	bool testShowBing;
+	uint8 testShowNumber;
 
 }*LandTreeGridPTR;
 /* 格子每一列以交错方式排列 0：没有格子 1：有格子
