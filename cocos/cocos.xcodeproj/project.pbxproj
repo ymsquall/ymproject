@@ -3402,6 +3402,10 @@
 		A07A4E0D178386390073F6A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-lz",
+				);
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
 			};
@@ -3410,6 +3414,10 @@
 		A07A4E0E178386390073F6A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-lz",
+				);
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
 			};

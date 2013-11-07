@@ -49,7 +49,6 @@
 		9233B8BC181158EB0095D07F /* libluabindings Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9233B8B3181158EB0095D07F /* libluabindings Mac.a */; };
 		9233B8BF181159A80095D07F /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 9233B8BE181159A80095D07F /* en.lproj */; };
 		9233B8D118115B300095D07F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9233B8D018115B300095D07F /* AudioToolbox.framework */; };
-		9233B8DB18115B3B0095D07F /* libbox2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9233B8D218115B3A0095D07F /* libbox2d iOS.a */; };
 		9233B8DC18115B3B0095D07F /* libchipmunk iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9233B8D318115B3A0095D07F /* libchipmunk iOS.a */; };
 		9233B8DD18115B3B0095D07F /* libcocos2dx iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9233B8D418115B3A0095D07F /* libcocos2dx iOS.a */; };
 		9233B8DE18115B3B0095D07F /* libcocos2dx-extensions iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9233B8D518115B3A0095D07F /* libcocos2dx-extensions iOS.a */; };
@@ -58,30 +57,31 @@
 		9233B8E118115B3B0095D07F /* libframework iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9233B8D818115B3A0095D07F /* libframework iOS.a */; };
 		9233B8E218115B3B0095D07F /* libjsbindings iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9233B8D918115B3A0095D07F /* libjsbindings iOS.a */; };
 		9233B8E318115B3B0095D07F /* libluabindings iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9233B8DA18115B3B0095D07F /* libluabindings iOS.a */; };
-		924EAFB318273AB000B6782F /* Model_GameLand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAF9A18273AB000B6782F /* Model_GameLand.cpp */; };
-		924EAFB418273AB000B6782F /* Model_GameLand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAF9A18273AB000B6782F /* Model_GameLand.cpp */; };
-		924EAFB518273AB000B6782F /* Model_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAF9C18273AB000B6782F /* Model_Login.cpp */; };
-		924EAFB618273AB000B6782F /* Model_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAF9C18273AB000B6782F /* Model_Login.cpp */; };
-		924EAFB718273AB000B6782F /* Model_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAF9E18273AB000B6782F /* Model_SelectHero.cpp */; };
-		924EAFB818273AB000B6782F /* Model_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAF9E18273AB000B6782F /* Model_SelectHero.cpp */; };
-		924EAFB918273AB000B6782F /* RootSceneView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAFA118273AB000B6782F /* RootSceneView.cpp */; };
-		924EAFBA18273AB000B6782F /* RootSceneView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAFA118273AB000B6782F /* RootSceneView.cpp */; };
-		924EAFBB18273AB000B6782F /* TopLevelView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAFA318273AB000B6782F /* TopLevelView.cpp */; };
-		924EAFBC18273AB000B6782F /* TopLevelView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAFA318273AB000B6782F /* TopLevelView.cpp */; };
-		924EAFBD18273AB000B6782F /* View_GameLand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAFA518273AB000B6782F /* View_GameLand.cpp */; };
-		924EAFBE18273AB000B6782F /* View_GameLand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAFA518273AB000B6782F /* View_GameLand.cpp */; };
-		924EAFBF18273AB000B6782F /* View_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAFA718273AB000B6782F /* View_Login.cpp */; };
-		924EAFC018273AB000B6782F /* View_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAFA718273AB000B6782F /* View_Login.cpp */; };
-		924EAFC118273AB000B6782F /* View_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAFA918273AB000B6782F /* View_SelectHero.cpp */; };
-		924EAFC218273AB000B6782F /* View_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAFA918273AB000B6782F /* View_SelectHero.cpp */; };
-		924EAFC318273AB000B6782F /* ViewModel_GameLand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAFAB18273AB000B6782F /* ViewModel_GameLand.cpp */; };
-		924EAFC418273AB000B6782F /* ViewModel_GameLand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAFAB18273AB000B6782F /* ViewModel_GameLand.cpp */; };
-		924EAFC518273AB000B6782F /* ViewModel_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAFAD18273AB000B6782F /* ViewModel_Login.cpp */; };
-		924EAFC618273AB000B6782F /* ViewModel_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAFAD18273AB000B6782F /* ViewModel_Login.cpp */; };
-		924EAFC718273AB000B6782F /* ViewModel_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAFAF18273AB000B6782F /* ViewModel_SelectHero.cpp */; };
-		924EAFC818273AB000B6782F /* ViewModel_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAFAF18273AB000B6782F /* ViewModel_SelectHero.cpp */; };
-		924EAFC918273AB000B6782F /* ViewModelManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAFB118273AB000B6782F /* ViewModelManager.cpp */; };
-		924EAFCA18273AB000B6782F /* ViewModelManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAFB118273AB000B6782F /* ViewModelManager.cpp */; };
+		925D98F9182B59E7006BED71 /* Model_GameLand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98E0182B59E7006BED71 /* Model_GameLand.cpp */; };
+		925D98FA182B59E7006BED71 /* Model_GameLand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98E0182B59E7006BED71 /* Model_GameLand.cpp */; };
+		925D98FB182B59E7006BED71 /* Model_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98E2182B59E7006BED71 /* Model_Login.cpp */; };
+		925D98FC182B59E7006BED71 /* Model_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98E2182B59E7006BED71 /* Model_Login.cpp */; };
+		925D98FD182B59E7006BED71 /* Model_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98E4182B59E7006BED71 /* Model_SelectHero.cpp */; };
+		925D98FE182B59E7006BED71 /* Model_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98E4182B59E7006BED71 /* Model_SelectHero.cpp */; };
+		925D98FF182B59E7006BED71 /* RootSceneView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98E7182B59E7006BED71 /* RootSceneView.cpp */; };
+		925D9900182B59E7006BED71 /* RootSceneView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98E7182B59E7006BED71 /* RootSceneView.cpp */; };
+		925D9901182B59E7006BED71 /* TopLevelView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98E9182B59E7006BED71 /* TopLevelView.cpp */; };
+		925D9902182B59E7006BED71 /* TopLevelView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98E9182B59E7006BED71 /* TopLevelView.cpp */; };
+		925D9903182B59E7006BED71 /* View_GameLand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98EB182B59E7006BED71 /* View_GameLand.cpp */; };
+		925D9904182B59E7006BED71 /* View_GameLand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98EB182B59E7006BED71 /* View_GameLand.cpp */; };
+		925D9905182B59E7006BED71 /* View_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98ED182B59E7006BED71 /* View_Login.cpp */; };
+		925D9906182B59E7006BED71 /* View_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98ED182B59E7006BED71 /* View_Login.cpp */; };
+		925D9907182B59E7006BED71 /* View_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98EF182B59E7006BED71 /* View_SelectHero.cpp */; };
+		925D9908182B59E7006BED71 /* View_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98EF182B59E7006BED71 /* View_SelectHero.cpp */; };
+		925D9909182B59E7006BED71 /* ViewModel_GameLand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98F1182B59E7006BED71 /* ViewModel_GameLand.cpp */; };
+		925D990A182B59E7006BED71 /* ViewModel_GameLand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98F1182B59E7006BED71 /* ViewModel_GameLand.cpp */; };
+		925D990B182B59E7006BED71 /* ViewModel_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98F3182B59E7006BED71 /* ViewModel_Login.cpp */; };
+		925D990C182B59E7006BED71 /* ViewModel_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98F3182B59E7006BED71 /* ViewModel_Login.cpp */; };
+		925D990D182B59E7006BED71 /* ViewModel_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98F5182B59E7006BED71 /* ViewModel_SelectHero.cpp */; };
+		925D990E182B59E7006BED71 /* ViewModel_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98F5182B59E7006BED71 /* ViewModel_SelectHero.cpp */; };
+		925D990F182B59E7006BED71 /* ViewModelManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98F7182B59E7006BED71 /* ViewModelManager.cpp */; };
+		925D9910182B59E7006BED71 /* ViewModelManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925D98F7182B59E7006BED71 /* ViewModelManager.cpp */; };
+		925D9912182B60AA006BED71 /* libbox2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 925D9911182B60AA006BED71 /* libbox2d iOS.a */; };
 		9296429B18279488007B4D7A /* luascript in Resources */ = {isa = PBXBuildFile; fileRef = 9296429818279488007B4D7A /* luascript */; };
 		9296429C18279488007B4D7A /* luascript in Resources */ = {isa = PBXBuildFile; fileRef = 9296429818279488007B4D7A /* luascript */; };
 		9296429D18279488007B4D7A /* picture in Resources */ = {isa = PBXBuildFile; fileRef = 9296429918279488007B4D7A /* picture */; };
@@ -144,31 +144,32 @@
 		9233B8D818115B3A0095D07F /* libframework iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libframework iOS.a"; path = "cocos/build/Debug-iphoneos/libframework iOS.a"; sourceTree = "<group>"; };
 		9233B8D918115B3A0095D07F /* libjsbindings iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libjsbindings iOS.a"; path = "../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libjsbindings iOS.a"; sourceTree = "<group>"; };
 		9233B8DA18115B3B0095D07F /* libluabindings iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libluabindings iOS.a"; path = "../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libluabindings iOS.a"; sourceTree = "<group>"; };
-		924EAF9A18273AB000B6782F /* Model_GameLand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Model_GameLand.cpp; sourceTree = "<group>"; };
-		924EAF9B18273AB000B6782F /* Model_GameLand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model_GameLand.h; sourceTree = "<group>"; };
-		924EAF9C18273AB000B6782F /* Model_Login.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Model_Login.cpp; sourceTree = "<group>"; };
-		924EAF9D18273AB000B6782F /* Model_Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model_Login.h; sourceTree = "<group>"; };
-		924EAF9E18273AB000B6782F /* Model_SelectHero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Model_SelectHero.cpp; sourceTree = "<group>"; };
-		924EAF9F18273AB000B6782F /* Model_SelectHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model_SelectHero.h; sourceTree = "<group>"; };
-		924EAFA018273AB000B6782F /* ModelTypeDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelTypeDefine.h; sourceTree = "<group>"; };
-		924EAFA118273AB000B6782F /* RootSceneView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RootSceneView.cpp; sourceTree = "<group>"; };
-		924EAFA218273AB000B6782F /* RootSceneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootSceneView.h; sourceTree = "<group>"; };
-		924EAFA318273AB000B6782F /* TopLevelView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TopLevelView.cpp; sourceTree = "<group>"; };
-		924EAFA418273AB000B6782F /* TopLevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopLevelView.h; sourceTree = "<group>"; };
-		924EAFA518273AB000B6782F /* View_GameLand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = View_GameLand.cpp; sourceTree = "<group>"; };
-		924EAFA618273AB000B6782F /* View_GameLand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View_GameLand.h; sourceTree = "<group>"; };
-		924EAFA718273AB000B6782F /* View_Login.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = View_Login.cpp; sourceTree = "<group>"; };
-		924EAFA818273AB000B6782F /* View_Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View_Login.h; sourceTree = "<group>"; };
-		924EAFA918273AB000B6782F /* View_SelectHero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = View_SelectHero.cpp; sourceTree = "<group>"; };
-		924EAFAA18273AB000B6782F /* View_SelectHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View_SelectHero.h; sourceTree = "<group>"; };
-		924EAFAB18273AB000B6782F /* ViewModel_GameLand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ViewModel_GameLand.cpp; sourceTree = "<group>"; };
-		924EAFAC18273AB000B6782F /* ViewModel_GameLand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModel_GameLand.h; sourceTree = "<group>"; };
-		924EAFAD18273AB000B6782F /* ViewModel_Login.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ViewModel_Login.cpp; sourceTree = "<group>"; };
-		924EAFAE18273AB000B6782F /* ViewModel_Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModel_Login.h; sourceTree = "<group>"; };
-		924EAFAF18273AB000B6782F /* ViewModel_SelectHero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ViewModel_SelectHero.cpp; sourceTree = "<group>"; };
-		924EAFB018273AB000B6782F /* ViewModel_SelectHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModel_SelectHero.h; sourceTree = "<group>"; };
-		924EAFB118273AB000B6782F /* ViewModelManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ViewModelManager.cpp; sourceTree = "<group>"; };
-		924EAFB218273AB000B6782F /* ViewModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModelManager.h; sourceTree = "<group>"; };
+		925D98E0182B59E7006BED71 /* Model_GameLand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Model_GameLand.cpp; sourceTree = "<group>"; };
+		925D98E1182B59E7006BED71 /* Model_GameLand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model_GameLand.h; sourceTree = "<group>"; };
+		925D98E2182B59E7006BED71 /* Model_Login.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Model_Login.cpp; sourceTree = "<group>"; };
+		925D98E3182B59E7006BED71 /* Model_Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model_Login.h; sourceTree = "<group>"; };
+		925D98E4182B59E7006BED71 /* Model_SelectHero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Model_SelectHero.cpp; sourceTree = "<group>"; };
+		925D98E5182B59E7006BED71 /* Model_SelectHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model_SelectHero.h; sourceTree = "<group>"; };
+		925D98E6182B59E7006BED71 /* ModelTypeDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelTypeDefine.h; sourceTree = "<group>"; };
+		925D98E7182B59E7006BED71 /* RootSceneView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RootSceneView.cpp; sourceTree = "<group>"; };
+		925D98E8182B59E7006BED71 /* RootSceneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootSceneView.h; sourceTree = "<group>"; };
+		925D98E9182B59E7006BED71 /* TopLevelView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TopLevelView.cpp; sourceTree = "<group>"; };
+		925D98EA182B59E7006BED71 /* TopLevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopLevelView.h; sourceTree = "<group>"; };
+		925D98EB182B59E7006BED71 /* View_GameLand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = View_GameLand.cpp; sourceTree = "<group>"; };
+		925D98EC182B59E7006BED71 /* View_GameLand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View_GameLand.h; sourceTree = "<group>"; };
+		925D98ED182B59E7006BED71 /* View_Login.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = View_Login.cpp; sourceTree = "<group>"; };
+		925D98EE182B59E7006BED71 /* View_Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View_Login.h; sourceTree = "<group>"; };
+		925D98EF182B59E7006BED71 /* View_SelectHero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = View_SelectHero.cpp; sourceTree = "<group>"; };
+		925D98F0182B59E7006BED71 /* View_SelectHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View_SelectHero.h; sourceTree = "<group>"; };
+		925D98F1182B59E7006BED71 /* ViewModel_GameLand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ViewModel_GameLand.cpp; sourceTree = "<group>"; };
+		925D98F2182B59E7006BED71 /* ViewModel_GameLand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModel_GameLand.h; sourceTree = "<group>"; };
+		925D98F3182B59E7006BED71 /* ViewModel_Login.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ViewModel_Login.cpp; sourceTree = "<group>"; };
+		925D98F4182B59E7006BED71 /* ViewModel_Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModel_Login.h; sourceTree = "<group>"; };
+		925D98F5182B59E7006BED71 /* ViewModel_SelectHero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ViewModel_SelectHero.cpp; sourceTree = "<group>"; };
+		925D98F6182B59E7006BED71 /* ViewModel_SelectHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModel_SelectHero.h; sourceTree = "<group>"; };
+		925D98F7182B59E7006BED71 /* ViewModelManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ViewModelManager.cpp; sourceTree = "<group>"; };
+		925D98F8182B59E7006BED71 /* ViewModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModelManager.h; sourceTree = "<group>"; };
+		925D9911182B60AA006BED71 /* libbox2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libbox2d iOS.a"; path = "../cocos2d-x-3.0alpha0-pre/build/Release-iphoneos/libbox2d iOS.a"; sourceTree = "<group>"; };
 		9296429818279488007B4D7A /* luascript */ = {isa = PBXFileReference; lastKnownFileType = folder; path = luascript; sourceTree = "<group>"; };
 		9296429918279488007B4D7A /* picture */ = {isa = PBXFileReference; lastKnownFileType = folder; path = picture; sourceTree = "<group>"; };
 		9296429A18279488007B4D7A /* studioui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = studioui; sourceTree = "<group>"; };
@@ -179,7 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9233B8DB18115B3B0095D07F /* libbox2d iOS.a in Frameworks */,
+				925D9912182B60AA006BED71 /* libbox2d iOS.a in Frameworks */,
 				9233B8DC18115B3B0095D07F /* libchipmunk iOS.a in Frameworks */,
 				9233B8DD18115B3B0095D07F /* libcocos2dx iOS.a in Frameworks */,
 				9233B8DE18115B3B0095D07F /* libcocos2dx-extensions iOS.a in Frameworks */,
@@ -240,8 +241,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				925D98DF182B59E7006BED71 /* Classes */,
 				924EBACA182773AA00B6782F /* Resources */,
-				924EAF9918273AB000B6782F /* Classes */,
 				9233B88C181156950095D07F /* Frameworks */,
 				9233B85A181152A80095D07F /* ios */,
 				9233B859181152A10095D07F /* mac */,
@@ -285,6 +286,7 @@
 		9233B88C181156950095D07F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				925D9911182B60AA006BED71 /* libbox2d iOS.a */,
 				9233B8D218115B3A0095D07F /* libbox2d iOS.a */,
 				9233B8D318115B3A0095D07F /* libchipmunk iOS.a */,
 				9233B8D418115B3A0095D07F /* libcocos2dx iOS.a */,
@@ -323,38 +325,6 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		924EAF9918273AB000B6782F /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				924EAF9A18273AB000B6782F /* Model_GameLand.cpp */,
-				924EAF9B18273AB000B6782F /* Model_GameLand.h */,
-				924EAF9C18273AB000B6782F /* Model_Login.cpp */,
-				924EAF9D18273AB000B6782F /* Model_Login.h */,
-				924EAF9E18273AB000B6782F /* Model_SelectHero.cpp */,
-				924EAF9F18273AB000B6782F /* Model_SelectHero.h */,
-				924EAFA018273AB000B6782F /* ModelTypeDefine.h */,
-				924EAFA118273AB000B6782F /* RootSceneView.cpp */,
-				924EAFA218273AB000B6782F /* RootSceneView.h */,
-				924EAFA318273AB000B6782F /* TopLevelView.cpp */,
-				924EAFA418273AB000B6782F /* TopLevelView.h */,
-				924EAFA518273AB000B6782F /* View_GameLand.cpp */,
-				924EAFA618273AB000B6782F /* View_GameLand.h */,
-				924EAFA718273AB000B6782F /* View_Login.cpp */,
-				924EAFA818273AB000B6782F /* View_Login.h */,
-				924EAFA918273AB000B6782F /* View_SelectHero.cpp */,
-				924EAFAA18273AB000B6782F /* View_SelectHero.h */,
-				924EAFAB18273AB000B6782F /* ViewModel_GameLand.cpp */,
-				924EAFAC18273AB000B6782F /* ViewModel_GameLand.h */,
-				924EAFAD18273AB000B6782F /* ViewModel_Login.cpp */,
-				924EAFAE18273AB000B6782F /* ViewModel_Login.h */,
-				924EAFAF18273AB000B6782F /* ViewModel_SelectHero.cpp */,
-				924EAFB018273AB000B6782F /* ViewModel_SelectHero.h */,
-				924EAFB118273AB000B6782F /* ViewModelManager.cpp */,
-				924EAFB218273AB000B6782F /* ViewModelManager.h */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		924EBACA182773AA00B6782F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +333,38 @@
 				9296429A18279488007B4D7A /* studioui */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		925D98DF182B59E7006BED71 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				925D98E0182B59E7006BED71 /* Model_GameLand.cpp */,
+				925D98E1182B59E7006BED71 /* Model_GameLand.h */,
+				925D98E2182B59E7006BED71 /* Model_Login.cpp */,
+				925D98E3182B59E7006BED71 /* Model_Login.h */,
+				925D98E4182B59E7006BED71 /* Model_SelectHero.cpp */,
+				925D98E5182B59E7006BED71 /* Model_SelectHero.h */,
+				925D98E6182B59E7006BED71 /* ModelTypeDefine.h */,
+				925D98E7182B59E7006BED71 /* RootSceneView.cpp */,
+				925D98E8182B59E7006BED71 /* RootSceneView.h */,
+				925D98E9182B59E7006BED71 /* TopLevelView.cpp */,
+				925D98EA182B59E7006BED71 /* TopLevelView.h */,
+				925D98EB182B59E7006BED71 /* View_GameLand.cpp */,
+				925D98EC182B59E7006BED71 /* View_GameLand.h */,
+				925D98ED182B59E7006BED71 /* View_Login.cpp */,
+				925D98EE182B59E7006BED71 /* View_Login.h */,
+				925D98EF182B59E7006BED71 /* View_SelectHero.cpp */,
+				925D98F0182B59E7006BED71 /* View_SelectHero.h */,
+				925D98F1182B59E7006BED71 /* ViewModel_GameLand.cpp */,
+				925D98F2182B59E7006BED71 /* ViewModel_GameLand.h */,
+				925D98F3182B59E7006BED71 /* ViewModel_Login.cpp */,
+				925D98F4182B59E7006BED71 /* ViewModel_Login.h */,
+				925D98F5182B59E7006BED71 /* ViewModel_SelectHero.cpp */,
+				925D98F6182B59E7006BED71 /* ViewModel_SelectHero.h */,
+				925D98F7182B59E7006BED71 /* ViewModelManager.cpp */,
+				925D98F8182B59E7006BED71 /* ViewModelManager.h */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,21 +471,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				924EAFB418273AB000B6782F /* Model_GameLand.cpp in Sources */,
+				925D98FA182B59E7006BED71 /* Model_GameLand.cpp in Sources */,
 				9233B871181152B90095D07F /* main.m in Sources */,
 				9233B868181152B90095D07F /* AppController.mm in Sources */,
-				924EAFC418273AB000B6782F /* ViewModel_GameLand.cpp in Sources */,
-				924EAFB818273AB000B6782F /* Model_SelectHero.cpp in Sources */,
-				924EAFC218273AB000B6782F /* View_SelectHero.cpp in Sources */,
-				924EAFC018273AB000B6782F /* View_Login.cpp in Sources */,
-				924EAFB618273AB000B6782F /* Model_Login.cpp in Sources */,
+				925D990A182B59E7006BED71 /* ViewModel_GameLand.cpp in Sources */,
+				925D98FE182B59E7006BED71 /* Model_SelectHero.cpp in Sources */,
+				925D9908182B59E7006BED71 /* View_SelectHero.cpp in Sources */,
+				925D9906182B59E7006BED71 /* View_Login.cpp in Sources */,
+				925D98FC182B59E7006BED71 /* Model_Login.cpp in Sources */,
 				9233B872181152B90095D07F /* RootViewController.mm in Sources */,
-				924EAFBA18273AB000B6782F /* RootSceneView.cpp in Sources */,
-				924EAFBE18273AB000B6782F /* View_GameLand.cpp in Sources */,
-				924EAFC618273AB000B6782F /* ViewModel_Login.cpp in Sources */,
-				924EAFC818273AB000B6782F /* ViewModel_SelectHero.cpp in Sources */,
-				924EAFBC18273AB000B6782F /* TopLevelView.cpp in Sources */,
-				924EAFCA18273AB000B6782F /* ViewModelManager.cpp in Sources */,
+				925D9900182B59E7006BED71 /* RootSceneView.cpp in Sources */,
+				925D9904182B59E7006BED71 /* View_GameLand.cpp in Sources */,
+				925D990C182B59E7006BED71 /* ViewModel_Login.cpp in Sources */,
+				925D990E182B59E7006BED71 /* ViewModel_SelectHero.cpp in Sources */,
+				925D9902182B59E7006BED71 /* TopLevelView.cpp in Sources */,
+				925D9910182B59E7006BED71 /* ViewModelManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,19 +493,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				924EAFC118273AB000B6782F /* View_SelectHero.cpp in Sources */,
+				925D9907182B59E7006BED71 /* View_SelectHero.cpp in Sources */,
 				9233B87D181152C70095D07F /* main.m in Sources */,
-				924EAFC318273AB000B6782F /* ViewModel_GameLand.cpp in Sources */,
-				924EAFBF18273AB000B6782F /* View_Login.cpp in Sources */,
-				924EAFBB18273AB000B6782F /* TopLevelView.cpp in Sources */,
-				924EAFB918273AB000B6782F /* RootSceneView.cpp in Sources */,
-				924EAFC718273AB000B6782F /* ViewModel_SelectHero.cpp in Sources */,
-				924EAFB718273AB000B6782F /* Model_SelectHero.cpp in Sources */,
-				924EAFC918273AB000B6782F /* ViewModelManager.cpp in Sources */,
-				924EAFB518273AB000B6782F /* Model_Login.cpp in Sources */,
-				924EAFC518273AB000B6782F /* ViewModel_Login.cpp in Sources */,
-				924EAFBD18273AB000B6782F /* View_GameLand.cpp in Sources */,
-				924EAFB318273AB000B6782F /* Model_GameLand.cpp in Sources */,
+				925D9909182B59E7006BED71 /* ViewModel_GameLand.cpp in Sources */,
+				925D9905182B59E7006BED71 /* View_Login.cpp in Sources */,
+				925D9901182B59E7006BED71 /* TopLevelView.cpp in Sources */,
+				925D98FF182B59E7006BED71 /* RootSceneView.cpp in Sources */,
+				925D990D182B59E7006BED71 /* ViewModel_SelectHero.cpp in Sources */,
+				925D98FD182B59E7006BED71 /* Model_SelectHero.cpp in Sources */,
+				925D990F182B59E7006BED71 /* ViewModelManager.cpp in Sources */,
+				925D98FB182B59E7006BED71 /* Model_Login.cpp in Sources */,
+				925D990B182B59E7006BED71 /* ViewModel_Login.cpp in Sources */,
+				925D9903182B59E7006BED71 /* View_GameLand.cpp in Sources */,
+				925D98F9182B59E7006BED71 /* Model_GameLand.cpp in Sources */,
 				9233B879181152C70095D07F /* AppController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,9 +537,12 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/proj.ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios/libraries\"";
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-lz",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "38EDD0CD-6709-4416-A663-BD7BA3161A2B";
 				SDKROOT = iphoneos;
@@ -570,10 +575,17 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/proj.ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios/libraries\"",
+					"\"$(SRCROOT)/../../ymworkspace/Build/Intermediates/ArchiveIntermediates/build-all-libs iOS/IntermediateBuildFilesPath/UninstalledProducts\"",
+					"\"$(SRCROOT)/../../ymworkspace/Build/Intermediates/ArchiveIntermediates/build-all-cocos iOS/IntermediateBuildFilesPath/UninstalledProducts\"",
+				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-lz",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "38EDD0CD-6709-4416-A663-BD7BA3161A2B";
 				SDKROOT = iphoneos;
