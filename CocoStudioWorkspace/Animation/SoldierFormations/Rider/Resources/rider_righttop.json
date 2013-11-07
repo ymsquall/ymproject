@@ -3,7 +3,7 @@
     {
       "strVersion": "1.0.2.0",
       "version": 1.02,
-      "name": "rider_leftbottom",
+      "name": "rider_righttop",
       "bone_data": [
         {
           "name": "01",
@@ -20,7 +20,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "rider_lb_01.png",
+              "name": "rider_rt_01.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -34,7 +34,7 @@
               ]
             },
             {
-              "name": "rider_lb_02.png",
+              "name": "rider_rt_02.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -48,7 +48,7 @@
               ]
             },
             {
-              "name": "rider_lb_03.png",
+              "name": "rider_rt_03.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -62,7 +62,7 @@
               ]
             },
             {
-              "name": "rider_lb_04.png",
+              "name": "rider_rt_04.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -76,7 +76,7 @@
               ]
             },
             {
-              "name": "rider_lb_05.png",
+              "name": "rider_rt_05.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -90,7 +90,7 @@
               ]
             },
             {
-              "name": "rider_lb_06.png",
+              "name": "rider_rt_06.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -104,7 +104,7 @@
               ]
             },
             {
-              "name": "rider_lb_07.png",
+              "name": "rider_rt_07.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -118,7 +118,7 @@
               ]
             },
             {
-              "name": "rider_lb_08.png",
+              "name": "rider_rt_08.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -148,7 +148,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "rider_lb_01.png",
+              "name": "rider_rt_01.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -162,7 +162,7 @@
               ]
             },
             {
-              "name": "rider_lb_02.png",
+              "name": "rider_rt_02.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -176,7 +176,7 @@
               ]
             },
             {
-              "name": "rider_lb_03.png",
+              "name": "rider_rt_03.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -190,7 +190,7 @@
               ]
             },
             {
-              "name": "rider_lb_04.png",
+              "name": "rider_rt_04.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -204,7 +204,7 @@
               ]
             },
             {
-              "name": "rider_lb_05.png",
+              "name": "rider_rt_05.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -218,7 +218,7 @@
               ]
             },
             {
-              "name": "rider_lb_06.png",
+              "name": "rider_rt_06.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -232,7 +232,7 @@
               ]
             },
             {
-              "name": "rider_lb_07.png",
+              "name": "rider_rt_07.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -246,7 +246,7 @@
               ]
             },
             {
-              "name": "rider_lb_08.png",
+              "name": "rider_rt_08.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -276,7 +276,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "rider_lb_01.png",
+              "name": "rider_rt_01.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -290,7 +290,7 @@
               ]
             },
             {
-              "name": "rider_lb_02.png",
+              "name": "rider_rt_02.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -304,7 +304,7 @@
               ]
             },
             {
-              "name": "rider_lb_03.png",
+              "name": "rider_rt_03.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -318,7 +318,7 @@
               ]
             },
             {
-              "name": "rider_lb_04.png",
+              "name": "rider_rt_04.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -332,7 +332,7 @@
               ]
             },
             {
-              "name": "rider_lb_05.png",
+              "name": "rider_rt_05.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -346,7 +346,7 @@
               ]
             },
             {
-              "name": "rider_lb_06.png",
+              "name": "rider_rt_06.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -360,7 +360,7 @@
               ]
             },
             {
-              "name": "rider_lb_07.png",
+              "name": "rider_rt_07.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -374,7 +374,7 @@
               ]
             },
             {
-              "name": "rider_lb_08.png",
+              "name": "rider_rt_08.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -404,7 +404,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "rider_lb_01.png",
+              "name": "rider_rt_01.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -418,7 +418,7 @@
               ]
             },
             {
-              "name": "rider_lb_02.png",
+              "name": "rider_rt_02.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -432,7 +432,7 @@
               ]
             },
             {
-              "name": "rider_lb_03.png",
+              "name": "rider_rt_03.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -446,7 +446,7 @@
               ]
             },
             {
-              "name": "rider_lb_04.png",
+              "name": "rider_rt_04.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -460,7 +460,7 @@
               ]
             },
             {
-              "name": "rider_lb_05.png",
+              "name": "rider_rt_05.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -474,7 +474,7 @@
               ]
             },
             {
-              "name": "rider_lb_06.png",
+              "name": "rider_rt_06.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -488,7 +488,7 @@
               ]
             },
             {
-              "name": "rider_lb_07.png",
+              "name": "rider_rt_07.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -502,7 +502,7 @@
               ]
             },
             {
-              "name": "rider_lb_08.png",
+              "name": "rider_rt_08.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -532,7 +532,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "rider_lb_01.png",
+              "name": "rider_rt_01.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -546,7 +546,7 @@
               ]
             },
             {
-              "name": "rider_lb_02.png",
+              "name": "rider_rt_02.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -560,7 +560,7 @@
               ]
             },
             {
-              "name": "rider_lb_03.png",
+              "name": "rider_rt_03.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -574,7 +574,7 @@
               ]
             },
             {
-              "name": "rider_lb_04.png",
+              "name": "rider_rt_04.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -588,7 +588,7 @@
               ]
             },
             {
-              "name": "rider_lb_05.png",
+              "name": "rider_rt_05.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -602,7 +602,7 @@
               ]
             },
             {
-              "name": "rider_lb_06.png",
+              "name": "rider_rt_06.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -616,7 +616,7 @@
               ]
             },
             {
-              "name": "rider_lb_07.png",
+              "name": "rider_rt_07.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -630,7 +630,7 @@
               ]
             },
             {
-              "name": "rider_lb_08.png",
+              "name": "rider_rt_08.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -660,7 +660,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "rider_lb_01.png",
+              "name": "rider_rt_01.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -674,7 +674,7 @@
               ]
             },
             {
-              "name": "rider_lb_02.png",
+              "name": "rider_rt_02.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -688,7 +688,7 @@
               ]
             },
             {
-              "name": "rider_lb_03.png",
+              "name": "rider_rt_03.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -702,7 +702,7 @@
               ]
             },
             {
-              "name": "rider_lb_04.png",
+              "name": "rider_rt_04.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -716,7 +716,7 @@
               ]
             },
             {
-              "name": "rider_lb_05.png",
+              "name": "rider_rt_05.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -730,7 +730,7 @@
               ]
             },
             {
-              "name": "rider_lb_06.png",
+              "name": "rider_rt_06.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -744,7 +744,7 @@
               ]
             },
             {
-              "name": "rider_lb_07.png",
+              "name": "rider_rt_07.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -758,7 +758,7 @@
               ]
             },
             {
-              "name": "rider_lb_08.png",
+              "name": "rider_rt_08.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -788,7 +788,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "rider_lb_01.png",
+              "name": "rider_rt_01.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -802,7 +802,7 @@
               ]
             },
             {
-              "name": "rider_lb_02.png",
+              "name": "rider_rt_02.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -816,7 +816,7 @@
               ]
             },
             {
-              "name": "rider_lb_03.png",
+              "name": "rider_rt_03.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -830,7 +830,7 @@
               ]
             },
             {
-              "name": "rider_lb_04.png",
+              "name": "rider_rt_04.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -844,7 +844,7 @@
               ]
             },
             {
-              "name": "rider_lb_05.png",
+              "name": "rider_rt_05.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -858,7 +858,7 @@
               ]
             },
             {
-              "name": "rider_lb_06.png",
+              "name": "rider_rt_06.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -872,7 +872,7 @@
               ]
             },
             {
-              "name": "rider_lb_07.png",
+              "name": "rider_rt_07.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -886,7 +886,7 @@
               ]
             },
             {
-              "name": "rider_lb_08.png",
+              "name": "rider_rt_08.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -916,7 +916,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "rider_lb_01.png",
+              "name": "rider_rt_01.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -930,7 +930,7 @@
               ]
             },
             {
-              "name": "rider_lb_02.png",
+              "name": "rider_rt_02.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -944,7 +944,7 @@
               ]
             },
             {
-              "name": "rider_lb_03.png",
+              "name": "rider_rt_03.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -958,7 +958,7 @@
               ]
             },
             {
-              "name": "rider_lb_04.png",
+              "name": "rider_rt_04.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -972,7 +972,7 @@
               ]
             },
             {
-              "name": "rider_lb_05.png",
+              "name": "rider_rt_05.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -986,7 +986,7 @@
               ]
             },
             {
-              "name": "rider_lb_06.png",
+              "name": "rider_rt_06.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1000,7 +1000,7 @@
               ]
             },
             {
-              "name": "rider_lb_07.png",
+              "name": "rider_rt_07.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1014,7 +1014,7 @@
               ]
             },
             {
-              "name": "rider_lb_08.png",
+              "name": "rider_rt_08.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1044,7 +1044,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "rider_lb_01.png",
+              "name": "rider_rt_01.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1058,7 +1058,7 @@
               ]
             },
             {
-              "name": "rider_lb_02.png",
+              "name": "rider_rt_02.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1072,7 +1072,7 @@
               ]
             },
             {
-              "name": "rider_lb_03.png",
+              "name": "rider_rt_03.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1086,7 +1086,7 @@
               ]
             },
             {
-              "name": "rider_lb_04.png",
+              "name": "rider_rt_04.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1100,7 +1100,7 @@
               ]
             },
             {
-              "name": "rider_lb_05.png",
+              "name": "rider_rt_05.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1114,7 +1114,7 @@
               ]
             },
             {
-              "name": "rider_lb_06.png",
+              "name": "rider_rt_06.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1128,7 +1128,7 @@
               ]
             },
             {
-              "name": "rider_lb_07.png",
+              "name": "rider_rt_07.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1142,7 +1142,7 @@
               ]
             },
             {
-              "name": "rider_lb_08.png",
+              "name": "rider_rt_08.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1172,7 +1172,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "rider_lb_01.png",
+              "name": "rider_rt_01.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1186,7 +1186,7 @@
               ]
             },
             {
-              "name": "rider_lb_02.png",
+              "name": "rider_rt_02.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1200,7 +1200,7 @@
               ]
             },
             {
-              "name": "rider_lb_03.png",
+              "name": "rider_rt_03.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1214,7 +1214,7 @@
               ]
             },
             {
-              "name": "rider_lb_04.png",
+              "name": "rider_rt_04.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1228,7 +1228,7 @@
               ]
             },
             {
-              "name": "rider_lb_05.png",
+              "name": "rider_rt_05.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1242,7 +1242,7 @@
               ]
             },
             {
-              "name": "rider_lb_06.png",
+              "name": "rider_rt_06.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1256,7 +1256,7 @@
               ]
             },
             {
-              "name": "rider_lb_07.png",
+              "name": "rider_rt_07.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1270,7 +1270,7 @@
               ]
             },
             {
-              "name": "rider_lb_08.png",
+              "name": "rider_rt_08.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1300,7 +1300,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "rider_lb_01.png",
+              "name": "rider_rt_01.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1314,7 +1314,7 @@
               ]
             },
             {
-              "name": "rider_lb_02.png",
+              "name": "rider_rt_02.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1328,7 +1328,7 @@
               ]
             },
             {
-              "name": "rider_lb_03.png",
+              "name": "rider_rt_03.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1342,7 +1342,7 @@
               ]
             },
             {
-              "name": "rider_lb_04.png",
+              "name": "rider_rt_04.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1356,7 +1356,7 @@
               ]
             },
             {
-              "name": "rider_lb_05.png",
+              "name": "rider_rt_05.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1370,7 +1370,7 @@
               ]
             },
             {
-              "name": "rider_lb_06.png",
+              "name": "rider_rt_06.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1384,7 +1384,7 @@
               ]
             },
             {
-              "name": "rider_lb_07.png",
+              "name": "rider_rt_07.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1398,7 +1398,7 @@
               ]
             },
             {
-              "name": "rider_lb_08.png",
+              "name": "rider_rt_08.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1428,7 +1428,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "rider_lb_01.png",
+              "name": "rider_rt_01.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1442,7 +1442,7 @@
               ]
             },
             {
-              "name": "rider_lb_02.png",
+              "name": "rider_rt_02.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1456,7 +1456,7 @@
               ]
             },
             {
-              "name": "rider_lb_03.png",
+              "name": "rider_rt_03.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1470,7 +1470,7 @@
               ]
             },
             {
-              "name": "rider_lb_04.png",
+              "name": "rider_rt_04.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1484,7 +1484,7 @@
               ]
             },
             {
-              "name": "rider_lb_05.png",
+              "name": "rider_rt_05.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1498,7 +1498,7 @@
               ]
             },
             {
-              "name": "rider_lb_06.png",
+              "name": "rider_rt_06.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1512,7 +1512,7 @@
               ]
             },
             {
-              "name": "rider_lb_07.png",
+              "name": "rider_rt_07.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1526,7 +1526,7 @@
               ]
             },
             {
-              "name": "rider_lb_08.png",
+              "name": "rider_rt_08.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1556,7 +1556,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "rider_lb_01.png",
+              "name": "rider_rt_01.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1570,7 +1570,7 @@
               ]
             },
             {
-              "name": "rider_lb_02.png",
+              "name": "rider_rt_02.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1584,7 +1584,7 @@
               ]
             },
             {
-              "name": "rider_lb_03.png",
+              "name": "rider_rt_03.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1598,7 +1598,7 @@
               ]
             },
             {
-              "name": "rider_lb_04.png",
+              "name": "rider_rt_04.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1612,7 +1612,7 @@
               ]
             },
             {
-              "name": "rider_lb_05.png",
+              "name": "rider_rt_05.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1626,7 +1626,7 @@
               ]
             },
             {
-              "name": "rider_lb_06.png",
+              "name": "rider_rt_06.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1640,7 +1640,7 @@
               ]
             },
             {
-              "name": "rider_lb_07.png",
+              "name": "rider_rt_07.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1654,7 +1654,7 @@
               ]
             },
             {
-              "name": "rider_lb_08.png",
+              "name": "rider_rt_08.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1684,7 +1684,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "rider_lb_01.png",
+              "name": "rider_rt_01.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1698,7 +1698,7 @@
               ]
             },
             {
-              "name": "rider_lb_02.png",
+              "name": "rider_rt_02.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1712,7 +1712,7 @@
               ]
             },
             {
-              "name": "rider_lb_03.png",
+              "name": "rider_rt_03.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1726,7 +1726,7 @@
               ]
             },
             {
-              "name": "rider_lb_04.png",
+              "name": "rider_rt_04.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1740,7 +1740,7 @@
               ]
             },
             {
-              "name": "rider_lb_05.png",
+              "name": "rider_rt_05.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1754,7 +1754,7 @@
               ]
             },
             {
-              "name": "rider_lb_06.png",
+              "name": "rider_rt_06.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1768,7 +1768,7 @@
               ]
             },
             {
-              "name": "rider_lb_07.png",
+              "name": "rider_rt_07.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1782,7 +1782,7 @@
               ]
             },
             {
-              "name": "rider_lb_08.png",
+              "name": "rider_rt_08.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1812,7 +1812,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "rider_lb_01.png",
+              "name": "rider_rt_01.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1826,7 +1826,7 @@
               ]
             },
             {
-              "name": "rider_lb_02.png",
+              "name": "rider_rt_02.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1840,7 +1840,7 @@
               ]
             },
             {
-              "name": "rider_lb_03.png",
+              "name": "rider_rt_03.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1854,7 +1854,7 @@
               ]
             },
             {
-              "name": "rider_lb_04.png",
+              "name": "rider_rt_04.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1868,7 +1868,7 @@
               ]
             },
             {
-              "name": "rider_lb_05.png",
+              "name": "rider_rt_05.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1882,7 +1882,7 @@
               ]
             },
             {
-              "name": "rider_lb_06.png",
+              "name": "rider_rt_06.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1896,7 +1896,7 @@
               ]
             },
             {
-              "name": "rider_lb_07.png",
+              "name": "rider_rt_07.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1910,7 +1910,7 @@
               ]
             },
             {
-              "name": "rider_lb_08.png",
+              "name": "rider_rt_08.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1940,7 +1940,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "rider_lb_01.png",
+              "name": "rider_rt_01.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1954,7 +1954,7 @@
               ]
             },
             {
-              "name": "rider_lb_02.png",
+              "name": "rider_rt_02.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1968,7 +1968,7 @@
               ]
             },
             {
-              "name": "rider_lb_03.png",
+              "name": "rider_rt_03.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1982,7 +1982,7 @@
               ]
             },
             {
-              "name": "rider_lb_04.png",
+              "name": "rider_rt_04.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -1996,7 +1996,7 @@
               ]
             },
             {
-              "name": "rider_lb_05.png",
+              "name": "rider_rt_05.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2010,7 +2010,7 @@
               ]
             },
             {
-              "name": "rider_lb_06.png",
+              "name": "rider_rt_06.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2024,7 +2024,7 @@
               ]
             },
             {
-              "name": "rider_lb_07.png",
+              "name": "rider_rt_07.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2038,7 +2038,7 @@
               ]
             },
             {
-              "name": "rider_lb_08.png",
+              "name": "rider_rt_08.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2068,7 +2068,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "rider_lb_01.png",
+              "name": "rider_rt_01.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2082,7 +2082,7 @@
               ]
             },
             {
-              "name": "rider_lb_02.png",
+              "name": "rider_rt_02.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2096,7 +2096,7 @@
               ]
             },
             {
-              "name": "rider_lb_03.png",
+              "name": "rider_rt_03.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2110,7 +2110,7 @@
               ]
             },
             {
-              "name": "rider_lb_04.png",
+              "name": "rider_rt_04.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2124,7 +2124,7 @@
               ]
             },
             {
-              "name": "rider_lb_05.png",
+              "name": "rider_rt_05.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2138,7 +2138,7 @@
               ]
             },
             {
-              "name": "rider_lb_06.png",
+              "name": "rider_rt_06.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2152,7 +2152,7 @@
               ]
             },
             {
-              "name": "rider_lb_07.png",
+              "name": "rider_rt_07.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2166,7 +2166,7 @@
               ]
             },
             {
-              "name": "rider_lb_08.png",
+              "name": "rider_rt_08.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2196,7 +2196,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "rider_lb_01.png",
+              "name": "rider_rt_01.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2210,7 +2210,7 @@
               ]
             },
             {
-              "name": "rider_lb_02.png",
+              "name": "rider_rt_02.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2224,7 +2224,7 @@
               ]
             },
             {
-              "name": "rider_lb_03.png",
+              "name": "rider_rt_03.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2238,7 +2238,7 @@
               ]
             },
             {
-              "name": "rider_lb_04.png",
+              "name": "rider_rt_04.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2252,7 +2252,7 @@
               ]
             },
             {
-              "name": "rider_lb_05.png",
+              "name": "rider_rt_05.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2266,7 +2266,7 @@
               ]
             },
             {
-              "name": "rider_lb_06.png",
+              "name": "rider_rt_06.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2280,7 +2280,7 @@
               ]
             },
             {
-              "name": "rider_lb_07.png",
+              "name": "rider_rt_07.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2294,7 +2294,7 @@
               ]
             },
             {
-              "name": "rider_lb_08.png",
+              "name": "rider_rt_08.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2324,7 +2324,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "rider_lb_01.png",
+              "name": "rider_rt_01.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2338,7 +2338,7 @@
               ]
             },
             {
-              "name": "rider_lb_02.png",
+              "name": "rider_rt_02.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2352,7 +2352,7 @@
               ]
             },
             {
-              "name": "rider_lb_03.png",
+              "name": "rider_rt_03.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2366,7 +2366,7 @@
               ]
             },
             {
-              "name": "rider_lb_04.png",
+              "name": "rider_rt_04.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2380,7 +2380,7 @@
               ]
             },
             {
-              "name": "rider_lb_05.png",
+              "name": "rider_rt_05.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2394,7 +2394,7 @@
               ]
             },
             {
-              "name": "rider_lb_06.png",
+              "name": "rider_rt_06.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2408,7 +2408,7 @@
               ]
             },
             {
-              "name": "rider_lb_07.png",
+              "name": "rider_rt_07.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2422,7 +2422,7 @@
               ]
             },
             {
-              "name": "rider_lb_08.png",
+              "name": "rider_rt_08.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -2442,7 +2442,7 @@
   ],
   "animation_data": [
     {
-      "name": "rider_leftbottom",
+      "name": "rider_righttop",
       "mov_data": [
         {
           "name": "Animation1",
@@ -4550,7 +4550,7 @@
   ],
   "texture_data": [
     {
-      "name": "rider_lb_01",
+      "name": "rider_rt_01",
       "width": 84.0,
       "height": 84.0,
       "pX": 0.5,
@@ -4558,7 +4558,7 @@
       "plistFile": ""
     },
     {
-      "name": "rider_lb_02",
+      "name": "rider_rt_02",
       "width": 0.0,
       "height": 0.0,
       "pX": 0.5,
@@ -4566,7 +4566,7 @@
       "plistFile": ""
     },
     {
-      "name": "rider_lb_03",
+      "name": "rider_rt_03",
       "width": 0.0,
       "height": 0.0,
       "pX": 0.5,
@@ -4574,7 +4574,7 @@
       "plistFile": ""
     },
     {
-      "name": "rider_lb_04",
+      "name": "rider_rt_04",
       "width": 0.0,
       "height": 0.0,
       "pX": 0.5,
@@ -4582,7 +4582,7 @@
       "plistFile": ""
     },
     {
-      "name": "rider_lb_05",
+      "name": "rider_rt_05",
       "width": 0.0,
       "height": 0.0,
       "pX": 0.5,
@@ -4590,7 +4590,7 @@
       "plistFile": ""
     },
     {
-      "name": "rider_lb_06",
+      "name": "rider_rt_06",
       "width": 0.0,
       "height": 0.0,
       "pX": 0.5,
@@ -4598,7 +4598,7 @@
       "plistFile": ""
     },
     {
-      "name": "rider_lb_07",
+      "name": "rider_rt_07",
       "width": 0.0,
       "height": 0.0,
       "pX": 0.5,
@@ -4606,7 +4606,7 @@
       "plistFile": ""
     },
     {
-      "name": "rider_lb_08",
+      "name": "rider_rt_08",
       "width": 0.0,
       "height": 0.0,
       "pX": 0.5,
@@ -4614,7 +4614,5 @@
       "plistFile": ""
     }
   ],
-  "config_file_path": [
-    "rider_righttop0.plist"
-  ]
+  "config_file_path": []
 }

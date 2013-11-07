@@ -17,6 +17,6 @@ function LUACreateAndPlayArmature(animName, playIndex, posX, posY, animScale, sc
 	pArmature:getAnimation():playByIndex(playIndex)
 	pArmature:getAnimation():setAnimationScale(animScale)
 	pArmature:setPosition(CCPoint(posX, posY))
-	pArmature:setScale(0.65)
+	pArmature:setScale(scale)
 	return pArmature
 end

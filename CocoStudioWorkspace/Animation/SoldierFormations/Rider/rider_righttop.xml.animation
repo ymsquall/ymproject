@@ -2,10 +2,10 @@
 <AnimationProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Version>0.0.0.0</Version>
   <Name>rider_righttop</Name>
-  <ProjectDir>Y:\Work\ymproject_github\CocoStudioWorkspace\Animation\SoldierFormations\Rider\rider_righttop</ProjectDir>
+  <ProjectDir>Y:\Work\ymproject_github\CocoStudioWorkspace\Animation\SoldierFormations\Rider</ProjectDir>
   <JsonFileName>rider_righttop.json</JsonFileName>
-  <Resources>Y:\Work\ymproject_github\CocoStudioWorkspace\Animation\SoldierFormations\Rider\rider_righttop\Resources</Resources>
-  <JsonFolder>Y:\Work\ymproject_github\CocoStudioWorkspace\Animation\SoldierFormations\Rider\rider_righttop\Json</JsonFolder>
+  <Resources>Y:\Work\ymproject_github\CocoStudioWorkspace\Animation\SoldierFormations\Rider\Resources</Resources>
+  <JsonFolder>Y:\Work\ymproject_github\CocoStudioWorkspace\Animation\SoldierFormations\Rider\Json</JsonFolder>
   <JsonList />
   <ResourceFileList />
   <CanvasSize>
