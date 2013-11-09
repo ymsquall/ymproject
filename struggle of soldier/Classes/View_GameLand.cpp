@@ -65,6 +65,7 @@ bool GameLandView::init()
 	if(userdata.type != LUA_TUSERDATA || NULL == userdata.value.pointer)
 		return false;
 	this->scheduleUpdate();
+
 	mLayout = (cocos2d::extension::Layout*)userdata.value.pointer;
 	this->addWidget(mLayout);
 
@@ -74,17 +75,6 @@ bool GameLandView::init()
 	mMapBGPanel = dynamic_cast<UIPanel*>(mLayout->getChildByName("mMapBGPanel"));
 	mMapBGImageView = dynamic_cast<UIImageView*>(mLayout->getChildByName("mMapBGImageView"));
 
-	cocos2d::Size viewSize = cocos2d::Director::getInstance()->getVisibleSize();
-	mMapDragPanel->setSize(viewSize);
-
-	lua_State* L = LuaEngine::getInstance()->getLuaStack()->getLuaState();
-	CCPoint displayOffPos(0, 0);
-	if(tolua_getGlobalUserData_ByFieldName(L, "__LUADeviceOffsetPos", displayOffPos))
-	{
-		CCPoint offPos(-displayOffPos.x, -displayOffPos.y);
-		mMapDragPanel->setPosition(offPos);
-		mBackButton->setPosition(offPos);
-	}
 	mBackButton->addReleaseEvent(this, coco_releaseselector(GameLandView::onBackBtnTouch));
 	mMapBGImageView->addReleaseEvent(this, coco_releaseselector(GameLandView::onMapTouched));
 	mMapDragPanel->addEventListener(this, dragpaneleventselector(GameLandView::onMapPanelDragEvent));
@@ -110,7 +100,7 @@ void GameLandView::onEnterTransitionDidFinish()
 	ViewSuperT::onEnterTransitionDidFinish();
 
 	this->initLandGrid();
-	mMapDragPanel->setInnerContainerPosition(CCPoint(-950,-1000),true);
+	//mMapDragPanel->setInnerContainerPosition(CCPoint(-568,-384),true);
 }
 
 void GameLandView::initLandGrid()

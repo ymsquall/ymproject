@@ -127,13 +127,13 @@ function post_output_hook(package)
  ****************************************************************************/
 
 extern "C" {
-#include "tolua_fix.h"
+#include "cocos2dx_support/tolua_fix.h"
 }
 
 #include <map>
 #include <string>
 #include "LuaExtern.h"
-#include "CCLuaEngine.h"
+#include "cocos2dx_support/CCLuaEngine.h"
 #include "SimpleAudioEngine.h"
 #include "cocos-ext.h"
 

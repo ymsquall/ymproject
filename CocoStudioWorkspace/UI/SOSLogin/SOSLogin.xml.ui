@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <UIProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Version>1.0.2.0</Version>
-  <Name>sos_login</Name>
-  <ProjectDir>Y:\Work\ym.cocos.project\CocoStudioWorkspace\UI\sos_login</ProjectDir>
-  <JsonFileName>sos_login.json</JsonFileName>
-  <Resources>Y:\Work\ym.cocos.project\CocoStudioWorkspace\UI\sos_login\Resources</Resources>
-  <JsonFolder>Y:\Work\ym.cocos.project\CocoStudioWorkspace\UI\sos_login\Json</JsonFolder>
+  <Name>SOSLogin</Name>
+  <ProjectDir>E:\work\ymproject_github\CocoStudioWorkspace\UI\SOSLogin</ProjectDir>
+  <JsonFileName>SOSLogin.json</JsonFileName>
+  <Resources>E:\work\ymproject_github\CocoStudioWorkspace\UI\SOSLogin\Resources</Resources>
+  <JsonFolder>E:\work\ymproject_github\CocoStudioWorkspace\UI\SOSLogin\Json</JsonFolder>
   <JsonList>
     <string>LoginView.json</string>
   </JsonList>
   <imageFileList>
-    <string>sos_login0.plist</string>
+    <string>SOSLogin0.plist</string>
   </imageFileList>
   <JsonSuffix>.json</JsonSuffix>
   <CurrentUIJson>LoginView.json</CurrentUIJson>

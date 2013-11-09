@@ -7,6 +7,7 @@ require "luascript/toolkit"
 
 require "luascript/models/gamelandmodel"
 require "luascript/views/helper"
+require "luascript/views/login"
 require "luascript/views/selecthero"
 require "luascript/views/gameland"
 ----------------

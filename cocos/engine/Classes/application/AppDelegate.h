@@ -36,9 +36,9 @@ namespace engine
 		*/
 		virtual void applicationWillEnterForeground();
 
-		int runApp(int width, int height, const char* title);
         
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+		int runApp(int width, int height, const char* title);
 		int runOneStep();
 		HWND getEGLViewHwnd();
 #endif
@@ -51,10 +51,9 @@ namespace engine
 		framework::unity::RoutedEvent<AppDelegate*> Event_AppWillEnterForeground;
 
 	private:
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 		int mEGLViewWidth;
 		int mEGLViewHeight;
-        
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 		MSG mLastGotMessage;
 		LARGE_INTEGER mMessageFreq;
 		LARGE_INTEGER mMessageLast;

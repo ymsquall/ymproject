@@ -28,14 +28,14 @@ private:
 
 	void onBackBtnTouch(cocos2d::CCObject* pSender);
 	void onOkBtnTouch(cocos2d::CCObject* pSender);
-	void onSelectBtnTouch(cocos2d::CCObject* pSender);
 	void onHeadImageTouch(cocos2d::CCObject* pSender);
 
 private:
 	cocos2d::extension::Layout* mLayout;
+	cocos2d::extension::UIImageView* mTitleTextBar;
+	cocos2d::extension::UIImageView* mBottomBar;
 	cocos2d::extension::UIButton* mBackButton;
 	cocos2d::extension::UIButton* mOkButton;
-	cocos2d::extension::UIButton* mSelectButton;
 	cocos2d::extension::UIScrollView* mHeroHeadScrollView;
 	HeroHeadList mHeroHeadList;
 	int mSelectHeroCount;

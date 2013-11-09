@@ -1,9 +1,20 @@
 function LUALoadSelectHeroView(viewWideh, viewHeight)
-	local pLayout = UIHelper:instance():createWidgetFromJsonFile('studioui/SelectHeroView/SelectHeroView.ExportJson')
+	local pLayout = UIHelper:instance():createWidgetFromJsonFile('studioui/SelectHeroView/SelectHeroView.json')
 	local layoutSize = pLayout:getContentSize()
 	pLayout:setPosition(CCPoint((viewWideh-layoutSize.width)/2.0, (viewHeight-layoutSize.height)/2.0));
 
-	local mHeroHeadScrollView = LuaCocoStudioConversion:getUIScrollViewByName("mHeroHeadScrollView", pLayout)
+	local mHeroHeadScrollView = LuaCocoStudioConversion:getChildUIScrollViewByName("mHeroHeadScrollView", pLayout)
+	local mTitleTextBar = LuaCocoStudioConversion:getChildUIImageViewByName("mTitleTextBar", pLayout)
+	local mBottomBar = LuaCocoStudioConversion:getChildUIImageViewByName("mBottomBar", pLayout)
+
+	local pos = mTitleTextBar:getPosition()
+	pos.x = pos.x - __LUADeviceOffsetPos.x
+	pos.y = pos.y + __LUADeviceOffsetPos.y
+	mTitleTextBar:setPosition(pos)
+	pos = mBottomBar:getPosition()
+	pos.y = pos.y - __LUADeviceOffsetPos.y
+	mBottomBar:setPosition(pos)
+
 	local pHeadImage1 = LUACreateUIImageView("picture/heroface/2160-1.png")
 	local pHeadImage2 = LUACreateUIImageView("picture/heroface/2105-1.png")
 	local pHeadImage3 = LUACreateUIImageView("picture/heroface/2161-1.png")

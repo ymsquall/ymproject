@@ -2,10 +2,10 @@
 <UIProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Version>1.0.2.0</Version>
   <Name>SOSGameLand</Name>
-  <ProjectDir>Y:\Work\ymproject_github\CocoStudioWorkspace\UI\SOSGameLand</ProjectDir>
+  <ProjectDir>E:\work\ymproject_github\CocoStudioWorkspace\UI\SOSGameLand</ProjectDir>
   <JsonFileName>SOSGameLand.json</JsonFileName>
-  <Resources>Y:\Work\ymproject_github\CocoStudioWorkspace\UI\SOSGameLand\Resources</Resources>
-  <JsonFolder>Y:\Work\ymproject_github\CocoStudioWorkspace\UI\SOSGameLand\Json</JsonFolder>
+  <Resources>E:\work\ymproject_github\CocoStudioWorkspace\UI\SOSGameLand\Resources</Resources>
+  <JsonFolder>E:\work\ymproject_github\CocoStudioWorkspace\UI\SOSGameLand\Json</JsonFolder>
   <JsonList>
     <string>SOSGameLand_BG.json</string>
   </JsonList>

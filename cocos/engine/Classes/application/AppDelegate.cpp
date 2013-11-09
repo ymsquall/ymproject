@@ -13,8 +13,10 @@ namespace engine
 	{
 		// fixed me
 		//_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF|_CRTDBG_LEAK_CHECK_DF);
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 		mEGLViewWidth = 960;
 		mEGLViewHeight = 640;
+#endif
 	}
 
 	AppDelegate::~AppDelegate()
@@ -28,16 +30,21 @@ namespace engine
 	{
 		// initialize director
 		Director *pDirector = Director::getInstance();
+		pDirector->setProjection(Director::Projection::_2D);
 		pDirector->setOpenGLView(EGLView::getInstance());
-    
-		EGLView::getInstance()->setDesignResolutionSize(mEGLViewWidth, mEGLViewHeight, ResolutionPolicy::NO_BORDER);
-
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+		EGLView::getInstance()->setDesignResolutionSize(mEGLViewWidth, mEGLViewHeight, ResolutionPolicy::EXACT_FIT);
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+		CCSize screenSize = pDirector->getWinSize();
+		if (screenSize.width == 2048 && screenSize.height == 1536)
+		{
+			EGLView::getInstance()->setDesignResolutionSize(1024.0f, 768.0f, ResolutionPolicy::EXACT_FIT);
+		}
+#endif
 		// turn on display FPS
 		pDirector->setDisplayStats(true);
-
 		// set FPS. the default value is 1.0/60 if you don't call this
 		pDirector->setAnimationInterval(1.0 / 60);
-
 		// register lua engine
 		LuaEngine* pEngine = LuaEngine::getInstance();
 		ScriptEngineManager::getInstance()->setScriptEngine(pEngine);
@@ -109,7 +116,6 @@ namespace engine
 
 		RegCloseKey(hKey);
 	}
-#endif
 	int AppDelegate::runApp(int width, int height, const char* title)
 	{
 		mEGLViewWidth = width;
@@ -118,28 +124,24 @@ namespace engine
 		eglView->setViewName(title);
 		eglView->setFrameSize(mEGLViewWidth, mEGLViewHeight);
 		// init main message environment
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 		PVRFrameEnableControlWindow(false);
 
 		QueryPerformanceFrequency(&mMessageFreq);
 		QueryPerformanceCounter(&mMessageLast);
-#endif
 		// Initialize instance and cocos2d.
 		if (!applicationDidFinishLaunching())
 		{
 			return 0;
 		}
        
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 		ShowWindow(eglView->getHWnd(), SW_SHOW);
-#endif
+
 		framework::unity::RoutedEventArgs eventArgs;
 		Event_AppInitOveredShowingAfter(this, &eventArgs);
         
 		return 1;
 	}
     
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 	int AppDelegate::runOneStep()
 	{
 		// Main message proc

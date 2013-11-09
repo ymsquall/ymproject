@@ -13,7 +13,6 @@ SelectHeroView::SelectHeroView()
 	mLayout = NULL;
 	mBackButton = NULL;
 	mOkButton = NULL;
-	mSelectButton = NULL;
 	mHeroHeadScrollView = NULL;
 	mSelectHeroCount = 0;
 }
@@ -38,15 +37,15 @@ bool SelectHeroView::init()
 	mLayout = (cocos2d::extension::Layout*)userdata.value.pointer;
 	this->addWidget(mLayout);
 
+	mTitleTextBar = dynamic_cast<UIImageView*>(mLayout->getChildByName("mTitleTextBar"));
+	mBottomBar = dynamic_cast<UIImageView*>(mLayout->getChildByName("mBottomBar"));
 	mBackButton = dynamic_cast<UIButton*>(mLayout->getChildByName("mBackButton"));
 	mOkButton = dynamic_cast<UIButton*>(mLayout->getChildByName("mOkButton"));
-	mSelectButton = dynamic_cast<UIButton*>(mLayout->getChildByName("mSelectButton"));
 	mHeroHeadScrollView = dynamic_cast<UIScrollView*>(mLayout->getChildByName("mHeroHeadScrollView"));
 
 	mOkButton->setEnabled(false);
 	mBackButton->addReleaseEvent(this, coco_releaseselector(SelectHeroView::onBackBtnTouch));
 	mOkButton->addReleaseEvent(this, coco_releaseselector(SelectHeroView::onOkBtnTouch));
-	mSelectButton->addReleaseEvent(this, coco_releaseselector(SelectHeroView::onSelectBtnTouch));
 
 	return true;
 }
@@ -123,11 +122,6 @@ void SelectHeroView::onBackBtnTouch(cocos2d::CCObject* pSender)
 void SelectHeroView::onOkBtnTouch(cocos2d::CCObject* pSender)
 {
 	ViewModelManager::point()->selectModel(ModelType::GameLand);
-}
-
-void SelectHeroView::onSelectBtnTouch(cocos2d::CCObject* pSender)
-{
-
 }
 
 void SelectHeroView::onHeadImageTouch(cocos2d::CCObject* pSender)

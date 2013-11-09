@@ -25,11 +25,6 @@ void RootSceneView::onEnterTransitionDidFinish()
 	cocos2d::Size thisSize = cocos2d::Director::getInstance()->getVisibleSize();
 	cocos2d::Sprite* pBgPic = cocos2d::Sprite::create("picture/background/3285-1.png");
 	lua_State* L = LuaEngine::getInstance()->getLuaStack()->getLuaState();
-	CCPoint displayOffPos(0, 0);
-	if(tolua_getGlobalUserData_ByFieldName(L, "__LUADeviceOffsetPos", displayOffPos))
-	{
-		//pBgPic->setPosition(displayOffPos);
-	}
 	pRootPanel->addChild(pBgPic);
 	this->addChild(pRootPanel);
 

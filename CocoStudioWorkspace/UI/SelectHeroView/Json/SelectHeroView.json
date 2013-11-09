@@ -81,66 +81,6 @@
             "name": null,
             "children": [
               {
-                "classname": "Button",
-                "name": null,
-                "children": [],
-                "options": {
-                  "__type": "ComGUIButtonSurrogate:#EditorCommon.JsonModel.Component.GUI",
-                  "classname": "Button",
-                  "name": "mSelectButton",
-                  "ZOrder": 1,
-                  "actiontag": 39,
-                  "anchorPointX": 0.5,
-                  "anchorPointY": 0.5,
-                  "classType": null,
-                  "colorB": 255,
-                  "colorG": 255,
-                  "colorR": 255,
-                  "flipX": false,
-                  "flipY": false,
-                  "height": 40,
-                  "ignoreSize": true,
-                  "opacity": 255,
-                  "rotation": 0,
-                  "scaleX": 1,
-                  "scaleY": 1,
-                  "tag": 19,
-                  "touchAble": false,
-                  "useMergedTexture": false,
-                  "visible": true,
-                  "width": 63,
-                  "x": 333,
-                  "xProportion": 0.4757143,
-                  "y": 62,
-                  "yProportion": 0.155,
-                  "capInsetsHeight": 0,
-                  "capInsetsWidth": 0,
-                  "capInsetsX": 0,
-                  "capInsetsY": 0,
-                  "disabled": null,
-                  "disabledData": {
-                    "path": null,
-                    "plistFile": null,
-                    "resourceType": 0
-                  },
-                  "normal": null,
-                  "normalData": {
-                    "path": "button22_n.png",
-                    "plistFile": null,
-                    "resourceType": 0
-                  },
-                  "pressed": null,
-                  "pressedData": {
-                    "path": "button22_l.png",
-                    "plistFile": null,
-                    "resourceType": 0
-                  },
-                  "scale9Enable": false,
-                  "scale9Height": 40,
-                  "scale9Width": 63
-                }
-              },
-              {
                 "classname": "ImageView",
                 "name": null,
                 "children": [],
@@ -599,7 +539,7 @@
         "options": {
           "__type": "ComGUIImageViewSurrogate:#EditorCommon.JsonModel.Component.GUI",
           "classname": "ImageView",
-          "name": "ImageView",
+          "name": "mBottomBar",
           "ZOrder": 2,
           "actiontag": 25,
           "anchorPointX": 0.5,
@@ -688,7 +628,7 @@
         "options": {
           "__type": "ComGUIImageViewSurrogate:#EditorCommon.JsonModel.Component.GUI",
           "classname": "ImageView",
-          "name": "ImageView",
+          "name": "mTitleTextBar",
           "ZOrder": 1,
           "actiontag": 23,
           "anchorPointX": 0.5,
