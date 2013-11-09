@@ -7,7 +7,7 @@
 
 using namespace framework;
 
-typedef struct LandTreeGrid *LandTreeGridPTR;
+typedef struct LandTreeGrid *LandTreeGridPtr;
 class GameLandView : public mvvm::ViewBase<GameLandView, cocos2d::extension::UILayer>
 {
 public:
@@ -42,6 +42,6 @@ public:
 	cocos2d::extension::UIPanel* mMapBGPanel;
 	cocos2d::extension::UIImageView* mMapBGImageView;
 	cocos2d::extension::UIWidget* mGridsParent;
-	std::map<cocos2d::extension::UIWidget*, LandTreeGridPTR> mGridRenderList;
+	std::map<cocos2d::extension::UIWidget*, LandTreeGridPtr> mGridRenderList;
 	std::vector<cocos2d::extension::armature::Armature*> mXiaobingAnimList;
 };

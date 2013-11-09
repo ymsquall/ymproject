@@ -5,20 +5,23 @@
 CCSize LandTreeGrid::Size;
 LandTreeGrid::LandTreeGrid()
 {
-	leftTop = NULL;
-	leftBottom = NULL;
-	rightTop = NULL;
-	rightBottom = NULL;
-	top = NULL;
-	bottom = NULL;
+	memset(sideGrids, 0, sizeof(sideGrids));
+	showGrid = false;
+#ifdef TEST_VIEWGRIDS
 	gridView = NULL;
-	testShowNumber = 0;
+#endif
 }
-
 LandTreeGrid::~LandTreeGrid()
 {
 }
 
+SoldierTroopsUnitGrid::SoldierTroopsUnitGrid()
+{
+	number = 0;
+	troopID = 0;
+	sType = SoldierType::unused;
+	oType = GridOrientation::maxnum;
+}
 
 
 MODEL_TYPECLASS_DEFINE_CONSTRUCTOR(GameLand)
@@ -50,6 +53,57 @@ bool GameLandModel::loadLandData(const std::string& landName)
 		return false;
 	if(!tolua_findNumberValueBySegmentName(pLanGridsData, "columns", mLandGridColumns))
 		return false;
+	typedef struct 
+	{
+		uint8 number;	// 部队编号
+		uint8 troopID;	// 所属部队
+		uint8 sType;		// 兵种
+		uint8 oType;	// 默认朝向
+	}TempTroopsUnit;
+	typedef std::map<size_t, TempTroopsUnit> TroopDatas;
+	TroopDatas tmpTroopDatas;
+	const ScriptParamObject* pTroopData = tolua_findTableValueBySegmentName(pLanGridsData, "troops");
+	for(ScriptParamObject::ScriptTableData::const_iterator it = pTroopData->tables.begin(); 
+		it != pTroopData->tables.end(); ++ it)
+	{
+		std::string troopID = it->first;
+		const ScriptParamObject& troop = it->second;
+		for(ScriptParamObject::ScriptTableData::const_iterator it_t = troop.tables.begin();
+			it_t != troop.tables.end(); ++ it_t)
+		{
+			std::string number = it_t->first;
+			TempTroopsUnit unit;
+			unit.number = atoi(number.c_str());
+			unit.troopID = atoi(troopID.c_str());
+			if(it_t->second.tables.size() != 3)
+			{
+				CCASSERT(false, "数据格式错误");
+				CCLOG("部队信息应该是3个字段[%d]", unit.number);
+				continue;
+			}
+			int index = -1;
+			if(!tolua_findNumberValueBySegmentName(&it_t->second, "1", index) || -1 == index)
+			{
+				CCASSERT(false, "数据格式错误");
+				CCLOG("部队信息应该是3个字段{格子编号，部队初始朝向，兵种}, 格子编号不是数值");
+				continue;
+			}
+			if(!tolua_findNumberValueBySegmentName(&it_t->second, "2", unit.oType))
+			{
+				CCASSERT(false, "数据格式错误");
+				CCLOG("部队信息应该是3个字段{格子编号，部队初始朝向，兵种}, 部队初始朝向不是数值");
+				continue;
+			}
+			if(!tolua_findNumberValueBySegmentName(&it_t->second, "3", unit.sType))
+			{
+				CCASSERT(false, "数据格式错误");
+				CCLOG("部队信息应该是3个字段{格子编号，部队初始朝向，兵种}, 兵种不是数值");
+				continue;
+			}
+			tmpTroopDatas[index] = unit;
+		}
+	}
+	
 	int count = mLandGridRows*mLandGridColumns;
 	mLandGridList.resize(count);
 	for(int i = 1; i <= count; ++ i)
@@ -59,24 +113,31 @@ bool GameLandModel::loadLandData(const std::string& landName)
 		int8 flag = 0;
 		if(!tolua_findNumberValueBySegmentName(pLanGridsData, pIndex->getCString(), flag))
 			return false;
+		if(NULL != mLandGridList[i-1])
+		{
+			delete mLandGridList[i-1];
+			mLandGridList[i-1] = NULL;
+		}
 		if(flag != 0)
 		{
-			if(NULL == mLandGridList[i-1])
-				mLandGridList[i-1] = new LandTreeGrid();
-			mLandGridList[i-1]->testShowNumber = flag;
-		}
-		else if(flag == 0)
-		{
-			if(NULL != mLandGridList[i-1])
+			TroopDatas::const_iterator it_t = tmpTroopDatas.find(i);
+			if(tmpTroopDatas.end() != it_t)
 			{
-				delete mLandGridList[i-1];
-				mLandGridList[i-1] = NULL;
+				const TempTroopsUnit& unit = it_t->second;
+				SoldierTroopsUnitGrid* pSoldierGrid = new SoldierTroopsUnitGrid();
+				pSoldierGrid->number = unit.number;
+				pSoldierGrid->troopID = unit.troopID;
+				pSoldierGrid->sType = static_cast<SoldierType>(unit.sType);
+				pSoldierGrid->oType = static_cast<GridOrientation>(unit.oType);
+				mLandGridList[i-1] = pSoldierGrid;
 			}
+			else
+				mLandGridList[i-1] = new LandTreeGrid();
+			mLandGridList[i-1]->showGrid = flag == 2;
 		}
 	}
+	tmpTroopDatas.clear();
 	CCPoint helfOff(LandTreeGrid::Size.width/2.0f, LandTreeGrid::Size.height/2.0f);
-	//float lineWidth = sqrtf(helfOff.x*helfOff.x + helfOff.y*helfOff.y);
-	//float helfLineWidth = lineWidth / 2.0f;
 	CCPoint offsetPos(mLandGridColumns * helfOff.x / 2.0f, mLandGridRows * (helfOff.y + helfOff.y/2.0f));
 	for(int j = 0; j < mLandGridColumns; ++ j)
 	{
@@ -119,17 +180,17 @@ bool GameLandModel::loadLandData(const std::string& landName)
 				rbIndex = -1;
 			}
 			if(topIndex >= 0 && topIndex < count)
-				mLandGridList[nowIndex]->top = mLandGridList[topIndex];
+				mLandGridList[nowIndex]->sideGrids[(size_t)GridOrientation::topper] = mLandGridList[topIndex];
 			if(bottomIndex >= 0 && bottomIndex < count)
-				mLandGridList[nowIndex]->bottom = mLandGridList[bottomIndex];
+				mLandGridList[nowIndex]->sideGrids[(size_t)GridOrientation::bottom] = mLandGridList[bottomIndex];
 			if(ltIndex >= 0 && ltIndex < count)
-				mLandGridList[nowIndex]->leftTop = mLandGridList[ltIndex];
+				mLandGridList[nowIndex]->sideGrids[(size_t)GridOrientation::lefttop] = mLandGridList[ltIndex];
 			if(lbIndex >= 0 && lbIndex < count)
-				mLandGridList[nowIndex]->leftBottom = mLandGridList[lbIndex];
+				mLandGridList[nowIndex]->sideGrids[(size_t)GridOrientation::leftbottom] = mLandGridList[lbIndex];
 			if(rtIndex >= 0 && rtIndex < count)
-				mLandGridList[nowIndex]->rightTop = mLandGridList[rtIndex];
+				mLandGridList[nowIndex]->sideGrids[(size_t)GridOrientation::righttop] = mLandGridList[rtIndex];
 			if(rbIndex >= 0 && rbIndex < count)
-				mLandGridList[nowIndex]->rightBottom = mLandGridList[rbIndex];
+				mLandGridList[nowIndex]->sideGrids[(size_t)GridOrientation::rightbottom] = mLandGridList[rbIndex];
 		}
 	}
 

@@ -11,6 +11,7 @@ using namespace cocos2d;
 using namespace cocos2d::extension;
 using namespace cocos2d::extension::armature;
 
+#ifdef TEST_VIEWGRIDS
 static UIImageView* gpLastSelectGrid = NULL;
 static UIImageView* gpLastSelectFarGridLT = NULL;
 static UIImageView* gpLastSelectFarGridLB = NULL;
@@ -18,6 +19,8 @@ static UIImageView* gpLastSelectFarGridRT = NULL;
 static UIImageView* gpLastSelectFarGridRB = NULL;
 static UIImageView* gpLastSelectFarGridT = NULL;
 static UIImageView* gpLastSelectFarGridB = NULL;
+#endif
+
 GameLandView::GameLandView()
 {
 	mLayout = NULL;
@@ -26,6 +29,7 @@ GameLandView::GameLandView()
 	mMapBGPanel = NULL;
 	mMapBGImageView = NULL;
 	gGameLandView = this;
+#ifdef TEST_VIEWGRIDS
 	gpLastSelectGrid = NULL;
 	gpLastSelectFarGridLT = NULL;
 	gpLastSelectFarGridLB = NULL;
@@ -33,11 +37,13 @@ GameLandView::GameLandView()
 	gpLastSelectFarGridRB = NULL;
 	gpLastSelectFarGridT = NULL;
 	gpLastSelectFarGridB = NULL;
+#endif
 }
 
 GameLandView::~GameLandView()
 {
 	gGameLandView = NULL;
+#ifdef TEST_VIEWGRIDS
 	gpLastSelectGrid = NULL;
 	gpLastSelectFarGridLT = NULL;
 	gpLastSelectFarGridLB = NULL;
@@ -45,6 +51,7 @@ GameLandView::~GameLandView()
 	gpLastSelectFarGridRB = NULL;
 	gpLastSelectFarGridT = NULL;
 	gpLastSelectFarGridB = NULL;
+#endif
 }
 
 bool GameLandView::init()
@@ -113,45 +120,29 @@ void GameLandView::initLandGrid()
 		for(GameLandModel::LandGridList::const_iterator it = gridList.begin();
 			it != gridList.end(); ++ it)
 		{
-			const LandTreeGridPTR pGrid = *it;
+			const LandTreeGridPtr pGrid = *it;
 			if(NULL == pGrid)
 				continue;
 			CCSize bkSize = mMapBGImageView->getSize();
 			CCPoint realPos = ccpSub(pGrid->center, ccp(bkSize.width/2.0f-2.0f, bkSize.height/2.0f));
-			ScriptParamObject userdata = callLuaFuncWithUserdataResult("LUACreateUIImageView", "picture/land/grid25d.png", realPos.x, realPos.y);
-			if(userdata.type != LUA_TUSERDATA || NULL == userdata.value.pointer)
+			if(pGrid->showGrid)
+			{
+				ScriptParamObject userdata = callLuaFuncWithUserdataResult("LUACreateUIImageView", "picture/land/grid25d.png", realPos.x, realPos.y);
+				if(userdata.type != LUA_TUSERDATA || NULL == userdata.value.pointer)
+					continue;
+				UIImageView* pGridImage = (UIImageView*)userdata.value.pointer;
+				mMapBGImageView->addChild(pGridImage);
+				mGridRenderList[pGridImage] = pGrid;
+				pGrid->gridView = pGridImage;
+				pGridImage->addReleaseEvent(this, coco_releaseselector(GameLandView::onMapGridTouched));
+			}
+			const SoldierTroopsUnitGrid* pUnit = dynamic_cast<const SoldierTroopsUnitGrid*>(pGrid);
+			if(NULL == pUnit)
 				continue;
-			UIImageView* pGridImage = (UIImageView*)userdata.value.pointer;
-			mMapBGImageView->addChild(pGridImage);
-			mGridRenderList[pGridImage] = pGrid;
-			pGrid->gridView = pGridImage;
-			pGridImage->addReleaseEvent(this, coco_releaseselector(GameLandView::onMapGridTouched));
-
 			Armature* pAnim = NULL;
-			if(2 == pGrid->testShowNumber)
-			{
-				ScriptParamObject userdata1 = callLuaFuncWithUserdataResult("LUACreateAndPlayArmature", "saber_righttop", 0, realPos.x, realPos.y, 1.0, 0.65f);
-				if(userdata1.type == LUA_TUSERDATA && NULL != userdata1.value.pointer)
-					pAnim = (Armature*)userdata1.value.pointer;
-			}
-			else if(3 == pGrid->testShowNumber)
-			{
-				ScriptParamObject userdata1 = callLuaFuncWithUserdataResult("LUACreateAndPlayArmature", "saber_leftbottom", 0, realPos.x, realPos.y, 1.0, 0.65f);
-				if(userdata1.type == LUA_TUSERDATA && NULL != userdata1.value.pointer)
-					pAnim = (Armature*)userdata1.value.pointer;
-			}
-			else if(4 == pGrid->testShowNumber)
-			{
-				ScriptParamObject userdata1 = callLuaFuncWithUserdataResult("LUACreateAndPlayArmature", "rider_righttop", 0, realPos.x, realPos.y, 1.0, 0.65f);
-				if(userdata1.type == LUA_TUSERDATA && NULL != userdata1.value.pointer)
-					pAnim = (Armature*)userdata1.value.pointer;
-			}
-			else if(5 == pGrid->testShowNumber)
-			{
-				ScriptParamObject userdata1 = callLuaFuncWithUserdataResult("LUACreateAndPlayArmature", "rider_leftbottom", 0, realPos.x, realPos.y, 1.0, 0.65f);
-				if(userdata1.type == LUA_TUSERDATA && NULL != userdata1.value.pointer)
-					pAnim = (Armature*)userdata1.value.pointer;
-			}
+			ScriptParamObject userdata1 = callLuaFuncWithUserdataResult("LUACreateSoldierAnimationWithTypeAndOrientation", (int)pUnit->sType, (int)pUnit->oType, realPos.x, realPos.y);
+			if(userdata1.type == LUA_TUSERDATA && NULL != userdata1.value.pointer)
+				pAnim = (Armature*)userdata1.value.pointer;
 			if(NULL != pAnim)
 			{
 				mMapBGImageView->addRenderer(pAnim, 1);
@@ -225,6 +216,7 @@ void GameLandView::onMapTouched(cocos2d::CCObject* pSender)
 
 void GameLandView::onMapGridTouched(cocos2d::CCObject* pSender)
 {
+#ifdef TEST_VIEWGRIDS
 	UIImageView* pGridImage = dynamic_cast<UIImageView*>(pSender);
 	if(NULL != pGridImage)
 	{
@@ -233,10 +225,10 @@ void GameLandView::onMapGridTouched(cocos2d::CCObject* pSender)
 			gpLastSelectGrid->setColor(Color3B(255,255,255));
 		gpLastSelectGrid = pGridImage;
 
-		std::map<cocos2d::extension::UIWidget*, LandTreeGridPTR>::iterator it = mGridRenderList.find(pGridImage);
+		std::map<cocos2d::extension::UIWidget*, LandTreeGridPtr>::iterator it = mGridRenderList.find(pGridImage);
 		if(it != mGridRenderList.end())
 		{
-			LandTreeGridPTR pGrid = it->second;
+			LandTreeGridPtr pGrid = it->second;
 			if(NULL == pGrid)
 				return;
 			if(NULL != gpLastSelectFarGridLT)
@@ -252,28 +244,28 @@ void GameLandView::onMapGridTouched(cocos2d::CCObject* pSender)
 			if(NULL != gpLastSelectFarGridB)
 				gpLastSelectFarGridB->setColor(Color3B(255,255,255));
 
-			if(NULL != pGrid->leftTop)
-				gpLastSelectFarGridLT = dynamic_cast<UIImageView*>(pGrid->leftTop->gridView);
+			if(NULL != pGrid->sideGrids[(size_t)GridOrientation::lefttop])
+				gpLastSelectFarGridLT = dynamic_cast<UIImageView*>(pGrid->sideGrids[(size_t)GridOrientation::lefttop]->gridView);
 			else
 				gpLastSelectFarGridLT = NULL;
-			if(NULL != pGrid->leftBottom)
-				gpLastSelectFarGridLB = dynamic_cast<UIImageView*>(pGrid->leftBottom->gridView);
+			if(NULL != pGrid->sideGrids[(size_t)GridOrientation::leftbottom])
+				gpLastSelectFarGridLB = dynamic_cast<UIImageView*>(pGrid->sideGrids[(size_t)GridOrientation::leftbottom]->gridView);
 			else
 				gpLastSelectFarGridLB = NULL;
-			if(NULL != pGrid->rightTop)
-				gpLastSelectFarGridRT = dynamic_cast<UIImageView*>(pGrid->rightTop->gridView);
+			if(NULL != pGrid->sideGrids[(size_t)GridOrientation::righttop])
+				gpLastSelectFarGridRT = dynamic_cast<UIImageView*>(pGrid->sideGrids[(size_t)GridOrientation::righttop]->gridView);
 			else
 				gpLastSelectFarGridRT = NULL;
-			if(NULL != pGrid->rightBottom)
-				gpLastSelectFarGridRB = dynamic_cast<UIImageView*>(pGrid->rightBottom->gridView);
+			if(NULL != pGrid->sideGrids[(size_t)GridOrientation::rightbottom])
+				gpLastSelectFarGridRB = dynamic_cast<UIImageView*>(pGrid->sideGrids[(size_t)GridOrientation::rightbottom]->gridView);
 			else
 				gpLastSelectFarGridRB = NULL;
-			if(NULL != pGrid->top)
-				gpLastSelectFarGridT = dynamic_cast<UIImageView*>(pGrid->top->gridView);
+			if(NULL != pGrid->sideGrids[(size_t)GridOrientation::topper])
+				gpLastSelectFarGridT = dynamic_cast<UIImageView*>(pGrid->sideGrids[(size_t)GridOrientation::topper]->gridView);
 			else
 				gpLastSelectFarGridT = NULL;
-			if(NULL != pGrid->bottom)
-				gpLastSelectFarGridB = dynamic_cast<UIImageView*>(pGrid->bottom->gridView);
+			if(NULL != pGrid->sideGrids[(size_t)GridOrientation::bottom])
+				gpLastSelectFarGridB = dynamic_cast<UIImageView*>(pGrid->sideGrids[(size_t)GridOrientation::bottom]->gridView);
 			else
 				gpLastSelectFarGridB = NULL;
 		}
@@ -293,6 +285,7 @@ void GameLandView::onMapGridTouched(cocos2d::CCObject* pSender)
 		if(NULL != gpLastSelectFarGridB)
 			gpLastSelectFarGridB->setColor(Color3B(255,0,0));
 	}
+#endif
 }
 
 void GameLandView::onMapPanelDragEvent(CCObject* pSender, DragPanelEventType type)

@@ -186,6 +186,13 @@ bool tolua_findStringValueBySegmentName(const ScriptParamObject* node, const cha
 	retValue = pRet->value.string;
 	return true;
 }
+const ScriptParamObject* tolua_findTableValueBySegmentName(const ScriptParamObject* node, const char* name)
+{
+	const ScriptParamObject* pRet = tolua_findNodeBySegmentName(node, name);
+	if((NULL == pRet) || (LUA_TTABLE != pRet->type))
+		return NULL;
+	return pRet;
+}
 //这个函数把一个 C 对象指针置入对应的 userdata ，如果是第一次 push 则创建出新的 userdata ，否则复用曾经创建过的。
 //int tolua_pushUserObject(lua_State *L, void* object)
 //{
