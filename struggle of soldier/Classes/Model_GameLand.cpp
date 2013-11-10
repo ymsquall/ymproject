@@ -28,9 +28,6 @@ SoldierTroopsUnitGrid::SoldierTroopsUnitGrid()
 
 MODEL_TYPECLASS_DEFINE_CONSTRUCTOR(GameLand),IsLive(this),ActiveTroopID(this),ActiveSoldierID(this){
 	// 构造函数，代码写这里
-	IsLive.mValue = false;
-	ActiveTroopID.mValue = 0;
-	ActiveSoldierID.mValue = 0;
 	mLandGridRows = 0;
 	mLandGridColumns = 0;
 MODEL_TYPECLASS_DEFINE_DECONSTRUCTOR(GameLand)
@@ -46,6 +43,7 @@ bool GameLandModel::initImpl()
 bool GameLandModel::loadLandData(const std::string& landName)
 {
 	ViewModelManager::reloadLuaScript("luascript/models/gamelandmodel.lua");
+	this->clearLandData();
 
 	lua_State* L = mLuaEngine->getLuaStack()->getLuaState();
 	tolua_getGlobalUserData_ByFieldName(L, "_LUALandGridSize", LandTreeGrid::Size);
@@ -220,6 +218,9 @@ bool GameLandModel::loadLandData(const std::string& landName)
 
 bool GameLandModel::clearLandData()
 {
+	IsLive.mValue = false;
+	ActiveTroopID.mValue = 0;
+	ActiveSoldierID.mValue = 0;
 	for(size_t i = 0; i < mLandGridList.size(); ++ i)
 	{
 		delete mLandGridList[i];
