@@ -29,11 +29,13 @@ namespace framework
 				this->finalize();
 				delete this;
 			}
-						
-			void setEnabled(const bool& b)
-			{
-				this->RaisePropertyChanged("Enabled");
-			}
+			//// property
+			//void setEnabled(const bool& b)
+			//{
+			//	this->RaisePropertyChanged("Enabled");
+			//}
+			//PROPERTY_DEFINED_SETTER_DECLEAR(Enabled, bool, IModel, setEnabled);
+			PROPERTY_DEFINED_SETTER_DEFINED(Enabled, bool, IModel);
 
 			virtual std::string getTypeName() const = 0;
 			virtual uint32 getRTTIType() const = 0;
@@ -44,8 +46,6 @@ namespace framework
 			{
 				mBindingTarget = view;
 			}
-			// property
-			PROPERTY_DEFINED_SETTER(Enabled, bool, IModel, setEnabled);
 
 		protected:
 			IView* mBindingTarget;
@@ -114,7 +114,7 @@ namespace framework
 					pModel->deleteModel();
 					return NULL;
 				}
-				pModel->Event_ModelDestory += ROUTEDEVENT_MAKER(IModel*, this, IModelManager::onModelDestory);
+				pModel->Event_ModelDestory += ROUTEDEVENT_HANDLE_SCHEDULE(IModel*, this, IModelManager::onModelDestory);
 				mModelList.push_back(pModel);
 				return pModel;
 			}

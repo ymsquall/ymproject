@@ -7,18 +7,27 @@
 
 using namespace framework;
 
+struct ActionStepOveredEventParams
+{
+};
 typedef struct LandTreeGrid *LandTreeGridPtr;
 class GameLandView : public mvvm::ViewBase<GameLandView, cocos2d::extension::UILayer>
 {
 public:
+	friend class GameLandModel;
 	GameLandView();
 	~GameLandView();
 
 	typedef std::vector<cocos2d::extension::UIImageView*> HeroHeadList;
+	framework::unity::event<GameLandView*, ActionStepOveredEventParams*> Event_OnActionStepOvered;
 
 	virtual bool init();
 	virtual bool initForMvvm();
 	virtual void update(float dt);
+	
+	void doLiveChanged(bool isLive);
+	void doTroopChanged(const std::string& name);
+	void doSelectGrid(const LandTreeGrid* pGrid);
 
 private:
 	virtual void onEnterTransitionDidFinish();
@@ -32,7 +41,7 @@ private:
 	void onMapGridTouched(cocos2d::CCObject* pSender);
 	void onMapPanelDragEvent(cocos2d::CCObject* pSender, cocos2d::extension::DragPanelEventType type);
 
-	void initLandGrid();
+	bool initLandGrid(const LandTreeGrid* pGrid);
 
 public:
 	cocos2d::extension::Layout* mLayout;
@@ -42,6 +51,9 @@ public:
 	cocos2d::extension::UIPanel* mMapBGPanel;
 	cocos2d::extension::UIImageView* mMapBGImageView;
 	cocos2d::extension::UIWidget* mGridsParent;
-	std::map<cocos2d::extension::UIWidget*, LandTreeGridPtr> mGridRenderList;
+	cocos2d::extension::UIImageView* mNowSelectGridImage;
+
+	typedef std::map<const LandTreeGrid*, cocos2d::extension::UIWidget*> GridRenderList;
+	GridRenderList mGridRenderList;
 	std::vector<cocos2d::extension::armature::Armature*> mXiaobingAnimList;
 };

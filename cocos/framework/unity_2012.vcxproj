@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Classes\unity\datablock.h" />
     <ClInclude Include="Classes\unity\delegate.h" />
     <ClInclude Include="Classes\unity\event.h" />
     <ClInclude Include="Classes\unity\factory.h" />
@@ -30,6 +31,7 @@
     <ClInclude Include="Classes\unity\singleton.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Classes\unity\datablock.cpp" />
     <ClCompile Include="Classes\unity\object.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

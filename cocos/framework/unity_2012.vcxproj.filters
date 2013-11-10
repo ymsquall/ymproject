@@ -10,8 +10,10 @@
     <ClInclude Include="Classes\unity\rtti.h" />
     <ClInclude Include="Classes\unity\reflection.h" />
     <ClInclude Include="Classes\unity\factory.h" />
+    <ClInclude Include="Classes\unity\datablock.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Classes\unity\object.cpp" />
+    <ClCompile Include="Classes\unity\datablock.cpp" />
   </ItemGroup>
 </Project>

@@ -1,7 +1,7 @@
 #include "Model_SelectHero.h"
 #include "ViewModelManager.h"
 
-MODEL_TYPECLASS_DEFINE_CONSTRUCTOR(SelectHero)
+MODEL_TYPECLASS_DEFINE_CONSTRUCTOR(SelectHero){
 	// 构造函数，代码写这里
 MODEL_TYPECLASS_DEFINE_DECONSTRUCTOR(SelectHero)
 	// 析构函数，代码写这里

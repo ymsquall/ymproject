@@ -33,7 +33,7 @@ public:
 	ModelImpl(const char* ascType) : mvvm::ModelBase<typeValue, rttiLength>(ascType)
 	{
 		mLuaEngine = cocos2d::LuaEngine::getInstance();
-		mModelManager = NULL;
+		mModelManager = ViewModelManager::point();
 	}
 
 	virtual bool init()
@@ -74,9 +74,8 @@ protected:
 			virtual void finalize(); 
 
 #define MODEL_TYPECLASS_DEFINE_CONSTRUCTOR(name) const std::string name##Model::TypeName = #name; \
-		name##Model::name##Model() : name##Model::SuperT(name##Model::TypeName.c_str()) \
-		{ \
-			mModelManager = ViewModelManager::point();
+		name##Model::name##Model() : name##Model::SuperT(name##Model::TypeName.c_str())
+
 #define MODEL_TYPECLASS_DEFINE_DECONSTRUCTOR(name) } name##Model::~name##Model() {
 #define MODEL_TYPECLASS_DEFINE_BEGINING }
 

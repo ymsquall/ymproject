@@ -1,7 +1,7 @@
 #include "Model_Login.h"
 #include "ViewModelManager.h"
 
-MODEL_TYPECLASS_DEFINE_CONSTRUCTOR(Login)
+MODEL_TYPECLASS_DEFINE_CONSTRUCTOR(Login){
 	// 构造函数，代码写这里
 MODEL_TYPECLASS_DEFINE_DECONSTRUCTOR(Login)
 	// 析构函数，代码写这里

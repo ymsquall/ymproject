@@ -85,10 +85,10 @@ namespace framework
 			{
 				mContainer = NULL;
 			}
-			PropertyReadOnly(ConT* container)
+			PropertyReadOnly(ConT* container, const ValueT& v)
 			{
 				mContainer = container;
-				//mSetter = setter;
+				mValue = v;
 			}
 			virtual ~PropertyReadOnly(){}
 			operator ValueT() const
@@ -181,7 +181,10 @@ namespace framework
 	}	// namespace unity
 }	// namespace framework
 
-#define PROPERTY_DEFINED_SETTER(name, type, container, setter) public: framework::unity::PropertyCallbackSetter<type, container, &container::setter> name;
+#define PROPERTY_DEFINED(name, type) public: framework::unity::Property<type> name;
+#define PROPERTY_DEFINED_SETTER_DECLEAR(name, type, container, setter) public: framework::unity::PropertyCallbackSetter<type, container, &container::setter> name;
+#define PROPERTY_DEFINED_SETTER_DEFINED(name, type, container) private: void set##name(const type& v){ this->RaisePropertyChanged(#name); }\
+															   public: framework::unity::PropertyCallbackSetter<type, container, &container::set##name> name;	
 #define PROPERTY_READONLY_DEFINED(name, type, container/*, setter*/) public: framework::unity::PropertyReadOnly<type, container/*, &container::setter*/> name;
 #define PROPERTY_WRITEONLY_DEFINED(name, type, container, setter) public: framework::unity::PropertyWriteOnly<type, container, &container::setter> name;
 #define PROPERTY_DEFINED_NOVALUE(name, type, container, setter, getter) public: framework::unity::PropertyNoValue<type, container, &container::setter, &container::getter> name;

@@ -21,7 +21,18 @@ function LUALoadGameLandView(viewWideh, viewHeight)
 	pos.y = pos.y + __LUADeviceOffsetPos.y
 	mDebugText:setPosition(pos)
 
-	mMapDragPanel:setInnerContainerPosition(CCPoint(-568,-384),true)
-
+	local innerSize = mMapDragPanel:getInnerContainerSize()
+	if innerSize.width > __LUADeviceWinSize.width then
+		innerSize.width = innerSize.width - __LUADeviceWinSize.width
+	else
+		innerSize.width = __LUADeviceWinSize.width - innerSize.width
+	end
+	if innerSize.height > __LUADeviceWinSize.height then
+		innerSize.height = innerSize.height - __LUADeviceWinSize.height
+	else
+		innerSize.height = __LUADeviceWinSize.height - innerSize.height
+	end
+	local centerPos = CCPoint(-innerSize.width/2.0, -innerSize.height/2.0)
+	mMapDragPanel:setInnerContainerPosition(centerPos,false)
 	return pLayout
 end

@@ -41,8 +41,8 @@ void ViewModelManager::initWithAppStart(engine::AppDelegate* pApp)
 	Director* pDirector = Director::getInstance();
 	pDirector->setNotificationNode(TopLevelView::point());
 	pDirector->runWithScene(RootSceneView::point());
-	pApp->Event_AppInitOveredShowingBefore += ROUTEDEVENT_MAKER(engine::AppDelegate*, this, ViewModelManager::onAppInitOveredShowingBefore);
-	pApp->Event_AppInitOveredShowingAfter += ROUTEDEVENT_MAKER(engine::AppDelegate*, this, ViewModelManager::onAppInitOveredShowingAfter);
+	pApp->Event_AppInitOveredShowingBefore += ROUTEDEVENT_HANDLE_SCHEDULE(engine::AppDelegate*, this, ViewModelManager::onAppInitOveredShowingBefore);
+	pApp->Event_AppInitOveredShowingAfter += ROUTEDEVENT_HANDLE_SCHEDULE(engine::AppDelegate*, this, ViewModelManager::onAppInitOveredShowingAfter);
 
 	mLastUpdate = new struct timeval;
 }
@@ -52,9 +52,9 @@ void ViewModelManager::initModels()
 	LoginModel* pLoginModel = this->addModel<LoginModel>();
 	if(NULL != pLoginModel)
 	{
-		pLoginModel->Event_PropertyChanged += ROUTEDEVENT_MAKER_PARAM(mvvm::INotifyPropertyChanged*, 
+		pLoginModel->Event_PropertyChanged += ROUTEDEVENT_HANDLE_SCHEDULE_PARAM(mvvm::INotifyPropertyChanged*, 
 			mvvm::NotifyPropertyChangedRoutedEventArgs*, LoginViewModel::point(), LoginViewModel::onLoginModelPropertyChanged);
-		pLoginModel->Event_ModelDestory += ROUTEDEVENT_MAKER(mvvm::IModel*, this, ViewModelManager::onEnabledModelDestory);
+		pLoginModel->Event_ModelDestory += ROUTEDEVENT_HANDLE_SCHEDULE(mvvm::IModel*, this, ViewModelManager::onEnabledModelDestory);
 		if(pLoginModel->Enabled)
 		{
 			mEnabledModelList.push_back(pLoginModel);
@@ -64,9 +64,9 @@ void ViewModelManager::initModels()
 	SelectHeroModel* pSelectHeroModel = this->addModel<SelectHeroModel>();
 	if(NULL != pSelectHeroModel)
 	{
-		pSelectHeroModel->Event_PropertyChanged += ROUTEDEVENT_MAKER_PARAM(mvvm::INotifyPropertyChanged*, 
+		pSelectHeroModel->Event_PropertyChanged += ROUTEDEVENT_HANDLE_SCHEDULE_PARAM(mvvm::INotifyPropertyChanged*, 
 			mvvm::NotifyPropertyChangedRoutedEventArgs*, SelectHeroViewModel::point(), SelectHeroViewModel::onSelectHeroModelPropertyChanged);
-		pSelectHeroModel->Event_ModelDestory += ROUTEDEVENT_MAKER(mvvm::IModel*, this, ViewModelManager::onEnabledModelDestory);
+		pSelectHeroModel->Event_ModelDestory += ROUTEDEVENT_HANDLE_SCHEDULE(mvvm::IModel*, this, ViewModelManager::onEnabledModelDestory);
 		if(pSelectHeroModel->Enabled)
 		{
 			mEnabledModelList.push_back(pSelectHeroModel);
@@ -76,9 +76,9 @@ void ViewModelManager::initModels()
 	GameLandModel* pGameLandModel = this->addModel<GameLandModel>();
 	if(NULL != pGameLandModel)
 	{
-		pGameLandModel->Event_PropertyChanged += ROUTEDEVENT_MAKER_PARAM(mvvm::INotifyPropertyChanged*, 
+		pGameLandModel->Event_PropertyChanged += ROUTEDEVENT_HANDLE_SCHEDULE_PARAM(mvvm::INotifyPropertyChanged*, 
 			mvvm::NotifyPropertyChangedRoutedEventArgs*, GameLandViewModel::point(), GameLandViewModel::onGameLandModelPropertyChanged);
-		pGameLandModel->Event_ModelDestory += ROUTEDEVENT_MAKER(mvvm::IModel*, this, ViewModelManager::onEnabledModelDestory);
+		pGameLandModel->Event_ModelDestory += ROUTEDEVENT_HANDLE_SCHEDULE(mvvm::IModel*, this, ViewModelManager::onEnabledModelDestory);
 		if(pGameLandModel->Enabled)
 		{
 			mEnabledModelList.push_back(pGameLandModel);
@@ -107,6 +107,25 @@ void ViewModelManager::selectModel(ModelType type)
 				mEnabledModelList.erase(it);
 		}
 	}
+}
+
+bool ViewModelManager::playStruggle(const int8* data, uint32 length, bool isLive)
+{
+	GameLandModel* pGameLandModel = NULL;
+	for(ModelListV::const_iterator it = mEnabledModelList.begin();
+		it != mEnabledModelList.end(); ++ it)
+	{
+		mvvm::IModel* pModle = *it;
+		if(pModle->getRTTIType() == (uint16)ModelType::GameLand)
+		{
+			pGameLandModel = dynamic_cast<GameLandModel*>(pModle);
+			break;
+		}
+	}
+	if(NULL == pGameLandModel)
+		return false;
+	pGameLandModel->IsLive = isLive;
+	return pGameLandModel->playAction(data, length);
 }
 
 void ViewModelManager::onEnabledModelDestory(mvvm::IModel* sender, unity::RoutedEventArgs* args)

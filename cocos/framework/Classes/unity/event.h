@@ -186,5 +186,6 @@ namespace framework
 	}	// namespace unity
 }	// namespace framework
 
-#define ROUTEDEVENT_MAKER(senderT, sender, recvFunc) framework::unity::RoutedEvent<senderT>::HandlerT(sender, &recvFunc);
-#define ROUTEDEVENT_MAKER_PARAM(senderT, paramT, sender, recvFunc) framework::unity::RoutedEvent<senderT, paramT>::HandlerT(sender, &recvFunc);
+#define EVENT_HANDLE_SCHEDULE(senderT, sender, paramT, recvFunc) framework::unity::event<senderT, paramT>::HandlerT(sender, &recvFunc);
+#define ROUTEDEVENT_HANDLE_SCHEDULE(senderT, sender, recvFunc) framework::unity::RoutedEvent<senderT>::HandlerT(sender, &recvFunc);
+#define ROUTEDEVENT_HANDLE_SCHEDULE_PARAM(senderT, paramT, sender, recvFunc) framework::unity::RoutedEvent<senderT, paramT>::HandlerT(sender, &recvFunc);

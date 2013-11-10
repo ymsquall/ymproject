@@ -31,6 +31,8 @@ public:
 
 	void selectModel(ModelType type);
 
+	bool playStruggle(const int8* data, uint32 length, bool isLive);
+
 private:
 	void initModels();
 
