@@ -1,0 +1,17 @@
+// class GameLandModel
+class GameLandModel : public ModelImpl
+{
+	enum PropertyType
+	{
+		EPTT_IsLive = 1,
+		EPTT_ActiveTroopID = 2,
+		EPTT_ActiveSoldierID = 3,
+	};
+	bool loadLandData(const std::string& landName);
+	bool clearLandData();
+	bool playAction(const int8* data, uint32 length);
+	const SoldierTroopsUnitGrid* getSoldierByTroopAndNumber(uint8 t, uint8 n) const;
+	std::string getTroopName() const;
+	void luaSetBoolProperty(PropertyType type, bool b);
+	void luaSetNumberProperty(PropertyType type, int v);
+};

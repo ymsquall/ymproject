@@ -119,6 +119,12 @@ struct ActionStepOveredEventParams;
 MODEL_TYPECLASS_DECLARE_HEADER(GameLand)
 	// 添加相应代码
 	public:
+		enum PropertyType
+		{
+			EPTT_IsLive = 1,
+			EPTT_ActiveTroopID = 2,
+			EPTT_ActiveSoldierID = 3,
+		};
 		typedef std::vector<LandTreeGrid*> LandGridList;
 
 		bool loadLandData(const std::string& landName);
@@ -127,8 +133,11 @@ MODEL_TYPECLASS_DECLARE_HEADER(GameLand)
 		const SoldierTroopsUnitGrid* getSoldierByTroopAndNumber(uint8 t = 0, uint8 n = 0) const;
 		std::string getTroopName() const;
 
+		void luaSetBoolProperty(PropertyType type, bool b);
+		void luaSetNumberProperty(PropertyType type, int v);
+
 	private:
-		void playOneStep(const ILiveAction* action);
+		void playOneStep();
 		void onActionStepOvered(GameLandView* sender, ActionStepOveredEventParams* args);
 
 		// property

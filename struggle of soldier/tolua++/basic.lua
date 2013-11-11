@@ -1,54 +1,15 @@
 -- usage: (use instead of ant)
--- tolua++ -L basic.lua -o "../Classes/luaext/LuaExtern.cpp" LuaExtern.pkg
+-- tolua++ -L basic.lua -o "../Classes/LuaSOSExtern.cpp" LuaSOSExtern.pkg
 
 _is_functions = _is_functions or {}
 _to_functions = _to_functions or {}
 _push_functions = _push_functions or {}
 
 local CCObjectTypes = {
-    --"CCActionFrame",
-    --"CCActionFrameEasing",
-    --"CCActionManager",
-    --"CCActionNode",
-    --"CCActionObject",
-    "CCComRender",
-    "CCCSComAttribute",
-    "CCCSComAudio",
-    "CCCSContentJsonDictionary",
-    "CCSGUIReader",
-    "CCSSceneReader",
-    "CocosGUI",
-    "CompatibleClasses",
-    "Layout",
-    "LayoutParameter",
-    "UIButton",
-    "UICheckBox",
-    "UIDragPanel",
-    "UIHelper",
-    "UIImageView",
-    "UIInputManager",
-    "UILabel",
-    "UILabelAtlas",
-    "UILabelBMFont",
-    "UILayer",
-    "UILayoutDefine",
-    "UIListView",
-    "UILoadingBar",
-    "UIPageView",
-    "UIRootWidget",
-    "UIScrollView",
-    "UISlider",
-    "UITextField",
-    "UIWidget",
-    "Armature",
-    "ArmatureAnimation",
-    "blockreader",
-    "blockwrite",
-    "framework::mvvm::IView",
-    "framework::mvvm::INotifyPropertyChanged",
-    "framework::mvvm::IModel",
-    "framework::mvvm::ModelBase",
-    "LuaCocoStudioConversion",
+    "ViewModelManager",
+    "GameLandModel",
+    "GameLandView",
+    "LuaUserDataConversion",
 }
 
 -- register CCObject types
@@ -138,17 +99,14 @@ extern "C" {
 
 #include <map>
 #include <string>
-#include "LuaExtern.h"
+#include "LuaSOSExtern.h"
 #include "cocos2dx_support/CCLuaEngine.h"
 #include "SimpleAudioEngine.h"
 #include "cocos-ext.h"
-#include "unity/object.h"
-#include "unity/datablock.h"
-#include "mvvm/interface.h"
-#include "mvvm/model.h"
-#include "mvvm/view.h"
-#include "CocoStudio/CocoStudio.h"
-#include "LuaCocoStudioConversion.h"
+#include "ViewModelManager.h"
+#include "Model_GameLand.h"
+#include "View_GameLand.h"
+#include "LuaUserDataConversion.h"
 
 using namespace cocos2d;
 using namespace cocos2d::extension;

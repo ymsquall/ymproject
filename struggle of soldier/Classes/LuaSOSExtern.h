@@ -8,5 +8,5 @@ extern "C" {
 }
 #endif
 
-TOLUA_API int tolua_LuaExtern_open(lua_State* tolua_S);
+TOLUA_API int tolua_LuaSOSExtern_open(lua_State* tolua_S);
 

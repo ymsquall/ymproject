@@ -16,6 +16,9 @@
     <Filter Include="Classes\ViewModel">
       <UniqueIdentifier>{1abf9179-123f-4864-8f0e-514c92fa44f1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Tools">
+      <UniqueIdentifier>{f955f2fe-dacd-46dd-a314-a2c592ef958c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -59,6 +62,12 @@
     </ClCompile>
     <ClCompile Include="..\Classes\ViewModel_SelectHero.cpp">
       <Filter>Classes\ViewModel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LuaUserDataConversion.cpp">
+      <Filter>Classes\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LuaSOSExtern.cpp">
+      <Filter>Classes\Tools</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +115,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\ViewModel_SelectHero.h">
       <Filter>Classes\ViewModel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LuaUserDataConversion.h">
+      <Filter>Classes\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LuaSOSExtern.h">
+      <Filter>Classes\Tools</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

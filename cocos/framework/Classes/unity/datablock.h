@@ -25,6 +25,15 @@ namespace framework
 				mBlock += size;
 				return true;
 			}
+			// 导出给lua用的接口
+			bool read1(char& ret);
+			bool read2(short& ret);
+			bool read4(long& ret);
+			bool read8(long long& ret);
+			bool readu1(unsigned char& ret);
+			bool readu2(unsigned short& ret);
+			bool readu4(unsigned long& ret);
+			bool readu8(unsigned long long& ret);
 
 		private:
 			char* mBuffer;
@@ -52,6 +61,16 @@ namespace framework
 				mRealLength += size;
 				return true;
 			}
+			// 导出给lua用的接口
+			bool write1(const char v);
+			bool write2(const short v);
+			bool write4(const long v);
+			bool write8(const long long v);
+			bool writeu1(const unsigned char v);
+			bool writeu2(const unsigned short v);
+			bool writeu4(const unsigned long v);
+			bool writeu8(const unsigned long long v);
+
 		private:
 			char* mBuffer;
 			char* mBlock;

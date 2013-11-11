@@ -3,6 +3,7 @@
 #include "mvvm/framework.h"
 #include "cocos2d.h"
 #include "RootSceneView.h"
+#include "LuaSOSExtern.h"
 // Model Impl
 #include "Model_Login.h"
 #include "Model_SelectHero.h"
@@ -11,6 +12,7 @@
 #include "ViewModel_Login.h"
 #include "ViewModel_SelectHero.h"
 #include "ViewModel_GameLand.h"
+#include "luaext/LuaHelper.h"
 
 USING_NS_CC;
 
@@ -30,6 +32,9 @@ ViewModelManager::~ViewModelManager(void)
 
 void ViewModelManager::initWithAppStart(engine::AppDelegate* pApp)
 {
+	LuaEngine* pLuaEngine = LuaEngine::getInstance();
+	tolua_LuaSOSExtern_open(pLuaEngine->getLuaStack()->getLuaState());
+
     CCFileUtils* pFileUtils = CCFileUtils::sharedFileUtils();
     std::vector<std::string> searchPaths;
 	searchPaths.push_back("studioui/LoginView");
@@ -124,8 +129,7 @@ bool ViewModelManager::playStruggle(const int8* data, uint32 length, bool isLive
 	}
 	if(NULL == pGameLandModel)
 		return false;
-	pGameLandModel->IsLive = isLive;
-	return pGameLandModel->playAction(data, length);
+	return callLuaFuncWithBoolResult("LUAPlayStruggleRecord", pGameLandModel, data, length, isLive);
 }
 
 void ViewModelManager::onEnabledModelDestory(mvvm::IModel* sender, unity::RoutedEventArgs* args)

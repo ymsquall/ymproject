@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaExtern
-** Generated automatically by tolua++-1.0.92 on 11/10/13 00:13:05.
+** Generated automatically by tolua++-1.0.92 on 11/11/13 23:54:48.
 */
 
 /****************************************************************************
@@ -37,10 +37,18 @@ extern "C" {
 #include "cocos2dx_support/CCLuaEngine.h"
 #include "SimpleAudioEngine.h"
 #include "cocos-ext.h"
+#include "unity/object.h"
+#include "unity/datablock.h"
+#include "mvvm/interface.h"
+#include "mvvm/model.h"
+#include "mvvm/view.h"
+#include "CocoStudio/CocoStudio.h"
+#include "LuaCocoStudioConversion.h"
 
 using namespace cocos2d;
 using namespace cocos2d::extension;
 using namespace cocos2d::extension::armature;
+using namespace framework;
 using namespace CocosDenshion;
 
 /* Exported function */
@@ -72,6 +80,13 @@ static int tolua_collect_UIWidget (lua_State* tolua_S)
     return 0;
 }
 
+static int tolua_collect_framework__mvvm__DependencyObject (lua_State* tolua_S)
+{
+ framework::mvvm::DependencyObject* self = (framework::mvvm::DependencyObject*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
+
 static int tolua_collect_UILabelAtlas (lua_State* tolua_S)
 {
  UILabelAtlas* self = (UILabelAtlas*) tolua_tousertype(tolua_S,1,0);
@@ -96,6 +111,13 @@ static int tolua_collect_UILoadingBar (lua_State* tolua_S)
 static int tolua_collect_UIRootWidget (lua_State* tolua_S)
 {
  UIRootWidget* self = (UIRootWidget*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
+
+static int tolua_collect_framework__unity__blockwrite (lua_State* tolua_S)
+{
+ framework::unity::blockwrite* self = (framework::unity::blockwrite*) tolua_tousertype(tolua_S,1,0);
     Mtolua_delete(self);
     return 0;
 }
@@ -170,6 +192,13 @@ static int tolua_collect_ArmatureAnimation (lua_State* tolua_S)
     return 0;
 }
 
+static int tolua_collect_framework__unity__blockreader (lua_State* tolua_S)
+{
+ framework::unity::blockreader* self = (framework::unity::blockreader*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
+
 static int tolua_collect_UISlider (lua_State* tolua_S)
 {
  UISlider* self = (UISlider*) tolua_tousertype(tolua_S,1,0);
@@ -184,9 +213,23 @@ static int tolua_collect_AffineTransform (lua_State* tolua_S)
     return 0;
 }
 
+static int tolua_collect_framework__mvvm__IModel (lua_State* tolua_S)
+{
+ framework::mvvm::IModel* self = (framework::mvvm::IModel*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
+
 static int tolua_collect_cs__CCCSJsonDictionary (lua_State* tolua_S)
 {
  cs::CCCSJsonDictionary* self = (cs::CCCSJsonDictionary*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
+
+static int tolua_collect_uint32 (lua_State* tolua_S)
+{
+ uint32* self = (uint32*) tolua_tousertype(tolua_S,1,0);
     Mtolua_delete(self);
     return 0;
 }
@@ -198,9 +241,30 @@ static int tolua_collect_UICCTextField (lua_State* tolua_S)
     return 0;
 }
 
+static int tolua_collect_framework__mvvm__FrameworkElement (lua_State* tolua_S)
+{
+ framework::mvvm::FrameworkElement* self = (framework::mvvm::FrameworkElement*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
+
+static int tolua_collect_framework__mvvm__Visual (lua_State* tolua_S)
+{
+ framework::mvvm::Visual* self = (framework::mvvm::Visual*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
+
 static int tolua_collect_UICheckBox (lua_State* tolua_S)
 {
  UICheckBox* self = (UICheckBox*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
+
+static int tolua_collect_framework__mvvm__UIElement (lua_State* tolua_S)
+{
+ framework::mvvm::UIElement* self = (framework::mvvm::UIElement*) tolua_tousertype(tolua_S,1,0);
     Mtolua_delete(self);
     return 0;
 }
@@ -222,6 +286,13 @@ static int tolua_collect_UIScrollView (lua_State* tolua_S)
 static int tolua_collect_UIPageView (lua_State* tolua_S)
 {
  UIPageView* self = (UIPageView*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
+
+static int tolua_collect_framework__mvvm__DispatcherObject (lua_State* tolua_S)
+{
+ framework::mvvm::DispatcherObject* self = (framework::mvvm::DispatcherObject*) tolua_tousertype(tolua_S,1,0);
     Mtolua_delete(self);
     return 0;
 }
@@ -315,124 +386,138 @@ static int tolua_collect_UILabel (lua_State* tolua_S)
 /* function to register type */
 static void tolua_reg_types (lua_State* tolua_S)
 {
- tolua_usertype(tolua_S,"RectClippingNode");
- tolua_usertype(tolua_S,"UITextField");
- tolua_usertype(tolua_S,"UILabel");
- tolua_usertype(tolua_S,"SEL_DragPanelBounceToTopEvent");
- tolua_usertype(tolua_S,"SEL_TextFieldDeleteBackwardEvent");
- tolua_usertype(tolua_S,"CCNode");
- tolua_usertype(tolua_S,"UIRootWidget");
- tolua_usertype(tolua_S,"SEL_DragPanelBerthToRightTopEvent");
- tolua_usertype(tolua_S,"RelativeLayoutParameter");
- tolua_usertype(tolua_S,"SEL_DragPanelBounceToRightBottomEvent");
- tolua_usertype(tolua_S,"SEL_SelectEvent");
- tolua_usertype(tolua_S,"AnimationData");
- tolua_usertype(tolua_S,"std::vector<std::string>");
- tolua_usertype(tolua_S,"ProcessBase");
- tolua_usertype(tolua_S,"UILayer");
- tolua_usertype(tolua_S,"SEL_TextFieldEvent");
- tolua_usertype(tolua_S,"ArmatureAnimation");
- tolua_usertype(tolua_S,"ccColor3B");
- tolua_usertype(tolua_S,"UIMargin");
- tolua_usertype(tolua_S,"cocos2d::CCComponent");
- tolua_usertype(tolua_S,"SEL_UnSelectEvent");
  tolua_usertype(tolua_S,"UILabelAtlas");
- tolua_usertype(tolua_S,"BatchNode");
- tolua_usertype(tolua_S,"SEL_ScrollToBottomEvent");
- tolua_usertype(tolua_S,"CCComAudio");
- tolua_usertype(tolua_S,"CCVerticalTextAlignment");
- tolua_usertype(tolua_S,"SEL_DragPanelBerthToLeftBottomEvent");
- tolua_usertype(tolua_S,"CCClippingNode");
- tolua_usertype(tolua_S,"BlendFunc");
- tolua_usertype(tolua_S,"AffineTransform");
- tolua_usertype(tolua_S,"Rect");
- tolua_usertype(tolua_S,"cs::CCCSJsonDictionary");
- tolua_usertype(tolua_S,"Dictionary");
+ tolua_usertype(tolua_S,"SEL_DragPanelBerthToBottomEvent");
+ tolua_usertype(tolua_S,"SEL_TextFieldDeleteBackwardEvent");
+ tolua_usertype(tolua_S,"SEL_DragPanelBounceToLeftEvent");
+ tolua_usertype(tolua_S,"framework::unity::blockwrite");
+ tolua_usertype(tolua_S,"SEL_DragPanelBerthToRightTopEvent");
  tolua_usertype(tolua_S,"SEL_TextFieldDetachWithIMEEvent");
- tolua_usertype(tolua_S,"CCBlendProtocol");
- tolua_usertype(tolua_S,"Armature");
- tolua_usertype(tolua_S,"UICheckBox");
+ tolua_usertype(tolua_S,"SEL_TextFieldEvent");
+ tolua_usertype(tolua_S,"SEL_ScrollViewEvent");
+ tolua_usertype(tolua_S,"SEL_ScrollToBottomEvent");
+ tolua_usertype(tolua_S,"UISlider");
+ tolua_usertype(tolua_S,"ProcessBase");
+ tolua_usertype(tolua_S,"CCAction");
  tolua_usertype(tolua_S,"cocos2d::CCObject");
- tolua_usertype(tolua_S,"LinearLayoutParameter");
+ tolua_usertype(tolua_S,"CCActionManager");
  tolua_usertype(tolua_S,"UIScrollView");
  tolua_usertype(tolua_S,"UIPageView");
- tolua_usertype(tolua_S,"CCTextFieldDelegate");
- tolua_usertype(tolua_S,"cocos2d::CCNode");
  tolua_usertype(tolua_S,"Layout");
- tolua_usertype(tolua_S,"GUIRenderer");
- tolua_usertype(tolua_S,"SEL_ScrollToRightEvent");
- tolua_usertype(tolua_S,"CCComRender");
- tolua_usertype(tolua_S,"TextureAtlas");
- tolua_usertype(tolua_S,"SEL_ReleaseEvent");
- tolua_usertype(tolua_S,"UILabelBMFont");
- tolua_usertype(tolua_S,"CCAction");
- tolua_usertype(tolua_S,"UIScrollInterface");
  tolua_usertype(tolua_S,"CCCSComAudio");
  tolua_usertype(tolua_S,"SEL_ScrollToTopEvent");
- tolua_usertype(tolua_S,"CCPoint");
- tolua_usertype(tolua_S,"CCActionManager");
  tolua_usertype(tolua_S,"CCTexture2D");
  tolua_usertype(tolua_S,"CCTouch");
  tolua_usertype(tolua_S,"SEL_SelectedStateEvent");
  tolua_usertype(tolua_S,"UIWidget");
- tolua_usertype(tolua_S,"SEL_ListViewUpdateChildEvent");
- tolua_usertype(tolua_S,"ccBlendFunc");
- tolua_usertype(tolua_S,"CCTextAlignment");
- tolua_usertype(tolua_S,"UICCLabelAtlas");
- tolua_usertype(tolua_S,"CCComAttribute");
- tolua_usertype(tolua_S,"SEL_TextFieldInsertTextEvent");
+ tolua_usertype(tolua_S,"SEL_ListViewEvent");
  tolua_usertype(tolua_S,"SEL_DragPanelBounceToLeftBottomEvent");
  tolua_usertype(tolua_S,"UILoadingBar");
- tolua_usertype(tolua_S,"armature::Bone");
- tolua_usertype(tolua_S,"SEL_TextFieldAttachWithIMEEvent");
  tolua_usertype(tolua_S,"SEL_PushEvent");
  tolua_usertype(tolua_S,"CCNodeRGBA");
- tolua_usertype(tolua_S,"SEL_DragPanelEvent");
- tolua_usertype(tolua_S,"CCTextFieldTTF");
+ tolua_usertype(tolua_S,"SEL_TextFieldInsertTextEvent");
  tolua_usertype(tolua_S,"SEL_MoveEvent");
  tolua_usertype(tolua_S,"CCSGUIReader");
- tolua_usertype(tolua_S,"CCLabelAtlas");
  tolua_usertype(tolua_S,"UIButton");
  tolua_usertype(tolua_S,"SEL_SlidPercentChangedEvent");
- tolua_usertype(tolua_S,"UISlider");
- tolua_usertype(tolua_S,"SEL_ListViewEvent");
- tolua_usertype(tolua_S,"UIListView");
- tolua_usertype(tolua_S,"SEL_ScrollViewEvent");
+ tolua_usertype(tolua_S,"CCTextFieldDelegate");
  tolua_usertype(tolua_S,"CCRect");
- tolua_usertype(tolua_S,"SEL_TouchEvent");
- tolua_usertype(tolua_S,"SEL_PageViewEvent");
- tolua_usertype(tolua_S,"SEL_ListViewInitChildEvent");
- tolua_usertype(tolua_S,"SEL_DragPanelBerthToLeftTopEvent");
+ tolua_usertype(tolua_S,"SEL_SelectEvent");
  tolua_usertype(tolua_S,"SEL_ScrollToLeftEvent");
- tolua_usertype(tolua_S,"CCEvent");
- tolua_usertype(tolua_S,"UIDragPanel");
+ tolua_usertype(tolua_S,"framework::unity::blockreader");
  tolua_usertype(tolua_S,"SEL_DragPanelBerthToLeftEvent");
- tolua_usertype(tolua_S,"CCLayer");
  tolua_usertype(tolua_S,"SEL_DragPanelBerthToTopEvent");
- tolua_usertype(tolua_S,"CCCSComAttribute");
  tolua_usertype(tolua_S,"SEL_DragPanelBerthToRightEvent");
- tolua_usertype(tolua_S,"CCSize");
  tolua_usertype(tolua_S,"UICCTextField");
- tolua_usertype(tolua_S,"SEL_CancelEvent");
- tolua_usertype(tolua_S,"SEL_DragPanelBerthToBottomEvent");
- tolua_usertype(tolua_S,"GLubyte");
- tolua_usertype(tolua_S,"CCArray");
  tolua_usertype(tolua_S,"UIImageView");
- tolua_usertype(tolua_S,"ArmatureData");
- tolua_usertype(tolua_S,"SEL_DragPanelBounceToRightTopEvent");
- tolua_usertype(tolua_S,"UIZoomButton");
- tolua_usertype(tolua_S,"UIInputManager");
- tolua_usertype(tolua_S,"LayoutParameter");
  tolua_usertype(tolua_S,"SEL_DragPanelBounceToBottomEvent");
- tolua_usertype(tolua_S,"UIHelper");
+ tolua_usertype(tolua_S,"UIInputManager");
+ tolua_usertype(tolua_S,"SEL_TextFieldAttachWithIMEEvent");
  tolua_usertype(tolua_S,"SEL_PageViewPageTurningEvent");
+ tolua_usertype(tolua_S,"UILabelBMFont");
+ tolua_usertype(tolua_S,"CCVerticalTextAlignment");
+ tolua_usertype(tolua_S,"framework::mvvm::ModelBase");
+ tolua_usertype(tolua_S,"RectClippingNode");
+ tolua_usertype(tolua_S,"UITextField");
+ tolua_usertype(tolua_S,"UILabel");
+ tolua_usertype(tolua_S,"SEL_DragPanelBounceToTopEvent");
+ tolua_usertype(tolua_S,"CCCSComAttribute");
+ tolua_usertype(tolua_S,"UIRootWidget");
+ tolua_usertype(tolua_S,"UIZoomButton");
+ tolua_usertype(tolua_S,"RelativeLayoutParameter");
+ tolua_usertype(tolua_S,"SEL_DragPanelBounceToRightBottomEvent");
+ tolua_usertype(tolua_S,"std::vector<std::string>");
+ tolua_usertype(tolua_S,"size_t");
+ tolua_usertype(tolua_S,"UILayer");
+ tolua_usertype(tolua_S,"CCComAttribute");
+ tolua_usertype(tolua_S,"CCSSceneReader");
+ tolua_usertype(tolua_S,"LayoutParameter");
+ tolua_usertype(tolua_S,"CCComAudio");
+ tolua_usertype(tolua_S,"BlendFunc");
+ tolua_usertype(tolua_S,"AffineTransform");
+ tolua_usertype(tolua_S,"SEL_ReleaseEvent");
+ tolua_usertype(tolua_S,"framework::mvvm::DispatcherObject");
+ tolua_usertype(tolua_S,"AnimationData");
+ tolua_usertype(tolua_S,"LinearLayoutParameter");
+ tolua_usertype(tolua_S,"cocos2d::CCNode");
+ tolua_usertype(tolua_S,"SEL_DragPanelBounceToRightEvent");
+ tolua_usertype(tolua_S,"SEL_ScrollToRightEvent");
+ tolua_usertype(tolua_S,"CCComRender");
+ tolua_usertype(tolua_S,"TextureAtlas");
+ tolua_usertype(tolua_S,"UIScrollInterface");
+ tolua_usertype(tolua_S,"SEL_ListViewInitChildEvent");
+ tolua_usertype(tolua_S,"CCLayer");
+ tolua_usertype(tolua_S,"SEL_ListViewUpdateChildEvent");
+ tolua_usertype(tolua_S,"UICCLabelAtlas");
+ tolua_usertype(tolua_S,"armature::Bone");
+ tolua_usertype(tolua_S,"GLubyte");
+ tolua_usertype(tolua_S,"uint32");
+ tolua_usertype(tolua_S,"SEL_DragPanelEvent");
+ tolua_usertype(tolua_S,"framework::mvvm::IModel");
+ tolua_usertype(tolua_S,"framework::mvvm::INotifyPropertyChanged");
+ tolua_usertype(tolua_S,"framework::mvvm::IView");
+ tolua_usertype(tolua_S,"CCLabelAtlas");
+ tolua_usertype(tolua_S,"framework::mvvm::FrameworkElement");
+ tolua_usertype(tolua_S,"unity::object");
+ tolua_usertype(tolua_S,"framework::mvvm::UIElement");
+ tolua_usertype(tolua_S,"framework::mvvm::Visual");
+ tolua_usertype(tolua_S,"UIListView");
+ tolua_usertype(tolua_S,"framework::mvvm::DependencyObject");
+ tolua_usertype(tolua_S,"CCObject");
+ tolua_usertype(tolua_S,"SEL_TouchEvent");
+ tolua_usertype(tolua_S,"CCNode");
+ tolua_usertype(tolua_S,"CCEvent");
+ tolua_usertype(tolua_S,"SEL_DragPanelBerthToLeftTopEvent");
+ tolua_usertype(tolua_S,"ArmatureAnimation");
+ tolua_usertype(tolua_S,"ccColor3B");
+ tolua_usertype(tolua_S,"UIDragPanel");
+ tolua_usertype(tolua_S,"UIMargin");
+ tolua_usertype(tolua_S,"cocos2d::CCComponent");
+ tolua_usertype(tolua_S,"SEL_UnSelectEvent");
+ tolua_usertype(tolua_S,"BatchNode");
+ tolua_usertype(tolua_S,"SEL_DragPanelBerthToLeftBottomEvent");
+ tolua_usertype(tolua_S,"CCSize");
+ tolua_usertype(tolua_S,"CCClippingNode");
+ tolua_usertype(tolua_S,"SEL_CancelEvent");
+ tolua_usertype(tolua_S,"Rect");
+ tolua_usertype(tolua_S,"cs::CCCSJsonDictionary");
+ tolua_usertype(tolua_S,"CCArray");
+ tolua_usertype(tolua_S,"Dictionary");
+ tolua_usertype(tolua_S,"ArmatureData");
+ tolua_usertype(tolua_S,"CCBlendProtocol");
+ tolua_usertype(tolua_S,"Armature");
+ tolua_usertype(tolua_S,"UICheckBox");
+ tolua_usertype(tolua_S,"GUIRenderer");
+ tolua_usertype(tolua_S,"CCPoint");
+ tolua_usertype(tolua_S,"UIHelper");
+ tolua_usertype(tolua_S,"CCTextFieldTTF");
  tolua_usertype(tolua_S,"SEL_DragPanelBerthToRightBottomEvent");
  tolua_usertype(tolua_S,"SEL_DragPanelBounceToLeftTopEvent");
- tolua_usertype(tolua_S,"SEL_DragPanelBounceToRightEvent");
- tolua_usertype(tolua_S,"CCObject");
- tolua_usertype(tolua_S,"SEL_DragPanelBounceToLeftEvent");
+ tolua_usertype(tolua_S,"ccBlendFunc");
+ tolua_usertype(tolua_S,"CCTextAlignment");
+ tolua_usertype(tolua_S,"SEL_PageViewEvent");
  tolua_usertype(tolua_S,"LuaCocoStudioConversion");
- tolua_usertype(tolua_S,"CCSSceneReader");
+ tolua_usertype(tolua_S,"SEL_DragPanelBounceToRightTopEvent");
 }
 
 /* method: onEnter of class  CCComRender */
@@ -26993,6 +27078,1515 @@ static int tolua_LuaExtern_ArmatureAnimation_setAnimationData00(lua_State* tolua
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: new of class  framework::unity::blockreader */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockreader_new00
+static int tolua_LuaExtern_framework_unity_blockreader_new00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const char* buffer = ((const char*)  tolua_tostring(tolua_S,2,0));
+  unsigned short length = ((unsigned short)  tolua_tonumber(tolua_S,3,0));
+  {
+   framework::unity::blockreader* tolua_ret = (framework::unity::blockreader*)  Mtolua_new((framework::unity::blockreader)(buffer,length));
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"framework::unity::blockreader");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new_local of class  framework::unity::blockreader */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockreader_new00_local
+static int tolua_LuaExtern_framework_unity_blockreader_new00_local(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const char* buffer = ((const char*)  tolua_tostring(tolua_S,2,0));
+  unsigned short length = ((unsigned short)  tolua_tonumber(tolua_S,3,0));
+  {
+   framework::unity::blockreader* tolua_ret = (framework::unity::blockreader*)  Mtolua_new((framework::unity::blockreader)(buffer,length));
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"framework::unity::blockreader");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: seek of class  framework::unity::blockreader */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockreader_seek00
+static int tolua_LuaExtern_framework_unity_blockreader_seek00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"size_t",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockreader* self = (framework::unity::blockreader*)  tolua_tousertype(tolua_S,1,0);
+  size_t off = *((size_t*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'seek'", NULL);
+#endif
+  {
+   self->seek(off);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'seek'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: reseek of class  framework::unity::blockreader */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockreader_reseek00
+static int tolua_LuaExtern_framework_unity_blockreader_reseek00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockreader* self = (framework::unity::blockreader*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'reseek'", NULL);
+#endif
+  {
+   self->reseek();
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'reseek'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: eof of class  framework::unity::blockreader */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockreader_eof00
+static int tolua_LuaExtern_framework_unity_blockreader_eof00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const framework::unity::blockreader",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const framework::unity::blockreader* self = (const framework::unity::blockreader*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'eof'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->eof();
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'eof'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: read1 of class  framework::unity::blockreader */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockreader_read100
+static int tolua_LuaExtern_framework_unity_blockreader_read100(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockreader* self = (framework::unity::blockreader*)  tolua_tousertype(tolua_S,1,0);
+  char ret = ((char)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'read1'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->read1(ret);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+   tolua_pushnumber(tolua_S,(lua_Number)ret);
+  }
+ }
+ return 2;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'read1'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: read2 of class  framework::unity::blockreader */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockreader_read200
+static int tolua_LuaExtern_framework_unity_blockreader_read200(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockreader* self = (framework::unity::blockreader*)  tolua_tousertype(tolua_S,1,0);
+  short ret = ((short)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'read2'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->read2(ret);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+   tolua_pushnumber(tolua_S,(lua_Number)ret);
+  }
+ }
+ return 2;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'read2'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: read4 of class  framework::unity::blockreader */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockreader_read400
+static int tolua_LuaExtern_framework_unity_blockreader_read400(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockreader* self = (framework::unity::blockreader*)  tolua_tousertype(tolua_S,1,0);
+  long ret = ((long)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'read4'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->read4(ret);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+   tolua_pushnumber(tolua_S,(lua_Number)ret);
+  }
+ }
+ return 2;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'read4'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: read8 of class  framework::unity::blockreader */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockreader_read800
+static int tolua_LuaExtern_framework_unity_blockreader_read800(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockreader* self = (framework::unity::blockreader*)  tolua_tousertype(tolua_S,1,0);
+  long long ret = ((long long)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'read8'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->read8(ret);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+   tolua_pushnumber(tolua_S,(lua_Number)ret);
+  }
+ }
+ return 2;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'read8'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: readu1 of class  framework::unity::blockreader */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockreader_readu100
+static int tolua_LuaExtern_framework_unity_blockreader_readu100(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockreader* self = (framework::unity::blockreader*)  tolua_tousertype(tolua_S,1,0);
+  unsigned char ret = ((unsigned char)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'readu1'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->readu1(ret);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+   tolua_pushnumber(tolua_S,(lua_Number)ret);
+  }
+ }
+ return 2;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'readu1'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: readu2 of class  framework::unity::blockreader */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockreader_readu200
+static int tolua_LuaExtern_framework_unity_blockreader_readu200(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockreader* self = (framework::unity::blockreader*)  tolua_tousertype(tolua_S,1,0);
+  unsigned short ret = ((unsigned short)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'readu2'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->readu2(ret);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+   tolua_pushnumber(tolua_S,(lua_Number)ret);
+  }
+ }
+ return 2;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'readu2'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: readu4 of class  framework::unity::blockreader */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockreader_readu400
+static int tolua_LuaExtern_framework_unity_blockreader_readu400(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockreader* self = (framework::unity::blockreader*)  tolua_tousertype(tolua_S,1,0);
+  unsigned long ret = ((unsigned long)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'readu4'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->readu4(ret);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+   tolua_pushnumber(tolua_S,(lua_Number)ret);
+  }
+ }
+ return 2;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'readu4'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: readu8 of class  framework::unity::blockreader */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockreader_readu800
+static int tolua_LuaExtern_framework_unity_blockreader_readu800(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockreader* self = (framework::unity::blockreader*)  tolua_tousertype(tolua_S,1,0);
+  unsigned long long ret = ((unsigned long long)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'readu8'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->readu8(ret);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+   tolua_pushnumber(tolua_S,(lua_Number)ret);
+  }
+ }
+ return 2;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'readu8'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new of class  framework::unity::blockwrite */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockwrite_new00
+static int tolua_LuaExtern_framework_unity_blockwrite_new00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"framework::unity::blockwrite",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  char* buffer = ((char*)  tolua_tostring(tolua_S,2,0));
+  unsigned short length = ((unsigned short)  tolua_tonumber(tolua_S,3,0));
+  {
+   framework::unity::blockwrite* tolua_ret = (framework::unity::blockwrite*)  Mtolua_new((framework::unity::blockwrite)(buffer,length));
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"framework::unity::blockwrite");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new_local of class  framework::unity::blockwrite */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockwrite_new00_local
+static int tolua_LuaExtern_framework_unity_blockwrite_new00_local(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"framework::unity::blockwrite",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  char* buffer = ((char*)  tolua_tostring(tolua_S,2,0));
+  unsigned short length = ((unsigned short)  tolua_tonumber(tolua_S,3,0));
+  {
+   framework::unity::blockwrite* tolua_ret = (framework::unity::blockwrite*)  Mtolua_new((framework::unity::blockwrite)(buffer,length));
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"framework::unity::blockwrite");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: seek of class  framework::unity::blockwrite */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockwrite_seek00
+static int tolua_LuaExtern_framework_unity_blockwrite_seek00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockwrite",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"size_t",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockwrite* self = (framework::unity::blockwrite*)  tolua_tousertype(tolua_S,1,0);
+  size_t off = *((size_t*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'seek'", NULL);
+#endif
+  {
+   self->seek(off);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'seek'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: reseek of class  framework::unity::blockwrite */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockwrite_reseek00
+static int tolua_LuaExtern_framework_unity_blockwrite_reseek00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockwrite",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockwrite* self = (framework::unity::blockwrite*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'reseek'", NULL);
+#endif
+  {
+   self->reseek();
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'reseek'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: buffer of class  framework::unity::blockwrite */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockwrite_buffer00
+static int tolua_LuaExtern_framework_unity_blockwrite_buffer00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const framework::unity::blockwrite",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const framework::unity::blockwrite* self = (const framework::unity::blockwrite*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'buffer'", NULL);
+#endif
+  {
+   char* tolua_ret = (char*)  self->buffer();
+   tolua_pushstring(tolua_S,(const char*)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'buffer'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: length of class  framework::unity::blockwrite */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockwrite_length00
+static int tolua_LuaExtern_framework_unity_blockwrite_length00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const framework::unity::blockwrite",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const framework::unity::blockwrite* self = (const framework::unity::blockwrite*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'length'", NULL);
+#endif
+  {
+   unsigned short tolua_ret = (unsigned short)  self->length();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'length'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: write1 of class  framework::unity::blockwrite */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockwrite_write100
+static int tolua_LuaExtern_framework_unity_blockwrite_write100(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockwrite",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockwrite* self = (framework::unity::blockwrite*)  tolua_tousertype(tolua_S,1,0);
+  const char v = ((const char)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'write1'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->write1(v);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'write1'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: write2 of class  framework::unity::blockwrite */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockwrite_write200
+static int tolua_LuaExtern_framework_unity_blockwrite_write200(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockwrite",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockwrite* self = (framework::unity::blockwrite*)  tolua_tousertype(tolua_S,1,0);
+  const short v = ((const short)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'write2'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->write2(v);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'write2'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: write4 of class  framework::unity::blockwrite */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockwrite_write400
+static int tolua_LuaExtern_framework_unity_blockwrite_write400(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockwrite",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockwrite* self = (framework::unity::blockwrite*)  tolua_tousertype(tolua_S,1,0);
+  const long v = ((const long)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'write4'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->write4(v);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'write4'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: write8 of class  framework::unity::blockwrite */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockwrite_write800
+static int tolua_LuaExtern_framework_unity_blockwrite_write800(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockwrite",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockwrite* self = (framework::unity::blockwrite*)  tolua_tousertype(tolua_S,1,0);
+  long const long v = ((long const long)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'write8'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->write8(v);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'write8'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: writeu1 of class  framework::unity::blockwrite */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockwrite_writeu100
+static int tolua_LuaExtern_framework_unity_blockwrite_writeu100(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockwrite",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockwrite* self = (framework::unity::blockwrite*)  tolua_tousertype(tolua_S,1,0);
+  unsigned const char v = ((unsigned const char)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'writeu1'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->writeu1(v);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'writeu1'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: writeu2 of class  framework::unity::blockwrite */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockwrite_writeu200
+static int tolua_LuaExtern_framework_unity_blockwrite_writeu200(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockwrite",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockwrite* self = (framework::unity::blockwrite*)  tolua_tousertype(tolua_S,1,0);
+  unsigned const short v = ((unsigned const short)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'writeu2'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->writeu2(v);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'writeu2'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: writeu4 of class  framework::unity::blockwrite */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockwrite_writeu400
+static int tolua_LuaExtern_framework_unity_blockwrite_writeu400(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockwrite",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockwrite* self = (framework::unity::blockwrite*)  tolua_tousertype(tolua_S,1,0);
+  unsigned const long v = ((unsigned const long)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'writeu4'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->writeu4(v);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'writeu4'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: writeu8 of class  framework::unity::blockwrite */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockwrite_writeu800
+static int tolua_LuaExtern_framework_unity_blockwrite_writeu800(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockwrite",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockwrite* self = (framework::unity::blockwrite*)  tolua_tousertype(tolua_S,1,0);
+  unsigned long const long v = ((unsigned long const long)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'writeu8'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->writeu8(v);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'writeu8'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new of class  framework::mvvm::DispatcherObject */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_DispatcherObject_new00
+static int tolua_LuaExtern_framework_mvvm_DispatcherObject_new00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"framework::mvvm::DispatcherObject",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   framework::mvvm::DispatcherObject* tolua_ret = (framework::mvvm::DispatcherObject*)  Mtolua_new((framework::mvvm::DispatcherObject)());
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"framework::mvvm::DispatcherObject");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new_local of class  framework::mvvm::DispatcherObject */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_DispatcherObject_new00_local
+static int tolua_LuaExtern_framework_mvvm_DispatcherObject_new00_local(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"framework::mvvm::DispatcherObject",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   framework::mvvm::DispatcherObject* tolua_ret = (framework::mvvm::DispatcherObject*)  Mtolua_new((framework::mvvm::DispatcherObject)());
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"framework::mvvm::DispatcherObject");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new of class  framework::mvvm::DependencyObject */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_DependencyObject_new00
+static int tolua_LuaExtern_framework_mvvm_DependencyObject_new00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"framework::mvvm::DependencyObject",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   framework::mvvm::DependencyObject* tolua_ret = (framework::mvvm::DependencyObject*)  Mtolua_new((framework::mvvm::DependencyObject)());
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"framework::mvvm::DependencyObject");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new_local of class  framework::mvvm::DependencyObject */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_DependencyObject_new00_local
+static int tolua_LuaExtern_framework_mvvm_DependencyObject_new00_local(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"framework::mvvm::DependencyObject",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   framework::mvvm::DependencyObject* tolua_ret = (framework::mvvm::DependencyObject*)  Mtolua_new((framework::mvvm::DependencyObject)());
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"framework::mvvm::DependencyObject");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new of class  framework::mvvm::Visual */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_Visual_new00
+static int tolua_LuaExtern_framework_mvvm_Visual_new00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"framework::mvvm::Visual",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   framework::mvvm::Visual* tolua_ret = (framework::mvvm::Visual*)  Mtolua_new((framework::mvvm::Visual)());
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"framework::mvvm::Visual");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new_local of class  framework::mvvm::Visual */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_Visual_new00_local
+static int tolua_LuaExtern_framework_mvvm_Visual_new00_local(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"framework::mvvm::Visual",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   framework::mvvm::Visual* tolua_ret = (framework::mvvm::Visual*)  Mtolua_new((framework::mvvm::Visual)());
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"framework::mvvm::Visual");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new of class  framework::mvvm::UIElement */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_UIElement_new00
+static int tolua_LuaExtern_framework_mvvm_UIElement_new00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"framework::mvvm::UIElement",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   framework::mvvm::UIElement* tolua_ret = (framework::mvvm::UIElement*)  Mtolua_new((framework::mvvm::UIElement)());
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"framework::mvvm::UIElement");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new_local of class  framework::mvvm::UIElement */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_UIElement_new00_local
+static int tolua_LuaExtern_framework_mvvm_UIElement_new00_local(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"framework::mvvm::UIElement",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   framework::mvvm::UIElement* tolua_ret = (framework::mvvm::UIElement*)  Mtolua_new((framework::mvvm::UIElement)());
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"framework::mvvm::UIElement");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: RaiseEvent of class  framework::mvvm::UIElement */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_UIElement_RaiseEvent00
+static int tolua_LuaExtern_framework_mvvm_UIElement_RaiseEvent00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::mvvm::UIElement",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"unity::object",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::mvvm::UIElement* self = (framework::mvvm::UIElement*)  tolua_tousertype(tolua_S,1,0);
+  unity::object* e = ((unity::object*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'RaiseEvent'", NULL);
+#endif
+  {
+   self->RaiseEvent(e);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'RaiseEvent'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new of class  framework::mvvm::FrameworkElement */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_FrameworkElement_new00
+static int tolua_LuaExtern_framework_mvvm_FrameworkElement_new00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"framework::mvvm::FrameworkElement",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   framework::mvvm::FrameworkElement* tolua_ret = (framework::mvvm::FrameworkElement*)  Mtolua_new((framework::mvvm::FrameworkElement)());
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"framework::mvvm::FrameworkElement");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new_local of class  framework::mvvm::FrameworkElement */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_FrameworkElement_new00_local
+static int tolua_LuaExtern_framework_mvvm_FrameworkElement_new00_local(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"framework::mvvm::FrameworkElement",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   framework::mvvm::FrameworkElement* tolua_ret = (framework::mvvm::FrameworkElement*)  Mtolua_new((framework::mvvm::FrameworkElement)());
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"framework::mvvm::FrameworkElement");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: initForMvvm of class  framework::mvvm::FrameworkElement */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_FrameworkElement_initForMvvm00
+static int tolua_LuaExtern_framework_mvvm_FrameworkElement_initForMvvm00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::mvvm::FrameworkElement",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::mvvm::FrameworkElement* self = (framework::mvvm::FrameworkElement*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'initForMvvm'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->initForMvvm();
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'initForMvvm'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: RaisePropertyChanged of class  framework::mvvm::INotifyPropertyChanged */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_INotifyPropertyChanged_RaisePropertyChanged00
+static int tolua_LuaExtern_framework_mvvm_INotifyPropertyChanged_RaisePropertyChanged00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::mvvm::INotifyPropertyChanged",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::mvvm::INotifyPropertyChanged* self = (framework::mvvm::INotifyPropertyChanged*)  tolua_tousertype(tolua_S,1,0);
+  const char* propertyName = ((const char*)  tolua_tostring(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'RaisePropertyChanged'", NULL);
+#endif
+  {
+   self->RaisePropertyChanged(propertyName);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'RaisePropertyChanged'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getTypeName of class  framework::mvvm::IModel */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_IModel_getTypeName00
+static int tolua_LuaExtern_framework_mvvm_IModel_getTypeName00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const framework::mvvm::IModel",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const framework::mvvm::IModel* self = (const framework::mvvm::IModel*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getTypeName'", NULL);
+#endif
+  {
+   std::string tolua_ret = (std::string)  self->getTypeName();
+   tolua_pushcppstring(tolua_S,(const char*)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getTypeName'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getRTTIType of class  framework::mvvm::IModel */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_IModel_getRTTIType00
+static int tolua_LuaExtern_framework_mvvm_IModel_getRTTIType00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const framework::mvvm::IModel",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const framework::mvvm::IModel* self = (const framework::mvvm::IModel*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getRTTIType'", NULL);
+#endif
+  {
+   uint32 tolua_ret = (uint32)  self->getRTTIType();
+   {
+#ifdef __cplusplus
+    void* tolua_obj = Mtolua_new((uint32)(tolua_ret));
+     tolua_pushusertype(tolua_S,tolua_obj,"uint32");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#else
+    void* tolua_obj = tolua_copy(tolua_S,(void*)&tolua_ret,sizeof(uint32));
+     tolua_pushusertype(tolua_S,tolua_obj,"uint32");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#endif
+   }
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getRTTIType'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: init of class  framework::mvvm::IModel */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_IModel_init00
+static int tolua_LuaExtern_framework_mvvm_IModel_init00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::mvvm::IModel",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::mvvm::IModel* self = (framework::mvvm::IModel*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'init'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->init();
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'init'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: finalize of class  framework::mvvm::IModel */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_IModel_finalize00
+static int tolua_LuaExtern_framework_mvvm_IModel_finalize00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::mvvm::IModel",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::mvvm::IModel* self = (framework::mvvm::IModel*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'finalize'", NULL);
+#endif
+  {
+   self->finalize();
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'finalize'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: update of class  framework::mvvm::IModel */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_IModel_update00
+static int tolua_LuaExtern_framework_mvvm_IModel_update00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::mvvm::IModel",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::mvvm::IModel* self = (framework::mvvm::IModel*)  tolua_tousertype(tolua_S,1,0);
+  float dt = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'update'", NULL);
+#endif
+  {
+   self->update(dt);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'update'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setBindingTarget of class  framework::mvvm::IModel */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_IModel_setBindingTarget00
+static int tolua_LuaExtern_framework_mvvm_IModel_setBindingTarget00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::mvvm::IModel",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"framework::mvvm::IView",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::mvvm::IModel* self = (framework::mvvm::IModel*)  tolua_tousertype(tolua_S,1,0);
+  framework::mvvm::IView* view = ((framework::mvvm::IView*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setBindingTarget'", NULL);
+#endif
+  {
+   self->setBindingTarget(view);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setBindingTarget'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* get function: __unity of class  framework::mvvm::IModel */
+#ifndef TOLUA_DISABLE_tolua_get_framework__mvvm__IModel___unity__object__
+static int tolua_get_framework__mvvm__IModel___unity__object__(lua_State* tolua_S)
+{
+  framework::mvvm::IModel* self = (framework::mvvm::IModel*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in accessing variable '__unity'",NULL);
+#endif
+#ifdef __cplusplus
+   tolua_pushusertype(tolua_S,(void*)static_cast<unity::object*>(self), "unity::object");
+#else
+   tolua_pushusertype(tolua_S,(void*)((unity::object*)self), "unity::object");
+#endif
+ return 1;
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: getChildUIButtonByName of class  LuaCocoStudioConversion */
 #ifndef TOLUA_DISABLE_tolua_LuaExtern_LuaCocoStudioConversion_getChildUIButtonByName00
 static int tolua_LuaExtern_LuaCocoStudioConversion_getChildUIButtonByName00(lua_State* tolua_S)
@@ -28702,6 +30296,137 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"update",tolua_LuaExtern_ArmatureAnimation_update00);
    tolua_function(tolua_S,"getAnimationData",tolua_LuaExtern_ArmatureAnimation_getAnimationData00);
    tolua_function(tolua_S,"setAnimationData",tolua_LuaExtern_ArmatureAnimation_setAnimationData00);
+  tolua_endmodule(tolua_S);
+  tolua_module(tolua_S,"framework",0);
+  tolua_beginmodule(tolua_S,"framework");
+   tolua_module(tolua_S,"unity",0);
+   tolua_beginmodule(tolua_S,"unity");
+    #ifdef __cplusplus
+    tolua_cclass(tolua_S,"blockreader","framework::unity::blockreader","",tolua_collect_framework__unity__blockreader);
+    #else
+    tolua_cclass(tolua_S,"blockreader","framework::unity::blockreader","",NULL);
+    #endif
+    tolua_beginmodule(tolua_S,"blockreader");
+     tolua_function(tolua_S,"new",tolua_LuaExtern_framework_unity_blockreader_new00);
+     tolua_function(tolua_S,"new_local",tolua_LuaExtern_framework_unity_blockreader_new00_local);
+     tolua_function(tolua_S,".call",tolua_LuaExtern_framework_unity_blockreader_new00_local);
+     tolua_function(tolua_S,"seek",tolua_LuaExtern_framework_unity_blockreader_seek00);
+     tolua_function(tolua_S,"reseek",tolua_LuaExtern_framework_unity_blockreader_reseek00);
+     tolua_function(tolua_S,"eof",tolua_LuaExtern_framework_unity_blockreader_eof00);
+     tolua_function(tolua_S,"read1",tolua_LuaExtern_framework_unity_blockreader_read100);
+     tolua_function(tolua_S,"read2",tolua_LuaExtern_framework_unity_blockreader_read200);
+     tolua_function(tolua_S,"read4",tolua_LuaExtern_framework_unity_blockreader_read400);
+     tolua_function(tolua_S,"read8",tolua_LuaExtern_framework_unity_blockreader_read800);
+     tolua_function(tolua_S,"readu1",tolua_LuaExtern_framework_unity_blockreader_readu100);
+     tolua_function(tolua_S,"readu2",tolua_LuaExtern_framework_unity_blockreader_readu200);
+     tolua_function(tolua_S,"readu4",tolua_LuaExtern_framework_unity_blockreader_readu400);
+     tolua_function(tolua_S,"readu8",tolua_LuaExtern_framework_unity_blockreader_readu800);
+    tolua_endmodule(tolua_S);
+    #ifdef __cplusplus
+    tolua_cclass(tolua_S,"blockwrite","framework::unity::blockwrite","",tolua_collect_framework__unity__blockwrite);
+    #else
+    tolua_cclass(tolua_S,"blockwrite","framework::unity::blockwrite","",NULL);
+    #endif
+    tolua_beginmodule(tolua_S,"blockwrite");
+     tolua_function(tolua_S,"new",tolua_LuaExtern_framework_unity_blockwrite_new00);
+     tolua_function(tolua_S,"new_local",tolua_LuaExtern_framework_unity_blockwrite_new00_local);
+     tolua_function(tolua_S,".call",tolua_LuaExtern_framework_unity_blockwrite_new00_local);
+     tolua_function(tolua_S,"seek",tolua_LuaExtern_framework_unity_blockwrite_seek00);
+     tolua_function(tolua_S,"reseek",tolua_LuaExtern_framework_unity_blockwrite_reseek00);
+     tolua_function(tolua_S,"buffer",tolua_LuaExtern_framework_unity_blockwrite_buffer00);
+     tolua_function(tolua_S,"length",tolua_LuaExtern_framework_unity_blockwrite_length00);
+     tolua_function(tolua_S,"write1",tolua_LuaExtern_framework_unity_blockwrite_write100);
+     tolua_function(tolua_S,"write2",tolua_LuaExtern_framework_unity_blockwrite_write200);
+     tolua_function(tolua_S,"write4",tolua_LuaExtern_framework_unity_blockwrite_write400);
+     tolua_function(tolua_S,"write8",tolua_LuaExtern_framework_unity_blockwrite_write800);
+     tolua_function(tolua_S,"writeu1",tolua_LuaExtern_framework_unity_blockwrite_writeu100);
+     tolua_function(tolua_S,"writeu2",tolua_LuaExtern_framework_unity_blockwrite_writeu200);
+     tolua_function(tolua_S,"writeu4",tolua_LuaExtern_framework_unity_blockwrite_writeu400);
+     tolua_function(tolua_S,"writeu8",tolua_LuaExtern_framework_unity_blockwrite_writeu800);
+    tolua_endmodule(tolua_S);
+   tolua_endmodule(tolua_S);
+  tolua_endmodule(tolua_S);
+  tolua_module(tolua_S,"framework",0);
+  tolua_beginmodule(tolua_S,"framework");
+   tolua_module(tolua_S,"mvvm",0);
+   tolua_beginmodule(tolua_S,"mvvm");
+    #ifdef __cplusplus
+    tolua_cclass(tolua_S,"DispatcherObject","framework::mvvm::DispatcherObject","",tolua_collect_framework__mvvm__DispatcherObject);
+    #else
+    tolua_cclass(tolua_S,"DispatcherObject","framework::mvvm::DispatcherObject","",NULL);
+    #endif
+    tolua_beginmodule(tolua_S,"DispatcherObject");
+     tolua_function(tolua_S,"new",tolua_LuaExtern_framework_mvvm_DispatcherObject_new00);
+     tolua_function(tolua_S,"new_local",tolua_LuaExtern_framework_mvvm_DispatcherObject_new00_local);
+     tolua_function(tolua_S,".call",tolua_LuaExtern_framework_mvvm_DispatcherObject_new00_local);
+    tolua_endmodule(tolua_S);
+    #ifdef __cplusplus
+    tolua_cclass(tolua_S,"DependencyObject","framework::mvvm::DependencyObject","framework::mvvm::DispatcherObject",tolua_collect_framework__mvvm__DependencyObject);
+    #else
+    tolua_cclass(tolua_S,"DependencyObject","framework::mvvm::DependencyObject","framework::mvvm::DispatcherObject",NULL);
+    #endif
+    tolua_beginmodule(tolua_S,"DependencyObject");
+     tolua_function(tolua_S,"new",tolua_LuaExtern_framework_mvvm_DependencyObject_new00);
+     tolua_function(tolua_S,"new_local",tolua_LuaExtern_framework_mvvm_DependencyObject_new00_local);
+     tolua_function(tolua_S,".call",tolua_LuaExtern_framework_mvvm_DependencyObject_new00_local);
+    tolua_endmodule(tolua_S);
+    #ifdef __cplusplus
+    tolua_cclass(tolua_S,"Visual","framework::mvvm::Visual","framework::mvvm::DependencyObject",tolua_collect_framework__mvvm__Visual);
+    #else
+    tolua_cclass(tolua_S,"Visual","framework::mvvm::Visual","framework::mvvm::DependencyObject",NULL);
+    #endif
+    tolua_beginmodule(tolua_S,"Visual");
+     tolua_function(tolua_S,"new",tolua_LuaExtern_framework_mvvm_Visual_new00);
+     tolua_function(tolua_S,"new_local",tolua_LuaExtern_framework_mvvm_Visual_new00_local);
+     tolua_function(tolua_S,".call",tolua_LuaExtern_framework_mvvm_Visual_new00_local);
+    tolua_endmodule(tolua_S);
+    #ifdef __cplusplus
+    tolua_cclass(tolua_S,"UIElement","framework::mvvm::UIElement","framework::mvvm::Visual",tolua_collect_framework__mvvm__UIElement);
+    #else
+    tolua_cclass(tolua_S,"UIElement","framework::mvvm::UIElement","framework::mvvm::Visual",NULL);
+    #endif
+    tolua_beginmodule(tolua_S,"UIElement");
+     tolua_function(tolua_S,"new",tolua_LuaExtern_framework_mvvm_UIElement_new00);
+     tolua_function(tolua_S,"new_local",tolua_LuaExtern_framework_mvvm_UIElement_new00_local);
+     tolua_function(tolua_S,".call",tolua_LuaExtern_framework_mvvm_UIElement_new00_local);
+     tolua_function(tolua_S,"RaiseEvent",tolua_LuaExtern_framework_mvvm_UIElement_RaiseEvent00);
+    tolua_endmodule(tolua_S);
+    #ifdef __cplusplus
+    tolua_cclass(tolua_S,"FrameworkElement","framework::mvvm::FrameworkElement","framework::mvvm::UIElement",tolua_collect_framework__mvvm__FrameworkElement);
+    #else
+    tolua_cclass(tolua_S,"FrameworkElement","framework::mvvm::FrameworkElement","framework::mvvm::UIElement",NULL);
+    #endif
+    tolua_beginmodule(tolua_S,"FrameworkElement");
+     tolua_function(tolua_S,"new",tolua_LuaExtern_framework_mvvm_FrameworkElement_new00);
+     tolua_function(tolua_S,"new_local",tolua_LuaExtern_framework_mvvm_FrameworkElement_new00_local);
+     tolua_function(tolua_S,".call",tolua_LuaExtern_framework_mvvm_FrameworkElement_new00_local);
+     tolua_function(tolua_S,"initForMvvm",tolua_LuaExtern_framework_mvvm_FrameworkElement_initForMvvm00);
+    tolua_endmodule(tolua_S);
+    tolua_cclass(tolua_S,"IView","framework::mvvm::IView","framework::mvvm::FrameworkElement",NULL);
+    tolua_beginmodule(tolua_S,"IView");
+    tolua_endmodule(tolua_S);
+    tolua_cclass(tolua_S,"INotifyPropertyChanged","framework::mvvm::INotifyPropertyChanged","",NULL);
+    tolua_beginmodule(tolua_S,"INotifyPropertyChanged");
+     tolua_function(tolua_S,"RaisePropertyChanged",tolua_LuaExtern_framework_mvvm_INotifyPropertyChanged_RaisePropertyChanged00);
+    tolua_endmodule(tolua_S);
+    #ifdef __cplusplus
+    tolua_cclass(tolua_S,"IModel","framework::mvvm::IModel","framework::mvvm::INotifyPropertyChanged",tolua_collect_framework__mvvm__IModel);
+    #else
+    tolua_cclass(tolua_S,"IModel","framework::mvvm::IModel","framework::mvvm::INotifyPropertyChanged",NULL);
+    #endif
+    tolua_beginmodule(tolua_S,"IModel");
+     tolua_function(tolua_S,"getTypeName",tolua_LuaExtern_framework_mvvm_IModel_getTypeName00);
+     tolua_function(tolua_S,"getRTTIType",tolua_LuaExtern_framework_mvvm_IModel_getRTTIType00);
+     tolua_function(tolua_S,"init",tolua_LuaExtern_framework_mvvm_IModel_init00);
+     tolua_function(tolua_S,"finalize",tolua_LuaExtern_framework_mvvm_IModel_finalize00);
+     tolua_function(tolua_S,"update",tolua_LuaExtern_framework_mvvm_IModel_update00);
+     tolua_function(tolua_S,"setBindingTarget",tolua_LuaExtern_framework_mvvm_IModel_setBindingTarget00);
+     tolua_variable(tolua_S,"__unity__object__",tolua_get_framework__mvvm__IModel___unity__object__,NULL);
+    tolua_endmodule(tolua_S);
+    tolua_cclass(tolua_S,"ModelBase","framework::mvvm::ModelBase","framework::mvvm::IModel",NULL);
+    tolua_beginmodule(tolua_S,"ModelBase");
+    tolua_endmodule(tolua_S);
+   tolua_endmodule(tolua_S);
   tolua_endmodule(tolua_S);
   tolua_cclass(tolua_S,"LuaCocoStudioConversion","LuaCocoStudioConversion","",NULL);
   tolua_beginmodule(tolua_S,"LuaCocoStudioConversion");

@@ -1,0 +1,49 @@
+namespace framework
+{
+	namespace mvvm
+	{
+		class DispatcherObject
+		{
+			DispatcherObject();
+		};
+		class DependencyObject : public DispatcherObject
+		{
+			DependencyObject();
+		};
+		class Visual : public DependencyObject
+		{
+			Visual();
+		};
+		class UIElement : public Visual
+		{
+			UIElement();
+			void RaiseEvent(unity::object* e);
+		};
+		class FrameworkElement : public UIElement
+		{
+			FrameworkElement();
+			virtual bool initForMvvm();
+		};
+		class IView : public FrameworkElement
+		{
+		};
+		class INotifyPropertyChanged
+		{
+			virtual void RaisePropertyChanged(const char* propertyName);
+		};
+		class IModel : public INotifyPropertyChanged,
+					   public unity::object
+		{
+			IModel();
+			virtual std::string getTypeName() const = 0;
+			virtual uint32 getRTTIType() const = 0;
+			virtual bool init() = 0;
+			virtual void finalize() = 0;
+			virtual void update(float dt) = 0;
+			virtual void setBindingTarget(IView* view);
+		};
+		class ModelBase : public IModel
+		{
+		};
+	}	// namespace mvvm
+}	// namespace framework

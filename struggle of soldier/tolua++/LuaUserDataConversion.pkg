@@ -1,0 +1,5 @@
+class LuaUserDataConversion
+{
+	static GameLandModel* toGameLandModle(void* pointer);
+	static GameLandView* toGameLandView(void* pointer);
+};

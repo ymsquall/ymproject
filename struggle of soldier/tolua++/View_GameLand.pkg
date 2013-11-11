@@ -1,0 +1,13 @@
+class GameLandView : public UILayer
+{
+	GameLandView();
+	~GameLandView();
+
+	virtual bool init();
+	virtual bool initForMvvm();
+	virtual void update(float dt);
+
+	void doLiveChanged(bool isLive);
+	void doTroopChanged(const std::string& name);
+	void doSelectGrid(const LandTreeGrid* pGrid);
+};

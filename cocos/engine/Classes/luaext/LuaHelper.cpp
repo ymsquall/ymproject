@@ -62,6 +62,11 @@ ScriptParamObject::ScriptParamObject(int v)
 	type = LUA_TINTEGER;
 	value.integer = v;
 }
+ScriptParamObject::ScriptParamObject(unsigned int v)
+{
+	type = LUA_TINTEGER;
+	value.integer = v;
+}
 ScriptParamObject::ScriptParamObject(bool v)
 {
 	type = LUA_TBOOLEAN;
@@ -528,6 +533,12 @@ ScriptParamObject tolua_callLuaFunctionWithParam5WithResult1(const char* funcNam
 void callLuaFuncNoResult(const char* funcName)
 {
 	tolua_callLuaFunctionWithParam0NoResult(funcName);
+}
+bool callLuaFuncWithBoolResult(const char* funcName)
+{
+	ScriptParamObject result = tolua_callLuaFunctionWithParam0WithResult1(funcName);
+	if(result.type == LUA_TBOOLEAN) return result.value.boolean;
+	return false;
 }
 std::string callLuaFuncWithStringResult(const char* funcName)
 {

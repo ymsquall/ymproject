@@ -56,4 +56,6 @@ public:
 	typedef std::map<const LandTreeGrid*, cocos2d::extension::UIWidget*> GridRenderList;
 	GridRenderList mGridRenderList;
 	std::vector<cocos2d::extension::armature::Armature*> mXiaobingAnimList;
+	std::string mTroopName;
+	bool mNeedWaitDragPanelBerthOvered;
 };

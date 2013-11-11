@@ -30,6 +30,14 @@ namespace framework
 				return true;
 			return false;
 		}
+		bool blockreader::read1(char& ret){ return read<char>(ret); }
+		bool blockreader::read2(short& ret){ return read<short>(ret); }
+		bool blockreader::read4(long& ret){ return read<long>(ret); }
+		bool blockreader::read8(long long& ret){ return read<long long>(ret); }
+		bool blockreader::readu1(unsigned char& ret){ return read<unsigned char>(ret); }
+		bool blockreader::readu2(unsigned short& ret){ return read<unsigned short>(ret); }
+		bool blockreader::readu4(unsigned long& ret){ return read<unsigned long>(ret); }
+		bool blockreader::readu8(unsigned long long& ret){ return read<unsigned long long>(ret); }
 
 		blockwrite::blockwrite()
 		{
@@ -72,6 +80,14 @@ namespace framework
 		{
 			return mRealLength;
 		}
+		bool blockwrite::write1(const char v){ return write<char>(v); }
+		bool blockwrite::write2(const short v){ return write<short>(v); }
+		bool blockwrite::write4(const long v){ return write<long>(v); }
+		bool blockwrite::write8(const long long v){ return write<long long>(v); }
+		bool blockwrite::writeu1(const unsigned char v){ return write<unsigned char>(v); }
+		bool blockwrite::writeu2(const unsigned short v){ return write<unsigned short>(v); }
+		bool blockwrite::writeu4(const unsigned long v){ return write<unsigned long>(v); }
+		bool blockwrite::writeu8(const unsigned long long v){ return write<unsigned long long>(v); }
 
 		datablock::datablock(unsigned short length)
 		{

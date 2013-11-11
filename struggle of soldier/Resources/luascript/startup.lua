@@ -6,6 +6,7 @@ require "luascript/toolkit"
 
 
 require "luascript/models/gamelandmodel"
+require "luascript/models/playstruggle_var01"
 require "luascript/views/helper"
 require "luascript/views/login"
 require "luascript/views/selecthero"

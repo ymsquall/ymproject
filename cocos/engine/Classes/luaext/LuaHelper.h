@@ -27,6 +27,7 @@ struct ScriptParamObject
 	ScriptParamObject(const ScriptParamObject& oth);
 	ScriptParamObject(double v);
 	ScriptParamObject(int v);
+	ScriptParamObject(unsigned int v);
 	ScriptParamObject(bool v);
 	ScriptParamObject(void* v);
 	ScriptParamObject(const void* v);
@@ -116,6 +117,32 @@ template<class P1, class P2> void callLuaFuncNoResult(const char* funcName, P1 p
 template<class P1, class P2, class P3> void callLuaFuncNoResult(const char* funcName, P1 p1, P2 p2, P3 p3)
 {
 	tolua_callLuaFunctionWithParam3NoResult(funcName, ScriptParamObject(p1), ScriptParamObject(p2), ScriptParamObject(p3));
+}
+// bool result
+bool callLuaFuncWithBoolResult(const char* funcName);
+template<class P1> bool callLuaFuncWithBoolResult(const char* funcName, P1 p1)
+{
+	ScriptParamObject result = tolua_callLuaFunctionWithParam1WithResult1(funcName, ScriptParamObject(p1));
+	if(result.type == LUA_TBOOLEAN) return result.value.boolean;
+	return false;
+}
+template<class P1, class P2> bool callLuaFuncWithBoolResult(const char* funcName, P1 p1, P2 p2)
+{
+	ScriptParamObject result = tolua_callLuaFunctionWithParam2WithResult1(funcName, ScriptParamObject(p1), ScriptParamObject(p2));
+	if(result.type == LUA_TBOOLEAN) return result.value.boolean;
+	return false;
+}
+template<class P1, class P2, class P3> bool callLuaFuncWithBoolResult(const char* funcName, P1 p1, P2 p2, P3 p3)
+{
+	ScriptParamObject result = tolua_callLuaFunctionWithParam3WithResult1(funcName, ScriptParamObject(p1), ScriptParamObject(p2), ScriptParamObject(p3));
+	if(result.type == LUA_TBOOLEAN) return result.value.boolean;
+	return false;
+}
+template<class P1, class P2, class P3, class P4> bool callLuaFuncWithBoolResult(const char* funcName, P1 p1, P2 p2, P3 p3, P4 p4)
+{
+	ScriptParamObject result = tolua_callLuaFunctionWithParam4WithResult1(funcName, ScriptParamObject(p1), ScriptParamObject(p2), ScriptParamObject(p3), ScriptParamObject(p4));
+	if(result.type == LUA_TBOOLEAN) return result.value.boolean;
+	return false;
 }
 // number result
 template<class R1> bool callLuaFuncWithNumberResult(const char* funcName, R1& r1)

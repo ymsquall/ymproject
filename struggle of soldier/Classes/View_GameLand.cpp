@@ -29,6 +29,7 @@ GameLandView::GameLandView()
 	mMapBGPanel = NULL;
 	mMapBGImageView = NULL;
 	mNowSelectGridImage = NULL;
+	mNeedWaitDragPanelBerthOvered = false;
 	gGameLandView = this;
 #ifdef TEST_VIEWGRIDS
 	gpLastSelectGrid = NULL;
@@ -97,7 +98,7 @@ bool GameLandView::initForMvvm()
 void GameLandView::update(float dt)
 {
 	CCPoint pos = mMapDragPanel->getInnerContainerPosition();
-	CCString* posText = CCString::createWithFormat("%.02f, %.02f", pos.x, pos.y);
+	CCString* posText = CCString::createWithFormat("%s[%.02f, %.02f]", mTroopName.c_str(), pos.x, pos.y);
 	mDebugText->setText(posText->getCString());
 
 	ViewSuperT::update(dt);
@@ -292,6 +293,13 @@ void GameLandView::onMapPanelDragEvent(CCObject* pSender, DragPanelEventType typ
 	case DRAGPANEL_EVENT_BERTH_TOP:
 	case DRAGPANEL_EVENT_BERTH_RIGHT:
 	case DRAGPANEL_EVENT_BERTH_BOTTOM:
+		if(mNeedWaitDragPanelBerthOvered)
+		{
+			mNeedWaitDragPanelBerthOvered = false;
+			ActionStepOveredEventParams eventArgs;
+			Event_OnActionStepOvered(this, &eventArgs);
+			mMapDragPanel->setTouchEnable(true);
+		}
 		break;
 	default:
 		break;
@@ -318,21 +326,27 @@ void GameLandView::doLiveChanged(bool isLive)
 
 void GameLandView::doTroopChanged(const std::string& name)
 {
-
+	mTroopName = name;
 }
 
 void GameLandView::doSelectGrid(const LandTreeGrid* pGrid)
 {
 	if(NULL != mNowSelectGridImage)
 	{
+		mNowSelectGridImage->setColor(Color3B(255,255,255));
 		mNowSelectGridImage->stopAllActions();
 	}
 	GridRenderList::iterator it = mGridRenderList.find(pGrid);
 	if(mGridRenderList.end() == it)
 		return;
 	mNowSelectGridImage = dynamic_cast<UIImageView*>(it->second);
-	CCBlink* pFlash = CCBlink::create(1.0f, 0);
+	mNowSelectGridImage->setColor(Color3B(0,255,0));
+	CCBlink* pFlash = CCBlink::create(1.0f, 1000000);
 	mNowSelectGridImage->runAction(pFlash);
 
+	mMapDragPanel->setTouchEnable(false);
+	mMapDragPanel->setAutoMoveDuration(10.0f);
+	mMapDragPanel->setAutoMoveEaseRate(10.0f);
 	mMapDragPanel->setInnerContainerPosition(CCPoint(-568,-384),true);
+	mNeedWaitDragPanelBerthOvered = true;
 }

@@ -19,7 +19,7 @@ namespace framework
 		public:
 			unity::RoutedEvent<INotifyPropertyChanged*, NotifyPropertyChangedRoutedEventArgs*> Event_PropertyChanged;
 
-		protected:
+		//protected:
 			virtual void RaisePropertyChanged(const char* propertyName)
 			{
 				NotifyPropertyChangedRoutedEventArgs args;
