@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaExtern
-** Generated automatically by tolua++-1.0.92 on 11/11/13 23:54:48.
+** Generated automatically by tolua++-1.0.92 on 11/13/13 00:32:03.
 */
 
 /****************************************************************************
@@ -447,7 +447,7 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"RelativeLayoutParameter");
  tolua_usertype(tolua_S,"SEL_DragPanelBounceToRightBottomEvent");
  tolua_usertype(tolua_S,"std::vector<std::string>");
- tolua_usertype(tolua_S,"size_t");
+ tolua_usertype(tolua_S,"framework::mvvm::IModel");
  tolua_usertype(tolua_S,"UILayer");
  tolua_usertype(tolua_S,"CCComAttribute");
  tolua_usertype(tolua_S,"CCSSceneReader");
@@ -473,19 +473,19 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"GLubyte");
  tolua_usertype(tolua_S,"uint32");
  tolua_usertype(tolua_S,"SEL_DragPanelEvent");
- tolua_usertype(tolua_S,"framework::mvvm::IModel");
  tolua_usertype(tolua_S,"framework::mvvm::INotifyPropertyChanged");
  tolua_usertype(tolua_S,"framework::mvvm::IView");
- tolua_usertype(tolua_S,"CCLabelAtlas");
  tolua_usertype(tolua_S,"framework::mvvm::FrameworkElement");
+ tolua_usertype(tolua_S,"CCLabelAtlas");
  tolua_usertype(tolua_S,"unity::object");
  tolua_usertype(tolua_S,"framework::mvvm::UIElement");
  tolua_usertype(tolua_S,"framework::mvvm::Visual");
- tolua_usertype(tolua_S,"UIListView");
  tolua_usertype(tolua_S,"framework::mvvm::DependencyObject");
+ tolua_usertype(tolua_S,"UIListView");
+ tolua_usertype(tolua_S,"CCNode");
  tolua_usertype(tolua_S,"CCObject");
  tolua_usertype(tolua_S,"SEL_TouchEvent");
- tolua_usertype(tolua_S,"CCNode");
+ tolua_usertype(tolua_S,"object");
  tolua_usertype(tolua_S,"CCEvent");
  tolua_usertype(tolua_S,"SEL_DragPanelBerthToLeftTopEvent");
  tolua_usertype(tolua_S,"ArmatureAnimation");
@@ -27151,7 +27151,7 @@ static int tolua_LuaExtern_framework_unity_blockreader_seek00(lua_State* tolua_S
  tolua_Error tolua_err;
  if (
      !tolua_isusertype(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
-     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"size_t",0,&tolua_err)) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
      !tolua_isnoobj(tolua_S,3,&tolua_err)
  )
   goto tolua_lerror;
@@ -27159,7 +27159,7 @@ static int tolua_LuaExtern_framework_unity_blockreader_seek00(lua_State* tolua_S
 #endif
  {
   framework::unity::blockreader* self = (framework::unity::blockreader*)  tolua_tousertype(tolua_S,1,0);
-  size_t off = *((size_t*)  tolua_tousertype(tolua_S,2,0));
+  unsigned short off = ((unsigned short)  tolua_tonumber(tolua_S,2,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'seek'", NULL);
 #endif
@@ -27239,6 +27239,38 @@ static int tolua_LuaExtern_framework_unity_blockreader_eof00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: create of class  framework::unity::blockreader */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockreader_create00
+static int tolua_LuaExtern_framework_unity_blockreader_create00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const char* buffer = ((const char*)  tolua_tostring(tolua_S,2,0));
+  unsigned short length = ((unsigned short)  tolua_tonumber(tolua_S,3,0));
+  {
+   framework::unity::blockreader* tolua_ret = (framework::unity::blockreader*)  framework::unity::blockreader::create(buffer,length);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"framework::unity::blockreader");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'create'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: read1 of class  framework::unity::blockreader */
 #ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockreader_read100
 static int tolua_LuaExtern_framework_unity_blockreader_read100(lua_State* tolua_S)
@@ -27247,25 +27279,22 @@ static int tolua_LuaExtern_framework_unity_blockreader_read100(lua_State* tolua_
  tolua_Error tolua_err;
  if (
      !tolua_isusertype(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,3,&tolua_err)
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
  )
   goto tolua_lerror;
  else
 #endif
  {
   framework::unity::blockreader* self = (framework::unity::blockreader*)  tolua_tousertype(tolua_S,1,0);
-  char ret = ((char)  tolua_tonumber(tolua_S,2,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'read1'", NULL);
 #endif
   {
-   bool tolua_ret = (bool)  self->read1(ret);
-   tolua_pushboolean(tolua_S,(bool)tolua_ret);
-   tolua_pushnumber(tolua_S,(lua_Number)ret);
+   long long tolua_ret = (long long)  self->read1();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
   }
  }
- return 2;
+ return 1;
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'read1'.",&tolua_err);
@@ -27282,25 +27311,22 @@ static int tolua_LuaExtern_framework_unity_blockreader_read200(lua_State* tolua_
  tolua_Error tolua_err;
  if (
      !tolua_isusertype(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,3,&tolua_err)
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
  )
   goto tolua_lerror;
  else
 #endif
  {
   framework::unity::blockreader* self = (framework::unity::blockreader*)  tolua_tousertype(tolua_S,1,0);
-  short ret = ((short)  tolua_tonumber(tolua_S,2,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'read2'", NULL);
 #endif
   {
-   bool tolua_ret = (bool)  self->read2(ret);
-   tolua_pushboolean(tolua_S,(bool)tolua_ret);
-   tolua_pushnumber(tolua_S,(lua_Number)ret);
+   long long tolua_ret = (long long)  self->read2();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
   }
  }
- return 2;
+ return 1;
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'read2'.",&tolua_err);
@@ -27317,25 +27343,22 @@ static int tolua_LuaExtern_framework_unity_blockreader_read400(lua_State* tolua_
  tolua_Error tolua_err;
  if (
      !tolua_isusertype(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,3,&tolua_err)
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
  )
   goto tolua_lerror;
  else
 #endif
  {
   framework::unity::blockreader* self = (framework::unity::blockreader*)  tolua_tousertype(tolua_S,1,0);
-  long ret = ((long)  tolua_tonumber(tolua_S,2,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'read4'", NULL);
 #endif
   {
-   bool tolua_ret = (bool)  self->read4(ret);
-   tolua_pushboolean(tolua_S,(bool)tolua_ret);
-   tolua_pushnumber(tolua_S,(lua_Number)ret);
+   long long tolua_ret = (long long)  self->read4();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
   }
  }
- return 2;
+ return 1;
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'read4'.",&tolua_err);
@@ -27352,25 +27375,22 @@ static int tolua_LuaExtern_framework_unity_blockreader_read800(lua_State* tolua_
  tolua_Error tolua_err;
  if (
      !tolua_isusertype(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,3,&tolua_err)
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
  )
   goto tolua_lerror;
  else
 #endif
  {
   framework::unity::blockreader* self = (framework::unity::blockreader*)  tolua_tousertype(tolua_S,1,0);
-  long long ret = ((long long)  tolua_tonumber(tolua_S,2,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'read8'", NULL);
 #endif
   {
-   bool tolua_ret = (bool)  self->read8(ret);
-   tolua_pushboolean(tolua_S,(bool)tolua_ret);
-   tolua_pushnumber(tolua_S,(lua_Number)ret);
+   long long tolua_ret = (long long)  self->read8();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
   }
  }
- return 2;
+ return 1;
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'read8'.",&tolua_err);
@@ -27387,25 +27407,22 @@ static int tolua_LuaExtern_framework_unity_blockreader_readu100(lua_State* tolua
  tolua_Error tolua_err;
  if (
      !tolua_isusertype(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,3,&tolua_err)
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
  )
   goto tolua_lerror;
  else
 #endif
  {
   framework::unity::blockreader* self = (framework::unity::blockreader*)  tolua_tousertype(tolua_S,1,0);
-  unsigned char ret = ((unsigned char)  tolua_tonumber(tolua_S,2,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'readu1'", NULL);
 #endif
   {
-   bool tolua_ret = (bool)  self->readu1(ret);
-   tolua_pushboolean(tolua_S,(bool)tolua_ret);
-   tolua_pushnumber(tolua_S,(lua_Number)ret);
+   unsigned long long tolua_ret = (unsigned long long)  self->readu1();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
   }
  }
- return 2;
+ return 1;
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'readu1'.",&tolua_err);
@@ -27422,25 +27439,22 @@ static int tolua_LuaExtern_framework_unity_blockreader_readu200(lua_State* tolua
  tolua_Error tolua_err;
  if (
      !tolua_isusertype(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,3,&tolua_err)
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
  )
   goto tolua_lerror;
  else
 #endif
  {
   framework::unity::blockreader* self = (framework::unity::blockreader*)  tolua_tousertype(tolua_S,1,0);
-  unsigned short ret = ((unsigned short)  tolua_tonumber(tolua_S,2,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'readu2'", NULL);
 #endif
   {
-   bool tolua_ret = (bool)  self->readu2(ret);
-   tolua_pushboolean(tolua_S,(bool)tolua_ret);
-   tolua_pushnumber(tolua_S,(lua_Number)ret);
+   unsigned long long tolua_ret = (unsigned long long)  self->readu2();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
   }
  }
- return 2;
+ return 1;
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'readu2'.",&tolua_err);
@@ -27457,25 +27471,22 @@ static int tolua_LuaExtern_framework_unity_blockreader_readu400(lua_State* tolua
  tolua_Error tolua_err;
  if (
      !tolua_isusertype(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,3,&tolua_err)
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
  )
   goto tolua_lerror;
  else
 #endif
  {
   framework::unity::blockreader* self = (framework::unity::blockreader*)  tolua_tousertype(tolua_S,1,0);
-  unsigned long ret = ((unsigned long)  tolua_tonumber(tolua_S,2,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'readu4'", NULL);
 #endif
   {
-   bool tolua_ret = (bool)  self->readu4(ret);
-   tolua_pushboolean(tolua_S,(bool)tolua_ret);
-   tolua_pushnumber(tolua_S,(lua_Number)ret);
+   unsigned long long tolua_ret = (unsigned long long)  self->readu4();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
   }
  }
- return 2;
+ return 1;
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'readu4'.",&tolua_err);
@@ -27492,28 +27503,89 @@ static int tolua_LuaExtern_framework_unity_blockreader_readu800(lua_State* tolua
  tolua_Error tolua_err;
  if (
      !tolua_isusertype(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,3,&tolua_err)
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
  )
   goto tolua_lerror;
  else
 #endif
  {
   framework::unity::blockreader* self = (framework::unity::blockreader*)  tolua_tousertype(tolua_S,1,0);
-  unsigned long long ret = ((unsigned long long)  tolua_tonumber(tolua_S,2,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'readu8'", NULL);
 #endif
   {
-   bool tolua_ret = (bool)  self->readu8(ret);
-   tolua_pushboolean(tolua_S,(bool)tolua_ret);
-   tolua_pushnumber(tolua_S,(lua_Number)ret);
+   unsigned long long tolua_ret = (unsigned long long)  self->readu8();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
   }
  }
- return 2;
+ return 1;
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'readu8'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: readf1 of class  framework::unity::blockreader */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockreader_readf100
+static int tolua_LuaExtern_framework_unity_blockreader_readf100(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockreader* self = (framework::unity::blockreader*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'readf1'", NULL);
+#endif
+  {
+   float tolua_ret = (float)  self->readf1();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'readf1'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: readf2 of class  framework::unity::blockreader */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockreader_readf200
+static int tolua_LuaExtern_framework_unity_blockreader_readf200(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockreader* self = (framework::unity::blockreader*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'readf2'", NULL);
+#endif
+  {
+   double tolua_ret = (double)  self->readf2();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'readf2'.",&tolua_err);
  return 0;
 #endif
 }
@@ -27592,7 +27664,7 @@ static int tolua_LuaExtern_framework_unity_blockwrite_seek00(lua_State* tolua_S)
  tolua_Error tolua_err;
  if (
      !tolua_isusertype(tolua_S,1,"framework::unity::blockwrite",0,&tolua_err) ||
-     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"size_t",0,&tolua_err)) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
      !tolua_isnoobj(tolua_S,3,&tolua_err)
  )
   goto tolua_lerror;
@@ -27600,7 +27672,7 @@ static int tolua_LuaExtern_framework_unity_blockwrite_seek00(lua_State* tolua_S)
 #endif
  {
   framework::unity::blockwrite* self = (framework::unity::blockwrite*)  tolua_tousertype(tolua_S,1,0);
-  size_t off = *((size_t*)  tolua_tousertype(tolua_S,2,0));
+  unsigned short off = ((unsigned short)  tolua_tonumber(tolua_S,2,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'seek'", NULL);
 #endif
@@ -27712,6 +27784,61 @@ static int tolua_LuaExtern_framework_unity_blockwrite_length00(lua_State* tolua_
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: create of class  framework::unity::blockwrite */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockwrite_create00
+static int tolua_LuaExtern_framework_unity_blockwrite_create00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"framework::unity::blockwrite",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   framework::unity::blockwrite* tolua_ret = (framework::unity::blockwrite*)  framework::unity::blockwrite::create();
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"framework::unity::blockwrite");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'create'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: create of class  framework::unity::blockwrite */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockwrite_create01
+static int tolua_LuaExtern_framework_unity_blockwrite_create01(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"framework::unity::blockwrite",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  char* buffer = ((char*)  tolua_tostring(tolua_S,2,0));
+  unsigned short length = ((unsigned short)  tolua_tonumber(tolua_S,3,0));
+  {
+   framework::unity::blockwrite* tolua_ret = (framework::unity::blockwrite*)  framework::unity::blockwrite::create(buffer,length);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"framework::unity::blockwrite");
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_framework_unity_blockwrite_create00(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: write1 of class  framework::unity::blockwrite */
 #ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockwrite_write100
 static int tolua_LuaExtern_framework_unity_blockwrite_write100(lua_State* tolua_S)
@@ -27728,7 +27855,7 @@ static int tolua_LuaExtern_framework_unity_blockwrite_write100(lua_State* tolua_
 #endif
  {
   framework::unity::blockwrite* self = (framework::unity::blockwrite*)  tolua_tousertype(tolua_S,1,0);
-  const char v = ((const char)  tolua_tonumber(tolua_S,2,0));
+  long const long v = ((long const long)  tolua_tonumber(tolua_S,2,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'write1'", NULL);
 #endif
@@ -27762,7 +27889,7 @@ static int tolua_LuaExtern_framework_unity_blockwrite_write200(lua_State* tolua_
 #endif
  {
   framework::unity::blockwrite* self = (framework::unity::blockwrite*)  tolua_tousertype(tolua_S,1,0);
-  const short v = ((const short)  tolua_tonumber(tolua_S,2,0));
+  long const long v = ((long const long)  tolua_tonumber(tolua_S,2,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'write2'", NULL);
 #endif
@@ -27796,7 +27923,7 @@ static int tolua_LuaExtern_framework_unity_blockwrite_write400(lua_State* tolua_
 #endif
  {
   framework::unity::blockwrite* self = (framework::unity::blockwrite*)  tolua_tousertype(tolua_S,1,0);
-  const long v = ((const long)  tolua_tonumber(tolua_S,2,0));
+  long const long v = ((long const long)  tolua_tonumber(tolua_S,2,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'write4'", NULL);
 #endif
@@ -27864,7 +27991,7 @@ static int tolua_LuaExtern_framework_unity_blockwrite_writeu100(lua_State* tolua
 #endif
  {
   framework::unity::blockwrite* self = (framework::unity::blockwrite*)  tolua_tousertype(tolua_S,1,0);
-  unsigned const char v = ((unsigned const char)  tolua_tonumber(tolua_S,2,0));
+  unsigned long const long v = ((unsigned long const long)  tolua_tonumber(tolua_S,2,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'writeu1'", NULL);
 #endif
@@ -27898,7 +28025,7 @@ static int tolua_LuaExtern_framework_unity_blockwrite_writeu200(lua_State* tolua
 #endif
  {
   framework::unity::blockwrite* self = (framework::unity::blockwrite*)  tolua_tousertype(tolua_S,1,0);
-  unsigned const short v = ((unsigned const short)  tolua_tonumber(tolua_S,2,0));
+  unsigned long const long v = ((unsigned long const long)  tolua_tonumber(tolua_S,2,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'writeu2'", NULL);
 #endif
@@ -27932,7 +28059,7 @@ static int tolua_LuaExtern_framework_unity_blockwrite_writeu400(lua_State* tolua
 #endif
  {
   framework::unity::blockwrite* self = (framework::unity::blockwrite*)  tolua_tousertype(tolua_S,1,0);
-  unsigned const long v = ((unsigned const long)  tolua_tonumber(tolua_S,2,0));
+  unsigned long const long v = ((unsigned long const long)  tolua_tonumber(tolua_S,2,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'writeu4'", NULL);
 #endif
@@ -27979,6 +28106,74 @@ static int tolua_LuaExtern_framework_unity_blockwrite_writeu800(lua_State* tolua
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'writeu8'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: writef1 of class  framework::unity::blockwrite */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockwrite_writef100
+static int tolua_LuaExtern_framework_unity_blockwrite_writef100(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockwrite",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockwrite* self = (framework::unity::blockwrite*)  tolua_tousertype(tolua_S,1,0);
+  const float v = ((const float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'writef1'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->writef1(v);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'writef1'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: writef2 of class  framework::unity::blockwrite */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockwrite_writef200
+static int tolua_LuaExtern_framework_unity_blockwrite_writef200(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::blockwrite",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::blockwrite* self = (framework::unity::blockwrite*)  tolua_tousertype(tolua_S,1,0);
+  const double v = ((const double)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'writef2'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->writef2(v);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'writef2'.",&tolua_err);
  return 0;
 #endif
 }
@@ -30302,9 +30497,9 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
    tolua_module(tolua_S,"unity",0);
    tolua_beginmodule(tolua_S,"unity");
     #ifdef __cplusplus
-    tolua_cclass(tolua_S,"blockreader","framework::unity::blockreader","",tolua_collect_framework__unity__blockreader);
+    tolua_cclass(tolua_S,"blockreader","framework::unity::blockreader","object",tolua_collect_framework__unity__blockreader);
     #else
-    tolua_cclass(tolua_S,"blockreader","framework::unity::blockreader","",NULL);
+    tolua_cclass(tolua_S,"blockreader","framework::unity::blockreader","object",NULL);
     #endif
     tolua_beginmodule(tolua_S,"blockreader");
      tolua_function(tolua_S,"new",tolua_LuaExtern_framework_unity_blockreader_new00);
@@ -30313,6 +30508,7 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
      tolua_function(tolua_S,"seek",tolua_LuaExtern_framework_unity_blockreader_seek00);
      tolua_function(tolua_S,"reseek",tolua_LuaExtern_framework_unity_blockreader_reseek00);
      tolua_function(tolua_S,"eof",tolua_LuaExtern_framework_unity_blockreader_eof00);
+     tolua_function(tolua_S,"create",tolua_LuaExtern_framework_unity_blockreader_create00);
      tolua_function(tolua_S,"read1",tolua_LuaExtern_framework_unity_blockreader_read100);
      tolua_function(tolua_S,"read2",tolua_LuaExtern_framework_unity_blockreader_read200);
      tolua_function(tolua_S,"read4",tolua_LuaExtern_framework_unity_blockreader_read400);
@@ -30321,11 +30517,13 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
      tolua_function(tolua_S,"readu2",tolua_LuaExtern_framework_unity_blockreader_readu200);
      tolua_function(tolua_S,"readu4",tolua_LuaExtern_framework_unity_blockreader_readu400);
      tolua_function(tolua_S,"readu8",tolua_LuaExtern_framework_unity_blockreader_readu800);
+     tolua_function(tolua_S,"readf1",tolua_LuaExtern_framework_unity_blockreader_readf100);
+     tolua_function(tolua_S,"readf2",tolua_LuaExtern_framework_unity_blockreader_readf200);
     tolua_endmodule(tolua_S);
     #ifdef __cplusplus
-    tolua_cclass(tolua_S,"blockwrite","framework::unity::blockwrite","",tolua_collect_framework__unity__blockwrite);
+    tolua_cclass(tolua_S,"blockwrite","framework::unity::blockwrite","object",tolua_collect_framework__unity__blockwrite);
     #else
-    tolua_cclass(tolua_S,"blockwrite","framework::unity::blockwrite","",NULL);
+    tolua_cclass(tolua_S,"blockwrite","framework::unity::blockwrite","object",NULL);
     #endif
     tolua_beginmodule(tolua_S,"blockwrite");
      tolua_function(tolua_S,"new",tolua_LuaExtern_framework_unity_blockwrite_new00);
@@ -30335,6 +30533,8 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
      tolua_function(tolua_S,"reseek",tolua_LuaExtern_framework_unity_blockwrite_reseek00);
      tolua_function(tolua_S,"buffer",tolua_LuaExtern_framework_unity_blockwrite_buffer00);
      tolua_function(tolua_S,"length",tolua_LuaExtern_framework_unity_blockwrite_length00);
+     tolua_function(tolua_S,"create",tolua_LuaExtern_framework_unity_blockwrite_create00);
+     tolua_function(tolua_S,"create",tolua_LuaExtern_framework_unity_blockwrite_create01);
      tolua_function(tolua_S,"write1",tolua_LuaExtern_framework_unity_blockwrite_write100);
      tolua_function(tolua_S,"write2",tolua_LuaExtern_framework_unity_blockwrite_write200);
      tolua_function(tolua_S,"write4",tolua_LuaExtern_framework_unity_blockwrite_write400);
@@ -30343,6 +30543,8 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
      tolua_function(tolua_S,"writeu2",tolua_LuaExtern_framework_unity_blockwrite_writeu200);
      tolua_function(tolua_S,"writeu4",tolua_LuaExtern_framework_unity_blockwrite_writeu400);
      tolua_function(tolua_S,"writeu8",tolua_LuaExtern_framework_unity_blockwrite_writeu800);
+     tolua_function(tolua_S,"writef1",tolua_LuaExtern_framework_unity_blockwrite_writef100);
+     tolua_function(tolua_S,"writef2",tolua_LuaExtern_framework_unity_blockwrite_writef200);
     tolua_endmodule(tolua_S);
    tolua_endmodule(tolua_S);
   tolua_endmodule(tolua_S);

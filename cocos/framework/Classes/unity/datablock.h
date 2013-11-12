@@ -1,5 +1,6 @@
 #pragma once
 #include <list> 
+#include "object.h"
 
 #pragma pack(push,1)
 namespace framework
@@ -8,11 +9,11 @@ namespace framework
 	{
 		const unsigned short Max_Memory_Block_Length = 65530;
 		// 内存数据读取器
-		class blockreader
+		class blockreader : public object
 		{
 		public:
 			blockreader(const char* buffer, unsigned short length);
-			void seek(size_t off);
+			void seek(unsigned short off);
 			void reseek();
 			bool eof() const;
 			template<class T> bool read(T& ret)
@@ -26,27 +27,30 @@ namespace framework
 				return true;
 			}
 			// 导出给lua用的接口
-			bool read1(char& ret);
-			bool read2(short& ret);
-			bool read4(long& ret);
-			bool read8(long long& ret);
-			bool readu1(unsigned char& ret);
-			bool readu2(unsigned short& ret);
-			bool readu4(unsigned long& ret);
-			bool readu8(unsigned long long& ret);
+			static blockreader* create(const char* buffer, unsigned short length);
+			long long read1();
+			long long read2();
+			long long read4();
+			long long read8();
+			unsigned long long readu1();
+			unsigned long long readu2();
+			unsigned long long readu4();
+			unsigned long long readu8();
+			float readf1();
+			double readf2();
 
 		private:
 			char* mBuffer;
 			char* mBlock;
 			unsigned short mLength;
 		};
-		class blockwrite
+		class blockwrite : public object
 		{
 		public:
 			blockwrite();
 			blockwrite(char* buffer, unsigned short length);
 			~blockwrite();
-			void seek(size_t off);
+			void seek(unsigned short off);
 			void reseek();
 			char* buffer() const;
 			unsigned short length() const;
@@ -62,14 +66,18 @@ namespace framework
 				return true;
 			}
 			// 导出给lua用的接口
-			bool write1(const char v);
-			bool write2(const short v);
-			bool write4(const long v);
+			static blockwrite* create();
+			static blockwrite* create(char* buffer, unsigned short length);
+			bool write1(const long long v);
+			bool write2(const long long v);
+			bool write4(const long long v);
 			bool write8(const long long v);
-			bool writeu1(const unsigned char v);
-			bool writeu2(const unsigned short v);
-			bool writeu4(const unsigned long v);
+			bool writeu1(const unsigned long long v);
+			bool writeu2(const unsigned long long v);
+			bool writeu4(const unsigned long long v);
 			bool writeu8(const unsigned long long v);
+			bool writef1(const float v);
+			bool writef2(const double v);
 
 		private:
 			char* mBuffer;

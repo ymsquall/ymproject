@@ -11,7 +11,7 @@ namespace framework
 			mBlock = mBuffer;
 			mLength = length;
 		}
-		void blockreader::seek(size_t off)
+		void blockreader::seek(unsigned short off)
 		{
 			size_t nowOff = mBlock - mBuffer;
 			if(nowOff + off >= mLength)
@@ -30,14 +30,82 @@ namespace framework
 				return true;
 			return false;
 		}
-		bool blockreader::read1(char& ret){ return read<char>(ret); }
-		bool blockreader::read2(short& ret){ return read<short>(ret); }
-		bool blockreader::read4(long& ret){ return read<long>(ret); }
-		bool blockreader::read8(long long& ret){ return read<long long>(ret); }
-		bool blockreader::readu1(unsigned char& ret){ return read<unsigned char>(ret); }
-		bool blockreader::readu2(unsigned short& ret){ return read<unsigned short>(ret); }
-		bool blockreader::readu4(unsigned long& ret){ return read<unsigned long>(ret); }
-		bool blockreader::readu8(unsigned long long& ret){ return read<unsigned long long>(ret); }
+		blockreader* blockreader::create(const char* buffer, unsigned short length)
+		{
+			blockreader* pRet = new blockreader(buffer, length);
+			pRet->autorelease();
+			return pRet;
+		}
+		long long blockreader::read1()
+		{
+			char ret = 0;
+			if(read<char>(ret))
+				return static_cast<long long>(ret);
+			return 0;
+		}
+		long long blockreader::read2()
+		{
+			short ret = 0;
+			if(read<short>(ret))
+				return static_cast<long long>(ret);
+			return 0;
+		}
+		long long blockreader::read4()
+		{
+			long ret = 0;
+			if(read<long>(ret))
+				return static_cast<long long>(ret);
+			return 0;
+		}
+		long long blockreader::read8()
+		{
+			long long ret = 0;
+			if(read<long long>(ret))
+				return ret;
+			return 0;
+		}
+		unsigned long long blockreader::readu1()
+		{
+			unsigned char ret = 0;
+			if(read<unsigned char>(ret))
+				return static_cast<unsigned long long>(ret);
+			return 0;
+		}
+		unsigned long long blockreader::readu2()
+		{
+			unsigned short ret = 0;
+			if(read<unsigned short>(ret))
+				return static_cast<unsigned long long>(ret);
+			return 0;
+		}
+		unsigned long long blockreader::readu4()
+		{
+			unsigned long ret = 0;
+			if(read<unsigned long>(ret))
+				return static_cast<unsigned long long>(ret);
+			return 0;
+		}
+		unsigned long long blockreader::readu8()
+		{
+			unsigned long long ret = 0;
+			if(read<unsigned long long>(ret))
+				return ret;
+			return 0;
+		}
+		float blockreader::readf1()
+		{
+			float ret = 0.0f;
+			if(read<float>(ret))
+				return ret;
+			return 0;
+		}
+		double blockreader::readf2()
+		{
+			double ret = 0.0;
+			if(read<double>(ret))
+				return ret;
+			return 0;
+		}
 
 		blockwrite::blockwrite()
 		{
@@ -60,7 +128,7 @@ namespace framework
 			if(mNeedDelete)
 				delete []mBuffer;
 		}
-		void blockwrite::seek(size_t off)
+		void blockwrite::seek(unsigned short off)
 		{
 			size_t nowOff = mBlock - mBuffer;
 			if(nowOff + off >= mLength)
@@ -80,14 +148,28 @@ namespace framework
 		{
 			return mRealLength;
 		}
-		bool blockwrite::write1(const char v){ return write<char>(v); }
-		bool blockwrite::write2(const short v){ return write<short>(v); }
-		bool blockwrite::write4(const long v){ return write<long>(v); }
+		blockwrite* blockwrite::create()
+		{
+			blockwrite* pRet = new blockwrite();
+			pRet->autorelease();
+			return pRet;
+		}
+		blockwrite* blockwrite::create(char* buffer, unsigned short length)
+		{
+			blockwrite* pRet = new blockwrite(buffer, length);
+			pRet->autorelease();
+			return pRet;
+		}
+		bool blockwrite::write1(const long long v){ return write<char>(static_cast<const char>(v)); }
+		bool blockwrite::write2(const long long v){ return write<short>(static_cast<const short>(v)); }
+		bool blockwrite::write4(const long long v){ return write<long>(static_cast<const long>(v)); }
 		bool blockwrite::write8(const long long v){ return write<long long>(v); }
-		bool blockwrite::writeu1(const unsigned char v){ return write<unsigned char>(v); }
-		bool blockwrite::writeu2(const unsigned short v){ return write<unsigned short>(v); }
-		bool blockwrite::writeu4(const unsigned long v){ return write<unsigned long>(v); }
+		bool blockwrite::writeu1(const unsigned long long v){ return write<unsigned char>(static_cast<const unsigned char>(v)); }
+		bool blockwrite::writeu2(const unsigned long long v){ return write<unsigned short>(static_cast<const unsigned short>(v)); }
+		bool blockwrite::writeu4(const unsigned long long v){ return write<unsigned long>(static_cast<const unsigned long>(v)); }
 		bool blockwrite::writeu8(const unsigned long long v){ return write<unsigned long long>(v); }
+		bool blockwrite::writef1(const float v){ return write<float>(static_cast<const float>(v)); }
+		bool blockwrite::writef2(const double v){ return write<double>(static_cast<const double>(v)); }
 
 		datablock::datablock(unsigned short length)
 		{
