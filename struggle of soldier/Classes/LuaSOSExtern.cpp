@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaSOSExtern
-** Generated automatically by tolua++-1.0.92 on 11/13/13 09:55:02.
+** Generated automatically by tolua++-1.0.92 on 11/14/13 00:12:42.
 */
 
 /****************************************************************************
@@ -88,6 +88,7 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"framework::unity::SingletonAutoT<ViewModelManager>");
  tolua_usertype(tolua_S,"uint8");
  tolua_usertype(tolua_S,"engine::AppDelegate");
+ tolua_usertype(tolua_S,"framework::unity::blockwrite");
  tolua_usertype(tolua_S,"unity::RoutedEventArgs");
  tolua_usertype(tolua_S,"uint32");
  tolua_usertype(tolua_S,"GameLandModel");
@@ -98,8 +99,8 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"SoldierTroopsUnitGrid");
  tolua_usertype(tolua_S,"unity::SingletonAutoT<ViewModelManager>");
  tolua_usertype(tolua_S,"ModelImpl");
- tolua_usertype(tolua_S,"int8");
  tolua_usertype(tolua_S,"GameLandView");
+ tolua_usertype(tolua_S,"int8");
  tolua_usertype(tolua_S,"unity::object");
 }
 
@@ -480,39 +481,37 @@ static int tolua_LuaSOSExtern_ViewModelManager_selectModel00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: playStruggle of class  ViewModelManager */
-#ifndef TOLUA_DISABLE_tolua_LuaSOSExtern_ViewModelManager_playStruggle00
-static int tolua_LuaSOSExtern_ViewModelManager_playStruggle00(lua_State* tolua_S)
+/* method: luaPlayStruggle of class  ViewModelManager */
+#ifndef TOLUA_DISABLE_tolua_LuaSOSExtern_ViewModelManager_luaPlayStruggle00
+static int tolua_LuaSOSExtern_ViewModelManager_luaPlayStruggle00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
  tolua_Error tolua_err;
  if (
      !tolua_isusertype(tolua_S,1,"ViewModelManager",0,&tolua_err) ||
-     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
-     !tolua_isboolean(tolua_S,4,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,5,&tolua_err)
+     !tolua_isusertype(tolua_S,2,"framework::unity::blockwrite",0,&tolua_err) ||
+     !tolua_isboolean(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
  )
   goto tolua_lerror;
  else
 #endif
  {
   ViewModelManager* self = (ViewModelManager*)  tolua_tousertype(tolua_S,1,0);
-  const char* data = ((const char*)  tolua_tostring(tolua_S,2,0));
-  unsigned long length = ((unsigned long)  tolua_tonumber(tolua_S,3,0));
-  bool isLive = ((bool)  tolua_toboolean(tolua_S,4,0));
+  framework::unity::blockwrite* data = ((framework::unity::blockwrite*)  tolua_tousertype(tolua_S,2,0));
+  bool isLive = ((bool)  tolua_toboolean(tolua_S,3,0));
 #ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'playStruggle'", NULL);
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'luaPlayStruggle'", NULL);
 #endif
   {
-   bool tolua_ret = (bool)  self->playStruggle(data,length,isLive);
+   bool tolua_ret = (bool)  self->luaPlayStruggle(data,isLive);
    tolua_pushboolean(tolua_S,(bool)tolua_ret);
   }
  }
  return 1;
 #ifndef TOLUA_RELEASE
  tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'playStruggle'.",&tolua_err);
+ tolua_error(tolua_S,"#ferror in function 'luaPlayStruggle'.",&tolua_err);
  return 0;
 #endif
 }
@@ -1080,6 +1079,36 @@ static int tolua_LuaSOSExtern_GameLandView_doSelectGrid00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: toBlockWrite of class  LuaUserDataConversion */
+#ifndef TOLUA_DISABLE_tolua_LuaSOSExtern_LuaUserDataConversion_toBlockWrite00
+static int tolua_LuaSOSExtern_LuaUserDataConversion_toBlockWrite00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"LuaUserDataConversion",0,&tolua_err) ||
+     !tolua_isuserdata(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  void* pointer = ((void*)  tolua_touserdata(tolua_S,2,0));
+  {
+   framework::unity::blockwrite* tolua_ret = (framework::unity::blockwrite*)  LuaUserDataConversion::toBlockWrite(pointer);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"framework::unity::blockwrite");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'toBlockWrite'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: toGameLandModle of class  LuaUserDataConversion */
 #ifndef TOLUA_DISABLE_tolua_LuaSOSExtern_LuaUserDataConversion_toGameLandModle00
 static int tolua_LuaSOSExtern_LuaUserDataConversion_toGameLandModle00(lua_State* tolua_S)
@@ -1183,7 +1212,7 @@ TOLUA_API int tolua_LuaSOSExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"onAppInitOveredShowingBefore",tolua_LuaSOSExtern_ViewModelManager_onAppInitOveredShowingBefore00);
    tolua_function(tolua_S,"onAppInitOveredShowingAfter",tolua_LuaSOSExtern_ViewModelManager_onAppInitOveredShowingAfter00);
    tolua_function(tolua_S,"selectModel",tolua_LuaSOSExtern_ViewModelManager_selectModel00);
-   tolua_function(tolua_S,"playStruggle",tolua_LuaSOSExtern_ViewModelManager_playStruggle00);
+   tolua_function(tolua_S,"luaPlayStruggle",tolua_LuaSOSExtern_ViewModelManager_luaPlayStruggle00);
    tolua_variable(tolua_S,"__mvvm__IModelManager__",tolua_get_ViewModelManager___mvvm__IModelManager__,NULL);
    tolua_variable(tolua_S,"__unity__SingletonAutoT_ViewModelManager___",tolua_get_ViewModelManager___unity__SingletonAutoT_ViewModelManager___,NULL);
   tolua_endmodule(tolua_S);
@@ -1219,6 +1248,7 @@ TOLUA_API int tolua_LuaSOSExtern_open (lua_State* tolua_S)
   tolua_endmodule(tolua_S);
   tolua_cclass(tolua_S,"LuaUserDataConversion","LuaUserDataConversion","",NULL);
   tolua_beginmodule(tolua_S,"LuaUserDataConversion");
+   tolua_function(tolua_S,"toBlockWrite",tolua_LuaSOSExtern_LuaUserDataConversion_toBlockWrite00);
    tolua_function(tolua_S,"toGameLandModle",tolua_LuaSOSExtern_LuaUserDataConversion_toGameLandModle00);
    tolua_function(tolua_S,"toGameLandView",tolua_LuaSOSExtern_LuaUserDataConversion_toGameLandView00);
   tolua_endmodule(tolua_S);

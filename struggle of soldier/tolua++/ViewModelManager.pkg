@@ -14,5 +14,5 @@ class ViewModelManager : public unity::object
 
 	void selectModel(ModelType type);
 
-	bool playStruggle(const char* data, unsigned long length, bool isLive);
+	bool luaPlayStruggle(framework::unity::blockwrite* data, bool isLive);
 };

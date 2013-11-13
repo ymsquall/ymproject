@@ -1,6 +1,7 @@
 #pragma once
 #include "unity/object.h"
 #include "unity/singleton.h"
+#include "unity/datablock.h"
 #include "application/AppDelegate.h"
 #include "mvvm/model.h"
 #include "ModelTypeDefine.h"
@@ -31,6 +32,7 @@ public:
 
 	void selectModel(ModelType type);
 
+	bool luaPlayStruggle(framework::unity::blockwrite* data, bool isLive);
 	bool playStruggle(const char* data, uint32 length, bool isLive);
 
 private:

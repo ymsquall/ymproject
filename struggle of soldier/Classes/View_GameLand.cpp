@@ -63,6 +63,8 @@ bool GameLandView::init()
 
 	ViewModelManager::reloadLuaScript("luascript/views/helper.lua");
 	ViewModelManager::reloadLuaScript("luascript/views/gameland.lua");
+	ViewModelManager::reloadLuaScript("luascript/models/gamelandmodel.lua");
+	ViewModelManager::reloadLuaScript("luascript/models/playstruggle_var01.lua");
 
 	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/saber_righttop0.png", "studioui/animation/saber_righttop0.plist", "studioui/animation/saber_leftbottom.json");
 	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/saber_righttop0.png", "studioui/animation/saber_righttop0.plist", "studioui/animation/saber_righttop.json");

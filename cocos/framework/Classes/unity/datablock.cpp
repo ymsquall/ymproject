@@ -36,6 +36,12 @@ namespace framework
 			pRet->autorelease();
 			return pRet;
 		}
+		blockreader* blockreader::create(blockwrite* block)
+		{
+			blockreader* pRet = new blockreader(block->buffer(), block->length());
+			pRet->autorelease();
+			return pRet;
+		}
 		long long blockreader::read1()
 		{
 			char ret = 0;

@@ -1,5 +1,9 @@
 #include "LuaUserDataConversion.h"
 
+framework::unity::blockwrite* LuaUserDataConversion::toBlockWrite(void* pointer)
+{
+	return static_cast<framework::unity::blockwrite*>(pointer);
+}
 GameLandModel* LuaUserDataConversion::toGameLandModle(void* pointer)
 {
 	return static_cast<GameLandModel*>(pointer);

@@ -99,10 +99,10 @@ void ViewModelManager::selectModel(ModelType type)
 		mvvm::IModel* pModle = *it;
 		if(pModle->getRTTIType() == (uint16)type)
 		{
-			pModle->Enabled = true;
 			ModelListV::iterator it = std::find(mEnabledModelList.begin(), mEnabledModelList.end(), pModle);
 			if(mEnabledModelList.end() == it)
 				mEnabledModelList.push_back(pModle);
+			pModle->Enabled = true;
 		}
 		else
 		{
@@ -112,6 +112,24 @@ void ViewModelManager::selectModel(ModelType type)
 				mEnabledModelList.erase(it);
 		}
 	}
+}
+
+bool ViewModelManager::luaPlayStruggle(unity::blockwrite* data, bool isLive)
+{
+	GameLandModel* pGameLandModel = NULL;
+	for(ModelListV::const_iterator it = mEnabledModelList.begin();
+		it != mEnabledModelList.end(); ++ it)
+	{
+		mvvm::IModel* pModle = *it;
+		if(pModle->getRTTIType() == (uint16)ModelType::GameLand)
+		{
+			pGameLandModel = dynamic_cast<GameLandModel*>(pModle);
+			break;
+		}
+	}
+	if(NULL == pGameLandModel)
+		return false;
+	return callLuaFuncWithBoolResult("LUAPlayStruggleRecord", pGameLandModel, data, isLive);
 }
 
 bool ViewModelManager::playStruggle(const char* data, uint32 length, bool isLive)

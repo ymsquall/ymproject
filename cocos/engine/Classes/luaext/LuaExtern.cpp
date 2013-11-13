@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaExtern
-** Generated automatically by tolua++-1.0.92 on 11/13/13 09:41:09.
+** Generated automatically by tolua++-1.0.92 on 11/14/13 00:06:46.
 */
 
 /****************************************************************************
@@ -27271,6 +27271,31 @@ static int tolua_LuaExtern_framework_unity_blockreader_create00(lua_State* tolua
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: create of class  framework::unity::blockreader */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockreader_create01
+static int tolua_LuaExtern_framework_unity_blockreader_create01(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"framework::unity::blockreader",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"framework::unity::blockwrite",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  framework::unity::blockwrite* block = ((framework::unity::blockwrite*)  tolua_tousertype(tolua_S,2,0));
+  {
+   framework::unity::blockreader* tolua_ret = (framework::unity::blockreader*)  framework::unity::blockreader::create(block);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"framework::unity::blockreader");
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_framework_unity_blockreader_create00(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: read1 of class  framework::unity::blockreader */
 #ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_unity_blockreader_read100
 static int tolua_LuaExtern_framework_unity_blockreader_read100(lua_State* tolua_S)
@@ -30509,6 +30534,7 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
      tolua_function(tolua_S,"reseek",tolua_LuaExtern_framework_unity_blockreader_reseek00);
      tolua_function(tolua_S,"eof",tolua_LuaExtern_framework_unity_blockreader_eof00);
      tolua_function(tolua_S,"create",tolua_LuaExtern_framework_unity_blockreader_create00);
+     tolua_function(tolua_S,"create",tolua_LuaExtern_framework_unity_blockreader_create01);
      tolua_function(tolua_S,"read1",tolua_LuaExtern_framework_unity_blockreader_read100);
      tolua_function(tolua_S,"read2",tolua_LuaExtern_framework_unity_blockreader_read200);
      tolua_function(tolua_S,"read4",tolua_LuaExtern_framework_unity_blockreader_read400);

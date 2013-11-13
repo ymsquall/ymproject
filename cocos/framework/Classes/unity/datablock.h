@@ -8,6 +8,7 @@ namespace framework
 	namespace unity
 	{
 		const unsigned short Max_Memory_Block_Length = 65530;
+		class blockwrite;
 		// 内存数据读取器
 		class blockreader : public object
 		{
@@ -28,6 +29,7 @@ namespace framework
 			}
 			// 导出给lua用的接口
 			static blockreader* create(const char* buffer, unsigned short length);
+			static blockreader* create(blockwrite* block);
 			long long read1();
 			long long read2();
 			long long read4();

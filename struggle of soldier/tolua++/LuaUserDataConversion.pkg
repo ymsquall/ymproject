@@ -1,5 +1,6 @@
 class LuaUserDataConversion
 {
+	static framework::unity::blockwrite* toBlockWrite(void* pointer);
 	static GameLandModel* toGameLandModle(void* pointer);
 	static GameLandView* toGameLandView(void* pointer);
 };
