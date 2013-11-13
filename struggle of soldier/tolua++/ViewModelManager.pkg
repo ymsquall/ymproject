@@ -2,6 +2,7 @@ class ViewModelManager : public unity::object
 					, public mvvm::IModelManager
 					, public unity::SingletonAutoT<ViewModelManager>
 {
+	static ViewModelManager* point();
 	static void reloadLuaScript(const char* luaFile);
 	ViewModelManager(void);
 	~ViewModelManager(void);
@@ -13,5 +14,5 @@ class ViewModelManager : public unity::object
 
 	void selectModel(ModelType type);
 
-	bool playStruggle(const int8* data, uint32 length, bool isLive);
+	bool playStruggle(const char* data, unsigned long length, bool isLive);
 };

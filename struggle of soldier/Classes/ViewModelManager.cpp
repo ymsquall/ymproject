@@ -114,7 +114,7 @@ void ViewModelManager::selectModel(ModelType type)
 	}
 }
 
-bool ViewModelManager::playStruggle(const int8* data, uint32 length, bool isLive)
+bool ViewModelManager::playStruggle(const char* data, uint32 length, bool isLive)
 {
 	GameLandModel* pGameLandModel = NULL;
 	for(ModelListV::const_iterator it = mEnabledModelList.begin();

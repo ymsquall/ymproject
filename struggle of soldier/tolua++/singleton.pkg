@@ -1,0 +1,12 @@
+namespace framework
+{
+	namespace unity
+	{
+		class SingletonAutoT
+		{
+			TOLUA_TEMPLATE_BIND(T, ViewModelManager)
+			virtual ~SingletonAutoT();
+			static T* point();
+		};
+	} // namespace unity
+}	// namespace framework

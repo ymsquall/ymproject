@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaSOSExtern
-** Generated automatically by tolua++-1.0.92 on 11/12/13 00:16:14.
+** Generated automatically by tolua++-1.0.92 on 11/13/13 09:55:02.
 */
 
 /****************************************************************************
@@ -37,6 +37,7 @@ extern "C" {
 #include "cocos2dx_support/CCLuaEngine.h"
 #include "SimpleAudioEngine.h"
 #include "cocos-ext.h"
+#include "unity/singleton.h"
 #include "ViewModelManager.h"
 #include "Model_GameLand.h"
 #include "View_GameLand.h"
@@ -55,6 +56,13 @@ TOLUA_API int  tolua_LuaSOSExtern_open (lua_State* tolua_S);
 
 /* function to release collected object via destructor */
 #ifdef __cplusplus
+
+static int tolua_collect_framework__unity__SingletonAutoT_ViewModelManager_ (lua_State* tolua_S)
+{
+ framework::unity::SingletonAutoT<ViewModelManager>* self = (framework::unity::SingletonAutoT<ViewModelManager>*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
 
 static int tolua_collect_ViewModelManager (lua_State* tolua_S)
 {
@@ -77,22 +85,112 @@ static void tolua_reg_types (lua_State* tolua_S)
 {
  tolua_usertype(tolua_S,"ModelType");
  tolua_usertype(tolua_S,"mvvm::IModelManager");
+ tolua_usertype(tolua_S,"framework::unity::SingletonAutoT<ViewModelManager>");
  tolua_usertype(tolua_S,"uint8");
  tolua_usertype(tolua_S,"engine::AppDelegate");
- tolua_usertype(tolua_S,"LandTreeGrid");
+ tolua_usertype(tolua_S,"unity::RoutedEventArgs");
  tolua_usertype(tolua_S,"uint32");
  tolua_usertype(tolua_S,"GameLandModel");
  tolua_usertype(tolua_S,"LuaUserDataConversion");
- tolua_usertype(tolua_S,"unity::RoutedEventArgs");
+ tolua_usertype(tolua_S,"LandTreeGrid");
  tolua_usertype(tolua_S,"UILayer");
  tolua_usertype(tolua_S,"ViewModelManager");
  tolua_usertype(tolua_S,"SoldierTroopsUnitGrid");
  tolua_usertype(tolua_S,"unity::SingletonAutoT<ViewModelManager>");
  tolua_usertype(tolua_S,"ModelImpl");
- tolua_usertype(tolua_S,"GameLandView");
  tolua_usertype(tolua_S,"int8");
+ tolua_usertype(tolua_S,"GameLandView");
  tolua_usertype(tolua_S,"unity::object");
 }
+
+/* method: delete of class  framework::unity::SingletonAutoT<ViewModelManager> */
+#ifndef TOLUA_DISABLE_tolua_LuaSOSExtern_framework_unity_SingletonAutoT_ViewModelManager__delete00
+static int tolua_LuaSOSExtern_framework_unity_SingletonAutoT_ViewModelManager__delete00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"framework::unity::SingletonAutoT<ViewModelManager>",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  framework::unity::SingletonAutoT<ViewModelManager>* self = (framework::unity::SingletonAutoT<ViewModelManager>*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'delete'", NULL);
+#endif
+  Mtolua_delete(self);
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'delete'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: point of class  framework::unity::SingletonAutoT<ViewModelManager> */
+#ifndef TOLUA_DISABLE_tolua_LuaSOSExtern_framework_unity_SingletonAutoT_ViewModelManager__point00
+static int tolua_LuaSOSExtern_framework_unity_SingletonAutoT_ViewModelManager__point00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"framework::unity::SingletonAutoT<ViewModelManager>",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   ViewModelManager* tolua_ret = (ViewModelManager*)  framework::unity::SingletonAutoT<ViewModelManager>::point();
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"ViewModelManager");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'point'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: point of class  ViewModelManager */
+#ifndef TOLUA_DISABLE_tolua_LuaSOSExtern_ViewModelManager_point00
+static int tolua_LuaSOSExtern_ViewModelManager_point00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"ViewModelManager",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   ViewModelManager* tolua_ret = (ViewModelManager*)  ViewModelManager::point();
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"ViewModelManager");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'point'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
 
 /* method: reloadLuaScript of class  ViewModelManager */
 #ifndef TOLUA_DISABLE_tolua_LuaSOSExtern_ViewModelManager_reloadLuaScript00
@@ -390,8 +488,8 @@ static int tolua_LuaSOSExtern_ViewModelManager_playStruggle00(lua_State* tolua_S
  tolua_Error tolua_err;
  if (
      !tolua_isusertype(tolua_S,1,"ViewModelManager",0,&tolua_err) ||
-     !tolua_isusertype(tolua_S,2,"const int8",0,&tolua_err) ||
-     (tolua_isvaluenil(tolua_S,3,&tolua_err) || !tolua_isusertype(tolua_S,3,"uint32",0,&tolua_err)) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
      !tolua_isboolean(tolua_S,4,0,&tolua_err) ||
      !tolua_isnoobj(tolua_S,5,&tolua_err)
  )
@@ -400,8 +498,8 @@ static int tolua_LuaSOSExtern_ViewModelManager_playStruggle00(lua_State* tolua_S
 #endif
  {
   ViewModelManager* self = (ViewModelManager*)  tolua_tousertype(tolua_S,1,0);
-  const int8* data = ((const int8*)  tolua_tousertype(tolua_S,2,0));
-  uint32 length = *((uint32*)  tolua_tousertype(tolua_S,3,0));
+  const char* data = ((const char*)  tolua_tostring(tolua_S,2,0));
+  unsigned long length = ((unsigned long)  tolua_tonumber(tolua_S,3,0));
   bool isLive = ((bool)  tolua_toboolean(tolua_S,4,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'playStruggle'", NULL);
@@ -1053,12 +1151,28 @@ TOLUA_API int tolua_LuaSOSExtern_open (lua_State* tolua_S)
  tolua_reg_types(tolua_S);
  tolua_module(tolua_S,NULL,0);
  tolua_beginmodule(tolua_S,NULL);
+  tolua_module(tolua_S,"framework",0);
+  tolua_beginmodule(tolua_S,"framework");
+   tolua_module(tolua_S,"unity",0);
+   tolua_beginmodule(tolua_S,"unity");
+    #ifdef __cplusplus
+    tolua_cclass(tolua_S,"SingletonAutoT_ViewModelManager_","framework::unity::SingletonAutoT<ViewModelManager>","",tolua_collect_framework__unity__SingletonAutoT_ViewModelManager_);
+    #else
+    tolua_cclass(tolua_S,"SingletonAutoT_ViewModelManager_","framework::unity::SingletonAutoT<ViewModelManager>","",NULL);
+    #endif
+    tolua_beginmodule(tolua_S,"SingletonAutoT_ViewModelManager_");
+     tolua_function(tolua_S,"delete",tolua_LuaSOSExtern_framework_unity_SingletonAutoT_ViewModelManager__delete00);
+     tolua_function(tolua_S,"point",tolua_LuaSOSExtern_framework_unity_SingletonAutoT_ViewModelManager__point00);
+    tolua_endmodule(tolua_S);
+   tolua_endmodule(tolua_S);
+  tolua_endmodule(tolua_S);
   #ifdef __cplusplus
   tolua_cclass(tolua_S,"ViewModelManager","ViewModelManager","unity::object",tolua_collect_ViewModelManager);
   #else
   tolua_cclass(tolua_S,"ViewModelManager","ViewModelManager","unity::object",NULL);
   #endif
   tolua_beginmodule(tolua_S,"ViewModelManager");
+   tolua_function(tolua_S,"point",tolua_LuaSOSExtern_ViewModelManager_point00);
    tolua_function(tolua_S,"reloadLuaScript",tolua_LuaSOSExtern_ViewModelManager_reloadLuaScript00);
    tolua_function(tolua_S,"new",tolua_LuaSOSExtern_ViewModelManager_new00);
    tolua_function(tolua_S,"new_local",tolua_LuaSOSExtern_ViewModelManager_new00_local);

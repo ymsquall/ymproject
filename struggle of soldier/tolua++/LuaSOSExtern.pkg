@@ -1,5 +1,6 @@
 $#include "LuaSOSExtern.h"
 
+$pfile "singleton.pkg"
 $pfile "ViewModelManager.pkg"
 $pfile "Model_GameLand.pkg"
 $pfile "View_GameLand.pkg"

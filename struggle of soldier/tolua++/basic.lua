@@ -6,6 +6,7 @@ _to_functions = _to_functions or {}
 _push_functions = _push_functions or {}
 
 local CCObjectTypes = {
+	"SingletonAutoT",
     "ViewModelManager",
     "GameLandModel",
     "GameLandView",
@@ -103,6 +104,7 @@ extern "C" {
 #include "cocos2dx_support/CCLuaEngine.h"
 #include "SimpleAudioEngine.h"
 #include "cocos-ext.h"
+#include "unity/singleton.h"
 #include "ViewModelManager.h"
 #include "Model_GameLand.h"
 #include "View_GameLand.h"
