@@ -16,13 +16,16 @@ LandTreeGrid::LandTreeGrid()
 LandTreeGrid::~LandTreeGrid()
 {
 }
-
+CCPoint LandTreeGrid::getCenter()
+{
+	return center;
+}
 SoldierTroopsUnitGrid::SoldierTroopsUnitGrid()
 {
 	number = 0;
 	troopID = 0;
-	sType = SoldierType::unused;
-	oType = GridOrientation::maxnum;
+	sType = SoldierType_unused;
+	oType = GridOrientation_maxnum;
 }
 
 
@@ -47,7 +50,6 @@ void GameLandModel::luaSetBoolProperty(GameLandModel::PropertyType type, bool b)
 	case EPTT_IsLive: this->IsLive = b; break;
 	}
 }
-
 void GameLandModel::luaSetNumberProperty(GameLandModel::PropertyType type, int v)
 {
 	switch(type)
@@ -55,6 +57,10 @@ void GameLandModel::luaSetNumberProperty(GameLandModel::PropertyType type, int v
 	case EPTT_ActiveTroopID: this->ActiveTroopID = (uint8)v; break;
 	case EPTT_ActiveSoldierID: this->ActiveSoldierID = (uint8)v; break;
 	}
+}
+GameLandView* GameLandModel::luaGetViewBinding()
+{
+	return static_cast<GameLandView*>(mBindingTarget);
 }
 
 bool GameLandModel::loadLandData(const std::string& landName)
@@ -201,17 +207,17 @@ bool GameLandModel::loadLandData(const std::string& landName)
 				rbIndex = -1;
 			}
 			if(topIndex >= 0 && topIndex < count)
-				mLandGridList[nowIndex]->sideGrids[(size_t)GridOrientation::topper] = mLandGridList[topIndex];
+				mLandGridList[nowIndex]->sideGrids[(size_t)GridOrientation_topper] = mLandGridList[topIndex];
 			if(bottomIndex >= 0 && bottomIndex < count)
-				mLandGridList[nowIndex]->sideGrids[(size_t)GridOrientation::bottom] = mLandGridList[bottomIndex];
+				mLandGridList[nowIndex]->sideGrids[(size_t)GridOrientation_bottom] = mLandGridList[bottomIndex];
 			if(ltIndex >= 0 && ltIndex < count)
-				mLandGridList[nowIndex]->sideGrids[(size_t)GridOrientation::lefttop] = mLandGridList[ltIndex];
+				mLandGridList[nowIndex]->sideGrids[(size_t)GridOrientation_lefttop] = mLandGridList[ltIndex];
 			if(lbIndex >= 0 && lbIndex < count)
-				mLandGridList[nowIndex]->sideGrids[(size_t)GridOrientation::leftbottom] = mLandGridList[lbIndex];
+				mLandGridList[nowIndex]->sideGrids[(size_t)GridOrientation_leftbottom] = mLandGridList[lbIndex];
 			if(rtIndex >= 0 && rtIndex < count)
-				mLandGridList[nowIndex]->sideGrids[(size_t)GridOrientation::righttop] = mLandGridList[rtIndex];
+				mLandGridList[nowIndex]->sideGrids[(size_t)GridOrientation_righttop] = mLandGridList[rtIndex];
 			if(rbIndex >= 0 && rbIndex < count)
-				mLandGridList[nowIndex]->sideGrids[(size_t)GridOrientation::rightbottom] = mLandGridList[rbIndex];
+				mLandGridList[nowIndex]->sideGrids[(size_t)GridOrientation_rightbottom] = mLandGridList[rbIndex];
 
 			pView->initLandGrid(mLandGridList[nowIndex]);
 			const SoldierTroopsUnitGrid* pUnit = dynamic_cast<const SoldierTroopsUnitGrid*>(mLandGridList[nowIndex]);

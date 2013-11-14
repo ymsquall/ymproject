@@ -25,6 +25,9 @@ public:
 	virtual bool initForMvvm();
 	virtual void update(float dt);
 	
+	// lua call
+	cocos2d::extension::UITextArea* luaGetDebugText();
+	cocos2d::extension::UIDragPanel* luaGetMapDragPanel();
 	void doLiveChanged(bool isLive);
 	void doTroopChanged(const std::string& name);
 	void doSelectGrid(const LandTreeGrid* pGrid);

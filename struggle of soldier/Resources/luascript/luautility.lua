@@ -7,20 +7,25 @@ function PrintTable(t,n,saved)
 			local fmt = '%' .. 2*n .. 's'
 			str = string.format(fmt, '')
 		end
-		io.write(str,tostring(k), ' = ')
+		print(str,tostring(k), ' = ')
+		--io.write(str,tostring(k), ' = ')
 		if type(t[k])=='table' then
 			local m = n
 			m = m+1
 			if saved[t[k]] then
-				io.write(saved[t[k]], '\n')
+				print(saved[t[k]], '\n')
+				--io.write(saved[t[k]], '\n')
 			else
 				saved[t[k]] = k
-				io.write('{\n')
+				print('{\n')
+				--io.write('{\n')
 				PrintTable(t[k], m, saved)
-				io.write(str,'}\n')
+				print(str,'}\n')
+				--io.write(str,'}\n')
 			end
 	   else
-			io.write(tostring(t[k]),'\n')
+			print(tostring(t[k]),'\n')
+			--io.write(tostring(t[k]),'\n')
 	   end
 	end
 end

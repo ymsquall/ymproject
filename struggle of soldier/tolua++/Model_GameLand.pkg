@@ -1,4 +1,42 @@
-// class GameLandModel
+// 兵种类型
+enum SoldierType
+{
+	SoldierType_Saber = 1	// 步兵
+	,SoldierType_Rider		// 骑兵
+	,SoldierType_Lancer		// 枪兵
+	,SoldierType_Archer		// 弓兵
+	,SoldierType_unused
+};
+// 方向类型
+enum GridOrientation
+{
+	GridOrientation_topper = 0
+	,GridOrientation_lefttop
+	,GridOrientation_leftbottom
+	,GridOrientation_bottom
+	,GridOrientation_rightbottom
+	,GridOrientation_righttop
+	,GridOrientation_maxnum			// 数量
+};
+struct LandTreeGrid
+{
+	LandTreeGrid* sideGrids[GridOrientation_maxnum];	// 相邻的格子（6个）
+	bool showGrid;
+	CCObject* gridView;
+	LandTreeGrid();
+	virtual ~LandTreeGrid();
+	CCPoint getCenter();
+};
+struct SoldierTroopsUnitGrid : public LandTreeGrid
+{
+	uint8 number;	// 部队编号
+	uint8 troopID;	// 所属部队
+	SoldierType sType;		// 兵种
+	GridOrientation oType;	// 默认朝向
+	SoldierTroopsUnitGrid();
+	~SoldierTroopsUnitGrid();
+};
+
 class GameLandModel : public ModelImpl
 {
 	enum PropertyType
@@ -9,9 +47,9 @@ class GameLandModel : public ModelImpl
 	};
 	bool loadLandData(const std::string& landName);
 	bool clearLandData();
-	bool playAction(const int8* data, uint32 length);
-	const SoldierTroopsUnitGrid* getSoldierByTroopAndNumber(uint8 t, uint8 n) const;
+	const SoldierTroopsUnitGrid* getSoldierByTroopAndNumber() const;
 	std::string getTroopName() const;
 	void luaSetBoolProperty(PropertyType type, bool b);
 	void luaSetNumberProperty(PropertyType type, int v);
+	GameLandView* luaGetViewBinding();
 };
