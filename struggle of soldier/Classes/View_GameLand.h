@@ -10,7 +10,7 @@ using namespace framework;
 struct ActionStepOveredEventParams
 {
 };
-typedef struct LandTreeGrid *LandTreeGridPtr;
+
 class GameLandView : public mvvm::ViewBase<GameLandView, cocos2d::extension::UILayer>
 {
 public:
@@ -23,17 +23,10 @@ public:
 
 	virtual bool init();
 	virtual bool initForMvvm();
-	virtual void update(float dt);
-	
-	// lua call
-	cocos2d::extension::UITextArea* luaGetDebugText();
-	cocos2d::extension::UIDragPanel* luaGetMapDragPanel();
-	void doLiveChanged(bool isLive);
-	void doTroopChanged(const std::string& name);
-	void doSelectGrid(const LandTreeGrid* pGrid);
 
 private:
 	virtual void onEnterTransitionDidFinish();
+	virtual void onExit();
 	virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
 	virtual void ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
 	virtual void ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
@@ -44,8 +37,6 @@ private:
 	void onMapGridTouched(cocos2d::CCObject* pSender);
 	void onMapPanelDragEvent(cocos2d::CCObject* pSender, cocos2d::extension::DragPanelEventType type);
 
-	bool initLandGrid(const LandTreeGrid* pGrid);
-
 public:
 	cocos2d::extension::Layout* mLayout;
 	cocos2d::extension::UIButton* mBackButton;
@@ -55,10 +46,16 @@ public:
 	cocos2d::extension::UIImageView* mMapBGImageView;
 	cocos2d::extension::UIWidget* mGridsParent;
 	cocos2d::extension::UIImageView* mNowSelectGridImage;
-
+	bool mNeedWaitDragPanelBerthOvered;
+	/*
+	//typedef struct LandTreeGrid *LandTreeGridPtr;
+	void doLiveChanged(bool isLive);
+	void doTroopChanged(const std::string& name);
+	void doSelectGrid(const LandTreeGrid* pGrid);
+	bool initLandGrid(const LandTreeGrid* pGrid);
 	typedef std::map<const LandTreeGrid*, cocos2d::extension::UIWidget*> GridRenderList;
 	GridRenderList mGridRenderList;
 	std::vector<cocos2d::extension::armature::Armature*> mXiaobingAnimList;
 	std::string mTroopName;
-	bool mNeedWaitDragPanelBerthOvered;
+	*/
 };

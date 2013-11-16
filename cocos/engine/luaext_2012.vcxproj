@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="Classes\luaext\LuaCocoStudioConversion.cpp" />
     <ClCompile Include="Classes\luaext\LuaExtern.cpp" />
+    <ClCompile Include="Classes\luaext\LuaExtern_Handler.cpp" />
     <ClCompile Include="Classes\luaext\LuaHelper.cpp" />
   </ItemGroup>
   <ItemGroup>

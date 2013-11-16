@@ -18,24 +18,6 @@ enum GridOrientation
 	,GridOrientation_righttop
 	,GridOrientation_maxnum			// 数量
 };
-struct LandTreeGrid
-{
-	LandTreeGrid* sideGrids[GridOrientation_maxnum];	// 相邻的格子（6个）
-	bool showGrid;
-	CCObject* gridView;
-	LandTreeGrid();
-	virtual ~LandTreeGrid();
-	CCPoint getCenter();
-};
-struct SoldierTroopsUnitGrid : public LandTreeGrid
-{
-	uint8 number;	// 部队编号
-	uint8 troopID;	// 所属部队
-	SoldierType sType;		// 兵种
-	GridOrientation oType;	// 默认朝向
-	SoldierTroopsUnitGrid();
-	~SoldierTroopsUnitGrid();
-};
 
 class GameLandModel : public ModelImpl
 {
@@ -45,10 +27,6 @@ class GameLandModel : public ModelImpl
 		EPTT_ActiveTroopID = 2,
 		EPTT_ActiveSoldierID = 3,
 	};
-	bool loadLandData(const std::string& landName);
-	bool clearLandData();
-	const SoldierTroopsUnitGrid* getSoldierByTroopAndNumber() const;
-	std::string getTroopName() const;
 	void luaSetBoolProperty(PropertyType type, bool b);
 	void luaSetNumberProperty(PropertyType type, int v);
 	GameLandView* luaGetViewBinding();

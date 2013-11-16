@@ -133,6 +133,11 @@ bool UIImageView::onTouchBegan(const CCPoint &touchPoint)
     m_touchStartPos.x = touchPoint.x;
     m_touchStartPos.y = touchPoint.y;
     m_pWidgetParent->checkChildInfo(0,this,touchPoint);
+	if(-1 != mScriptTouchPriority)
+	{
+		if(executeScriptTouchHandler(CCTOUCHBEGAN, touchPoint))
+			return true;
+	}
     pushDownEvent();
     
     if (m_bDoubleClickEnabled)

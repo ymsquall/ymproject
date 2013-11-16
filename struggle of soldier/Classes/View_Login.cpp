@@ -23,7 +23,6 @@ bool LoginView::init()
 	if(!ViewSuperT::init())
 		return false;
 	ViewModelManager::reloadLuaScript("luascript/views/helper.lua");
-	ViewModelManager::reloadLuaScript("luascript/views/gameland.lua");
 
     cocos2d::Size thisSize = this->getContentSize();
 	ScriptParamObject userdata = callLuaFuncWithUserdataResult("LUALoadLoginView", thisSize.width, thisSize.height);

@@ -81,7 +81,10 @@ m_pCancelListener(NULL),
 m_pfnCancelSelector(NULL)
 /************/
 {
-    
+	mTouchScriptType = kScriptTypeLua;
+	mScriptTouchMode = Touch::DispatchMode::ALL_AT_ONCE;
+	mScriptTouchPriority = -1;
+    mScriptSwallowsTouches = false;
 }
 
 UIWidget::~UIWidget()
@@ -637,12 +640,18 @@ bool UIWidget::onTouchBegan(const CCPoint &touchPoint)
 {
     setFocused(true);
     m_touchStartPos.x = touchPoint.x;
-    m_touchStartPos.y = touchPoint.y;
+	m_touchStartPos.y = touchPoint.y;
     if (m_pWidgetParent)
     {
         m_pWidgetParent->checkChildInfo(0,this,touchPoint);
-    }
+	}
+	if(-1 != mScriptTouchPriority)
+	{
+		if(executeScriptTouchHandler(CCTOUCHBEGAN, touchPoint))
+			return m_bTouchPassedEnabled;
+	}
     pushDownEvent();
+
     return m_bTouchPassedEnabled;
 }
 
@@ -654,7 +663,12 @@ void UIWidget::onTouchMoved(const CCPoint &touchPoint)
     if (m_pWidgetParent)
     {
         m_pWidgetParent->checkChildInfo(1,this,touchPoint);
-    }
+	}
+	if(-1 != mScriptTouchPriority)
+	{
+		if(executeScriptTouchHandler(CCTOUCHMOVED, touchPoint))
+			return;
+	}
     moveEvent();
 }
 
@@ -667,7 +681,12 @@ void UIWidget::onTouchEnded(const CCPoint &touchPoint)
     if (m_pWidgetParent)
     {
         m_pWidgetParent->checkChildInfo(2,this,touchPoint);
-    }
+	}
+	if(-1 != mScriptTouchPriority)
+	{
+		if(executeScriptTouchHandler(CCTOUCHENDED, touchPoint))
+			return;
+	}
     if (focus)
     {
         releaseUpEvent();
@@ -680,7 +699,12 @@ void UIWidget::onTouchEnded(const CCPoint &touchPoint)
 
 void UIWidget::onTouchCancelled(const CCPoint &touchPoint)
 {
-    setFocused(false);
+	setFocused(false);
+	if(-1 != mScriptTouchPriority)
+	{
+		if(executeScriptTouchHandler(CCTOUCHCANCELLED, touchPoint))
+			return;
+	}
     cancelUpEvent();
 }
 
@@ -1216,6 +1240,42 @@ void UIWidget::setActionTag(int tag)
 int UIWidget::getActionTag()
 {
 	return m_nActionTag;
+}
+void UIWidget::setScriptTouchHandler(Touch::DispatchMode mode, int priority, bool swallowsTouches)
+{
+	bool changed = false;
+	if(mScriptTouchMode != mode)
+	{
+		mScriptTouchMode = mode;
+		changed = m_bTouchEnabled;
+	}
+	if (mScriptTouchPriority != priority)
+	{
+		mScriptTouchPriority = priority;
+		changed = m_bTouchEnabled;
+	}
+	if (mScriptSwallowsTouches != swallowsTouches)
+	{
+		mScriptSwallowsTouches = swallowsTouches;
+		changed = m_bTouchEnabled;
+	}
+	if(changed)
+	{
+		setTouchEnabled(false);
+		setTouchEnabled(true);
+	}
+}
+int UIWidget::executeScriptTouchHandler(int eventType, const CCPoint& touchPoint)
+{
+	if (-1 != mScriptTouchPriority)
+	{
+		ScriptTouchData data(eventType, this, touchPoint);
+		ScriptEvent event((ScriptEventType)UIWidget::kScriptTouchEvent, &data);
+		return ScriptEngineManager::getInstance()->getScriptEngine()->sendEvent(&event);
+	}
+
+	//can not reach it
+	return 0;
 }
 
 GUIRenderer::GUIRenderer():

@@ -31,8 +31,11 @@
 #include "cocos2dx_support/LuaOpengl.h"
 #include "cocos2dx_support/LuaCocos2d.h"
 #include "luaext/LuaExtern.h"
+#include "CocoStudio/GUI/BaseClasses/UIWidget.h"
 
 NS_CC_BEGIN
+
+using namespace extension;
 
 LuaEngine* LuaEngine::_defaultEngine = NULL;
 
@@ -220,7 +223,12 @@ int LuaEngine::sendEvent(ScriptEvent* evt)
             {
                 return handleTouchEvent(evt->data);
             }
-            break;
+			break;
+		case UIWidget::kScriptTouchEvent:
+			{
+				return handleScriptTouchEvent(evt->data);
+			}
+			break;
         case kTouchesEvent:
             {
                 return handleTouchesEvent(evt->data);
@@ -512,6 +520,53 @@ int LuaEngine::handleTouchEvent(void* data)
     return ret;
 }
 
+int LuaEngine::handleScriptTouchEvent(void* data)
+{
+	if (NULL == data)
+		return 0;
+
+	UIWidget::ScriptTouchData* touchScriptData = static_cast<UIWidget::ScriptTouchData*>(data);
+	if (NULL == touchScriptData->nativeObject)
+		return 0;
+
+	int handler = ScriptHandlerMgr::getInstance()->getObjectHandler((void*)touchScriptData->nativeObject, ScriptHandlerMgr::kTouchesHandler);
+
+	if (0 == handler)
+		return 0;
+
+	switch (touchScriptData->actionType)
+	{
+	case CCTOUCHBEGAN:
+		_stack->pushString("began");
+		break;
+
+	case CCTOUCHMOVED:
+		_stack->pushString("moved");
+		break;
+
+	case CCTOUCHENDED:
+		_stack->pushString("ended");
+		break;
+
+	case CCTOUCHCANCELLED:
+		_stack->pushString("cancelled");
+		break;
+
+	default:
+		return 0;
+	}
+
+	int ret = 0;
+	UIWidget* pWidget = static_cast<UIWidget*>(touchScriptData->nativeObject);
+	_stack->pushObject(pWidget, "UIWidget");
+	_stack->pushFloat(touchScriptData->touchPoint.x);
+	_stack->pushFloat(touchScriptData->touchPoint.y);
+	ret = _stack->executeFunctionByHandler(handler, 4);
+
+	_stack->clean();
+	return ret;
+}
+
 int LuaEngine::handleTouchesEvent(void* data)
 {
     if (NULL == data)
@@ -619,6 +674,7 @@ void LuaEngine::extendLuaObject()
     extendDrawNode(lua_S);
 	tolua_Cocos2d_open(lua_S);
 	tolua_LuaExtern_open(lua_S);
+	tolua_LuaExternHandler_open(lua_S);
     
     _stack->clean();
 }

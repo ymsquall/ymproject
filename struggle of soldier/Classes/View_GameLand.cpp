@@ -62,8 +62,9 @@ bool GameLandView::init()
 		return false;
 
 	ViewModelManager::reloadLuaScript("luascript/views/helper.lua");
-	ViewModelManager::reloadLuaScript("luascript/views/gameland.lua");
+	ViewModelManager::reloadLuaScript("luascript/views/gamelandview.lua");
 	ViewModelManager::reloadLuaScript("luascript/models/gamelandmodel.lua");
+	ViewModelManager::reloadLuaScript("luascript/models/gamelandmodel_loader.lua");
 	ViewModelManager::reloadLuaScript("luascript/models/playstruggle_var01.lua");
 
 	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/saber_righttop0.png", "studioui/animation/saber_righttop0.plist", "studioui/animation/saber_leftbottom.json");
@@ -72,7 +73,7 @@ bool GameLandView::init()
 	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/rider_righttop0.png", "studioui/animation/rider_righttop0.plist", "studioui/animation/rider_righttop.json");
 
 	cocos2d::Size thisSize = this->getContentSize();
-	ScriptParamObject userdata = callLuaFuncWithUserdataResult("LUALoadGameLandView", thisSize.width, thisSize.height);
+	ScriptParamObject userdata = callLuaFuncWithUserdataResult("LUALoadGameLandView", this, thisSize.width, thisSize.height);
 	if(userdata.type != LUA_TUSERDATA || NULL == userdata.value.pointer)
 		return false;
 	this->scheduleUpdate();
@@ -97,68 +98,16 @@ bool GameLandView::initForMvvm()
 	return true;
 }
 
-void GameLandView::update(float dt)
-{
-	CCPoint pos = mMapDragPanel->getInnerContainerPosition();
-	CCString* posText = CCString::createWithFormat("%s[%.02f, %.02f]", mTroopName.c_str(), pos.x, pos.y);
-	mDebugText->setText(posText->getCString());
-
-	ViewSuperT::update(dt);
-}
-
 void GameLandView::onEnterTransitionDidFinish()
 {
 	ViewSuperT::onEnterTransitionDidFinish();
+	callLuaFuncNoResult("LUAGameLandViewOnEnter");
 }
-
-bool GameLandView::initLandGrid(const LandTreeGrid* pGrid)
+void GameLandView::onExit()
 {
-	if(NULL == pGrid)
-		return false;
-	ScriptParamObject userdata = callLuaFuncWithUserdataResult("LUALoadLandGridView", pGrid);
-	if(userdata.type != LUA_TUSERDATA || NULL == userdata.value.pointer)
-		return false;
-	UIImageView* pGridImage = (UIImageView*)userdata.value.pointer;
-	if(NULL == pGridImage)
-	{
-		if(pGrid->showGrid)
-			return false;
-		return true;
-	}
-#ifdef TEST_VIEWGRIDS
-	const_cast<LandTreeGrid*>(pGrid)->gridView = pGridImage;
-#endif
-	pGridImage->addReleaseEvent(this, coco_releaseselector(GameLandView::onMapGridTouched));
-//	CCSize bkSize = mMapBGImageView->getSize();
-//	CCPoint realPos = ccpSub(pGrid->center, ccp(bkSize.width/2.0f-2.0f, bkSize.height/2.0f));
-//	if(pGrid->showGrid)
-//	{
-//		ScriptParamObject userdata = callLuaFuncWithUserdataResult("LUACreateUIImageView", "picture/land/grid25d.png", realPos.x, realPos.y);
-//		if(userdata.type != LUA_TUSERDATA || NULL == userdata.value.pointer)
-//			return false;
-//		UIImageView* pGridImage = (UIImageView*)userdata.value.pointer;
-//		mMapBGImageView->addChild(pGridImage);
-//		mGridRenderList[pGrid] = pGridImage;
-//#ifdef TEST_VIEWGRIDS
-//		const_cast<LandTreeGrid*>(pGrid)->gridView = pGridImage;
-//#endif
-//		pGridImage->addReleaseEvent(this, coco_releaseselector(GameLandView::onMapGridTouched));
-//	}
-//	const SoldierTroopsUnitGrid* pUnit = dynamic_cast<const SoldierTroopsUnitGrid*>(pGrid);
-//	if(NULL == pUnit)
-//		return false;
-//	Armature* pAnim = NULL;
-//	ScriptParamObject userdata1 = callLuaFuncWithUserdataResult("LUACreateSoldierAnimationWithTypeAndOrientation", (int)pUnit->sType, (int)pUnit->oType, realPos.x, realPos.y);
-//	if(userdata1.type == LUA_TUSERDATA && NULL != userdata1.value.pointer)
-//		pAnim = (Armature*)userdata1.value.pointer;
-//	if(NULL != pAnim)
-//	{
-//		mMapBGImageView->addRenderer(pAnim, 1);
-//		mXiaobingAnimList.push_back(pAnim);
-//	}
-	return true;
+	callLuaFuncNoResult("LUAGameLandViewOnExit");
+	ViewSuperT::onExit();
 }
-
 static UIImageView* gpLastBeginTouchImage = NULL;
 bool GameLandView::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
@@ -222,7 +171,36 @@ void GameLandView::onMapTouched(cocos2d::CCObject* pSender)
 {
 
 }
+void GameLandView::onMapPanelDragEvent(CCObject* pSender, DragPanelEventType type)
+{
+	switch (type)
+	{
+	case DRAGPANEL_EVENT_BERTH_LEFTBOTTOM:
+	case DRAGPANEL_EVENT_BERTH_LFETTOP:
+	case DRAGPANEL_EVENT_BERTH_RIGHTBOTTOM:
+	case DRAGPANEL_EVENT_BERTH_RIGHTTOP:
+	case DRAGPANEL_EVENT_BERTH_LEFT:
+	case DRAGPANEL_EVENT_BERTH_TOP:
+	case DRAGPANEL_EVENT_BERTH_RIGHT:
+	case DRAGPANEL_EVENT_BERTH_BOTTOM:
+		if(mNeedWaitDragPanelBerthOvered)
+		{
+			mNeedWaitDragPanelBerthOvered = false;
+			ActionStepOveredEventParams eventArgs;
+			Event_OnActionStepOvered(this, &eventArgs);
+		}
+		break;
+	default:
+		break;
+	}
+}
 
+void GameLandView::onBackBtnTouch(cocos2d::CCObject* pSender)
+{
+	ViewModelManager::point()->selectModel(ModelType::SelectHero);
+}
+
+/*
 void GameLandView::onMapGridTouched(cocos2d::CCObject* pSender)
 {
 #ifdef TEST_VIEWGRIDS
@@ -299,35 +277,27 @@ void GameLandView::onMapGridTouched(cocos2d::CCObject* pSender)
 	}
 #endif
 }
-
-void GameLandView::onMapPanelDragEvent(CCObject* pSender, DragPanelEventType type)
+*/
+/*
+bool GameLandView::initLandGrid(const LandTreeGrid* pGrid)
 {
-	switch (type)
+	if(NULL == pGrid)
+		return false;
+	ScriptParamObject userdata = callLuaFuncWithUserdataResult("LUALoadLandGridView", pGrid);
+	if(userdata.type != LUA_TUSERDATA || NULL == userdata.value.pointer)
+		return false;
+	UIImageView* pGridImage = (UIImageView*)userdata.value.pointer;
+	if(NULL == pGridImage)
 	{
-	case DRAGPANEL_EVENT_BERTH_LEFTBOTTOM:
-	case DRAGPANEL_EVENT_BERTH_LFETTOP:
-	case DRAGPANEL_EVENT_BERTH_RIGHTBOTTOM:
-	case DRAGPANEL_EVENT_BERTH_RIGHTTOP:
-	case DRAGPANEL_EVENT_BERTH_LEFT:
-	case DRAGPANEL_EVENT_BERTH_TOP:
-	case DRAGPANEL_EVENT_BERTH_RIGHT:
-	case DRAGPANEL_EVENT_BERTH_BOTTOM:
-		if(mNeedWaitDragPanelBerthOvered)
-		{
-			mNeedWaitDragPanelBerthOvered = false;
-			ActionStepOveredEventParams eventArgs;
-			Event_OnActionStepOvered(this, &eventArgs);
-			//mMapDragPanel->setTouchEnable(true);
-		}
-		break;
-	default:
-		break;
+		if(pGrid->showGrid)
+			return false;
+		return true;
 	}
-}
-
-void GameLandView::onBackBtnTouch(cocos2d::CCObject* pSender)
-{
-	ViewModelManager::point()->selectModel(ModelType::SelectHero);
+#ifdef TEST_VIEWGRIDS
+	const_cast<LandTreeGrid*>(pGrid)->gridView = pGridImage;
+#endif
+	pGridImage->addReleaseEvent(this, coco_releaseselector(GameLandView::onMapGridTouched));
+	return true;
 }
 
 void GameLandView::doLiveChanged(bool isLive)
@@ -340,7 +310,7 @@ void GameLandView::doLiveChanged(bool isLive)
 	{
 		mDebugText->setVisible(true);
 	}
-	//mMapDragPanel->setTouchEnable(false);
+	mMapDragPanel->setTouchEnable(false);
 }
 
 void GameLandView::doTroopChanged(const std::string& name)
@@ -368,3 +338,4 @@ void GameLandView::doSelectGrid(const LandTreeGrid* pGrid)
 	mMapDragPanel->setInnerContainerPosition(CCPoint(-568,-384),true);
 	mNeedWaitDragPanelBerthOvered = true;
 }
+*/

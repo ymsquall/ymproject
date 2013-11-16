@@ -17,14 +17,6 @@ GameLandView* LuaUserDataConversion::toGameLandView(void* pointer)
 {
 	return static_cast<GameLandView*>(pointer);
 }
-LandTreeGrid* LuaUserDataConversion::toLandTreeGrid(void* pointer)
-{
-	return static_cast<LandTreeGrid*>(pointer);
-}
-SoldierTroopsUnitGrid* LuaUserDataConversion::toSoldierTroopsUnitGrid(LandTreeGrid* grid)
-{
-	return dynamic_cast<SoldierTroopsUnitGrid*>(grid);
-}
 cocos2d::extension::Armature* LuaUserDataConversion::toArmature(void* pointer)
 {
 	return static_cast<cocos2d::extension::Armature*>(pointer);
@@ -33,3 +25,13 @@ CCNode* LuaUserDataConversion::toNode(void* pointer)
 {
 	return static_cast<CCNode*>(pointer);
 }
+/*
+LandTreeGrid* LuaUserDataConversion::toLandTreeGrid(void* pointer)
+{
+	return static_cast<LandTreeGrid*>(pointer);
+}
+SoldierTroopsUnitGrid* LuaUserDataConversion::toSoldierTroopsUnitGrid(LandTreeGrid* grid)
+{
+	return dynamic_cast<SoldierTroopsUnitGrid*>(grid);
+}
+*/

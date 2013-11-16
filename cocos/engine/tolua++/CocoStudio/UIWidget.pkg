@@ -99,7 +99,7 @@ class UIWidget : public CCObject
     virtual bool isFlipX();
     virtual void setFlipY(bool flipY);
     virtual bool isFlipY();
-    virtual void setColor(const ccColor3B &color);
+    virtual void setColor(const Color3B &color);
     virtual const ccColor3B& getColor();
     virtual void setOpacity(int opacity);
     virtual int getOpacity();

@@ -3,7 +3,7 @@ function LUATestStartPlayStruggleRecord()
 	local block = framework.unity.blockwrite:create()
 	block:seek(4)
 	block:write1(1) actNum = actNum + 1
-	block:write1(1)
+	block:write1(2)
 	block:write1(2) actNum = actNum + 1
 	block:write1(1)
 	block:write1(3) actNum = actNum + 1
@@ -31,7 +31,7 @@ end
 function LUAPlayStruggleRecord(model, data, live)
 	local pGameLandModel = LuaUserDataConversion:toGameLandModle(model)
 	local pGameLandView = pGameLandModel:luaGetViewBinding()
-	pGameLandModel:luaSetBoolProperty(GameLandModel.EPTT_IsLive, live)
+	--pGameLandModel:luaSetBoolProperty(GameLandModel.EPTT_IsLive, live)
 	LUAGameLandView_doLiveChanged(pGameLandView, live)
 	local actNum = 0
 	local dataBlock = LuaUserDataConversion:toBlockWrite(data)
@@ -43,7 +43,7 @@ function LUAPlayStruggleRecord(model, data, live)
 		local actType = block:read1()
 		if 1 == actType then
 			troopID = block:read1()
-			pGameLandModel:luaSetNumberProperty(GameLandModel.EPTT_ActiveTroopID, troopID)
+			--pGameLandModel:luaSetNumberProperty(GameLandModel.EPTT_ActiveTroopID, troopID)
 			LUAGameLandView_doTroopChanged(pGameLandView, troopID)
 		elseif 2 == actType then
 			soldierID = block:read1()

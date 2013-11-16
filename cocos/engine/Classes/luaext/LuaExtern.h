@@ -10,3 +10,4 @@ extern "C" {
 
 TOLUA_API int tolua_LuaExtern_open(lua_State* tolua_S);
 
+TOLUA_API int tolua_LuaExternHandler_open(lua_State* tolua_S);

@@ -29,7 +29,8 @@ void GameLandViewModel::onGameLandModelPropertyChanged(mvvm::INotifyPropertyChan
 				mLandView->setBindingSource(pModel);
 				pRootView->addChild(mLandView);
 			}
-			pModel->loadLandData("hlg");
+			callLuaFuncNoResult("LUAGameLandLoadDataWithMapName", pModel, "hlg");
+			//pModel->loadLandData("hlg");
 			callLuaFuncNoResult("LUATestStartPlayStruggleRecord");
 		}
 		else
@@ -41,6 +42,7 @@ void GameLandViewModel::onGameLandModelPropertyChanged(mvvm::INotifyPropertyChan
 			}
 		}
 	}
+	/*
 	else if("IsLive" == args->PropertyName)
 	{
 		if(NULL != mLandView)
@@ -59,7 +61,8 @@ void GameLandViewModel::onGameLandModelPropertyChanged(mvvm::INotifyPropertyChan
 	{
 		if(NULL != mLandView)
 		{
-			mLandView->doSelectGrid(dynamic_cast<const LandTreeGrid*>(pModel->getSoldierByTroopAndNumber()));
+			//mLandView->doSelectGrid(dynamic_cast<const LandTreeGrid*>(pModel->getSoldierByTroopAndNumber()));
 		}
 	}
+	*/
 }

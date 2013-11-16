@@ -1018,6 +1018,30 @@ protected:
      */
     virtual void releaseResoures();
     void updateSizeAndPosition();
+public:
+	// add by ming.yue script handler
+	enum ScriptTouchEventType
+	{
+		kScriptTouchEvent = 11
+	};
+	struct ScriptTouchData
+	{
+		ScriptTouchData(int inActionType, void* inNativeObject, const CCPoint &touchPoint)
+			: actionType(inActionType),
+			nativeObject(inNativeObject),
+			touchPoint(touchPoint){}
+		int actionType;
+		void* nativeObject;
+		CCPoint touchPoint;
+	};
+	void setScriptTouchHandler(Touch::DispatchMode mode, int priority, bool swallowsTouches);
+	int executeScriptTouchHandler(int eventType, const CCPoint& touchPoint);
+protected:
+	ccScriptType mTouchScriptType;
+	Touch::DispatchMode mScriptTouchMode;
+	int mScriptTouchPriority;
+	bool mScriptSwallowsTouches;
+
 protected:
     bool m_bEnabled;            ///< Highest control of widget
     bool m_bVisible;            ///< is this widget visible

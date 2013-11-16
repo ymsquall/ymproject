@@ -135,7 +135,8 @@ private:
     int handleKeypadEvent(void* data);
     int handleAccelerometerEvent(void* data);
     int handleCommonEvent(void* data);
-    int handleTouchEvent(void* data);
+	int handleTouchEvent(void* data);
+	int handleScriptTouchEvent(void* data);
     int handleTouchesEvent(void* data);
     int handlerControlEvent(void* data);
     void extendNode(lua_State* lua_S);

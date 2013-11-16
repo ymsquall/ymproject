@@ -6,26 +6,7 @@ using namespace framework;
 
 #define TEST_VIEWGRIDS
 
-//// 兵种类型
-//enum class SoldierType : uint8
-//{
-//	Saber = 1	// 步兵
-//	,Rider		// 骑兵
-//	,Lancer		// 枪兵
-//	,Archer		// 弓兵
-//	,unused
-//};
-//// 方向类型
-//enum class GridOrientation : uint8
-//{
-//	topper = 0
-//	,lefttop
-//	,leftbottom
-//	,bottom
-//	,rightbottom
-//	,righttop
-//	,maxnum			// 数量
-//};
+#pragma pack(push,1)
 // 兵种类型
 enum SoldierType
 {
@@ -46,39 +27,6 @@ enum GridOrientation
 	,GridOrientation_righttop
 	,GridOrientation_maxnum			// 数量
 };
-/* 格子每一列以交错方式排列 0：不可能有东西 1：可以有东西但是不显示格子 2: 显示格子
-1,1,2,
-0,1,2,
-1,0,0,
-*/
-// 6叉树型结构的单个格子
-typedef struct LandTreeGrid
-{
-	LandTreeGrid();
-	virtual ~LandTreeGrid();
-	CCPoint getCenter();
-	static CCSize Size;
-	CCPoint center;
-	LandTreeGrid* sideGrids[GridOrientation_maxnum];	// 相邻的格子（6个）
-	bool showGrid;
-#ifdef TEST_VIEWGRIDS
-	CCObject* gridView;
-#endif
-}*LandTreeGridPtr;
-
-#pragma pack(push,1)
-// 单个部队的格子
-struct SoldierTroopsUnitGrid : public LandTreeGrid
-{
-	SoldierTroopsUnitGrid();
-	~SoldierTroopsUnitGrid(){}
-	uint8 number;	// 部队编号
-	uint8 troopID;	// 所属部队
-	SoldierType sType;		// 兵种
-	GridOrientation oType;	// 默认朝向
-};
-typedef std::map<uint8, const SoldierTroopsUnitGrid*> TroopSoldiers;
-typedef std::map<uint8, TroopSoldiers> SoldierTroops;
 
 // 直播（或录像）动作类型，数据结构：动作数量（uint32) 动作类型（uint8） 参数1...参数n
 enum class LiveActionType : uint8
@@ -147,12 +95,8 @@ MODEL_TYPECLASS_DECLARE_HEADER(GameLand)
 			EPTT_ActiveTroopID = 2,
 			EPTT_ActiveSoldierID = 3,
 		};
-		typedef std::vector<LandTreeGrid*> LandGridList;
-
-		bool loadLandData(const std::string& landName);
-		bool clearLandData();
 		bool playAction(const int8* data, uint32 length);
-		const SoldierTroopsUnitGrid* getSoldierByTroopAndNumber(uint8 t = 0, uint8 n = 0) const;
+		//const SoldierTroopsUnitGrid* getSoldierByTroopAndNumber(uint8 t = 0, uint8 n = 0) const;
 		std::string getTroopName() const;
 		// lua call
 		void luaSetBoolProperty(PropertyType type, bool b);
@@ -169,9 +113,71 @@ MODEL_TYPECLASS_DECLARE_HEADER(GameLand)
 		PROPERTY_DEFINED_SETTER_DEFINED(ActiveSoldierID, uint8, GameLandModel);
 
 	private:
+		LiveActionQueue mLiveActionQueue;
+		/*
+		typedef std::vector<LandTreeGrid*> LandGridList;
+		bool loadLandData(const std::string& landName);
+		bool clearLandData();
 		uint8 mLandGridRows;
 		uint8 mLandGridColumns;
 		LandGridList mLandGridList;
 		SoldierTroops mSoldierTroops;
-		LiveActionQueue mLiveActionQueue;
+		*/
 MODEL_TYPECLASS_DECLARE_END 
+//// 兵种类型
+//enum class SoldierType : uint8
+//{
+//	Saber = 1	// 步兵
+//	,Rider		// 骑兵
+//	,Lancer		// 枪兵
+//	,Archer		// 弓兵
+//	,unused
+//};
+//// 方向类型
+//enum class GridOrientation : uint8
+//{
+//	topper = 0
+//	,lefttop
+//	,leftbottom
+//	,bottom
+//	,rightbottom
+//	,righttop
+//	,maxnum			// 数量
+//};
+/* 格子每一列以交错方式排列 0：不可能有东西 1：可以有东西但是不显示格子 2: 显示格子
+1,1,2,
+0,1,2,
+1,0,0,
+*/
+/*
+// 6叉树型结构的单个格子
+typedef struct LandTreeGrid
+{
+	LandTreeGrid();
+	virtual ~LandTreeGrid();
+	CCPoint getCenter();
+	static CCSize Size;
+	CCPoint center;
+	LandTreeGrid* sideGrids[GridOrientation_maxnum];	// 相邻的格子（6个）
+	bool showGrid;
+#ifdef TEST_VIEWGRIDS
+	CCObject* gridView;
+#endif
+}*LandTreeGridPtr;
+
+#pragma pack(push,1)
+// 单个部队的格子
+struct SoldierTroopsUnitGrid : public LandTreeGrid
+{
+	SoldierTroopsUnitGrid();
+	~SoldierTroopsUnitGrid(){}
+	uint8 number;	// 部队编号
+	uint8 troopID;	// 所属部队
+	SoldierType sType;		// 兵种
+	GridOrientation oType;	// 默认朝向
+};
+typedef std::map<uint8, const SoldierTroopsUnitGrid*> TroopSoldiers;
+typedef std::map<uint8, TroopSoldiers> SoldierTroops;
+
+#pragma pack(pop)
+*/

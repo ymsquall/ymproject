@@ -71,3 +71,60 @@ UIPageView* LuaCocoStudioConversion::getChildUIPageViewByName(const char* name, 
 	UIWidget* pUI = pParent->getChildByName(name);
 	return dynamic_cast<UIPageView*>(pUI);
 }
+
+UIButton* LuaCocoStudioConversion::toUIButton(void* pointer)
+{
+	return static_cast<UIButton*>(pointer);
+}
+UICheckBox* LuaCocoStudioConversion::toUICheckBox(void* pointer)
+{
+	return static_cast<UICheckBox*>(pointer);
+}
+UIImageView* LuaCocoStudioConversion::toUIImageView(void* pointer)
+{
+	return static_cast<UIImageView*>(pointer);
+}
+UILabel* LuaCocoStudioConversion::toUILabel(void* pointer)
+{
+	return static_cast<UILabel*>(pointer);
+}
+UITextArea* LuaCocoStudioConversion::toUITextArea(void* pointer)
+{
+	return static_cast<UITextArea*>(pointer);
+}
+UILabelAtlas* LuaCocoStudioConversion::toUILabelAtlas(void* pointer)
+{
+	return static_cast<UILabelAtlas*>(pointer);
+}
+UILabelBMFont* LuaCocoStudioConversion::toUILabelBMFont(void* pointer)
+{
+	return static_cast<UILabelBMFont*>(pointer);
+}
+UILoadingBar* LuaCocoStudioConversion::toUILoadingBar(void* pointer)
+{
+	return static_cast<UILoadingBar*>(pointer);
+}
+UISlider* LuaCocoStudioConversion::toUISlider(void* pointer)
+{
+	return static_cast<UISlider*>(pointer);
+}
+UITextField* LuaCocoStudioConversion::toUITextField(void* pointer)
+{
+	return static_cast<UITextField*>(pointer);
+}
+UIScrollView* LuaCocoStudioConversion::toUIScrollView(void* pointer)
+{
+	return static_cast<UIScrollView*>(pointer);
+}
+UIDragPanel* LuaCocoStudioConversion::toUIDragPanel(void* pointer)
+{
+	return static_cast<UIDragPanel*>(pointer);
+}
+UIListView* LuaCocoStudioConversion::toUIListView(void* pointer)
+{
+	return static_cast<UIListView*>(pointer);
+}
+UIPageView* LuaCocoStudioConversion::toUIPageView(void* pointer)
+{
+	return static_cast<UIPageView*>(pointer);
+}
