@@ -8,6 +8,7 @@ function LUALoadGameLandView(self, viewWideh, viewHeight)
 	_LUAGameLandView.mBackButton = LuaCocoStudioConversion:getChildUIButtonByName("mBackButton", _LUAGameLandView.mLayout)
 	_LUAGameLandView.mDebugText = LuaCocoStudioConversion:getChildUITextAreaByName("mDebugText", _LUAGameLandView.mLayout)
 	_LUAGameLandView.mMapBGImageView = LuaCocoStudioConversion:getChildUIImageViewByName("mMapBGImageView", _LUAGameLandView.mLayout)
+	_LUAGameLandView.mMapBGPanel = LuaCocoStudioConversion:getChildLayoutByName("mMapBGPanel", _LUAGameLandView.mLayout)
 	_LUAGameLandView.mMapDragPanel:setSize(__LUADeviceWinSize)
 
 	local pos = _LUAGameLandView.mMapDragPanel:getPosition()
@@ -23,7 +24,9 @@ function LUALoadGameLandView(self, viewWideh, viewHeight)
 	pos.y = pos.y + __LUADeviceOffsetPos.y
 	_LUAGameLandView.mDebugText:setPosition(pos)
 
-	local innerSize = _LUAGameLandView.mMapDragPanel:getInnerContainerSize()
+	local imageSize = _LUAGameLandView.mMapBGImageView:getSize()
+	local innerSize = CCSize(imageSize.width, imageSize.height)
+	_LUAGameLandView.mMapDragPanel:setInnerContainerSize(innerSize)
 	if innerSize.width > __LUADeviceWinSize.width then
 		innerSize.width = innerSize.width - __LUADeviceWinSize.width
 	else
@@ -36,6 +39,8 @@ function LUALoadGameLandView(self, viewWideh, viewHeight)
 	end
 	local centerPos = CCPoint(-innerSize.width/2.0, -innerSize.height/2.0)
 	_LUAGameLandView.mMapDragPanel:setInnerContainerPosition(centerPos,false)
+	local imageBgPos = CCPoint(innerSize.width/2.0 + (__LUADeviceWinSize.width - imageSize.width)/2.0, innerSize.height/2.0 + (__LUADeviceWinSize.height - imageSize.height)/2.0)
+	_LUAGameLandView.mMapBGPanel:setPosition(imageBgPos)
 	_LUAGameLandView.mLastSelectedGrids = {}
 
 	return _LUAGameLandView.mLayout
@@ -116,6 +121,7 @@ function LUAGridImageTouchHandler(eventType, sender, x, y)
 				if _LUAGameLandView.mLastSelectedGrids.b ~= nil then _LUAGameLandView.mLastSelectedGrids.b:setColor(Color3B(255,0,255)) end
 				if _LUAGameLandView.mLastSelectedGrids.rb ~= nil then _LUAGameLandView.mLastSelectedGrids.rb:setColor(Color3B(255,0,255)) end
 				if _LUAGameLandView.mLastSelectedGrids.rt ~= nil then _LUAGameLandView.mLastSelectedGrids.rt:setColor(Color3B(255,0,255)) end
+				LUAGameLandView_moveGridToCenter(k['center'])
 				break
 			end
 		end
@@ -139,8 +145,8 @@ function LUAGameLandView_doLiveChanged(view, isLive)
 	else
 		_LUAGameLandView.mDebugText:setVisible(true)
 	end
+	_LUAGameLandView.mMapDragPanel:setTouchEnable(false)
 	--]]
-	--_LUAGameLandView.mMapDragPanel:setTouchEnable(false)
 end
 
 function LUAGameLandView_doTroopChanged(view, troopID)
@@ -155,10 +161,12 @@ function LUAGameLandView_doSelectGrid(view, soldierID)
 	local gridImage = _LUAGameLandView.mGridRenderList[gridData]
 	gridImage:setColor(Color3B(255,255,0));
 	_LUAGameLandView.mLastSelectedGrids.c = gridImage
-	local innerSize = _LUAGameLandView.mMapDragPanel:getInnerContainerSize()
-	local innerPos = CCPoint(gridData['center'].x - innerSize.width/2.0, gridData['center'].y - innerSize.height/2.0)
-	print(tostring(_LUAGameLandView.mSelectTroopID)..', '..soldierID..', '..gridNumber..'('..gridData['center'].x..','..gridData['center'].y..')'..'('..innerSize.width..','..innerSize.height..')'..
-		'('..innerPos.x..','..innerPos.y..')')
-	_LUAGameLandView.mMapDragPanel:setInnerContainerPosition(innerPos,true);
+	LUAGameLandView_moveGridToCenter(gridData['center'])
 end
 
+function LUAGameLandView_moveGridToCenter(gridCenter)
+	local imageBgPos = _LUAGameLandView.mMapBGPanel:getPosition()
+	local gridWorldPos = CCPoint(imageBgPos.x + gridCenter.x, imageBgPos.y + gridCenter.y)
+	local innerPos = CCPoint(-(gridWorldPos.x - __LUADeviceWinSize.width/2.0), -(gridWorldPos.y - __LUADeviceWinSize.height/2.0))
+	_LUAGameLandView.mMapDragPanel:setInnerContainerPosition(innerPos,true);
+end

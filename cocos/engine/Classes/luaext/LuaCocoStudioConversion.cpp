@@ -1,5 +1,15 @@
 #include "LuaCocoStudioConversion.h"
 
+Layout* LuaCocoStudioConversion::getChildLayoutByName(const char* name, UIWidget* pParent)
+{
+	UIWidget* pUI = pParent->getChildByName(name);
+	return dynamic_cast<Layout*>(pUI);
+}
+UILayer* LuaCocoStudioConversion::getChildUILayerByName(const char* name, UIWidget* pParent)
+{
+	UIWidget* pUI = pParent->getChildByName(name);
+	return dynamic_cast<UILayer*>(pUI);
+}
 UIButton* LuaCocoStudioConversion::getChildUIButtonByName(const char* name, UIWidget* pParent)
 {
 	UIWidget* pUI = pParent->getChildByName(name);
@@ -72,6 +82,14 @@ UIPageView* LuaCocoStudioConversion::getChildUIPageViewByName(const char* name, 
 	return dynamic_cast<UIPageView*>(pUI);
 }
 
+Layout* LuaCocoStudioConversion::toLayout(void* pointer)
+{
+	return static_cast<Layout*>(pointer);
+}
+UILayer* LuaCocoStudioConversion::toUILayer(void* pointer)
+{
+	return static_cast<UILayer*>(pointer);
+}
 UIButton* LuaCocoStudioConversion::toUIButton(void* pointer)
 {
 	return static_cast<UIButton*>(pointer);

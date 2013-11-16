@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaExtern
-** Generated automatically by tolua++-1.0.92 on 11/16/13 18:41:57.
+** Generated automatically by tolua++-1.0.92 on 11/16/13 21:43:36.
 */
 
 /****************************************************************************
@@ -28808,6 +28808,74 @@ static int tolua_get_framework__mvvm__IModel___unity__object__(lua_State* tolua_
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: getChildLayoutByName of class  LuaCocoStudioConversion */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_LuaCocoStudioConversion_getChildLayoutByName00
+static int tolua_LuaExtern_LuaCocoStudioConversion_getChildLayoutByName00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"LuaCocoStudioConversion",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,3,"UIWidget",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const char* name = ((const char*)  tolua_tostring(tolua_S,2,0));
+  UIWidget* pParent = ((UIWidget*)  tolua_tousertype(tolua_S,3,0));
+  {
+   Layout* tolua_ret = (Layout*)  LuaCocoStudioConversion::getChildLayoutByName(name,pParent);
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"Layout");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getChildLayoutByName'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getChildUILayerByName of class  LuaCocoStudioConversion */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_LuaCocoStudioConversion_getChildUILayerByName00
+static int tolua_LuaExtern_LuaCocoStudioConversion_getChildUILayerByName00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"LuaCocoStudioConversion",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,3,"UIWidget",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const char* name = ((const char*)  tolua_tostring(tolua_S,2,0));
+  UIWidget* pParent = ((UIWidget*)  tolua_tousertype(tolua_S,3,0));
+  {
+   UILayer* tolua_ret = (UILayer*)  LuaCocoStudioConversion::getChildUILayerByName(name,pParent);
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"UILayer");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getChildUILayerByName'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: getChildUIButtonByName of class  LuaCocoStudioConversion */
 #ifndef TOLUA_DISABLE_tolua_LuaExtern_LuaCocoStudioConversion_getChildUIButtonByName00
 static int tolua_LuaExtern_LuaCocoStudioConversion_getChildUIButtonByName00(lua_State* tolua_S)
@@ -29279,6 +29347,70 @@ static int tolua_LuaExtern_LuaCocoStudioConversion_getChildUIPageViewByName00(lu
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'getChildUIPageViewByName'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: toLayout of class  LuaCocoStudioConversion */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_LuaCocoStudioConversion_toLayout00
+static int tolua_LuaExtern_LuaCocoStudioConversion_toLayout00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"LuaCocoStudioConversion",0,&tolua_err) ||
+     !tolua_isuserdata(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  void* pointer = ((void*)  tolua_touserdata(tolua_S,2,0));
+  {
+   Layout* tolua_ret = (Layout*)  LuaCocoStudioConversion::toLayout(pointer);
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"Layout");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'toLayout'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: toUILayer of class  LuaCocoStudioConversion */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_LuaCocoStudioConversion_toUILayer00
+static int tolua_LuaExtern_LuaCocoStudioConversion_toUILayer00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"LuaCocoStudioConversion",0,&tolua_err) ||
+     !tolua_isuserdata(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  void* pointer = ((void*)  tolua_touserdata(tolua_S,2,0));
+  {
+   UILayer* tolua_ret = (UILayer*)  LuaCocoStudioConversion::toUILayer(pointer);
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"UILayer");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'toUILayer'.",&tolua_err);
  return 0;
 #endif
 }
@@ -31107,6 +31239,8 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
   tolua_endmodule(tolua_S);
   tolua_cclass(tolua_S,"LuaCocoStudioConversion","LuaCocoStudioConversion","",NULL);
   tolua_beginmodule(tolua_S,"LuaCocoStudioConversion");
+   tolua_function(tolua_S,"getChildLayoutByName",tolua_LuaExtern_LuaCocoStudioConversion_getChildLayoutByName00);
+   tolua_function(tolua_S,"getChildUILayerByName",tolua_LuaExtern_LuaCocoStudioConversion_getChildUILayerByName00);
    tolua_function(tolua_S,"getChildUIButtonByName",tolua_LuaExtern_LuaCocoStudioConversion_getChildUIButtonByName00);
    tolua_function(tolua_S,"getChildUICheckBoxByName",tolua_LuaExtern_LuaCocoStudioConversion_getChildUICheckBoxByName00);
    tolua_function(tolua_S,"getChildUIImageViewByName",tolua_LuaExtern_LuaCocoStudioConversion_getChildUIImageViewByName00);
@@ -31121,6 +31255,8 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"getChildUIDragPanelByName",tolua_LuaExtern_LuaCocoStudioConversion_getChildUIDragPanelByName00);
    tolua_function(tolua_S,"getChildUIListViewByName",tolua_LuaExtern_LuaCocoStudioConversion_getChildUIListViewByName00);
    tolua_function(tolua_S,"getChildUIPageViewByName",tolua_LuaExtern_LuaCocoStudioConversion_getChildUIPageViewByName00);
+   tolua_function(tolua_S,"toLayout",tolua_LuaExtern_LuaCocoStudioConversion_toLayout00);
+   tolua_function(tolua_S,"toUILayer",tolua_LuaExtern_LuaCocoStudioConversion_toUILayer00);
    tolua_function(tolua_S,"toUIButton",tolua_LuaExtern_LuaCocoStudioConversion_toUIButton00);
    tolua_function(tolua_S,"toUICheckBox",tolua_LuaExtern_LuaCocoStudioConversion_toUICheckBox00);
    tolua_function(tolua_S,"toUIImageView",tolua_LuaExtern_LuaCocoStudioConversion_toUIImageView00);

@@ -9,6 +9,8 @@ using namespace cocos2d::extension;
 class LuaCocoStudioConversion
 {
 public:
+	static Layout* getChildLayoutByName(const char* name, UIWidget* pParent);
+	static UILayer* getChildUILayerByName(const char* name, UIWidget* pParent);
 	static UIButton* getChildUIButtonByName(const char* name, UIWidget* pParent);
 	static UICheckBox* getChildUICheckBoxByName(const char* name, UIWidget* pParent);
 	static UIImageView* getChildUIImageViewByName(const char* name, UIWidget* pParent);
@@ -24,6 +26,8 @@ public:
 	static UIListView* getChildUIListViewByName(const char* name, UIWidget* pParent);
 	static UIPageView* getChildUIPageViewByName(const char* name, UIWidget* pParent);
 
+	static Layout* toLayout(void* pointer);
+	static UILayer* toUILayer(void* pointer);
 	static UIButton* toUIButton(void* pointer);
 	static UICheckBox* toUICheckBox(void* pointer);
 	static UIImageView* toUIImageView(void* pointer);
