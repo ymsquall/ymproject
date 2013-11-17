@@ -14,7 +14,7 @@ function LUACreateAndPlayArmature(animName, playIndex, posX, posY, animScale, sc
 	animScale = animScale or 1
 	scale = scale or 1
 	local pArmature = Armature:create(animName)
-	pArmature:getAnimation():playByIndex(playIndex)
+	--pArmature:getAnimation():playByIndex(playIndex)
 	pArmature:getAnimation():setAnimationScale(animScale)
 	pArmature:setPosition(CCPoint(posX, posY))
 	pArmature:setScale(scale)
@@ -35,7 +35,6 @@ function LUACreateSoldierAnimationWithTypeAndOrientation(soldierType, orientatio
 		solder = 'archer_'
 	end
 	local orient
-	print(orientation)
 	if GridOrientation_topper == orientation then
 		orient = 'top'
 	elseif GridOrientation_lefttop == orientation then

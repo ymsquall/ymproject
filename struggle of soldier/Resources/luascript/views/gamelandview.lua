@@ -80,6 +80,7 @@ function LUALoadLandGridView(view, gridData)
 	_LUAGameLandView.mAnimeList = _LUAGameLandView.mAnimeList or {}
 	if gridData['data'] ~= nil then
 		local pAnime = LUACreateSoldierAnimationWithTypeAndOrientation(gridData['data'].sType, gridData['data'].oType, realPos.x, realPos.y)
+		pAnime:getAnimation():play('01.dj')
 		local pAnimeNode = LuaUserDataConversion:toNode(pAnime)
 		_LUAGameLandView.mAnimeList[gridData] = pAnime
 		_LUAGameLandView.mMapBGImageView:addRenderer(pAnimeNode, 1)
@@ -218,24 +219,29 @@ function LUAGameLandView_doMoveStep(view, oType)
 	local toGridNimber = nowGridData['side'][oType]
 	local toGridData = _LUASelectedLandGridDatas.grids[toGridNimber]
 	local soldierView = _LUAGameLandView.mAnimeList[nowGridData]
+	soldierView:getAnimation():play('02.yd')
 	local bkSize = _LUAGameLandView.mMapBGImageView:getSize()
 	local beginPos = CCPoint(nowGridData['center'].x - bkSize.width/2.0, nowGridData['center'].y - bkSize.height/2.0)
 	local endPos = CCPoint(toGridData['center'].x - bkSize.width/2.0, toGridData['center'].y - bkSize.height/2.0)
-	local act1 = CCMoveTo:create(2, endPos)
+	local act1 = CCDelayTime:create(0.2)
 	local act2 = CCCallFunc:create(function()
+		end)
+	local act3 = CCMoveTo:create(1.7, endPos)
+	local act4 = CCCallFunc:create(function()
 			if _LUAGameLandView.mLastSelectedGrids.c ~= nil then _LUAGameLandView.mLastSelectedGrids.c:setColor(Color3B(255,255,255)) end
 			local gridImage = _LUAGameLandView.mGridRenderList[toGridData]
 			gridImage:setColor(Color3B(255,255,0))
 			_LUAGameLandView.mLastSelectedGrids.c = gridImage
 		end)
-	local act3 = CCDelayTime:create(0.2)
-	local act4 = CCCallFunc:create(function()
+	local act5 = CCDelayTime:create(0.1)
+	local act6 = CCCallFunc:create(function()
 			print('move action ended')
 			local troopsData = _LUASelectedLandGridDatas.grids[nowGridNumber]['data']
 			_LUASelectedLandGridDatas.grids[toGridNimber]['data'] = troopsData
 			_LUASelectedLandGridDatas.grids[nowGridNumber]['data'] = {}
 			_LUASelectedLandGridDatas.troopDatas[_LUAGameLandView.mSelectTroopID][_LUAGameLandView.mSelectSoldierID] = toGridNimber
 			_LUAGameLandView.mAnimeList[toGridData] = soldierView
+			soldierView:getAnimation():play('01.dj')
 			LUAPlayStruggleRecordOneStep(view)
 		end)
 	local actList = CCArray:create()
@@ -243,6 +249,8 @@ function LUAGameLandView_doMoveStep(view, oType)
 	actList:addObject(act2)
 	actList:addObject(act3)
 	actList:addObject(act4)
+	actList:addObject(act5)
+	actList:addObject(act6)
 	soldierView:runAction(CCSequence:create(actList))
 	--local actF = CCSequence:create(actList)
 	--CCDirector:getInstance():getActionManager():addAction(actF, gridImage, false)
@@ -255,7 +263,9 @@ function LUAGameLandView_doAttackToGrid(view, troopID, soldierID)
 	local targetGridNumber = _LUASelectedLandGridDatas.troopDatas[troopID][soldierID]
 	local targetGridData = _LUASelectedLandGridDatas.grids[targetGridNumber]
 	local targetGridView = _LUAGameLandView.mGridRenderList[targetGridData]
-	LUAGameLandView_moveGridToCenter(targetGridData['center'])
+	local soldierView = _LUAGameLandView.mAnimeList[nowGridData]
+	local targetSoldierView = _LUAGameLandView.mAnimeList[targetGridData]
+	--LUAGameLandView_moveGridToCenter(nowGridData['center'])
 
 	for _,v in pairs(_LUAGameLandView.mLastSelectedGrids.target) do
 		v:setColor(Color3B(255,255,255))
@@ -264,14 +274,28 @@ function LUAGameLandView_doAttackToGrid(view, troopID, soldierID)
 	targetGridView:setColor(Color3B(255,0,0))
 	table.insert(_LUAGameLandView.mLastSelectedGrids.target, targetGridView)
 
-	local act1 = CCDelayTime:create(1)
+	local act1 = CCDelayTime:create(0.2)
 	local act2 = CCCallFunc:create(function()
+			soldierView:getAnimation():play('04.gj')
+		end)
+	local act3 = CCDelayTime:create(0.5)
+	local act4 = CCCallFunc:create(function()
+			targetSoldierView:getAnimation():play('03.bj')
+		end)
+	local act5 = CCDelayTime:create(1)
+	local act6 = CCCallFunc:create(function()
 			print('attack action ended')
+			soldierView:getAnimation():play('01.dj')
+			targetSoldierView:getAnimation():play('01.dj')
 			LUAPlayStruggleRecordOneStep(view)
 		end)
 	local actList = CCArray:create()
 	actList:addObject(act1)
 	actList:addObject(act2)
+	actList:addObject(act3)
+	actList:addObject(act4)
+	actList:addObject(act5)
+	actList:addObject(act6)
 	view:runAction(CCSequence:create(actList))
 end
 
@@ -280,7 +304,8 @@ function LUAGameLandView_doSkillToGrid(view, skillID, gridNumber)
 	local nowGridNumber = _LUASelectedLandGridDatas.troopDatas[_LUAGameLandView.mSelectTroopID][_LUAGameLandView.mSelectSoldierID]
 	local nowGridData = _LUASelectedLandGridDatas.grids[nowGridNumber]
 	local targetGridData = _LUASelectedLandGridDatas.grids[gridNumber]
-	local targetGridView = _LUAGameLandView.mGridRenderList[targetGridData]LUAGameLandView_moveGridToCenter(targetGridData['center'])
+	local targetGridView = _LUAGameLandView.mGridRenderList[targetGridData]
+	--LUAGameLandView_moveGridToCenter(targetGridData['center'])
 
 	for _,v in pairs(_LUAGameLandView.mLastSelectedGrids.target) do
 		v:setColor(Color3B(255,255,255))
