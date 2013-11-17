@@ -12,4 +12,5 @@ require "luascript/views/helper"
 require "luascript/views/login"
 require "luascript/views/selecthero"
 require "luascript/views/gamelandview"
+require "luascript/views/gamelandview_playing"
 ----------------

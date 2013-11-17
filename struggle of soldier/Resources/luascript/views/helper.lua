@@ -7,6 +7,7 @@ function LUACreateUIImageView(textureName, posX, posY)
 	return pImageView
 end
 
+-- 创建出的动画如果有闪烁现象，要先检查关键帧中设置的颜色是否连续(检查json数据，因为使用默认颜色的话，颜色值不会被写入json文件中，需手动添加)
 function LUACreateAndPlayArmature(animName, playIndex, posX, posY, animScale, scale)
 	playIndex = playIndex or 0
 	posX = posX or 0
@@ -14,7 +15,9 @@ function LUACreateAndPlayArmature(animName, playIndex, posX, posY, animScale, sc
 	animScale = animScale or 1
 	scale = scale or 1
 	local pArmature = Armature:create(animName)
-	--pArmature:getAnimation():playByIndex(playIndex)
+	if playIndex ~= -1 then
+		pArmature:getAnimation():playByIndex(playIndex)
+	end
 	pArmature:getAnimation():setAnimationScale(animScale)
 	pArmature:setPosition(CCPoint(posX, posY))
 	pArmature:setScale(scale)
@@ -23,7 +26,8 @@ end
 
 --部队朝向：上=0，左上=1，左下=2，下=3，右下=4，右上=5
 --兵种：步兵=1，骑兵=2，枪兵=3，弓兵=4
-function LUACreateSoldierAnimationWithTypeAndOrientation(soldierType, orientation, posX, posY)
+function LUACreateSoldierAnimationWithTypeAndOrientation(soldierType, orientation, posX, posY, scale)
+	scale = scale or 0.65
 	local solder
 	if SoldierType_Saber == soldierType then
 		solder = 'saber_'
@@ -48,5 +52,5 @@ function LUACreateSoldierAnimationWithTypeAndOrientation(soldierType, orientatio
 	elseif GridOrientation_righttop == orientation then
 		orient = 'righttop'
 	end
-	return LUACreateAndPlayArmature(solder..orient, 0, posX, posY, 1.0, 0.65)
+	return LUACreateAndPlayArmature(solder..orient, -1, posX, posY, 1.0, scale)
 end

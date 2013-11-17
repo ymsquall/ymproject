@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<AnimationProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>0.0.0.0</Version>
+  <Name>BeAttacked</Name>
+  <ProjectDir>Y:\Work\ymproject_github\CocoStudioWorkspace\Animation\ActionEffect\BeAttacked</ProjectDir>
+  <JsonFileName>BeAttacked.json</JsonFileName>
+  <Resources>Y:\Work\ymproject_github\CocoStudioWorkspace\Animation\ActionEffect\BeAttacked\Resources</Resources>
+  <JsonFolder>Y:\Work\ymproject_github\CocoStudioWorkspace\Animation\ActionEffect\BeAttacked\Json</JsonFolder>
+  <JsonList />
+  <ResourceFileList>
+    <string>BeAttacked0.plist</string>
+    <string>BeAttacked1.plist</string>
+    <string>BeAttacked2.plist</string>
+    <string>BeAttacked3.plist</string>
+    <string>BeAttacked4.plist</string>
+    <string>BeAttacked5.plist</string>
+    <string>BeAttacked6.plist</string>
+    <string>BeAttacked7.plist</string>
+    <string>BeAttacked8.plist</string>
+    <string>BeAttacked9.plist</string>
+    <string>BeAttacked10.plist</string>
+    <string>BeAttacked11.plist</string>
+  </ResourceFileList>
+  <CanvasSize>
+    <Width>0</Width>
+    <Height>0</Height>
+  </CanvasSize>
+  <bBatchImage>true</bBatchImage>
+</AnimationProject>

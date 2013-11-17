@@ -1,0 +1,16 @@
+class  ArmatureDataManager : public Object
+{
+    static ArmatureDataManager *sharedArmatureDataManager();
+    static void purgeArmatureSystem();
+    virtual bool init();
+    void addArmatureData(const char *id, ArmatureData *armatureData);
+    ArmatureData *getArmatureData(const char *id);
+    void addAnimationData(const char *id, AnimationData *animationData);
+    AnimationData *getAnimationData(const char *id);
+    void addTextureData(const char *id, TextureData *textureData);
+    TextureData *getTextureData(const char *id);
+	void addArmatureFileInfo(const char *armatureName, const char *useExistFileInfo, const char *imagePath, const char *plistPath, const char *configFilePath);
+	void addArmatureFileInfo(const char *imagePath, const char *plistPath, const char *configFilePath);
+    void addSpriteFrameFromFile(const char *plistPath, const char *imagePath);
+    void removeAll();
+};

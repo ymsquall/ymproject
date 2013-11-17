@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<AnimationProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>0.0.0.0</Version>
+  <Name>luncer_skill_cast_0</Name>
+  <ProjectDir>Y:\Work\ymproject_github\CocoStudioWorkspace\Animation\ActionEffect\SkillCasting\Lancer</ProjectDir>
+  <JsonFileName>luncer_skill_cast_0.json</JsonFileName>
+  <Resources>Y:\Work\ymproject_github\CocoStudioWorkspace\Animation\ActionEffect\SkillCasting\Lancer\Resources</Resources>
+  <JsonFolder>Y:\Work\ymproject_github\CocoStudioWorkspace\Animation\ActionEffect\SkillCasting\Lancer\Json</JsonFolder>
+  <JsonList />
+  <ResourceFileList />
+  <CanvasSize>
+    <Width>0</Width>
+    <Height>0</Height>
+  </CanvasSize>
+  <bBatchImage>false</bBatchImage>
+</AnimationProject>

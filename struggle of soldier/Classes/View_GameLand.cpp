@@ -2,24 +2,11 @@
 #include "ViewModelManager.h"
 #include "luaext/LuaHelper.h"
 #include "Model_GameLand.h"
-#include "CCArmature/utils/CCArmatureDataManager.h"
-#include "CCArmature/CCArmature.h"
 
 GameLandView* gGameLandView = NULL;
 
 using namespace cocos2d;
 using namespace cocos2d::extension;
-using namespace cocos2d::extension::armature;
-
-#ifdef TEST_VIEWGRIDS
-static UIImageView* gpLastSelectGrid = NULL;
-static UIImageView* gpLastSelectFarGridLT = NULL;
-static UIImageView* gpLastSelectFarGridLB = NULL;
-static UIImageView* gpLastSelectFarGridRT = NULL;
-static UIImageView* gpLastSelectFarGridRB = NULL;
-static UIImageView* gpLastSelectFarGridT = NULL;
-static UIImageView* gpLastSelectFarGridB = NULL;
-#endif
 
 GameLandView::GameLandView()
 {
@@ -31,29 +18,11 @@ GameLandView::GameLandView()
 	mNowSelectGridImage = NULL;
 	mNeedWaitDragPanelBerthOvered = false;
 	gGameLandView = this;
-#ifdef TEST_VIEWGRIDS
-	gpLastSelectGrid = NULL;
-	gpLastSelectFarGridLT = NULL;
-	gpLastSelectFarGridLB = NULL;
-	gpLastSelectFarGridRT = NULL;
-	gpLastSelectFarGridRB = NULL;
-	gpLastSelectFarGridT = NULL;
-	gpLastSelectFarGridB = NULL;
-#endif
 }
 
 GameLandView::~GameLandView()
 {
 	gGameLandView = NULL;
-#ifdef TEST_VIEWGRIDS
-	gpLastSelectGrid = NULL;
-	gpLastSelectFarGridLT = NULL;
-	gpLastSelectFarGridLB = NULL;
-	gpLastSelectFarGridRT = NULL;
-	gpLastSelectFarGridRB = NULL;
-	gpLastSelectFarGridT = NULL;
-	gpLastSelectFarGridB = NULL;
-#endif
 }
 
 bool GameLandView::init()
@@ -66,13 +35,6 @@ bool GameLandView::init()
 	ViewModelManager::reloadLuaScript("luascript/models/gamelandmodel.lua");
 	ViewModelManager::reloadLuaScript("luascript/models/gamelandmodel_loader.lua");
 	ViewModelManager::reloadLuaScript("luascript/models/playstruggle_var01.lua");
-
-	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/archer/archer0.png", "studioui/animation/archer/archer0.plist", "studioui/animation/archer/archer_leftbottom.json");
-	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/archer/archer0.png", "studioui/animation/archer/archer0.plist", "studioui/animation/archer/archer_righttop.json");
-	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/saber/saber0.png", "studioui/animation/saber/saber0.plist", "studioui/animation/saber/saber_leftbottom.json");
-	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/saber/saber0.png", "studioui/animation/saber/saber0.plist", "studioui/animation/saber/saber_righttop.json");
-	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/rider/rider0.png", "studioui/animation/rider/rider0.plist", "studioui/animation/rider/rider_leftbottom.json");
-	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/rider/rider0.png", "studioui/animation/rider/rider0.plist", "studioui/animation/rider/rider_righttop.json");
 
 	cocos2d::Size thisSize = this->getContentSize();
 	ScriptParamObject userdata = callLuaFuncWithUserdataResult("LUALoadGameLandView", this, thisSize.width, thisSize.height);
@@ -201,6 +163,33 @@ void GameLandView::onBackBtnTouch(cocos2d::CCObject* pSender)
 }
 
 /*
+#ifdef TEST_VIEWGRIDS
+static UIImageView* gpLastSelectGrid = NULL;
+static UIImageView* gpLastSelectFarGridLT = NULL;
+static UIImageView* gpLastSelectFarGridLB = NULL;
+static UIImageView* gpLastSelectFarGridRT = NULL;
+static UIImageView* gpLastSelectFarGridRB = NULL;
+static UIImageView* gpLastSelectFarGridT = NULL;
+static UIImageView* gpLastSelectFarGridB = NULL;
+#endif
+#ifdef TEST_VIEWGRIDS
+gpLastSelectGrid = NULL;
+gpLastSelectFarGridLT = NULL;
+gpLastSelectFarGridLB = NULL;
+gpLastSelectFarGridRT = NULL;
+gpLastSelectFarGridRB = NULL;
+gpLastSelectFarGridT = NULL;
+gpLastSelectFarGridB = NULL;
+#endif
+#ifdef TEST_VIEWGRIDS
+gpLastSelectGrid = NULL;
+gpLastSelectFarGridLT = NULL;
+gpLastSelectFarGridLB = NULL;
+gpLastSelectFarGridRT = NULL;
+gpLastSelectFarGridRB = NULL;
+gpLastSelectFarGridT = NULL;
+gpLastSelectFarGridB = NULL;
+#endif
 Event_OnActionStepOvered(this, &eventArgs);
 ActionStepOveredEventParams eventArgs;
 void GameLandView::onMapGridTouched(cocos2d::CCObject* pSender)

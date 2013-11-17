@@ -42,6 +42,7 @@ local CCObjectTypes = {
     "UIWidget",
     "Armature",
     "ArmatureAnimation",
+	"ArmatureDataManager",
     "blockreader",
     "blockwrite",
     "framework::mvvm::IView",
@@ -149,6 +150,7 @@ extern "C" {
 #include "mvvm/view.h"
 #include "CocoStudio/CocoStudio.h"
 #include "LuaCocoStudioConversion.h"
+#include "CCArmature/utils/CCArmatureDataManager.h"
 
 using namespace cocos2d;
 using namespace cocos2d::extension;
