@@ -69,8 +69,8 @@ bool GameLandView::init()
 
 	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/saber_righttop0.png", "studioui/animation/saber_righttop0.plist", "studioui/animation/saber_leftbottom.json");
 	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/saber_righttop0.png", "studioui/animation/saber_righttop0.plist", "studioui/animation/saber_righttop.json");
-	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/rider_righttop0.png", "studioui/animation/rider_righttop0.plist", "studioui/animation/rider_leftbottom.json");
-	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/rider_righttop0.png", "studioui/animation/rider_righttop0.plist", "studioui/animation/rider_righttop.json");
+	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/rider/rider0.png", "studioui/animation/rider/rider0.plist", "studioui/animation/rider/rider_leftbottom.json");
+	ArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("studioui/animation/rider/rider0.png", "studioui/animation/rider/rider0.plist", "studioui/animation/rider/rider_righttop.json");
 
 	cocos2d::Size thisSize = this->getContentSize();
 	ScriptParamObject userdata = callLuaFuncWithUserdataResult("LUALoadGameLandView", this, thisSize.width, thisSize.height);
