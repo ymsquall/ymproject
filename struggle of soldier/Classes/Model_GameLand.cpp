@@ -42,143 +42,6 @@ std::string GameLandModel::getTroopName() const
 	return pStr->getCString();
 }
 
-bool GameLandModel::playAction(const int8* data, uint32 length)
-{
-	while(!mLiveActionQueue.empty())
-	{
-		delete mLiveActionQueue.front();
-		mLiveActionQueue.pop();
-	}
-	unity::blockreader block(data, length);
-	uint32 actNum = 0;
-	if(!block.read(actNum) || actNum <= 0)
-		return false;
-	uint8 actType = (uint8)LiveActionType::unused;
-	while(!block.eof())
-	{
-		actType = (uint8)LiveActionType::unused;
-		if(!block.read(actType))
-			return false;
-		ILiveAction* pAction = NULL;
-		switch(actType)
-		{
-		case LiveActionType::change:
-			{
-				LiveActionChange* pRetImpl = new LiveActionChange();
-				if(block.read(pRetImpl->troopID))
-					pAction = pRetImpl;
-			}
-			break;
-		case LiveActionType::select:
-			{
-				LiveActionSelect* pRetImpl = new LiveActionSelect();
-				if(block.read(pRetImpl->number))
-					pAction = pRetImpl;
-			}
-			break;
-		case LiveActionType::moveto:
-			{
-				uint8 moveNum = 0;
-				if(!block.read(moveNum) || moveNum <= 0)
-					return false;
-				LiveActionMoveTo* pRetImpl = new LiveActionMoveTo();
-				for(uint8 i = 0; i < moveNum; ++ i)
-				{
-					if(block.read(pRetImpl->to))
-						pAction = pRetImpl;
-				}
-			}
-			break;
-		case LiveActionType::attack:
-			{
-				uint8 attackCount = 0;
-				if(!block.read(attackCount) || attackCount <= 0)
-					return false;
-				LiveActionAttack* pRetImpl = new LiveActionAttack();
-				for(uint8 i = 0; i < attackCount; ++ i)
-				{
-					if(block.read(pRetImpl->grid))
-						pAction = pRetImpl;
-				}
-			}
-			break;
-		case LiveActionType::skill:
-			{
-				uint8 skillCount = 0;
-				if(!block.read(skillCount) || skillCount <= 0)
-					return false;
-				LiveActionSkill* pRetImpl = new LiveActionSkill();
-				for(uint8 i = 0; i < skillCount; ++ i)
-				{
-					if(block.read(pRetImpl->skillID) && block.read(pRetImpl->grid))
-						pAction = pRetImpl;
-				}
-			}
-			break;
-		}
-		mLiveActionQueue.push(pAction);
-	}
-	GameLandView* pView = dynamic_cast<GameLandView*>(this->mBindingTarget);
-	pView->Event_OnActionStepOvered += EVENT_HANDLE_SCHEDULE(GameLandView*, this, ActionStepOveredEventParams*, GameLandModel::onActionStepOvered);
-	this->playOneStep();
-	return true;
-}
-
-void GameLandModel::playOneStep()
-{
-	ILiveAction* pAction = mLiveActionQueue.front();
-	mLiveActionQueue.pop();
-	if(NULL == pAction)
-	{
-		this->playOneStep();
-		return;
-	}
-	if(pAction->type() == LiveActionType::change)
-	{
-		const LiveActionChange* pAct = dynamic_cast<const LiveActionChange*>(pAction);
-		this->ActiveTroopID = pAct->troopID;
-		this->playOneStep();
-		return;
-	}
-	if(pAction->type() == LiveActionType::select)
-	{
-		const LiveActionSelect* pAct = dynamic_cast<const LiveActionSelect*>(pAction);
-		this->ActiveSoldierID = pAct->number;
-		// wait onActionStepOvered event
-		return;
-	}
-	GameLandView* pView = dynamic_cast<GameLandView*>(this->mBindingTarget);
-	if(pAction->type() == LiveActionType::moveto)
-	{
-		const LiveActionMoveTo* pAct = dynamic_cast<const LiveActionMoveTo*>(pAction);
-		// wait onActionStepOvered event
-		return;
-	}
-	if(pAction->type() == LiveActionType::attack)
-	{
-		const LiveActionAttack* pAct = dynamic_cast<const LiveActionAttack*>(pAction);
-		// wait onActionStepOvered event
-		return;
-	}
-	if(pAction->type() == LiveActionType::skill)
-	{
-		const LiveActionSkill* pAct = dynamic_cast<const LiveActionSkill*>(pAction);
-		// wait onActionStepOvered event
-		return;
-	}
-}
-
-void GameLandModel::onActionStepOvered(GameLandView* sender, ActionStepOveredEventParams* args)
-{
-	if(mLiveActionQueue.empty())
-	{
-		GameLandView* pView = dynamic_cast<GameLandView*>(this->mBindingTarget);
-		pView->Event_OnActionStepOvered -= EVENT_HANDLE_SCHEDULE(GameLandView*, this, ActionStepOveredEventParams*, GameLandModel::onActionStepOvered);
-		return;
-	}
-	this->playOneStep();
-}
-
 void GameLandModel::updateImpl(float dt)
 {
 
@@ -190,6 +53,142 @@ void GameLandModel::finalize()
 }
 
 /*
+bool GameLandModel::playAction(const int8* data, uint32 length)
+{
+while(!mLiveActionQueue.empty())
+{
+delete mLiveActionQueue.front();
+mLiveActionQueue.pop();
+}
+unity::blockreader block(data, length);
+uint32 actNum = 0;
+if(!block.read(actNum) || actNum <= 0)
+return false;
+uint8 actType = (uint8)LiveActionType::unused;
+while(!block.eof())
+{
+actType = (uint8)LiveActionType::unused;
+if(!block.read(actType))
+return false;
+ILiveAction* pAction = NULL;
+switch(actType)
+{
+case LiveActionType::change:
+{
+LiveActionChange* pRetImpl = new LiveActionChange();
+if(block.read(pRetImpl->troopID))
+pAction = pRetImpl;
+}
+break;
+case LiveActionType::select:
+{
+LiveActionSelect* pRetImpl = new LiveActionSelect();
+if(block.read(pRetImpl->number))
+pAction = pRetImpl;
+}
+break;
+case LiveActionType::moveto:
+{
+uint8 moveNum = 0;
+if(!block.read(moveNum) || moveNum <= 0)
+return false;
+LiveActionMoveTo* pRetImpl = new LiveActionMoveTo();
+for(uint8 i = 0; i < moveNum; ++ i)
+{
+if(block.read(pRetImpl->to))
+pAction = pRetImpl;
+}
+}
+break;
+case LiveActionType::attack:
+{
+uint8 attackCount = 0;
+if(!block.read(attackCount) || attackCount <= 0)
+return false;
+LiveActionAttack* pRetImpl = new LiveActionAttack();
+for(uint8 i = 0; i < attackCount; ++ i)
+{
+if(block.read(pRetImpl->grid))
+pAction = pRetImpl;
+}
+}
+break;
+case LiveActionType::skill:
+{
+uint8 skillCount = 0;
+if(!block.read(skillCount) || skillCount <= 0)
+return false;
+LiveActionSkill* pRetImpl = new LiveActionSkill();
+for(uint8 i = 0; i < skillCount; ++ i)
+{
+if(block.read(pRetImpl->skillID) && block.read(pRetImpl->grid))
+pAction = pRetImpl;
+}
+}
+break;
+}
+mLiveActionQueue.push(pAction);
+}
+GameLandView* pView = dynamic_cast<GameLandView*>(this->mBindingTarget);
+pView->Event_OnActionStepOvered += EVENT_HANDLE_SCHEDULE(GameLandView*, this, ActionStepOveredEventParams*, GameLandModel::onActionStepOvered);
+this->playOneStep();
+return true;
+}
+
+void GameLandModel::playOneStep()
+{
+ILiveAction* pAction = mLiveActionQueue.front();
+mLiveActionQueue.pop();
+if(NULL == pAction)
+{
+this->playOneStep();
+return;
+}
+if(pAction->type() == LiveActionType::change)
+{
+const LiveActionChange* pAct = dynamic_cast<const LiveActionChange*>(pAction);
+this->ActiveTroopID = pAct->troopID;
+this->playOneStep();
+return;
+}
+if(pAction->type() == LiveActionType::select)
+{
+const LiveActionSelect* pAct = dynamic_cast<const LiveActionSelect*>(pAction);
+this->ActiveSoldierID = pAct->number;
+// wait onActionStepOvered event
+return;
+}
+GameLandView* pView = dynamic_cast<GameLandView*>(this->mBindingTarget);
+if(pAction->type() == LiveActionType::moveto)
+{
+const LiveActionMoveTo* pAct = dynamic_cast<const LiveActionMoveTo*>(pAction);
+// wait onActionStepOvered event
+return;
+}
+if(pAction->type() == LiveActionType::attack)
+{
+const LiveActionAttack* pAct = dynamic_cast<const LiveActionAttack*>(pAction);
+// wait onActionStepOvered event
+return;
+}
+if(pAction->type() == LiveActionType::skill)
+{
+const LiveActionSkill* pAct = dynamic_cast<const LiveActionSkill*>(pAction);
+// wait onActionStepOvered event
+return;
+}
+}
+
+void GameLandModel::onActionStepOvered(GameLandView* sender, ActionStepOveredEventParams* args)
+{
+if(mLiveActionQueue.empty())
+{
+GameLandView* pView = dynamic_cast<GameLandView*>(this->mBindingTarget);
+pView->Event_OnActionStepOvered -= EVENT_HANDLE_SCHEDULE(GameLandView*, this, ActionStepOveredEventParams*, GameLandModel::onActionStepOvered);
+return;
+}
+this->playOneStep();
+}
 this->clearLandData();
 mLandGridRows = 0;
 mLandGridColumns = 0;

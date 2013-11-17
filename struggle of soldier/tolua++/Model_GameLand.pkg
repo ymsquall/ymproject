@@ -18,7 +18,16 @@ enum GridOrientation
 	,GridOrientation_righttop
 	,GridOrientation_maxnum			// 数量
 };
-
+// 直播（或录像）动作类型，数据结构：动作数量（uint32) 动作类型（uint8） 参数1...参数n
+enum LiveActionType
+{
+	LiveActionType_change = 1		// 切换阵营：			参数1（阵营ID uint8）
+	,LiveActionType_select			// 选中部队：			参数1（部队编号 uint8）
+	,LiveActionType_moveto			// 移动到相邻格子：		参数1（移动格数n uint8） 参数2...参数n（GridOrientation）
+	,LiveActionType_attack			// 攻击某阵营某号部队：	参数1（攻击次数n uint8） 参数2（阵营ID uint8）参数3(部队编号 uint8） ...参数n
+	,LiveActionType_skill			// 指定某格释放技能：	参数1（释放次数n uint8） 参数2（技能ID uint16）参数3（格子编号 uint16）...参数n
+	,LiveActionType_unused
+};
 class GameLandModel : public ModelImpl
 {
 	enum PropertyType

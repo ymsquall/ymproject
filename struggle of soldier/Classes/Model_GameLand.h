@@ -29,58 +29,15 @@ enum GridOrientation
 };
 
 // 直播（或录像）动作类型，数据结构：动作数量（uint32) 动作类型（uint8） 参数1...参数n
-enum class LiveActionType : uint8
+enum LiveActionType
 {
-	change = 1		// 切换阵营：			参数1（阵营ID uint8）
-	,select			// 选中部队：			参数1（部队编号 uint8）
-	,moveto			// 移动到相邻格子：		参数1（移动格数n uint8） 参数2...参数n（GridOrientation）
-	,attack			// 攻击某格部队：		参数1（攻击次数n uint8） 参数2...参数n（格子编号 uint16）
-	,skill			// 技能攻击某格部队：	参数1（攻击次数n uint8） 参数2（技能ID uint16）参数3（格子编号 uint16）...参数n
-	,unused
+	LiveActionType_change = 1		// 切换阵营：			参数1（阵营ID uint8）
+	,LiveActionType_select			// 选中部队：			参数1（部队编号 uint8）
+	,LiveActionType_moveto			// 移动到相邻格子：		参数1（移动格数n uint8） 参数2...参数n（GridOrientation）
+	,LiveActionType_attack			// 攻击某阵营某号部队：	参数1（攻击次数n uint8） 参数2（阵营ID uint8）参数3(部队编号 uint8） ...参数n
+	,LiveActionType_skill			// 指定某格释放技能：	参数1（释放次数n uint8） 参数2（技能ID uint16）参数3（格子编号 uint16）...参数n
+	,LiveActionType_unused
 };
-class ILiveAction
-{
-public:
-	virtual LiveActionType type() const = 0;
-};
-template<LiveActionType typeValue>
-class LiveAction : public ILiveAction, public MAKER_ENUM2BTRTTI_TYPE((uint16)typeValue)
-{
-public:
-	virtual LiveActionType type() const{ return (LiveActionType)this->eType(); }
-};
-class LiveActionChange : public LiveAction<LiveActionType::change>
-{
-public:
-	LiveActionChange(){ troopID = 0; }
-	uint8 troopID;
-};
-class LiveActionSelect : public LiveAction<LiveActionType::select>
-{
-public:
-	LiveActionSelect(){ number = 0; }
-	uint8 number;
-};
-class LiveActionMoveTo : public LiveAction<LiveActionType::moveto>
-{
-public:
-	LiveActionMoveTo(){ to = GridOrientation_maxnum; }
-	GridOrientation to;
-};
-class LiveActionAttack : public LiveAction<LiveActionType::attack>
-{
-public:
-	LiveActionAttack(){ grid = 0; }
-	uint16 grid;
-};
-class LiveActionSkill : public LiveAction<LiveActionType::skill>
-{
-public:
-	LiveActionSkill(){ skillID = 0; grid = 0; }
-	uint16 skillID;
-	uint16 grid;
-};
-typedef std::queue<ILiveAction*> LiveActionQueue;
 #pragma pack(pop)
 
 class GameLandView;
@@ -96,7 +53,6 @@ MODEL_TYPECLASS_DECLARE_HEADER(GameLand)
 			EPTT_ActiveSoldierID = 3,
 		};
 		bool playAction(const int8* data, uint32 length);
-		//const SoldierTroopsUnitGrid* getSoldierByTroopAndNumber(uint8 t = 0, uint8 n = 0) const;
 		std::string getTroopName() const;
 		// lua call
 		void luaSetBoolProperty(PropertyType type, bool b);
@@ -113,8 +69,9 @@ MODEL_TYPECLASS_DECLARE_HEADER(GameLand)
 		PROPERTY_DEFINED_SETTER_DEFINED(ActiveSoldierID, uint8, GameLandModel);
 
 	private:
-		LiveActionQueue mLiveActionQueue;
 		/*
+		//const SoldierTroopsUnitGrid* getSoldierByTroopAndNumber(uint8 t = 0, uint8 n = 0) const;
+		LiveActionQueue mLiveActionQueue;
 		typedef std::vector<LandTreeGrid*> LandGridList;
 		bool loadLandData(const std::string& landName);
 		bool clearLandData();
@@ -178,6 +135,57 @@ struct SoldierTroopsUnitGrid : public LandTreeGrid
 };
 typedef std::map<uint8, const SoldierTroopsUnitGrid*> TroopSoldiers;
 typedef std::map<uint8, TroopSoldiers> SoldierTroops;
-
+enum class LiveActionType : uint8
+{
+change = 1		// 切换阵营：			参数1（阵营ID uint8）
+,select			// 选中部队：			参数1（部队编号 uint8）
+,moveto			// 移动到相邻格子：		参数1（移动格数n uint8） 参数2...参数n（GridOrientation）
+,attack			// 攻击某格部队：		参数1（攻击次数n uint8） 参数2...参数n（格子编号 uint16）
+,skill			// 技能攻击某格部队：	参数1（攻击次数n uint8） 参数2（技能ID uint16）参数3（格子编号 uint16）...参数n
+,unused
+};
+class ILiveAction
+{
+public:
+virtual LiveActionType type() const = 0;
+};
+template<LiveActionType typeValue>
+class LiveAction : public ILiveAction, public MAKER_ENUM2BTRTTI_TYPE((uint16)typeValue)
+{
+public:
+virtual LiveActionType type() const{ return (LiveActionType)this->eType(); }
+};
+class LiveActionChange : public LiveAction<LiveActionType::change>
+{
+public:
+LiveActionChange(){ troopID = 0; }
+uint8 troopID;
+};
+class LiveActionSelect : public LiveAction<LiveActionType::select>
+{
+public:
+LiveActionSelect(){ number = 0; }
+uint8 number;
+};
+class LiveActionMoveTo : public LiveAction<LiveActionType::moveto>
+{
+public:
+LiveActionMoveTo(){ to = GridOrientation_maxnum; }
+GridOrientation to;
+};
+class LiveActionAttack : public LiveAction<LiveActionType::attack>
+{
+public:
+LiveActionAttack(){ grid = 0; }
+uint16 grid;
+};
+class LiveActionSkill : public LiveAction<LiveActionType::skill>
+{
+public:
+LiveActionSkill(){ skillID = 0; grid = 0; }
+uint16 skillID;
+uint16 grid;
+};
+typedef std::queue<ILiveAction*> LiveActionQueue;
 #pragma pack(pop)
 */

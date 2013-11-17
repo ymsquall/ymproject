@@ -186,8 +186,6 @@ void GameLandView::onMapPanelDragEvent(CCObject* pSender, DragPanelEventType typ
 		if(mNeedWaitDragPanelBerthOvered)
 		{
 			mNeedWaitDragPanelBerthOvered = false;
-			ActionStepOveredEventParams eventArgs;
-			Event_OnActionStepOvered(this, &eventArgs);
 		}
 		break;
 	default:
@@ -201,6 +199,8 @@ void GameLandView::onBackBtnTouch(cocos2d::CCObject* pSender)
 }
 
 /*
+Event_OnActionStepOvered(this, &eventArgs);
+ActionStepOveredEventParams eventArgs;
 void GameLandView::onMapGridTouched(cocos2d::CCObject* pSender)
 {
 #ifdef TEST_VIEWGRIDS

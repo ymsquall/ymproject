@@ -19,7 +19,6 @@ public:
 	~GameLandView();
 
 	typedef std::vector<cocos2d::extension::UIImageView*> HeroHeadList;
-	framework::unity::event<GameLandView*, ActionStepOveredEventParams*> Event_OnActionStepOvered;
 
 	virtual bool init();
 	virtual bool initForMvvm();
@@ -48,7 +47,8 @@ public:
 	cocos2d::extension::UIImageView* mNowSelectGridImage;
 	bool mNeedWaitDragPanelBerthOvered;
 	/*
-	//typedef struct LandTreeGrid *LandTreeGridPtr;
+	framework::unity::event<GameLandView*, ActionStepOveredEventParams*> Event_OnActionStepOvered;
+	typedef struct LandTreeGrid *LandTreeGridPtr;
 	void doLiveChanged(bool isLive);
 	void doTroopChanged(const std::string& name);
 	void doSelectGrid(const LandTreeGrid* pGrid);

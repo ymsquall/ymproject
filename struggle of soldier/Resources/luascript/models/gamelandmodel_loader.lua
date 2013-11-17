@@ -58,6 +58,7 @@ function LUAGameLandLoadDataWithMapName(pModel, mapName)
 					rtIndex = -1
 					rbIndex = -1
 				end
+				-- 这里lefttop和leftbottom,righttop和rightbottom）是反的，先不查原因了，反过来就行
 				if topIndex >= 0 and topIndex < count then
 					_LUASelectedLandGridDatas.grids[nowIndex+1]['side'][GridOrientation_topper] = topIndex+1
 				end
@@ -65,16 +66,16 @@ function LUAGameLandLoadDataWithMapName(pModel, mapName)
 					_LUASelectedLandGridDatas.grids[nowIndex+1]['side'][GridOrientation_bottom] = bottomIndex+1
 				end
 				if ltIndex >= 0 and ltIndex < count then
-					_LUASelectedLandGridDatas.grids[nowIndex+1]['side'][GridOrientation_lefttop] = ltIndex+1
+					_LUASelectedLandGridDatas.grids[nowIndex+1]['side'][GridOrientation_lefttop] = lbIndex+1
 				end
 				if lbIndex >= 0 and lbIndex < count then
-					_LUASelectedLandGridDatas.grids[nowIndex+1]['side'][GridOrientation_leftbottom] = lbIndex+1
+					_LUASelectedLandGridDatas.grids[nowIndex+1]['side'][GridOrientation_leftbottom] = ltIndex+1
 				end
 				if rtIndex >= 0 and rtIndex < count then
-					_LUASelectedLandGridDatas.grids[nowIndex+1]['side'][GridOrientation_righttop] = rtIndex+1
+					_LUASelectedLandGridDatas.grids[nowIndex+1]['side'][GridOrientation_righttop] = rbIndex+1
 				end
 				if rbIndex >= 0 and rbIndex < count then
-					_LUASelectedLandGridDatas.grids[nowIndex+1]['side'][GridOrientation_rightbottom] = rbIndex+1
+					_LUASelectedLandGridDatas.grids[nowIndex+1]['side'][GridOrientation_rightbottom] = rtIndex+1
 				end
 				LUALoadLandGridView(pView, _LUASelectedLandGridDatas.grids[nowIndex+1])
 			end

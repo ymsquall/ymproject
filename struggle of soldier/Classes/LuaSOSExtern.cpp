@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaSOSExtern
-** Generated automatically by tolua++-1.0.92 on 11/16/13 17:55:00.
+** Generated automatically by tolua++-1.0.92 on 11/16/13 23:55:26.
 */
 
 /****************************************************************************
@@ -951,6 +951,12 @@ TOLUA_API int tolua_LuaSOSExtern_open (lua_State* tolua_S)
   tolua_constant(tolua_S,"GridOrientation_rightbottom",GridOrientation_rightbottom);
   tolua_constant(tolua_S,"GridOrientation_righttop",GridOrientation_righttop);
   tolua_constant(tolua_S,"GridOrientation_maxnum",GridOrientation_maxnum);
+  tolua_constant(tolua_S,"LiveActionType_change",LiveActionType_change);
+  tolua_constant(tolua_S,"LiveActionType_select",LiveActionType_select);
+  tolua_constant(tolua_S,"LiveActionType_moveto",LiveActionType_moveto);
+  tolua_constant(tolua_S,"LiveActionType_attack",LiveActionType_attack);
+  tolua_constant(tolua_S,"LiveActionType_skill",LiveActionType_skill);
+  tolua_constant(tolua_S,"LiveActionType_unused",LiveActionType_unused);
   tolua_cclass(tolua_S,"GameLandModel","GameLandModel","ModelImpl",NULL);
   tolua_beginmodule(tolua_S,"GameLandModel");
    tolua_constant(tolua_S,"EPTT_IsLive",GameLandModel::EPTT_IsLive);
