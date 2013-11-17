@@ -41,7 +41,9 @@ void ViewModelManager::initWithAppStart(engine::AppDelegate* pApp)
 	searchPaths.push_back("studioui/SelectHeroView");
 	searchPaths.push_back("studioui/GameLand");
 	searchPaths.push_back("studioui/animation");
+	searchPaths.push_back("studioui/animation/archer");
 	searchPaths.push_back("studioui/animation/rider");
+	searchPaths.push_back("studioui/animation/saber");
 	pFileUtils->setSearchPaths(searchPaths);
 
 	Director* pDirector = Director::getInstance();

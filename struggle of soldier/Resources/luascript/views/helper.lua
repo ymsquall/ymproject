@@ -24,43 +24,30 @@ end
 --部队朝向：上=0，左上=1，左下=2，下=3，右下=4，右上=5
 --兵种：步兵=1，骑兵=2，枪兵=3，弓兵=4
 function LUACreateSoldierAnimationWithTypeAndOrientation(soldierType, orientation, posX, posY)
-	local animName = ''
-	if soldierType == 1 then
-		if orientation == 0 then
-		elseif orientation == 1 then
-		elseif orientation == 2 then
-			animName = 'saber_leftbottom'
-		elseif orientation == 3 then
-		elseif orientation == 4 then
-		elseif orientation == 5 then
-			animName = 'saber_righttop'
-		end
-	elseif soldierType == 2 then
-		if orientation == 0 then
-		elseif orientation == 1 then
-		elseif orientation == 2 then
-			animName = 'rider_leftbottom'
-		elseif orientation == 3 then
-		elseif orientation == 4 then
-		elseif orientation == 5 then
-			animName = 'rider_righttop'
-		end
-	elseif soldierType == 3 then
-		if orientation == 0 then
-		elseif orientation == 1 then
-		elseif orientation == 2 then
-		elseif orientation == 3 then
-		elseif orientation == 4 then
-		elseif orientation == 5 then
-		end
-	elseif soldierType == 4 then
-		if orientation == 0 then
-		elseif orientation == 1 then
-		elseif orientation == 2 then
-		elseif orientation == 3 then
-		elseif orientation == 4 then
-		elseif orientation == 5 then
-		end
+	local solder
+	if SoldierType_Saber == soldierType then
+		solder = 'saber_'
+	elseif SoldierType_Rider == soldierType then
+		solder = 'rider_'
+	elseif SoldierType_Lancer == soldierType then
+		solder = 'lancer_'
+	elseif SoldierType_Archer == soldierType then
+		solder = 'archer_'
 	end
-	return LUACreateAndPlayArmature(animName, 0, posX, posY, 1.0, 0.65)
+	local orient
+	print(orientation)
+	if GridOrientation_topper == orientation then
+		orient = 'top'
+	elseif GridOrientation_lefttop == orientation then
+		orient = 'lefttop'
+	elseif GridOrientation_leftbottom == orientation then
+		orient = 'leftbottom'
+	elseif GridOrientation_bottom == orientation then
+		orient = 'bottom'
+	elseif GridOrientation_rightbottom == orientation then
+		orient = 'rightbottom'
+	elseif GridOrientation_righttop == orientation then
+		orient = 'righttop'
+	end
+	return LUACreateAndPlayArmature(solder..orient, 0, posX, posY, 1.0, 0.65)
 end

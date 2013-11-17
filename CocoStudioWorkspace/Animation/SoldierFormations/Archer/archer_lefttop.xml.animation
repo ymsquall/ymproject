@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <AnimationProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Version>0.0.0.0</Version>
-  <Name>rider_lefttop</Name>
-  <ProjectDir>Y:\Work\ymproject_github\CocoStudioWorkspace\Animation\SoldierFormations\Rider</ProjectDir>
-  <JsonFileName>rider_lefttop.json</JsonFileName>
-  <Resources>Y:\Work\ymproject_github\CocoStudioWorkspace\Animation\SoldierFormations\Rider\Resources</Resources>
-  <JsonFolder>Y:\Work\ymproject_github\CocoStudioWorkspace\Animation\SoldierFormations\Rider\Json</JsonFolder>
+  <Name>archer_lefttop</Name>
+  <ProjectDir>Y:\Work\ymproject_github\CocoStudioWorkspace\Animation\SoldierFormations\Arche</ProjectDir>
+  <JsonFileName>archer_lefttop.json</JsonFileName>
+  <Resources>Y:\Work\ymproject_github\CocoStudioWorkspace\Animation\SoldierFormations\Arche\Resources</Resources>
+  <JsonFolder>Y:\Work\ymproject_github\CocoStudioWorkspace\Animation\SoldierFormations\Arche\Json</JsonFolder>
   <JsonList />
   <ResourceFileList />
   <CanvasSize>
