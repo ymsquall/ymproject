@@ -85,14 +85,14 @@ function LUAPlayStruggleRecord(model, data, live)
 	LUAReadStruggleRecordData(data)
 	local pGameLandModel = LuaUserDataConversion:toGameLandModle(model)
 	local pGameLandView = pGameLandModel:luaGetViewBinding()
-	LUALUAGameLandView_PlayStruggleBegining()
+	LUAGameLandView_PlayStruggleBegining()
 	LUAPlayStruggleRecordOneStep(pGameLandView)
 	return true
 end
 
 function LUAPlayStruggleRecordOneStep(view)
 	if #_LUANowPlayingRecordData <= 0 then
-		LUALUAGameLandView_PlayStruggleEnded()
+		LUAGameLandView_PlayStruggleEnded()
 		return
 	end
 	local actionData = _LUANowPlayingRecordData[1]

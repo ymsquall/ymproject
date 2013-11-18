@@ -1,5 +1,40 @@
 -- 负责动画播放的表现展示
-function LUALUAGameLandView_PlayStruggleBegining(isLive)
+-- 动作类型(actionType): 1 = 01.dj 2 = 02.yd 3 = 03.bj 4 = 04.gj 5 = 05.sw
+function LUAGameLandGetSoldierFullAnimName(orientation, actionType)
+	local orient
+	if GridOrientation_topper == orientation then
+		orient = 'top_'
+	elseif GridOrientation_lefttop == orientation then
+		orient = 'lefttop_'
+	elseif GridOrientation_leftbottom == orientation then
+		orient = 'leftbottom_'
+	elseif GridOrientation_bottom == orientation then
+		orient = 'bottom_'
+	elseif GridOrientation_rightbottom == orientation then
+		orient = 'rightbottom_'
+	elseif GridOrientation_righttop == orientation then
+		orient = 'righttop_'
+	elseif GridOrientation_left == orientation then
+		orient = 'left_'
+	elseif GridOrientation_right == orientation then
+		orient = 'right_'
+	end
+	local actionName
+	if 1 == actionType then
+		solder = '01.dj'
+	elseif 2 == actionType then
+		solder = '02.yd'
+	elseif 3 == actionType then
+		solder = '03.bj'
+	elseif 4 == actionType then
+		solder = '04.gj'
+	elseif 5 == actionType then
+		solder = '05.sw'
+	end
+	return orient..actionName
+end
+
+function LUAGameLandView_PlayStruggleBegining(isLive)
 	print('struggle playing begining')
 	--[[
 	if isLive == true then
@@ -190,7 +225,7 @@ function LUAGameLandView_doSkillToGrid(view, skillID, gridNumber)
 	view:runAction(CCSequence:create(actList))
 end
 
-function LUALUAGameLandView_PlayStruggleEnded()
+function LUAGameLandView_PlayStruggleEnded()
 	print('struggle playing ended')
 	_LUAGameLandView.mMapDragPanel:setTouchEnable(true)
 end

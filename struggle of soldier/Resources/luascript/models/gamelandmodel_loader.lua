@@ -110,6 +110,7 @@ function LUALoadGameLandViewResources()
 	pArmatureDataMgr:addArmatureFileInfo("studioui/animation/rider/rider0.png", "studioui/animation/rider/rider0.plist", "studioui/animation/rider/rider_righttop.json")
 
 	pArmatureDataMgr:addArmatureFileInfo("studioui/animation/actions/beattacked0.png", "studioui/animation/actions/beattacked0.plist", "studioui/animation/actions/beattacked.json")
+	pArmatureDataMgr:addArmatureFileInfo("studioui/animation/actions/luncer_skill_cast_0_0.png", "studioui/animation/actions/luncer_skill_cast_0_0.plist", "studioui/animation/actions/luncer_skill_cast_0.json")
 
 end
 
