@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{83371666-be62-4e91-b8cc-395730853621}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="win32">
+      <UniqueIdentifier>{917fb40f-fc6d-4ee9-9a20-26debabe41aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Model">
+      <UniqueIdentifier>{b76a5b4a-31a7-4d30-89cb-a68ebaf74ee2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\View">
+      <UniqueIdentifier>{45a35c90-2fe9-4e3e-b65f-2608e14800ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\ViewModel">
+      <UniqueIdentifier>{1abf9179-123f-4864-8f0e-514c92fa44f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Tools">
+      <UniqueIdentifier>{f955f2fe-dacd-46dd-a314-a2c592ef958c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Model_Login.cpp">
+      <Filter>Classes\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Win32MsgProc.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\View_Login.cpp">
+      <Filter>Classes\View</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ViewModel_Login.cpp">
+      <Filter>Classes\ViewModel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\RootSceneView.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TopLevelView.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ViewModelManager.cpp">
+      <Filter>Classes\ViewModel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Model_SelectHero.cpp">
+      <Filter>Classes\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\View_SelectHero.cpp">
+      <Filter>Classes\View</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ViewModel_SelectHero.cpp">
+      <Filter>Classes\ViewModel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LuaUserDataConversion.cpp">
+      <Filter>Classes\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Model_GameScene.cpp">
+      <Filter>Classes\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\View_GameScene.cpp">
+      <Filter>Classes\View</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ViewModel_GameScene.cpp">
+      <Filter>Classes\ViewModel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LuaSOFExtern.cpp">
+      <Filter>Classes\Tools</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model_Login.h">
+      <Filter>Classes\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32MsgProc.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\View_Login.h">
+      <Filter>Classes\View</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ViewModel_Login.h">
+      <Filter>Classes\ViewModel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TopLevelView.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\RootSceneView.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ModelTypeDefine.h">
+      <Filter>Classes\ViewModel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ViewModelManager.h">
+      <Filter>Classes\ViewModel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model_SelectHero.h">
+      <Filter>Classes\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\View_SelectHero.h">
+      <Filter>Classes\View</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ViewModel_SelectHero.h">
+      <Filter>Classes\ViewModel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LuaUserDataConversion.h">
+      <Filter>Classes\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model_GameScene.h">
+      <Filter>Classes\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\View_GameScene.h">
+      <Filter>Classes\View</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ViewModel_GameScene.h">
+      <Filter>Classes\ViewModel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LuaSOFExtern.h">
+      <Filter>Classes\Tools</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

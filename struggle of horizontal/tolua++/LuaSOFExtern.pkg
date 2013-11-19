@@ -1,0 +1,7 @@
+$#include "LuaSOFExtern.h"
+
+$pfile "singleton.pkg"
+$pfile "ViewModelManager.pkg"
+$pfile "Model_GameScene.pkg"
+$pfile "View_GameScene.pkg"
+$pfile "LuaUserDataConversion.pkg"

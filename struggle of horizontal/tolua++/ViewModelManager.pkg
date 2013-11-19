@@ -1,0 +1,18 @@
+class ViewModelManager : public unity::object
+					, public mvvm::IModelManager
+					, public unity::SingletonAutoT<ViewModelManager>
+{
+	static ViewModelManager* point();
+	static void reloadLuaScript(const char* luaFile);
+	ViewModelManager(void);
+	~ViewModelManager(void);
+
+	void initWithAppStart(engine::AppDelegate* pApp);
+	void modelLoop(float dt);
+	void onAppInitOveredShowingBefore(engine::AppDelegate* pApp, unity::RoutedEventArgs* args);
+	void onAppInitOveredShowingAfter(engine::AppDelegate* pApp, unity::RoutedEventArgs* args);
+
+	void selectModel(ModelType type);
+
+	bool luaPlayStruggle(framework::unity::blockwrite* data, bool isLive);
+};
