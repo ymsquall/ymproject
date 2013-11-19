@@ -1,0 +1,8 @@
+class LuaUserDataConversion
+{
+	static framework::unity::blockwrite* toBlockWrite(void* pointer);
+	static GameSceneModel* toGameSceneModle(void* pointer);
+	static GameSceneView* toGameSceneView(void* pointer);
+	static cocos2d::extension::Armature* toArmature(void* pointer);
+	static CCNode* toNode(void* pointer);
+};

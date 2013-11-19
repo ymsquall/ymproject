@@ -1,0 +1,5 @@
+class GameSceneView : public UILayer
+{
+	GameSceneView();
+	~GameSceneView();
+};
