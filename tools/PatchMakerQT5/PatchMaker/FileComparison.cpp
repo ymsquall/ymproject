@@ -1,5 +1,6 @@
 #include "FileComparison.h"
-#include "helper.h"
+#include <QDir>
+#include <QtDebug>
 
 FileComparison::FileComparison(QObject *parent) :
     QObject(parent)
@@ -33,12 +34,80 @@ void FileComparison::scanFileWithPath(const QString& oldPath, const QString& new
 {
     int pos1 = oldPath.lastIndexOf('/');
     int pos2 = newPath.lastIndexOf('/');
+    if(pos1 == -1 || pos2 == -1)
+    {
+        mOldRootPath = "";
+        mNewRootPath = "";
+        return;
+    }
     mOldRootPath = oldPath.mid(pos1+1);
     mNewRootPath = newPath.mid(pos2+1);
     mOldRootFullPath = oldPath + '/';
     mNewRootFullPath = newPath + '/';
-    mOldFileList = Helper::getAllFilesInPath(oldPath);
-    mNewFileList = Helper::getAllFilesInPath(newPath);
+    // 先查找有无版本MD5文件，如果有说明以前扫描过，直接通过MD5文件获取文件列表和文件MD5码
+    QString nowWorkPath = QDir::currentPath();
+    QString oldMD5FileFullPath = nowWorkPath + "/MD5List/" + mOldRootPath + ".md5";
+    QString newMD5FileFullPath = nowWorkPath + "/MD5List/" + mNewRootPath + ".md5";
+    QFile oldMD5File(oldMD5FileFullPath);
+    if(oldMD5File.exists() && oldMD5File.open(QIODevice::ReadOnly))
+    {
+        QString fileBuff = oldMD5File.readAll();
+        QList<QString> lines = fileBuff.split("\r\n");
+        for(int i = 0; i < lines.size(); ++ i)
+        {
+            QString fileStr = lines[i].mid(lines[i].indexOf(oldPath) + 1);
+            QList<QString> fileInfo = fileStr.split("\t");
+            if(fileInfo.size() == 2)
+            {
+                FileMD5 fileMD5;
+                fileMD5.fileName = fileInfo[0];
+                fileMD5.fileMD5 = fileInfo[1];
+                mOldFileList << fileMD5;
+            }
+        }
+        oldMD5File.close();
+    }
+    else
+    {
+        QDir checkDir(mOldRootFullPath);
+        if(!checkDir.exists())
+        {
+            mOldRootPath = "";
+            mNewRootPath = "";
+            return;
+        }
+        mOldFileList = Helper::getAllFilesInPath(oldPath);
+    }
+    QFile newMD5File(newMD5FileFullPath);
+    if(newMD5File.exists() && newMD5File.open(QIODevice::ReadOnly))
+    {
+        QString fileBuff = newMD5File.readAll();
+        QList<QString> lines = fileBuff.split("\r\n");
+        for(int i = 0; i < lines.size(); ++ i)
+        {
+            QString fileStr = lines[i].mid(lines[i].indexOf(oldPath) + 1);
+            QList<QString> fileInfo = fileStr.split("\t");
+            if(fileInfo.size() == 2)
+            {
+                FileMD5 fileMD5;
+                fileMD5.fileName = fileInfo[0];
+                fileMD5.fileMD5 = fileInfo[1];
+                mNewFileList << fileMD5;
+            }
+        }
+        newMD5File.close();
+    }
+    else
+    {
+        QDir checkDir(mNewRootFullPath);
+        if(!checkDir.exists())
+        {
+            mOldRootPath = "";
+            mNewRootPath = "";
+            return;
+        }
+        mNewFileList = Helper::getAllFilesInPath(newPath);
+    }
 }
 
 const FileCompResultList& FileComparison::comparison()
@@ -46,23 +115,19 @@ const FileCompResultList& FileComparison::comparison()
     while(mOldFileList.size() > 0)
     {
         bool finded = false;
-        QStringList cloneOldList = mOldFileList;
+        QList<FileMD5> cloneOldList = mOldFileList;
         for(int j = 0; j < mNewFileList.size();)
         {
-            if(mNewFileList[j] == "filelist")
+            if(mNewFileList[j].fileName == "filelist")
             {
                 int id = 0;
             }
-            if(mOldFileList[0] == mNewFileList[j])
+            if(mOldFileList[0].fileName == mNewFileList[j].fileName)
             {
-                QString name1MD5 = Helper::getFileMd5(mOldRootFullPath + mOldFileList[0]);
-                QString name2MD5 = Helper::getFileMd5(mNewRootFullPath + mNewFileList[j]);
-                name1MD5 = name1MD5.toUpper();
-                name2MD5 = name2MD5.toUpper();
                 FileCompResultType sameType = FileCompResultType::None;
-                if(name1MD5 != name2MD5)
+                if(mOldFileList[0].fileMD5 != mNewFileList[j].fileMD5)
                     sameType = FileCompResultType::Modify;
-                FileCompResult compResult = FileCompResult{ mOldFileList[0], name1MD5, name2MD5, sameType };
+                FileCompResult compResult = FileCompResult{ mOldFileList[0].fileName, mOldFileList[0].fileMD5, mNewFileList[j].fileMD5, sameType };
                 mCompResultList.append(compResult);
                 mNewFileList.removeAt(j);
                 finded = true;
@@ -71,7 +136,7 @@ const FileCompResultList& FileComparison::comparison()
             bool addFinded = false;
             for(int i = 0; i < cloneOldList.size(); ++ i)
             {
-                if(cloneOldList[i] == mNewFileList[j])
+                if(cloneOldList[i].fileName == mNewFileList[j].fileName)
                 {
                     addFinded = true;
                     break;
@@ -79,9 +144,7 @@ const FileCompResultList& FileComparison::comparison()
             }
             if(!addFinded)
             {
-                QString name2MD5 = Helper::getFileMd5(mNewRootFullPath + mNewFileList[j]);
-                name2MD5 = name2MD5.toUpper();
-                FileCompResult compResult = FileCompResult{ mNewFileList[j], "", name2MD5, FileCompResultType::Added };
+                FileCompResult compResult = FileCompResult{ mNewFileList[j].fileName, "", mNewFileList[j].fileMD5, FileCompResultType::Added };
                 mCompResultList.append(compResult);
                 mNewFileList.removeAt(j);
             }
@@ -90,9 +153,7 @@ const FileCompResultList& FileComparison::comparison()
         }
         if(!finded)
         {
-            QString name1MD5 = Helper::getFileMd5(mOldRootFullPath + mOldFileList[0]);
-            name1MD5 = name1MD5.toUpper();
-            FileCompResult compResult = FileCompResult{ mOldFileList[0], name1MD5, "", FileCompResultType::Removed };
+            FileCompResult compResult = FileCompResult{ mOldFileList[0].fileName, mOldFileList[0].fileMD5, "", FileCompResultType::Removed };
             mCompResultList.append(compResult);
         }
         mOldFileList.removeAt(0);

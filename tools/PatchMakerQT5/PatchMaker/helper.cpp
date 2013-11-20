@@ -4,42 +4,6 @@
 #include <QDir>
 #include <QtDebug>
 
-static void enumFiles(QString rootPath, QString path, QStringList& retList)
-{
-    QDir dir(path);
-    dir.setFilter(QDir::Files|QDir::Dirs);
-    QFileInfoList fileInfos = dir.entryInfoList();
-    for(int i = 0; i < fileInfos.size(); ++ i)
-    {
-        QString fileName = fileInfos[i].fileName();
-        QString filePath = fileInfos[i].filePath();
-        if(fileName == "." || fileName == "..")
-        {
-            //qDebug() << "is not file or dirs[" << fileName << "]!";
-            continue;
-        }
-        if(fileInfos[i].isDir())
-        {
-            qDebug() << "finded a dir[" << fileName << "], enums";
-            enumFiles(rootPath, filePath, retList);
-        }
-        else
-        {
-            filePath = filePath.mid(rootPath.size()+1);
-            retList << filePath;
-            qDebug() << "finded a file[" << filePath << "], add to list";
-        }
-    }
-}
-
-QStringList& Helper::getAllFilesInPath(QString rootPath)
-{
-    static QStringList retList;
-    retList.clear();
-    enumFiles(rootPath, rootPath, retList);
-    return retList;
-}
-
 QByteArray Helper::getFileMd5(QString filePath)
 {
     QFile localFile(filePath);
@@ -85,4 +49,44 @@ QByteArray Helper::getFileMd5(QString filePath)
      localFile.close();
      QByteArray md5 = ch.result().toHex();
      return md5;
+}
+
+static void enumFiles(QString rootPath, QString path, QList<FileMD5>& retList)
+{
+    QDir dir(path);
+    dir.setFilter(QDir::Files|QDir::Dirs);
+    QFileInfoList fileInfos = dir.entryInfoList();
+    for(int i = 0; i < fileInfos.size(); ++ i)
+    {
+        QString fileName = fileInfos[i].fileName();
+        QString filePath = fileInfos[i].filePath();
+        if(fileName == "." || fileName == "..")
+        {
+            //qDebug() << "is not file or dirs[" << fileName << "]!";
+            continue;
+        }
+        if(fileInfos[i].isDir())
+        {
+            qDebug() << "finded a dir[" << fileName << "], enums";
+            enumFiles(rootPath, filePath, retList);
+        }
+        else
+        {
+            filePath = filePath.mid(rootPath.size()+1);
+            FileMD5 fileMD5;
+            fileMD5.fileName = filePath;
+            fileMD5.fileMD5 = Helper::getFileMd5(rootPath + '/' + filePath);
+            fileMD5.fileMD5 = fileMD5.fileMD5.toUpper();
+            retList << fileMD5;
+            qDebug() << "finded a file[" << filePath << "], add to list";
+        }
+    }
+}
+
+QList<FileMD5>& Helper::getAllFilesInPath(QString rootPath)
+{
+    static QList<FileMD5> retList;
+    retList.clear();
+    enumFiles(rootPath, rootPath, retList);
+    return retList;
 }

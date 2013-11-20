@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QStringList>
+#include "helper.h"
 
 enum class FileCompResultType : char
 {
@@ -62,8 +63,8 @@ private:
     QString mNewRootPath;
     QString mOldRootFullPath;
     QString mNewRootFullPath;
-    QStringList mOldFileList;
-    QStringList mNewFileList;
+    QList<FileMD5> mOldFileList;
+    QList<FileMD5> mNewFileList;
     FileCompResultList mCompResultList;
 };
 

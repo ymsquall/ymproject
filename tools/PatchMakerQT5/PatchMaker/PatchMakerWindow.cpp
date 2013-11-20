@@ -18,10 +18,10 @@ PatchMakerWindow::PatchMakerWindow(QWidget *parent) :
     mAboutDlg = NULL;
     ui->setupUi(this);
 
-
-    mSelDirPath1 = "D:/football_manager/ios/PatchMaker/Versions/000005";
-    mSelDirPath2 = "D:/football_manager/ios/PatchMaker/Versions/000006";
-    mSelDirPath3 = "D:/football_manager/ios/PatchMaker";
+    QString nowPath = QDir::currentPath();
+    mSelDirPath1 = nowPath + "/Versions/000001";
+    mSelDirPath2 = nowPath + "/Versions/000002";
+    mSelDirPath3 = nowPath;
     ui->lineEdit_1->setText(mSelDirPath1);
     ui->lineEdit_2->setText(mSelDirPath2);
     ui->lineEdit_3->setText(mSelDirPath3);
@@ -82,18 +82,6 @@ void PatchMakerWindow::onBrowseBtn3Clicked()
 
 void PatchMakerWindow::onBrowseBtn4Clicked()
 {
-    QDir dir1(mSelDirPath1);
-    if(mSelDirPath1 == "" || !dir1.exists())
-    {
-        qDebug() << "dir[" << mSelDirPath1 << "] dos not exist!";
-        return;
-    }
-    QDir dir2(mSelDirPath2);
-    if(mSelDirPath2 == "" || !dir2.exists())
-    {
-        qDebug() << "dir[" << mSelDirPath2 << "] dos not exist!";
-        return;
-    }
     QDir dir3(mSelDirPath3);
     if(mSelDirPath3 == "" || !dir3.exists())
     {
@@ -108,6 +96,29 @@ void PatchMakerWindow::onBrowseBtn4Clicked()
     this->createScanAndMD5TableView(fileList);
     mOldVersionsStr = fileCompObject.oldPathName();
     mNewVersionsStr = fileCompObject.newPathName();
+    if(mOldVersionsStr == "")
+    {
+        QDir dir1(mSelDirPath1);
+        if(mSelDirPath1 == "" || !dir1.exists())
+        {
+            qDebug() << "选中的版本目录目录错误[" << mSelDirPath1 << "]!";
+            QMessageBox::question(this, "Show Qt", "选中的版本目录目录错误，检查路径是否存在!",
+                QMessageBox::Ok, QMessageBox::Ok);
+
+            return;
+        }
+    }
+    if(mNewVersionsStr == "")
+    {
+        QDir dir2(mSelDirPath2);
+        if(mSelDirPath2 == "" || !dir2.exists())
+        {
+            qDebug() << "选中的版本目录目录错误[" << mSelDirPath2 << "]!";
+            QMessageBox::question(this, "Show Qt", "选中的版本目录目录错误，检查路径是否存在!",
+                QMessageBox::Ok, QMessageBox::Ok);
+            return;
+        }
+    }
     this->createMD5ListFile(fileList, mOldVersionsStr, mNewVersionsStr);
     this->setEnabled(true);
 }
@@ -167,7 +178,7 @@ void PatchMakerWindow::createPatch(const FileCompResultList& fileList, const QSt
     fileListFile.open(QIODevice::WriteOnly);
     int newVersNum = newVerStr.toInt();
     int canPatch = 1;
-    QString canUpdateFileName = newVerRootDir + "/update.full";
+    QString canUpdateFileName = newVerRootDir + "/update.full.unused";
     QFile canUpdateFlag(canUpdateFileName);
     if(canUpdateFlag.exists())
     {
@@ -261,82 +272,98 @@ void PatchMakerWindow::createMD5ListFile(const FileCompResultList& fileList, con
 
 void PatchMakerWindow::createScanAndMD5TableView(const FileCompResultList& fileList)
 {
-    ui->tableWidget_1->setRowCount(fileList.size());
-    ui->tableWidget_2->setRowCount(fileList.size());
+    typedef struct TableRow
+    {
+        TableRow()
+        {
+            col1 = col2 = col3 = NULL;
+        }
+
+        QTableWidgetItem* col1;
+        QTableWidgetItem* col2;
+        QTableWidgetItem* col3;
+    };
+    QList<TableRow> table1RowList;
+    QList<TableRow> table2RowList;
+
     for(int i = 0; i < fileList.size(); ++ i)
     {
-        QTableWidgetItem* pItem1 = NULL;
-        QTableWidgetItem* pItem2 = NULL;
-        QTableWidgetItem* pItem1Col1 = NULL;
-        QTableWidgetItem* pItem2Col1 = NULL;
-        QTableWidgetItem* pItem1Col2 = NULL;
-        QTableWidgetItem* pItem2Col2 = NULL;
+        TableRow table1Row;
+        TableRow table2Row;
         if(fileList[i].resultType == FileCompResultType::Removed)
         {
-            pItem1 = new QTableWidgetItem(fileList[i].fileName);
-            pItem2 = new QTableWidgetItem("----");
-            pItem1Col1 = new QTableWidgetItem(fileList[i].file1MD5);
-            pItem2Col1 = new QTableWidgetItem("----");
-            pItem1Col2 = new QTableWidgetItem("移除文件");
-            pItem2Col2 = new QTableWidgetItem("移除文件");
+            table1Row.col1 = new QTableWidgetItem(fileList[i].fileName);
+            table2Row.col1 = new QTableWidgetItem("----");
+            table1Row.col2 = new QTableWidgetItem(fileList[i].file1MD5);
+            table2Row.col2 = new QTableWidgetItem("----");
+            table1Row.col3 = new QTableWidgetItem("移除文件");
+            table2Row.col3 = new QTableWidgetItem("移除文件");
             QLinearGradient linearGrad(QPointF(0, 0), QPointF(200, 200));
             linearGrad.setColorAt(0, Qt::darkRed);
             linearGrad.setColorAt(1, Qt::red);
             QBrush brush(linearGrad);
-            pItem1->setBackground(brush);
-            pItem2->setBackground(brush);
+            table1Row.col1->setBackground(brush);
+            table2Row.col1->setBackground(brush);
         }
         else if(fileList[i].resultType == FileCompResultType::Added)
         {
-            pItem1 = new QTableWidgetItem("----");
-            pItem2 = new QTableWidgetItem(fileList[i].fileName);
-            pItem1Col1 = new QTableWidgetItem("----");
-            pItem2Col1 = new QTableWidgetItem(fileList[i].file2MD5);
-            pItem1Col2 = new QTableWidgetItem("新增文件");
-            pItem2Col2 = new QTableWidgetItem("新增文件");
+            table1Row.col1 = new QTableWidgetItem("----");
+            table2Row.col1 = new QTableWidgetItem(fileList[i].fileName);
+            table1Row.col2 = new QTableWidgetItem("----");
+            table2Row.col2 = new QTableWidgetItem(fileList[i].file2MD5);
+            table1Row.col3 = new QTableWidgetItem("新增文件");
+            table2Row.col3 = new QTableWidgetItem("新增文件");
             QLinearGradient linearGrad(QPointF(0, 0), QPointF(200, 200));
             linearGrad.setColorAt(0, Qt::darkGreen);
             linearGrad.setColorAt(1, Qt::green);
             QBrush brush(linearGrad);
-            pItem1->setBackground(brush);
-            pItem2->setBackground(brush);
+            table1Row.col1->setBackground(brush);
+            table2Row.col1->setBackground(brush);
         }
         else
         {
-            pItem1 = new QTableWidgetItem(fileList[i].fileName);
-            pItem2 = new QTableWidgetItem(fileList[i].fileName);
-            pItem1Col1 = new QTableWidgetItem(fileList[i].file1MD5);
-            pItem2Col1 = new QTableWidgetItem(fileList[i].file2MD5);
             if(fileList[i].resultType == FileCompResultType::Modify)
             {
+                table1Row.col1 = new QTableWidgetItem(fileList[i].fileName);
+                table2Row.col1 = new QTableWidgetItem(fileList[i].fileName);
+                table1Row.col2 = new QTableWidgetItem(fileList[i].file1MD5);
+                table2Row.col2 = new QTableWidgetItem(fileList[i].file2MD5);
                 QLinearGradient linearGrad(QPointF(0, 0), QPointF(200, 200));
                 linearGrad.setColorAt(0, Qt::darkYellow);
                 linearGrad.setColorAt(1, Qt::yellow);
                 linearGrad.setColorAt(2, Qt::yellow);
                 QBrush brush(linearGrad);
-                pItem1->setBackground(brush);
-                pItem2->setBackground(brush);
+                table1Row.col1->setBackground(brush);
+                table2Row.col1->setBackground(brush);
 
                 linearGrad.setColorAt(0, Qt::yellow);
                 linearGrad.setColorAt(1, Qt::yellow);
                 brush = QBrush(linearGrad);
-                pItem1Col1->setBackground(brush);
-                pItem2Col1->setBackground(brush);
-                pItem1Col2 = new QTableWidgetItem("文件改动");
-                pItem2Col2 = new QTableWidgetItem("文件改动");
+                table1Row.col2->setBackground(brush);
+                table2Row.col2->setBackground(brush);
+                table1Row.col3 = new QTableWidgetItem("文件改动");
+                table2Row.col3 = new QTableWidgetItem("文件改动");
             }
             else
             {
-                pItem1Col2 = new QTableWidgetItem("---");
-                pItem2Col2 = new QTableWidgetItem("---");
+                continue;
             }
         }
-        ui->tableWidget_1->setItem(i, 0, pItem1);
-        ui->tableWidget_2->setItem(i, 0, pItem2);
-        ui->tableWidget_1->setItem(i, 1, pItem1Col1);
-        ui->tableWidget_2->setItem(i, 1, pItem2Col1);
-        ui->tableWidget_1->setItem(i, 2, pItem1Col2);
-        ui->tableWidget_2->setItem(i, 2, pItem2Col2);
+        table1RowList.append(table1Row);
+        table2RowList.append(table2Row);
+    }
+    ui->tableWidget_1->setRowCount(table1RowList.size());
+    ui->tableWidget_2->setRowCount(table2RowList.size());
+    for(int i = 0; i < table1RowList.size(); ++ i)
+    {
+        TableRow table1Row = table1RowList.at(i);
+        TableRow table2Row = table2RowList.at(i);
+        ui->tableWidget_1->setItem(i, 0, table1Row.col1);
+        ui->tableWidget_2->setItem(i, 0, table2Row.col1);
+        ui->tableWidget_1->setItem(i, 1, table1Row.col2);
+        ui->tableWidget_2->setItem(i, 1, table2Row.col2);
+        ui->tableWidget_1->setItem(i, 2, table1Row.col3);
+        ui->tableWidget_2->setItem(i, 2, table2Row.col3);
     }
 }
 
