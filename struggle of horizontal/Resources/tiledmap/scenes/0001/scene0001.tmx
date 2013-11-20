@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="15" height="8" tilewidth="256" tileheight="256">
+ <tileset firstgid="1" name="scene2" tilewidth="256" tileheight="256">
+  <image source="scene2.png" width="3584" height="1792"/>
+ </tileset>
+ <imagelayer name="background" width="15" height="8">
+  <image source="scene0.jpg"/>
+ </imagelayer>
+ <layer name="foreground" width="15" height="8">
+  <data encoding="base64" compression="zlib">
+   eJyly1cyA1AAQNGnRO+ih+i9BtGJ3kUN0YL9L8KZ8XbgzpzPWxZCKKeCShJUUU0NtdRRTwONNIW/mmmhlTbaSdJBJ11000MvfaTi288AaQYZYpgRRhljnAkmmWI6vjPMMsc8CyyyRIZlVlglyxrr8d1gky222WGXPXLsc8AhRxxzEt9TzjjngkuuuOaGPLfccc8Dj/F9osAzLxR55Y13PvikxBff/IT/9wsrtRL0
+  </data>
+ </layer>
+</map>

@@ -29,8 +29,8 @@ void GameSceneViewModel::onGameSceneModelPropertyChanged(mvvm::INotifyPropertyCh
 				mSceneView->setBindingSource(pModel);
 				pRootView->addChild(mSceneView);
 			}
-			callLuaFuncNoResult("LUAGameSceneLoadDataWithMapName", pModel, "hlg");
-			callLuaFuncNoResult("LUATestStartPlayStruggleRecord");
+			//callLuaFuncNoResult("LUAGameSceneLoadDataWithMapName", pModel, "hlg");
+			//callLuaFuncNoResult("LUATestStartPlayStruggleRecord");
 		}
 		else
 		{

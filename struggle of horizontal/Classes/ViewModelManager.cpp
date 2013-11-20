@@ -37,14 +37,9 @@ void ViewModelManager::initWithAppStart(engine::AppDelegate* pApp)
 
     CCFileUtils* pFileUtils = CCFileUtils::sharedFileUtils();
     std::vector<std::string> searchPaths;
-	searchPaths.push_back("studioui/loginview");
-	searchPaths.push_back("studioui/selectheroview");
-	searchPaths.push_back("studioui/gamescene");
-	searchPaths.push_back("studioui/animation");
-	searchPaths.push_back("studioui/animation/archer");
-	searchPaths.push_back("studioui/animation/rider");
-	searchPaths.push_back("studioui/animation/saber");
-	searchPaths.push_back("studioui/animation/actions");
+	searchPaths.push_back("tiledmap");
+	searchPaths.push_back("tiledmap/scenes/0001");
+	searchPaths.push_back("cocostudio/animations");
 	pFileUtils->setSearchPaths(searchPaths);
 
 	Director* pDirector = Director::getInstance();

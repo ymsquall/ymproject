@@ -18,7 +18,7 @@ void RootSceneView::onEnterTransitionDidFinish()
 {
 	cocos2d::Scene::onEnterTransitionDidFinish();
 	this->scheduleUpdate();
-	// test
+	/* test
 	uiview::Panel* pRootPanel = uiview::Panel::createView();
 	cocos2d::Size panelSize = pRootPanel->Size;
 	pRootPanel->Position = cocos2d::CCPoint(panelSize.width / 2.0f, panelSize.height / 2.0f);
@@ -27,8 +27,9 @@ void RootSceneView::onEnterTransitionDidFinish()
 	lua_State* L = LuaEngine::getInstance()->getLuaStack()->getLuaState();
 	pRootPanel->addChild(pBgPic);
 	this->addChild(pRootPanel);
+	*/
 
-	ViewModelManager::point()->selectModel(ModelType::Login);
+	ViewModelManager::point()->selectModel(ModelType::GameScene);
 }
 
 void RootSceneView::onExit()

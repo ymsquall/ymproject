@@ -7,18 +7,12 @@
 
 using namespace framework;
 
-struct ActionStepOveredEventParams
-{
-};
-
-class GameSceneView : public mvvm::ViewBase<GameSceneView, cocos2d::extension::UILayer>
+class GameSceneView : public mvvm::ViewBase<GameSceneView, cocos2d::CCLayer>
 {
 public:
 	friend class GameSceneModel;
 	GameSceneView();
 	~GameSceneView();
-
-	typedef std::vector<cocos2d::extension::UIImageView*> HeroHeadList;
 
 	virtual bool init();
 	virtual bool initForMvvm();
@@ -37,13 +31,5 @@ private:
 	void onMapPanelDragEvent(cocos2d::CCObject* pSender, cocos2d::extension::DragPanelEventType type);
 
 public:
-	cocos2d::extension::Layout* mLayout;
-	cocos2d::extension::UIButton* mBackButton;
-	cocos2d::extension::UITextArea* mDebugText;
-	cocos2d::extension::UIDragPanel* mMapDragPanel;
-	cocos2d::extension::UIPanel* mMapBGPanel;
-	cocos2d::extension::UIImageView* mMapBGImageView;
-	cocos2d::extension::UIWidget* mGridsParent;
-	cocos2d::extension::UIImageView* mNowSelectGridImage;
-	bool mNeedWaitDragPanelBerthOvered;
+	cocos2d::TMXTiledMap* mTiledMap;
 };

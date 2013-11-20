@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<AnimationProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>0.0.0.0</Version>
+  <Name>Hero</Name>
+  <ProjectDir>Y:\Work\ymproject_github\CocoStudioWorkspace\HeroAnimation</ProjectDir>
+  <JsonFileName>Hero.json</JsonFileName>
+  <Resources>Y:\Work\ymproject_github\CocoStudioWorkspace\HeroAnimation\Resources</Resources>
+  <JsonFolder>Y:\Work\ymproject_github\CocoStudioWorkspace\HeroAnimation\Json</JsonFolder>
+  <JsonList />
+  <ResourceFileList>
+    <string>Hero0.plist</string>
+  </ResourceFileList>
+  <CanvasSize>
+    <Width>0</Width>
+    <Height>0</Height>
+  </CanvasSize>
+  <bBatchImage>true</bBatchImage>
+</AnimationProject>
