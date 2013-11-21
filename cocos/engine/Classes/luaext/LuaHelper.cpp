@@ -432,6 +432,7 @@ void tolua_callLuaFunctionWithParamsResult1(const char* funcName, const std::vec
 #define BUILD_SCRIPT_PARAMS_COUNT5 std::vector<ScriptParamObject> ps; ps.push_back(ScriptParamObject(p1)); ps.push_back(ScriptParamObject(p2)); ps.push_back(ScriptParamObject(p3)); ps.push_back(ScriptParamObject(p4)); ps.push_back(ScriptParamObject(p5));
 #define BUILD_SCRIPT_PARAMS_COUNT6 std::vector<ScriptParamObject> ps; ps.push_back(ScriptParamObject(p1)); ps.push_back(ScriptParamObject(p2)); ps.push_back(ScriptParamObject(p3)); ps.push_back(ScriptParamObject(p4)); ps.push_back(ScriptParamObject(p5)); ps.push_back(ScriptParamObject(p6));
 #define BUILD_SCRIPT_PARAMS_COUNT7 std::vector<ScriptParamObject> ps; ps.push_back(ScriptParamObject(p1)); ps.push_back(ScriptParamObject(p2)); ps.push_back(ScriptParamObject(p3)); ps.push_back(ScriptParamObject(p4)); ps.push_back(ScriptParamObject(p5)); ps.push_back(ScriptParamObject(p6)); ps.push_back(ScriptParamObject(p7));
+#define BUILD_SCRIPT_PARAMS_COUNT8 std::vector<ScriptParamObject> ps; ps.push_back(ScriptParamObject(p1)); ps.push_back(ScriptParamObject(p2)); ps.push_back(ScriptParamObject(p3)); ps.push_back(ScriptParamObject(p4)); ps.push_back(ScriptParamObject(p5)); ps.push_back(ScriptParamObject(p6)); ps.push_back(ScriptParamObject(p7)); ps.push_back(ScriptParamObject(p8));
 
 void tolua_callLuaFunctionWithParam0NoResult(const char* funcName)
 {
@@ -470,6 +471,11 @@ void tolua_callLuaFunctionWithParam6NoResult(const char* funcName, const ScriptP
 void tolua_callLuaFunctionWithParam7NoResult(const char* funcName, const ScriptParamObject& p1, const ScriptParamObject& p2, const ScriptParamObject& p3, const ScriptParamObject& p4, const ScriptParamObject& p5, const ScriptParamObject& p6, const ScriptParamObject& p7)
 {
 	BUILD_SCRIPT_PARAMS_COUNT7;
+	tolua_callLuaFunctionWithParamsNoResult(funcName, ps);
+}
+void tolua_callLuaFunctionWithParam8NoResult(const char* funcName, const ScriptParamObject& p1, const ScriptParamObject& p2, const ScriptParamObject& p3, const ScriptParamObject& p4, const ScriptParamObject& p5, const ScriptParamObject& p6, const ScriptParamObject& p7, const ScriptParamObject& p8)
+{
+	BUILD_SCRIPT_PARAMS_COUNT8;
 	tolua_callLuaFunctionWithParamsNoResult(funcName, ps);
 }
 
@@ -514,17 +520,24 @@ ScriptParamObject tolua_callLuaFunctionWithParam5WithResult1(const char* funcNam
 	tolua_callLuaFunctionWithParamsResult1(funcName, ps, result);
 	return result;
 }
-ScriptParamObject tolua_callLuaFunctionWithParam5WithResult1(const char* funcName, const ScriptParamObject& p1, const ScriptParamObject& p2, const ScriptParamObject& p3, const ScriptParamObject& p4, const ScriptParamObject& p5, const ScriptParamObject& p6)
+ScriptParamObject tolua_callLuaFunctionWithParam6WithResult1(const char* funcName, const ScriptParamObject& p1, const ScriptParamObject& p2, const ScriptParamObject& p3, const ScriptParamObject& p4, const ScriptParamObject& p5, const ScriptParamObject& p6)
 {
 	ScriptParamObject result;
 	BUILD_SCRIPT_PARAMS_COUNT6;
 	tolua_callLuaFunctionWithParamsResult1(funcName, ps, result);
 	return result;
 }
-ScriptParamObject tolua_callLuaFunctionWithParam5WithResult1(const char* funcName, const ScriptParamObject& p1, const ScriptParamObject& p2, const ScriptParamObject& p3, const ScriptParamObject& p4, const ScriptParamObject& p5, const ScriptParamObject& p6, const ScriptParamObject& p7)
+ScriptParamObject tolua_callLuaFunctionWithParam7WithResult1(const char* funcName, const ScriptParamObject& p1, const ScriptParamObject& p2, const ScriptParamObject& p3, const ScriptParamObject& p4, const ScriptParamObject& p5, const ScriptParamObject& p6, const ScriptParamObject& p7)
 {
 	ScriptParamObject result;
 	BUILD_SCRIPT_PARAMS_COUNT7;
+	tolua_callLuaFunctionWithParamsResult1(funcName, ps, result);
+	return result;
+}
+ScriptParamObject tolua_callLuaFunctionWithParam8WithResult1(const char* funcName, const ScriptParamObject& p1, const ScriptParamObject& p2, const ScriptParamObject& p3, const ScriptParamObject& p4, const ScriptParamObject& p5, const ScriptParamObject& p6, const ScriptParamObject& p7, const ScriptParamObject& p8)
+{
+	ScriptParamObject result;
+	BUILD_SCRIPT_PARAMS_COUNT8;
 	tolua_callLuaFunctionWithParamsResult1(funcName, ps, result);
 	return result;
 }

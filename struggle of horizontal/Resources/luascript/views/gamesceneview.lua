@@ -3,7 +3,6 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 	LUALoadGameSceneViewResources()
 	_LUAGameSceneView.self = LuaUserDataConversion:toGameSceneView(self)
 	local map = CCTMXTiledMap:create("scene0001.tmx")
-	map:setScale(0.5)
 	_LUAGameSceneView.mTiledMap = map
 	_LUAGameSceneView.self:addChild(map)
 	return _LUAGameSceneView.mTiledMap

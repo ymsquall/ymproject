@@ -96,14 +96,16 @@ void tolua_callLuaFunctionWithParam4NoResult(const char* funcName, const ScriptP
 void tolua_callLuaFunctionWithParam5NoResult(const char* funcName, const ScriptParamObject& p1, const ScriptParamObject& p2, const ScriptParamObject& p3, const ScriptParamObject& p4, const ScriptParamObject& p5);
 void tolua_callLuaFunctionWithParam6NoResult(const char* funcName, const ScriptParamObject& p1, const ScriptParamObject& p2, const ScriptParamObject& p3, const ScriptParamObject& p4, const ScriptParamObject& p5, const ScriptParamObject& p6);
 void tolua_callLuaFunctionWithParam7NoResult(const char* funcName, const ScriptParamObject& p1, const ScriptParamObject& p2, const ScriptParamObject& p3, const ScriptParamObject& p4, const ScriptParamObject& p5, const ScriptParamObject& p6, const ScriptParamObject& p7);
+void tolua_callLuaFunctionWithParam8NoResult(const char* funcName, const ScriptParamObject& p1, const ScriptParamObject& p2, const ScriptParamObject& p3, const ScriptParamObject& p4, const ScriptParamObject& p5, const ScriptParamObject& p6, const ScriptParamObject& p7, const ScriptParamObject& p8);
 ScriptParamObject tolua_callLuaFunctionWithParam0WithResult1(const char* funcName);
 ScriptParamObject tolua_callLuaFunctionWithParam1WithResult1(const char* funcName, const ScriptParamObject& p1);
 ScriptParamObject tolua_callLuaFunctionWithParam2WithResult1(const char* funcName, const ScriptParamObject& p1, const ScriptParamObject& p2);
 ScriptParamObject tolua_callLuaFunctionWithParam3WithResult1(const char* funcName, const ScriptParamObject& p1, const ScriptParamObject& p2, const ScriptParamObject& p3);
 ScriptParamObject tolua_callLuaFunctionWithParam4WithResult1(const char* funcName, const ScriptParamObject& p1, const ScriptParamObject& p2, const ScriptParamObject& p3, const ScriptParamObject& p4);
 ScriptParamObject tolua_callLuaFunctionWithParam5WithResult1(const char* funcName, const ScriptParamObject& p1, const ScriptParamObject& p2, const ScriptParamObject& p3, const ScriptParamObject& p4, const ScriptParamObject& p5);
-ScriptParamObject tolua_callLuaFunctionWithParam5WithResult1(const char* funcName, const ScriptParamObject& p1, const ScriptParamObject& p2, const ScriptParamObject& p3, const ScriptParamObject& p4, const ScriptParamObject& p5, const ScriptParamObject& p6);
-ScriptParamObject tolua_callLuaFunctionWithParam5WithResult1(const char* funcName, const ScriptParamObject& p1, const ScriptParamObject& p2, const ScriptParamObject& p3, const ScriptParamObject& p4, const ScriptParamObject& p5, const ScriptParamObject& p6, const ScriptParamObject& p7);
+ScriptParamObject tolua_callLuaFunctionWithParam6WithResult1(const char* funcName, const ScriptParamObject& p1, const ScriptParamObject& p2, const ScriptParamObject& p3, const ScriptParamObject& p4, const ScriptParamObject& p5, const ScriptParamObject& p6);
+ScriptParamObject tolua_callLuaFunctionWithParam7WithResult1(const char* funcName, const ScriptParamObject& p1, const ScriptParamObject& p2, const ScriptParamObject& p3, const ScriptParamObject& p4, const ScriptParamObject& p5, const ScriptParamObject& p6, const ScriptParamObject& p7);
+ScriptParamObject tolua_callLuaFunctionWithParam8WithResult1(const char* funcName, const ScriptParamObject& p1, const ScriptParamObject& p2, const ScriptParamObject& p3, const ScriptParamObject& p4, const ScriptParamObject& p5, const ScriptParamObject& p6, const ScriptParamObject& p7, const ScriptParamObject& p8);
 // none result
 void callLuaFuncNoResult(const char* funcName);
 template<class P1> void callLuaFuncNoResult(const char* funcName, P1 p1)
@@ -117,6 +119,26 @@ template<class P1, class P2> void callLuaFuncNoResult(const char* funcName, P1 p
 template<class P1, class P2, class P3> void callLuaFuncNoResult(const char* funcName, P1 p1, P2 p2, P3 p3)
 {
 	tolua_callLuaFunctionWithParam3NoResult(funcName, ScriptParamObject(p1), ScriptParamObject(p2), ScriptParamObject(p3));
+}
+template<class P1, class P2, class P3, class P4> void callLuaFuncNoResult(const char* funcName, P1 p1, P2 p2, P3 p3, P4 p4)
+{
+	tolua_callLuaFunctionWithParam4NoResult(funcName, ScriptParamObject(p1), ScriptParamObject(p2), ScriptParamObject(p3), ScriptParamObject(p4));
+}
+template<class P1, class P2, class P3, class P4, class P5> void callLuaFuncNoResult(const char* funcName, P1 p1, P2 p2, P3 p3, P4 p4, P5 p5)
+{
+	tolua_callLuaFunctionWithParam5NoResult(funcName, ScriptParamObject(p1), ScriptParamObject(p2), ScriptParamObject(p3), ScriptParamObject(p4), ScriptParamObject(p5));
+}
+template<class P1, class P2, class P3, class P4, class P5, class P6> void callLuaFuncNoResult(const char* funcName, P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6)
+{
+	tolua_callLuaFunctionWithParam6NoResult(funcName, ScriptParamObject(p1), ScriptParamObject(p2), ScriptParamObject(p3), ScriptParamObject(p4), ScriptParamObject(p5), ScriptParamObject(p6));
+}
+template<class P1, class P2, class P3, class P4, class P5, class P6, class P7> void callLuaFuncNoResult(const char* funcName, P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7)
+{
+	tolua_callLuaFunctionWithParam7NoResult(funcName, ScriptParamObject(p1), ScriptParamObject(p2), ScriptParamObject(p3), ScriptParamObject(p4), ScriptParamObject(p5), ScriptParamObject(p6), ScriptParamObject(p7));
+}
+template<class P1, class P2, class P3, class P4, class P5, class P6, class P7, class P8> void callLuaFuncNoResult(const char* funcName, P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8)
+{
+	tolua_callLuaFunctionWithParam8NoResult(funcName, ScriptParamObject(p1), ScriptParamObject(p2), ScriptParamObject(p3), ScriptParamObject(p4), ScriptParamObject(p5), ScriptParamObject(p6), ScriptParamObject(p7), ScriptParamObject(p8));
 }
 // bool result
 bool callLuaFuncWithBoolResult(const char* funcName);
@@ -141,6 +163,30 @@ template<class P1, class P2, class P3> bool callLuaFuncWithBoolResult(const char
 template<class P1, class P2, class P3, class P4> bool callLuaFuncWithBoolResult(const char* funcName, P1 p1, P2 p2, P3 p3, P4 p4)
 {
 	ScriptParamObject result = tolua_callLuaFunctionWithParam4WithResult1(funcName, ScriptParamObject(p1), ScriptParamObject(p2), ScriptParamObject(p3), ScriptParamObject(p4));
+	if(result.type == LUA_TBOOLEAN) return result.value.boolean;
+	return false;
+}
+template<class P1, class P2, class P3, class P4, class P5> bool callLuaFuncWithBoolResult(const char* funcName, P1 p1, P2 p2, P3 p3, P4 p4, P5 p5)
+{
+	ScriptParamObject result = tolua_callLuaFunctionWithParam5WithResult1(funcName, ScriptParamObject(p1), ScriptParamObject(p2), ScriptParamObject(p3), ScriptParamObject(p4), ScriptParamObject(p5));
+	if(result.type == LUA_TBOOLEAN) return result.value.boolean;
+	return false;
+}
+template<class P1, class P2, class P3, class P4, class P5, class P6> bool callLuaFuncWithBoolResult(const char* funcName, P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6)
+{
+	ScriptParamObject result = tolua_callLuaFunctionWithParam6WithResult1(funcName, ScriptParamObject(p1), ScriptParamObject(p2), ScriptParamObject(p3), ScriptParamObject(p4), ScriptParamObject(p5), ScriptParamObject(p6));
+	if(result.type == LUA_TBOOLEAN) return result.value.boolean;
+	return false;
+}
+template<class P1, class P2, class P3, class P4, class P5, class P6, class P7> bool callLuaFuncWithBoolResult(const char* funcName, P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7)
+{
+	ScriptParamObject result = tolua_callLuaFunctionWithParam7WithResult1(funcName, ScriptParamObject(p1), ScriptParamObject(p2), ScriptParamObject(p3), ScriptParamObject(p4), ScriptParamObject(p5), ScriptParamObject(p6), ScriptParamObject(p7));
+	if(result.type == LUA_TBOOLEAN) return result.value.boolean;
+	return false;
+}
+template<class P1, class P2, class P3, class P4, class P5, class P6, class P7, class P8> bool callLuaFuncWithBoolResult(const char* funcName, P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8)
+{
+	ScriptParamObject result = tolua_callLuaFunctionWithParam8WithResult1(funcName, ScriptParamObject(p1), ScriptParamObject(p2), ScriptParamObject(p3), ScriptParamObject(p4), ScriptParamObject(p5), ScriptParamObject(p6), ScriptParamObject(p7), ScriptParamObject(p8));
 	if(result.type == LUA_TBOOLEAN) return result.value.boolean;
 	return false;
 }

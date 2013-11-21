@@ -32,6 +32,8 @@ bool GameSceneView::init()
 	if(userdata.type != LUA_TUSERDATA || NULL == userdata.value.pointer)
 		return false;
 	mTiledMap = (TMXTiledMap*)userdata.value.pointer;
+	TMXLayer* pLayer1 = mTiledMap->getLayer("foreground");
+	TMXLayer* pLayer2 = mTiledMap->getLayer("background");
 	this->scheduleUpdate();
 	/*
 	mLayout = (cocos2d::extension::Layout*)userdata.value.pointer;

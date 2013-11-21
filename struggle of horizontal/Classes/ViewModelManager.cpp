@@ -34,6 +34,7 @@ void ViewModelManager::initWithAppStart(engine::AppDelegate* pApp)
 {
 	LuaEngine* pLuaEngine = LuaEngine::getInstance();
 	tolua_LuaSOFExtern_open(pLuaEngine->getLuaStack()->getLuaState());
+	reloadLuaScript("debug/win32handler.lua");
 
     CCFileUtils* pFileUtils = CCFileUtils::sharedFileUtils();
     std::vector<std::string> searchPaths;
