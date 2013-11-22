@@ -124,10 +124,10 @@ const FileCompResultList& FileComparison::comparison()
             }
             if(mOldFileList[0].fileName == mNewFileList[j].fileName)
             {
-                FileCompResultType sameType = FileCompResultType::None;
+                FileCompResultType sameType = FileCompResultType_None;
                 if(mOldFileList[0].fileMD5 != mNewFileList[j].fileMD5)
-                    sameType = FileCompResultType::Modify;
-                FileCompResult compResult = FileCompResult{ mOldFileList[0].fileName, mOldFileList[0].fileMD5, mNewFileList[j].fileMD5, sameType };
+                    sameType = FileCompResultType_Modify;
+                FileCompResult compResult(mOldFileList[0].fileName, mOldFileList[0].fileMD5, mNewFileList[j].fileMD5, sameType);
                 mCompResultList.append(compResult);
                 mNewFileList.removeAt(j);
                 finded = true;
@@ -144,7 +144,7 @@ const FileCompResultList& FileComparison::comparison()
             }
             if(!addFinded)
             {
-                FileCompResult compResult = FileCompResult{ mNewFileList[j].fileName, "", mNewFileList[j].fileMD5, FileCompResultType::Added };
+                FileCompResult compResult(mNewFileList[j].fileName, "", mNewFileList[j].fileMD5, FileCompResultType_Added);
                 mCompResultList.append(compResult);
                 mNewFileList.removeAt(j);
             }
@@ -153,7 +153,7 @@ const FileCompResultList& FileComparison::comparison()
         }
         if(!finded)
         {
-            FileCompResult compResult = FileCompResult{ mOldFileList[0].fileName, mOldFileList[0].fileMD5, "", FileCompResultType::Removed };
+            FileCompResult compResult(mOldFileList[0].fileName, mOldFileList[0].fileMD5, "", FileCompResultType_Removed);
             mCompResultList.append(compResult);
         }
         mOldFileList.removeAt(0);

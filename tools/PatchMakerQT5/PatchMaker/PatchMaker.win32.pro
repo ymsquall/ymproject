@@ -39,3 +39,14 @@ FORMS    += PatchMakerWindow.ui \
     AboutDialog.ui
 
 OTHER_FILES +=
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/ -lz
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/ -lzd
+else:unix: LIBS += -L$$PWD/ -lz
+
+INCLUDEPATH += $$PWD/
+DEPENDPATH += $$PWD/
+
+win32:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/z.lib
+else:win32:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/zd.lib
+else:unix: PRE_TARGETDEPS += $$PWD/libz.a

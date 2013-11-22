@@ -5,12 +5,12 @@
 #include <QStringList>
 #include "helper.h"
 
-enum class FileCompResultType : char
+enum FileCompResultType
 {
-    None = 0,
-    Modify = 1,
-    Removed = 2,
-    Added = 3
+    FileCompResultType_None = 0,
+    FileCompResultType_Modify = 1,
+    FileCompResultType_Removed = 2,
+    FileCompResultType_Added = 3
 };
 struct FileCompResult
 {

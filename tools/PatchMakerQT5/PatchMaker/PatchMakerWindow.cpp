@@ -8,6 +8,7 @@
 #include "helper.h"
 #include <QtDebug>
 #include <QScrollBar>
+#include <QStringList>
 #include <QGlobal.h>
 #include "ZipCompress.h"
 
@@ -204,7 +205,7 @@ void PatchMakerWindow::createPatch(const FileCompResultList& fileList, const QSt
         QString fileDstName = tempRootPath + '/' + fileList[i].fileName;
         if(canUpdateFileName == fileSrcName)
             continue;
-        if(fileList[i].resultType == FileCompResultType::Modify)
+        if(fileList[i].resultType == FileCompResultType_Modify)
         {
             line.append("m\r\n");
             QFile dstFileExist(fileDstName);
@@ -215,11 +216,11 @@ void PatchMakerWindow::createPatch(const FileCompResultList& fileList, const QSt
             }
             QFile::copy(fileSrcName, fileDstName);
         }
-        else if(fileList[i].resultType == FileCompResultType::Removed)
+        else if(fileList[i].resultType == FileCompResultType_Removed)
         {
             line.append("r\r\n");
         }
-        else if(fileList[i].resultType == FileCompResultType::Added)
+        else if(fileList[i].resultType == FileCompResultType_Added)
         {
             line.append("a\r\n");
             QFile dstFileExist(fileDstName);
@@ -263,7 +264,7 @@ void PatchMakerWindow::createMD5ListFile(const FileCompResultList& fileList, con
             QString line = fileList[i].fileName + '\t' + file2md5 + "\r\n";
             newFile.write(line.toStdString().c_str(), line.size());
         }
-        if(fileList[i].resultType != FileCompResultType::None)
+        if(fileList[i].resultType != FileCompResultType_None)
             mPatchListFile.append(fileList[i]);
     }
     oldFile.close();
@@ -290,7 +291,7 @@ void PatchMakerWindow::createScanAndMD5TableView(const FileCompResultList& fileL
     {
         TableRow table1Row;
         TableRow table2Row;
-        if(fileList[i].resultType == FileCompResultType::Removed)
+        if(fileList[i].resultType == FileCompResultType_Removed)
         {
             table1Row.col1 = new QTableWidgetItem(fileList[i].fileName);
             table2Row.col1 = new QTableWidgetItem("----");
@@ -305,7 +306,7 @@ void PatchMakerWindow::createScanAndMD5TableView(const FileCompResultList& fileL
             table1Row.col1->setBackground(brush);
             table2Row.col1->setBackground(brush);
         }
-        else if(fileList[i].resultType == FileCompResultType::Added)
+        else if(fileList[i].resultType == FileCompResultType_Added)
         {
             table1Row.col1 = new QTableWidgetItem("----");
             table2Row.col1 = new QTableWidgetItem(fileList[i].fileName);
@@ -322,7 +323,7 @@ void PatchMakerWindow::createScanAndMD5TableView(const FileCompResultList& fileL
         }
         else
         {
-            if(fileList[i].resultType == FileCompResultType::Modify)
+            if(fileList[i].resultType == FileCompResultType_Modify)
             {
                 table1Row.col1 = new QTableWidgetItem(fileList[i].fileName);
                 table2Row.col1 = new QTableWidgetItem(fileList[i].fileName);
@@ -370,7 +371,7 @@ void PatchMakerWindow::createScanAndMD5TableView(const FileCompResultList& fileL
 void PatchMakerWindow::resetTabPage(int tab)
 {
     QStringList headerText;
-    headerText << "文件名" << "MD5码" << "文件状态";
+    headerText << "filename" << "MD5" << "state";
     if(tab == 1)
     {
         ui->tableWidget_1->clear();

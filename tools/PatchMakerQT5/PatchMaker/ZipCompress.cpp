@@ -7,6 +7,8 @@
 #include <assert.h>
 #include <dos.h>
 #include <direct.h>
+#include <direct.h>
+#include <io.h>
 
 static int compress_dir(const char* rootDir, zipFile& zpFile, const char *file_in, int level)
 {
