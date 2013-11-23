@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaExtern
-** Generated automatically by tolua++-1.0.92 on 11/22/13 22:57:49.
+** Generated automatically by tolua++-1.0.92 on 11/23/13 16:08:42.
 */
 
 /****************************************************************************
@@ -31807,6 +31807,41 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
   tolua_constant(tolua_S,"VK_INSERT",VK_INSERT);
   tolua_constant(tolua_S,"VK_DELETE",VK_DELETE);
   tolua_constant(tolua_S,"VK_HELP",VK_HELP);
+  tolua_constant(tolua_S,"VK_0",VK_0);
+  tolua_constant(tolua_S,"VK_1",VK_1);
+  tolua_constant(tolua_S,"VK_2",VK_2);
+  tolua_constant(tolua_S,"VK_3",VK_3);
+  tolua_constant(tolua_S,"VK_4",VK_4);
+  tolua_constant(tolua_S,"VK_5",VK_5);
+  tolua_constant(tolua_S,"VK_6",VK_6);
+  tolua_constant(tolua_S,"VK_7",VK_7);
+  tolua_constant(tolua_S,"VK_8",VK_8);
+  tolua_constant(tolua_S,"VK_9",VK_9);
+  tolua_constant(tolua_S,"VK_A",VK_A);
+  tolua_constant(tolua_S,"VK_B",VK_B);
+  tolua_constant(tolua_S,"VK_C",VK_C);
+  tolua_constant(tolua_S,"VK_D",VK_D);
+  tolua_constant(tolua_S,"VK_E",VK_E);
+  tolua_constant(tolua_S,"VK_F",VK_F);
+  tolua_constant(tolua_S,"VK_G",VK_G);
+  tolua_constant(tolua_S,"VK_H",VK_H);
+  tolua_constant(tolua_S,"VK_I",VK_I);
+  tolua_constant(tolua_S,"VK_J",VK_J);
+  tolua_constant(tolua_S,"VK_K",VK_K);
+  tolua_constant(tolua_S,"VK_L",VK_L);
+  tolua_constant(tolua_S,"VK_M",VK_M);
+  tolua_constant(tolua_S,"VK_N",VK_N);
+  tolua_constant(tolua_S,"VK_O",VK_O);
+  tolua_constant(tolua_S,"VK_P",VK_P);
+  tolua_constant(tolua_S,"VK_Q",VK_Q);
+  tolua_constant(tolua_S,"VK_R",VK_R);
+  tolua_constant(tolua_S,"VK_S",VK_S);
+  tolua_constant(tolua_S,"VK_T",VK_T);
+  tolua_constant(tolua_S,"VK_U",VK_U);
+  tolua_constant(tolua_S,"VK_W",VK_W);
+  tolua_constant(tolua_S,"VK_X",VK_X);
+  tolua_constant(tolua_S,"VK_Y",VK_Y);
+  tolua_constant(tolua_S,"VK_Z",VK_Z);
   tolua_constant(tolua_S,"VK_LWIN",VK_LWIN);
   tolua_constant(tolua_S,"VK_RWIN",VK_RWIN);
   tolua_constant(tolua_S,"VK_APPS",VK_APPS);

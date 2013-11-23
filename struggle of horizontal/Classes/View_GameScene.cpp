@@ -37,6 +37,7 @@ bool GameSceneView::init()
 	mTiledMap = (TMXTiledMap*)userdata.value.pointer;
 	mFGLayer = mTiledMap->getLayer("foreground");
 	mBGLayer = mTiledMap->getLayer("background");
+	mHeroAnim = dynamic_cast<Armature*>(mTiledMap->getChildByTag(101));
 
 	this->scheduleUpdate();
 	return true;

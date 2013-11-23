@@ -2,19 +2,21 @@ _LUAGameSceneView = _LUAGameSceneView or {}
 function LUALoadGameSceneView(self, viewWideh, viewHeight)
 	LUALoadGameSceneViewResources()
 	_LUAGameSceneView.self = LuaUserDataConversion:toGameSceneView(self)
-	local map = CCTMXTiledMap:create("scene0001.tmx")
-	_LUAGameSceneView.mTiledMap = map
-	_LUAGameSceneView.self:addChild(map)
-	local foreground = map:getLayer("foreground")
-	local background = map:getLayer("background")
-	local fgImageSize = LuaTiledHelper:getTMXLayerImageSize(foreground)
-	local bgImageSize = LuaTiledHelper:getTMXLayerImageSize(background)
+	_LUAGameSceneView.mTiledMap = CCTMXTiledMap:create("scene0001.tmx")
+	_LUAGameSceneView.self:addChild(_LUAGameSceneView.mTiledMap)
+	_LUAGameSceneView.mHeroAnim = LUACreateAndPlayArmature("hero_animations", -1, 0, 0, 0, 1, 1)
+	_LUAGameSceneView.mHeroAnim:setTag(101)
+	_LUAGameSceneView.self:addChild(_LUAGameSceneView.mHeroAnim)
+	--_LUAGameSceneView.self:reorderChild(_LUAGameSceneView.mHeroAnim, 101)
+	_LUAGameSceneView.mHeroAnim:getAnimation():play('run')
 	return _LUAGameSceneView.mTiledMap
 end
 
 function LUAGameSceneViewOnEnter()
 	_LUAGameSceneView = _LUAGameSceneView or {}
-	_LUAGameSceneView.self:screenScrollTo(CCPoint(0, 0))
+	local foreground = _LUAGameSceneView.mTiledMap:getLayer("foreground")
+	local fgImageSize = LuaTiledHelper:getTMXLayerImageSize(foreground)
+	_LUAGameSceneView.self:screenScrollTo(CCPoint(0, fgImageSize.height/2.0))
 	_LUAGameSceneView.mOnTickScriptHandlerID = CCDirector:getInstance():getScheduler():scheduleScriptFunc(LUAGameSceneViewOnTick, 0, false)
 end
 

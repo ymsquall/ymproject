@@ -6,15 +6,15 @@ extern GameSceneView* gGameSceneView;
 
 void Win32MsgProc::OnKeyDownMsgProc(WPARAM wParam, LPARAM lParam)
 {
-	callLuaFuncNoResult("LUAOnWin32KeyDownMsgProc", wParam, lParam, HIWORD(wParam), LOWORD(wParam), HIWORD(lParam), LOWORD(lParam));
+	callLuaFuncNoResult("LUAOnWin32KeyDownMsgProc", wParam, lParam, (short)HIWORD(wParam), (short)LOWORD(wParam), (short)HIWORD(lParam), (short)LOWORD(lParam));
 }
 void Win32MsgProc::OnKeyUpMsgProc(WPARAM wParam, LPARAM lParam)
 {
-	callLuaFuncNoResult("LUAOnWin32KeyUpMsgProc", wParam, lParam, HIWORD(wParam), LOWORD(wParam), HIWORD(lParam), LOWORD(lParam));
+	callLuaFuncNoResult("LUAOnWin32KeyUpMsgProc", wParam, lParam, (short)HIWORD(wParam), (short)LOWORD(wParam), (short)HIWORD(lParam), (short)LOWORD(lParam));
 }
 void Win32MsgProc::OnCharMsgProc(WPARAM wParam, LPARAM lParam)
 {
-	callLuaFuncNoResult("LUAOnWin32CharMsgProc", wParam, lParam, HIWORD(wParam), LOWORD(wParam), HIWORD(lParam), LOWORD(lParam));
+	callLuaFuncNoResult("LUAOnWin32CharMsgProc", wParam, lParam, (short)HIWORD(wParam), (short)LOWORD(wParam), (short)HIWORD(lParam), (short)LOWORD(lParam));
 }
 
 bool Win32MsgProc::MouseLeftBtnDown = false;
@@ -24,15 +24,15 @@ LRESULT Win32MsgProc::OnMouseLeftBtnMsgProc(UINT message, WPARAM wParam, LPARAM 
 	{
 	case WM_LBUTTONDOWN:
 		MouseLeftBtnDown = true;
-		*pProcessed = callLuaFuncWithBoolResult("LUAOnWin32MouseLeftDown", wParam, lParam, HIWORD(wParam), LOWORD(wParam), HIWORD(lParam), LOWORD(lParam));
+		*pProcessed = callLuaFuncWithBoolResult("LUAOnWin32MouseLeftDown", wParam, lParam, (short)HIWORD(wParam), (short)LOWORD(wParam), (short)HIWORD(lParam), (short)LOWORD(lParam));
 		break;
 	case WM_LBUTTONUP:
 		MouseLeftBtnDown = false;
-		*pProcessed = callLuaFuncWithBoolResult("LUAOnWin32MouseLeftUp", wParam, lParam, HIWORD(wParam), LOWORD(wParam), HIWORD(lParam), LOWORD(lParam));
+		*pProcessed = callLuaFuncWithBoolResult("LUAOnWin32MouseLeftUp", wParam, lParam, (short)HIWORD(wParam), (short)LOWORD(wParam), (short)HIWORD(lParam), (short)LOWORD(lParam));
 		break;
 	case WM_LBUTTONDBLCLK:
 		MouseLeftBtnDown = false;
-		*pProcessed = callLuaFuncWithBoolResult("LUAOnWin32MouseLeftDBClick", wParam, lParam, HIWORD(wParam), LOWORD(wParam), HIWORD(lParam), LOWORD(lParam));
+		*pProcessed = callLuaFuncWithBoolResult("LUAOnWin32MouseLeftDBClick", wParam, lParam, (short)HIWORD(wParam), (short)LOWORD(wParam), (short)HIWORD(lParam), (short)LOWORD(lParam));
 		break;
 	}
 	return 0;
@@ -45,15 +45,15 @@ LRESULT Win32MsgProc::OnMouseRightBtnMsgProc(UINT message, WPARAM wParam, LPARAM
 	{
 	case WM_RBUTTONDOWN:
 		MouseRightBtnDown = true;
-		*pProcessed = callLuaFuncWithBoolResult("LUAOnWin32MouseRightDown", wParam, lParam, HIWORD(wParam), LOWORD(wParam), HIWORD(lParam), LOWORD(lParam));
+		*pProcessed = callLuaFuncWithBoolResult("LUAOnWin32MouseRightDown", wParam, lParam, (short)HIWORD(wParam), (short)LOWORD(wParam), (short)HIWORD(lParam), (short)LOWORD(lParam));
 		break;
 	case WM_RBUTTONUP:
 		MouseRightBtnDown = false;
-		*pProcessed = callLuaFuncWithBoolResult("LUAOnWin32MouseRightUp", wParam, lParam, HIWORD(wParam), LOWORD(wParam), HIWORD(lParam), LOWORD(lParam));
+		*pProcessed = callLuaFuncWithBoolResult("LUAOnWin32MouseRightUp", wParam, lParam, (short)HIWORD(wParam), (short)LOWORD(wParam), (short)HIWORD(lParam), (short)LOWORD(lParam));
 		break;
 	case WM_RBUTTONDBLCLK:
 		MouseRightBtnDown = false;
-		*pProcessed = callLuaFuncWithBoolResult("LUAOnWin32MouseRightDBClick", wParam, lParam, HIWORD(wParam), LOWORD(wParam), HIWORD(lParam), LOWORD(lParam));
+		*pProcessed = callLuaFuncWithBoolResult("LUAOnWin32MouseRightDBClick", wParam, lParam, (short)HIWORD(wParam), (short)LOWORD(wParam), (short)HIWORD(lParam), (short)LOWORD(lParam));
 		break;
 	}
 	return 0;
@@ -66,15 +66,15 @@ LRESULT Win32MsgProc::OnMouseMiddleBtnMsgProc(UINT message, WPARAM wParam, LPARA
 	{
 	case WM_MBUTTONDOWN:
 		MouseMiddleBtnDown = true;
-		*pProcessed = callLuaFuncWithBoolResult("LUAOnWin32MouseMiddleDown", wParam, lParam, HIWORD(wParam), LOWORD(wParam), HIWORD(lParam), LOWORD(lParam));
+		*pProcessed = callLuaFuncWithBoolResult("LUAOnWin32MouseMiddleDown", wParam, lParam, (short)HIWORD(wParam), (short)LOWORD(wParam), (short)HIWORD(lParam), (short)LOWORD(lParam));
 		break;
 	case WM_MBUTTONUP:
 		MouseMiddleBtnDown = false;
-		*pProcessed = callLuaFuncWithBoolResult("LUAOnWin32MouseMiddleUp", wParam, lParam, HIWORD(wParam), LOWORD(wParam), HIWORD(lParam), LOWORD(lParam));
+		*pProcessed = callLuaFuncWithBoolResult("LUAOnWin32MouseMiddleUp", wParam, lParam, (short)HIWORD(wParam), (short)LOWORD(wParam), (short)HIWORD(lParam), (short)LOWORD(lParam));
 		break;
 	case WM_MBUTTONDBLCLK:
 		MouseMiddleBtnDown = false;
-		*pProcessed = callLuaFuncWithBoolResult("LUAOnWin32MouseMiddleDBClick", wParam, lParam, HIWORD(wParam), LOWORD(wParam), HIWORD(lParam), LOWORD(lParam));
+		*pProcessed = callLuaFuncWithBoolResult("LUAOnWin32MouseMiddleDBClick", wParam, lParam, (short)HIWORD(wParam), (short)LOWORD(wParam), (short)HIWORD(lParam), (short)LOWORD(lParam));
 		break;
 	}
 	return 0;
@@ -84,10 +84,10 @@ LRESULT Win32MsgProc::OnMouseMoveWheelMsgProc(UINT message, WPARAM wParam, LPARA
 	switch(message)
 	{
 	case WM_MOUSEMOVE:
-		*pProcessed = callLuaFuncWithBoolResult("LUAOnWin32MouseMoveing", wParam, lParam, HIWORD(wParam), LOWORD(wParam), HIWORD(lParam), LOWORD(lParam));
+		*pProcessed = callLuaFuncWithBoolResult("LUAOnWin32MouseMoveing", wParam, lParam, (short)HIWORD(wParam), (short)LOWORD(wParam), (short)HIWORD(lParam), (short)LOWORD(lParam));
 		break;
 	case WM_MOUSEWHEEL:
-		*pProcessed = callLuaFuncWithBoolResult("LUAOnWin32MouseWheeling", wParam, lParam, HIWORD(wParam), LOWORD(wParam), HIWORD(lParam), LOWORD(lParam));
+		*pProcessed = callLuaFuncWithBoolResult("LUAOnWin32MouseWheeling", wParam, lParam, (short)HIWORD(wParam), (short)LOWORD(wParam), (short)HIWORD(lParam), (short)LOWORD(lParam));
 		break;
 	}
 	return 0;

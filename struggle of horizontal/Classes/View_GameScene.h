@@ -6,6 +6,7 @@
 #include "CocoStudio/CocoStudio.h"
 
 using namespace cocos2d;
+using namespace cocos2d::extension::armature;
 using namespace framework;
 
 class GameSceneView : public mvvm::ViewBase<GameSceneView, cocos2d::CCLayer>
@@ -40,6 +41,7 @@ public:
 	TMXTiledMap* mTiledMap;
 	TMXLayer* mFGLayer;
 	TMXLayer* mBGLayer;
+	Armature* mHeroAnim;
 	CCPoint mScrollEndPos;
 	CCPoint mBgFixedPos;
 	CCPoint mPlayerEndPos;

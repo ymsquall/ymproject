@@ -1,8 +1,11 @@
+_LUAWin32KeyboardInfo = _LUAWin32KeyboardInfo or {}
+_LUAWin32MouseInfo = _LUAWin32MouseInfo or {}
 function LUAOnWin32KeyDownMsgProc(wp, lp, hiwp, lowp, hilp, lolp)
-	if VK_UP == wp then _LUAGameSceneView.self:screenScroll(CCPoint(0, 10)) end
-	if VK_DOWN == wp then _LUAGameSceneView.self:screenScroll(CCPoint(0, -10)) end
-	if VK_LEFT == wp then _LUAGameSceneView.self:screenScroll(CCPoint(-10, 0)) end
-	if VK_RIGHT == wp then _LUAGameSceneView.self:screenScroll(CCPoint(10, 0)) end
+	if _LUAGameSceneView == nil or _LUAGameSceneView.self == nil then return false end
+	if VK_W == wp then _LUAGameSceneView.self:screenScroll(CCPoint(0, 10)) end
+	if VK_S == wp then _LUAGameSceneView.self:screenScroll(CCPoint(0, -10)) end
+	if VK_A == wp then _LUAGameSceneView.self:screenScroll(CCPoint(-10, 0)) end
+	if VK_D == wp then _LUAGameSceneView.self:screenScroll(CCPoint(10, 0)) end
 end
 
 function LUAOnWin32KeyUpMsgProc(wp, lp, hiwp, lowp, hilp, lolp)
@@ -40,6 +43,8 @@ function LUAOnWin32MouseMiddleDown(wp, lp, hiwp, lowp, hilp, lolp)
 end
 
 function LUAOnWin32MouseMiddleUp(wp, lp, hiwp, lowp, hilp, lolp)
+	if _LUAGameSceneView == nil or _LUAGameSceneView.self == nil then return false end
+	_LUAGameSceneView.self:setScale(1.0)
 	return false
 end
 
@@ -52,5 +57,9 @@ function LUAOnWin32MouseMoveing(wp, lp, hiwp, lowp, hilp, lolp)
 end
 
 function LUAOnWin32MouseWheeling(wp, lp, hiwp, lowp, hilp, lolp)
+	if _LUAGameSceneView == nil or _LUAGameSceneView.self == nil then return false end
+	local scale = _LUAGameSceneView.self:getScale()
+	scale = scale + hiwp / WHEEL_DELTA * 0.01;
+	_LUAGameSceneView.self:setScale(scale)
 	return false
 end
