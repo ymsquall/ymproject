@@ -5,6 +5,7 @@
 
 using namespace cocos2d;
 using namespace cocos2d::extension;
+using namespace gui;
 
 LoginView::LoginView()
 {
@@ -30,15 +31,15 @@ bool LoginView::init()
 		return false;
 
     this->scheduleUpdate();
-	mLayout = (cocos2d::extension::Layout*)userdata.value.pointer;
+	mLayout = (UILayout*)userdata.value.pointer;
 	this->addWidget(mLayout);
 
-	mCheckBox = dynamic_cast<cocos2d::extension::UICheckBox*>(mLayout->getChildByName("CheckBox"));
-	mNameInput = dynamic_cast<cocos2d::extension::UITextField*>(mLayout->getChildByName("mNameInput"));
-	mEnterGameBtn = dynamic_cast<cocos2d::extension::UIButton*>(mLayout->getChildByName("mEnterGameBtn"));
-	mNameInput->setTouchEnable(true);
-	mEnterGameBtn->addReleaseEvent(this, coco_releaseselector(LoginView::onEnterGameBtnTouch));
-	mNameInput->addEventListener(this, textfieldeventselector(LoginView::onNameInputFieldEvent));
+	mCheckBox = dynamic_cast<UICheckBox*>(mLayout->getChildByName("CheckBox"));
+	mNameInput = dynamic_cast<UITextField*>(mLayout->getChildByName("mNameInput"));
+	mEnterGameBtn = dynamic_cast<UIButton*>(mLayout->getChildByName("mEnterGameBtn"));
+	mNameInput->setTouchEnabled(true);
+	mEnterGameBtn->addTouchEventListener(this, toucheventselector(LoginView::onEnterGameBtnTouch));
+	mNameInput->addEventListenerTextField(this, textfieldeventselector(LoginView::onNameInputFieldEvent));
 
 	return true;
 }
@@ -58,12 +59,12 @@ void LoginView::onEnterTransitionDidFinish()
 	ViewSuperT::onEnterTransitionDidFinish();
 }
 
-void LoginView::onEnterGameBtnTouch(cocos2d::CCObject* pSender)
+void LoginView::onEnterGameBtnTouch(cocos2d::CCObject* pSender, TouchEventType type)
 {
 	ViewModelManager::point()->selectModel(ModelType::SelectHero);
 }
 
-void LoginView::onNameInputFieldEvent(cocos2d::CCObject *pSender, cocos2d::extension::TextFiledEventType type)
+void LoginView::onNameInputFieldEvent(cocos2d::Object* pSender, gui::TextFiledEventType type)
 {
 
 }

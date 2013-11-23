@@ -3,11 +3,11 @@
 #include "cocos2d.h"
 #include "cocos-ext.h"
 #include "mvvm/view.h"
-#include "CocoStudio/CocoStudio.h"
+#include "cocostudio/CocoStudio.h"
 
 using namespace cocos2d;
-using namespace cocos2d::extension::armature;
 using namespace framework;
+using namespace cocostudio;
 
 class GameSceneView : public mvvm::ViewBase<GameSceneView, cocos2d::CCLayer>
 {
@@ -27,10 +27,10 @@ public:
 private:
 	virtual void onEnterTransitionDidFinish();
 	virtual void onExit();
-	virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
-	virtual void ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
-	virtual void ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
-	virtual void ccTouchCancelled(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+	virtual bool onTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+	virtual void onTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+	virtual void onTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+	virtual void onTouchCancelled(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
 
 	bool fixedScreenPositionBound(float& posX, float& posY);
 	void fixedBgImagePosition(float& posX, float& posY);

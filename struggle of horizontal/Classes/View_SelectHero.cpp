@@ -2,11 +2,10 @@
 #include "CocoStudio/CocoStudio.h"
 #include "ViewModelManager.h"
 #include "luaext/LuaHelper.h"
-#include "CCArmature/utils/CCArmatureDataManager.h"
 
 using namespace cocos2d;
 using namespace cocos2d::extension;
-using namespace cocos2d::extension::armature;
+using namespace gui;
 
 SelectHeroView::SelectHeroView()
 {
@@ -34,7 +33,7 @@ bool SelectHeroView::init()
 	if(userdata.type != LUA_TUSERDATA || NULL == userdata.value.pointer)
 		return false;
 	this->scheduleUpdate();
-	mLayout = (cocos2d::extension::Layout*)userdata.value.pointer;
+	mLayout = (UILayout*)userdata.value.pointer;
 	this->addWidget(mLayout);
 
 	mTitleTextBar = dynamic_cast<UIImageView*>(mLayout->getChildByName("mTitleTextBar"));
@@ -44,8 +43,8 @@ bool SelectHeroView::init()
 	mHeroHeadScrollView = dynamic_cast<UIScrollView*>(mLayout->getChildByName("mHeroHeadScrollView"));
 
 	mOkButton->setEnabled(false);
-	mBackButton->addReleaseEvent(this, coco_releaseselector(SelectHeroView::onBackBtnTouch));
-	mOkButton->addReleaseEvent(this, coco_releaseselector(SelectHeroView::onOkBtnTouch));
+	mBackButton->addTouchEventListener(this, toucheventselector(SelectHeroView::onBackBtnTouch));
+	mOkButton->addTouchEventListener(this, toucheventselector(SelectHeroView::onOkBtnTouch));
 
 	return true;
 }
@@ -66,7 +65,7 @@ void SelectHeroView::onEnterTransitionDidFinish()
 }
 
 static UIImageView* gpLastBeginTouchImage = NULL;
-bool SelectHeroView::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
+bool SelectHeroView::onTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
 	CCPoint touchPos = pTouch->getLocation();
 	gpLastBeginTouchImage = NULL;
@@ -76,55 +75,55 @@ bool SelectHeroView::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 		UIImageView* pHeaderImage = dynamic_cast<UIImageView*>(pObj);
 		if(NULL != pHeaderImage)
 		{
-			if(pHeaderImage->getRect().containsPoint(touchPos))
+			if(pHeaderImage->hitTest(touchPos))
 			{
-				pHeaderImage->addReleaseEvent(this, coco_releaseselector(SelectHeroView::onHeadImageTouch));
+				pHeaderImage->addTouchEventListener(this, toucheventselector(SelectHeroView::onHeadImageTouch));
 				pHeaderImage->onTouchBegan(touchPos);
 				gpLastBeginTouchImage = pHeaderImage;
 				break;
 			}
 		}
 	}
-	return UILayer::ccTouchBegan(pTouch, pEvent);
+	return UILayer::onTouchBegan(pTouch, pEvent);
 }
-void SelectHeroView::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
+void SelectHeroView::onTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
 {
 	CCPoint touchPos = pTouch->getLocation();
 	gpLastBeginTouchImage = NULL;
-	UILayer::ccTouchMoved(pTouch, pEvent);
+	UILayer::onTouchMoved(pTouch, pEvent);
 }
-void SelectHeroView::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
+void SelectHeroView::onTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
 {
 	CCPoint touchPos = pTouch->getLocation();
-	if(NULL != gpLastBeginTouchImage && gpLastBeginTouchImage->getRect().containsPoint(touchPos))
+	if(NULL != gpLastBeginTouchImage && gpLastBeginTouchImage->hitTest(touchPos))
 	{
 		gpLastBeginTouchImage->onTouchEnded(touchPos);
 		gpLastBeginTouchImage = NULL;
 	}
-	UILayer::ccTouchEnded(pTouch, pEvent);
+	UILayer::onTouchEnded(pTouch, pEvent);
 }
-void SelectHeroView::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent)
+void SelectHeroView::onTouchCancelled(CCTouch *pTouch, CCEvent *pEvent)
 {
 	CCPoint touchPos = pTouch->getLocation();
-	if(NULL != gpLastBeginTouchImage && gpLastBeginTouchImage->getRect().containsPoint(touchPos))
+	if(NULL != gpLastBeginTouchImage && gpLastBeginTouchImage->hitTest(touchPos))
 	{
 		gpLastBeginTouchImage->onTouchCancelled(touchPos);
 		gpLastBeginTouchImage = NULL;
 	}
-	UILayer::ccTouchCancelled(pTouch, pEvent);
+	UILayer::onTouchCancelled(pTouch, pEvent);
 }
 
-void SelectHeroView::onBackBtnTouch(cocos2d::CCObject* pSender)
+void SelectHeroView::onBackBtnTouch(Object *pSender, TouchEventType type)
 {
 	ViewModelManager::point()->selectModel(ModelType::Login);
 }
 
-void SelectHeroView::onOkBtnTouch(cocos2d::CCObject* pSender)
+void SelectHeroView::onOkBtnTouch(Object *pSender, TouchEventType type)
 {
 	ViewModelManager::point()->selectModel(ModelType::GameScene);
 }
 
-void SelectHeroView::onHeadImageTouch(cocos2d::CCObject* pSender)
+void SelectHeroView::onHeadImageTouch(Object *pSender, TouchEventType type)
 {
 	UIImageView* pImage = dynamic_cast<UIImageView*>(pSender);
 	if(NULL != pImage)
@@ -134,7 +133,7 @@ void SelectHeroView::onHeadImageTouch(cocos2d::CCObject* pSender)
 		pSelected = dynamic_cast<UIImageView*>(pNode);
 		if(NULL != pSelected)
 		{
-			pImage->removeChild(pSelected, true);
+			pImage->removeChild(pSelected);
 			mSelectHeroCount --;
 		}
 		else if(mSelectHeroCount < 3)

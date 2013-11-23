@@ -2,16 +2,16 @@
 
 extern "C" {
 #include "tolua++.h"
-#include "cocos2dx_support/tolua_fix.h"
+#include "tolua_fix.h"
 }
 
 #include <map>
 #include <string>
 #include "lua.h"
 #include "tolua++.h"
-#include "cocos2dx_support/tolua_fix.h"
+#include "tolua_fix.h"
 #include "cocos2d.h"
-#include "application/CCLuaEngine.h"
+#include "CCLuaEngine.h"
 
 using namespace cocos2d;
 

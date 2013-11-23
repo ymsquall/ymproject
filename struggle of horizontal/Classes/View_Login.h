@@ -3,11 +3,11 @@
 #include "cocos2d.h"
 #include "cocos-ext.h"
 #include "mvvm/view.h"
-#include "CocoStudio/CocoStudio.h"
+#include "gui/CocosGUI.h"
 
 using namespace framework;
 
-class LoginView : public mvvm::ViewBase<LoginView, cocos2d::extension::UILayer>
+class LoginView : public mvvm::ViewBase<LoginView, gui::UILayer>
 {
 public:
 	LoginView();
@@ -19,12 +19,12 @@ public:
 
 private:
 	virtual void onEnterTransitionDidFinish();
-	void onEnterGameBtnTouch(cocos2d::CCObject* pSender);
-	void onNameInputFieldEvent(cocos2d::CCObject *pSender, cocos2d::extension::TextFiledEventType type);
+	void onEnterGameBtnTouch(cocos2d::CCObject* pSender, gui::TouchEventType type);
+	void onNameInputFieldEvent(cocos2d::Object* pSender, gui::TextFiledEventType type);
 
 private:
-    cocos2d::extension::Layout* mLayout;
-	cocos2d::extension::UIButton* mEnterGameBtn;
-	cocos2d::extension::UITextField* mNameInput;
-	cocos2d::extension::UICheckBox* mCheckBox;
+    gui::UILayout* mLayout;
+	gui::UIButton* mEnterGameBtn;
+	gui::UITextField* mNameInput;
+	gui::UICheckBox* mCheckBox;
 };

@@ -3,7 +3,7 @@
 #include "unity/event.h"
 #include "unity/property.h"
 #include "mvvm/model.h"
-#include "application/CCLuaEngine.h"
+#include "CCLuaEngine.h"
 
 using namespace framework;
 

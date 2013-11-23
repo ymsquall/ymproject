@@ -3,6 +3,7 @@
 #include "CCEGLView.h"
 #include "ViewModelManager.h"
 #include "Win32MsgProc.h"
+#include "LuaSOFExtern.h"
 
 USING_NS_CC;
 
@@ -24,16 +25,19 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
     freopen("CONOUT$", "w", stderr);
 #endif
 
+	CCFileUtils::getInstance()->addSearchPath("luascript/cocos2dx-3");
     // create the application instance
 	engine::AppDelegate app;
 
 	EGLView::getInstance()->setAccelerometerKeyHook(&Win32MsgProc::KeyboardMsgProc);
-	EGLView::getInstance()->setWndProc(&Win32MsgProc::WindowsMsgProc);
+	//EGLView::getInstance()->setWndProc(&Win32MsgProc::WindowsMsgProc);
 
 	ViewModelManager* pModelMgr = ViewModelManager::point();
 	pModelMgr->initWithAppStart(&app);
-
     int ret = app.runApp(1024, 768, "struggle of soldier app");
+
+	LuaEngine* pEngine = LuaEngine::getInstance();
+	tolua_LuaSOFExtern_open(pEngine->getLuaStack()->getLuaState());
 	while(true)
 	{
 		pModelMgr->modelLoop(0);

@@ -1,11 +1,12 @@
 #include "LuaExtern.h"
-#include "cocos2dx_support/tolua_fix.h"
-#include "cocos2dx_support/CCLuaValue.h"
-#include "cocos2dx_support/LuaScriptHandlerMgr.h"
-#include "CocoStudio/GUI/BaseClasses/UIWidget.h"
+#include "tolua_fix.h"
+#include "CCLuaValue.h"
+#include "LuaScriptHandlerMgr.h"
+#include "LuaScriptHandlerMgr.h"
+#include "CocosGUI.h"
 
 using namespace cocos2d;
-using namespace cocos2d::extension;
+using namespace gui;
 
 int tolua_LuaExter_registerUIWidgetTouchHandler00(lua_State* tolua_S)
 {
@@ -30,8 +31,8 @@ int tolua_LuaExter_registerUIWidgetTouchHandler00(lua_State* tolua_S)
 		Touch::DispatchMode touchesMode = Touch::DispatchMode::ALL_AT_ONCE;
 		if (!isMultiTouches)
 			touchesMode = Touch::DispatchMode::ONE_BY_ONE;
-		self->setScriptTouchHandler(touchesMode, priority, swallowTouches);
-		ScriptHandlerMgr::getInstance()->addObjectHandler((void*)self, handler, ScriptHandlerMgr::kTouchesHandler);
+		//self->setScriptTouchHandler(touchesMode, priority, swallowTouches);
+		ScriptHandlerMgr::getInstance()->addObjectHandler((void*)self, handler, ScriptHandlerMgr::HandlerType::TOUCHES);
 	}
 	return 0;
 #ifndef TOLUA_RELEASE
@@ -53,8 +54,8 @@ int tolua_LuaExter_unregisterUIWidgetTouchHandler00(lua_State* tolua_S)
 #endif
 	{
 		UIWidget* self = (UIWidget*)  tolua_tousertype(tolua_S,1,0);
-		self->setScriptTouchHandler(Touch::DispatchMode::ALL_AT_ONCE, -1, false);
-		ScriptHandlerMgr::getInstance()->removeObjectHandler((void*)self, ScriptHandlerMgr::kTouchesHandler);
+		//self->setScriptTouchHandler(Touch::DispatchMode::ALL_AT_ONCE, -1, false);
+		ScriptHandlerMgr::getInstance()->removeObjectHandler((void*)self, ScriptHandlerMgr::HandlerType::TOUCHES);
 		return 0;
 	}
 #ifndef TOLUA_RELEASE

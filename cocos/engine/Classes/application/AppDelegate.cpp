@@ -1,8 +1,9 @@
 #include "cocos2d.h"
 #include "AppDelegate.h"
 #include "SimpleAudioEngine.h"
-#include "script_support/CCScriptSupport.h"
-#include "application/CCLuaEngine.h"
+#include "CCScriptSupport.h"
+#include "CCLuaEngine.h"
+#include "luaext/LuaExtern.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -47,6 +48,8 @@ namespace engine
 		pDirector->setAnimationInterval(1.0 / 60);
 		// register lua engine
 		LuaEngine* pEngine = LuaEngine::getInstance();
+		tolua_LuaExtern_open(pEngine->getLuaStack()->getLuaState());
+		tolua_LuaExternHandler_open(pEngine->getLuaStack()->getLuaState());
 		ScriptEngineManager::getInstance()->setScriptEngine(pEngine);
 		std::string path;
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
@@ -120,9 +123,7 @@ namespace engine
 	{
 		mEGLViewWidth = width;
 		mEGLViewHeight = height;
-		EGLView* eglView = EGLView::getInstance();
-		eglView->setViewName(title);
-		eglView->setFrameSize(mEGLViewWidth, mEGLViewHeight);
+		mCustomEGLView.init(title, mEGLViewWidth, mEGLViewHeight);
 		// init main message environment
 		PVRFrameEnableControlWindow(false);
 
@@ -134,7 +135,7 @@ namespace engine
 			return 0;
 		}
        
-		ShowWindow(eglView->getHWnd(), SW_SHOW);
+		//ShowWindow(eglView->getHWnd(), SW_SHOW);
 
 		framework::unity::RoutedEventArgs eventArgs;
 		Event_AppInitOveredShowingAfter(this, &eventArgs);
@@ -178,7 +179,8 @@ namespace engine
 	{
 		EGLView* eglView = EGLView::getInstance();
 		if(!eglView) return 0;
-		return eglView->getHWnd();
+		//return eglView->getHWnd();
+		return 0;
 	}
 #endif
     

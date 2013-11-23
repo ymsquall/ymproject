@@ -7,7 +7,7 @@ function LUAGameSceneModelOnFinalize()
 end
 
 function LUALoadGameSceneViewResources()
-	local pArmatureDataMgr = ArmatureDataManager:sharedArmatureDataManager()
+	local pArmatureDataMgr = ccs.ArmatureDataManager:getInstance()
 	pArmatureDataMgr:addArmatureFileInfo("heroanim0.png", "heroanim0.plist", "heroanim.json")
 end
 

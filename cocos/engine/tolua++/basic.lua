@@ -6,43 +6,6 @@ _to_functions = _to_functions or {}
 _push_functions = _push_functions or {}
 
 local CCObjectTypes = {
-    --"CCActionFrame",
-    --"CCActionFrameEasing",
-    --"CCActionManager",
-    --"CCActionNode",
-    --"CCActionObject",
-    "CCComRender",
-    "CCCSComAttribute",
-    "CCCSComAudio",
-    "CCCSContentJsonDictionary",
-    "CCSGUIReader",
-    "CCSSceneReader",
-    "CocosGUI",
-    "CompatibleClasses",
-    "Layout",
-    "LayoutParameter",
-    "UIButton",
-    "UICheckBox",
-    "UIDragPanel",
-    "UIHelper",
-    "UIImageView",
-    "UIInputManager",
-    "UILabel",
-    "UILabelAtlas",
-    "UILabelBMFont",
-    "UILayer",
-    "UILayoutDefine",
-    "UIListView",
-    "UILoadingBar",
-    "UIPageView",
-    "UIRootWidget",
-    "UIScrollView",
-    "UISlider",
-    "UITextField",
-    "UIWidget",
-    "Armature",
-    "ArmatureAnimation",
-	"ArmatureDataManager",
     "blockreader",
     "blockwrite",
     "framework::mvvm::IView",
@@ -135,13 +98,13 @@ function post_output_hook(package)
  ****************************************************************************/
 
 extern "C" {
-#include "cocos2dx_support/tolua_fix.h"
+#include "tolua_fix.h"
 }
 
 #include <map>
 #include <string>
 #include "LuaExtern.h"
-#include "cocos2dx_support/CCLuaEngine.h"
+#include "CCLuaEngine.h"
 #include "SimpleAudioEngine.h"
 #include "cocos-ext.h"
 #include "unity/object.h"
@@ -149,14 +112,12 @@ extern "C" {
 #include "mvvm/interface.h"
 #include "mvvm/model.h"
 #include "mvvm/view.h"
-#include "CocoStudio/CocoStudio.h"
+#include "CocoStudio.h"
 #include "LuaCocoStudioConversion.h"
 #include "LuaTiledHelper.h"
-#include "CCArmature/utils/CCArmatureDataManager.h"
 
 using namespace cocos2d;
 using namespace cocos2d::extension;
-using namespace cocos2d::extension::armature;
 using namespace framework;
 using namespace CocosDenshion;]])
 

@@ -14,11 +14,11 @@ function LUACreateAndPlayArmature(animName, playIndex, posX, posY, animScale, sc
 	posY = posY or 0
 	animScale = animScale or 1
 	scale = scale or 1
-	local pArmature = Armature:create(animName)
+	local pArmature = ccs.Armature:create(animName)
 	if playIndex ~= -1 then
 		pArmature:getAnimation():playByIndex(playIndex)
 	end
-	pArmature:getAnimation():setAnimationScale(animScale)
+	pArmature:getAnimation():setSpeedScale(animScale)
 	pArmature:setPosition(CCPoint(posX, posY))
 	pArmature:setScale(scale)
 	return pArmature

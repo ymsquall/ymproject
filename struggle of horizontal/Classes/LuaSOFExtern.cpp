@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaSOFExtern
-** Generated automatically by tolua++-1.0.92 on 11/22/13 23:23:23.
+** Generated automatically by tolua++-1.0.92 on 11/23/13 23:31:55.
 */
 
 /****************************************************************************
@@ -28,13 +28,13 @@
  ****************************************************************************/
 
 extern "C" {
-#include "cocos2dx_support/tolua_fix.h"
+#include "tolua_fix.h"
 }
 
 #include <map>
 #include <string>
 #include "LuaSOFExtern.h"
-#include "cocos2dx_support/CCLuaEngine.h"
+#include "CCLuaEngine.h"
 #include "SimpleAudioEngine.h"
 #include "cocos-ext.h"
 #include "unity/singleton.h"
@@ -45,7 +45,6 @@ extern "C" {
 
 using namespace cocos2d;
 using namespace cocos2d::extension;
-using namespace cocos2d::extension::armature;
 using namespace framework;
 using namespace CocosDenshion;
 

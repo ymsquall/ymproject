@@ -59,17 +59,17 @@ void GameSceneView::onExit()
 	ViewSuperT::onExit();
 }
 
-bool GameSceneView::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
+bool GameSceneView::onTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
 	return true;
 }
-void GameSceneView::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
+void GameSceneView::onTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
 {
 }
-void GameSceneView::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
+void GameSceneView::onTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
 {
 }
-void GameSceneView::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent)
+void GameSceneView::onTouchCancelled(CCTouch *pTouch, CCEvent *pEvent)
 {
 }
 
@@ -86,7 +86,7 @@ bool GameSceneView::screenScrollTo(const CCPoint& toPos)
 {
 	// 
 	static CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
-	static CCSize scrnHelfSize = ccp(screenSize.width/2.0f, screenSize.height/2.0f);
+	static CCSize scrnHelfSize = CCSizeMake(screenSize.width/2.0f, screenSize.height/2.0f);
 	float posX = scrnHelfSize.width + toPos.x;
 	float posY = scrnHelfSize.height - toPos.y;
 	bool ret = fixedScreenPositionBound(posX, posY);
@@ -98,7 +98,7 @@ bool GameSceneView::screenScrollTo(const CCPoint& toPos)
 void GameSceneView::fixedBgImagePosition(float& posX, float& posY)
 {
 	static CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
-	static CCSize scrnHelfSize = ccp(screenSize.width/2.0f, screenSize.height/2.0f);
+	static CCSize scrnHelfSize = CCSizeMake(screenSize.width/2.0f, screenSize.height/2.0f);
 	if((NULL != mBGLayer) && (NULL != mFGLayer))
 	{
 		CCSize fgSize = mFGLayer->getTileSet()->_imageSize;
@@ -113,7 +113,7 @@ void GameSceneView::fixedBgImagePosition(float& posX, float& posY)
 bool GameSceneView::fixedScreenPositionBound(float& posX, float& posY)
 {
 	static CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
-	static CCSize scrnHelfSize = ccp(screenSize.width/2.0f, screenSize.height/2.0f);
+	static CCSize scrnHelfSize = CCSizeMake(screenSize.width/2.0f, screenSize.height/2.0f);
 	bool ret = true;
 	if(NULL != mFGLayer)
 	{

@@ -3,17 +3,17 @@
 #include "cocos2d.h"
 #include "cocos-ext.h"
 #include "mvvm/view.h"
-#include "CocoStudio/CocoStudio.h"
+#include "gui/CocosGUI.h"
 
 using namespace framework;
 
-class SelectHeroView : public mvvm::ViewBase<SelectHeroView, cocos2d::extension::UILayer>
+class SelectHeroView : public mvvm::ViewBase<SelectHeroView, gui::UILayer>
 {
 public:
 	SelectHeroView();
 	~SelectHeroView();
 
-	typedef std::vector<cocos2d::extension::UIImageView*> HeroHeadList;
+	typedef std::vector<gui::UIImageView*> HeroHeadList;
 
     virtual bool init();
 	virtual bool initForMvvm();
@@ -21,22 +21,22 @@ public:
 
 private:
 	virtual void onEnterTransitionDidFinish();
-	virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
-	virtual void ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
-	virtual void ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
-	virtual void ccTouchCancelled(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+	virtual bool onTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+	virtual void onTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+	virtual void onTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+	virtual void onTouchCancelled(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
 
-	void onBackBtnTouch(cocos2d::CCObject* pSender);
-	void onOkBtnTouch(cocos2d::CCObject* pSender);
-	void onHeadImageTouch(cocos2d::CCObject* pSender);
+	void onBackBtnTouch(Object *pSender, gui::TouchEventType type);
+	void onOkBtnTouch(Object *pSender, gui::TouchEventType type);
+	void onHeadImageTouch(Object *pSender, gui::TouchEventType type);
 
 private:
-	cocos2d::extension::Layout* mLayout;
-	cocos2d::extension::UIImageView* mTitleTextBar;
-	cocos2d::extension::UIImageView* mBottomBar;
-	cocos2d::extension::UIButton* mBackButton;
-	cocos2d::extension::UIButton* mOkButton;
-	cocos2d::extension::UIScrollView* mHeroHeadScrollView;
+	gui::UILayout* mLayout;
+	gui::UIImageView* mTitleTextBar;
+	gui::UIImageView* mBottomBar;
+	gui::UIButton* mBackButton;
+	gui::UIButton* mOkButton;
+	gui::UIScrollView* mHeroHeadScrollView;
 	HeroHeadList mHeroHeadList;
 	int mSelectHeroCount;
 };

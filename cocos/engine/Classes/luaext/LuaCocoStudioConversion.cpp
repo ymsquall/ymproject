@@ -1,9 +1,9 @@
 #include "LuaCocoStudioConversion.h"
 
-Layout* LuaCocoStudioConversion::getChildLayoutByName(const char* name, UIWidget* pParent)
+UILayout* LuaCocoStudioConversion::getChildLayoutByName(const char* name, UIWidget* pParent)
 {
 	UIWidget* pUI = pParent->getChildByName(name);
-	return dynamic_cast<Layout*>(pUI);
+	return dynamic_cast<UILayout*>(pUI);
 }
 UILayer* LuaCocoStudioConversion::getChildUILayerByName(const char* name, UIWidget* pParent)
 {
@@ -29,11 +29,6 @@ UILabel* LuaCocoStudioConversion::getChildUILabelByName(const char* name, UIWidg
 {
 	UIWidget* pUI = pParent->getChildByName(name);
 	return dynamic_cast<UILabel*>(pUI);
-}
-UITextArea* LuaCocoStudioConversion::getChildUITextAreaByName(const char* name, UIWidget* pParent)
-{
-	UIWidget* pUI = pParent->getChildByName(name);
-	return dynamic_cast<UITextArea*>(pUI);
 }
 UILabelAtlas* LuaCocoStudioConversion::getChildUILabelAtlasByName(const char* name, UIWidget* pParent)
 {
@@ -66,11 +61,6 @@ UIScrollView* LuaCocoStudioConversion::getChildUIScrollViewByName(const char* na
 	UIWidget* pUI = pParent->getChildByName(name);
 	return dynamic_cast<UIScrollView*>(pUI);
 }
-UIDragPanel* LuaCocoStudioConversion::getChildUIDragPanelByName(const char* name, UIWidget* pParent)
-{
-	UIWidget* pUI = pParent->getChildByName(name);
-	return dynamic_cast<UIDragPanel*>(pUI);
-}
 UIListView* LuaCocoStudioConversion::getChildUIListViewByName(const char* name, UIWidget* pParent)
 {
 	UIWidget* pUI = pParent->getChildByName(name);
@@ -82,9 +72,9 @@ UIPageView* LuaCocoStudioConversion::getChildUIPageViewByName(const char* name, 
 	return dynamic_cast<UIPageView*>(pUI);
 }
 
-Layout* LuaCocoStudioConversion::toLayout(void* pointer)
+UILayout* LuaCocoStudioConversion::toLayout(void* pointer)
 {
-	return static_cast<Layout*>(pointer);
+	return static_cast<UILayout*>(pointer);
 }
 UILayer* LuaCocoStudioConversion::toUILayer(void* pointer)
 {
@@ -105,10 +95,6 @@ UIImageView* LuaCocoStudioConversion::toUIImageView(void* pointer)
 UILabel* LuaCocoStudioConversion::toUILabel(void* pointer)
 {
 	return static_cast<UILabel*>(pointer);
-}
-UITextArea* LuaCocoStudioConversion::toUITextArea(void* pointer)
-{
-	return static_cast<UITextArea*>(pointer);
 }
 UILabelAtlas* LuaCocoStudioConversion::toUILabelAtlas(void* pointer)
 {
@@ -133,10 +119,6 @@ UITextField* LuaCocoStudioConversion::toUITextField(void* pointer)
 UIScrollView* LuaCocoStudioConversion::toUIScrollView(void* pointer)
 {
 	return static_cast<UIScrollView*>(pointer);
-}
-UIDragPanel* LuaCocoStudioConversion::toUIDragPanel(void* pointer)
-{
-	return static_cast<UIDragPanel*>(pointer);
 }
 UIListView* LuaCocoStudioConversion::toUIListView(void* pointer)
 {

@@ -3,6 +3,7 @@
 
 #include "CCApplication.h"
 #include "mvvm/framework.h"
+#include "CustomEGLView.h"
 
 /**
 @brief    The cocos2d Application.
@@ -59,6 +60,7 @@ namespace engine
 		LARGE_INTEGER mMessageLast;
 		LARGE_INTEGER mMessageNow;
 #endif
+		CustomEGLView mCustomEGLView;
 	};
 }
 

@@ -1,5 +1,5 @@
-function LUALog(str)
-	CCLuaLog('LUA : '..str)
+function LUALog(...)
+    print(string.format(...))
 end
 function LUAGetResourceFullDir(file, path)
 	local filePath = nil
@@ -28,9 +28,9 @@ function LUAGetDisplayOffPos()
 	return offPos,index
 end
 
-__LUADeviceWinSize = CCDirector:sharedDirector():getWinSize()
-__LUADeviceVisibleSize = CCDirector:sharedDirector():getVisibleSize()
-__LUADeviceOriginPos = CCDirector:sharedDirector():getVisibleOrigin()
+__LUADeviceWinSize = cc.Director:sharedDirector():getWinSize()
+__LUADeviceVisibleSize = cc.Director:sharedDirector():getVisibleSize()
+__LUADeviceOriginPos = cc.Director:sharedDirector():getVisibleOrigin()
 __LUADeviceOffsetPos, __LUADeviceOffIndex = LUAGetDisplayOffPos()
 __LUADeviceCenterPos = CCPoint(__LUADeviceVisibleSize.width/2.0, __LUADeviceVisibleSize.height/2.0)
 __LUADeviceRealCenterPos = CCPoint(__LUADeviceCenterPos.x-__LUADeviceOffsetPos.x, __LUADeviceCenterPos.y-__LUADeviceOffsetPos.y)
