@@ -5,6 +5,7 @@
 #include "mvvm/view.h"
 #include "CocoStudio/CocoStudio.h"
 
+using namespace cocos2d;
 using namespace framework;
 
 class GameSceneView : public mvvm::ViewBase<GameSceneView, cocos2d::CCLayer>
@@ -17,6 +18,11 @@ public:
 	virtual bool init();
 	virtual bool initForMvvm();
 
+	bool screenScroll(const CCPoint& offset);
+	bool screenScrollTo(const CCPoint& toPos);
+	bool movePlayer(const CCPoint& offset);
+	bool movePlayerTo(const CCPoint& toPos);
+
 private:
 	virtual void onEnterTransitionDidFinish();
 	virtual void onExit();
@@ -25,11 +31,16 @@ private:
 	virtual void ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
 	virtual void ccTouchCancelled(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
 
-	void onBackBtnTouch(cocos2d::CCObject* pSender);
-	void onMapTouched(cocos2d::CCObject* pSender);
-	void onMapGridTouched(cocos2d::CCObject* pSender);
-	void onMapPanelDragEvent(cocos2d::CCObject* pSender, cocos2d::extension::DragPanelEventType type);
+	bool fixedScreenPositionBound(float& posX, float& posY);
+	void fixedBgImagePosition(float& posX, float& posY);
+
+	virtual void update(float dt);
 
 public:
-	cocos2d::TMXTiledMap* mTiledMap;
+	TMXTiledMap* mTiledMap;
+	TMXLayer* mFGLayer;
+	TMXLayer* mBGLayer;
+	CCPoint mScrollEndPos;
+	CCPoint mBgFixedPos;
+	CCPoint mPlayerEndPos;
 };

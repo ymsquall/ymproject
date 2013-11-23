@@ -23,11 +23,13 @@
     <ClCompile Include="Classes\luaext\LuaExtern.cpp" />
     <ClCompile Include="Classes\luaext\LuaExtern_Handler.cpp" />
     <ClCompile Include="Classes\luaext\LuaHelper.cpp" />
+    <ClCompile Include="Classes\luaext\LuaTiledHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Classes\luaext\LuaCocoStudioConversion.h" />
     <ClInclude Include="Classes\luaext\LuaExtern.h" />
     <ClInclude Include="Classes\luaext\LuaHelper.h" />
+    <ClInclude Include="Classes\luaext\LuaTiledHelper.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{0174FF64-EE4F-4222-99B5-34414CF23075}</ProjectGuid>

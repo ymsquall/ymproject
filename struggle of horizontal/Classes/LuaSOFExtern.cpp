@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaSOFExtern
-** Generated automatically by tolua++-1.0.92 on 11/19/13 10:29:31.
+** Generated automatically by tolua++-1.0.92 on 11/22/13 23:23:23.
 */
 
 /****************************************************************************
@@ -90,21 +90,22 @@ static int tolua_collect_GameSceneModel (lua_State* tolua_S)
 /* function to register type */
 static void tolua_reg_types (lua_State* tolua_S)
 {
- tolua_usertype(tolua_S,"ModelType");
- tolua_usertype(tolua_S,"unity::RoutedEventArgs");
- tolua_usertype(tolua_S,"ViewModelManager");
+ tolua_usertype(tolua_S,"CCPoint");
  tolua_usertype(tolua_S,"mvvm::IModelManager");
- tolua_usertype(tolua_S,"framework::unity::blockwrite");
  tolua_usertype(tolua_S,"framework::unity::SingletonAutoT<ViewModelManager>");
  tolua_usertype(tolua_S,"LuaUserDataConversion");
+ tolua_usertype(tolua_S,"CCNode");
+ tolua_usertype(tolua_S,"engine::AppDelegate");
+ tolua_usertype(tolua_S,"framework::unity::blockwrite");
+ tolua_usertype(tolua_S,"unity::RoutedEventArgs");
+ tolua_usertype(tolua_S,"ViewModelManager");
  tolua_usertype(tolua_S,"GameSceneModel");
  tolua_usertype(tolua_S,"UILayer");
  tolua_usertype(tolua_S,"GameSceneView");
- tolua_usertype(tolua_S,"cocos2d::extension::Armature");
  tolua_usertype(tolua_S,"unity::SingletonAutoT<ViewModelManager>");
  tolua_usertype(tolua_S,"ModelImpl");
- tolua_usertype(tolua_S,"CCNode");
- tolua_usertype(tolua_S,"engine::AppDelegate");
+ tolua_usertype(tolua_S,"ModelType");
+ tolua_usertype(tolua_S,"cocos2d::extension::Armature");
  tolua_usertype(tolua_S,"unity::object");
 }
 
@@ -735,6 +736,142 @@ static int tolua_LuaSOFExtern_GameSceneView_delete00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: screenScroll of class  GameSceneView */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_GameSceneView_screenScroll00
+static int tolua_LuaSOFExtern_GameSceneView_screenScroll00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"GameSceneView",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const CCPoint",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  GameSceneView* self = (GameSceneView*)  tolua_tousertype(tolua_S,1,0);
+  const CCPoint* offset = ((const CCPoint*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'screenScroll'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->screenScroll(*offset);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'screenScroll'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: screenScrollTo of class  GameSceneView */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_GameSceneView_screenScrollTo00
+static int tolua_LuaSOFExtern_GameSceneView_screenScrollTo00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"GameSceneView",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const CCPoint",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  GameSceneView* self = (GameSceneView*)  tolua_tousertype(tolua_S,1,0);
+  const CCPoint* toPos = ((const CCPoint*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'screenScrollTo'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->screenScrollTo(*toPos);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'screenScrollTo'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: movePlayer of class  GameSceneView */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_GameSceneView_movePlayer00
+static int tolua_LuaSOFExtern_GameSceneView_movePlayer00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"GameSceneView",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const CCPoint",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  GameSceneView* self = (GameSceneView*)  tolua_tousertype(tolua_S,1,0);
+  const CCPoint* offset = ((const CCPoint*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'movePlayer'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->movePlayer(*offset);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'movePlayer'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: movePlayerTo of class  GameSceneView */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_GameSceneView_movePlayerTo00
+static int tolua_LuaSOFExtern_GameSceneView_movePlayerTo00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"GameSceneView",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const CCPoint",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  GameSceneView* self = (GameSceneView*)  tolua_tousertype(tolua_S,1,0);
+  const CCPoint* toPos = ((const CCPoint*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'movePlayerTo'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->movePlayerTo(*toPos);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'movePlayerTo'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: toBlockWrite of class  LuaUserDataConversion */
 #ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_LuaUserDataConversion_toBlockWrite00
 static int tolua_LuaSOFExtern_LuaUserDataConversion_toBlockWrite00(lua_State* tolua_S)
@@ -953,6 +1090,10 @@ TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"new_local",tolua_LuaSOFExtern_GameSceneView_new00_local);
    tolua_function(tolua_S,".call",tolua_LuaSOFExtern_GameSceneView_new00_local);
    tolua_function(tolua_S,"delete",tolua_LuaSOFExtern_GameSceneView_delete00);
+   tolua_function(tolua_S,"screenScroll",tolua_LuaSOFExtern_GameSceneView_screenScroll00);
+   tolua_function(tolua_S,"screenScrollTo",tolua_LuaSOFExtern_GameSceneView_screenScrollTo00);
+   tolua_function(tolua_S,"movePlayer",tolua_LuaSOFExtern_GameSceneView_movePlayer00);
+   tolua_function(tolua_S,"movePlayerTo",tolua_LuaSOFExtern_GameSceneView_movePlayerTo00);
   tolua_endmodule(tolua_S);
   tolua_cclass(tolua_S,"LuaUserDataConversion","LuaUserDataConversion","",NULL);
   tolua_beginmodule(tolua_S,"LuaUserDataConversion");

@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaExtern
-** Generated automatically by tolua++-1.0.92 on 11/21/13 23:41:17.
+** Generated automatically by tolua++-1.0.92 on 11/22/13 22:57:49.
 */
 
 /****************************************************************************
@@ -44,6 +44,7 @@ extern "C" {
 #include "mvvm/view.h"
 #include "CocoStudio/CocoStudio.h"
 #include "LuaCocoStudioConversion.h"
+#include "LuaTiledHelper.h"
 #include "CCArmature/utils/CCArmatureDataManager.h"
 
 using namespace cocos2d;
@@ -457,6 +458,7 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"CCComAudio");
  tolua_usertype(tolua_S,"CCClippingNode");
  tolua_usertype(tolua_S,"AffineTransform");
+ tolua_usertype(tolua_S,"CCTMXLayer");
  tolua_usertype(tolua_S,"cs::CCCSJsonDictionary");
  tolua_usertype(tolua_S,"framework::mvvm::DispatcherObject");
  tolua_usertype(tolua_S,"AnimationData");
@@ -471,6 +473,7 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"CCLayer");
  tolua_usertype(tolua_S,"SEL_ListViewUpdateChildEvent");
  tolua_usertype(tolua_S,"UICCLabelAtlas");
+ tolua_usertype(tolua_S,"LuaTiledHelper");
  tolua_usertype(tolua_S,"GLubyte");
  tolua_usertype(tolua_S,"uint32");
  tolua_usertype(tolua_S,"armature::Bone");
@@ -30303,6 +30306,36 @@ static int tolua_LuaExtern_LuaCocoStudioConversion_toUIPageView00(lua_State* tol
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: getTMXLayerImageSize of class  LuaTiledHelper */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_LuaTiledHelper_getTMXLayerImageSize00
+static int tolua_LuaExtern_LuaTiledHelper_getTMXLayerImageSize00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"LuaTiledHelper",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"CCTMXLayer",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  CCTMXLayer* layer = ((CCTMXLayer*)  tolua_tousertype(tolua_S,2,0));
+  {
+   const CCSize& tolua_ret = (const CCSize&)  LuaTiledHelper::getTMXLayerImageSize(layer);
+    tolua_pushusertype(tolua_S,(void*)&tolua_ret,"const CCSize");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getTMXLayerImageSize'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* Open function */
 TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
 {
@@ -31726,6 +31759,10 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"toUIDragPanel",tolua_LuaExtern_LuaCocoStudioConversion_toUIDragPanel00);
    tolua_function(tolua_S,"toUIListView",tolua_LuaExtern_LuaCocoStudioConversion_toUIListView00);
    tolua_function(tolua_S,"toUIPageView",tolua_LuaExtern_LuaCocoStudioConversion_toUIPageView00);
+  tolua_endmodule(tolua_S);
+  tolua_cclass(tolua_S,"LuaTiledHelper","LuaTiledHelper","",NULL);
+  tolua_beginmodule(tolua_S,"LuaTiledHelper");
+   tolua_function(tolua_S,"getTMXLayerImageSize",tolua_LuaExtern_LuaTiledHelper_getTMXLayerImageSize00);
   tolua_endmodule(tolua_S);
   tolua_constant(tolua_S,"VK_LBUTTON",VK_LBUTTON);
   tolua_constant(tolua_S,"VK_RBUTTON",VK_RBUTTON);

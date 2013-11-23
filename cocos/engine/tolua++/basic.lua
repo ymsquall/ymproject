@@ -50,6 +50,7 @@ local CCObjectTypes = {
     "framework::mvvm::IModel",
     "framework::mvvm::ModelBase",
     "LuaCocoStudioConversion",
+    "LuaTiledHelper",
 }
 
 -- register CCObject types
@@ -150,6 +151,7 @@ extern "C" {
 #include "mvvm/view.h"
 #include "CocoStudio/CocoStudio.h"
 #include "LuaCocoStudioConversion.h"
+#include "LuaTiledHelper.h"
 #include "CCArmature/utils/CCArmatureDataManager.h"
 
 using namespace cocos2d;

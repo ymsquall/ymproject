@@ -2,4 +2,8 @@ class GameSceneView : public UILayer
 {
 	GameSceneView();
 	~GameSceneView();
+	bool screenScroll(const CCPoint& offset);
+	bool screenScrollTo(const CCPoint& toPos);
+	bool movePlayer(const CCPoint& offset);
+	bool movePlayerTo(const CCPoint& toPos);
 };

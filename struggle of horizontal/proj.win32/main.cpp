@@ -33,7 +33,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 	ViewModelManager* pModelMgr = ViewModelManager::point();
 	pModelMgr->initWithAppStart(&app);
 
-    int ret = app.runApp(1440, 840, "struggle of soldier app");
+    int ret = app.runApp(1024, 768, "struggle of soldier app");
 	while(true)
 	{
 		pModelMgr->modelLoop(0);

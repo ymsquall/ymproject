@@ -5,11 +5,16 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 	local map = CCTMXTiledMap:create("scene0001.tmx")
 	_LUAGameSceneView.mTiledMap = map
 	_LUAGameSceneView.self:addChild(map)
+	local foreground = map:getLayer("foreground")
+	local background = map:getLayer("background")
+	local fgImageSize = LuaTiledHelper:getTMXLayerImageSize(foreground)
+	local bgImageSize = LuaTiledHelper:getTMXLayerImageSize(background)
 	return _LUAGameSceneView.mTiledMap
 end
 
 function LUAGameSceneViewOnEnter()
 	_LUAGameSceneView = _LUAGameSceneView or {}
+	_LUAGameSceneView.self:screenScrollTo(CCPoint(0, 0))
 	_LUAGameSceneView.mOnTickScriptHandlerID = CCDirector:getInstance():getScheduler():scheduleScriptFunc(LUAGameSceneViewOnTick, 0, false)
 end
 

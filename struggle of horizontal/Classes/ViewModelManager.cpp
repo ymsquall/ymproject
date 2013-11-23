@@ -34,14 +34,15 @@ void ViewModelManager::initWithAppStart(engine::AppDelegate* pApp)
 {
 	LuaEngine* pLuaEngine = LuaEngine::getInstance();
 	tolua_LuaSOFExtern_open(pLuaEngine->getLuaStack()->getLuaState());
-	reloadLuaScript("debug/win32handler.lua");
 
     CCFileUtils* pFileUtils = CCFileUtils::sharedFileUtils();
     std::vector<std::string> searchPaths;
 	searchPaths.push_back("tiledmap");
 	searchPaths.push_back("tiledmap/scenes/0001");
 	searchPaths.push_back("cocostudio/animations");
+	searchPaths.push_back("luascript");
 	pFileUtils->setSearchPaths(searchPaths);
+	reloadLuaScript("debug/win32handler.lua");
 
 	Director* pDirector = Director::getInstance();
 	pDirector->setNotificationNode(TopLevelView::point());
