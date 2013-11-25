@@ -920,9 +920,13 @@ xcopy /Y /D /V "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\websockets\pr
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Classes\Physics_Box2dView.cpp" />
+    <ClCompile Include="..\Classes\Physics_GameScene.cpp" />
+    <ClCompile Include="..\Classes\Physics_GLESDebugDraw.cpp" />
     <ClCompile Include="..\Classes\LuaSOFExtern.cpp" />
     <ClCompile Include="..\Classes\LuaUserDataConversion.cpp" />
     <ClCompile Include="..\Classes\Model_SelectHero.cpp" />
+    <ClCompile Include="..\Classes\PhysicsBase.cpp" />
     <ClCompile Include="..\Classes\ViewModelManager.cpp" />
     <ClCompile Include="..\Classes\Model_GameScene.cpp" />
     <ClCompile Include="..\Classes\Model_Login.cpp" />
@@ -938,9 +942,13 @@ xcopy /Y /D /V "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\websockets\pr
     <ClCompile Include="Win32MsgProc.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Classes\Physics_Box2dView.h" />
+    <ClInclude Include="..\Classes\Physics_GameScene.h" />
+    <ClInclude Include="..\Classes\Physics_GLESDebugDraw.h" />
     <ClInclude Include="..\Classes\LuaSOFExtern.h" />
     <ClInclude Include="..\Classes\LuaUserDataConversion.h" />
     <ClInclude Include="..\Classes\Model_SelectHero.h" />
+    <ClInclude Include="..\Classes\PhysicsBase.h" />
     <ClInclude Include="..\Classes\ViewModelManager.h" />
     <ClInclude Include="..\Classes\ModelTypeDefine.h" />
     <ClInclude Include="..\Classes\Model_GameScene.h" />

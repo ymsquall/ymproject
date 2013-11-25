@@ -11,19 +11,19 @@ function LUAGetResourceFullDir(file, path)
 	return CCFileUtils:getInstance():fullPathForFilename(filePath)
 end
 function LUAGetDisplayOffPos()
-	local offPos = CCPoint(0,0)
+	local offPos = cc.p(0,0)
 	local index = 0
 	if __LUADeviceWinSize.width <= 960 and __LUADeviceWinSize.height <= 640 then --iphone4
 		index = 1
 	elseif __LUADeviceWinSize.width > 960 and __LUADeviceWinSize.width <=1200 and __LUADeviceWinSize.height <= 640 then	--iphone5 1136 X 640
 		index = 2
-		offPos = CCPoint(90,0)
+		offPos = cc.p(90,0)
 	elseif __LUADeviceWinSize.width > 960 and __LUADeviceWinSize.width <=1200 and __LUADeviceWinSize.height > 640 and __LUADeviceWinSize.height < 800 then	--iPad 1024 x 768
 		index = 3
-		offPos = CCPoint(36,128/2)
+		offPos = cc.p(36,128/2)
 	elseif __LUADeviceWinSize.width  >= 2000 and __LUADeviceWinSize.height >= 1500 then
 		index = 4
-		offPos = CCPoint(2048/2-960/2,1536/2-640/2);
+		offPos = cc.p(2048/2-960/2,1536/2-640/2);
 	end
 	return offPos,index
 end
@@ -32,8 +32,8 @@ __LUADeviceWinSize = cc.Director:sharedDirector():getWinSize()
 __LUADeviceVisibleSize = cc.Director:sharedDirector():getVisibleSize()
 __LUADeviceOriginPos = cc.Director:sharedDirector():getVisibleOrigin()
 __LUADeviceOffsetPos, __LUADeviceOffIndex = LUAGetDisplayOffPos()
-__LUADeviceCenterPos = CCPoint(__LUADeviceVisibleSize.width/2.0, __LUADeviceVisibleSize.height/2.0)
-__LUADeviceRealCenterPos = CCPoint(__LUADeviceCenterPos.x-__LUADeviceOffsetPos.x, __LUADeviceCenterPos.y-__LUADeviceOffsetPos.y)
+__LUADeviceCenterPos = cc.p(__LUADeviceVisibleSize.width/2.0, __LUADeviceVisibleSize.height/2.0)
+__LUADeviceRealCenterPos = cc.p(__LUADeviceCenterPos.x-__LUADeviceOffsetPos.x, __LUADeviceCenterPos.y-__LUADeviceOffsetPos.y)
 __LUADeviceResourceDir = CCFileUtils:getInstance():fullPathForFilename('')
 local startmsg = 'lua script begining in device info'..
 				 ':\n\t[ScreenSize = '..__LUADeviceWinSize.width..','..__LUADeviceWinSize.height..

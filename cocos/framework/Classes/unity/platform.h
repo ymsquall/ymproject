@@ -83,7 +83,7 @@
 	typedef unsigned __int16	uint16;
 	typedef __int16				int16;
 	typedef unsigned __int8		uint8;
-	typedef __int8				int8;
+	typedef signed char			int8;
 	typedef unsigned __int64	uint64;
 	typedef __int64				int64;
 #else
@@ -92,7 +92,7 @@
 	typedef unsigned short		uint16;
 	typedef short				int16;
 	typedef unsigned char		uint8;
-	typedef char				int8;
+	typedef signed char			int8;
 	typedef unsigned long long	uint64;
 	typedef long long			int64;
 #endif

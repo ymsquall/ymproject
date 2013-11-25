@@ -158,6 +158,14 @@ DebugMT.win32
 ReleaseMT.win32
 Debug.win32
 Release.win32
+Debug_2.win32
+Release_2.win32
+Debug_3.win32
+Release_3.win32
+DebugMT_2.win32
+ReleaseMT_2.win32
+DebugMT_3.win32
+ReleaseMT_3.win32
 
 glew32.dll
 iconv.dll
@@ -188,3 +196,4 @@ sofD.map
 
 sof.exe
 sof.map
+proj.win32

@@ -9,6 +9,7 @@ using namespace cocos2d;
 using namespace framework;
 using namespace cocostudio;
 
+class Physics_Box2DView;
 class GameSceneView : public mvvm::ViewBase<GameSceneView, cocos2d::CCLayer>
 {
 public:
@@ -19,30 +20,37 @@ public:
 	virtual bool init();
 	virtual bool initForMvvm();
 
-	bool screenScroll(const CCPoint& offset);
-	bool screenScrollTo(const CCPoint& toPos);
-	bool movePlayer(const CCPoint& offset);
-	bool movePlayerTo(const CCPoint& toPos);
+	bool screenScroll(const Point& offset);
+	bool screenScrollTo(const Point& toPos);
+	bool movePlayer(const Point& offset);
+	bool movePlayerTo(const Point& toPos);
 
 private:
 	virtual void onEnterTransitionDidFinish();
 	virtual void onExit();
-	virtual bool onTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
-	virtual void onTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
-	virtual void onTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
-	virtual void onTouchCancelled(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+	virtual void onTouchesBegan(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event);
+	virtual void onTouchesMoved(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event);
+	virtual void onTouchesEnded(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event);
 
 	bool fixedScreenPositionBound(float& posX, float& posY);
 	void fixedBgImagePosition(float& posX, float& posY);
 
 	virtual void update(float dt);
 
+	void onFrameEvent(cocostudio::Bone *bone, const char *evt, int originFrameIndex, int currentFrameIndex);
+	void animationEvent(cocostudio::Armature *armature, cocostudio::MovementEventType movementType, const char *movementID);
+
 public:
 	TMXTiledMap* mTiledMap;
 	TMXLayer* mFGLayer;
 	TMXLayer* mBGLayer;
-	Armature* mHeroAnim;
+	cocostudio::Armature* mHeroAnim;
 	CCPoint mScrollEndPos;
 	CCPoint mBgFixedPos;
 	CCPoint mPlayerEndPos;
+
+	Physics_Box2DView* mPhysicsView;
+
+	CCPoint mTouchMoveBeginPos;
+	cocos2d::Touch* mTouchMoveing;
 };

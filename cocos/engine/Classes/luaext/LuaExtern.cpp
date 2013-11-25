@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaExtern
-** Generated automatically by tolua++-1.0.92 on 11/23/13 23:03:43.
+** Generated automatically by tolua++-1.0.92 on 11/24/13 10:37:21.
 */
 
 /****************************************************************************
@@ -127,6 +127,7 @@ static int tolua_collect_framework__mvvm__UIElement (lua_State* tolua_S)
 /* function to register type */
 static void tolua_reg_types (lua_State* tolua_S)
 {
+ tolua_usertype(tolua_S,"TMXLayer");
  tolua_usertype(tolua_S,"UILayout");
  tolua_usertype(tolua_S,"LuaTiledHelper");
  tolua_usertype(tolua_S,"UIWidget");
@@ -141,7 +142,6 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"UIListView");
  tolua_usertype(tolua_S,"framework::unity::blockreader");
  tolua_usertype(tolua_S,"UISlider");
- tolua_usertype(tolua_S,"CCTMXLayer");
  tolua_usertype(tolua_S,"CCSize");
  tolua_usertype(tolua_S,"framework::mvvm::DispatcherObject");
  tolua_usertype(tolua_S,"UICheckBox");
@@ -2767,14 +2767,14 @@ static int tolua_LuaExtern_LuaTiledHelper_getTMXLayerImageSize00(lua_State* tolu
  tolua_Error tolua_err;
  if (
      !tolua_isusertable(tolua_S,1,"LuaTiledHelper",0,&tolua_err) ||
-     !tolua_isusertype(tolua_S,2,"CCTMXLayer",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"TMXLayer",0,&tolua_err) ||
      !tolua_isnoobj(tolua_S,3,&tolua_err)
  )
   goto tolua_lerror;
  else
 #endif
  {
-  CCTMXLayer* layer = ((CCTMXLayer*)  tolua_tousertype(tolua_S,2,0));
+  TMXLayer* layer = ((TMXLayer*)  tolua_tousertype(tolua_S,2,0));
   {
    const CCSize& tolua_ret = (const CCSize&)  LuaTiledHelper::getTMXLayerImageSize(layer);
     tolua_pushusertype(tolua_S,(void*)&tolua_ret,"const CCSize");

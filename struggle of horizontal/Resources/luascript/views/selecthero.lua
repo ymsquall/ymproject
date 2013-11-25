@@ -1,7 +1,7 @@
 function LUALoadSelectHeroView(viewWideh, viewHeight)
 	local pLayout = UIHelper:instance():createWidgetFromJsonFile('studioui/SelectHeroView/SelectHeroView.json')
 	local layoutSize = pLayout:getContentSize()
-	pLayout:setPosition(CCPoint((viewWideh-layoutSize.width)/2.0, (viewHeight-layoutSize.height)/2.0));
+	pLayout:setPosition(cc.p((viewWideh-layoutSize.width)/2.0, (viewHeight-layoutSize.height)/2.0));
 
 	local mHeroHeadScrollView = LuaCocoStudioConversion:getChildUIScrollViewByName("mHeroHeadScrollView", pLayout)
 	local mTitleTextBar = LuaCocoStudioConversion:getChildUIImageViewByName("mTitleTextBar", pLayout)
@@ -23,7 +23,7 @@ function LUALoadSelectHeroView(viewWideh, viewHeight)
 	local pHeadImage6 = LUACreateUIImageView("picture/heroface/531-1.png")
 
 	local headSize = pHeadImage1:getContentSize()
-	local pos = CCPoint(headSize.width/2.0 + 20, headSize.height/2.0 + 7.0)
+	local pos = cc.p(headSize.width/2.0 + 20, headSize.height/2.0 + 7.0)
 	pHeadImage1:setPosition(pos)
 	pos.x = pos.x + headSize.width + 20
 	pHeadImage2:setPosition(pos)

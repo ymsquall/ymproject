@@ -1,17 +1,22 @@
 _LUAWin32KeyboardInfo = _LUAWin32KeyboardInfo or {}
 _LUAWin32MouseInfo = _LUAWin32MouseInfo or {}
-function LUAOnWin32KeyDownMsgProc(wp, lp, hiwp, lowp, hilp, lolp)
+function LUAOnWin32KeyDownMsgProc(key)
 	if _LUAGameSceneView == nil or _LUAGameSceneView.self == nil then return false end
-	if VK_W == wp then _LUAGameSceneView.self:screenScroll(CCPoint(0, 10)) end
-	if VK_S == wp then _LUAGameSceneView.self:screenScroll(CCPoint(0, -10)) end
-	if VK_A == wp then _LUAGameSceneView.self:screenScroll(CCPoint(-10, 0)) end
-	if VK_D == wp then _LUAGameSceneView.self:screenScroll(CCPoint(10, 0)) end
+	if VK_UP == key then _LUAGameSceneView.self:screenScroll(CCPoint(0, 10)) end
+	if VK_DOWN == key then _LUAGameSceneView.self:screenScroll(CCPoint(0, -10)) end
+	if VK_LEFT == key then _LUAGameSceneView.self:screenScroll(CCPoint(-10, 0)) end
+	if VK_RIGHT == key then _LUAGameSceneView.self:screenScroll(CCPoint(10, 0)) end
+	if VK_1 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('loading') end
+	if VK_2 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('run') end
+	if VK_3 == key or VK_SPACE == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('attack') end
+	if VK_4 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('smitten') end
+	if VK_5 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('death') end
 end
 
-function LUAOnWin32KeyUpMsgProc(wp, lp, hiwp, lowp, hilp, lolp)
+function LUAOnWin32KeyUpMsgProc(key)
 end
 
-function LUAOnWin32CharMsgProc(wp, lp, hiwp, lowp, hilp, lolp)
+function LUAOnWin32CharMsgProc(char)
 end
 
 function LUAOnWin32MouseLeftDown(wp, lp, hiwp, lowp, hilp, lolp)
@@ -52,14 +57,14 @@ function LUAOnWin32MouseMiddleDBClick(wp, lp, hiwp, lowp, hilp, lolp)
 	return false
 end
 
-function LUAOnWin32MouseMoveing(wp, lp, hiwp, lowp, hilp, lolp)
+function LUAOnWin32MouseMoveing(posX, posY)
 	return false
 end
 
-function LUAOnWin32MouseWheeling(wp, lp, hiwp, lowp, hilp, lolp)
+function LUAOnWin32MouseWheeling(scrX, scrY, key)
 	if _LUAGameSceneView == nil or _LUAGameSceneView.self == nil then return false end
 	local scale = _LUAGameSceneView.self:getScale()
-	scale = scale + hiwp / WHEEL_DELTA * 0.01;
+	scale = scale - scrY * 0.01;
 	_LUAGameSceneView.self:setScale(scale)
 	return false
 end

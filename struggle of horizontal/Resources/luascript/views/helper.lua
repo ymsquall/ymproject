@@ -3,7 +3,7 @@ function LUACreateUIImageView(textureName, posX, posY)
 	posY = posY or 0
 	local pImageView = UIImageView:create()
 	pImageView:setTexture(textureName)
-	pImageView:setPosition(CCPoint(posX, posY))
+	pImageView:setPosition(cc.p(posX, posY))
 	return pImageView
 end
 
@@ -19,7 +19,7 @@ function LUACreateAndPlayArmature(animName, playIndex, posX, posY, animScale, sc
 		pArmature:getAnimation():playByIndex(playIndex)
 	end
 	pArmature:getAnimation():setSpeedScale(animScale)
-	pArmature:setPosition(CCPoint(posX, posY))
+	pArmature:setPosition(cc.p(posX, posY))
 	pArmature:setScale(scale)
 	return pArmature
 end

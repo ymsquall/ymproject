@@ -25,9 +25,21 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
     freopen("CONOUT$", "w", stderr);
 #endif
 
-	CCFileUtils::getInstance()->addSearchPath("luascript/cocos2dx-3");
     // create the application instance
 	engine::AppDelegate app;
+
+	Win32MsgProc win32MsgProc;
+	auto dispatcher = Director::getInstance()->getEventDispatcher();
+	auto keyboradList = EventListenerKeyboard::create();
+	keyboradList->onKeyPressed = CC_CALLBACK_2(Win32MsgProc::onKeyPressed, &win32MsgProc);
+	keyboradList->onKeyReleased = CC_CALLBACK_2(Win32MsgProc::onKeyReleased, &win32MsgProc);
+	dispatcher->addEventListenerWithFixedPriority(keyboradList, -1);
+	auto mouseList = EventListenerMouse::create();
+	mouseList->onMouseDown = CC_CALLBACK_1(Win32MsgProc::onMouseDown, &win32MsgProc);
+	mouseList->onMouseUp = CC_CALLBACK_1(Win32MsgProc::onMouseUp, &win32MsgProc);
+	mouseList->onMouseMove = CC_CALLBACK_1(Win32MsgProc::onMouseMove, &win32MsgProc);
+	mouseList->onMouseScroll = CC_CALLBACK_1(Win32MsgProc::onMouseScroll, &win32MsgProc);
+	dispatcher->addEventListenerWithFixedPriority(mouseList, -1);
 
 	EGLView::getInstance()->setAccelerometerKeyHook(&Win32MsgProc::KeyboardMsgProc);
 	//EGLView::getInstance()->setWndProc(&Win32MsgProc::WindowsMsgProc);

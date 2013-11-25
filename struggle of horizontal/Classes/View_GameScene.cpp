@@ -2,6 +2,8 @@
 #include "ViewModelManager.h"
 #include "luaext/LuaHelper.h"
 #include "Model_GameScene.h"
+#include "Physics_Box2dView.h"
+#include "Physics_GameScene.h"
 
 GameSceneView* gGameSceneView = NULL;
 
@@ -13,6 +15,7 @@ GameSceneView::GameSceneView()
 	mTiledMap = NULL;
 	mFGLayer = NULL;
 	mBGLayer = NULL;
+	mTouchMoveing = NULL;
 	gGameSceneView = this;
 }
 
@@ -38,9 +41,28 @@ bool GameSceneView::init()
 	mFGLayer = mTiledMap->getLayer("foreground");
 	mBGLayer = mTiledMap->getLayer("background");
 	mHeroAnim = dynamic_cast<Armature*>(mTiledMap->getChildByTag(101));
-
+	mHeroAnim->getAnimation()->setFrameEventCallFunc(this, frameEvent_selector(GameSceneView::onFrameEvent));
+	mHeroAnim->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(GameSceneView::animationEvent));
 	this->scheduleUpdate();
+
+	auto listener = EventListenerTouchAllAtOnce::create();
+	listener->onTouchesBegan = CC_CALLBACK_2(GameSceneView::onTouchesBegan, this);
+	listener->onTouchesMoved = CC_CALLBACK_2(GameSceneView::onTouchesMoved, this);
+	listener->onTouchesEnded = CC_CALLBACK_2(GameSceneView::onTouchesEnded, this);
+	_eventDispatcher->addEventListenerWithFixedPriority(listener, -10);
+	_touchListener = listener;
+
 	return true;
+}
+
+void GameSceneView::onFrameEvent(cocostudio::Bone *bone, const char *evt, int originFrameIndex, int currentFrameIndex)
+{
+
+}
+
+void GameSceneView::animationEvent(cocostudio::Armature *armature, cocostudio::MovementEventType movementType, const char *movementID)
+{
+
 }
 
 bool GameSceneView::initForMvvm()
@@ -52,6 +74,38 @@ void GameSceneView::onEnterTransitionDidFinish()
 {
 	ViewSuperT::onEnterTransitionDidFinish();
 	callLuaFuncNoResult("LUAGameSceneViewOnEnter");
+
+	auto director = Director::getInstance();
+	Point visibleOrigin = director->getVisibleOrigin();
+	Size visibleSize = director->getVisibleSize();
+	mPhysicsView = Physics_Box2DView::create(1);
+	mTiledMap->addChild(mPhysicsView,1000);
+	mPhysicsView->setScale(VIEW_SCALE_RATE);
+	mPhysicsView->setAnchorPoint(Point(0,0));
+
+	GameScenePhysics* pPhysics = mPhysicsView->physics<GameScenePhysics>();
+	if(NULL != pPhysics)
+	{
+		// hero weapon box
+		//CCBone* pBone = mHeroAnim->getBone("Layer17");
+		//pPhysics->mHeroWeaponBody1->SetUserData((void*)pBone);
+		//CCNode* boneNode = pBone->getDisplayRenderNode();
+		//CCSize size = boneNode->getContentSize();
+		//CCPoint pos = boneNode->getPosition();
+		//pBone->getParentBone()->getDisplayRenderNode()->convertToWorldSpaceAR(pos);
+		//b2BodyDef bd;
+		//bd.type = b2_dynamicBody;
+		//bd.position.Set(pos.x/VIEW_SCALE_RATE, pos.x/VIEW_SCALE_RATE);
+		//pPhysics->mHeroWeaponBody = pPhysics->mWorld->CreateBody(&bd);
+		//b2PolygonShape shape;
+		//b2FixtureDef fd;
+		//fd.shape = &shape;
+		//fd.density = 0.0f;
+		//fd.friction = 0.0f;
+		//shape.SetAsBox(size.width/PTM_RATIO, size.height/PTM_RATIO, b2Vec2(0, 0), pBone->getRotation());
+		//pPhysics->mHeroWeaponBody->CreateFixture(&fd);
+		//pPhysics->mHeroWeaponBody->SetUserData((void*)pBone);
+	}
 }
 void GameSceneView::onExit()
 {
@@ -59,30 +113,47 @@ void GameSceneView::onExit()
 	ViewSuperT::onExit();
 }
 
-bool GameSceneView::onTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
+void GameSceneView::onTouchesBegan(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event)
 {
-	return true;
+	static CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
+	static CCSize scrnHelfSize = CCSizeMake(screenSize.width/2.0f, screenSize.height/2.0f);
+	for(std::vector<cocos2d::Touch*>::const_iterator it = touches.begin(); it != touches.end(); ++ it)
+	{
+		CCPoint locPos = touches[0]->getLocation();
+		CCPoint nodePos = convertToNodeSpace(locPos);
+		if(nodePos.x < scrnHelfSize.width)
+		{
+			mTouchMoveBeginPos = nodePos;
+			mTouchMoveing = *it;
+		}
+	}
 }
-void GameSceneView::onTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
+void GameSceneView::onTouchesMoved(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event)
 {
 }
-void GameSceneView::onTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
+void GameSceneView::onTouchesEnded(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event)
 {
-}
-void GameSceneView::onTouchCancelled(CCTouch *pTouch, CCEvent *pEvent)
-{
+	for(std::vector<cocos2d::Touch*>::const_iterator it = touches.begin(); it != touches.end(); ++ it)
+	{
+		if(*it == mTouchMoveing)
+		{
+			mTouchMoveing = NULL;
+			mHeroAnim->getAnimation()->play("loading");
+		}
+	}
 }
 
-bool GameSceneView::screenScroll(const CCPoint& offset)
+bool GameSceneView::screenScroll(const Point& offset)
 {
 	float posX = mScrollEndPos.x + offset.x;
 	float posY = mScrollEndPos.y - offset.y;
 	bool ret = fixedScreenPositionBound(posX, posY);
+	CCPoint oldEndPos = mScrollEndPos;
 	mScrollEndPos = ccp(posX, posY);
 	this->fixedBgImagePosition(posX, posY);
 	return ret;
 }
-bool GameSceneView::screenScrollTo(const CCPoint& toPos)
+bool GameSceneView::screenScrollTo(const Point& toPos)
 {
 	// 
 	static CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
@@ -90,6 +161,7 @@ bool GameSceneView::screenScrollTo(const CCPoint& toPos)
 	float posX = scrnHelfSize.width + toPos.x;
 	float posY = scrnHelfSize.height - toPos.y;
 	bool ret = fixedScreenPositionBound(posX, posY);
+	CCPoint oldEndPos = mScrollEndPos;
 	mScrollEndPos = ccp(posX, posY);
 	this->fixedBgImagePosition(posX, posY);
 	return ret;
@@ -143,12 +215,12 @@ bool GameSceneView::fixedScreenPositionBound(float& posX, float& posY)
 }
 
 
-bool GameSceneView::movePlayer(const CCPoint& offset)
+bool GameSceneView::movePlayer(const Point& offset)
 {
 
 	return true;
 }
-bool GameSceneView::movePlayerTo(const CCPoint& toPos)
+bool GameSceneView::movePlayerTo(const Point& toPos)
 {
 
 	return true;
@@ -156,6 +228,8 @@ bool GameSceneView::movePlayerTo(const CCPoint& toPos)
 
 void GameSceneView::update(float dt)
 {
+	static CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
+	static CCSize scrnHelfSize = CCSizeMake(screenSize.width/2.0f, screenSize.height/2.0f);
 	if(NULL != mTiledMap)
 	{
 		mTiledMap->setPosition(mScrollEndPos);
@@ -163,5 +237,94 @@ void GameSceneView::update(float dt)
 	if(NULL != mBGLayer)
 	{
 		mBGLayer->setPosition(mBgFixedPos);
+	}
+	GameScenePhysics* pPhysics = mPhysicsView->physics<GameScenePhysics>();
+	if(NULL != pPhysics)
+	{
+		b2Vec2 heroPos = pPhysics->mHeroBody->GetWorldCenter();
+		const b2Fixture* fixture = pPhysics->mHeroBody->GetFixtureList();
+		const b2AABB& aabb = fixture->GetAABB(0);
+		CCPoint finalPos = CCPoint(heroPos.x - (aabb.upperBound.x - aabb.lowerBound.x)/2.0f, heroPos.y - (aabb.upperBound.y - aabb.lowerBound.y)/2.0f);
+		mHeroAnim->setPosition(CCPoint(finalPos.x * VIEW_SCALE_RATE, finalPos.y * VIEW_SCALE_RATE));
+		if(NULL != mTouchMoveing)
+		{
+			b2ContactEdge* pContact = pPhysics->mHeroBody->GetContactList();
+			if(NULL == pContact)
+			{
+				if(mHeroAnim->getAnimation()->getCurrentMovementID() != "loading")
+					mHeroAnim->getAnimation()->play("loading");
+				pPhysics->mHeroMoveSpeed = 0;
+			}
+			else
+			{
+				CCPoint locPos = mTouchMoveing->getLocation();
+				CCPoint nodePos = convertToNodeSpace(locPos);
+				float dist = (nodePos - mTouchMoveBeginPos).getLength();
+				if(fabs(dist) > 20.0f)
+				{
+					if(mHeroAnim->getAnimation()->getCurrentMovementID() != "run")
+						mHeroAnim->getAnimation()->play("run");
+					if(dist > 100.0f) dist = 100.0f;
+					float width = nodePos.x - mTouchMoveBeginPos.x;
+					float height = nodePos.y - mTouchMoveBeginPos.y;
+					float speed = 2.0f;
+					float moveDistX = dist * speed / VIEW_SCALE_RATE;
+					b2Vec2 pos = pPhysics->mHeroBody->GetPosition();
+					if(width > 0)
+					{
+						mHeroAnim->setRotationY(0);
+					}
+					else
+					{
+						moveDistX = -moveDistX;
+						mHeroAnim->setRotationY(180);
+					}
+					pPhysics->mHeroMoveSpeed = moveDistX;
+				}
+				else
+				{
+					if(mHeroAnim->getAnimation()->getCurrentMovementID() != "loading")
+						mHeroAnim->getAnimation()->play("loading");
+					pPhysics->mHeroMoveSpeed = 0;
+				}
+			}
+		}
+		else
+		{
+			pPhysics->mHeroMoveSpeed = 0;
+		}
+
+		// hero weapon box
+		{
+			CCBone* pBone = mHeroAnim->getBone("Layer17");
+			CCNode* pBoneNode = pBone->getDisplayRenderNode();
+			CCPoint pos = pBoneNode->getPosition();
+			pos = pBone->getParentBone()->getDisplayRenderNode()->convertToWorldSpaceAR(pos);
+			b2BodyDef bd;
+			//bd.type = b2_dynamicBody;
+			bd.position.Set(pos.x / VIEW_SCALE_RATE, pos.y / VIEW_SCALE_RATE);
+			if(NULL != pPhysics->mHeroWeaponBody)
+			{
+				pPhysics->mWorld->DestroyBody(pPhysics->mHeroWeaponBody);
+				pPhysics->mHeroWeaponBody = NULL;
+			}
+			pPhysics->mHeroWeaponBody = pPhysics->mWorld->CreateBody(&bd);
+			b2PolygonShape shape;
+			b2FixtureDef fd;
+			fd.shape = &shape;
+			fd.density = 0;
+			fd.friction = 0;
+			CCSize size = pBoneNode->getContentSize();
+			float rota = pBoneNode->getRotation();
+			CCLOG("bone node rota = %.02f", rota);
+			shape.SetAsBox(size.width/PTM_RATIO, size.height/PTM_RATIO, b2Vec2(0, 0), (rand() % (int)rota));
+			pPhysics->mHeroWeaponBody->CreateFixture(&fd);
+		}
+		//CCBone* pBone = (CCBone*)pPhysics->mHeroWeaponBody1->GetUserData();
+		//CCNode* pBoneNode = pBone->getDisplayRenderNode();
+		//CCPoint pos = pBoneNode->getPosition();
+		//pos = pBone->getParentBone()->getDisplayRenderNode()->convertToWorldSpaceAR(pos);
+		//float rota = pBoneNode->getRotation();
+		//pPhysics->mHeroWeaponBody1->SetTransform(b2Vec2(pos.x / VIEW_SCALE_RATE, pos.y / VIEW_SCALE_RATE), -rota);
 	}
 }

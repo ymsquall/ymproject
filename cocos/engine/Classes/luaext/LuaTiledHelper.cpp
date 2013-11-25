@@ -1,7 +1,7 @@
 #include "LuaTiledHelper.h"
 
 
-const CCSize& LuaTiledHelper::getTMXLayerImageSize(CCTMXLayer* layer)
+const CCSize& LuaTiledHelper::getTMXLayerImageSize(TMXLayer* layer)
 {
 	if((NULL != layer) && (NULL != layer->getTileSet()))
 	{

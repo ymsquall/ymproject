@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaSOFExtern
-** Generated automatically by tolua++-1.0.92 on 11/23/13 23:31:55.
+** Generated automatically by tolua++-1.0.92 on 11/24/13 15:09:28.
 */
 
 /****************************************************************************

@@ -19,6 +19,9 @@
     <Filter Include="Classes\Tools">
       <UniqueIdentifier>{f955f2fe-dacd-46dd-a314-a2c592ef958c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Physics">
+      <UniqueIdentifier>{7f234da9-c2af-420f-8fd8-c7bddb3408ea}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -68,6 +71,18 @@
     </ClCompile>
     <ClCompile Include="..\Classes\LuaSOFExtern.cpp">
       <Filter>Classes\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Physics_GLESDebugDraw.cpp">
+      <Filter>Classes\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\PhysicsBase.cpp">
+      <Filter>Classes\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Physics_GameScene.cpp">
+      <Filter>Classes\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Physics_Box2dView.cpp">
+      <Filter>Classes\Physics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +136,18 @@
     </ClInclude>
     <ClInclude Include="..\Classes\LuaSOFExtern.h">
       <Filter>Classes\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Physics_GLESDebugDraw.h">
+      <Filter>Classes\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PhysicsBase.h">
+      <Filter>Classes\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Physics_GameScene.h">
+      <Filter>Classes\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Physics_Box2dView.h">
+      <Filter>Classes\Physics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

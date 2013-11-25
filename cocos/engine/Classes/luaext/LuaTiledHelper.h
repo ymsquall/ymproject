@@ -8,6 +8,6 @@ using namespace cocos2d;
 class LuaTiledHelper
 {
 public:
-	static const CCSize& getTMXLayerImageSize(CCTMXLayer* layer);
+	static const CCSize& getTMXLayerImageSize(TMXLayer* layer);
 };
 

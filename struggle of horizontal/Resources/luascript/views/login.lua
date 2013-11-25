@@ -1,7 +1,7 @@
 function LUALoadLoginView(viewWideh, viewHeight)
 	local pLayout = UIHelper:instance():createWidgetFromJsonFile('studioui/LoginView/LoginView.json')
 	local layoutSize = pLayout:getContentSize()
-	pLayout:setPosition(CCPoint((viewWideh-layoutSize.width)/2.0, (viewHeight-layoutSize.height)/2.0))
+	pLayout:setPosition(cc.p((viewWideh-layoutSize.width)/2.0, (viewHeight-layoutSize.height)/2.0))
 
 	local mTopBar = LuaCocoStudioConversion:getChildUIImageViewByName("mTopBar", pLayout)
 	local mBottonBar = LuaCocoStudioConversion:getChildUIImageViewByName("mBottonBar", pLayout)
