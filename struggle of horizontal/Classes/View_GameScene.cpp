@@ -299,9 +299,9 @@ void GameSceneView::update(float dt)
 			CCBone* pBone = mHeroAnim->getBone("Layer17");
 			CCNode* pBoneNode = pBone->getDisplayRenderNode();
 			CCPoint pos = pBoneNode->getPosition();
-			pos = pBone->getParentBone()->getDisplayRenderNode()->convertToWorldSpaceAR(pos);
+			pos = pBone->getParentBone()->getDisplayRenderNode()->convertToWorldSpace(pos);
 			b2BodyDef bd;
-			//bd.type = b2_dynamicBody;
+			bd.type = b2_dynamicBody;
 			bd.position.Set(pos.x / VIEW_SCALE_RATE, pos.y / VIEW_SCALE_RATE);
 			if(NULL != pPhysics->mHeroWeaponBody)
 			{
@@ -315,9 +315,12 @@ void GameSceneView::update(float dt)
 			fd.density = 0;
 			fd.friction = 0;
 			CCSize size = pBoneNode->getContentSize();
-			float rota = pBoneNode->getRotation();
-			CCLOG("bone node rota = %.02f", rota);
-			shape.SetAsBox(size.width/PTM_RATIO, size.height/PTM_RATIO, b2Vec2(0, 0), (rand() % (int)rota));
+			//float rota = pBoneNode->getRotation();
+			AffineTransform trans = pBoneNode->getNodeToWorldTransform();
+			float rota1 = acosf(trans.a);
+			float rota2 = asinf(trans.b);
+			CCLOG("bone node rota = %.02f, %0.02f", rota1, rota2);
+			shape.SetAsBox(size.width/PTM_RATIO, size.height/PTM_RATIO, b2Vec2(0, 0), rota1/*/180.0f*3.14f*/);
 			pPhysics->mHeroWeaponBody->CreateFixture(&fd);
 		}
 		//CCBone* pBone = (CCBone*)pPhysics->mHeroWeaponBody1->GetUserData();
