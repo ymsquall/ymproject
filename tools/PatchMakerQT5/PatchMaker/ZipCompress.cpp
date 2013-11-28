@@ -13,8 +13,8 @@
 static int compress_dir(const char* rootDir, zipFile& zpFile, const char *file_in, int level)
 {
     struct _finddata_t find_data;
-    char file[128];
-    memset(file, 0, 128);
+    char file[1024];
+    memset(file, 0, 1024);
     long lf;
     int ret = 0;
     sprintf(file,"%s%s",file_in,"/*");

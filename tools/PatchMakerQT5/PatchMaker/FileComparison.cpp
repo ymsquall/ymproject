@@ -158,5 +158,11 @@ const FileCompResultList& FileComparison::comparison()
         }
         mOldFileList.removeAt(0);
     }
+    while(mNewFileList.size() > 0)
+    {
+        FileCompResult compResult(mNewFileList[0].fileName, "", mNewFileList[0].fileMD5, FileCompResultType_Added);
+        mCompResultList.append(compResult);
+        mNewFileList.removeAt(0);
+    }
     return mCompResultList;
 }
