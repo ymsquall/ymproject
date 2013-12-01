@@ -16,4 +16,26 @@
    HQAAAB4AAAAfAAAAIAAAACEAAAAiAAAAIwAAACQAAAAlAAAAJgAAACcAAAAoAAAAKQAAACoAAAArAAAALAAAAC0AAAAuAAAALwAAADAAAAAxAAAAMgAAADMAAAA0AAAANQAAADYAAAA3AAAAOAAAADkAAAA6AAAAOwAAADwAAAA9AAAAPgAAAD8AAABAAAAAQQAAAEIAAABDAAAARAAAAEUAAABGAAAARwAAAEgAAABJAAAASgAAAEsAAABMAAAATQAAAE4AAABPAAAAUAAAAFEAAABSAAAAUwAAAFQAAABVAAAAVgAAAFcAAABYAAAAWQAAAFoAAABbAAAAXAAAAF0AAABeAAAAXwAAAGAAAABhAAAAYgAAAGMAAABkAAAAZQAAAGYAAABnAAAAaAAAAGkAAABqAAAAawAAAGwAAABtAAAAbgAAAG8AAABwAAAAcQAAAHIAAABzAAAAdAAAAHUAAAB2AAAAdwAAAHgAAAB5AAAAegAAAHsAAAB8AAAAfQAAAH4AAAA=
   </data>
  </layer>
+ <objectgroup name="ground" width="14" height="7">
+  <object name="001" x="3" y="1581" width="1654" height="41"/>
+  <object name="002" x="1657" y="1581">
+   <polyline points="0,0 68,23 632,20 674,41 1924,40"/>
+  </object>
+  <object name="003" x="-6" y="1128" width="1032" height="52"/>
+  <object name="004" x="1024" y="1127">
+   <polyline points="0,0 146,-70 469,-76 586,-100"/>
+  </object>
+  <object name="005" x="1663" y="1147">
+   <polyline points="0,0 147,68 527,52"/>
+  </object>
+  <object name="006" x="2172" y="1263">
+   <polyline points="0,0 212,-7 299,10 1411,2"/>
+  </object>
+  <object name="007" x="2339" y="760">
+   <polyline points="5,3 90,16 632,14 701,-288"/>
+  </object>
+  <object name="008" x="3382" y="2">
+   <polyline points="0,0 -47,475 -589,460 -787,465 -882,470 -904,487 -2051,475 -2196,484 -2437,476 -2443,461 -2621,439 -2677,423 -2844,425 -2902,-1"/>
+  </object>
+ </objectgroup>
 </map>

@@ -437,7 +437,7 @@ echo f | xcopy "$(OutDir)$(TargetName).exe" "$(ProjectDir)..\Resources\$(TargetN
       <AdditionalIncludeDirectories>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\include;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>ymlibApplication.lib;ymlibMvvm.lib;ymlibUnity.lib;ymlibUIView.lib;ymlibLuaExtern.lib;libcocos2d.lib;libAudio.lib;libExtensions.lib;libCocosBuilder.lib;libCocosStudio.lib;libBox2D.lib;libchipmunk.lib;libGUI.lib;liblua.lib;libSpine.lib;libNetwork.lib;libLocalStorage.lib;lua51.lib;libcurl_imp.lib;websockets.lib;freetype250.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ymlibApplication.lib;ymlibMvvm.lib;ymlibUnity.lib;ymlibUIView.lib;ymlibLuaExtern.lib;ymlibMath.lib;libcocos2d.lib;libAudio.lib;libExtensions.lib;libCocosBuilder.lib;libCocosStudio.lib;libBox2D.lib;libchipmunk.lib;libGUI.lib;liblua.lib;libSpine.lib;libNetwork.lib;libLocalStorage.lib;lua51.lib;libcurl_imp.lib;websockets.lib;freetype250.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
@@ -920,6 +920,8 @@ xcopy /Y /D /V "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\websockets\pr
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Classes\ICreature.cpp" />
+    <ClCompile Include="..\Classes\Monster.cpp" />
     <ClCompile Include="..\Classes\Physics_Box2dView.cpp" />
     <ClCompile Include="..\Classes\Physics_GameScene.cpp" />
     <ClCompile Include="..\Classes\Physics_GLESDebugDraw.cpp" />
@@ -927,6 +929,7 @@ xcopy /Y /D /V "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\websockets\pr
     <ClCompile Include="..\Classes\LuaUserDataConversion.cpp" />
     <ClCompile Include="..\Classes\Model_SelectHero.cpp" />
     <ClCompile Include="..\Classes\PhysicsBase.cpp" />
+    <ClCompile Include="..\Classes\Player.cpp" />
     <ClCompile Include="..\Classes\ViewModelManager.cpp" />
     <ClCompile Include="..\Classes\Model_GameScene.cpp" />
     <ClCompile Include="..\Classes\Model_Login.cpp" />
@@ -942,6 +945,8 @@ xcopy /Y /D /V "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\websockets\pr
     <ClCompile Include="Win32MsgProc.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Classes\ICreature.h" />
+    <ClInclude Include="..\Classes\Monster.h" />
     <ClInclude Include="..\Classes\Physics_Box2dView.h" />
     <ClInclude Include="..\Classes\Physics_GameScene.h" />
     <ClInclude Include="..\Classes\Physics_GLESDebugDraw.h" />
@@ -949,6 +954,7 @@ xcopy /Y /D /V "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\websockets\pr
     <ClInclude Include="..\Classes\LuaUserDataConversion.h" />
     <ClInclude Include="..\Classes\Model_SelectHero.h" />
     <ClInclude Include="..\Classes\PhysicsBase.h" />
+    <ClInclude Include="..\Classes\Player.h" />
     <ClInclude Include="..\Classes\ViewModelManager.h" />
     <ClInclude Include="..\Classes\ModelTypeDefine.h" />
     <ClInclude Include="..\Classes\Model_GameScene.h" />

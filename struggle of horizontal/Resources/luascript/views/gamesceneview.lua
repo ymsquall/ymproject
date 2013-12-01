@@ -5,7 +5,7 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 	_LUAGameSceneView.mTiledMap = CCTMXTiledMap:create("scene0001.tmx")
 	_LUAGameSceneView.self:addChild(_LUAGameSceneView.mTiledMap)
 	_LUAGameSceneView.mHeroAnim = LUACreateAndPlayArmature("hero_animations")
-	_LUAGameSceneView.mHeroAnim:getAnimation():setSpeedScale(0.4)
+	_LUAGameSceneView.mHeroAnim:getAnimation():setSpeedScale(0.25)
 	_LUAGameSceneView.mHeroAnim:setTag(101)
 	_LUAGameSceneView.mTiledMap:addChild(_LUAGameSceneView.mHeroAnim)
 	_LUAGameSceneView.mTiledMap:reorderChild(_LUAGameSceneView.mHeroAnim, 101)
@@ -39,8 +39,6 @@ function LUAGameSceneViewOnEnter()
 	_LUAGameSceneView = _LUAGameSceneView or {}
 	local foreground = _LUAGameSceneView.mTiledMap:getLayer("foreground")
 	local background = _LUAGameSceneView.mTiledMap:getLayer("background")
-	--background:setVisible(false)
-	--foreground:setVisible(false)
 	local fgImageSize = LuaTiledHelper:getTMXLayerImageSize(foreground)
 	_LUAGameSceneView.self:screenScrollTo(CCPoint(0, 0--[[fgImageSize.height/2.0--]]))
 	_LUAGameSceneView.mOnTickScriptHandlerID = CCDirector:getInstance():getScheduler():scheduleScriptFunc(LUAGameSceneViewOnTick, 0, false)
@@ -52,8 +50,4 @@ function LUAGameSceneViewOnExit()
 end
 
 function LUAGameSceneViewOnTick(dt)
-	--local dragPos = _LUAGameSceneView.mMapDragPanel:getInnerContainerPosition()
-	--_LUAGameSceneView.mSelectTroopID = _LUAGameSceneView.mSelectTroopID or -1
-	--local posText = string.format("(%d)[%.02f, %.02f]", _LUAGameSceneView.mSelectTroopID, dragPos.x, dragPos.y)
-	--_LUAGameSceneView.mDebugText:setText(posText)
 end
