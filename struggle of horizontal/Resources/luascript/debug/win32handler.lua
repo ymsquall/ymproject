@@ -11,6 +11,19 @@ function LUAOnWin32KeyDownMsgProc(key)
 	if VK_3 == key or VK_SPACE == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('attack') end
 	if VK_4 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('smitten') end
 	if VK_5 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('death') end
+	if VK_F9 == key then
+		ViewModelManager:reloadLuaScript("luascript/debug/win32handler.lua")
+		ViewModelManager:reloadLuaScript("luascript/luautility.lua")
+		ViewModelManager:reloadLuaScript("luascript/toolkit.lua")
+		ViewModelManager:reloadLuaScript("luascript/models/gamescenemodel.lua")
+		ViewModelManager:reloadLuaScript("luascript/models/gamescenemodel_loader.lua")
+		ViewModelManager:reloadLuaScript("luascript/models/playstruggle_var01.lua")
+		ViewModelManager:reloadLuaScript("luascript/views/helper.lua")
+		ViewModelManager:reloadLuaScript("luascript/views/login.lua")
+		ViewModelManager:reloadLuaScript("luascript/views/selecthero.lua")
+		ViewModelManager:reloadLuaScript("luascript/views/gamesceneview.lua")
+		ViewModelManager:reloadLuaScript("luascript/views/gamesceneview_playing.lua")
+	end
 end
 
 function LUAOnWin32KeyUpMsgProc(key)

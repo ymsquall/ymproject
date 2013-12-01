@@ -122,15 +122,18 @@ void GameScenePhysics::Step(Settings* settings)
 {
 	b2Vec2 vel = mHeroBody->GetLinearVelocity();
 	vel.x = mHeroMoveSpeed;
+	//vel.y = -10;
 	mHeroBody->SetLinearVelocity(vel);
 	PhysicsBase::Step(settings);
 }
 
 void GameScenePhysics::PreSolve(b2Contact* contact, const b2Manifold* oldManifold)
 {
+	PhysicsBase::PreSolve(contact, oldManifold);
 	const b2Manifold* manifold = contact->GetManifold();
 	if (manifold->pointCount <= 0)
 		return;
+	//contact->SetEnabled(false);
 	b2Fixture* fixtureA = contact->GetFixtureA();
 	b2Fixture* fixtureB = contact->GetFixtureB();
 	if(NULL == fixtureA || NULL == fixtureB)
@@ -141,9 +144,7 @@ void GameScenePhysics::PreSolve(b2Contact* contact, const b2Manifold* oldManifol
 		{
 			if(body1 == mEdgeGround || body2 == mEdgeGround)
 			{
-
 			}
 		}
 	}
-	PhysicsBase::PreSolve(contact, oldManifold);
 }

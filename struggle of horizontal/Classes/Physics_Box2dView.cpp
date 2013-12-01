@@ -62,15 +62,15 @@ void Physics_Box2DView::draw()
 {
     Layer::draw();
 
-    GL::enableVertexAttribs( cocos2d::GL::VERTEX_ATTRIB_FLAG_POSITION );
+	GL::enableVertexAttribs( cocos2d::GL::VERTEX_ATTRIB_FLAG_POSITION );
 
-    kmGLPushMatrix();
+	kmGLPushMatrix();
 
-    mPhysics->mWorld->DrawDebugData();
+	mPhysics->mWorld->DrawDebugData();
 
-    kmGLPopMatrix();
+	kmGLPopMatrix();
 
-    CHECK_GL_ERROR_DEBUG();
+	CHECK_GL_ERROR_DEBUG();
 }
 
 bool Physics_Box2DView::onTouchBegan(Touch* touch, Event* event)
