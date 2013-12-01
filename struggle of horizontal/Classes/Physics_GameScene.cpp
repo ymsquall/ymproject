@@ -28,7 +28,7 @@ GameScenePhysics::GameScenePhysics()
 		fd.shape = &shape;
 		fd.density = 10.0f;
 		fd.friction = 1.0f;
-		shape.SetAsBox(2, 0.1, b2Vec2(0, 0), 0.0);
+		shape.SetAsBox(0.5, 0.1, b2Vec2(0, 0), 0.0);
 		mHeroBody->CreateFixture(&fd);
 		mHeroBody->SetFixedRotation(true); // 设置为固定角度（不旋转）
 	}

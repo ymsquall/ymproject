@@ -305,9 +305,11 @@ void GameSceneView::update(float dt)
 			CCNode* pBoneNode = pBone->getDisplayRenderNode();
 			CCNode* pBindNode = dynamic_cast<CCNode*>(pBoneNode->getChildByTag(111));
 			CCSize size = pBoneNode->getContentSize();
-			//AffineTransform nodeTrans = pBoneNode->getWorldToNodeTransform();
 			AffineTransform trans = pBone->getNodeToWorldTransform();
 			Point pos = pBoneNode->convertToWorldSpaceAR(pBindNode->getPosition());
+			Point titledMapPos = mTiledMap->getPosition();
+			pos.x -= titledMapPos.x;
+			pos.y -= titledMapPos.y;
 			float rota = 0.0f;
 			float rotaA = acosf(trans.a);
 			float rotaB = asinf(trans.b);
