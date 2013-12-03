@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaSOFExtern
-** Generated automatically by tolua++-1.0.92 on 11/24/13 15:09:28.
+** Generated automatically by tolua++-1.0.92 on 12/03/13 22:50:35.
 */
 
 /****************************************************************************
@@ -42,6 +42,7 @@ extern "C" {
 #include "Model_GameScene.h"
 #include "View_GameScene.h"
 #include "LuaUserDataConversion.h"
+#include "Physics_GameScene.h"
 
 using namespace cocos2d;
 using namespace cocos2d::extension;
@@ -63,16 +64,23 @@ static int tolua_collect_GameSceneView (lua_State* tolua_S)
     return 0;
 }
 
-static int tolua_collect_framework__unity__SingletonAutoT_ViewModelManager_ (lua_State* tolua_S)
+static int tolua_collect_ViewModelManager (lua_State* tolua_S)
 {
- framework::unity::SingletonAutoT<ViewModelManager>* self = (framework::unity::SingletonAutoT<ViewModelManager>*) tolua_tousertype(tolua_S,1,0);
+ ViewModelManager* self = (ViewModelManager*) tolua_tousertype(tolua_S,1,0);
     Mtolua_delete(self);
     return 0;
 }
 
-static int tolua_collect_ViewModelManager (lua_State* tolua_S)
+static int tolua_collect_GameScenePhysics (lua_State* tolua_S)
 {
- ViewModelManager* self = (ViewModelManager*) tolua_tousertype(tolua_S,1,0);
+ GameScenePhysics* self = (GameScenePhysics*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
+
+static int tolua_collect_framework__unity__SingletonAutoT_ViewModelManager_ (lua_State* tolua_S)
+{
+ framework::unity::SingletonAutoT<ViewModelManager>* self = (framework::unity::SingletonAutoT<ViewModelManager>*) tolua_tousertype(tolua_S,1,0);
     Mtolua_delete(self);
     return 0;
 }
@@ -98,9 +106,12 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"framework::unity::blockwrite");
  tolua_usertype(tolua_S,"unity::RoutedEventArgs");
  tolua_usertype(tolua_S,"ViewModelManager");
+ tolua_usertype(tolua_S,"TMXTiledMap");
+ tolua_usertype(tolua_S,"GameScenePhysics");
  tolua_usertype(tolua_S,"GameSceneModel");
  tolua_usertype(tolua_S,"UILayer");
  tolua_usertype(tolua_S,"GameSceneView");
+ tolua_usertype(tolua_S,"Object");
  tolua_usertype(tolua_S,"unity::SingletonAutoT<ViewModelManager>");
  tolua_usertype(tolua_S,"ModelImpl");
  tolua_usertype(tolua_S,"ModelType");
@@ -1025,6 +1036,165 @@ static int tolua_LuaSOFExtern_LuaUserDataConversion_toNode00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: new of class  GameScenePhysics */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_GameScenePhysics_new00
+static int tolua_LuaSOFExtern_GameScenePhysics_new00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"GameScenePhysics",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   GameScenePhysics* tolua_ret = (GameScenePhysics*)  Mtolua_new((GameScenePhysics)());
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"GameScenePhysics");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new_local of class  GameScenePhysics */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_GameScenePhysics_new00_local
+static int tolua_LuaSOFExtern_GameScenePhysics_new00_local(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"GameScenePhysics",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   GameScenePhysics* tolua_ret = (GameScenePhysics*)  Mtolua_new((GameScenePhysics)());
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"GameScenePhysics");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: delete of class  GameScenePhysics */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_GameScenePhysics_delete00
+static int tolua_LuaSOFExtern_GameScenePhysics_delete00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"GameScenePhysics",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  GameScenePhysics* self = (GameScenePhysics*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'delete'", NULL);
+#endif
+  Mtolua_delete(self);
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'delete'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: initBoxWithTiledMap of class  GameScenePhysics */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_GameScenePhysics_initBoxWithTiledMap00
+static int tolua_LuaSOFExtern_GameScenePhysics_initBoxWithTiledMap00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"GameScenePhysics",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"const TMXTiledMap",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  GameScenePhysics* self = (GameScenePhysics*)  tolua_tousertype(tolua_S,1,0);
+  const TMXTiledMap* pTiledMap = ((const TMXTiledMap*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'initBoxWithTiledMap'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->initBoxWithTiledMap(pTiledMap);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'initBoxWithTiledMap'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: changeMoveDirection of class  GameScenePhysics */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_GameScenePhysics_changeMoveDirection00
+static int tolua_LuaSOFExtern_GameScenePhysics_changeMoveDirection00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"GameScenePhysics",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  GameScenePhysics* self = (GameScenePhysics*)  tolua_tousertype(tolua_S,1,0);
+  float dir = ((float)  tolua_tonumber(tolua_S,2,0));
+  float speed = ((float)  tolua_tonumber(tolua_S,3,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'changeMoveDirection'", NULL);
+#endif
+  {
+   self->changeMoveDirection(dir,speed);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'changeMoveDirection'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* Open function */
 TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
 {
@@ -1101,6 +1271,19 @@ TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"toGameSceneView",tolua_LuaSOFExtern_LuaUserDataConversion_toGameSceneView00);
    tolua_function(tolua_S,"toArmature",tolua_LuaSOFExtern_LuaUserDataConversion_toArmature00);
    tolua_function(tolua_S,"toNode",tolua_LuaSOFExtern_LuaUserDataConversion_toNode00);
+  tolua_endmodule(tolua_S);
+  #ifdef __cplusplus
+  tolua_cclass(tolua_S,"GameScenePhysics","GameScenePhysics","Object",tolua_collect_GameScenePhysics);
+  #else
+  tolua_cclass(tolua_S,"GameScenePhysics","GameScenePhysics","Object",NULL);
+  #endif
+  tolua_beginmodule(tolua_S,"GameScenePhysics");
+   tolua_function(tolua_S,"new",tolua_LuaSOFExtern_GameScenePhysics_new00);
+   tolua_function(tolua_S,"new_local",tolua_LuaSOFExtern_GameScenePhysics_new00_local);
+   tolua_function(tolua_S,".call",tolua_LuaSOFExtern_GameScenePhysics_new00_local);
+   tolua_function(tolua_S,"delete",tolua_LuaSOFExtern_GameScenePhysics_delete00);
+   tolua_function(tolua_S,"initBoxWithTiledMap",tolua_LuaSOFExtern_GameScenePhysics_initBoxWithTiledMap00);
+   tolua_function(tolua_S,"changeMoveDirection",tolua_LuaSOFExtern_GameScenePhysics_changeMoveDirection00);
   tolua_endmodule(tolua_S);
  tolua_endmodule(tolua_S);
  return 1;

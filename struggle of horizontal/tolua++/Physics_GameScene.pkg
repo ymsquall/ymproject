@@ -1,0 +1,10 @@
+class GameScenePhysics : public Object
+{
+public:
+	GameScenePhysics();
+	~GameScenePhysics();
+
+	bool initBoxWithTiledMap(const TMXTiledMap* pTiledMap);
+	void changeMoveDirection(float dir, float speed);
+};
+

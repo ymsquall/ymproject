@@ -233,6 +233,11 @@ bool GameSceneView::movePlayerTo(const Point& toPos)
 	return true;
 }
 
+GameScenePhysics* GameSceneView::getPhysics()
+{
+	return mPhysicsView->physics<GameScenePhysics>();
+}
+
 void GameSceneView::update(float dt)
 {
 	static CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
@@ -248,61 +253,61 @@ void GameSceneView::update(float dt)
 	GameScenePhysics* pPhysics = mPhysicsView->physics<GameScenePhysics>();
 	if(NULL != pPhysics)
 	{
-		b2Vec2 heroPos = pPhysics->mHeroBody->GetWorldCenter();
-		const b2Fixture* fixture = pPhysics->mHeroBody->GetFixtureList();
-		const b2AABB& aabb = fixture->GetAABB(0);
-		CCPoint finalPos = CCPoint(heroPos.x - (aabb.upperBound.x - aabb.lowerBound.x)/2.0f, heroPos.y - (aabb.upperBound.y - aabb.lowerBound.y)/2.0f);
-		//if(mHeroAnim->getRotationY() > 90.0f)
-		//	mHeroAnim->setPosition(CCPoint(finalPos.x * PTM_RATIO + mHeroAnim->getContentSize().width/2.0f, finalPos.y * PTM_RATIO));
+		//b2Vec2 heroPos = pPhysics->mHeroBody->GetWorldCenter();
+		//const b2Fixture* fixture = pPhysics->mHeroBody->GetFixtureList();
+		//const b2AABB& aabb = fixture->GetAABB(0);
+		//CCPoint finalPos = CCPoint(heroPos.x - (aabb.upperBound.x - aabb.lowerBound.x)/2.0f, heroPos.y - (aabb.upperBound.y - aabb.lowerBound.y)/2.0f);
+		////if(mHeroAnim->getRotationY() > 90.0f)
+		////	mHeroAnim->setPosition(CCPoint(finalPos.x * PTM_RATIO + mHeroAnim->getContentSize().width/2.0f, finalPos.y * PTM_RATIO));
+		////else
+		//	mHeroAnim->setPosition(CCPoint(finalPos.x * PTM_RATIO, finalPos.y * PTM_RATIO));
+		//if(NULL != mTouchMoveing)
+		//{
+		//	b2ContactEdge* pContact = pPhysics->mHeroBody->GetContactList();
+		//	if(NULL == pContact)
+		//	{
+		//		if(mHeroAnim->getAnimation()->getCurrentMovementID() != "loading")
+		//			mHeroAnim->getAnimation()->play("loading");
+		//		pPhysics->mHeroMoveSpeed = 0;
+		//	}
+		//	else
+		//	{
+		//		CCPoint locPos = mTouchMoveing->getLocation();
+		//		CCPoint nodePos = convertToNodeSpace(locPos);
+		//		float dist = (nodePos - mTouchMoveBeginPos).getLength();
+		//		if(fabs(dist) > 20.0f)
+		//		{
+		//			if(mHeroAnim->getAnimation()->getCurrentMovementID() != "run")
+		//				mHeroAnim->getAnimation()->play("run");
+		//			if(dist > 100.0f) dist = 100.0f;
+		//			float width = nodePos.x - mTouchMoveBeginPos.x;
+		//			float height = nodePos.y - mTouchMoveBeginPos.y;
+		//			float speed = 2.0f;
+		//			float moveDistX = dist * speed / PTM_RATIO;
+		//			b2Vec2 pos = pPhysics->mHeroBody->GetPosition();
+		//			if(width > 0)
+		//			{
+		//				mHeroAnim->setRotationY(0);
+		//			}
+		//			else
+		//			{
+		//				moveDistX = -moveDistX;
+		//				mHeroAnim->setRotationY(180);
+		//			}
+		//			pPhysics->mHeroMoveSpeed = moveDistX;
+		//		}
+		//		else
+		//		{
+		//			if(mHeroAnim->getAnimation()->getCurrentMovementID() != "loading")
+		//				mHeroAnim->getAnimation()->play("loading");
+		//			pPhysics->mHeroMoveSpeed = 0;
+		//		}
+		//	}
+		//}
 		//else
-			mHeroAnim->setPosition(CCPoint(finalPos.x * PTM_RATIO, finalPos.y * PTM_RATIO));
-		if(NULL != mTouchMoveing)
-		{
-			b2ContactEdge* pContact = pPhysics->mHeroBody->GetContactList();
-			if(NULL == pContact)
-			{
-				if(mHeroAnim->getAnimation()->getCurrentMovementID() != "loading")
-					mHeroAnim->getAnimation()->play("loading");
-				pPhysics->mHeroMoveSpeed = 0;
-			}
-			else
-			{
-				CCPoint locPos = mTouchMoveing->getLocation();
-				CCPoint nodePos = convertToNodeSpace(locPos);
-				float dist = (nodePos - mTouchMoveBeginPos).getLength();
-				if(fabs(dist) > 20.0f)
-				{
-					if(mHeroAnim->getAnimation()->getCurrentMovementID() != "run")
-						mHeroAnim->getAnimation()->play("run");
-					if(dist > 100.0f) dist = 100.0f;
-					float width = nodePos.x - mTouchMoveBeginPos.x;
-					float height = nodePos.y - mTouchMoveBeginPos.y;
-					float speed = 2.0f;
-					float moveDistX = dist * speed / PTM_RATIO;
-					b2Vec2 pos = pPhysics->mHeroBody->GetPosition();
-					if(width > 0)
-					{
-						mHeroAnim->setRotationY(0);
-					}
-					else
-					{
-						moveDistX = -moveDistX;
-						mHeroAnim->setRotationY(180);
-					}
-					pPhysics->mHeroMoveSpeed = moveDistX;
-				}
-				else
-				{
-					if(mHeroAnim->getAnimation()->getCurrentMovementID() != "loading")
-						mHeroAnim->getAnimation()->play("loading");
-					pPhysics->mHeroMoveSpeed = 0;
-				}
-			}
-		}
-		else
-		{
-			pPhysics->mHeroMoveSpeed = 0;
-		}
+		//{
+		//	pPhysics->mHeroMoveSpeed = 0;
+		//}
 		// hero weapon box
 		{
 			CCBone* pBone = (CCBone*)pPhysics->mHeroWeaponBody->GetUserData();

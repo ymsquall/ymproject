@@ -118,12 +118,20 @@ b2Body* GameScenePhysics::createGround(const b2Vec2& pos, float width, float hei
 	return pBody;
 }
 
+void GameScenePhysics::changeMoveDirection(float dir, float speed)
+{
+	mHeroMoveSpeed = dir * speed / PTM_RATIO;
+}
+
 void GameScenePhysics::Step(Settings* settings)
 {
-	b2Vec2 vel = mHeroBody->GetLinearVelocity();
-	vel.x = mHeroMoveSpeed;
-	//vel.y = -10;
-	mHeroBody->SetLinearVelocity(vel);
+	if(fabs(mHeroMoveSpeed) > 0.001f)
+	{
+		b2Vec2 vel = mHeroBody->GetLinearVelocity();
+		vel.x = mHeroMoveSpeed;
+		//vel.y = -10;
+		mHeroBody->SetLinearVelocity(vel);
+	}
 	PhysicsBase::Step(settings);
 }
 

@@ -10,6 +10,7 @@ using namespace framework;
 using namespace cocostudio;
 
 class Physics_Box2DView;
+class GameScenePhysics;
 class GameSceneView : public mvvm::ViewBase<GameSceneView, cocos2d::CCLayer>
 {
 public:
@@ -24,6 +25,7 @@ public:
 	bool screenScrollTo(const Point& toPos);
 	bool movePlayer(const Point& offset);
 	bool movePlayerTo(const Point& toPos);
+	GameScenePhysics* getPhysics();
 
 private:
 	virtual void onEnterTransitionDidFinish();

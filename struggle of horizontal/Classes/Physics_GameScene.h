@@ -6,7 +6,7 @@ namespace cocos2d
 	class TMXTiledMap;
 }
 
-class GameScenePhysics : public PhysicsBase
+class GameScenePhysics : public PhysicsBase, public cocos2d::Object
 {
 public:
 	GameScenePhysics();
@@ -15,6 +15,8 @@ public:
     void Step(Settings* settings);
 	
 	bool initBoxWithTiledMap(const cocos2d::TMXTiledMap* pTiledMap);
+
+	void changeMoveDirection(float dir, float speed);
 
 private:
 	b2Body* createGround(const b2Vec2& pos, const b2Vec2& p1, const b2Vec2& p2);
