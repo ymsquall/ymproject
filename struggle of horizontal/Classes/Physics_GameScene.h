@@ -16,6 +16,7 @@ public:
 	
 	bool initBoxWithTiledMap(const cocos2d::TMXTiledMap* pTiledMap);
 
+	const cocos2d::CCPoint& getHeroBodyPos();
 	void changeMoveDirection(float dir, float speed);
 
 private:

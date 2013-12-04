@@ -6,4 +6,5 @@ class GameSceneView : public UILayer
 	bool screenScrollTo(const CCPoint& toPos);
 	bool movePlayer(const CCPoint& offset);
 	bool movePlayerTo(const CCPoint& toPos);
+	GameScenePhysics* getPhysics();
 };

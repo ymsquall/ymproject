@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaSOFExtern
-** Generated automatically by tolua++-1.0.92 on 12/03/13 22:50:35.
+** Generated automatically by tolua++-1.0.92 on 12/04/13 23:12:34.
 */
 
 /****************************************************************************
@@ -882,6 +882,40 @@ static int tolua_LuaSOFExtern_GameSceneView_movePlayerTo00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: getPhysics of class  GameSceneView */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_GameSceneView_getPhysics00
+static int tolua_LuaSOFExtern_GameSceneView_getPhysics00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"GameSceneView",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  GameSceneView* self = (GameSceneView*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getPhysics'", NULL);
+#endif
+  {
+   GameScenePhysics* tolua_ret = (GameScenePhysics*)  self->getPhysics();
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"GameScenePhysics");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getPhysics'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: toBlockWrite of class  LuaUserDataConversion */
 #ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_LuaUserDataConversion_toBlockWrite00
 static int tolua_LuaSOFExtern_LuaUserDataConversion_toBlockWrite00(lua_State* tolua_S)
@@ -1160,6 +1194,38 @@ static int tolua_LuaSOFExtern_GameScenePhysics_initBoxWithTiledMap00(lua_State* 
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: getHeroBodyPos of class  GameScenePhysics */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_GameScenePhysics_getHeroBodyPos00
+static int tolua_LuaSOFExtern_GameScenePhysics_getHeroBodyPos00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"GameScenePhysics",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  GameScenePhysics* self = (GameScenePhysics*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getHeroBodyPos'", NULL);
+#endif
+  {
+   const CCPoint& tolua_ret = (const CCPoint&)  self->getHeroBodyPos();
+    tolua_pushusertype(tolua_S,(void*)&tolua_ret,"const CCPoint");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getHeroBodyPos'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: changeMoveDirection of class  GameScenePhysics */
 #ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_GameScenePhysics_changeMoveDirection00
 static int tolua_LuaSOFExtern_GameScenePhysics_changeMoveDirection00(lua_State* tolua_S)
@@ -1263,6 +1329,7 @@ TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"screenScrollTo",tolua_LuaSOFExtern_GameSceneView_screenScrollTo00);
    tolua_function(tolua_S,"movePlayer",tolua_LuaSOFExtern_GameSceneView_movePlayer00);
    tolua_function(tolua_S,"movePlayerTo",tolua_LuaSOFExtern_GameSceneView_movePlayerTo00);
+   tolua_function(tolua_S,"getPhysics",tolua_LuaSOFExtern_GameSceneView_getPhysics00);
   tolua_endmodule(tolua_S);
   tolua_cclass(tolua_S,"LuaUserDataConversion","LuaUserDataConversion","",NULL);
   tolua_beginmodule(tolua_S,"LuaUserDataConversion");
@@ -1283,6 +1350,7 @@ TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,".call",tolua_LuaSOFExtern_GameScenePhysics_new00_local);
    tolua_function(tolua_S,"delete",tolua_LuaSOFExtern_GameScenePhysics_delete00);
    tolua_function(tolua_S,"initBoxWithTiledMap",tolua_LuaSOFExtern_GameScenePhysics_initBoxWithTiledMap00);
+   tolua_function(tolua_S,"getHeroBodyPos",tolua_LuaSOFExtern_GameScenePhysics_getHeroBodyPos00);
    tolua_function(tolua_S,"changeMoveDirection",tolua_LuaSOFExtern_GameScenePhysics_changeMoveDirection00);
   tolua_endmodule(tolua_S);
  tolua_endmodule(tolua_S);

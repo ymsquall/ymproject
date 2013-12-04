@@ -60,6 +60,7 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 					-- set move dist to box2d herobody
 					_LUAGameSceneView.mMoveDirection = tmpMoveDir
 					_LUAGameSceneView.mMoveSpeedScale = tmpSpeed
+					_LUAGameSceneView.self:getPhysics():changeMoveDirection(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
 				end
 			else
 				if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "loading" then
@@ -68,11 +69,13 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 				_LUAGameSceneView.mMoveing = false
 				_LUAGameSceneView.mMoveDirection = 0.0
 				_LUAGameSceneView.mMoveSpeedScale = 0.0
+				_LUAGameSceneView.self:getPhysics():changeMoveDirection(0.0, 0.0)
 			end
 		else
 			if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "loading" then
 				_LUAGameSceneView.mHeroAnim:getAnimation():play("loading")
 			end
+			_LUAGameSceneView.self:getPhysics():changeMoveDirection(0.0, 0.0)
 		end
 		return false
 	end
@@ -86,6 +89,7 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 			if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "loading" then
 				_LUAGameSceneView.mHeroAnim:getAnimation():play("loading")
 			end
+			_LUAGameSceneView.self:getPhysics():changeMoveDirection(0.0, 0.0)
 		end
 		return true
     end
@@ -118,6 +122,8 @@ function LUAGameSceneViewOnExit()
 end
 
 function LUAGameSceneViewOnTick(dt)
+	local heroPos = _LUAGameSceneView.self:getPhysics():getHeroBodyPos()
+	_LUAGameSceneView.mHeroAnim:setPosition(CCPoint(heroPos.x, heroPos.y))
 end
 
 print('game scene view loaded')

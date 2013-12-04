@@ -118,6 +118,16 @@ b2Body* GameScenePhysics::createGround(const b2Vec2& pos, float width, float hei
 	return pBody;
 }
 
+const CCPoint& GameScenePhysics::getHeroBodyPos()
+{
+	static CCPoint finalPos;
+	b2Vec2 heroPos = mHeroBody->GetWorldCenter();
+	const b2Fixture* fixture = mHeroBody->GetFixtureList();
+	const b2AABB& aabb = fixture->GetAABB(0);
+	finalPos = CCPoint((heroPos.x - (aabb.upperBound.x - aabb.lowerBound.x)/2.0f) * PTM_RATIO, (heroPos.y - (aabb.upperBound.y - aabb.lowerBound.y)/2.0f) * PTM_RATIO);
+	return finalPos;
+}
+
 void GameScenePhysics::changeMoveDirection(float dir, float speed)
 {
 	mHeroMoveSpeed = dir * speed / PTM_RATIO;
@@ -125,7 +135,7 @@ void GameScenePhysics::changeMoveDirection(float dir, float speed)
 
 void GameScenePhysics::Step(Settings* settings)
 {
-	if(fabs(mHeroMoveSpeed) > 0.001f)
+	if(fabs(mHeroMoveSpeed) > 0.000001f)
 	{
 		b2Vec2 vel = mHeroBody->GetLinearVelocity();
 		vel.x = mHeroMoveSpeed;

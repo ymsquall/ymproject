@@ -5,6 +5,7 @@ public:
 	~GameScenePhysics();
 
 	bool initBoxWithTiledMap(const TMXTiledMap* pTiledMap);
+	const CCPoint& getHeroBodyPos();
 	void changeMoveDirection(float dir, float speed);
 };
 

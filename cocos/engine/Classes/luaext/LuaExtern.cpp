@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaExtern
-** Generated automatically by tolua++-1.0.92 on 11/24/13 10:37:21.
+** Generated automatically by tolua++-1.0.92 on 12/04/13 23:01:53.
 */
 
 /****************************************************************************
