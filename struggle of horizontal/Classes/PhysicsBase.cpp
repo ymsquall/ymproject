@@ -16,7 +16,7 @@ void DestructionListener::SayGoodbye(b2Joint* joint)
 PhysicsBase::PhysicsBase()
 {
     b2Vec2 gravity;
-    gravity.Set(0.0f, -10.0f);
+    gravity.Set(0.0f, -50.0f);
     mWorld = new b2World(gravity);
     m_bomb = NULL;
     m_textLine = 30;

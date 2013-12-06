@@ -876,31 +876,15 @@ xcopy "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0
       <MapFileName>$(OutDir)$(TargetName)MTR.map</MapFileName>
     </Link>
     <PostBuildEvent>
-      <Command>if not exist "$(OutDir)..\" mkdir "$(OutDir)"
-
-if not exist "$(ProjectDir)..\Resources" mkdir "$(ProjectDir)..\Resources"
-
-xcopy /Y /Q "$(OutDir)*.dll" "$(ProjectDir)..\Resources"
-
-xcopy /Y /Q "$(OutDir)*.pdb" "$(ProjectDir)..\Resources"
-
-xcopy /Y /Q "$(OutDir)*.map" "$(ProjectDir)..\Resources"
-
-xcopy /Y /Q "$(OutDir)*.exe" "$(ProjectDir)..\Resources"
-
-
-del "$(OutDir)$(TargetName)MTR$(TargetExt)"
-del "$(OutDir)$(TargetName)MTR.pdb"
-del "$(OutDir)$(TargetName)MTR.map"
-</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>xcopy "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\script" "$(ProjectDir)..\..\testeditor\Resources" /e /Y
-xcopy "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\external\libwebsockets\win32\lib\*.*" "$(OutDir)" /e /Y
-</Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
     <Lib>
-      <AdditionalDependencies>libcocos2d.lib;libCocosDenshion.lib;liblua.lib;lua51.lib;libExtensions.lib;websockets.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <TargetMachine>MachineX86</TargetMachine>
     </Lib>

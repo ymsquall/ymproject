@@ -38,6 +38,7 @@ void ViewModelManager::initWithAppStart(engine::AppDelegate* pApp)
 	searchPaths.push_back("tiledmap");
 	searchPaths.push_back("tiledmap/scenes/0001");
 	searchPaths.push_back("cocostudio/animations");
+	searchPaths.push_back("cocostudio/ui");
 	searchPaths.push_back("luascript");
 	searchPaths.push_back("luascript/cocos2dx-3");
 	pFileUtils->setSearchPaths(searchPaths);

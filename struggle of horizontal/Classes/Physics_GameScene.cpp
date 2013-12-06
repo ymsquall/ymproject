@@ -32,7 +32,10 @@ GameScenePhysics::GameScenePhysics()
 		mHeroBody->CreateFixture(&fd);
 		mHeroBody->SetFixedRotation(true); // 设置为固定角度（不旋转）
 	}
+	mHeroMoveDir = 0;
 	mHeroMoveSpeed = 0;
+	mIsHeroDorping = false;
+	mIsOriJump = true;
 }
 
 GameScenePhysics::~GameScenePhysics()
@@ -130,16 +133,51 @@ const CCPoint& GameScenePhysics::getHeroBodyPos()
 
 void GameScenePhysics::changeMoveDirection(float dir, float speed)
 {
-	mHeroMoveSpeed = dir * speed / PTM_RATIO;
+	mHeroMoveDir = dir;
+	mHeroMoveSpeed = speed;
+}
+
+void GameScenePhysics::setIsHeroDorping(bool b)
+{
+	if(mIsHeroDorping && !b)
+	{
+		mIsOriJump = true;
+	}
+	mIsHeroDorping = b;
+}
+bool GameScenePhysics::getIsHeroDorping()
+{
+	return mIsHeroDorping;
+}
+void GameScenePhysics::jump(float speed)
+{
+	if(mIsHeroDorping)
+		return;
+	b2Vec2 vel = mHeroBody->GetLinearVelocity();
+	vel.y = speed;
+	mHeroBody->SetLinearVelocity(vel);
+	if(fabs(mHeroMoveDir) > 0.001f)
+		mIsOriJump = false;
+}
+
+b2ContactEdge* GameScenePhysics::getHeroBodyContactList()
+{
+	return mHeroBody->GetContactList();
 }
 
 void GameScenePhysics::Step(Settings* settings)
 {
-	if(fabs(mHeroMoveSpeed) > 0.000001f)
+	b2Vec2 vel = mHeroBody->GetLinearVelocity();
+	if(fabs(mHeroMoveDir) > 0.001f)
 	{
-		b2Vec2 vel = mHeroBody->GetLinearVelocity();
-		vel.x = mHeroMoveSpeed;
-		//vel.y = -10;
+		vel.x = mHeroMoveDir * mHeroMoveSpeed / PTM_RATIO + mHeroMoveDir;
+		if(mIsHeroDorping && mIsOriJump)
+			vel.x /= 2.0f;
+		mHeroBody->SetLinearVelocity(vel);
+	}
+	else
+	{
+		vel.x = 0.0f;
 		mHeroBody->SetLinearVelocity(vel);
 	}
 	PhysicsBase::Step(settings);
@@ -151,18 +189,26 @@ void GameScenePhysics::PreSolve(b2Contact* contact, const b2Manifold* oldManifol
 	const b2Manifold* manifold = contact->GetManifold();
 	if (manifold->pointCount <= 0)
 		return;
-	//contact->SetEnabled(false);
 	b2Fixture* fixtureA = contact->GetFixtureA();
 	b2Fixture* fixtureB = contact->GetFixtureB();
-	if(NULL == fixtureA || NULL == fixtureB)
+	if(NULL != fixtureA && NULL != fixtureB)
 	{
 		b2Body* body1 = fixtureA->GetBody();
 		b2Body* body2 = fixtureB->GetBody();
-		if(body1 == mHeroWeaponBody || body2 == mHeroWeaponBody)
+		if(body1 == mHeroBody || body2 == mHeroBody)
 		{
-			if(body1 == mEdgeGround || body2 == mEdgeGround)
-			{
-			}
+			contact->SetEnabled(true);
+			b2Vec2 vel = mHeroBody->GetLinearVelocity();
+			if(vel.y > 0)
+				contact->SetEnabled(false);
 		}
 	}
+}
+
+void GameScenePhysics::BeginContact(b2Contact* contact)
+{
+}
+
+void GameScenePhysics::EndContact(b2Contact* contact)
+{
 }

@@ -868,7 +868,7 @@ xcopy /Y /D /V "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-
       <ProxyFileName>testeditor_p.c</ProxyFileName>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir).\Classes;$(ProjectDir)..\framework\Classes;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\base;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\2d;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\2d\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\physics;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua\bindings;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua\script;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\math\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\audio\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\extensions;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\win32-specific\gles\include\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\glfw3\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir).\Classes;$(ProjectDir)..\Classes;$(ProjectDir)..\..\cocos\engine\Classes;$(ProjectDir)..\..\cocos\framework\Classes;$(ProjectDir)..\framework\Classes;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\base;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\2d;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\2d\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\physics;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua\bindings;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua\script;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\math\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\audio\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\editor-support;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\extensions;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\lua\tolua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\win32-specific\gles\include\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\glfw3\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>Sync</ExceptionHandling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -887,7 +887,7 @@ xcopy /Y /D /V "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-
       <AdditionalIncludeDirectories>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\include;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>ymlibApplication.lib;ymlibMvvm.lib;ymlibUnity.lib;ymlibUIView.lib;ymlibLuaExtern.lib;libcocos2d.lib;libCocosDenshion.lib;libExtensions.lib;libCocoStudio.lib;libBox2D.lib;liblua.lib;lua51.lib;websockets.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ymlibApplication.lib;ymlibMvvm.lib;ymlibUnity.lib;ymlibUIView.lib;ymlibLuaExtern.lib;ymlibMath.lib;libcocos2d.lib;libAudio.lib;libExtensions.lib;libCocosBuilder.lib;libCocosStudio.lib;libBox2D.lib;libchipmunk.lib;libGUI.lib;liblua.lib;libSpine.lib;libNetwork.lib;libLocalStorage.lib;lua51.lib;libcurl_imp.lib;websockets.lib;freetype250.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
@@ -895,8 +895,7 @@ xcopy /Y /D /V "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-
       <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
       <GenerateMapFile>true</GenerateMapFile>
       <MapFileName>$(OutDir)$(TargetName).map</MapFileName>
-      <IgnoreSpecificDefaultLibraries>
-      </IgnoreSpecificDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>

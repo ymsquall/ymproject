@@ -18,12 +18,18 @@ public:
 
 	const cocos2d::CCPoint& getHeroBodyPos();
 	void changeMoveDirection(float dir, float speed);
+	void setIsHeroDorping(bool b);
+	bool getIsHeroDorping();
+	void jump(float speed);
+	b2ContactEdge* getHeroBodyContactList();
 
 private:
 	b2Body* createGround(const b2Vec2& pos, const b2Vec2& p1, const b2Vec2& p2);
 	b2Body* createGround(const b2Vec2& pos, float width, float height);
 
 	virtual void PreSolve(b2Contact* contact, const b2Manifold* oldManifold) override;
+	virtual void BeginContact(b2Contact* contact) override;
+	virtual void EndContact(b2Contact* contact) override;
 
 public:
 	b2Body* mHeroBody;
@@ -31,6 +37,9 @@ public:
 	GroundList mGroundList;
 	b2MouseJoint* mHeroMoveJoint;
 
+	float mHeroMoveDir;
 	float mHeroMoveSpeed;
+	bool mIsHeroDorping;
+	bool mIsOriJump;
 };
 

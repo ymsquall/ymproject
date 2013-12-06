@@ -7,5 +7,9 @@ public:
 	bool initBoxWithTiledMap(const TMXTiledMap* pTiledMap);
 	const CCPoint& getHeroBodyPos();
 	void changeMoveDirection(float dir, float speed);
+	void setIsHeroDorping(bool b);
+	bool getIsHeroDorping();
+	void jump(float speed);
+	b2ContactEdge* getHeroBodyContactList();
 };
 

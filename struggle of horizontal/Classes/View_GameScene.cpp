@@ -5,6 +5,7 @@
 #include "Physics_Box2dView.h"
 #include "Physics_GameScene.h"
 #include "math/Math.h"
+#include "gui/CocosGUI.h"
 
 GameSceneView* gGameSceneView = NULL;
 
@@ -17,7 +18,8 @@ GameSceneView::GameSceneView()
 	mTiledMap = NULL;
 	mFGLayer = NULL;
 	mBGLayer = NULL;
-	mTouchMoveing = NULL;
+	mJumpBtn = NULL;
+	mAttackBtn = NULL;
 	gGameSceneView = this;
 }
 
@@ -43,6 +45,12 @@ bool GameSceneView::init()
 	mFGLayer = mTiledMap->getLayer("foreground");
 	mBGLayer = mTiledMap->getLayer("background");
 	mHeroAnim = dynamic_cast<Armature*>(mTiledMap->getChildByTag(101));
+
+	gui::UILayer* pUILayer = dynamic_cast<gui::UILayer*>(this->getChildByTag(201));
+	gui::UIWidget* pWidget = dynamic_cast<gui::UIWidget*>(pUILayer->getWidgetByTag(202));
+	mJumpBtn = dynamic_cast<gui::UIButton*>(pWidget->getChildByName("mJumpBtn"));
+	mAttackBtn = dynamic_cast<gui::UIButton*>(pWidget->getChildByName("mAttackBtn"));
+
 	mHeroAnim->getAnimation()->setFrameEventCallFunc(this, frameEvent_selector(GameSceneView::onFrameEvent));
 	mHeroAnim->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(GameSceneView::animationEvent));
 	this->scheduleUpdate();
@@ -115,45 +123,35 @@ void GameSceneView::onExit()
 	callLuaFuncNoResult("LUAGameSceneViewOnExit");
 	ViewSuperT::onExit();
 }
-//
-//void GameSceneView::onTouchesBegan(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event)
-//{
-//	//static CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
-//	//static CCSize scrnHelfSize = CCSizeMake(screenSize.width/2.0f, screenSize.height/2.0f);
-//	//for(std::vector<cocos2d::Touch*>::const_iterator it = touches.begin(); it != touches.end(); ++ it)
-//	//{
-//	//	CCPoint locPos = touches[0]->getLocation();
-//	//	CCPoint nodePos = convertToNodeSpace(locPos);
-//	//	if(nodePos.x < scrnHelfSize.width)
-//	//	{
-//	//		mTouchMoveBeginPos = nodePos;
-//	//		mTouchMoveing = *it;
-//	//	}
-//	//}
-//}
-//void GameSceneView::onTouchesMoved(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event)
-//{
-//	if(NULL != mTouchMoveing)
-//	{
-//
-//	}
-//}
-//void GameSceneView::onTouchesEnded(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event)
-//{
-//	//for(std::vector<cocos2d::Touch*>::const_iterator it = touches.begin(); it != touches.end(); ++ it)
-//	//{
-//	//	if(*it == mTouchMoveing)
-//	//	{
-//	//		mTouchMoveing = NULL;
-//	//		mHeroAnim->getAnimation()->play("loading");
-//	//	}
-//	//}
-//}
+
+void GameSceneView::onTouchBegan(const CCPoint& pos)
+{
+	if(mJumpBtn->hitTest(pos))
+	{
+		mJumpBtn->onTouchBegan(pos);
+		return;
+	}
+	if(mAttackBtn->hitTest(pos))
+	{
+		mAttackBtn->onTouchBegan(pos);
+		return;
+	}
+}
+void GameSceneView::onTouchMoved(const CCPoint& pos)
+{
+	mJumpBtn->onTouchMoved(pos);
+	mAttackBtn->onTouchMoved(pos);
+}
+void GameSceneView::onTouchEnded(const CCPoint& pos)
+{
+	mJumpBtn->onTouchEnded(pos);
+	mAttackBtn->onTouchEnded(pos);
+}
 
 bool GameSceneView::screenScroll(const Point& offset)
 {
 	float posX = mScrollEndPos.x + offset.x;
-	float posY = mScrollEndPos.y - offset.y;
+	float posY = mScrollEndPos.y + offset.y;
 	bool ret = fixedScreenPositionBound(posX, posY);
 	CCPoint oldEndPos = mScrollEndPos;
 	mScrollEndPos = ccp(posX, posY);
@@ -166,7 +164,7 @@ bool GameSceneView::screenScrollTo(const Point& toPos)
 	static CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
 	static CCSize scrnHelfSize = CCSizeMake(screenSize.width/2.0f, screenSize.height/2.0f);
 	float posX = scrnHelfSize.width + toPos.x;
-	float posY = scrnHelfSize.height - toPos.y;
+	float posY = scrnHelfSize.height + toPos.y;
 	bool ret = fixedScreenPositionBound(posX, posY);
 	CCPoint oldEndPos = mScrollEndPos;
 	mScrollEndPos = ccp(posX, posY);
@@ -250,64 +248,10 @@ void GameSceneView::update(float dt)
 	{
 		mBGLayer->setPosition(mBgFixedPos);
 	}
+	/*
 	GameScenePhysics* pPhysics = mPhysicsView->physics<GameScenePhysics>();
 	if(NULL != pPhysics)
 	{
-		//b2Vec2 heroPos = pPhysics->mHeroBody->GetWorldCenter();
-		//const b2Fixture* fixture = pPhysics->mHeroBody->GetFixtureList();
-		//const b2AABB& aabb = fixture->GetAABB(0);
-		//CCPoint finalPos = CCPoint(heroPos.x - (aabb.upperBound.x - aabb.lowerBound.x)/2.0f, heroPos.y - (aabb.upperBound.y - aabb.lowerBound.y)/2.0f);
-		////if(mHeroAnim->getRotationY() > 90.0f)
-		////	mHeroAnim->setPosition(CCPoint(finalPos.x * PTM_RATIO + mHeroAnim->getContentSize().width/2.0f, finalPos.y * PTM_RATIO));
-		////else
-		//	mHeroAnim->setPosition(CCPoint(finalPos.x * PTM_RATIO, finalPos.y * PTM_RATIO));
-		//if(NULL != mTouchMoveing)
-		//{
-		//	b2ContactEdge* pContact = pPhysics->mHeroBody->GetContactList();
-		//	if(NULL == pContact)
-		//	{
-		//		if(mHeroAnim->getAnimation()->getCurrentMovementID() != "loading")
-		//			mHeroAnim->getAnimation()->play("loading");
-		//		pPhysics->mHeroMoveSpeed = 0;
-		//	}
-		//	else
-		//	{
-		//		CCPoint locPos = mTouchMoveing->getLocation();
-		//		CCPoint nodePos = convertToNodeSpace(locPos);
-		//		float dist = (nodePos - mTouchMoveBeginPos).getLength();
-		//		if(fabs(dist) > 20.0f)
-		//		{
-		//			if(mHeroAnim->getAnimation()->getCurrentMovementID() != "run")
-		//				mHeroAnim->getAnimation()->play("run");
-		//			if(dist > 100.0f) dist = 100.0f;
-		//			float width = nodePos.x - mTouchMoveBeginPos.x;
-		//			float height = nodePos.y - mTouchMoveBeginPos.y;
-		//			float speed = 2.0f;
-		//			float moveDistX = dist * speed / PTM_RATIO;
-		//			b2Vec2 pos = pPhysics->mHeroBody->GetPosition();
-		//			if(width > 0)
-		//			{
-		//				mHeroAnim->setRotationY(0);
-		//			}
-		//			else
-		//			{
-		//				moveDistX = -moveDistX;
-		//				mHeroAnim->setRotationY(180);
-		//			}
-		//			pPhysics->mHeroMoveSpeed = moveDistX;
-		//		}
-		//		else
-		//		{
-		//			if(mHeroAnim->getAnimation()->getCurrentMovementID() != "loading")
-		//				mHeroAnim->getAnimation()->play("loading");
-		//			pPhysics->mHeroMoveSpeed = 0;
-		//		}
-		//	}
-		//}
-		//else
-		//{
-		//	pPhysics->mHeroMoveSpeed = 0;
-		//}
 		// hero weapon box
 		{
 			CCBone* pBone = (CCBone*)pPhysics->mHeroWeaponBody->GetUserData();
@@ -356,6 +300,7 @@ void GameSceneView::update(float dt)
 			pPhysics->mHeroWeaponBody->SetLinearVelocity(b2Vec2(0,0));
 		}
 	}
+	*/
 	//
 	Point animPos = mHeroAnim->getPosition();
 	Point mapPos = mTiledMap->getPosition();
@@ -372,5 +317,6 @@ void GameSceneView::update(float dt)
 	else if(offset.y > 100)
 		mapPos.y = (mapPos.y - (offset.y - 100.0f)) - scrnHelfSize.height;
 	else mapPos.y = mapPos.y - scrnHelfSize.height;
+	//CCLOG("screen [%.02f, %.02f]", mapPos.x, mapPos.y);
 	this->screenScrollTo(mapPos);
 }

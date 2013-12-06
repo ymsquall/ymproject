@@ -272,6 +272,12 @@
     <Bscmake>
       <PreserveSbr>true</PreserveSbr>
     </Bscmake>
+    <PreBuildEvent>
+      <Command>if not exist "$(OutDir)..\" mkdir "$(OutDir)"
+
+xcopy /Y /D /V "$(OutDir)..\Debug.win32\*.*" "$(OutDir)"
+</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_3|Win32'">
     <ClCompile>
@@ -299,6 +305,12 @@
     <Bscmake>
       <PreserveSbr>true</PreserveSbr>
     </Bscmake>
+    <PreBuildEvent>
+      <Command>if not exist "$(OutDir)..\" mkdir "$(OutDir)"
+
+xcopy /Y /D /V "$(OutDir)..\Debug.win32\*.*" "$(OutDir)"
+</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">
     <ClCompile>
@@ -320,6 +332,12 @@
     <Lib>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
     </Lib>
+    <PreBuildEvent>
+      <Command>if not exist "$(OutDir)..\" mkdir "$(OutDir)"
+
+xcopy /Y /D /V "$(OutDir)..\Debug.win32\*.*" "$(OutDir)"
+</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -362,6 +380,12 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <PreBuildEvent>
+      <Command>if not exist "$(OutDir)..\" mkdir "$(OutDir)"
+
+xcopy /Y /D /V "$(OutDir)..\Release.win32\*.*" "$(OutDir)"
+</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_3|Win32'">
     <ClCompile>
@@ -383,6 +407,12 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <PreBuildEvent>
+      <Command>if not exist "$(OutDir)..\" mkdir "$(OutDir)"
+
+xcopy /Y /D /V "$(OutDir)..\Release.win32\*.*" "$(OutDir)"
+</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">
     <ClCompile>
@@ -407,6 +437,12 @@
     <Lib>
       <TargetMachine>MachineX86</TargetMachine>
     </Lib>
+    <PreBuildEvent>
+      <Command>if not exist "$(OutDir)..\" mkdir "$(OutDir)"
+
+xcopy /Y /D /V "$(OutDir)..\Release.win32\*.*" "$(OutDir)"
+</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT_2|Win32'">
     <ClCompile>
@@ -431,6 +467,12 @@
     <Lib>
       <TargetMachine>MachineX86</TargetMachine>
     </Lib>
+    <PreBuildEvent>
+      <Command>if not exist "$(OutDir)..\" mkdir "$(OutDir)"
+
+xcopy /Y /D /V "$(OutDir)..\Release.win32\*.*" "$(OutDir)"
+</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT_3|Win32'">
     <ClCompile>
@@ -455,6 +497,12 @@
     <Lib>
       <TargetMachine>MachineX86</TargetMachine>
     </Lib>
+    <PreBuildEvent>
+      <Command>if not exist "$(OutDir)..\" mkdir "$(OutDir)"
+
+xcopy /Y /D /V "$(OutDir)..\Release.win32\*.*" "$(OutDir)"
+</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

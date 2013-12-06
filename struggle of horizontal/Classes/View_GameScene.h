@@ -9,6 +9,11 @@ using namespace cocos2d;
 using namespace framework;
 using namespace cocostudio;
 
+namespace gui
+{
+	class UIButton;
+}
+
 class Physics_Box2DView;
 class GameScenePhysics;
 class GameSceneView : public mvvm::ViewBase<GameSceneView, cocos2d::CCLayer>
@@ -27,12 +32,13 @@ public:
 	bool movePlayerTo(const Point& toPos);
 	GameScenePhysics* getPhysics();
 
+	void onTouchBegan(const CCPoint& pos);
+	void onTouchMoved(const CCPoint& pos);
+	void onTouchEnded(const CCPoint& pos);
+
 private:
 	virtual void onEnterTransitionDidFinish();
 	virtual void onExit();
-	//virtual void onTouchesBegan(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event);
-	//virtual void onTouchesMoved(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event);
-	//virtual void onTouchesEnded(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event);
 
 	bool fixedScreenPositionBound(float& posX, float& posY);
 	void fixedBgImagePosition(float& posX, float& posY);
@@ -52,7 +58,7 @@ public:
 	CCPoint mPlayerEndPos;
 
 	Physics_Box2DView* mPhysicsView;
-
-	CCPoint mTouchMoveBeginPos;
-	cocos2d::Touch* mTouchMoveing;
+	
+	gui::UIButton* mJumpBtn;
+	gui::UIButton* mAttackBtn;
 };
