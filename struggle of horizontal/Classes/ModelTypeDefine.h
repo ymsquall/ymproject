@@ -33,7 +33,7 @@ public:
 	ModelImpl(const char* ascType) : mvvm::ModelBase<typeValue, rttiLength>(ascType)
 	{
 		mLuaEngine = cocos2d::LuaEngine::getInstance();
-		mModelManager = ViewModelManager::point();
+		mModelManager = NULL;
 	}
 
 	virtual bool init()

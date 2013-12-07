@@ -132,366 +132,6 @@
 		924EAC061827330000B6782F /* AppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAAFD182732FF00B6782F /* AppDelegate.h */; };
 		924EAC071827330000B6782F /* AppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAAFD182732FF00B6782F /* AppDelegate.h */; };
 		924EAC081827330000B6782F /* AppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAAFD182732FF00B6782F /* AppDelegate.h */; };
-		924EAC091827330000B6782F /* CCLuaEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAAFE182732FF00B6782F /* CCLuaEngine.cpp */; };
-		924EAC0A1827330000B6782F /* CCLuaEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAAFE182732FF00B6782F /* CCLuaEngine.cpp */; };
-		924EAC0B1827330000B6782F /* CCLuaEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAAFE182732FF00B6782F /* CCLuaEngine.cpp */; };
-		924EAC0C1827330000B6782F /* CCLuaEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAAFE182732FF00B6782F /* CCLuaEngine.cpp */; };
-		924EAC0D1827330000B6782F /* CCLuaEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAAFF182732FF00B6782F /* CCLuaEngine.h */; };
-		924EAC0E1827330000B6782F /* CCLuaEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAAFF182732FF00B6782F /* CCLuaEngine.h */; };
-		924EAC0F1827330000B6782F /* CCLuaEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAAFF182732FF00B6782F /* CCLuaEngine.h */; };
-		924EAC101827330000B6782F /* CCLuaEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAAFF182732FF00B6782F /* CCLuaEngine.h */; };
-		924EAC111827330000B6782F /* CCActionFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB02182732FF00B6782F /* CCActionFrame.cpp */; };
-		924EAC121827330000B6782F /* CCActionFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB02182732FF00B6782F /* CCActionFrame.cpp */; };
-		924EAC131827330000B6782F /* CCActionFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB02182732FF00B6782F /* CCActionFrame.cpp */; };
-		924EAC141827330000B6782F /* CCActionFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB02182732FF00B6782F /* CCActionFrame.cpp */; };
-		924EAC151827330000B6782F /* CCActionFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB03182732FF00B6782F /* CCActionFrame.h */; };
-		924EAC161827330000B6782F /* CCActionFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB03182732FF00B6782F /* CCActionFrame.h */; };
-		924EAC171827330000B6782F /* CCActionFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB03182732FF00B6782F /* CCActionFrame.h */; };
-		924EAC181827330000B6782F /* CCActionFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB03182732FF00B6782F /* CCActionFrame.h */; };
-		924EAC191827330000B6782F /* CCActionFrameEasing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB04182732FF00B6782F /* CCActionFrameEasing.cpp */; };
-		924EAC1A1827330000B6782F /* CCActionFrameEasing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB04182732FF00B6782F /* CCActionFrameEasing.cpp */; };
-		924EAC1B1827330000B6782F /* CCActionFrameEasing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB04182732FF00B6782F /* CCActionFrameEasing.cpp */; };
-		924EAC1C1827330000B6782F /* CCActionFrameEasing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB04182732FF00B6782F /* CCActionFrameEasing.cpp */; };
-		924EAC1D1827330000B6782F /* CCActionFrameEasing.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB05182732FF00B6782F /* CCActionFrameEasing.h */; };
-		924EAC1E1827330000B6782F /* CCActionFrameEasing.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB05182732FF00B6782F /* CCActionFrameEasing.h */; };
-		924EAC1F1827330000B6782F /* CCActionFrameEasing.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB05182732FF00B6782F /* CCActionFrameEasing.h */; };
-		924EAC201827330000B6782F /* CCActionFrameEasing.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB05182732FF00B6782F /* CCActionFrameEasing.h */; };
-		924EAC211827330000B6782F /* CCActionManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB06182732FF00B6782F /* CCActionManager.cpp */; };
-		924EAC221827330000B6782F /* CCActionManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB06182732FF00B6782F /* CCActionManager.cpp */; };
-		924EAC231827330000B6782F /* CCActionManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB06182732FF00B6782F /* CCActionManager.cpp */; };
-		924EAC241827330000B6782F /* CCActionManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB06182732FF00B6782F /* CCActionManager.cpp */; };
-		924EAC251827330000B6782F /* CCActionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB07182732FF00B6782F /* CCActionManager.h */; };
-		924EAC261827330000B6782F /* CCActionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB07182732FF00B6782F /* CCActionManager.h */; };
-		924EAC271827330000B6782F /* CCActionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB07182732FF00B6782F /* CCActionManager.h */; };
-		924EAC281827330000B6782F /* CCActionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB07182732FF00B6782F /* CCActionManager.h */; };
-		924EAC291827330000B6782F /* CCActionNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB08182732FF00B6782F /* CCActionNode.cpp */; };
-		924EAC2A1827330000B6782F /* CCActionNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB08182732FF00B6782F /* CCActionNode.cpp */; };
-		924EAC2B1827330000B6782F /* CCActionNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB08182732FF00B6782F /* CCActionNode.cpp */; };
-		924EAC2C1827330000B6782F /* CCActionNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB08182732FF00B6782F /* CCActionNode.cpp */; };
-		924EAC2D1827330000B6782F /* CCActionNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB09182732FF00B6782F /* CCActionNode.h */; };
-		924EAC2E1827330000B6782F /* CCActionNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB09182732FF00B6782F /* CCActionNode.h */; };
-		924EAC2F1827330000B6782F /* CCActionNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB09182732FF00B6782F /* CCActionNode.h */; };
-		924EAC301827330000B6782F /* CCActionNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB09182732FF00B6782F /* CCActionNode.h */; };
-		924EAC311827330000B6782F /* CCActionObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB0A182732FF00B6782F /* CCActionObject.cpp */; };
-		924EAC321827330000B6782F /* CCActionObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB0A182732FF00B6782F /* CCActionObject.cpp */; };
-		924EAC331827330000B6782F /* CCActionObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB0A182732FF00B6782F /* CCActionObject.cpp */; };
-		924EAC341827330000B6782F /* CCActionObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB0A182732FF00B6782F /* CCActionObject.cpp */; };
-		924EAC351827330000B6782F /* CCActionObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB0B182732FF00B6782F /* CCActionObject.h */; };
-		924EAC361827330000B6782F /* CCActionObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB0B182732FF00B6782F /* CCActionObject.h */; };
-		924EAC371827330000B6782F /* CCActionObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB0B182732FF00B6782F /* CCActionObject.h */; };
-		924EAC381827330000B6782F /* CCActionObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB0B182732FF00B6782F /* CCActionObject.h */; };
-		924EAC391827330000B6782F /* CCCSContentJsonDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB0F182732FF00B6782F /* CCCSContentJsonDictionary.cpp */; };
-		924EAC3A1827330000B6782F /* CCCSContentJsonDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB0F182732FF00B6782F /* CCCSContentJsonDictionary.cpp */; };
-		924EAC3B1827330000B6782F /* CCCSContentJsonDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB0F182732FF00B6782F /* CCCSContentJsonDictionary.cpp */; };
-		924EAC3C1827330000B6782F /* CCCSContentJsonDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB0F182732FF00B6782F /* CCCSContentJsonDictionary.cpp */; };
-		924EAC3D1827330000B6782F /* CCCSContentJsonDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB10182732FF00B6782F /* CCCSContentJsonDictionary.h */; };
-		924EAC3E1827330000B6782F /* CCCSContentJsonDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB10182732FF00B6782F /* CCCSContentJsonDictionary.h */; };
-		924EAC3F1827330000B6782F /* CCCSContentJsonDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB10182732FF00B6782F /* CCCSContentJsonDictionary.h */; };
-		924EAC401827330000B6782F /* CCCSContentJsonDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB10182732FF00B6782F /* CCCSContentJsonDictionary.h */; };
-		924EAC411827330000B6782F /* CocoStudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB11182732FF00B6782F /* CocoStudio.h */; };
-		924EAC421827330000B6782F /* CocoStudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB11182732FF00B6782F /* CocoStudio.h */; };
-		924EAC431827330000B6782F /* CocoStudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB11182732FF00B6782F /* CocoStudio.h */; };
-		924EAC441827330000B6782F /* CocoStudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB11182732FF00B6782F /* CocoStudio.h */; };
-		924EAC451827330000B6782F /* CCComRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB13182732FF00B6782F /* CCComRender.cpp */; };
-		924EAC461827330000B6782F /* CCComRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB13182732FF00B6782F /* CCComRender.cpp */; };
-		924EAC471827330000B6782F /* CCComRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB13182732FF00B6782F /* CCComRender.cpp */; };
-		924EAC481827330000B6782F /* CCComRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB13182732FF00B6782F /* CCComRender.cpp */; };
-		924EAC491827330000B6782F /* CCComRender.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB14182732FF00B6782F /* CCComRender.h */; };
-		924EAC4A1827330000B6782F /* CCComRender.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB14182732FF00B6782F /* CCComRender.h */; };
-		924EAC4B1827330000B6782F /* CCComRender.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB14182732FF00B6782F /* CCComRender.h */; };
-		924EAC4C1827330000B6782F /* CCComRender.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB14182732FF00B6782F /* CCComRender.h */; };
-		924EAC4D1827330000B6782F /* CCCSComAttribute.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB15182732FF00B6782F /* CCCSComAttribute.cpp */; };
-		924EAC4E1827330000B6782F /* CCCSComAttribute.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB15182732FF00B6782F /* CCCSComAttribute.cpp */; };
-		924EAC4F1827330000B6782F /* CCCSComAttribute.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB15182732FF00B6782F /* CCCSComAttribute.cpp */; };
-		924EAC501827330000B6782F /* CCCSComAttribute.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB15182732FF00B6782F /* CCCSComAttribute.cpp */; };
-		924EAC511827330000B6782F /* CCCSComAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB16182732FF00B6782F /* CCCSComAttribute.h */; };
-		924EAC521827330000B6782F /* CCCSComAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB16182732FF00B6782F /* CCCSComAttribute.h */; };
-		924EAC531827330000B6782F /* CCCSComAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB16182732FF00B6782F /* CCCSComAttribute.h */; };
-		924EAC541827330000B6782F /* CCCSComAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB16182732FF00B6782F /* CCCSComAttribute.h */; };
-		924EAC551827330000B6782F /* CCCSComAudio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB17182732FF00B6782F /* CCCSComAudio.cpp */; };
-		924EAC561827330000B6782F /* CCCSComAudio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB17182732FF00B6782F /* CCCSComAudio.cpp */; };
-		924EAC571827330000B6782F /* CCCSComAudio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB17182732FF00B6782F /* CCCSComAudio.cpp */; };
-		924EAC581827330000B6782F /* CCCSComAudio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB17182732FF00B6782F /* CCCSComAudio.cpp */; };
-		924EAC591827330000B6782F /* CCCSComAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB18182732FF00B6782F /* CCCSComAudio.h */; };
-		924EAC5A1827330000B6782F /* CCCSComAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB18182732FF00B6782F /* CCCSComAudio.h */; };
-		924EAC5B1827330000B6782F /* CCCSComAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB18182732FF00B6782F /* CCCSComAudio.h */; };
-		924EAC5C1827330000B6782F /* CCCSComAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB18182732FF00B6782F /* CCCSComAudio.h */; };
-		924EAC5D1827330000B6782F /* UIRootWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB1B182732FF00B6782F /* UIRootWidget.cpp */; };
-		924EAC5E1827330000B6782F /* UIRootWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB1B182732FF00B6782F /* UIRootWidget.cpp */; };
-		924EAC5F1827330000B6782F /* UIRootWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB1B182732FF00B6782F /* UIRootWidget.cpp */; };
-		924EAC601827330000B6782F /* UIRootWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB1B182732FF00B6782F /* UIRootWidget.cpp */; };
-		924EAC611827330000B6782F /* UIRootWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB1C182732FF00B6782F /* UIRootWidget.h */; };
-		924EAC621827330000B6782F /* UIRootWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB1C182732FF00B6782F /* UIRootWidget.h */; };
-		924EAC631827330000B6782F /* UIRootWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB1C182732FF00B6782F /* UIRootWidget.h */; };
-		924EAC641827330000B6782F /* UIRootWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB1C182732FF00B6782F /* UIRootWidget.h */; };
-		924EAC651827330000B6782F /* UIWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB1D182732FF00B6782F /* UIWidget.cpp */; };
-		924EAC661827330000B6782F /* UIWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB1D182732FF00B6782F /* UIWidget.cpp */; };
-		924EAC671827330000B6782F /* UIWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB1D182732FF00B6782F /* UIWidget.cpp */; };
-		924EAC681827330000B6782F /* UIWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB1D182732FF00B6782F /* UIWidget.cpp */; };
-		924EAC691827330000B6782F /* UIWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB1E182732FF00B6782F /* UIWidget.h */; };
-		924EAC6A1827330000B6782F /* UIWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB1E182732FF00B6782F /* UIWidget.h */; };
-		924EAC6B1827330000B6782F /* UIWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB1E182732FF00B6782F /* UIWidget.h */; };
-		924EAC6C1827330000B6782F /* UIWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB1E182732FF00B6782F /* UIWidget.h */; };
-		924EAC6D1827330000B6782F /* Layout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB20182732FF00B6782F /* Layout.cpp */; };
-		924EAC6E1827330000B6782F /* Layout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB20182732FF00B6782F /* Layout.cpp */; };
-		924EAC6F1827330000B6782F /* Layout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB20182732FF00B6782F /* Layout.cpp */; };
-		924EAC701827330000B6782F /* Layout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB20182732FF00B6782F /* Layout.cpp */; };
-		924EAC711827330000B6782F /* Layout.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB21182732FF00B6782F /* Layout.h */; };
-		924EAC721827330000B6782F /* Layout.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB21182732FF00B6782F /* Layout.h */; };
-		924EAC731827330000B6782F /* Layout.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB21182732FF00B6782F /* Layout.h */; };
-		924EAC741827330000B6782F /* Layout.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB21182732FF00B6782F /* Layout.h */; };
-		924EAC751827330000B6782F /* LayoutParameter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB22182732FF00B6782F /* LayoutParameter.cpp */; };
-		924EAC761827330000B6782F /* LayoutParameter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB22182732FF00B6782F /* LayoutParameter.cpp */; };
-		924EAC771827330000B6782F /* LayoutParameter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB22182732FF00B6782F /* LayoutParameter.cpp */; };
-		924EAC781827330000B6782F /* LayoutParameter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB22182732FF00B6782F /* LayoutParameter.cpp */; };
-		924EAC791827330000B6782F /* LayoutParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB23182732FF00B6782F /* LayoutParameter.h */; };
-		924EAC7A1827330000B6782F /* LayoutParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB23182732FF00B6782F /* LayoutParameter.h */; };
-		924EAC7B1827330000B6782F /* LayoutParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB23182732FF00B6782F /* LayoutParameter.h */; };
-		924EAC7C1827330000B6782F /* LayoutParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB23182732FF00B6782F /* LayoutParameter.h */; };
-		924EAC7D1827330000B6782F /* UILayoutDefine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB24182732FF00B6782F /* UILayoutDefine.cpp */; };
-		924EAC7E1827330000B6782F /* UILayoutDefine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB24182732FF00B6782F /* UILayoutDefine.cpp */; };
-		924EAC7F1827330000B6782F /* UILayoutDefine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB24182732FF00B6782F /* UILayoutDefine.cpp */; };
-		924EAC801827330000B6782F /* UILayoutDefine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB24182732FF00B6782F /* UILayoutDefine.cpp */; };
-		924EAC811827330000B6782F /* UILayoutDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB25182732FF00B6782F /* UILayoutDefine.h */; };
-		924EAC821827330000B6782F /* UILayoutDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB25182732FF00B6782F /* UILayoutDefine.h */; };
-		924EAC831827330000B6782F /* UILayoutDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB25182732FF00B6782F /* UILayoutDefine.h */; };
-		924EAC841827330000B6782F /* UILayoutDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB25182732FF00B6782F /* UILayoutDefine.h */; };
-		924EAC851827330000B6782F /* CocosGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB27182732FF00B6782F /* CocosGUI.cpp */; };
-		924EAC861827330000B6782F /* CocosGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB27182732FF00B6782F /* CocosGUI.cpp */; };
-		924EAC871827330000B6782F /* CocosGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB27182732FF00B6782F /* CocosGUI.cpp */; };
-		924EAC881827330000B6782F /* CocosGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB27182732FF00B6782F /* CocosGUI.cpp */; };
-		924EAC891827330000B6782F /* CocosGUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB28182732FF00B6782F /* CocosGUI.h */; };
-		924EAC8A1827330000B6782F /* CocosGUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB28182732FF00B6782F /* CocosGUI.h */; };
-		924EAC8B1827330000B6782F /* CocosGUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB28182732FF00B6782F /* CocosGUI.h */; };
-		924EAC8C1827330000B6782F /* CocosGUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB28182732FF00B6782F /* CocosGUI.h */; };
-		924EAC8D1827330000B6782F /* UIHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB29182732FF00B6782F /* UIHelper.cpp */; };
-		924EAC8E1827330000B6782F /* UIHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB29182732FF00B6782F /* UIHelper.cpp */; };
-		924EAC8F1827330000B6782F /* UIHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB29182732FF00B6782F /* UIHelper.cpp */; };
-		924EAC901827330000B6782F /* UIHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB29182732FF00B6782F /* UIHelper.cpp */; };
-		924EAC911827330000B6782F /* UIHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB2A182732FF00B6782F /* UIHelper.h */; };
-		924EAC921827330000B6782F /* UIHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB2A182732FF00B6782F /* UIHelper.h */; };
-		924EAC931827330000B6782F /* UIHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB2A182732FF00B6782F /* UIHelper.h */; };
-		924EAC941827330000B6782F /* UIHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB2A182732FF00B6782F /* UIHelper.h */; };
-		924EAC951827330000B6782F /* UIInputManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB2B182732FF00B6782F /* UIInputManager.cpp */; };
-		924EAC961827330000B6782F /* UIInputManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB2B182732FF00B6782F /* UIInputManager.cpp */; };
-		924EAC971827330000B6782F /* UIInputManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB2B182732FF00B6782F /* UIInputManager.cpp */; };
-		924EAC981827330000B6782F /* UIInputManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB2B182732FF00B6782F /* UIInputManager.cpp */; };
-		924EAC991827330000B6782F /* UIInputManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB2C182732FF00B6782F /* UIInputManager.h */; };
-		924EAC9A1827330000B6782F /* UIInputManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB2C182732FF00B6782F /* UIInputManager.h */; };
-		924EAC9B1827330000B6782F /* UIInputManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB2C182732FF00B6782F /* UIInputManager.h */; };
-		924EAC9C1827330000B6782F /* UIInputManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB2C182732FF00B6782F /* UIInputManager.h */; };
-		924EAC9D1827330000B6782F /* UILayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB2D182732FF00B6782F /* UILayer.cpp */; };
-		924EAC9E1827330000B6782F /* UILayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB2D182732FF00B6782F /* UILayer.cpp */; };
-		924EAC9F1827330000B6782F /* UILayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB2D182732FF00B6782F /* UILayer.cpp */; };
-		924EACA01827330000B6782F /* UILayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB2D182732FF00B6782F /* UILayer.cpp */; };
-		924EACA11827330000B6782F /* UILayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB2E182732FF00B6782F /* UILayer.h */; };
-		924EACA21827330000B6782F /* UILayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB2E182732FF00B6782F /* UILayer.h */; };
-		924EACA31827330000B6782F /* UILayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB2E182732FF00B6782F /* UILayer.h */; };
-		924EACA41827330000B6782F /* UILayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB2E182732FF00B6782F /* UILayer.h */; };
-		924EACA51827330000B6782F /* CompatibleClasses.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB31182732FF00B6782F /* CompatibleClasses.h */; };
-		924EACA61827330000B6782F /* CompatibleClasses.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB31182732FF00B6782F /* CompatibleClasses.h */; };
-		924EACA71827330000B6782F /* CompatibleClasses.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB31182732FF00B6782F /* CompatibleClasses.h */; };
-		924EACA81827330000B6782F /* CompatibleClasses.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB31182732FF00B6782F /* CompatibleClasses.h */; };
-		924EACA91827330000B6782F /* UIDragPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB33182732FF00B6782F /* UIDragPanel.cpp */; };
-		924EACAA1827330000B6782F /* UIDragPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB33182732FF00B6782F /* UIDragPanel.cpp */; };
-		924EACAB1827330000B6782F /* UIDragPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB33182732FF00B6782F /* UIDragPanel.cpp */; };
-		924EACAC1827330000B6782F /* UIDragPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB33182732FF00B6782F /* UIDragPanel.cpp */; };
-		924EACAD1827330000B6782F /* UIDragPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB34182732FF00B6782F /* UIDragPanel.h */; };
-		924EACAE1827330000B6782F /* UIDragPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB34182732FF00B6782F /* UIDragPanel.h */; };
-		924EACAF1827330000B6782F /* UIDragPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB34182732FF00B6782F /* UIDragPanel.h */; };
-		924EACB01827330000B6782F /* UIDragPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB34182732FF00B6782F /* UIDragPanel.h */; };
-		924EACB11827330000B6782F /* UIListView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB35182732FF00B6782F /* UIListView.cpp */; };
-		924EACB21827330000B6782F /* UIListView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB35182732FF00B6782F /* UIListView.cpp */; };
-		924EACB31827330000B6782F /* UIListView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB35182732FF00B6782F /* UIListView.cpp */; };
-		924EACB41827330000B6782F /* UIListView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB35182732FF00B6782F /* UIListView.cpp */; };
-		924EACB51827330000B6782F /* UIListView.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB36182732FF00B6782F /* UIListView.h */; };
-		924EACB61827330000B6782F /* UIListView.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB36182732FF00B6782F /* UIListView.h */; };
-		924EACB71827330000B6782F /* UIListView.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB36182732FF00B6782F /* UIListView.h */; };
-		924EACB81827330000B6782F /* UIListView.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB36182732FF00B6782F /* UIListView.h */; };
-		924EACB91827330000B6782F /* UIPageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB37182732FF00B6782F /* UIPageView.cpp */; };
-		924EACBA1827330000B6782F /* UIPageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB37182732FF00B6782F /* UIPageView.cpp */; };
-		924EACBB1827330000B6782F /* UIPageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB37182732FF00B6782F /* UIPageView.cpp */; };
-		924EACBC1827330000B6782F /* UIPageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB37182732FF00B6782F /* UIPageView.cpp */; };
-		924EACBD1827330000B6782F /* UIPageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB38182732FF00B6782F /* UIPageView.h */; };
-		924EACBE1827330000B6782F /* UIPageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB38182732FF00B6782F /* UIPageView.h */; };
-		924EACBF1827330000B6782F /* UIPageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB38182732FF00B6782F /* UIPageView.h */; };
-		924EACC01827330000B6782F /* UIPageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB38182732FF00B6782F /* UIPageView.h */; };
-		924EACC11827330000B6782F /* UIScrollInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB39182732FF00B6782F /* UIScrollInterface.h */; };
-		924EACC21827330000B6782F /* UIScrollInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB39182732FF00B6782F /* UIScrollInterface.h */; };
-		924EACC31827330000B6782F /* UIScrollInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB39182732FF00B6782F /* UIScrollInterface.h */; };
-		924EACC41827330000B6782F /* UIScrollInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB39182732FF00B6782F /* UIScrollInterface.h */; };
-		924EACC51827330000B6782F /* UIScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB3A182732FF00B6782F /* UIScrollView.cpp */; };
-		924EACC61827330000B6782F /* UIScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB3A182732FF00B6782F /* UIScrollView.cpp */; };
-		924EACC71827330000B6782F /* UIScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB3A182732FF00B6782F /* UIScrollView.cpp */; };
-		924EACC81827330000B6782F /* UIScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB3A182732FF00B6782F /* UIScrollView.cpp */; };
-		924EACC91827330000B6782F /* UIScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB3B182732FF00B6782F /* UIScrollView.h */; };
-		924EACCA1827330000B6782F /* UIScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB3B182732FF00B6782F /* UIScrollView.h */; };
-		924EACCB1827330000B6782F /* UIScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB3B182732FF00B6782F /* UIScrollView.h */; };
-		924EACCC1827330000B6782F /* UIScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB3B182732FF00B6782F /* UIScrollView.h */; };
-		924EACCD1827330000B6782F /* UIButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB3C182732FF00B6782F /* UIButton.cpp */; };
-		924EACCE1827330000B6782F /* UIButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB3C182732FF00B6782F /* UIButton.cpp */; };
-		924EACCF1827330000B6782F /* UIButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB3C182732FF00B6782F /* UIButton.cpp */; };
-		924EACD01827330000B6782F /* UIButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB3C182732FF00B6782F /* UIButton.cpp */; };
-		924EACD11827330000B6782F /* UIButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB3D182732FF00B6782F /* UIButton.h */; };
-		924EACD21827330000B6782F /* UIButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB3D182732FF00B6782F /* UIButton.h */; };
-		924EACD31827330000B6782F /* UIButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB3D182732FF00B6782F /* UIButton.h */; };
-		924EACD41827330000B6782F /* UIButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB3D182732FF00B6782F /* UIButton.h */; };
-		924EACD51827330000B6782F /* UICheckBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB3E182732FF00B6782F /* UICheckBox.cpp */; };
-		924EACD61827330000B6782F /* UICheckBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB3E182732FF00B6782F /* UICheckBox.cpp */; };
-		924EACD71827330000B6782F /* UICheckBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB3E182732FF00B6782F /* UICheckBox.cpp */; };
-		924EACD81827330000B6782F /* UICheckBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB3E182732FF00B6782F /* UICheckBox.cpp */; };
-		924EACD91827330000B6782F /* UICheckBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB3F182732FF00B6782F /* UICheckBox.h */; };
-		924EACDA1827330000B6782F /* UICheckBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB3F182732FF00B6782F /* UICheckBox.h */; };
-		924EACDB1827330000B6782F /* UICheckBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB3F182732FF00B6782F /* UICheckBox.h */; };
-		924EACDC1827330000B6782F /* UICheckBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB3F182732FF00B6782F /* UICheckBox.h */; };
-		924EACDD1827330000B6782F /* UIImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB40182732FF00B6782F /* UIImageView.cpp */; };
-		924EACDE1827330000B6782F /* UIImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB40182732FF00B6782F /* UIImageView.cpp */; };
-		924EACDF1827330000B6782F /* UIImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB40182732FF00B6782F /* UIImageView.cpp */; };
-		924EACE01827330000B6782F /* UIImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB40182732FF00B6782F /* UIImageView.cpp */; };
-		924EACE11827330000B6782F /* UIImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB41182732FF00B6782F /* UIImageView.h */; };
-		924EACE21827330000B6782F /* UIImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB41182732FF00B6782F /* UIImageView.h */; };
-		924EACE31827330000B6782F /* UIImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB41182732FF00B6782F /* UIImageView.h */; };
-		924EACE41827330000B6782F /* UIImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB41182732FF00B6782F /* UIImageView.h */; };
-		924EACE51827330000B6782F /* UILabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB42182732FF00B6782F /* UILabel.cpp */; };
-		924EACE61827330000B6782F /* UILabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB42182732FF00B6782F /* UILabel.cpp */; };
-		924EACE71827330000B6782F /* UILabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB42182732FF00B6782F /* UILabel.cpp */; };
-		924EACE81827330000B6782F /* UILabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB42182732FF00B6782F /* UILabel.cpp */; };
-		924EACE91827330000B6782F /* UILabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB43182732FF00B6782F /* UILabel.h */; };
-		924EACEA1827330000B6782F /* UILabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB43182732FF00B6782F /* UILabel.h */; };
-		924EACEB1827330000B6782F /* UILabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB43182732FF00B6782F /* UILabel.h */; };
-		924EACEC1827330000B6782F /* UILabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB43182732FF00B6782F /* UILabel.h */; };
-		924EACED1827330000B6782F /* UILabelAtlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB44182732FF00B6782F /* UILabelAtlas.cpp */; };
-		924EACEE1827330000B6782F /* UILabelAtlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB44182732FF00B6782F /* UILabelAtlas.cpp */; };
-		924EACEF1827330000B6782F /* UILabelAtlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB44182732FF00B6782F /* UILabelAtlas.cpp */; };
-		924EACF01827330000B6782F /* UILabelAtlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB44182732FF00B6782F /* UILabelAtlas.cpp */; };
-		924EACF11827330000B6782F /* UILabelAtlas.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB45182732FF00B6782F /* UILabelAtlas.h */; };
-		924EACF21827330000B6782F /* UILabelAtlas.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB45182732FF00B6782F /* UILabelAtlas.h */; };
-		924EACF31827330000B6782F /* UILabelAtlas.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB45182732FF00B6782F /* UILabelAtlas.h */; };
-		924EACF41827330000B6782F /* UILabelAtlas.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB45182732FF00B6782F /* UILabelAtlas.h */; };
-		924EACF51827330000B6782F /* UILabelBMFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB46182732FF00B6782F /* UILabelBMFont.cpp */; };
-		924EACF61827330000B6782F /* UILabelBMFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB46182732FF00B6782F /* UILabelBMFont.cpp */; };
-		924EACF71827330000B6782F /* UILabelBMFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB46182732FF00B6782F /* UILabelBMFont.cpp */; };
-		924EACF81827330000B6782F /* UILabelBMFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB46182732FF00B6782F /* UILabelBMFont.cpp */; };
-		924EACF91827330000B6782F /* UILabelBMFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB47182732FF00B6782F /* UILabelBMFont.h */; };
-		924EACFA1827330000B6782F /* UILabelBMFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB47182732FF00B6782F /* UILabelBMFont.h */; };
-		924EACFB1827330000B6782F /* UILabelBMFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB47182732FF00B6782F /* UILabelBMFont.h */; };
-		924EACFC1827330000B6782F /* UILabelBMFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB47182732FF00B6782F /* UILabelBMFont.h */; };
-		924EACFD1827330000B6782F /* UILoadingBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB48182732FF00B6782F /* UILoadingBar.cpp */; };
-		924EACFE1827330000B6782F /* UILoadingBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB48182732FF00B6782F /* UILoadingBar.cpp */; };
-		924EACFF1827330000B6782F /* UILoadingBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB48182732FF00B6782F /* UILoadingBar.cpp */; };
-		924EAD001827330000B6782F /* UILoadingBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB48182732FF00B6782F /* UILoadingBar.cpp */; };
-		924EAD011827330000B6782F /* UILoadingBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB49182732FF00B6782F /* UILoadingBar.h */; };
-		924EAD021827330000B6782F /* UILoadingBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB49182732FF00B6782F /* UILoadingBar.h */; };
-		924EAD031827330000B6782F /* UILoadingBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB49182732FF00B6782F /* UILoadingBar.h */; };
-		924EAD041827330000B6782F /* UILoadingBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB49182732FF00B6782F /* UILoadingBar.h */; };
-		924EAD051827330000B6782F /* UISlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB4A182732FF00B6782F /* UISlider.cpp */; };
-		924EAD061827330000B6782F /* UISlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB4A182732FF00B6782F /* UISlider.cpp */; };
-		924EAD071827330000B6782F /* UISlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB4A182732FF00B6782F /* UISlider.cpp */; };
-		924EAD081827330000B6782F /* UISlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB4A182732FF00B6782F /* UISlider.cpp */; };
-		924EAD091827330000B6782F /* UISlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB4B182732FF00B6782F /* UISlider.h */; };
-		924EAD0A1827330000B6782F /* UISlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB4B182732FF00B6782F /* UISlider.h */; };
-		924EAD0B1827330000B6782F /* UISlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB4B182732FF00B6782F /* UISlider.h */; };
-		924EAD0C1827330000B6782F /* UISlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB4B182732FF00B6782F /* UISlider.h */; };
-		924EAD0D1827330000B6782F /* UISwitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB4C182732FF00B6782F /* UISwitch.cpp */; };
-		924EAD0E1827330000B6782F /* UISwitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB4C182732FF00B6782F /* UISwitch.cpp */; };
-		924EAD0F1827330000B6782F /* UISwitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB4C182732FF00B6782F /* UISwitch.cpp */; };
-		924EAD101827330000B6782F /* UISwitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB4C182732FF00B6782F /* UISwitch.cpp */; };
-		924EAD111827330000B6782F /* UISwitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB4D182732FF00B6782F /* UISwitch.h */; };
-		924EAD121827330000B6782F /* UISwitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB4D182732FF00B6782F /* UISwitch.h */; };
-		924EAD131827330000B6782F /* UISwitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB4D182732FF00B6782F /* UISwitch.h */; };
-		924EAD141827330000B6782F /* UISwitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB4D182732FF00B6782F /* UISwitch.h */; };
-		924EAD151827330000B6782F /* UITextField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB4E182732FF00B6782F /* UITextField.cpp */; };
-		924EAD161827330000B6782F /* UITextField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB4E182732FF00B6782F /* UITextField.cpp */; };
-		924EAD171827330000B6782F /* UITextField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB4E182732FF00B6782F /* UITextField.cpp */; };
-		924EAD181827330000B6782F /* UITextField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB4E182732FF00B6782F /* UITextField.cpp */; };
-		924EAD191827330000B6782F /* UITextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB4F182732FF00B6782F /* UITextField.h */; };
-		924EAD1A1827330000B6782F /* UITextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB4F182732FF00B6782F /* UITextField.h */; };
-		924EAD1B1827330000B6782F /* UITextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB4F182732FF00B6782F /* UITextField.h */; };
-		924EAD1C1827330000B6782F /* UITextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB4F182732FF00B6782F /* UITextField.h */; };
-		924EAD1D1827330000B6782F /* DictionaryHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB51182732FF00B6782F /* DictionaryHelper.cpp */; };
-		924EAD1E1827330000B6782F /* DictionaryHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB51182732FF00B6782F /* DictionaryHelper.cpp */; };
-		924EAD1F1827330000B6782F /* DictionaryHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB51182732FF00B6782F /* DictionaryHelper.cpp */; };
-		924EAD201827330000B6782F /* DictionaryHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB51182732FF00B6782F /* DictionaryHelper.cpp */; };
-		924EAD211827330000B6782F /* DictionaryHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB52182732FF00B6782F /* DictionaryHelper.h */; };
-		924EAD221827330000B6782F /* DictionaryHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB52182732FF00B6782F /* DictionaryHelper.h */; };
-		924EAD231827330000B6782F /* DictionaryHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB52182732FF00B6782F /* DictionaryHelper.h */; };
-		924EAD241827330000B6782F /* DictionaryHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB52182732FF00B6782F /* DictionaryHelper.h */; };
-		924EAD251827330000B6782F /* autolink.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB54182732FF00B6782F /* autolink.h */; };
-		924EAD261827330000B6782F /* autolink.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB54182732FF00B6782F /* autolink.h */; };
-		924EAD271827330000B6782F /* autolink.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB54182732FF00B6782F /* autolink.h */; };
-		924EAD281827330000B6782F /* autolink.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB54182732FF00B6782F /* autolink.h */; };
-		924EAD291827330000B6782F /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB55182732FF00B6782F /* config.h */; };
-		924EAD2A1827330000B6782F /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB55182732FF00B6782F /* config.h */; };
-		924EAD2B1827330000B6782F /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB55182732FF00B6782F /* config.h */; };
-		924EAD2C1827330000B6782F /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB55182732FF00B6782F /* config.h */; };
-		924EAD2D1827330000B6782F /* features.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB56182732FF00B6782F /* features.h */; };
-		924EAD2E1827330000B6782F /* features.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB56182732FF00B6782F /* features.h */; };
-		924EAD2F1827330000B6782F /* features.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB56182732FF00B6782F /* features.h */; };
-		924EAD301827330000B6782F /* features.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB56182732FF00B6782F /* features.h */; };
-		924EAD311827330000B6782F /* forwards.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB57182732FF00B6782F /* forwards.h */; };
-		924EAD321827330000B6782F /* forwards.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB57182732FF00B6782F /* forwards.h */; };
-		924EAD331827330000B6782F /* forwards.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB57182732FF00B6782F /* forwards.h */; };
-		924EAD341827330000B6782F /* forwards.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB57182732FF00B6782F /* forwards.h */; };
-		924EAD351827330000B6782F /* json_batchallocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB58182732FF00B6782F /* json_batchallocator.h */; };
-		924EAD361827330000B6782F /* json_batchallocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB58182732FF00B6782F /* json_batchallocator.h */; };
-		924EAD371827330000B6782F /* json_batchallocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB58182732FF00B6782F /* json_batchallocator.h */; };
-		924EAD381827330000B6782F /* json_batchallocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB58182732FF00B6782F /* json_batchallocator.h */; };
-		924EAD391827330000B6782F /* json_lib.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB5B182732FF00B6782F /* json_lib.h */; };
-		924EAD3A1827330000B6782F /* json_lib.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB5B182732FF00B6782F /* json_lib.h */; };
-		924EAD3B1827330000B6782F /* json_lib.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB5B182732FF00B6782F /* json_lib.h */; };
-		924EAD3C1827330000B6782F /* json_lib.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB5B182732FF00B6782F /* json_lib.h */; };
-		924EAD3D1827330000B6782F /* json_reader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB5C182732FF00B6782F /* json_reader.cpp */; };
-		924EAD3E1827330000B6782F /* json_reader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB5C182732FF00B6782F /* json_reader.cpp */; };
-		924EAD3F1827330000B6782F /* json_reader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB5C182732FF00B6782F /* json_reader.cpp */; };
-		924EAD401827330000B6782F /* json_reader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB5C182732FF00B6782F /* json_reader.cpp */; };
-		924EAD411827330000B6782F /* json_tool.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB5D182732FF00B6782F /* json_tool.h */; };
-		924EAD421827330000B6782F /* json_tool.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB5D182732FF00B6782F /* json_tool.h */; };
-		924EAD431827330000B6782F /* json_tool.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB5D182732FF00B6782F /* json_tool.h */; };
-		924EAD441827330000B6782F /* json_tool.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB5D182732FF00B6782F /* json_tool.h */; };
-		924EAD451827330000B6782F /* json_value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB5E182732FF00B6782F /* json_value.cpp */; };
-		924EAD461827330000B6782F /* json_value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB5E182732FF00B6782F /* json_value.cpp */; };
-		924EAD471827330000B6782F /* json_value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB5E182732FF00B6782F /* json_value.cpp */; };
-		924EAD481827330000B6782F /* json_value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB5E182732FF00B6782F /* json_value.cpp */; };
-		924EAD491827330000B6782F /* json_writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB60182732FF00B6782F /* json_writer.cpp */; };
-		924EAD4A1827330000B6782F /* json_writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB60182732FF00B6782F /* json_writer.cpp */; };
-		924EAD4B1827330000B6782F /* json_writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB60182732FF00B6782F /* json_writer.cpp */; };
-		924EAD4C1827330000B6782F /* json_writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB60182732FF00B6782F /* json_writer.cpp */; };
-		924EAD4D1827330000B6782F /* reader.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB61182732FF00B6782F /* reader.h */; };
-		924EAD4E1827330000B6782F /* reader.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB61182732FF00B6782F /* reader.h */; };
-		924EAD4F1827330000B6782F /* reader.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB61182732FF00B6782F /* reader.h */; };
-		924EAD501827330000B6782F /* reader.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB61182732FF00B6782F /* reader.h */; };
-		924EAD511827330000B6782F /* value.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB63182732FF00B6782F /* value.h */; };
-		924EAD521827330000B6782F /* value.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB63182732FF00B6782F /* value.h */; };
-		924EAD531827330000B6782F /* value.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB63182732FF00B6782F /* value.h */; };
-		924EAD541827330000B6782F /* value.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB63182732FF00B6782F /* value.h */; };
-		924EAD551827330000B6782F /* writer.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB64182732FF00B6782F /* writer.h */; };
-		924EAD561827330000B6782F /* writer.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB64182732FF00B6782F /* writer.h */; };
-		924EAD571827330000B6782F /* writer.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB64182732FF00B6782F /* writer.h */; };
-		924EAD581827330000B6782F /* writer.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB64182732FF00B6782F /* writer.h */; };
-		924EAD591827330000B6782F /* CCSGUIReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB66182732FF00B6782F /* CCSGUIReader.cpp */; };
-		924EAD5A1827330000B6782F /* CCSGUIReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB66182732FF00B6782F /* CCSGUIReader.cpp */; };
-		924EAD5B1827330000B6782F /* CCSGUIReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB66182732FF00B6782F /* CCSGUIReader.cpp */; };
-		924EAD5C1827330000B6782F /* CCSGUIReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB66182732FF00B6782F /* CCSGUIReader.cpp */; };
-		924EAD5D1827330000B6782F /* CCSGUIReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB67182732FF00B6782F /* CCSGUIReader.h */; };
-		924EAD5E1827330000B6782F /* CCSGUIReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB67182732FF00B6782F /* CCSGUIReader.h */; };
-		924EAD5F1827330000B6782F /* CCSGUIReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB67182732FF00B6782F /* CCSGUIReader.h */; };
-		924EAD601827330000B6782F /* CCSGUIReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB67182732FF00B6782F /* CCSGUIReader.h */; };
-		924EAD611827330000B6782F /* CCSSceneReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB68182732FF00B6782F /* CCSSceneReader.cpp */; };
-		924EAD621827330000B6782F /* CCSSceneReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB68182732FF00B6782F /* CCSSceneReader.cpp */; };
-		924EAD631827330000B6782F /* CCSSceneReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB68182732FF00B6782F /* CCSSceneReader.cpp */; };
-		924EAD641827330000B6782F /* CCSSceneReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB68182732FF00B6782F /* CCSSceneReader.cpp */; };
-		924EAD651827330000B6782F /* CCSSceneReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB69182732FF00B6782F /* CCSSceneReader.h */; };
-		924EAD661827330000B6782F /* CCSSceneReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB69182732FF00B6782F /* CCSSceneReader.h */; };
-		924EAD671827330000B6782F /* CCSSceneReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB69182732FF00B6782F /* CCSSceneReader.h */; };
-		924EAD681827330000B6782F /* CCSSceneReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB69182732FF00B6782F /* CCSSceneReader.h */; };
-		924EAD691827330000B6782F /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB6A182732FF00B6782F /* stdafx.cpp */; };
-		924EAD6A1827330000B6782F /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB6A182732FF00B6782F /* stdafx.cpp */; };
-		924EAD6B1827330000B6782F /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB6A182732FF00B6782F /* stdafx.cpp */; };
-		924EAD6C1827330000B6782F /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB6A182732FF00B6782F /* stdafx.cpp */; };
-		924EAD6D1827330000B6782F /* stdafx.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB6B182732FF00B6782F /* stdafx.h */; };
-		924EAD6E1827330000B6782F /* stdafx.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB6B182732FF00B6782F /* stdafx.h */; };
-		924EAD6F1827330000B6782F /* stdafx.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB6B182732FF00B6782F /* stdafx.h */; };
-		924EAD701827330000B6782F /* stdafx.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB6B182732FF00B6782F /* stdafx.h */; };
 		924EAD711827330000B6782F /* LuaCocoStudioConversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB6D182732FF00B6782F /* LuaCocoStudioConversion.cpp */; };
 		924EAD721827330000B6782F /* LuaCocoStudioConversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB6D182732FF00B6782F /* LuaCocoStudioConversion.cpp */; };
 		924EAD731827330000B6782F /* LuaCocoStudioConversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB6D182732FF00B6782F /* LuaCocoStudioConversion.cpp */; };
@@ -1044,6 +684,20 @@
 		924EAF961827330100B6782F /* TextBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAC001827330000B6782F /* TextBox.h */; };
 		924EAF971827330100B6782F /* TextBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAC001827330000B6782F /* TextBox.h */; };
 		924EAF981827330100B6782F /* TextBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAC001827330000B6782F /* TextBox.h */; };
+		92EF2C341853077700CB9EA4 /* CustomEGLView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92EF2C321853077700CB9EA4 /* CustomEGLView.cpp */; };
+		92EF2C351853077700CB9EA4 /* CustomEGLView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92EF2C321853077700CB9EA4 /* CustomEGLView.cpp */; };
+		92EF2C361853077700CB9EA4 /* CustomEGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = 92EF2C331853077700CB9EA4 /* CustomEGLView.h */; };
+		92EF2C371853077700CB9EA4 /* CustomEGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = 92EF2C331853077700CB9EA4 /* CustomEGLView.h */; };
+		92EF2C3B1853079700CB9EA4 /* LuaExtern_Handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92EF2C381853079700CB9EA4 /* LuaExtern_Handler.cpp */; };
+		92EF2C3C1853079700CB9EA4 /* LuaExtern_Handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92EF2C381853079700CB9EA4 /* LuaExtern_Handler.cpp */; };
+		92EF2C3D1853079700CB9EA4 /* LuaTiledHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92EF2C391853079700CB9EA4 /* LuaTiledHelper.cpp */; };
+		92EF2C3E1853079700CB9EA4 /* LuaTiledHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92EF2C391853079700CB9EA4 /* LuaTiledHelper.cpp */; };
+		92EF2C3F1853079700CB9EA4 /* LuaTiledHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 92EF2C3A1853079700CB9EA4 /* LuaTiledHelper.h */; };
+		92EF2C401853079700CB9EA4 /* LuaTiledHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 92EF2C3A1853079700CB9EA4 /* LuaTiledHelper.h */; };
+		92EF2C43185307B100CB9EA4 /* datablock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92EF2C41185307B100CB9EA4 /* datablock.cpp */; };
+		92EF2C44185307B200CB9EA4 /* datablock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92EF2C41185307B100CB9EA4 /* datablock.cpp */; };
+		92EF2C45185307B200CB9EA4 /* datablock.h in Headers */ = {isa = PBXBuildFile; fileRef = 92EF2C42185307B100CB9EA4 /* datablock.h */; };
+		92EF2C46185307B200CB9EA4 /* datablock.h in Headers */ = {isa = PBXBuildFile; fileRef = 92EF2C42185307B100CB9EA4 /* datablock.h */; };
 		92FAA037180D3708004A8D24 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FAA036180D3708004A8D24 /* OpenGLES.framework */; };
 		92FAA038180D3710004A8D24 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FAA036180D3708004A8D24 /* OpenGLES.framework */; };
 /* End PBXBuildFile section */
@@ -1123,100 +777,6 @@
 		924EAA36182732F100B6782F /* singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = singleton.h; sourceTree = "<group>"; };
 		924EAAFC182732FF00B6782F /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		924EAAFD182732FF00B6782F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		924EAAFE182732FF00B6782F /* CCLuaEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCLuaEngine.cpp; sourceTree = "<group>"; };
-		924EAAFF182732FF00B6782F /* CCLuaEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLuaEngine.h; sourceTree = "<group>"; };
-		924EAB02182732FF00B6782F /* CCActionFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCActionFrame.cpp; sourceTree = "<group>"; };
-		924EAB03182732FF00B6782F /* CCActionFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCActionFrame.h; sourceTree = "<group>"; };
-		924EAB04182732FF00B6782F /* CCActionFrameEasing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCActionFrameEasing.cpp; sourceTree = "<group>"; };
-		924EAB05182732FF00B6782F /* CCActionFrameEasing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCActionFrameEasing.h; sourceTree = "<group>"; };
-		924EAB06182732FF00B6782F /* CCActionManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCActionManager.cpp; sourceTree = "<group>"; };
-		924EAB07182732FF00B6782F /* CCActionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCActionManager.h; sourceTree = "<group>"; };
-		924EAB08182732FF00B6782F /* CCActionNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCActionNode.cpp; sourceTree = "<group>"; };
-		924EAB09182732FF00B6782F /* CCActionNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCActionNode.h; sourceTree = "<group>"; };
-		924EAB0A182732FF00B6782F /* CCActionObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCActionObject.cpp; sourceTree = "<group>"; };
-		924EAB0B182732FF00B6782F /* CCActionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCActionObject.h; sourceTree = "<group>"; };
-		924EAB0F182732FF00B6782F /* CCCSContentJsonDictionary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCCSContentJsonDictionary.cpp; sourceTree = "<group>"; };
-		924EAB10182732FF00B6782F /* CCCSContentJsonDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCSContentJsonDictionary.h; sourceTree = "<group>"; };
-		924EAB11182732FF00B6782F /* CocoStudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoStudio.h; sourceTree = "<group>"; };
-		924EAB13182732FF00B6782F /* CCComRender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCComRender.cpp; sourceTree = "<group>"; };
-		924EAB14182732FF00B6782F /* CCComRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCComRender.h; sourceTree = "<group>"; };
-		924EAB15182732FF00B6782F /* CCCSComAttribute.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCCSComAttribute.cpp; sourceTree = "<group>"; };
-		924EAB16182732FF00B6782F /* CCCSComAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCSComAttribute.h; sourceTree = "<group>"; };
-		924EAB17182732FF00B6782F /* CCCSComAudio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCCSComAudio.cpp; sourceTree = "<group>"; };
-		924EAB18182732FF00B6782F /* CCCSComAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCSComAudio.h; sourceTree = "<group>"; };
-		924EAB1B182732FF00B6782F /* UIRootWidget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIRootWidget.cpp; sourceTree = "<group>"; };
-		924EAB1C182732FF00B6782F /* UIRootWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIRootWidget.h; sourceTree = "<group>"; };
-		924EAB1D182732FF00B6782F /* UIWidget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIWidget.cpp; sourceTree = "<group>"; };
-		924EAB1E182732FF00B6782F /* UIWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIWidget.h; sourceTree = "<group>"; };
-		924EAB20182732FF00B6782F /* Layout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Layout.cpp; sourceTree = "<group>"; };
-		924EAB21182732FF00B6782F /* Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Layout.h; sourceTree = "<group>"; };
-		924EAB22182732FF00B6782F /* LayoutParameter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LayoutParameter.cpp; sourceTree = "<group>"; };
-		924EAB23182732FF00B6782F /* LayoutParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutParameter.h; sourceTree = "<group>"; };
-		924EAB24182732FF00B6782F /* UILayoutDefine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UILayoutDefine.cpp; sourceTree = "<group>"; };
-		924EAB25182732FF00B6782F /* UILayoutDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILayoutDefine.h; sourceTree = "<group>"; };
-		924EAB27182732FF00B6782F /* CocosGUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CocosGUI.cpp; sourceTree = "<group>"; };
-		924EAB28182732FF00B6782F /* CocosGUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosGUI.h; sourceTree = "<group>"; };
-		924EAB29182732FF00B6782F /* UIHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIHelper.cpp; sourceTree = "<group>"; };
-		924EAB2A182732FF00B6782F /* UIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHelper.h; sourceTree = "<group>"; };
-		924EAB2B182732FF00B6782F /* UIInputManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIInputManager.cpp; sourceTree = "<group>"; };
-		924EAB2C182732FF00B6782F /* UIInputManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIInputManager.h; sourceTree = "<group>"; };
-		924EAB2D182732FF00B6782F /* UILayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UILayer.cpp; sourceTree = "<group>"; };
-		924EAB2E182732FF00B6782F /* UILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILayer.h; sourceTree = "<group>"; };
-		924EAB31182732FF00B6782F /* CompatibleClasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompatibleClasses.h; sourceTree = "<group>"; };
-		924EAB33182732FF00B6782F /* UIDragPanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIDragPanel.cpp; sourceTree = "<group>"; };
-		924EAB34182732FF00B6782F /* UIDragPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDragPanel.h; sourceTree = "<group>"; };
-		924EAB35182732FF00B6782F /* UIListView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIListView.cpp; sourceTree = "<group>"; };
-		924EAB36182732FF00B6782F /* UIListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIListView.h; sourceTree = "<group>"; };
-		924EAB37182732FF00B6782F /* UIPageView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIPageView.cpp; sourceTree = "<group>"; };
-		924EAB38182732FF00B6782F /* UIPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPageView.h; sourceTree = "<group>"; };
-		924EAB39182732FF00B6782F /* UIScrollInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIScrollInterface.h; sourceTree = "<group>"; };
-		924EAB3A182732FF00B6782F /* UIScrollView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIScrollView.cpp; sourceTree = "<group>"; };
-		924EAB3B182732FF00B6782F /* UIScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIScrollView.h; sourceTree = "<group>"; };
-		924EAB3C182732FF00B6782F /* UIButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIButton.cpp; sourceTree = "<group>"; };
-		924EAB3D182732FF00B6782F /* UIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButton.h; sourceTree = "<group>"; };
-		924EAB3E182732FF00B6782F /* UICheckBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UICheckBox.cpp; sourceTree = "<group>"; };
-		924EAB3F182732FF00B6782F /* UICheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICheckBox.h; sourceTree = "<group>"; };
-		924EAB40182732FF00B6782F /* UIImageView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIImageView.cpp; sourceTree = "<group>"; };
-		924EAB41182732FF00B6782F /* UIImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageView.h; sourceTree = "<group>"; };
-		924EAB42182732FF00B6782F /* UILabel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UILabel.cpp; sourceTree = "<group>"; };
-		924EAB43182732FF00B6782F /* UILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILabel.h; sourceTree = "<group>"; };
-		924EAB44182732FF00B6782F /* UILabelAtlas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UILabelAtlas.cpp; sourceTree = "<group>"; };
-		924EAB45182732FF00B6782F /* UILabelAtlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILabelAtlas.h; sourceTree = "<group>"; };
-		924EAB46182732FF00B6782F /* UILabelBMFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UILabelBMFont.cpp; sourceTree = "<group>"; };
-		924EAB47182732FF00B6782F /* UILabelBMFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILabelBMFont.h; sourceTree = "<group>"; };
-		924EAB48182732FF00B6782F /* UILoadingBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UILoadingBar.cpp; sourceTree = "<group>"; };
-		924EAB49182732FF00B6782F /* UILoadingBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILoadingBar.h; sourceTree = "<group>"; };
-		924EAB4A182732FF00B6782F /* UISlider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UISlider.cpp; sourceTree = "<group>"; };
-		924EAB4B182732FF00B6782F /* UISlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISlider.h; sourceTree = "<group>"; };
-		924EAB4C182732FF00B6782F /* UISwitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UISwitch.cpp; sourceTree = "<group>"; };
-		924EAB4D182732FF00B6782F /* UISwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISwitch.h; sourceTree = "<group>"; };
-		924EAB4E182732FF00B6782F /* UITextField.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UITextField.cpp; sourceTree = "<group>"; };
-		924EAB4F182732FF00B6782F /* UITextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextField.h; sourceTree = "<group>"; };
-		924EAB51182732FF00B6782F /* DictionaryHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DictionaryHelper.cpp; sourceTree = "<group>"; };
-		924EAB52182732FF00B6782F /* DictionaryHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryHelper.h; sourceTree = "<group>"; };
-		924EAB54182732FF00B6782F /* autolink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = autolink.h; sourceTree = "<group>"; };
-		924EAB55182732FF00B6782F /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
-		924EAB56182732FF00B6782F /* features.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = features.h; sourceTree = "<group>"; };
-		924EAB57182732FF00B6782F /* forwards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = forwards.h; sourceTree = "<group>"; };
-		924EAB58182732FF00B6782F /* json_batchallocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json_batchallocator.h; sourceTree = "<group>"; };
-		924EAB59182732FF00B6782F /* json_internalarray.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json_internalarray.inl; sourceTree = "<group>"; };
-		924EAB5A182732FF00B6782F /* json_internalmap.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json_internalmap.inl; sourceTree = "<group>"; };
-		924EAB5B182732FF00B6782F /* json_lib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json_lib.h; sourceTree = "<group>"; };
-		924EAB5C182732FF00B6782F /* json_reader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json_reader.cpp; sourceTree = "<group>"; };
-		924EAB5D182732FF00B6782F /* json_tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json_tool.h; sourceTree = "<group>"; };
-		924EAB5E182732FF00B6782F /* json_value.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json_value.cpp; sourceTree = "<group>"; };
-		924EAB5F182732FF00B6782F /* json_valueiterator.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json_valueiterator.inl; sourceTree = "<group>"; };
-		924EAB60182732FF00B6782F /* json_writer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json_writer.cpp; sourceTree = "<group>"; };
-		924EAB61182732FF00B6782F /* reader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reader.h; sourceTree = "<group>"; };
-		924EAB62182732FF00B6782F /* sconscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sconscript; sourceTree = "<group>"; };
-		924EAB63182732FF00B6782F /* value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = value.h; sourceTree = "<group>"; };
-		924EAB64182732FF00B6782F /* writer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = writer.h; sourceTree = "<group>"; };
-		924EAB66182732FF00B6782F /* CCSGUIReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSGUIReader.cpp; sourceTree = "<group>"; };
-		924EAB67182732FF00B6782F /* CCSGUIReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSGUIReader.h; sourceTree = "<group>"; };
-		924EAB68182732FF00B6782F /* CCSSceneReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSSceneReader.cpp; sourceTree = "<group>"; };
-		924EAB69182732FF00B6782F /* CCSSceneReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSSceneReader.h; sourceTree = "<group>"; };
-		924EAB6A182732FF00B6782F /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stdafx.cpp; sourceTree = "<group>"; };
-		924EAB6B182732FF00B6782F /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
 		924EAB6D182732FF00B6782F /* LuaCocoStudioConversion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaCocoStudioConversion.cpp; sourceTree = "<group>"; };
 		924EAB6E182732FF00B6782F /* LuaCocoStudioConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaCocoStudioConversion.h; sourceTree = "<group>"; };
 		924EAB6F182732FF00B6782F /* LuaExtern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaExtern.cpp; sourceTree = "<group>"; };
@@ -1357,6 +917,13 @@
 		924EAC001827330000B6782F /* TextBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextBox.h; sourceTree = "<group>"; };
 		9276BCB0180D22F600B9FE55 /* libengine Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libengine Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9276BD4B180D256C00B9FE55 /* libengine iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libengine iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92EF2C321853077700CB9EA4 /* CustomEGLView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CustomEGLView.cpp; sourceTree = "<group>"; };
+		92EF2C331853077700CB9EA4 /* CustomEGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomEGLView.h; sourceTree = "<group>"; };
+		92EF2C381853079700CB9EA4 /* LuaExtern_Handler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaExtern_Handler.cpp; sourceTree = "<group>"; };
+		92EF2C391853079700CB9EA4 /* LuaTiledHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaTiledHelper.cpp; sourceTree = "<group>"; };
+		92EF2C3A1853079700CB9EA4 /* LuaTiledHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaTiledHelper.h; sourceTree = "<group>"; };
+		92EF2C41185307B100CB9EA4 /* datablock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = datablock.cpp; sourceTree = "<group>"; };
+		92EF2C42185307B100CB9EA4 /* datablock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = datablock.h; sourceTree = "<group>"; };
 		92FAA036180D3708004A8D24 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
 		A07A4D641783777C0073F6A7 /* libframework iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libframework iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1443,7 +1010,6 @@
 			isa = PBXGroup;
 			children = (
 				924EAAFB182732FF00B6782F /* application */,
-				924EAB00182732FF00B6782F /* CocoStudio */,
 				924EAB6C182732FF00B6782F /* luaext */,
 				924EAB73182732FF00B6782F /* uiview */,
 			);
@@ -1470,6 +1036,8 @@
 		924EAA2C182732F100B6782F /* unity */ = {
 			isa = PBXGroup;
 			children = (
+				92EF2C41185307B100CB9EA4 /* datablock.cpp */,
+				92EF2C42185307B100CB9EA4 /* datablock.h */,
 				924EAA2D182732F100B6782F /* delegate.h */,
 				924EAA2E182732F100B6782F /* event.h */,
 				924EAA2F182732F100B6782F /* factory.h */,
@@ -1488,238 +1056,21 @@
 		924EAAFB182732FF00B6782F /* application */ = {
 			isa = PBXGroup;
 			children = (
+				92EF2C321853077700CB9EA4 /* CustomEGLView.cpp */,
+				92EF2C331853077700CB9EA4 /* CustomEGLView.h */,
 				924EAAFC182732FF00B6782F /* AppDelegate.cpp */,
 				924EAAFD182732FF00B6782F /* AppDelegate.h */,
-				924EAAFE182732FF00B6782F /* CCLuaEngine.cpp */,
-				924EAAFF182732FF00B6782F /* CCLuaEngine.h */,
 			);
 			name = application;
 			path = engine/Classes/application;
 			sourceTree = "<group>";
 		};
-		924EAB00182732FF00B6782F /* CocoStudio */ = {
-			isa = PBXGroup;
-			children = (
-				924EAB01182732FF00B6782F /* Action */,
-				924EAB0C182732FF00B6782F /* CCArmature */,
-				924EAB11182732FF00B6782F /* CocoStudio.h */,
-				924EAB12182732FF00B6782F /* Components */,
-				924EAB19182732FF00B6782F /* GUI */,
-				924EAB50182732FF00B6782F /* Json */,
-				924EAB65182732FF00B6782F /* Reader */,
-				924EAB6A182732FF00B6782F /* stdafx.cpp */,
-				924EAB6B182732FF00B6782F /* stdafx.h */,
-			);
-			name = CocoStudio;
-			path = engine/Classes/CocoStudio;
-			sourceTree = "<group>";
-		};
-		924EAB01182732FF00B6782F /* Action */ = {
-			isa = PBXGroup;
-			children = (
-				924EAB02182732FF00B6782F /* CCActionFrame.cpp */,
-				924EAB03182732FF00B6782F /* CCActionFrame.h */,
-				924EAB04182732FF00B6782F /* CCActionFrameEasing.cpp */,
-				924EAB05182732FF00B6782F /* CCActionFrameEasing.h */,
-				924EAB06182732FF00B6782F /* CCActionManager.cpp */,
-				924EAB07182732FF00B6782F /* CCActionManager.h */,
-				924EAB08182732FF00B6782F /* CCActionNode.cpp */,
-				924EAB09182732FF00B6782F /* CCActionNode.h */,
-				924EAB0A182732FF00B6782F /* CCActionObject.cpp */,
-				924EAB0B182732FF00B6782F /* CCActionObject.h */,
-			);
-			path = Action;
-			sourceTree = "<group>";
-		};
-		924EAB0C182732FF00B6782F /* CCArmature */ = {
-			isa = PBXGroup;
-			children = (
-				924EAB0D182732FF00B6782F /* external_tool */,
-			);
-			path = CCArmature;
-			sourceTree = "<group>";
-		};
-		924EAB0D182732FF00B6782F /* external_tool */ = {
-			isa = PBXGroup;
-			children = (
-				924EAB0E182732FF00B6782F /* Json */,
-			);
-			path = external_tool;
-			sourceTree = "<group>";
-		};
-		924EAB0E182732FF00B6782F /* Json */ = {
-			isa = PBXGroup;
-			children = (
-				924EAB0F182732FF00B6782F /* CCCSContentJsonDictionary.cpp */,
-				924EAB10182732FF00B6782F /* CCCSContentJsonDictionary.h */,
-			);
-			path = Json;
-			sourceTree = "<group>";
-		};
-		924EAB12182732FF00B6782F /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				924EAB13182732FF00B6782F /* CCComRender.cpp */,
-				924EAB14182732FF00B6782F /* CCComRender.h */,
-				924EAB15182732FF00B6782F /* CCCSComAttribute.cpp */,
-				924EAB16182732FF00B6782F /* CCCSComAttribute.h */,
-				924EAB17182732FF00B6782F /* CCCSComAudio.cpp */,
-				924EAB18182732FF00B6782F /* CCCSComAudio.h */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		924EAB19182732FF00B6782F /* GUI */ = {
-			isa = PBXGroup;
-			children = (
-				924EAB1A182732FF00B6782F /* BaseClasses */,
-				924EAB1F182732FF00B6782F /* Layouts */,
-				924EAB26182732FF00B6782F /* System */,
-				924EAB2F182732FF00B6782F /* UIWidgets */,
-			);
-			path = GUI;
-			sourceTree = "<group>";
-		};
-		924EAB1A182732FF00B6782F /* BaseClasses */ = {
-			isa = PBXGroup;
-			children = (
-				924EAB1B182732FF00B6782F /* UIRootWidget.cpp */,
-				924EAB1C182732FF00B6782F /* UIRootWidget.h */,
-				924EAB1D182732FF00B6782F /* UIWidget.cpp */,
-				924EAB1E182732FF00B6782F /* UIWidget.h */,
-			);
-			path = BaseClasses;
-			sourceTree = "<group>";
-		};
-		924EAB1F182732FF00B6782F /* Layouts */ = {
-			isa = PBXGroup;
-			children = (
-				924EAB20182732FF00B6782F /* Layout.cpp */,
-				924EAB21182732FF00B6782F /* Layout.h */,
-				924EAB22182732FF00B6782F /* LayoutParameter.cpp */,
-				924EAB23182732FF00B6782F /* LayoutParameter.h */,
-				924EAB24182732FF00B6782F /* UILayoutDefine.cpp */,
-				924EAB25182732FF00B6782F /* UILayoutDefine.h */,
-			);
-			path = Layouts;
-			sourceTree = "<group>";
-		};
-		924EAB26182732FF00B6782F /* System */ = {
-			isa = PBXGroup;
-			children = (
-				924EAB27182732FF00B6782F /* CocosGUI.cpp */,
-				924EAB28182732FF00B6782F /* CocosGUI.h */,
-				924EAB29182732FF00B6782F /* UIHelper.cpp */,
-				924EAB2A182732FF00B6782F /* UIHelper.h */,
-				924EAB2B182732FF00B6782F /* UIInputManager.cpp */,
-				924EAB2C182732FF00B6782F /* UIInputManager.h */,
-				924EAB2D182732FF00B6782F /* UILayer.cpp */,
-				924EAB2E182732FF00B6782F /* UILayer.h */,
-			);
-			path = System;
-			sourceTree = "<group>";
-		};
-		924EAB2F182732FF00B6782F /* UIWidgets */ = {
-			isa = PBXGroup;
-			children = (
-				924EAB30182732FF00B6782F /* Compatible */,
-				924EAB32182732FF00B6782F /* ScrollWidget */,
-				924EAB3C182732FF00B6782F /* UIButton.cpp */,
-				924EAB3D182732FF00B6782F /* UIButton.h */,
-				924EAB3E182732FF00B6782F /* UICheckBox.cpp */,
-				924EAB3F182732FF00B6782F /* UICheckBox.h */,
-				924EAB40182732FF00B6782F /* UIImageView.cpp */,
-				924EAB41182732FF00B6782F /* UIImageView.h */,
-				924EAB42182732FF00B6782F /* UILabel.cpp */,
-				924EAB43182732FF00B6782F /* UILabel.h */,
-				924EAB44182732FF00B6782F /* UILabelAtlas.cpp */,
-				924EAB45182732FF00B6782F /* UILabelAtlas.h */,
-				924EAB46182732FF00B6782F /* UILabelBMFont.cpp */,
-				924EAB47182732FF00B6782F /* UILabelBMFont.h */,
-				924EAB48182732FF00B6782F /* UILoadingBar.cpp */,
-				924EAB49182732FF00B6782F /* UILoadingBar.h */,
-				924EAB4A182732FF00B6782F /* UISlider.cpp */,
-				924EAB4B182732FF00B6782F /* UISlider.h */,
-				924EAB4C182732FF00B6782F /* UISwitch.cpp */,
-				924EAB4D182732FF00B6782F /* UISwitch.h */,
-				924EAB4E182732FF00B6782F /* UITextField.cpp */,
-				924EAB4F182732FF00B6782F /* UITextField.h */,
-			);
-			path = UIWidgets;
-			sourceTree = "<group>";
-		};
-		924EAB30182732FF00B6782F /* Compatible */ = {
-			isa = PBXGroup;
-			children = (
-				924EAB31182732FF00B6782F /* CompatibleClasses.h */,
-			);
-			path = Compatible;
-			sourceTree = "<group>";
-		};
-		924EAB32182732FF00B6782F /* ScrollWidget */ = {
-			isa = PBXGroup;
-			children = (
-				924EAB33182732FF00B6782F /* UIDragPanel.cpp */,
-				924EAB34182732FF00B6782F /* UIDragPanel.h */,
-				924EAB35182732FF00B6782F /* UIListView.cpp */,
-				924EAB36182732FF00B6782F /* UIListView.h */,
-				924EAB37182732FF00B6782F /* UIPageView.cpp */,
-				924EAB38182732FF00B6782F /* UIPageView.h */,
-				924EAB39182732FF00B6782F /* UIScrollInterface.h */,
-				924EAB3A182732FF00B6782F /* UIScrollView.cpp */,
-				924EAB3B182732FF00B6782F /* UIScrollView.h */,
-			);
-			path = ScrollWidget;
-			sourceTree = "<group>";
-		};
-		924EAB50182732FF00B6782F /* Json */ = {
-			isa = PBXGroup;
-			children = (
-				924EAB51182732FF00B6782F /* DictionaryHelper.cpp */,
-				924EAB52182732FF00B6782F /* DictionaryHelper.h */,
-				924EAB53182732FF00B6782F /* lib_json */,
-			);
-			path = Json;
-			sourceTree = "<group>";
-		};
-		924EAB53182732FF00B6782F /* lib_json */ = {
-			isa = PBXGroup;
-			children = (
-				924EAB54182732FF00B6782F /* autolink.h */,
-				924EAB55182732FF00B6782F /* config.h */,
-				924EAB56182732FF00B6782F /* features.h */,
-				924EAB57182732FF00B6782F /* forwards.h */,
-				924EAB58182732FF00B6782F /* json_batchallocator.h */,
-				924EAB59182732FF00B6782F /* json_internalarray.inl */,
-				924EAB5A182732FF00B6782F /* json_internalmap.inl */,
-				924EAB5B182732FF00B6782F /* json_lib.h */,
-				924EAB5C182732FF00B6782F /* json_reader.cpp */,
-				924EAB5D182732FF00B6782F /* json_tool.h */,
-				924EAB5E182732FF00B6782F /* json_value.cpp */,
-				924EAB5F182732FF00B6782F /* json_valueiterator.inl */,
-				924EAB60182732FF00B6782F /* json_writer.cpp */,
-				924EAB61182732FF00B6782F /* reader.h */,
-				924EAB62182732FF00B6782F /* sconscript */,
-				924EAB63182732FF00B6782F /* value.h */,
-				924EAB64182732FF00B6782F /* writer.h */,
-			);
-			path = lib_json;
-			sourceTree = "<group>";
-		};
-		924EAB65182732FF00B6782F /* Reader */ = {
-			isa = PBXGroup;
-			children = (
-				924EAB66182732FF00B6782F /* CCSGUIReader.cpp */,
-				924EAB67182732FF00B6782F /* CCSGUIReader.h */,
-				924EAB68182732FF00B6782F /* CCSSceneReader.cpp */,
-				924EAB69182732FF00B6782F /* CCSSceneReader.h */,
-			);
-			path = Reader;
-			sourceTree = "<group>";
-		};
 		924EAB6C182732FF00B6782F /* luaext */ = {
 			isa = PBXGroup;
 			children = (
+				92EF2C381853079700CB9EA4 /* LuaExtern_Handler.cpp */,
+				92EF2C391853079700CB9EA4 /* LuaTiledHelper.cpp */,
+				92EF2C3A1853079700CB9EA4 /* LuaTiledHelper.h */,
 				924EAB6D182732FF00B6782F /* LuaCocoStudioConversion.cpp */,
 				924EAB6E182732FF00B6782F /* LuaCocoStudioConversion.h */,
 				924EAB6F182732FF00B6782F /* LuaExtern.cpp */,
@@ -1981,93 +1332,59 @@
 			files = (
 				924EADD51827330000B6782F /* ListBoxItem.h in Headers */,
 				924EAECD1827330000B6782F /* ItemsControl.h in Headers */,
-				924EAD4D1827330000B6782F /* reader.h in Headers */,
-				924EAD551827330000B6782F /* writer.h in Headers */,
 				924EADBD1827330000B6782F /* GridViewColumnHeader.h in Headers */,
 				924EAE351827330000B6782F /* Border.h in Headers */,
-				924EACC91827330000B6782F /* UIScrollView.h in Headers */,
 				924EAAAF182732F100B6782F /* binding.h in Headers */,
-				924EAC591827330000B6782F /* CCCSComAudio.h in Headers */,
-				924EAD251827330000B6782F /* autolink.h in Headers */,
-				924EAD011827330000B6782F /* UILoadingBar.h in Headers */,
-				924EAD411827330000B6782F /* json_tool.h in Headers */,
 				924EAD9D1827330000B6782F /* CheckBox.h in Headers */,
 				924EAE7D1827330000B6782F /* Expander.h in Headers */,
 				924EAF1D1827330100B6782F /* Canvas.h in Headers */,
-				924EACD91827330000B6782F /* UICheckBox.h in Headers */,
 				924EAEE51827330100B6782F /* Menu.h in Headers */,
-				924EACB51827330000B6782F /* UIListView.h in Headers */,
-				924EAD191827330000B6782F /* UITextField.h in Headers */,
-				924EAD311827330000B6782F /* forwards.h in Headers */,
 				924EADB51827330000B6782F /* Frame.h in Headers */,
 				924EAF951827330100B6782F /* TextBox.h in Headers */,
-				924EAD511827330000B6782F /* value.h in Headers */,
 				924EAE8D1827330000B6782F /* HeaderedContentControl.h in Headers */,
 				924EAF5D1827330100B6782F /* UniformGrid.h in Headers */,
 				924EAF7D1827330100B6782F /* Shape.h in Headers */,
+				92EF2C45185307B200CB9EA4 /* datablock.h in Headers */,
 				924EAE551827330000B6782F /* Decorator.h in Headers */,
 				924EAEC51827330000B6782F /* ContextMenu.h in Headers */,
-				924EAD291827330000B6782F /* config.h in Headers */,
 				924EAF651827330100B6782F /* VirtualizingPanel.h in Headers */,
-				924EAC1D1827330000B6782F /* CCActionFrameEasing.h in Headers */,
-				924EAC611827330000B6782F /* UIRootWidget.h in Headers */,
-				924EACC11827330000B6782F /* UIScrollInterface.h in Headers */,
 				924EAF751827330100B6782F /* WrapPanel.h in Headers */,
 				924EAEB51827330000B6782F /* TreeViewItem.h in Headers */,
 				924EAAB3182732F100B6782F /* DataContext.h in Headers */,
 				924EADFD1827330000B6782F /* ScrollViewer.h in Headers */,
 				924EADF51827330000B6782F /* RepeatButton.h in Headers */,
-				924EAD5D1827330000B6782F /* CCSGUIReader.h in Headers */,
 				924EAAE3182732F100B6782F /* object.h in Headers */,
 				924EAF4D1827330100B6782F /* ToolBarOverflowPanel.h in Headers */,
-				924EACD11827330000B6782F /* UIButton.h in Headers */,
 				924EAEED1827330100B6782F /* MenuBase.h in Headers */,
 				924EAACB182732F100B6782F /* view.h in Headers */,
 				924EAF2D1827330100B6782F /* Grid.h in Headers */,
-				924EAC511827330000B6782F /* CCCSComAttribute.h in Headers */,
 				924EAABB182732F100B6782F /* framework.h in Headers */,
 				924EAADB182732F100B6782F /* factory.h in Headers */,
 				924EAF351827330100B6782F /* Panel.h in Headers */,
 				924EAEFD1827330100B6782F /* StatusBar.h in Headers */,
 				924EAAC7182732F100B6782F /* model.h in Headers */,
 				924EAE051827330000B6782F /* StatusBarItem.h in Headers */,
-				924EAD091827330000B6782F /* UISlider.h in Headers */,
 				924EAE5D1827330000B6782F /* InkPresenter.h in Headers */,
-				924EAC811827330000B6782F /* UILayoutDefine.h in Headers */,
 				924EAED51827330100B6782F /* ListBox.h in Headers */,
 				924EAF151827330100B6782F /* Adorner.h in Headers */,
-				924EAC991827330000B6782F /* UIInputManager.h in Headers */,
-				924EAC911827330000B6782F /* UIHelper.h in Headers */,
 				924EAAEB182732F100B6782F /* property.h in Headers */,
 				924EAD7D1827330000B6782F /* LuaExtern.h in Headers */,
-				924EACE11827330000B6782F /* UIImageView.h in Headers */,
-				924EAC351827330000B6782F /* CCActionObject.h in Headers */,
 				924EAEBD1827330000B6782F /* ComboBox.h in Headers */,
 				924EAE851827330000B6782F /* GroupBox.h in Headers */,
-				924EAD651827330000B6782F /* CCSSceneReader.h in Headers */,
 				924EAEDD1827330100B6782F /* ListView.h in Headers */,
 				924EAF6D1827330100B6782F /* VirtualizingStackPanel.h in Headers */,
 				924EADED1827330000B6782F /* RadioButton.h in Headers */,
 				924EAF051827330100B6782F /* TabControl.h in Headers */,
-				924EACF91827330000B6782F /* UILabelBMFont.h in Headers */,
-				924EAD111827330000B6782F /* UISwitch.h in Headers */,
 				924EADCD1827330000B6782F /* Label.h in Headers */,
 				924EAF0D1827330100B6782F /* TreeView.h in Headers */,
-				924EACAD1827330000B6782F /* UIDragPanel.h in Headers */,
 				924EAF251827330100B6782F /* DockPanel.h in Headers */,
 				924EAEA51827330000B6782F /* MenuItem.h in Headers */,
-				924EAC151827330000B6782F /* CCActionFrame.h in Headers */,
 				924EAD951827330000B6782F /* ButtonBase.h in Headers */,
-				924EAC251827330000B6782F /* CCActionManager.h in Headers */,
-				924EAC791827330000B6782F /* LayoutParameter.h in Headers */,
 				924EAE751827330000B6782F /* Viewbox.h in Headers */,
 				924EAE4D1827330000B6782F /* ClassicBorderDecorator.h in Headers */,
-				924EAC2D1827330000B6782F /* CCActionNode.h in Headers */,
 				924EAEF51827330100B6782F /* Selector.h in Headers */,
 				924EAD751827330000B6782F /* LuaCocoStudioConversion.h in Headers */,
 				924EADDD1827330000B6782F /* ListViewItem.h in Headers */,
-				924EAD391827330000B6782F /* json_lib.h in Headers */,
-				924EAC411827330000B6782F /* CocoStudio.h in Headers */,
 				924EAEAD1827330000B6782F /* ToolBar.h in Headers */,
 				924EAAF3182732F100B6782F /* rtti.h in Headers */,
 				924EAC051827330000B6782F /* AppDelegate.h in Headers */,
@@ -2078,44 +1395,29 @@
 				924EAAB7182732F100B6782F /* dependency.h in Headers */,
 				924EADA51827330000B6782F /* ComboBoxItem.h in Headers */,
 				924EADC51827330000B6782F /* GroupItem.h in Headers */,
-				924EAC711827330000B6782F /* Layout.h in Headers */,
 				924EAF451827330100B6782F /* TabPanel.h in Headers */,
-				924EACBD1827330000B6782F /* UIPageView.h in Headers */,
-				924EACA11827330000B6782F /* UILayer.h in Headers */,
 				924EAE451827330000B6782F /* ButtonChrome.h in Headers */,
-				924EAD351827330000B6782F /* json_batchallocator.h in Headers */,
-				924EAD211827330000B6782F /* DictionaryHelper.h in Headers */,
-				924EAC491827330000B6782F /* CCComRender.h in Headers */,
 				924EAE1D1827330000B6782F /* UserControl.h in Headers */,
 				924EAAD7182732F100B6782F /* event.h in Headers */,
-				924EACE91827330000B6782F /* UILabel.h in Headers */,
 				924EAE951827330000B6782F /* TabItem.h in Headers */,
 				924EAE251827330000B6782F /* Window.h in Headers */,
-				924EACF11827330000B6782F /* UILabelAtlas.h in Headers */,
 				924EAF551827330100B6782F /* ToolBarPanel.h in Headers */,
 				924EAE2D1827330000B6782F /* AdornerDecorator.h in Headers */,
 				924EAF851827330100B6782F /* FlowText.h in Headers */,
 				924EADAD1827330000B6782F /* ContentControl.h in Headers */,
-				924EAC3D1827330000B6782F /* CCCSContentJsonDictionary.h in Headers */,
 				924EAF8D1827330100B6782F /* TextBlock.h in Headers */,
 				924EAAD3182732F100B6782F /* delegate.h in Headers */,
 				924EAACF182732F100B6782F /* viewmodel.h in Headers */,
 				924EAE3D1827330000B6782F /* BulletDecorator.h in Headers */,
 				924EAD851827330000B6782F /* LuaHelper.h in Headers */,
-				924EAD6D1827330000B6782F /* stdafx.h in Headers */,
 				924EAE651827330000B6782F /* ListBoxChrome.h in Headers */,
-				924EAC0D1827330000B6782F /* CCLuaEngine.h in Headers */,
 				924EAE9D1827330000B6782F /* HeaderedItemsControl.h in Headers */,
 				924EADE51827330000B6782F /* NavigationWindow.h in Headers */,
 				924EAAE7182732F100B6782F /* platform.h in Headers */,
 				924EAE6D1827330000B6782F /* SystemDropShadowChrome.h in Headers */,
 				924EAF3D1827330100B6782F /* StackPanel.h in Headers */,
 				924EAAEF182732F100B6782F /* reflection.h in Headers */,
-				924EAC891827330000B6782F /* CocosGUI.h in Headers */,
 				924EAAC3182732F100B6782F /* interface.h in Headers */,
-				924EAC691827330000B6782F /* UIWidget.h in Headers */,
-				924EACA51827330000B6782F /* CompatibleClasses.h in Headers */,
-				924EAD2D1827330000B6782F /* features.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2125,97 +1427,64 @@
 			files = (
 				924EAAD0182732F100B6782F /* viewmodel.h in Headers */,
 				924EADD61827330000B6782F /* ListBoxItem.h in Headers */,
+				92EF2C3F1853079700CB9EA4 /* LuaTiledHelper.h in Headers */,
 				924EAAC8182732F100B6782F /* model.h in Headers */,
 				924EAECE1827330000B6782F /* ItemsControl.h in Headers */,
-				924EAD4E1827330000B6782F /* reader.h in Headers */,
-				924EAD561827330000B6782F /* writer.h in Headers */,
 				924EADBE1827330000B6782F /* GridViewColumnHeader.h in Headers */,
 				924EAE361827330000B6782F /* Border.h in Headers */,
-				924EACCA1827330000B6782F /* UIScrollView.h in Headers */,
 				924EAADC182732F100B6782F /* factory.h in Headers */,
-				924EAC5A1827330000B6782F /* CCCSComAudio.h in Headers */,
-				924EAD261827330000B6782F /* autolink.h in Headers */,
 				924EAAB8182732F100B6782F /* dependency.h in Headers */,
-				924EAD021827330000B6782F /* UILoadingBar.h in Headers */,
-				924EAD421827330000B6782F /* json_tool.h in Headers */,
 				924EAD9E1827330000B6782F /* CheckBox.h in Headers */,
 				924EAE7E1827330000B6782F /* Expander.h in Headers */,
 				924EAAE8182732F100B6782F /* platform.h in Headers */,
 				924EAF1E1827330100B6782F /* Canvas.h in Headers */,
-				924EACDA1827330000B6782F /* UICheckBox.h in Headers */,
 				924EAEE61827330100B6782F /* Menu.h in Headers */,
-				924EACB61827330000B6782F /* UIListView.h in Headers */,
-				924EAD1A1827330000B6782F /* UITextField.h in Headers */,
-				924EAD321827330000B6782F /* forwards.h in Headers */,
 				924EADB61827330000B6782F /* Frame.h in Headers */,
 				924EAF961827330100B6782F /* TextBox.h in Headers */,
-				924EAD521827330000B6782F /* value.h in Headers */,
 				924EAE8E1827330000B6782F /* HeaderedContentControl.h in Headers */,
 				924EAF5E1827330100B6782F /* UniformGrid.h in Headers */,
 				924EAF7E1827330100B6782F /* Shape.h in Headers */,
 				924EAE561827330000B6782F /* Decorator.h in Headers */,
 				924EAEC61827330000B6782F /* ContextMenu.h in Headers */,
-				924EAD2A1827330000B6782F /* config.h in Headers */,
 				924EAF661827330100B6782F /* VirtualizingPanel.h in Headers */,
-				924EAC1E1827330000B6782F /* CCActionFrameEasing.h in Headers */,
-				924EAC621827330000B6782F /* UIRootWidget.h in Headers */,
-				924EACC21827330000B6782F /* UIScrollInterface.h in Headers */,
 				924EAF761827330100B6782F /* WrapPanel.h in Headers */,
 				924EAEB61827330000B6782F /* TreeViewItem.h in Headers */,
 				924EAAEC182732F100B6782F /* property.h in Headers */,
 				924EADFE1827330000B6782F /* ScrollViewer.h in Headers */,
 				924EADF61827330000B6782F /* RepeatButton.h in Headers */,
-				924EAD5E1827330000B6782F /* CCSGUIReader.h in Headers */,
 				924EAF4E1827330100B6782F /* ToolBarOverflowPanel.h in Headers */,
-				924EACD21827330000B6782F /* UIButton.h in Headers */,
 				924EAAF0182732F100B6782F /* reflection.h in Headers */,
 				924EAEEE1827330100B6782F /* MenuBase.h in Headers */,
 				924EAAC4182732F100B6782F /* interface.h in Headers */,
 				924EAF2E1827330100B6782F /* Grid.h in Headers */,
-				924EAC521827330000B6782F /* CCCSComAttribute.h in Headers */,
 				924EAABC182732F100B6782F /* framework.h in Headers */,
 				924EAF361827330100B6782F /* Panel.h in Headers */,
 				924EAEFE1827330100B6782F /* StatusBar.h in Headers */,
 				924EAE061827330000B6782F /* StatusBarItem.h in Headers */,
-				924EAD0A1827330000B6782F /* UISlider.h in Headers */,
 				924EAE5E1827330000B6782F /* InkPresenter.h in Headers */,
-				924EAC821827330000B6782F /* UILayoutDefine.h in Headers */,
 				924EAED61827330100B6782F /* ListBox.h in Headers */,
 				924EAF161827330100B6782F /* Adorner.h in Headers */,
-				924EAC9A1827330000B6782F /* UIInputManager.h in Headers */,
-				924EAC921827330000B6782F /* UIHelper.h in Headers */,
 				924EAD7E1827330000B6782F /* LuaExtern.h in Headers */,
-				924EACE21827330000B6782F /* UIImageView.h in Headers */,
-				924EAC361827330000B6782F /* CCActionObject.h in Headers */,
 				924EAEBE1827330000B6782F /* ComboBox.h in Headers */,
 				924EAE861827330000B6782F /* GroupBox.h in Headers */,
-				924EAD661827330000B6782F /* CCSSceneReader.h in Headers */,
 				924EAEDE1827330100B6782F /* ListView.h in Headers */,
 				924EAF6E1827330100B6782F /* VirtualizingStackPanel.h in Headers */,
 				924EADEE1827330000B6782F /* RadioButton.h in Headers */,
 				924EAF061827330100B6782F /* TabControl.h in Headers */,
-				924EACFA1827330000B6782F /* UILabelBMFont.h in Headers */,
-				924EAD121827330000B6782F /* UISwitch.h in Headers */,
 				924EADCE1827330000B6782F /* Label.h in Headers */,
 				924EAF0E1827330100B6782F /* TreeView.h in Headers */,
-				924EACAE1827330000B6782F /* UIDragPanel.h in Headers */,
 				924EAF261827330100B6782F /* DockPanel.h in Headers */,
 				924EAEA61827330000B6782F /* MenuItem.h in Headers */,
 				924EAAF8182732F100B6782F /* singleton.h in Headers */,
-				924EAC161827330000B6782F /* CCActionFrame.h in Headers */,
 				924EAD961827330000B6782F /* ButtonBase.h in Headers */,
-				924EAC261827330000B6782F /* CCActionManager.h in Headers */,
-				924EAC7A1827330000B6782F /* LayoutParameter.h in Headers */,
 				924EAE761827330000B6782F /* Viewbox.h in Headers */,
 				924EAAB4182732F100B6782F /* DataContext.h in Headers */,
 				924EAE4E1827330000B6782F /* ClassicBorderDecorator.h in Headers */,
-				924EAC2E1827330000B6782F /* CCActionNode.h in Headers */,
 				924EAEF61827330100B6782F /* Selector.h in Headers */,
 				924EAD761827330000B6782F /* LuaCocoStudioConversion.h in Headers */,
 				924EADDE1827330000B6782F /* ListViewItem.h in Headers */,
-				924EAD3A1827330000B6782F /* json_lib.h in Headers */,
-				924EAC421827330000B6782F /* CocoStudio.h in Headers */,
 				924EAEAE1827330000B6782F /* ToolBar.h in Headers */,
+				92EF2C361853077700CB9EA4 /* CustomEGLView.h in Headers */,
 				924EAC061827330000B6782F /* AppDelegate.h in Headers */,
 				924EAD8E1827330000B6782F /* Button.h in Headers */,
 				924EAE161827330000B6782F /* ToolTip.h in Headers */,
@@ -2224,42 +1493,27 @@
 				924EAAE4182732F100B6782F /* object.h in Headers */,
 				924EADA61827330000B6782F /* ComboBoxItem.h in Headers */,
 				924EADC61827330000B6782F /* GroupItem.h in Headers */,
-				924EAC721827330000B6782F /* Layout.h in Headers */,
 				924EAF461827330100B6782F /* TabPanel.h in Headers */,
 				924EAACC182732F100B6782F /* view.h in Headers */,
-				924EACBE1827330000B6782F /* UIPageView.h in Headers */,
-				924EACA21827330000B6782F /* UILayer.h in Headers */,
 				924EAE461827330000B6782F /* ButtonChrome.h in Headers */,
-				924EAD361827330000B6782F /* json_batchallocator.h in Headers */,
-				924EAD221827330000B6782F /* DictionaryHelper.h in Headers */,
-				924EAC4A1827330000B6782F /* CCComRender.h in Headers */,
 				924EAE1E1827330000B6782F /* UserControl.h in Headers */,
 				924EAAB0182732F100B6782F /* binding.h in Headers */,
-				924EACEA1827330000B6782F /* UILabel.h in Headers */,
 				924EAE961827330000B6782F /* TabItem.h in Headers */,
 				924EAE261827330000B6782F /* Window.h in Headers */,
-				924EACF21827330000B6782F /* UILabelAtlas.h in Headers */,
 				924EAF561827330100B6782F /* ToolBarPanel.h in Headers */,
 				924EAE2E1827330000B6782F /* AdornerDecorator.h in Headers */,
 				924EAF861827330100B6782F /* FlowText.h in Headers */,
 				924EADAE1827330000B6782F /* ContentControl.h in Headers */,
-				924EAC3E1827330000B6782F /* CCCSContentJsonDictionary.h in Headers */,
 				924EAF8E1827330100B6782F /* TextBlock.h in Headers */,
 				924EAE3E1827330000B6782F /* BulletDecorator.h in Headers */,
 				924EAD861827330000B6782F /* LuaHelper.h in Headers */,
-				924EAD6E1827330000B6782F /* stdafx.h in Headers */,
 				924EAE661827330000B6782F /* ListBoxChrome.h in Headers */,
-				924EAC0E1827330000B6782F /* CCLuaEngine.h in Headers */,
 				924EAE9E1827330000B6782F /* HeaderedItemsControl.h in Headers */,
 				924EADE61827330000B6782F /* NavigationWindow.h in Headers */,
 				924EAE6E1827330000B6782F /* SystemDropShadowChrome.h in Headers */,
 				924EAF3E1827330100B6782F /* StackPanel.h in Headers */,
 				924EAAF4182732F100B6782F /* rtti.h in Headers */,
-				924EAC8A1827330000B6782F /* CocosGUI.h in Headers */,
 				924EAAD4182732F100B6782F /* delegate.h in Headers */,
-				924EAC6A1827330000B6782F /* UIWidget.h in Headers */,
-				924EACA61827330000B6782F /* CompatibleClasses.h in Headers */,
-				924EAD2E1827330000B6782F /* features.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2269,97 +1523,64 @@
 			files = (
 				924EAAD2182732F100B6782F /* viewmodel.h in Headers */,
 				924EADD81827330000B6782F /* ListBoxItem.h in Headers */,
+				92EF2C401853079700CB9EA4 /* LuaTiledHelper.h in Headers */,
 				924EAACA182732F100B6782F /* model.h in Headers */,
 				924EAED01827330000B6782F /* ItemsControl.h in Headers */,
-				924EAD501827330000B6782F /* reader.h in Headers */,
-				924EAD581827330000B6782F /* writer.h in Headers */,
 				924EADC01827330000B6782F /* GridViewColumnHeader.h in Headers */,
 				924EAE381827330000B6782F /* Border.h in Headers */,
-				924EACCC1827330000B6782F /* UIScrollView.h in Headers */,
 				924EAADE182732F100B6782F /* factory.h in Headers */,
-				924EAC5C1827330000B6782F /* CCCSComAudio.h in Headers */,
-				924EAD281827330000B6782F /* autolink.h in Headers */,
 				924EAABA182732F100B6782F /* dependency.h in Headers */,
-				924EAD041827330000B6782F /* UILoadingBar.h in Headers */,
-				924EAD441827330000B6782F /* json_tool.h in Headers */,
 				924EADA01827330000B6782F /* CheckBox.h in Headers */,
 				924EAE801827330000B6782F /* Expander.h in Headers */,
 				924EAAEA182732F100B6782F /* platform.h in Headers */,
 				924EAF201827330100B6782F /* Canvas.h in Headers */,
-				924EACDC1827330000B6782F /* UICheckBox.h in Headers */,
 				924EAEE81827330100B6782F /* Menu.h in Headers */,
-				924EACB81827330000B6782F /* UIListView.h in Headers */,
-				924EAD1C1827330000B6782F /* UITextField.h in Headers */,
-				924EAD341827330000B6782F /* forwards.h in Headers */,
 				924EADB81827330000B6782F /* Frame.h in Headers */,
 				924EAF981827330100B6782F /* TextBox.h in Headers */,
-				924EAD541827330000B6782F /* value.h in Headers */,
 				924EAE901827330000B6782F /* HeaderedContentControl.h in Headers */,
 				924EAF601827330100B6782F /* UniformGrid.h in Headers */,
 				924EAF801827330100B6782F /* Shape.h in Headers */,
 				924EAE581827330000B6782F /* Decorator.h in Headers */,
 				924EAEC81827330000B6782F /* ContextMenu.h in Headers */,
-				924EAD2C1827330000B6782F /* config.h in Headers */,
 				924EAF681827330100B6782F /* VirtualizingPanel.h in Headers */,
-				924EAC201827330000B6782F /* CCActionFrameEasing.h in Headers */,
-				924EAC641827330000B6782F /* UIRootWidget.h in Headers */,
-				924EACC41827330000B6782F /* UIScrollInterface.h in Headers */,
 				924EAF781827330100B6782F /* WrapPanel.h in Headers */,
 				924EAEB81827330000B6782F /* TreeViewItem.h in Headers */,
 				924EAAEE182732F100B6782F /* property.h in Headers */,
 				924EAE001827330000B6782F /* ScrollViewer.h in Headers */,
 				924EADF81827330000B6782F /* RepeatButton.h in Headers */,
-				924EAD601827330000B6782F /* CCSGUIReader.h in Headers */,
 				924EAF501827330100B6782F /* ToolBarOverflowPanel.h in Headers */,
-				924EACD41827330000B6782F /* UIButton.h in Headers */,
 				924EAAF2182732F100B6782F /* reflection.h in Headers */,
 				924EAEF01827330100B6782F /* MenuBase.h in Headers */,
 				924EAAC6182732F100B6782F /* interface.h in Headers */,
 				924EAF301827330100B6782F /* Grid.h in Headers */,
-				924EAC541827330000B6782F /* CCCSComAttribute.h in Headers */,
 				924EAABE182732F100B6782F /* framework.h in Headers */,
 				924EAF381827330100B6782F /* Panel.h in Headers */,
 				924EAF001827330100B6782F /* StatusBar.h in Headers */,
 				924EAE081827330000B6782F /* StatusBarItem.h in Headers */,
-				924EAD0C1827330000B6782F /* UISlider.h in Headers */,
 				924EAE601827330000B6782F /* InkPresenter.h in Headers */,
-				924EAC841827330000B6782F /* UILayoutDefine.h in Headers */,
 				924EAED81827330100B6782F /* ListBox.h in Headers */,
 				924EAF181827330100B6782F /* Adorner.h in Headers */,
-				924EAC9C1827330000B6782F /* UIInputManager.h in Headers */,
-				924EAC941827330000B6782F /* UIHelper.h in Headers */,
 				924EAD801827330000B6782F /* LuaExtern.h in Headers */,
-				924EACE41827330000B6782F /* UIImageView.h in Headers */,
-				924EAC381827330000B6782F /* CCActionObject.h in Headers */,
 				924EAEC01827330000B6782F /* ComboBox.h in Headers */,
 				924EAE881827330000B6782F /* GroupBox.h in Headers */,
-				924EAD681827330000B6782F /* CCSSceneReader.h in Headers */,
 				924EAEE01827330100B6782F /* ListView.h in Headers */,
 				924EAF701827330100B6782F /* VirtualizingStackPanel.h in Headers */,
 				924EADF01827330000B6782F /* RadioButton.h in Headers */,
 				924EAF081827330100B6782F /* TabControl.h in Headers */,
-				924EACFC1827330000B6782F /* UILabelBMFont.h in Headers */,
-				924EAD141827330000B6782F /* UISwitch.h in Headers */,
 				924EADD01827330000B6782F /* Label.h in Headers */,
 				924EAF101827330100B6782F /* TreeView.h in Headers */,
-				924EACB01827330000B6782F /* UIDragPanel.h in Headers */,
 				924EAF281827330100B6782F /* DockPanel.h in Headers */,
 				924EAEA81827330000B6782F /* MenuItem.h in Headers */,
 				924EAAFA182732F100B6782F /* singleton.h in Headers */,
-				924EAC181827330000B6782F /* CCActionFrame.h in Headers */,
 				924EAD981827330000B6782F /* ButtonBase.h in Headers */,
-				924EAC281827330000B6782F /* CCActionManager.h in Headers */,
-				924EAC7C1827330000B6782F /* LayoutParameter.h in Headers */,
 				924EAE781827330000B6782F /* Viewbox.h in Headers */,
 				924EAAB6182732F100B6782F /* DataContext.h in Headers */,
 				924EAE501827330000B6782F /* ClassicBorderDecorator.h in Headers */,
-				924EAC301827330000B6782F /* CCActionNode.h in Headers */,
 				924EAEF81827330100B6782F /* Selector.h in Headers */,
 				924EAD781827330000B6782F /* LuaCocoStudioConversion.h in Headers */,
 				924EADE01827330000B6782F /* ListViewItem.h in Headers */,
-				924EAD3C1827330000B6782F /* json_lib.h in Headers */,
-				924EAC441827330000B6782F /* CocoStudio.h in Headers */,
 				924EAEB01827330000B6782F /* ToolBar.h in Headers */,
+				92EF2C371853077700CB9EA4 /* CustomEGLView.h in Headers */,
 				924EAC081827330000B6782F /* AppDelegate.h in Headers */,
 				924EAD901827330000B6782F /* Button.h in Headers */,
 				924EAE181827330000B6782F /* ToolTip.h in Headers */,
@@ -2368,42 +1589,27 @@
 				924EAAE6182732F100B6782F /* object.h in Headers */,
 				924EADA81827330000B6782F /* ComboBoxItem.h in Headers */,
 				924EADC81827330000B6782F /* GroupItem.h in Headers */,
-				924EAC741827330000B6782F /* Layout.h in Headers */,
 				924EAF481827330100B6782F /* TabPanel.h in Headers */,
 				924EAACE182732F100B6782F /* view.h in Headers */,
-				924EACC01827330000B6782F /* UIPageView.h in Headers */,
-				924EACA41827330000B6782F /* UILayer.h in Headers */,
 				924EAE481827330000B6782F /* ButtonChrome.h in Headers */,
-				924EAD381827330000B6782F /* json_batchallocator.h in Headers */,
-				924EAD241827330000B6782F /* DictionaryHelper.h in Headers */,
-				924EAC4C1827330000B6782F /* CCComRender.h in Headers */,
 				924EAE201827330000B6782F /* UserControl.h in Headers */,
 				924EAAB2182732F100B6782F /* binding.h in Headers */,
-				924EACEC1827330000B6782F /* UILabel.h in Headers */,
 				924EAE981827330000B6782F /* TabItem.h in Headers */,
 				924EAE281827330000B6782F /* Window.h in Headers */,
-				924EACF41827330000B6782F /* UILabelAtlas.h in Headers */,
 				924EAF581827330100B6782F /* ToolBarPanel.h in Headers */,
 				924EAE301827330000B6782F /* AdornerDecorator.h in Headers */,
 				924EAF881827330100B6782F /* FlowText.h in Headers */,
 				924EADB01827330000B6782F /* ContentControl.h in Headers */,
-				924EAC401827330000B6782F /* CCCSContentJsonDictionary.h in Headers */,
 				924EAF901827330100B6782F /* TextBlock.h in Headers */,
 				924EAE401827330000B6782F /* BulletDecorator.h in Headers */,
 				924EAD881827330000B6782F /* LuaHelper.h in Headers */,
-				924EAD701827330000B6782F /* stdafx.h in Headers */,
 				924EAE681827330000B6782F /* ListBoxChrome.h in Headers */,
-				924EAC101827330000B6782F /* CCLuaEngine.h in Headers */,
 				924EAEA01827330000B6782F /* HeaderedItemsControl.h in Headers */,
 				924EADE81827330000B6782F /* NavigationWindow.h in Headers */,
 				924EAE701827330000B6782F /* SystemDropShadowChrome.h in Headers */,
 				924EAF401827330100B6782F /* StackPanel.h in Headers */,
 				924EAAF6182732F100B6782F /* rtti.h in Headers */,
-				924EAC8C1827330000B6782F /* CocosGUI.h in Headers */,
 				924EAAD6182732F100B6782F /* delegate.h in Headers */,
-				924EAC6C1827330000B6782F /* UIWidget.h in Headers */,
-				924EACA81827330000B6782F /* CompatibleClasses.h in Headers */,
-				924EAD301827330000B6782F /* features.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2413,93 +1619,59 @@
 			files = (
 				924EADD71827330000B6782F /* ListBoxItem.h in Headers */,
 				924EAECF1827330000B6782F /* ItemsControl.h in Headers */,
-				924EAD4F1827330000B6782F /* reader.h in Headers */,
-				924EAD571827330000B6782F /* writer.h in Headers */,
 				924EADBF1827330000B6782F /* GridViewColumnHeader.h in Headers */,
 				924EAE371827330000B6782F /* Border.h in Headers */,
-				924EACCB1827330000B6782F /* UIScrollView.h in Headers */,
 				924EAAB1182732F100B6782F /* binding.h in Headers */,
-				924EAC5B1827330000B6782F /* CCCSComAudio.h in Headers */,
-				924EAD271827330000B6782F /* autolink.h in Headers */,
-				924EAD031827330000B6782F /* UILoadingBar.h in Headers */,
-				924EAD431827330000B6782F /* json_tool.h in Headers */,
 				924EAD9F1827330000B6782F /* CheckBox.h in Headers */,
 				924EAE7F1827330000B6782F /* Expander.h in Headers */,
 				924EAF1F1827330100B6782F /* Canvas.h in Headers */,
-				924EACDB1827330000B6782F /* UICheckBox.h in Headers */,
 				924EAEE71827330100B6782F /* Menu.h in Headers */,
-				924EACB71827330000B6782F /* UIListView.h in Headers */,
-				924EAD1B1827330000B6782F /* UITextField.h in Headers */,
-				924EAD331827330000B6782F /* forwards.h in Headers */,
 				924EADB71827330000B6782F /* Frame.h in Headers */,
 				924EAF971827330100B6782F /* TextBox.h in Headers */,
-				924EAD531827330000B6782F /* value.h in Headers */,
 				924EAE8F1827330000B6782F /* HeaderedContentControl.h in Headers */,
 				924EAF5F1827330100B6782F /* UniformGrid.h in Headers */,
 				924EAF7F1827330100B6782F /* Shape.h in Headers */,
+				92EF2C46185307B200CB9EA4 /* datablock.h in Headers */,
 				924EAE571827330000B6782F /* Decorator.h in Headers */,
 				924EAEC71827330000B6782F /* ContextMenu.h in Headers */,
-				924EAD2B1827330000B6782F /* config.h in Headers */,
 				924EAF671827330100B6782F /* VirtualizingPanel.h in Headers */,
-				924EAC1F1827330000B6782F /* CCActionFrameEasing.h in Headers */,
-				924EAC631827330000B6782F /* UIRootWidget.h in Headers */,
-				924EACC31827330000B6782F /* UIScrollInterface.h in Headers */,
 				924EAF771827330100B6782F /* WrapPanel.h in Headers */,
 				924EAEB71827330000B6782F /* TreeViewItem.h in Headers */,
 				924EAAB5182732F100B6782F /* DataContext.h in Headers */,
 				924EADFF1827330000B6782F /* ScrollViewer.h in Headers */,
 				924EADF71827330000B6782F /* RepeatButton.h in Headers */,
-				924EAD5F1827330000B6782F /* CCSGUIReader.h in Headers */,
 				924EAAE5182732F100B6782F /* object.h in Headers */,
 				924EAF4F1827330100B6782F /* ToolBarOverflowPanel.h in Headers */,
-				924EACD31827330000B6782F /* UIButton.h in Headers */,
 				924EAEEF1827330100B6782F /* MenuBase.h in Headers */,
 				924EAACD182732F100B6782F /* view.h in Headers */,
 				924EAF2F1827330100B6782F /* Grid.h in Headers */,
-				924EAC531827330000B6782F /* CCCSComAttribute.h in Headers */,
 				924EAABD182732F100B6782F /* framework.h in Headers */,
 				924EAADD182732F100B6782F /* factory.h in Headers */,
 				924EAF371827330100B6782F /* Panel.h in Headers */,
 				924EAEFF1827330100B6782F /* StatusBar.h in Headers */,
 				924EAAC9182732F100B6782F /* model.h in Headers */,
 				924EAE071827330000B6782F /* StatusBarItem.h in Headers */,
-				924EAD0B1827330000B6782F /* UISlider.h in Headers */,
 				924EAE5F1827330000B6782F /* InkPresenter.h in Headers */,
-				924EAC831827330000B6782F /* UILayoutDefine.h in Headers */,
 				924EAED71827330100B6782F /* ListBox.h in Headers */,
 				924EAF171827330100B6782F /* Adorner.h in Headers */,
-				924EAC9B1827330000B6782F /* UIInputManager.h in Headers */,
-				924EAC931827330000B6782F /* UIHelper.h in Headers */,
 				924EAAED182732F100B6782F /* property.h in Headers */,
 				924EAD7F1827330000B6782F /* LuaExtern.h in Headers */,
-				924EACE31827330000B6782F /* UIImageView.h in Headers */,
-				924EAC371827330000B6782F /* CCActionObject.h in Headers */,
 				924EAEBF1827330000B6782F /* ComboBox.h in Headers */,
 				924EAE871827330000B6782F /* GroupBox.h in Headers */,
-				924EAD671827330000B6782F /* CCSSceneReader.h in Headers */,
 				924EAEDF1827330100B6782F /* ListView.h in Headers */,
 				924EAF6F1827330100B6782F /* VirtualizingStackPanel.h in Headers */,
 				924EADEF1827330000B6782F /* RadioButton.h in Headers */,
 				924EAF071827330100B6782F /* TabControl.h in Headers */,
-				924EACFB1827330000B6782F /* UILabelBMFont.h in Headers */,
-				924EAD131827330000B6782F /* UISwitch.h in Headers */,
 				924EADCF1827330000B6782F /* Label.h in Headers */,
 				924EAF0F1827330100B6782F /* TreeView.h in Headers */,
-				924EACAF1827330000B6782F /* UIDragPanel.h in Headers */,
 				924EAF271827330100B6782F /* DockPanel.h in Headers */,
 				924EAEA71827330000B6782F /* MenuItem.h in Headers */,
-				924EAC171827330000B6782F /* CCActionFrame.h in Headers */,
 				924EAD971827330000B6782F /* ButtonBase.h in Headers */,
-				924EAC271827330000B6782F /* CCActionManager.h in Headers */,
-				924EAC7B1827330000B6782F /* LayoutParameter.h in Headers */,
 				924EAE771827330000B6782F /* Viewbox.h in Headers */,
 				924EAE4F1827330000B6782F /* ClassicBorderDecorator.h in Headers */,
-				924EAC2F1827330000B6782F /* CCActionNode.h in Headers */,
 				924EAEF71827330100B6782F /* Selector.h in Headers */,
 				924EAD771827330000B6782F /* LuaCocoStudioConversion.h in Headers */,
 				924EADDF1827330000B6782F /* ListViewItem.h in Headers */,
-				924EAD3B1827330000B6782F /* json_lib.h in Headers */,
-				924EAC431827330000B6782F /* CocoStudio.h in Headers */,
 				924EAEAF1827330000B6782F /* ToolBar.h in Headers */,
 				924EAAF5182732F100B6782F /* rtti.h in Headers */,
 				924EAC071827330000B6782F /* AppDelegate.h in Headers */,
@@ -2510,44 +1682,29 @@
 				924EAAB9182732F100B6782F /* dependency.h in Headers */,
 				924EADA71827330000B6782F /* ComboBoxItem.h in Headers */,
 				924EADC71827330000B6782F /* GroupItem.h in Headers */,
-				924EAC731827330000B6782F /* Layout.h in Headers */,
 				924EAF471827330100B6782F /* TabPanel.h in Headers */,
-				924EACBF1827330000B6782F /* UIPageView.h in Headers */,
-				924EACA31827330000B6782F /* UILayer.h in Headers */,
 				924EAE471827330000B6782F /* ButtonChrome.h in Headers */,
-				924EAD371827330000B6782F /* json_batchallocator.h in Headers */,
-				924EAD231827330000B6782F /* DictionaryHelper.h in Headers */,
-				924EAC4B1827330000B6782F /* CCComRender.h in Headers */,
 				924EAE1F1827330000B6782F /* UserControl.h in Headers */,
 				924EAAD9182732F100B6782F /* event.h in Headers */,
-				924EACEB1827330000B6782F /* UILabel.h in Headers */,
 				924EAE971827330000B6782F /* TabItem.h in Headers */,
 				924EAE271827330000B6782F /* Window.h in Headers */,
-				924EACF31827330000B6782F /* UILabelAtlas.h in Headers */,
 				924EAF571827330100B6782F /* ToolBarPanel.h in Headers */,
 				924EAE2F1827330000B6782F /* AdornerDecorator.h in Headers */,
 				924EAF871827330100B6782F /* FlowText.h in Headers */,
 				924EADAF1827330000B6782F /* ContentControl.h in Headers */,
-				924EAC3F1827330000B6782F /* CCCSContentJsonDictionary.h in Headers */,
 				924EAF8F1827330100B6782F /* TextBlock.h in Headers */,
 				924EAAD5182732F100B6782F /* delegate.h in Headers */,
 				924EAAD1182732F100B6782F /* viewmodel.h in Headers */,
 				924EAE3F1827330000B6782F /* BulletDecorator.h in Headers */,
 				924EAD871827330000B6782F /* LuaHelper.h in Headers */,
-				924EAD6F1827330000B6782F /* stdafx.h in Headers */,
 				924EAE671827330000B6782F /* ListBoxChrome.h in Headers */,
-				924EAC0F1827330000B6782F /* CCLuaEngine.h in Headers */,
 				924EAE9F1827330000B6782F /* HeaderedItemsControl.h in Headers */,
 				924EADE71827330000B6782F /* NavigationWindow.h in Headers */,
 				924EAAE9182732F100B6782F /* platform.h in Headers */,
 				924EAE6F1827330000B6782F /* SystemDropShadowChrome.h in Headers */,
 				924EAF3F1827330100B6782F /* StackPanel.h in Headers */,
 				924EAAF1182732F100B6782F /* reflection.h in Headers */,
-				924EAC8B1827330000B6782F /* CocosGUI.h in Headers */,
 				924EAAC5182732F100B6782F /* interface.h in Headers */,
-				924EAC6B1827330000B6782F /* UIWidget.h in Headers */,
-				924EACA71827330000B6782F /* CompatibleClasses.h in Headers */,
-				924EAD2F1827330000B6782F /* features.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2658,30 +1815,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				924EAD3D1827330000B6782F /* json_reader.cpp in Sources */,
-				924EAD0D1827330000B6782F /* UISwitch.cpp in Sources */,
-				924EAC7D1827330000B6782F /* UILayoutDefine.cpp in Sources */,
 				924EADF91827330000B6782F /* ScrollViewer.cpp in Sources */,
-				924EACB91827330000B6782F /* UIPageView.cpp in Sources */,
 				924EAED11827330100B6782F /* ListBox.cpp in Sources */,
 				924EAF111827330100B6782F /* Adorner.cpp in Sources */,
-				924EACED1827330000B6782F /* UILabelAtlas.cpp in Sources */,
-				924EAC211827330000B6782F /* CCActionManager.cpp in Sources */,
 				924EAF311827330100B6782F /* Panel.cpp in Sources */,
-				924EAC551827330000B6782F /* CCCSComAudio.cpp in Sources */,
 				924EAE811827330000B6782F /* GroupBox.cpp in Sources */,
+				92EF2C43185307B100CB9EA4 /* datablock.cpp in Sources */,
 				924EADE91827330000B6782F /* RadioButton.cpp in Sources */,
-				924EAC951827330000B6782F /* UIInputManager.cpp in Sources */,
 				924EAC011827330000B6782F /* AppDelegate.cpp in Sources */,
 				924EAF211827330100B6782F /* DockPanel.cpp in Sources */,
 				924EAD811827330000B6782F /* LuaHelper.cpp in Sources */,
 				924EAE791827330000B6782F /* Expander.cpp in Sources */,
-				924EAC451827330000B6782F /* CCComRender.cpp in Sources */,
 				924EAABF182732F100B6782F /* interface.cpp in Sources */,
-				924EACD51827330000B6782F /* UICheckBox.cpp in Sources */,
 				924EAE411827330000B6782F /* ButtonChrome.cpp in Sources */,
-				924EACE51827330000B6782F /* UILabel.cpp in Sources */,
-				924EAD051827330000B6782F /* UISlider.cpp in Sources */,
 				924EAE011827330000B6782F /* StatusBarItem.cpp in Sources */,
 				924EAF811827330100B6782F /* FlowText.cpp in Sources */,
 				924EAF391827330100B6782F /* StackPanel.cpp in Sources */,
@@ -2689,14 +1835,11 @@
 				924EAF711827330100B6782F /* WrapPanel.cpp in Sources */,
 				924EADA91827330000B6782F /* ContentControl.cpp in Sources */,
 				924EADC11827330000B6782F /* GroupItem.cpp in Sources */,
-				924EAD691827330000B6782F /* stdafx.cpp in Sources */,
-				924EACDD1827330000B6782F /* UIImageView.cpp in Sources */,
 				924EAF491827330100B6782F /* ToolBarOverflowPanel.cpp in Sources */,
 				924EAEA91827330000B6782F /* ToolBar.cpp in Sources */,
 				924EADC91827330000B6782F /* Label.cpp in Sources */,
 				924EAF011827330100B6782F /* TabControl.cpp in Sources */,
 				924EAF411827330100B6782F /* TabPanel.cpp in Sources */,
-				924EAC391827330000B6782F /* CCCSContentJsonDictionary.cpp in Sources */,
 				924EAE211827330000B6782F /* Window.cpp in Sources */,
 				924EAF791827330100B6782F /* Shape.cpp in Sources */,
 				924EAD891827330000B6782F /* Button.cpp in Sources */,
@@ -2706,59 +1849,34 @@
 				924EADE11827330000B6782F /* NavigationWindow.cpp in Sources */,
 				924EAE091827330000B6782F /* ToggleButton.cpp in Sources */,
 				924EAF191827330100B6782F /* Canvas.cpp in Sources */,
-				924EAC191827330000B6782F /* CCActionFrameEasing.cpp in Sources */,
 				924EAED91827330100B6782F /* ListView.cpp in Sources */,
-				924EAC5D1827330000B6782F /* UIRootWidget.cpp in Sources */,
 				924EAE991827330000B6782F /* HeaderedItemsControl.cpp in Sources */,
-				924EAD151827330000B6782F /* UITextField.cpp in Sources */,
-				924EACA91827330000B6782F /* UIDragPanel.cpp in Sources */,
-				924EACFD1827330000B6782F /* UILoadingBar.cpp in Sources */,
 				924EAEE11827330100B6782F /* Menu.cpp in Sources */,
-				924EAC311827330000B6782F /* CCActionObject.cpp in Sources */,
 				924EAE691827330000B6782F /* SystemDropShadowChrome.cpp in Sources */,
 				924EAF511827330100B6782F /* ToolBarPanel.cpp in Sources */,
-				924EAD451827330000B6782F /* json_value.cpp in Sources */,
-				924EAD611827330000B6782F /* CCSSceneReader.cpp in Sources */,
 				924EAD711827330000B6782F /* LuaCocoStudioConversion.cpp in Sources */,
 				924EAEF91827330100B6782F /* StatusBar.cpp in Sources */,
-				924EAC751827330000B6782F /* LayoutParameter.cpp in Sources */,
 				924EADD11827330000B6782F /* ListBoxItem.cpp in Sources */,
 				924EADB11827330000B6782F /* Frame.cpp in Sources */,
-				924EAC291827330000B6782F /* CCActionNode.cpp in Sources */,
-				924EAD591827330000B6782F /* CCSGUIReader.cpp in Sources */,
 				924EAADF182732F100B6782F /* object.cpp in Sources */,
 				924EAF091827330100B6782F /* TreeView.cpp in Sources */,
-				924EACB11827330000B6782F /* UIListView.cpp in Sources */,
-				924EAC9D1827330000B6782F /* UILayer.cpp in Sources */,
 				924EADA11827330000B6782F /* ComboBoxItem.cpp in Sources */,
 				924EAE491827330000B6782F /* ClassicBorderDecorator.cpp in Sources */,
 				924EAEC11827330000B6782F /* ContextMenu.cpp in Sources */,
-				924EAC111827330000B6782F /* CCActionFrame.cpp in Sources */,
 				924EAEA11827330000B6782F /* MenuItem.cpp in Sources */,
-				924EAC851827330000B6782F /* CocosGUI.cpp in Sources */,
-				924EACF51827330000B6782F /* UILabelBMFont.cpp in Sources */,
-				924EAC4D1827330000B6782F /* CCCSComAttribute.cpp in Sources */,
 				924EAF291827330100B6782F /* Grid.cpp in Sources */,
-				924EAD1D1827330000B6782F /* DictionaryHelper.cpp in Sources */,
-				924EACC51827330000B6782F /* UIScrollView.cpp in Sources */,
 				924EAF911827330100B6782F /* TextBox.cpp in Sources */,
-				924EAC8D1827330000B6782F /* UIHelper.cpp in Sources */,
 				924EAEC91827330000B6782F /* ItemsControl.cpp in Sources */,
-				924EAD491827330000B6782F /* json_writer.cpp in Sources */,
-				924EACCD1827330000B6782F /* UIButton.cpp in Sources */,
 				924EAE111827330000B6782F /* ToolTip.cpp in Sources */,
 				924EAD911827330000B6782F /* ButtonBase.cpp in Sources */,
 				924EAD991827330000B6782F /* CheckBox.cpp in Sources */,
 				924EAE611827330000B6782F /* ListBoxChrome.cpp in Sources */,
-				924EAC651827330000B6782F /* UIWidget.cpp in Sources */,
 				924EAE591827330000B6782F /* InkPresenter.cpp in Sources */,
 				924EAEB91827330000B6782F /* ComboBox.cpp in Sources */,
-				924EAC6D1827330000B6782F /* Layout.cpp in Sources */,
 				924EAE311827330000B6782F /* Border.cpp in Sources */,
 				924EAF891827330100B6782F /* TextBlock.cpp in Sources */,
 				924EAE891827330000B6782F /* HeaderedContentControl.cpp in Sources */,
 				924EAF611827330100B6782F /* VirtualizingPanel.cpp in Sources */,
-				924EAC091827330000B6782F /* CCLuaEngine.cpp in Sources */,
 				924EAE711827330000B6782F /* Viewbox.cpp in Sources */,
 				924EAE511827330000B6782F /* Decorator.cpp in Sources */,
 				924EAF591827330100B6782F /* UniformGrid.cpp in Sources */,
@@ -2777,30 +1895,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				924EAD3E1827330000B6782F /* json_reader.cpp in Sources */,
-				924EAD0E1827330000B6782F /* UISwitch.cpp in Sources */,
-				924EAC7E1827330000B6782F /* UILayoutDefine.cpp in Sources */,
 				924EADFA1827330000B6782F /* ScrollViewer.cpp in Sources */,
-				924EACBA1827330000B6782F /* UIPageView.cpp in Sources */,
 				924EAED21827330100B6782F /* ListBox.cpp in Sources */,
 				924EAF121827330100B6782F /* Adorner.cpp in Sources */,
-				924EACEE1827330000B6782F /* UILabelAtlas.cpp in Sources */,
-				924EAC221827330000B6782F /* CCActionManager.cpp in Sources */,
 				924EAF321827330100B6782F /* Panel.cpp in Sources */,
-				924EAC561827330000B6782F /* CCCSComAudio.cpp in Sources */,
 				924EAE821827330000B6782F /* GroupBox.cpp in Sources */,
 				924EADEA1827330000B6782F /* RadioButton.cpp in Sources */,
-				924EAC961827330000B6782F /* UIInputManager.cpp in Sources */,
 				924EAC021827330000B6782F /* AppDelegate.cpp in Sources */,
 				924EAF221827330100B6782F /* DockPanel.cpp in Sources */,
 				924EAD821827330000B6782F /* LuaHelper.cpp in Sources */,
 				924EAE7A1827330000B6782F /* Expander.cpp in Sources */,
-				924EAC461827330000B6782F /* CCComRender.cpp in Sources */,
 				924EAAC0182732F100B6782F /* interface.cpp in Sources */,
-				924EACD61827330000B6782F /* UICheckBox.cpp in Sources */,
 				924EAE421827330000B6782F /* ButtonChrome.cpp in Sources */,
-				924EACE61827330000B6782F /* UILabel.cpp in Sources */,
-				924EAD061827330000B6782F /* UISlider.cpp in Sources */,
 				924EAE021827330000B6782F /* StatusBarItem.cpp in Sources */,
 				924EAF821827330100B6782F /* FlowText.cpp in Sources */,
 				924EAF3A1827330100B6782F /* StackPanel.cpp in Sources */,
@@ -2808,14 +1914,12 @@
 				924EAF721827330100B6782F /* WrapPanel.cpp in Sources */,
 				924EADAA1827330000B6782F /* ContentControl.cpp in Sources */,
 				924EADC21827330000B6782F /* GroupItem.cpp in Sources */,
-				924EAD6A1827330000B6782F /* stdafx.cpp in Sources */,
-				924EACDE1827330000B6782F /* UIImageView.cpp in Sources */,
 				924EAF4A1827330100B6782F /* ToolBarOverflowPanel.cpp in Sources */,
 				924EAEAA1827330000B6782F /* ToolBar.cpp in Sources */,
 				924EADCA1827330000B6782F /* Label.cpp in Sources */,
 				924EAF021827330100B6782F /* TabControl.cpp in Sources */,
 				924EAF421827330100B6782F /* TabPanel.cpp in Sources */,
-				924EAC3A1827330000B6782F /* CCCSContentJsonDictionary.cpp in Sources */,
+				92EF2C341853077700CB9EA4 /* CustomEGLView.cpp in Sources */,
 				924EAE221827330000B6782F /* Window.cpp in Sources */,
 				924EAF7A1827330100B6782F /* Shape.cpp in Sources */,
 				924EAD8A1827330000B6782F /* Button.cpp in Sources */,
@@ -2825,59 +1929,36 @@
 				924EADE21827330000B6782F /* NavigationWindow.cpp in Sources */,
 				924EAE0A1827330000B6782F /* ToggleButton.cpp in Sources */,
 				924EAF1A1827330100B6782F /* Canvas.cpp in Sources */,
-				924EAC1A1827330000B6782F /* CCActionFrameEasing.cpp in Sources */,
 				924EAEDA1827330100B6782F /* ListView.cpp in Sources */,
-				924EAC5E1827330000B6782F /* UIRootWidget.cpp in Sources */,
 				924EAE9A1827330000B6782F /* HeaderedItemsControl.cpp in Sources */,
-				924EAD161827330000B6782F /* UITextField.cpp in Sources */,
-				924EACAA1827330000B6782F /* UIDragPanel.cpp in Sources */,
-				924EACFE1827330000B6782F /* UILoadingBar.cpp in Sources */,
 				924EAEE21827330100B6782F /* Menu.cpp in Sources */,
-				924EAC321827330000B6782F /* CCActionObject.cpp in Sources */,
 				924EAE6A1827330000B6782F /* SystemDropShadowChrome.cpp in Sources */,
 				924EAF521827330100B6782F /* ToolBarPanel.cpp in Sources */,
-				924EAD461827330000B6782F /* json_value.cpp in Sources */,
-				924EAD621827330000B6782F /* CCSSceneReader.cpp in Sources */,
 				924EAD721827330000B6782F /* LuaCocoStudioConversion.cpp in Sources */,
 				924EAEFA1827330100B6782F /* StatusBar.cpp in Sources */,
-				924EAC761827330000B6782F /* LayoutParameter.cpp in Sources */,
 				924EADD21827330000B6782F /* ListBoxItem.cpp in Sources */,
 				924EADB21827330000B6782F /* Frame.cpp in Sources */,
-				924EAC2A1827330000B6782F /* CCActionNode.cpp in Sources */,
-				924EAD5A1827330000B6782F /* CCSGUIReader.cpp in Sources */,
 				924EAF0A1827330100B6782F /* TreeView.cpp in Sources */,
 				924EAAE0182732F100B6782F /* object.cpp in Sources */,
-				924EACB21827330000B6782F /* UIListView.cpp in Sources */,
-				924EAC9E1827330000B6782F /* UILayer.cpp in Sources */,
 				924EADA21827330000B6782F /* ComboBoxItem.cpp in Sources */,
 				924EAE4A1827330000B6782F /* ClassicBorderDecorator.cpp in Sources */,
+				92EF2C3D1853079700CB9EA4 /* LuaTiledHelper.cpp in Sources */,
 				924EAEC21827330000B6782F /* ContextMenu.cpp in Sources */,
-				924EAC121827330000B6782F /* CCActionFrame.cpp in Sources */,
 				924EAEA21827330000B6782F /* MenuItem.cpp in Sources */,
-				924EAC861827330000B6782F /* CocosGUI.cpp in Sources */,
-				924EACF61827330000B6782F /* UILabelBMFont.cpp in Sources */,
-				924EAC4E1827330000B6782F /* CCCSComAttribute.cpp in Sources */,
+				92EF2C3B1853079700CB9EA4 /* LuaExtern_Handler.cpp in Sources */,
 				924EAF2A1827330100B6782F /* Grid.cpp in Sources */,
-				924EAD1E1827330000B6782F /* DictionaryHelper.cpp in Sources */,
-				924EACC61827330000B6782F /* UIScrollView.cpp in Sources */,
 				924EAF921827330100B6782F /* TextBox.cpp in Sources */,
-				924EAC8E1827330000B6782F /* UIHelper.cpp in Sources */,
 				924EAECA1827330000B6782F /* ItemsControl.cpp in Sources */,
-				924EAD4A1827330000B6782F /* json_writer.cpp in Sources */,
-				924EACCE1827330000B6782F /* UIButton.cpp in Sources */,
 				924EAE121827330000B6782F /* ToolTip.cpp in Sources */,
 				924EAD921827330000B6782F /* ButtonBase.cpp in Sources */,
 				924EAD9A1827330000B6782F /* CheckBox.cpp in Sources */,
 				924EAE621827330000B6782F /* ListBoxChrome.cpp in Sources */,
-				924EAC661827330000B6782F /* UIWidget.cpp in Sources */,
 				924EAE5A1827330000B6782F /* InkPresenter.cpp in Sources */,
 				924EAEBA1827330000B6782F /* ComboBox.cpp in Sources */,
-				924EAC6E1827330000B6782F /* Layout.cpp in Sources */,
 				924EAE321827330000B6782F /* Border.cpp in Sources */,
 				924EAF8A1827330100B6782F /* TextBlock.cpp in Sources */,
 				924EAE8A1827330000B6782F /* HeaderedContentControl.cpp in Sources */,
 				924EAF621827330100B6782F /* VirtualizingPanel.cpp in Sources */,
-				924EAC0A1827330000B6782F /* CCLuaEngine.cpp in Sources */,
 				924EAE721827330000B6782F /* Viewbox.cpp in Sources */,
 				924EAE521827330000B6782F /* Decorator.cpp in Sources */,
 				924EAF5A1827330100B6782F /* UniformGrid.cpp in Sources */,
@@ -2896,30 +1977,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				924EAD401827330000B6782F /* json_reader.cpp in Sources */,
-				924EAD101827330000B6782F /* UISwitch.cpp in Sources */,
-				924EAC801827330000B6782F /* UILayoutDefine.cpp in Sources */,
 				924EADFC1827330000B6782F /* ScrollViewer.cpp in Sources */,
-				924EACBC1827330000B6782F /* UIPageView.cpp in Sources */,
 				924EAED41827330100B6782F /* ListBox.cpp in Sources */,
 				924EAF141827330100B6782F /* Adorner.cpp in Sources */,
-				924EACF01827330000B6782F /* UILabelAtlas.cpp in Sources */,
-				924EAC241827330000B6782F /* CCActionManager.cpp in Sources */,
 				924EAF341827330100B6782F /* Panel.cpp in Sources */,
-				924EAC581827330000B6782F /* CCCSComAudio.cpp in Sources */,
 				924EAE841827330000B6782F /* GroupBox.cpp in Sources */,
 				924EADEC1827330000B6782F /* RadioButton.cpp in Sources */,
-				924EAC981827330000B6782F /* UIInputManager.cpp in Sources */,
 				924EAC041827330000B6782F /* AppDelegate.cpp in Sources */,
 				924EAF241827330100B6782F /* DockPanel.cpp in Sources */,
 				924EAD841827330000B6782F /* LuaHelper.cpp in Sources */,
 				924EAE7C1827330000B6782F /* Expander.cpp in Sources */,
-				924EAC481827330000B6782F /* CCComRender.cpp in Sources */,
 				924EAAC2182732F100B6782F /* interface.cpp in Sources */,
-				924EACD81827330000B6782F /* UICheckBox.cpp in Sources */,
 				924EAE441827330000B6782F /* ButtonChrome.cpp in Sources */,
-				924EACE81827330000B6782F /* UILabel.cpp in Sources */,
-				924EAD081827330000B6782F /* UISlider.cpp in Sources */,
 				924EAE041827330000B6782F /* StatusBarItem.cpp in Sources */,
 				924EAF841827330100B6782F /* FlowText.cpp in Sources */,
 				924EAF3C1827330100B6782F /* StackPanel.cpp in Sources */,
@@ -2927,14 +1996,12 @@
 				924EAF741827330100B6782F /* WrapPanel.cpp in Sources */,
 				924EADAC1827330000B6782F /* ContentControl.cpp in Sources */,
 				924EADC41827330000B6782F /* GroupItem.cpp in Sources */,
-				924EAD6C1827330000B6782F /* stdafx.cpp in Sources */,
-				924EACE01827330000B6782F /* UIImageView.cpp in Sources */,
 				924EAF4C1827330100B6782F /* ToolBarOverflowPanel.cpp in Sources */,
 				924EAEAC1827330000B6782F /* ToolBar.cpp in Sources */,
 				924EADCC1827330000B6782F /* Label.cpp in Sources */,
 				924EAF041827330100B6782F /* TabControl.cpp in Sources */,
 				924EAF441827330100B6782F /* TabPanel.cpp in Sources */,
-				924EAC3C1827330000B6782F /* CCCSContentJsonDictionary.cpp in Sources */,
+				92EF2C351853077700CB9EA4 /* CustomEGLView.cpp in Sources */,
 				924EAE241827330000B6782F /* Window.cpp in Sources */,
 				924EAF7C1827330100B6782F /* Shape.cpp in Sources */,
 				924EAD8C1827330000B6782F /* Button.cpp in Sources */,
@@ -2944,59 +2011,36 @@
 				924EADE41827330000B6782F /* NavigationWindow.cpp in Sources */,
 				924EAE0C1827330000B6782F /* ToggleButton.cpp in Sources */,
 				924EAF1C1827330100B6782F /* Canvas.cpp in Sources */,
-				924EAC1C1827330000B6782F /* CCActionFrameEasing.cpp in Sources */,
 				924EAEDC1827330100B6782F /* ListView.cpp in Sources */,
-				924EAC601827330000B6782F /* UIRootWidget.cpp in Sources */,
 				924EAE9C1827330000B6782F /* HeaderedItemsControl.cpp in Sources */,
-				924EAD181827330000B6782F /* UITextField.cpp in Sources */,
-				924EACAC1827330000B6782F /* UIDragPanel.cpp in Sources */,
-				924EAD001827330000B6782F /* UILoadingBar.cpp in Sources */,
 				924EAEE41827330100B6782F /* Menu.cpp in Sources */,
-				924EAC341827330000B6782F /* CCActionObject.cpp in Sources */,
 				924EAE6C1827330000B6782F /* SystemDropShadowChrome.cpp in Sources */,
 				924EAF541827330100B6782F /* ToolBarPanel.cpp in Sources */,
-				924EAD481827330000B6782F /* json_value.cpp in Sources */,
-				924EAD641827330000B6782F /* CCSSceneReader.cpp in Sources */,
 				924EAD741827330000B6782F /* LuaCocoStudioConversion.cpp in Sources */,
 				924EAEFC1827330100B6782F /* StatusBar.cpp in Sources */,
-				924EAC781827330000B6782F /* LayoutParameter.cpp in Sources */,
 				924EADD41827330000B6782F /* ListBoxItem.cpp in Sources */,
 				924EADB41827330000B6782F /* Frame.cpp in Sources */,
-				924EAC2C1827330000B6782F /* CCActionNode.cpp in Sources */,
-				924EAD5C1827330000B6782F /* CCSGUIReader.cpp in Sources */,
 				924EAF0C1827330100B6782F /* TreeView.cpp in Sources */,
 				924EAAE2182732F100B6782F /* object.cpp in Sources */,
-				924EACB41827330000B6782F /* UIListView.cpp in Sources */,
-				924EACA01827330000B6782F /* UILayer.cpp in Sources */,
 				924EADA41827330000B6782F /* ComboBoxItem.cpp in Sources */,
 				924EAE4C1827330000B6782F /* ClassicBorderDecorator.cpp in Sources */,
+				92EF2C3E1853079700CB9EA4 /* LuaTiledHelper.cpp in Sources */,
 				924EAEC41827330000B6782F /* ContextMenu.cpp in Sources */,
-				924EAC141827330000B6782F /* CCActionFrame.cpp in Sources */,
 				924EAEA41827330000B6782F /* MenuItem.cpp in Sources */,
-				924EAC881827330000B6782F /* CocosGUI.cpp in Sources */,
-				924EACF81827330000B6782F /* UILabelBMFont.cpp in Sources */,
-				924EAC501827330000B6782F /* CCCSComAttribute.cpp in Sources */,
+				92EF2C3C1853079700CB9EA4 /* LuaExtern_Handler.cpp in Sources */,
 				924EAF2C1827330100B6782F /* Grid.cpp in Sources */,
-				924EAD201827330000B6782F /* DictionaryHelper.cpp in Sources */,
-				924EACC81827330000B6782F /* UIScrollView.cpp in Sources */,
 				924EAF941827330100B6782F /* TextBox.cpp in Sources */,
-				924EAC901827330000B6782F /* UIHelper.cpp in Sources */,
 				924EAECC1827330000B6782F /* ItemsControl.cpp in Sources */,
-				924EAD4C1827330000B6782F /* json_writer.cpp in Sources */,
-				924EACD01827330000B6782F /* UIButton.cpp in Sources */,
 				924EAE141827330000B6782F /* ToolTip.cpp in Sources */,
 				924EAD941827330000B6782F /* ButtonBase.cpp in Sources */,
 				924EAD9C1827330000B6782F /* CheckBox.cpp in Sources */,
 				924EAE641827330000B6782F /* ListBoxChrome.cpp in Sources */,
-				924EAC681827330000B6782F /* UIWidget.cpp in Sources */,
 				924EAE5C1827330000B6782F /* InkPresenter.cpp in Sources */,
 				924EAEBC1827330000B6782F /* ComboBox.cpp in Sources */,
-				924EAC701827330000B6782F /* Layout.cpp in Sources */,
 				924EAE341827330000B6782F /* Border.cpp in Sources */,
 				924EAF8C1827330100B6782F /* TextBlock.cpp in Sources */,
 				924EAE8C1827330000B6782F /* HeaderedContentControl.cpp in Sources */,
 				924EAF641827330100B6782F /* VirtualizingPanel.cpp in Sources */,
-				924EAC0C1827330000B6782F /* CCLuaEngine.cpp in Sources */,
 				924EAE741827330000B6782F /* Viewbox.cpp in Sources */,
 				924EAE541827330000B6782F /* Decorator.cpp in Sources */,
 				924EAF5C1827330100B6782F /* UniformGrid.cpp in Sources */,
@@ -3015,30 +2059,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				924EAD3F1827330000B6782F /* json_reader.cpp in Sources */,
-				924EAD0F1827330000B6782F /* UISwitch.cpp in Sources */,
-				924EAC7F1827330000B6782F /* UILayoutDefine.cpp in Sources */,
 				924EADFB1827330000B6782F /* ScrollViewer.cpp in Sources */,
-				924EACBB1827330000B6782F /* UIPageView.cpp in Sources */,
 				924EAED31827330100B6782F /* ListBox.cpp in Sources */,
 				924EAF131827330100B6782F /* Adorner.cpp in Sources */,
-				924EACEF1827330000B6782F /* UILabelAtlas.cpp in Sources */,
-				924EAC231827330000B6782F /* CCActionManager.cpp in Sources */,
 				924EAF331827330100B6782F /* Panel.cpp in Sources */,
-				924EAC571827330000B6782F /* CCCSComAudio.cpp in Sources */,
 				924EAE831827330000B6782F /* GroupBox.cpp in Sources */,
+				92EF2C44185307B200CB9EA4 /* datablock.cpp in Sources */,
 				924EADEB1827330000B6782F /* RadioButton.cpp in Sources */,
-				924EAC971827330000B6782F /* UIInputManager.cpp in Sources */,
 				924EAC031827330000B6782F /* AppDelegate.cpp in Sources */,
 				924EAF231827330100B6782F /* DockPanel.cpp in Sources */,
 				924EAD831827330000B6782F /* LuaHelper.cpp in Sources */,
 				924EAE7B1827330000B6782F /* Expander.cpp in Sources */,
-				924EAC471827330000B6782F /* CCComRender.cpp in Sources */,
 				924EAAC1182732F100B6782F /* interface.cpp in Sources */,
-				924EACD71827330000B6782F /* UICheckBox.cpp in Sources */,
 				924EAE431827330000B6782F /* ButtonChrome.cpp in Sources */,
-				924EACE71827330000B6782F /* UILabel.cpp in Sources */,
-				924EAD071827330000B6782F /* UISlider.cpp in Sources */,
 				924EAE031827330000B6782F /* StatusBarItem.cpp in Sources */,
 				924EAF831827330100B6782F /* FlowText.cpp in Sources */,
 				924EAF3B1827330100B6782F /* StackPanel.cpp in Sources */,
@@ -3046,14 +2079,11 @@
 				924EAF731827330100B6782F /* WrapPanel.cpp in Sources */,
 				924EADAB1827330000B6782F /* ContentControl.cpp in Sources */,
 				924EADC31827330000B6782F /* GroupItem.cpp in Sources */,
-				924EAD6B1827330000B6782F /* stdafx.cpp in Sources */,
-				924EACDF1827330000B6782F /* UIImageView.cpp in Sources */,
 				924EAF4B1827330100B6782F /* ToolBarOverflowPanel.cpp in Sources */,
 				924EAEAB1827330000B6782F /* ToolBar.cpp in Sources */,
 				924EADCB1827330000B6782F /* Label.cpp in Sources */,
 				924EAF031827330100B6782F /* TabControl.cpp in Sources */,
 				924EAF431827330100B6782F /* TabPanel.cpp in Sources */,
-				924EAC3B1827330000B6782F /* CCCSContentJsonDictionary.cpp in Sources */,
 				924EAE231827330000B6782F /* Window.cpp in Sources */,
 				924EAF7B1827330100B6782F /* Shape.cpp in Sources */,
 				924EAD8B1827330000B6782F /* Button.cpp in Sources */,
@@ -3063,59 +2093,34 @@
 				924EADE31827330000B6782F /* NavigationWindow.cpp in Sources */,
 				924EAE0B1827330000B6782F /* ToggleButton.cpp in Sources */,
 				924EAF1B1827330100B6782F /* Canvas.cpp in Sources */,
-				924EAC1B1827330000B6782F /* CCActionFrameEasing.cpp in Sources */,
 				924EAEDB1827330100B6782F /* ListView.cpp in Sources */,
-				924EAC5F1827330000B6782F /* UIRootWidget.cpp in Sources */,
 				924EAE9B1827330000B6782F /* HeaderedItemsControl.cpp in Sources */,
-				924EAD171827330000B6782F /* UITextField.cpp in Sources */,
-				924EACAB1827330000B6782F /* UIDragPanel.cpp in Sources */,
-				924EACFF1827330000B6782F /* UILoadingBar.cpp in Sources */,
 				924EAEE31827330100B6782F /* Menu.cpp in Sources */,
-				924EAC331827330000B6782F /* CCActionObject.cpp in Sources */,
 				924EAE6B1827330000B6782F /* SystemDropShadowChrome.cpp in Sources */,
 				924EAF531827330100B6782F /* ToolBarPanel.cpp in Sources */,
-				924EAD471827330000B6782F /* json_value.cpp in Sources */,
-				924EAD631827330000B6782F /* CCSSceneReader.cpp in Sources */,
 				924EAD731827330000B6782F /* LuaCocoStudioConversion.cpp in Sources */,
 				924EAEFB1827330100B6782F /* StatusBar.cpp in Sources */,
-				924EAC771827330000B6782F /* LayoutParameter.cpp in Sources */,
 				924EADD31827330000B6782F /* ListBoxItem.cpp in Sources */,
 				924EADB31827330000B6782F /* Frame.cpp in Sources */,
-				924EAC2B1827330000B6782F /* CCActionNode.cpp in Sources */,
-				924EAD5B1827330000B6782F /* CCSGUIReader.cpp in Sources */,
 				924EAAE1182732F100B6782F /* object.cpp in Sources */,
 				924EAF0B1827330100B6782F /* TreeView.cpp in Sources */,
-				924EACB31827330000B6782F /* UIListView.cpp in Sources */,
-				924EAC9F1827330000B6782F /* UILayer.cpp in Sources */,
 				924EADA31827330000B6782F /* ComboBoxItem.cpp in Sources */,
 				924EAE4B1827330000B6782F /* ClassicBorderDecorator.cpp in Sources */,
 				924EAEC31827330000B6782F /* ContextMenu.cpp in Sources */,
-				924EAC131827330000B6782F /* CCActionFrame.cpp in Sources */,
 				924EAEA31827330000B6782F /* MenuItem.cpp in Sources */,
-				924EAC871827330000B6782F /* CocosGUI.cpp in Sources */,
-				924EACF71827330000B6782F /* UILabelBMFont.cpp in Sources */,
-				924EAC4F1827330000B6782F /* CCCSComAttribute.cpp in Sources */,
 				924EAF2B1827330100B6782F /* Grid.cpp in Sources */,
-				924EAD1F1827330000B6782F /* DictionaryHelper.cpp in Sources */,
-				924EACC71827330000B6782F /* UIScrollView.cpp in Sources */,
 				924EAF931827330100B6782F /* TextBox.cpp in Sources */,
-				924EAC8F1827330000B6782F /* UIHelper.cpp in Sources */,
 				924EAECB1827330000B6782F /* ItemsControl.cpp in Sources */,
-				924EAD4B1827330000B6782F /* json_writer.cpp in Sources */,
-				924EACCF1827330000B6782F /* UIButton.cpp in Sources */,
 				924EAE131827330000B6782F /* ToolTip.cpp in Sources */,
 				924EAD931827330000B6782F /* ButtonBase.cpp in Sources */,
 				924EAD9B1827330000B6782F /* CheckBox.cpp in Sources */,
 				924EAE631827330000B6782F /* ListBoxChrome.cpp in Sources */,
-				924EAC671827330000B6782F /* UIWidget.cpp in Sources */,
 				924EAE5B1827330000B6782F /* InkPresenter.cpp in Sources */,
 				924EAEBB1827330000B6782F /* ComboBox.cpp in Sources */,
-				924EAC6F1827330000B6782F /* Layout.cpp in Sources */,
 				924EAE331827330000B6782F /* Border.cpp in Sources */,
 				924EAF8B1827330100B6782F /* TextBlock.cpp in Sources */,
 				924EAE8B1827330000B6782F /* HeaderedContentControl.cpp in Sources */,
 				924EAF631827330100B6782F /* VirtualizingPanel.cpp in Sources */,
-				924EAC0B1827330000B6782F /* CCLuaEngine.cpp in Sources */,
 				924EAE731827330000B6782F /* Viewbox.cpp in Sources */,
 				924EAE531827330000B6782F /* Decorator.cpp in Sources */,
 				924EAF5B1827330100B6782F /* UniformGrid.cpp in Sources */,
@@ -3312,7 +2317,7 @@
 				PROVISIONING_PROFILE = "38EDD0CD-6709-4416-A663-BD7BA3161A2B";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios/Simulation\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/extensions\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/chipmunk/include/chipmunk\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/libwebsockets/ios/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d/cocos2d-x-3\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/base\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/gui\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d/platform/ios\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/math/kazmath/include\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d/platform/ios/Simulation\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/audio/include\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/extensions\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/lua/lua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/lua/tolua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/chipmunk/include/chipmunk\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/physics\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua/bindings\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua/script\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/editor-support\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/editor-support/cocostudio\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
 			};
 			name = Debug;
 		};
@@ -3335,7 +2340,7 @@
 				PROVISIONING_PROFILE = "38EDD0CD-6709-4416-A663-BD7BA3161A2B";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios/Simulation\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/extensions\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/chipmunk/include/chipmunk\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/libwebsockets/ios/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d/cocos2d-x-3\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/base\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/gui\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d/platform/ios\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/math/kazmath/include\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d/platform/ios/Simulation\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/audio/include\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/extensions\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/lua/lua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/lua/tolua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/chipmunk/include/chipmunk\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/physics\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua/bindings\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua/script\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/editor-support\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/editor-support/cocostudio\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
 			};
 			name = Release;
 		};
@@ -3373,7 +2378,7 @@
 				PROVISIONING_PROFILE = "38EDD0CD-6709-4416-A663-BD7BA3161A2B";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios/Simulation\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/extensions\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/chipmunk/include/chipmunk\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/libwebsockets/ios/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d/cocos2d-x-3\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/base\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/gui\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d/platform/ios\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/math/kazmath/include\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d/platform/ios/Simulation\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/audio/include\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/extensions\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/lua/lua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/lua/tolua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/chipmunk/include/chipmunk\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/physics\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua/bindings\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua/script\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/editor-support\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/editor-support/cocostudio\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
 			};
 			name = Debug;
 		};
@@ -3395,7 +2400,7 @@
 				PROVISIONING_PROFILE = "38EDD0CD-6709-4416-A663-BD7BA3161A2B";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/kazmath/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/ios/Simulation\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/cocos2dx/platform/third_party/ios\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/CocosDenshion/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/extensions\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/chipmunk/include/chipmunk\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/external/libwebsockets/ios/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/luajit/include\" \"$(SRCROOT)/../../cocos2d-x-3.0alpha0-pre/scripting/lua/tolua\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d/cocos2d-x-3\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/base\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/gui\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d/platform/ios\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/math/kazmath/include\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d/platform/ios/Simulation\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/audio/include\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/extensions\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/lua/lua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/lua/tolua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/chipmunk/include/chipmunk\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/physics\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua/bindings\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua/script\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/editor-support\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/editor-support/cocostudio\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
 			};
 			name = Release;
 		};

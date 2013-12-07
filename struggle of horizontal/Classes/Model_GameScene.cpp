@@ -6,6 +6,7 @@
 
 MODEL_TYPECLASS_DEFINE_CONSTRUCTOR(GameScene)
 {
+    mModelManager = ViewModelManager::point();
 	// 构造函数，代码写这里
 MODEL_TYPECLASS_DEFINE_DECONSTRUCTOR(GameScene)
 	// 析构函数，代码写这里

@@ -2,6 +2,7 @@
 #include "ViewModelManager.h"
 
 MODEL_TYPECLASS_DEFINE_CONSTRUCTOR(SelectHero){
+    mModelManager = ViewModelManager::point();
 	// 构造函数，代码写这里
 MODEL_TYPECLASS_DEFINE_DECONSTRUCTOR(SelectHero)
 	// 析构函数，代码写这里
