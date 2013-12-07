@@ -28,7 +28,7 @@ GameScenePhysics::GameScenePhysics()
 		fd.shape = &shape;
 		fd.density = 10.0f;
 		fd.friction = 1.0f;
-		shape.SetAsBox(0.5, 0.1, b2Vec2(0, 0), 0.0);
+		shape.SetAsBox(1.0, 1.0, b2Vec2(0, 0), 0.0);
 		mHeroBody->CreateFixture(&fd);
 		mHeroBody->SetFixedRotation(true); // 设置为固定角度（不旋转）
 	}
@@ -168,6 +168,8 @@ b2ContactEdge* GameScenePhysics::getHeroBodyContactList()
 void GameScenePhysics::Step(Settings* settings)
 {
 	b2Vec2 vel = mHeroBody->GetLinearVelocity();
+	//if(vel.y <= 0.001f && vel.y >= -0.001f)
+	//	vel.y = 1.0f; 
 	if(fabs(mHeroMoveDir) > 0.001f)
 	{
 		vel.x = mHeroMoveDir * mHeroMoveSpeed / PTM_RATIO + mHeroMoveDir;

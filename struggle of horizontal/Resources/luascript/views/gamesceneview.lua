@@ -89,12 +89,11 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 				end
 				if dist > 100.0 then dist = 100.0 end
 				if dist < -100.0 then dist = -100.0 end
-				tmpSpeed = math.abs(dist) * 2.0
+				tmpSpeed = math.abs(dist) * 3.0
 				if _LUAGameSceneView.mMoveSpeedScale ~= tmpSpeed or _LUAGameSceneView.mMoveDirection ~= tmpMoveDir then
 					-- set move dist to box2d herobody
 					_LUAGameSceneView.mMoveDirection = tmpMoveDir
 					_LUAGameSceneView.mMoveSpeedScale = tmpSpeed
-					print('move dir = '.._LUAGameSceneView.mMoveDirection..', move speed = '.._LUAGameSceneView.mMoveSpeedScale)
 					_LUAGameSceneView.self:getPhysics():changeMoveDirection(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
 					if _LUAGameSceneView.mMoveDirection > 0.0 then
 						_LUAGameSceneView.mHeroAnim:setRotationY(0)

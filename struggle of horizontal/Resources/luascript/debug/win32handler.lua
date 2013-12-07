@@ -11,6 +11,16 @@ function LUAOnWin32KeyDownMsgProc(key)
 	if VK_3 == key or VK_SPACE == key then _LUAGameSceneView.self:getPhysics():jump(25.0) end
 	if VK_4 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('smitten') end
 	if VK_5 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('death') end
+	if VK_W == key then end
+	if VK_S == key then end
+	if VK_A == key or VK_D == key then
+		if VK_A == key then _LUAGameSceneView.mMoveDirection = -1 _LUAGameSceneView.mHeroAnim:setRotationY(180) else _LUAGameSceneView.mMoveDirection = 1 _LUAGameSceneView.mHeroAnim:setRotationY(0) end
+		if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "run" then
+			_LUAGameSceneView.mHeroAnim:getAnimation():play("run")
+		end
+		_LUAGameSceneView.mMoveSpeedScale = 300
+		_LUAGameSceneView.self:getPhysics():changeMoveDirection(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
+	end
 	if VK_F9 == key then
 		ViewModelManager:reloadLuaScript("luascript/debug/win32handler.lua")
 		ViewModelManager:reloadLuaScript("luascript/luautility.lua")
@@ -27,6 +37,14 @@ function LUAOnWin32KeyDownMsgProc(key)
 end
 
 function LUAOnWin32KeyUpMsgProc(key)
+	if VK_A == key or VK_D == key then
+		_LUAGameSceneView.mMoveDirection = 0
+		_LUAGameSceneView.mMoveSpeedScale = 0
+		_LUAGameSceneView.self:getPhysics():changeMoveDirection(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
+		if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "loading" then
+			_LUAGameSceneView.mHeroAnim:getAnimation():play("loading")
+		end
+	end
 end
 
 function LUAOnWin32CharMsgProc(char)
