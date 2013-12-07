@@ -3,8 +3,9 @@
 
 #include "CCApplication.h"
 #include "mvvm/framework.h"
-#include "CustomEGLView.h"
-
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+#   include "CustomEGLView.h"
+#endif
 /**
 @brief    The cocos2d Application.
 
@@ -59,8 +60,8 @@ namespace engine
 		LARGE_INTEGER mMessageFreq;
 		LARGE_INTEGER mMessageLast;
 		LARGE_INTEGER mMessageNow;
-#endif
 		CustomEGLView mCustomEGLView;
+#endif
 	};
 }
 

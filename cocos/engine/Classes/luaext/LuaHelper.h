@@ -287,14 +287,14 @@ void* callLuaFuncWithUserdataResult(const char* funcName, P1 p1, P2 p2, P3 p3, P
 template<class P1, class P2, class P3, class P4, class P5, class P6> 
 void* callLuaFuncWithUserdataResult(const char* funcName, P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6)
 {
-	ScriptParamObject result = tolua_callLuaFunctionWithParam5WithResult1(funcName, ScriptParamObject(p1), ScriptParamObject(p2), ScriptParamObject(p3), ScriptParamObject(p4), ScriptParamObject(p5), ScriptParamObject(p6));
+	ScriptParamObject result = tolua_callLuaFunctionWithParam6WithResult1(funcName, ScriptParamObject(p1), ScriptParamObject(p2), ScriptParamObject(p3), ScriptParamObject(p4), ScriptParamObject(p5), ScriptParamObject(p6));
 	if(result.type == LUA_TUSERDATA) return result.value.pointer;
 	return NULL;
 }
 template<class P1, class P2, class P3, class P4, class P5, class P6, class P7> 
 void* callLuaFuncWithUserdataResult(const char* funcName, P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7)
 {
-	ScriptParamObject result = tolua_callLuaFunctionWithParam5WithResult1(funcName, ScriptParamObject(p1), ScriptParamObject(p2), ScriptParamObject(p3), ScriptParamObject(p4), ScriptParamObject(p5), ScriptParamObject(p6), ScriptParamObject(p7));
+	ScriptParamObject result = tolua_callLuaFunctionWithParam7WithResult1(funcName, ScriptParamObject(p1), ScriptParamObject(p2), ScriptParamObject(p3), ScriptParamObject(p4), ScriptParamObject(p5), ScriptParamObject(p6), ScriptParamObject(p7));
 	if(result.type == LUA_TUSERDATA) return result.value.pointer;
 	return NULL;
 }
