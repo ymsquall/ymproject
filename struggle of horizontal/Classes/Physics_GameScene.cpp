@@ -28,7 +28,7 @@ GameScenePhysics::GameScenePhysics()
 		fd.shape = &shape;
 		fd.density = 10.0f;
 		fd.friction = 1.0f;
-		shape.SetAsBox(1.0, 1.0, b2Vec2(0, 0), 0.0);
+		shape.SetAsBox(0.2, 0.2, b2Vec2(0, 0), 0.0);
 		mHeroBody->CreateFixture(&fd);
 		mHeroBody->SetFixedRotation(true); // 设置为固定角度（不旋转）
 	}
@@ -36,6 +36,7 @@ GameScenePhysics::GameScenePhysics()
 	mHeroMoveSpeed = 0;
 	mIsHeroDorping = false;
 	mIsOriJump = true;
+	mJumpState = JumpState::none;
 }
 
 GameScenePhysics::~GameScenePhysics()
@@ -62,8 +63,7 @@ bool GameScenePhysics::initBoxWithTiledMap(const TMXTiledMap* pTiledMap)
 		//}
 		int x = ((String*)pGroundDict->objectForKey("x"))->intValue();
 		int y = ((String*)pGroundDict->objectForKey("y"))->intValue();
-		int width = ((String*)pGroundDict->objectForKey("width"))->intValue();
-		int height = ((String*)pGroundDict->objectForKey("height"))->intValue();
+		std::string oType = ((String*)pGroundDict->objectForKey("type"))->getCString();
 		Object* pPointObj = pGroundDict->objectForKey("polylinePoints");// points
 		if(NULL != pPointObj)
 		{
@@ -83,6 +83,8 @@ bool GameScenePhysics::initBoxWithTiledMap(const TMXTiledMap* pTiledMap)
 		}
 		else
 		{
+			int width = ((String*)pGroundDict->objectForKey("width"))->intValue();
+			int height = ((String*)pGroundDict->objectForKey("height"))->intValue();
 			b2Body* pBody = this->createGround(b2Vec2(x, y), width, height);
 			if(NULL != pBody)
 				mGroundList.push_back(pBody);

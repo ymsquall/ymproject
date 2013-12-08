@@ -17,51 +17,56 @@
   </data>
  </layer>
  <objectgroup name="ground" width="14" height="7">
-  <object name="002" x="1657" y="1581">
-   <polyline points="-38,-19 125,5 602,1 762,33 1924,40"/>
+  <object name="001" type="land" x="131" y="1536">
+   <polyline points="0,0 70,25 168,42 331,52 772,34 1309,29 1446,6 1548,17 1653,39 2077,45 2237,78 3061,79 3014,140 3125,200 3167,217 3217,219 3240,192"/>
   </object>
-  <object name="003" x="-12" y="1121" width="1032" height="52"/>
-  <object name="004" x="1024" y="1127">
-   <polyline points="-62,3 179,-88 468,-89 586,-100"/>
+  <object name="002" type="land" x="0" y="1114">
+   <polyline points="0,0 991,10 1209,-67 1636,-75"/>
   </object>
-  <object name="005" x="1663" y="1147">
-   <polyline points="-5,17 150,60 527,52"/>
+  <object name="003" type="land" x="1670" y="1154">
+   <polyline points="0,0 158,59 351,58 527,29"/>
   </object>
-  <object name="006" x="2172" y="1263">
-   <polyline points="0,0 212,-7 299,10 1411,2"/>
+  <object name="004" type="land" x="2175" y="1261">
+   <polyline points="0,0 1405,-5"/>
   </object>
-  <object name="007" x="2339" y="760">
-   <polyline points="5,3 90,16 632,14 629,-296"/>
+  <object name="005" type="land" x="2314" y="767">
+   <polyline points="0,0 763,-2 1093,57"/>
   </object>
-  <object name="008" x="3382" y="2">
-   <polyline points="-161,2 -159,457 -586,452 -766,457 -849,458 -940,466 -1921,467 -2171,471 -2359,466 -2444,457 -2528,438 -2644,412 -2855,412 -2855,2"/>
+  <object name="006" type="land" x="3254" y="465">
+   <polyline points="0,0 -1920,6 -2058,19 -2313,-1 -2525,-45 -2728,-48"/>
   </object>
-  <object name="009" x="909" y="1382">
-   <polyline points="0,0 130,1"/>
+  <object name="007" type="land" x="2804" y="616">
+   <polyline points="0,0 208,1"/>
   </object>
-  <object name="010" x="917" y="1243">
-   <polyline points="0,0 127,1"/>
+  <object name="008" type="land" x="2603" y="1072">
+   <polyline points="0,0 200,1"/>
   </object>
-  <object name="011" x="2" y="1787">
-   <polyline points="0,0 0,-1786 3579,-1786 3579,-166"/>
+  <object name="009" type="land" x="2610" y="920">
+   <polyline points="0,0 198,2"/>
   </object>
-  <object name="012" x="2453" y="1428">
-   <polyline points="0,0 108,0"/>
+  <object name="010" type="land" x="2415" y="1420">
+   <polyline points="0,0 172,-3"/>
   </object>
-  <object name="013" x="2639" y="1093">
-   <polyline points="0,0 120,0"/>
+  <object name="011" type="land" x="913" y="1392">
+   <polyline points="0,0 152,-1"/>
   </object>
-  <object name="014" x="2636" y="1000">
-   <polyline points="0,0 149,-2"/>
+  <object name="012" type="land" x="898" y="1265">
+   <polyline points="0,0 166,-3"/>
   </object>
-  <object name="015" x="2851" y="642">
-   <polyline points="0,0 115,-23"/>
+  <object name="100" type="box" x="0" y="1789">
+   <polyline points="0,0 3581,0 3580,-1788 2,-1786 2,-1"/>
   </object>
-  <object name="016" x="1619" y="1550">
-   <polyline points="-1,11 -1338,23 -1337,-372"/>
+  <object name="101" type="wall" x="137" y="1589">
+   <polyline points="0,0 7,-423"/>
   </object>
-  <object name="017" x="2640" y="891">
-   <polyline points="0,0 137,-1"/>
+  <object name="102" type="wall" x="3368" y="1778">
+   <polyline points="0,0 1,-486"/>
+  </object>
+  <object name="103" type="wall" x="3253" y="476">
+   <polyline points="0,0 -2,-473"/>
+  </object>
+  <object name="104" type="wall" x="531" y="465">
+   <polyline points="0,0 0,-459"/>
   </object>
  </objectgroup>
 </map>

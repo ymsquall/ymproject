@@ -20,8 +20,16 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 	_LUAGameSceneView.mUILayout:setPosition(cc.p((viewWideh-layoutSize.width)/2.0, (viewHeight-layoutSize.height)/2.0))
 	_LUAGameSceneView.mMoveStickBG = LuaCocoStudioConversion:getChildUIImageViewByName("mMoveStickBG", _LUAGameSceneView.mUILayout)
 	_LUAGameSceneView.mMoveStick = LuaCocoStudioConversion:getChildUIImageViewByName("mMoveStick", _LUAGameSceneView.mUILayout)
+	_LUAGameSceneView.mMoveStickBGShowing = LuaCocoStudioConversion:getChildUIImageViewByName("mMoveStickBGShowing", _LUAGameSceneView.mUILayout)
+	_LUAGameSceneView.mMoveStickShowing = LuaCocoStudioConversion:getChildUIImageViewByName("mMoveStickShowing", _LUAGameSceneView.mUILayout)
 	_LUAGameSceneView.mJumpBtn = LuaCocoStudioConversion:getChildUIButtonByName("mJumpBtn", _LUAGameSceneView.mUILayout)
 	_LUAGameSceneView.mAttackBtn = LuaCocoStudioConversion:getChildUIButtonByName("mAttackBtn", _LUAGameSceneView.mUILayout)
+	local oBtntnPos = _LUAGameSceneView.mJumpBtn:getPosition()
+	_LUAGameSceneView.mJumpBtn:setPosition(cc.p(oBtntnPos.x + __LUADeviceOffsetPos.x, oBtntnPos.y - __LUADeviceOffsetPos.y))
+	oBtntnPos = _LUAGameSceneView.mAttackBtn:getPosition()
+	_LUAGameSceneView.mAttackBtn:setPosition(cc.p(oBtntnPos.x + __LUADeviceOffsetPos.x, oBtntnPos.y - __LUADeviceOffsetPos.y))
+	oBtntnPos = _LUAGameSceneView.mMoveStickBGShowing:getPosition()
+	_LUAGameSceneView.mMoveStickBGShowing:setPosition(cc.p(oBtntnPos.x - __LUADeviceOffsetPos.x, oBtntnPos.y - __LUADeviceOffsetPos.y))
 	_LUAGameSceneView.mUILayout:setTag(202)
 	_LUAGameSceneView.mUILayer:addWidget(_LUAGameSceneView.mUILayout)
 	_LUAGameSceneView.mMoveStickBG:setVisible(false)
@@ -50,7 +58,7 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 			_LUAGameSceneView.mTouchMoveBeginPos = pos
 			_LUAGameSceneView.mTouchIndex = index
 			_LUAGameSceneView.mMoveing = false
-			_LUAGameSceneView.mMoveStickBG:setPosition(pos)
+			_LUAGameSceneView.mMoveStickBG:setPosition(cc.p(pos.x - 30, pos.y - 65))
 			_LUAGameSceneView.mMoveStickBG:setVisible(true)
 		end
 		_LUAGameSceneView.self:onTouchBegan(CCPoint(tableArray[1], tableArray[2]))
@@ -114,6 +122,7 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 			if distY > 100 then distY = 100 end
 			if distY < -100 then distY = -100 end
 			_LUAGameSceneView.mMoveStick:setPosition(cc.p(dist, distY))
+			_LUAGameSceneView.mMoveStickShowing:setPosition(cc.p(dist, distY))
 		else
 			if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "loading" then
 				_LUAGameSceneView.mHeroAnim:getAnimation():play("loading")
@@ -136,6 +145,7 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 			_LUAGameSceneView.self:getPhysics():changeMoveDirection(0.0, 0.0)
 			_LUAGameSceneView.mMoveStickBG:setVisible(false)
 			_LUAGameSceneView.mMoveStick:setPosition(cc.p(0, 0))
+			_LUAGameSceneView.mMoveStickShowing:setPosition(cc.p(0, 0))
 		end
 		_LUAGameSceneView.self:onTouchEnded(CCPoint(tableArray[1], tableArray[2]))
 		return true

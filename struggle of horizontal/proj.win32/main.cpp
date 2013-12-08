@@ -46,7 +46,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 
 	ViewModelManager* pModelMgr = ViewModelManager::point();
 	pModelMgr->initWithAppStart(&app);
-    int ret = app.runApp(1024, 768, "struggle of soldier app");
+    int ret = app.runApp(1136, 640, "struggle of soldier app");
 
 	LuaEngine* pEngine = LuaEngine::getInstance();
 	tolua_LuaSOFExtern_open(pEngine->getLuaStack()->getLuaState());

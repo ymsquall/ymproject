@@ -6,6 +6,15 @@ namespace cocos2d
 	class TMXTiledMap;
 }
 
+enum class JumpState : int8
+{
+	none,		// 落地后的状态
+	gouping,	// 持续状态，上升
+	floated,	// 瞬时状态，悬浮
+	droping,	// 瞬时状态，下落
+	landed,		// 瞬时状态，落地
+};
+
 class GameScenePhysics : public PhysicsBase, public cocos2d::Object
 {
 public:
@@ -41,5 +50,6 @@ public:
 	float mHeroMoveSpeed;
 	bool mIsHeroDorping;
 	bool mIsOriJump;
+	JumpState mJumpState;
 };
 
