@@ -93,6 +93,7 @@ void GameSceneView::onEnterTransitionDidFinish()
 	if(NULL != pPhysics)
 	{
 		pPhysics->initBoxWithTiledMap(mTiledMap);
+		/*
 		// hero weapon box
 		CCBone* pBone = mHeroAnim->getBone("Layer17");
 		CCNode* boneNode = pBone->getDisplayRenderNode();
@@ -113,6 +114,7 @@ void GameSceneView::onEnterTransitionDidFinish()
 		pBindNode->setTag(111);
 		boneNode->addChild(pBindNode);
 		pPhysics->mHeroWeaponBody->SetUserData((void*)pBone);
+		*/
 	}
 	mTiledMap->addChild(mPhysicsView,1000);
 	mPhysicsView->setScale(PTM_RATIO);

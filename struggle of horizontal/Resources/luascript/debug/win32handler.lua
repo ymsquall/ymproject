@@ -6,11 +6,11 @@ function LUAOnWin32KeyDownMsgProc(key)
 	if VK_DOWN == key then _LUAGameSceneView.self:screenScroll(CCPoint(0, 10)) end
 	if VK_LEFT == key then _LUAGameSceneView.self:screenScroll(CCPoint(-10, 0)) end
 	if VK_RIGHT == key then _LUAGameSceneView.self:screenScroll(CCPoint(10, 0)) end
-	if VK_1 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('loading') end
+	if VK_1 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('stand') end
 	if VK_2 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('run') end
 	if VK_3 == key or VK_SPACE == key then _LUAGameSceneView.self:getPhysics():jump(25.0) end
-	if VK_4 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('smitten') end
-	if VK_5 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('death') end
+	if VK_4 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('attack1') end
+	if VK_5 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('attack2') end
 	if VK_W == key then end
 	if VK_S == key then end
 	if VK_A == key or VK_D == key then
@@ -41,8 +41,8 @@ function LUAOnWin32KeyUpMsgProc(key)
 		_LUAGameSceneView.mMoveDirection = 0
 		_LUAGameSceneView.mMoveSpeedScale = 0
 		_LUAGameSceneView.self:getPhysics():changeMoveDirection(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
-		if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "loading" then
-			_LUAGameSceneView.mHeroAnim:getAnimation():play("loading")
+		if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "stand" then
+			_LUAGameSceneView.mHeroAnim:getAnimation():play("stand")
 		end
 	end
 end
