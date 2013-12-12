@@ -1,0 +1,4 @@
+stand
+attack1
+attack2
+run
