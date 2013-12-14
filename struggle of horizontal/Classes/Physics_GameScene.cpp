@@ -1,5 +1,6 @@
 #include "Physics_GameScene.h"
 #include "cocos2d.h"
+#include "luaext/LuaHelper.h"
 
 using namespace cocos2d;
 
@@ -28,7 +29,7 @@ GameScenePhysics::GameScenePhysics()
 		fd.shape = &shape;
 		fd.density = 10.0f;
 		fd.friction = 1.0f;
-		shape.SetAsBox(0.2, 0.2, b2Vec2(0, 0), 0.0);
+		shape.SetAsBox(0.3f, 0.1f, b2Vec2(0, 0), 0.0);
 		mHeroBody->CreateFixture(&fd);
 		mHeroBody->SetFixedRotation(true); // 设置为固定角度（不旋转）
 	}
@@ -36,6 +37,7 @@ GameScenePhysics::GameScenePhysics()
 	mHeroMoveSpeed = 0;
 	mIsHeroDorping = false;
 	mIsOriJump = true;
+	mIsJumping = false;
 	mJumpState = JumpState::none;
 }
 
@@ -78,7 +80,12 @@ bool GameScenePhysics::initBoxWithTiledMap(const TMXTiledMap* pTiledMap)
 				int pt2Y = ((String*)dPoint2->objectForKey("y"))->intValue();
 				b2Body* pBody = this->createGround(b2Vec2(x, y), b2Vec2(pt1X / PTM_RATIO, -pt1Y / PTM_RATIO), b2Vec2(pt2X / PTM_RATIO, -pt2Y / PTM_RATIO));
 				if(NULL != pBody)
-					mGroundList.push_back(pBody);
+				{
+					if("land" == oType)
+						mLandList.push_back(pBody);
+					else if("wall" == oType)
+						mWallList.push_back(pBody);
+				}
 			}
 		}
 		else
@@ -87,7 +94,12 @@ bool GameScenePhysics::initBoxWithTiledMap(const TMXTiledMap* pTiledMap)
 			int height = ((String*)pGroundDict->objectForKey("height"))->intValue();
 			b2Body* pBody = this->createGround(b2Vec2(x, y), width, height);
 			if(NULL != pBody)
-				mGroundList.push_back(pBody);
+			{
+				if("land" == oType)
+					mLandList.push_back(pBody);
+				else if("wall" == oType)
+					mWallList.push_back(pBody);
+			}
 		}
 	}
 	return true;
@@ -141,9 +153,14 @@ void GameScenePhysics::changeMoveDirection(float dir, float speed)
 
 void GameScenePhysics::setIsHeroDorping(bool b)
 {
-	if(mIsHeroDorping && !b)
+	if(mIsHeroDorping)
 	{
-		mIsOriJump = true;
+		if(!b)
+			mIsOriJump = true;
+	}
+	else if(b)
+	{
+		mIsJumping = true;
 	}
 	mIsHeroDorping = b;
 }
@@ -160,6 +177,7 @@ void GameScenePhysics::jump(float speed)
 	mHeroBody->SetLinearVelocity(vel);
 	if(fabs(mHeroMoveDir) > 0.001f)
 		mIsOriJump = false;
+	mIsJumping = true;
 }
 
 b2ContactEdge* GameScenePhysics::getHeroBodyContactList()
@@ -184,6 +202,15 @@ void GameScenePhysics::Step(Settings* settings)
 		vel.x = 0.0f;
 		mHeroBody->SetLinearVelocity(vel);
 	}
+	if(mIsJumping)
+	{
+		mHeroBody->SetFixedRotation(true); // 起跳后设置为固定角度（不旋转），否则会产生多余的位移
+		if(!mWorld->IsLocked())
+		{
+			b2Vec2 pos = mHeroBody->GetWorldCenter();
+			mHeroBody->SetTransform(pos, 0.0f);
+		}
+	}
 	PhysicsBase::Step(settings);
 }
 
@@ -202,9 +229,38 @@ void GameScenePhysics::PreSolve(b2Contact* contact, const b2Manifold* oldManifol
 		if(body1 == mHeroBody || body2 == mHeroBody)
 		{
 			contact->SetEnabled(true);
-			b2Vec2 vel = mHeroBody->GetLinearVelocity();
-			if(vel.y > 0)
-				contact->SetEnabled(false);
+			bool isLand = false;
+			for(PhysicsBodyList::iterator it = mLandList.begin();
+				it != mLandList.end(); ++ it)
+			{
+				isLand = (body1 == *it) || (body2 == *it);
+				if(isLand)
+					break;
+			}
+			if(isLand)
+			{
+				if(mIsJumping)
+				{
+					b2Vec2 vel = mHeroBody->GetLinearVelocity();
+					if(vel.y > 0)
+						contact->SetEnabled(false);
+					else
+					{
+						mIsJumping = false;
+						mHeroBody->SetFixedRotation(false); // 行走时设为旋转，否则根据body的形状会有不同频率的抖动
+					}
+				}
+			}
+			else
+			{
+				callLuaFuncNoResult("LUAGameScenePhysicsHeroHitWall");
+				mHeroBody->SetFixedRotation(true); // 起跳后设置为固定角度（不旋转），否则会产生多余的位移
+				if(!mWorld->IsLocked())
+				{
+					b2Vec2 pos = mHeroBody->GetWorldCenter();
+					mHeroBody->SetTransform(pos, 0.0f);
+				}
+			}
 		}
 	}
 }

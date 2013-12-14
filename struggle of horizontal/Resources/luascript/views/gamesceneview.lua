@@ -33,6 +33,7 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 	_LUAGameSceneView.mUILayout:setTag(202)
 	_LUAGameSceneView.mUILayer:addWidget(_LUAGameSceneView.mUILayout)
 	_LUAGameSceneView.mMoveStickBG:setVisible(false)
+	_LUAGameSceneView.mHeroPlayAttactAnimIndex = 1
     _LUAGameSceneView.mJumpBtn:addTouchEventListener(function(sender, eventType)
 			if eventType == 2 then
 				local physics = _LUAGameSceneView.self:getPhysics()
@@ -40,10 +41,18 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 			end
 		end)
     _LUAGameSceneView.mAttackBtn:addTouchEventListener(function(sender, eventType)
-			print('mAttackBtn touch ended')
 			if eventType == 2 then
-				if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= 'attack1' or _LUAGameSceneView.mHeroAnim:getAnimation():isComplete() then
-					_LUAGameSceneView.mHeroAnim:getAnimation():play('attack1')
+				local movementName = _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID()
+				if movementName ~= 'attack1' and movementName ~= 'attack2' then
+					if _LUAGameSceneView.mHeroPlayAttactAnimIndex == 1 then
+						print('attack1')
+						_LUAGameSceneView.mHeroAnim:getAnimation():play('attack1')
+						_LUAGameSceneView.mHeroPlayAttactAnimIndex = 2
+					elseif _LUAGameSceneView.mHeroPlayAttactAnimIndex == 2 then
+						print('attack2')
+						_LUAGameSceneView.mHeroAnim:getAnimation():play('attack2')
+						_LUAGameSceneView.mHeroPlayAttactAnimIndex = 1
+					end
 				end
 			end
 		end)
@@ -162,6 +171,20 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 		end,true)
 
 	return _LUAGameSceneView.mTiledMap
+end
+
+function LUAGameScenePhysicsHeroHitWall()
+	_LUAGameSceneView.mTouchIndex = nil
+	_LUAGameSceneView.mMoveing = false
+	_LUAGameSceneView.mMoveDirection = 0.0
+	_LUAGameSceneView.mMoveSpeedScale = 0.0
+	if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "stand" then
+		_LUAGameSceneView.mHeroAnim:getAnimation():play("stand")
+	end
+	_LUAGameSceneView.self:getPhysics():changeMoveDirection(0.0, 0.0)
+	_LUAGameSceneView.mMoveStickBG:setVisible(false)
+	_LUAGameSceneView.mMoveStick:setPosition(cc.p(0, 0))
+	_LUAGameSceneView.mMoveStickShowing:setPosition(cc.p(0, 0))
 end
 
 function LUAGameSceneViewOnEnter()

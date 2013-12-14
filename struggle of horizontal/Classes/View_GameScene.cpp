@@ -72,7 +72,12 @@ void GameSceneView::onFrameEvent(cocostudio::Bone *bone, const char *evt, int or
 
 void GameSceneView::animationEvent(cocostudio::Armature *armature, cocostudio::MovementEventType movementType, const char *movementID)
 {
-
+	static const std::string attack1 = "attack1";
+	static const std::string attack2 = "attack2";
+	if(movementType == cocostudio::COMPLETE && (attack1 == movementID || attack2 == movementID))
+	{
+		mHeroAnim->getAnimation()->play("stand");
+	}
 }
 
 bool GameSceneView::initForMvvm()

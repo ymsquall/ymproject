@@ -14,13 +14,13 @@ enum class JumpState : int8
 	droping,	// Ë²Ê±×´Ì¬£¬ÏÂÂä
 	landed,		// Ë²Ê±×´Ì¬£¬ÂäµØ
 };
+typedef std::vector<b2Body*> PhysicsBodyList;
 
 class GameScenePhysics : public PhysicsBase, public cocos2d::Object
 {
 public:
 	GameScenePhysics();
 	~GameScenePhysics();
-	typedef std::vector<b2Body*> GroundList;
     void Step(Settings* settings);
 	
 	bool initBoxWithTiledMap(const cocos2d::TMXTiledMap* pTiledMap);
@@ -43,13 +43,16 @@ private:
 public:
 	b2Body* mHeroBody;
 	b2Body* mHeroWeaponBody;
-	GroundList mGroundList;
+	PhysicsBodyList mLandList;
+	PhysicsBodyList mWallList;
+
 	b2MouseJoint* mHeroMoveJoint;
 
 	float mHeroMoveDir;
 	float mHeroMoveSpeed;
 	bool mIsHeroDorping;
 	bool mIsOriJump;
+	bool mIsJumping;
 	JumpState mJumpState;
 };
 
