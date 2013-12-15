@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1A1197B31785363400D62A44"
-               BuildableName = "struggle of horizontal.app"
-               BlueprintName = "struggle of horizontal"
+               BuildableName = "SOH.app"
+               BlueprintName = "SOH"
                ReferencedContainer = "container:struggle of horizontal.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1A1197B31785363400D62A44"
-            BuildableName = "struggle of horizontal.app"
-            BlueprintName = "struggle of horizontal"
+            BuildableName = "SOH.app"
+            BlueprintName = "SOH"
             ReferencedContainer = "container:struggle of horizontal.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -52,8 +52,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1A1197B31785363400D62A44"
-            BuildableName = "struggle of horizontal.app"
-            BlueprintName = "struggle of horizontal"
+            BuildableName = "SOH.app"
+            BlueprintName = "SOH"
             ReferencedContainer = "container:struggle of horizontal.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -70,8 +70,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1A1197B31785363400D62A44"
-            BuildableName = "struggle of horizontal.app"
-            BlueprintName = "struggle of horizontal"
+            BuildableName = "SOH.app"
+            BlueprintName = "SOH"
             ReferencedContainer = "container:struggle of horizontal.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

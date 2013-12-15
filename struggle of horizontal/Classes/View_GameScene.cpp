@@ -59,8 +59,8 @@ bool GameSceneView::init()
 	listener->onTouchesBegan = CC_CALLBACK_2(GameSceneView::onTouchesBegan, this);
 	listener->onTouchesMoved = CC_CALLBACK_2(GameSceneView::onTouchesMoved, this);
 	listener->onTouchesEnded = CC_CALLBACK_2(GameSceneView::onTouchesEnded, this);
-	_eventDispatcher->addEventListenerWithFixedPriority(listener, -10);
-	_touchListener = listener;
+	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+	//_touchListener = listener;
 
 	return true;
 }
@@ -76,7 +76,8 @@ void GameSceneView::animationEvent(cocostudio::Armature *armature, cocostudio::M
 	static const std::string attack2 = "attack2";
 	if(movementType == cocostudio::COMPLETE && (attack1 == movementID || attack2 == movementID))
 	{
-		mHeroAnim->getAnimation()->play("stand");
+        callLuaFuncNoResult("LUAGameSceneViewAttackAnimEnded");
+		//mHeroAnim->getAnimation()->play("stand");
 	}
 }
 
@@ -131,28 +132,56 @@ void GameSceneView::onExit()
 	ViewSuperT::onExit();
 }
 
-void GameSceneView::onTouchBegan(const CCPoint& pos)
+void GameSceneView::onTouchesBegan(const std::vector<Touch*>& touches, Event *unused_event)
 {
-	if(mJumpBtn->hitTest(pos))
-	{
-		mJumpBtn->onTouchBegan(pos);
-		return;
-	}
-	if(mAttackBtn->hitTest(pos))
-	{
-		mAttackBtn->onTouchBegan(pos);
-		return;
-	}
+    for(auto& touch: touches)
+    {
+        auto location = touch->getLocation();
+        if(!callLuaFuncWithBoolResult("LUAGameSceneViewTouchesBegan", touch->getID(), location.x, location.y))
+            this->onTouchBegan(location);
+    }
 }
-void GameSceneView::onTouchMoved(const CCPoint& pos)
+void GameSceneView::onTouchesMoved(const std::vector<Touch*>& touches, Event *unused_event)
 {
-	mJumpBtn->onTouchMoved(pos);
-	mAttackBtn->onTouchMoved(pos);
+    for(auto& touch: touches)
+    {
+        auto location = touch->getLocation();
+        if(!callLuaFuncWithBoolResult("LUAGameSceneViewTouchesMoved", touch->getID(), location.x, location.y))
+           this->onTouchBegan(location);
+    }
 }
-void GameSceneView::onTouchEnded(const CCPoint& pos)
+void GameSceneView::onTouchesEnded(const std::vector<Touch*>& touches, Event *unused_event)
 {
-	mJumpBtn->onTouchEnded(pos);
-	mAttackBtn->onTouchEnded(pos);
+    for(auto& touch: touches)
+    {
+        auto location = touch->getLocation();
+        if(!callLuaFuncWithBoolResult("LUAGameSceneViewTouchesEnded", touch->getID(), location.x, location.y))
+           this->onTouchEnded(location);
+    }
+}
+
+void GameSceneView::onTouchBegan(const Point& pos)
+{
+     if(mJumpBtn->hitTest(pos))
+     {
+         mJumpBtn->onTouchBegan(pos);
+         return;
+     }
+     if(mAttackBtn->hitTest(pos))
+     {
+         mAttackBtn->onTouchBegan(pos);
+         return;
+     }
+}
+void GameSceneView::onTouchMoved(const Point& pos)
+{
+     mJumpBtn->onTouchMoved(pos);
+     mAttackBtn->onTouchMoved(pos);
+}
+void GameSceneView::onTouchEnded(const Point& pos)
+{
+     mJumpBtn->onTouchEnded(pos);
+     mAttackBtn->onTouchEnded(pos);
 }
 
 bool GameSceneView::screenScroll(const Point& offset)

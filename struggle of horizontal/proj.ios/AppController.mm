@@ -52,11 +52,11 @@ static engine::AppDelegate s_sharedApplication;
                                    multiSampling: NO
                                  numberOfSamples: 0 ];
     
-    // Use RootViewController manage CCEAGLView 
+    // Use RootViewController manage CCEAGLView
+    [__glView setMultipleTouchEnabled:true];
     viewController = [[RootViewController alloc] initWithNibName:nil bundle:nil];
     viewController.wantsFullScreenLayout = YES;
     viewController.view = __glView;
-
     // Set RootViewController to window
     if ( [[UIDevice currentDevice].systemVersion floatValue] < 6.0)
     {

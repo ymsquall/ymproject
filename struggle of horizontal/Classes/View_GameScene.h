@@ -32,9 +32,13 @@ public:
 	bool movePlayerTo(const Point& toPos);
 	GameScenePhysics* getPhysics();
 
-	void onTouchBegan(const CCPoint& pos);
-	void onTouchMoved(const CCPoint& pos);
-	void onTouchEnded(const CCPoint& pos);
+	void onTouchesBegan(const std::vector<Touch*>& touches, Event *unused_event);
+	void onTouchesMoved(const std::vector<Touch*>& touches, Event *unused_event);
+	void onTouchesEnded(const std::vector<Touch*>& touches, Event *unused_event);
+    
+	void onTouchBegan(const Point& pos);
+	void onTouchMoved(const Point& pos);
+	void onTouchEnded(const Point& pos);
 
 private:
 	virtual void onEnterTransitionDidFinish();

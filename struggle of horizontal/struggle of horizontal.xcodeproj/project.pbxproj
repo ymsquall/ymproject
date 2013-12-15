@@ -428,9 +428,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1A1197B31785363400D62A44 /* struggle of horizontal */ = {
+		1A1197B31785363400D62A44 /* SOH */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1A1197D41785363400D62A44 /* Build configuration list for PBXNativeTarget "struggle of horizontal" */;
+			buildConfigurationList = 1A1197D41785363400D62A44 /* Build configuration list for PBXNativeTarget "SOH" */;
 			buildPhases = (
 				1A1197B61785363400D62A44 /* Resources */,
 				1A1197C31785363400D62A44 /* Sources */,
@@ -440,14 +440,14 @@
 			);
 			dependencies = (
 			);
-			name = "struggle of horizontal";
+			name = SOH;
 			productName = iphone;
 			productReference = 1A1197D71785363400D62A44 /* struggle of horizontal.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1A6FB53517854FE400CDF010 /* struggle of horizontal Mac */ = {
+		1A6FB53517854FE400CDF010 /* SOH_Mac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1A6FB56817854FE400CDF010 /* Build configuration list for PBXNativeTarget "struggle of horizontal Mac" */;
+			buildConfigurationList = 1A6FB56817854FE400CDF010 /* Build configuration list for PBXNativeTarget "SOH_Mac" */;
 			buildPhases = (
 				1A6FB53E17854FE400CDF010 /* Resources */,
 				1A6FB55517854FE400CDF010 /* Sources */,
@@ -457,7 +457,7 @@
 			);
 			dependencies = (
 			);
-			name = "struggle of horizontal Mac";
+			name = SOH_Mac;
 			productName = iphone;
 			productReference = 1A6FB56B17854FE400CDF010 /* struggle of horizontal Mac.app */;
 			productType = "com.apple.product-type.application";
@@ -485,8 +485,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1A6FB53517854FE400CDF010 /* struggle of horizontal Mac */,
-				1A1197B31785363400D62A44 /* struggle of horizontal */,
+				1A6FB53517854FE400CDF010 /* SOH_Mac */,
+				1A1197B31785363400D62A44 /* SOH */,
 			);
 		};
 /* End PBXProject section */
@@ -601,10 +601,11 @@
 					"$(inherited)",
 					"$(DEVELOPER_DIR)/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks",
 				);
-				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
@@ -644,9 +645,10 @@
 					"$(inherited)",
 					"$(DEVELOPER_DIR)/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks",
 				);
-				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
@@ -811,7 +813,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1A1197D41785363400D62A44 /* Build configuration list for PBXNativeTarget "struggle of horizontal" */ = {
+		1A1197D41785363400D62A44 /* Build configuration list for PBXNativeTarget "SOH" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1A1197D51785363400D62A44 /* Debug */,
@@ -820,7 +822,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		1A6FB56817854FE400CDF010 /* Build configuration list for PBXNativeTarget "struggle of horizontal Mac" */ = {
+		1A6FB56817854FE400CDF010 /* Build configuration list for PBXNativeTarget "SOH_Mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1A6FB56917854FE400CDF010 /* Debug */,
