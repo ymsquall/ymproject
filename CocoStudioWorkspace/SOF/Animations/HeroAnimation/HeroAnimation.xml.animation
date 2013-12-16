@@ -2,10 +2,10 @@
 <AnimationProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Version>0.0.0.0</Version>
   <Name>Hero</Name>
-  <ProjectDir>Y:\Work\ymproject_github\CocoStudioWorkspace\SOF\Animations\HeroAnimation</ProjectDir>
+  <ProjectDir>Y:\Work\ymproject\CocoStudioWorkspace\SOF\Animations\HeroAnimation</ProjectDir>
   <JsonFileName>Hero.json</JsonFileName>
-  <Resources>Y:\Work\ymproject_github\CocoStudioWorkspace\SOF\Animations\HeroAnimation\Resources</Resources>
-  <JsonFolder>Y:\Work\ymproject_github\CocoStudioWorkspace\SOF\Animations\HeroAnimation\Json</JsonFolder>
+  <Resources>Y:\Work\ymproject\CocoStudioWorkspace\SOF\Animations\HeroAnimation\Resources</Resources>
+  <JsonFolder>Y:\Work\ymproject\CocoStudioWorkspace\SOF\Animations\HeroAnimation\Json</JsonFolder>
   <JsonList />
   <ResourceFileList>
     <string>Hero0.plist</string>
