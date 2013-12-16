@@ -254,7 +254,7 @@
       "mov_data": [
         {
           "name": "run",
-          "dr": 30,
+          "dr": 45,
           "lp": true,
           "to": 0,
           "drTW": 0,
@@ -287,7 +287,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 2,
+                  "fi": 3,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -300,7 +300,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 4,
+                  "fi": 6,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -313,7 +313,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 6,
+                  "fi": 9,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -326,7 +326,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 8,
+                  "fi": 12,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -339,7 +339,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 10,
+                  "fi": 15,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -352,7 +352,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 12,
+                  "fi": 18,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -365,7 +365,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 14,
+                  "fi": 21,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -378,7 +378,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 16,
+                  "fi": 24,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -391,7 +391,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 18,
+                  "fi": 27,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -404,7 +404,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 20,
+                  "fi": 30,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -417,7 +417,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 22,
+                  "fi": 33,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -430,7 +430,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 24,
+                  "fi": 36,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -443,7 +443,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 26,
+                  "fi": 39,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -456,7 +456,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 28,
+                  "fi": 42,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -469,7 +469,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 30,
+                  "fi": 45,
                   "twE": 0,
                   "tweenFrame": true
                 }
