@@ -5,8 +5,8 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 	_LUAGameSceneView.self = LuaUserDataConversion:toGameSceneView(self)
 	_LUAGameSceneView.mTiledMap = CCTMXTiledMap:create("scene0001.tmx")
 	_LUAGameSceneView.self:addChild(_LUAGameSceneView.mTiledMap)
-	_LUAGameSceneView.mHeroAnim = LUACreateAndPlayArmature("HeroAnimC")
-	_LUAGameSceneView.mHeroAnim:getAnimation():setSpeedScale(0.75)
+	_LUAGameSceneView.mHeroAnim = LUACreateAndPlayArmature("HeroAnimHL")
+	_LUAGameSceneView.mHeroAnim:getAnimation():setSpeedScale(0.5)
 	_LUAGameSceneView.mHeroAnim:setTag(101)
 	_LUAGameSceneView.mTiledMap:addChild(_LUAGameSceneView.mHeroAnim)
 	_LUAGameSceneView.mTiledMap:reorderChild(_LUAGameSceneView.mHeroAnim, 101)
@@ -113,6 +113,7 @@ function LUAGameSceneViewTouchesMoved(touchID, x, y)
 			else
 				tmpMoveDir = -1.0
 			end
+			--[[
 			local tmpSpeed = 0.0
 			if math.abs(dist) < 30.0 then
 				tmpSpeed = 0.2
@@ -130,6 +131,8 @@ function LUAGameSceneViewTouchesMoved(touchID, x, y)
 			if dist > 100.0 then dist = 100.0 end
 			if dist < -100.0 then dist = -100.0 end
 			tmpSpeed = math.abs(dist) * 3.0
+			--]]
+			local tmpSpeed = 300.0
 			if _LUAGameSceneView.mMoveSpeedScale ~= tmpSpeed or _LUAGameSceneView.mMoveDirection ~= tmpMoveDir then
 				-- set move dist to box2d herobody
 				_LUAGameSceneView.mMoveDirection = tmpMoveDir

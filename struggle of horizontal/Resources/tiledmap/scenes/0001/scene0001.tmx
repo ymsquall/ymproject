@@ -65,7 +65,7 @@
   <object name="103" type="wall" x="3253" y="476">
    <polyline points="0,0 -2,-473"/>
   </object>
-  <object name="104" type="wall" x="531" y="465">
+  <object name="104" type="wall" x="376" y="461">
    <polyline points="0,0 0,-459"/>
   </object>
  </objectgroup>
