@@ -110,8 +110,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1A1197D71785363400D62A44 /* struggle of horizontal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "struggle of horizontal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A6FB56B17854FE400CDF010 /* struggle of horizontal Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "struggle of horizontal Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A1197D71785363400D62A44 /* SOH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOH.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A6FB56B17854FE400CDF010 /* struggle of horizontal Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "struggle of horizontal Mac.app"; path = SOH_Mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9222552B1853234000D6C90F /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		9222552E185325A300D6C90F /* ICreature.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ICreature.cpp; sourceTree = "<group>"; };
 		9222552F185325A300D6C90F /* ICreature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICreature.h; sourceTree = "<group>"; };
@@ -271,7 +271,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1A1197D71785363400D62A44 /* struggle of horizontal.app */,
+				1A1197D71785363400D62A44 /* SOH.app */,
 				1A6FB56B17854FE400CDF010 /* struggle of horizontal Mac.app */,
 			);
 			name = Products;
@@ -442,7 +442,7 @@
 			);
 			name = SOH;
 			productName = iphone;
-			productReference = 1A1197D71785363400D62A44 /* struggle of horizontal.app */;
+			productReference = 1A1197D71785363400D62A44 /* SOH.app */;
 			productType = "com.apple.product-type.application";
 		};
 		1A6FB53517854FE400CDF010 /* SOH_Mac */ = {
@@ -595,7 +595,8 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
-				CODE_SIGN_IDENTITY = "iPhone Developer: song hongyu (6R4L5CKN8Z)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 敏 宋 (259D4DU467)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 敏 宋 (259D4DU467)";
 				DSTROOT = "/tmp/$(PROJECT_NAME).dst";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -625,7 +626,7 @@
 					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "38EDD0CD-6709-4416-A663-BD7BA3161A2B";
+				PROVISIONING_PROFILE = "B0FAE4E4-E451-4359-B815-23E35323982E";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d/cocos2d-x-3\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/base\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/gui\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d/platform/ios\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/math/kazmath/include\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d/platform/ios/Simulation\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/audio/include\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/extensions\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/lua/lua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/lua/tolua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/chipmunk/include/chipmunk\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/physics\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua/bindings\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua/script\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/editor-support\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/editor-support/cocostudio\" \"$(SRCROOT)/../cocos/framework/Classes/\" \"$(SRCROOT)/../cocos/engine/Classes/\"";
@@ -639,7 +640,8 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
-				CODE_SIGN_IDENTITY = "iPhone Developer: song hongyu (6R4L5CKN8Z)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 敏 宋 (259D4DU467)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 敏 宋 (259D4DU467)";
 				DSTROOT = "/tmp/$(PROJECT_NAME).dst";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -669,7 +671,7 @@
 					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "38EDD0CD-6709-4416-A663-BD7BA3161A2B";
+				PROVISIONING_PROFILE = "B0FAE4E4-E451-4359-B815-23E35323982E";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d/cocos2d-x-3\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/base\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/gui\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d/platform/ios\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/math/kazmath/include\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d/platform/ios/Simulation\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/audio/include\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/extensions\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/lua/lua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/lua/tolua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/chipmunk/include/chipmunk\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/physics\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua/bindings\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua/script\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/editor-support\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/editor-support/cocostudio\" \"$(SRCROOT)/../cocos/framework/Classes/\" \"$(SRCROOT)/../cocos/engine/Classes/\"";

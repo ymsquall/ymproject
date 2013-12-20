@@ -2302,7 +2302,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: song hongyu (6R4L5CKN8Z)";
+				CODE_SIGN_IDENTITY = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos-Prefix.pch";
@@ -2314,7 +2314,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "engine iOS";
-				PROVISIONING_PROFILE = "38EDD0CD-6709-4416-A663-BD7BA3161A2B";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d/cocos2d-x-3\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/base\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/gui\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d/platform/ios\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/math/kazmath/include\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d/platform/ios/Simulation\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/audio/include\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/extensions\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/lua/lua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/lua/tolua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/chipmunk/include/chipmunk\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/physics\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua/bindings\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua/script\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/editor-support\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/editor-support/cocostudio\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
@@ -2325,7 +2325,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: song hongyu (6R4L5CKN8Z)";
+				CODE_SIGN_IDENTITY = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos-Prefix.pch";
@@ -2337,7 +2337,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "engine iOS";
-				PROVISIONING_PROFILE = "38EDD0CD-6709-4416-A663-BD7BA3161A2B";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d/cocos2d-x-3\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/base\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/gui\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d/platform/ios\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/math/kazmath/include\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d/platform/ios/Simulation\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/audio/include\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/extensions\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/lua/lua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/lua/tolua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/chipmunk/include/chipmunk\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/physics\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua/bindings\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua/script\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/editor-support\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/editor-support/cocostudio\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
@@ -2364,7 +2364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: song hongyu (6R4L5CKN8Z)";
+				CODE_SIGN_IDENTITY = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos-Prefix.pch";
@@ -2375,7 +2375,7 @@
 				HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PROVISIONING_PROFILE = "38EDD0CD-6709-4416-A663-BD7BA3161A2B";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d/cocos2d-x-3\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/base\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/gui\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d/platform/ios\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/math/kazmath/include\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d/platform/ios/Simulation\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/audio/include\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/extensions\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/lua/lua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/lua/tolua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/chipmunk/include/chipmunk\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/physics\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua/bindings\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua/script\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/editor-support\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/editor-support/cocostudio\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
@@ -2386,7 +2386,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: song hongyu (6R4L5CKN8Z)";
+				CODE_SIGN_IDENTITY = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos-Prefix.pch";
@@ -2397,7 +2397,7 @@
 				HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PROVISIONING_PROFILE = "38EDD0CD-6709-4416-A663-BD7BA3161A2B";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../cocos2d/cocos2d-x-3\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/base\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/gui\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d/platform/ios\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/math/kazmath/include\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/2d/platform/ios/Simulation\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/audio/include\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/extensions\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/lua/lua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/lua/tolua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/external/chipmunk/include/chipmunk\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/physics\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua/bindings\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/scripting/lua/script\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/editor-support\" \"$(SRCROOT)/../../cocos2d/cocos2d-x-3/cocos/editor-support/cocostudio\" \"$(SRCROOT)/framework/Classes/\" \"$(SRCROOT)/engine/Classes/\"";
