@@ -6,17 +6,17 @@ function LUAOnWin32KeyDownMsgProc(key)
 	if VK_DOWN == key then _LUAGameSceneView.self:screenScroll(CCPoint(0, 10)) end
 	if VK_LEFT == key then _LUAGameSceneView.self:screenScroll(CCPoint(-10, 0)) end
 	if VK_RIGHT == key then _LUAGameSceneView.self:screenScroll(CCPoint(10, 0)) end
-	if VK_1 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('stand') end
-	if VK_2 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('run') end
+	if VK_1 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('stand01') end
+	if VK_2 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('run01') end
 	if VK_3 == key or VK_SPACE == key then _LUAGameSceneView.self:getPhysics():jump(25.0) end
-	if VK_4 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('attack1') end
-	if VK_5 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('attack2') end
+	if VK_4 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('attack01') end
+	if VK_5 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('attack02') end
 	if VK_W == key then end
 	if VK_S == key then end
 	if VK_A == key or VK_D == key then
 		if VK_A == key then _LUAGameSceneView.mMoveDirection = -1 _LUAGameSceneView.mHeroAnim:setRotationY(180) else _LUAGameSceneView.mMoveDirection = 1 _LUAGameSceneView.mHeroAnim:setRotationY(0) end
-		if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "run" then
-			_LUAGameSceneView.mHeroAnim:getAnimation():play("run")
+		if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "run01" then
+			_LUAGameSceneView.mHeroAnim:getAnimation():play("run01")
 		end
 		_LUAGameSceneView.mMoveSpeedScale = 300
 		_LUAGameSceneView.self:getPhysics():changeMoveDirection(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
@@ -41,8 +41,8 @@ function LUAOnWin32KeyUpMsgProc(key)
 		_LUAGameSceneView.mMoveDirection = 0
 		_LUAGameSceneView.mMoveSpeedScale = 0
 		_LUAGameSceneView.self:getPhysics():changeMoveDirection(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
-		if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "stand" then
-			_LUAGameSceneView.mHeroAnim:getAnimation():play("stand")
+		if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "stand01" then
+			_LUAGameSceneView.mHeroAnim:getAnimation():play("stand01")
 		end
 	end
 end

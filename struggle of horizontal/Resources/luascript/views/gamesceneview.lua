@@ -5,7 +5,7 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 	_LUAGameSceneView.self = LuaUserDataConversion:toGameSceneView(self)
 	_LUAGameSceneView.mTiledMap = CCTMXTiledMap:create("scene0001.tmx")
 	_LUAGameSceneView.self:addChild(_LUAGameSceneView.mTiledMap)
-	_LUAGameSceneView.mHeroAnim = LUACreateAndPlayArmature("HeroAnimHL")
+	_LUAGameSceneView.mHeroAnim = LUACreateAndPlayArmature("anim.major")
 	_LUAGameSceneView.mHeroAnim:getAnimation():setSpeedScale(0.5)
 	_LUAGameSceneView.mHeroAnim:setTag(101)
 	_LUAGameSceneView.mTiledMap:addChild(_LUAGameSceneView.mHeroAnim)
@@ -46,14 +46,12 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
     _LUAGameSceneView.mAttackBtn:addTouchEventListener(function(sender, eventType)
 			if eventType == 2 then
 				local movementName = _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID()
-				if movementName ~= 'attack1' and movementName ~= 'attack2' then
+				if movementName ~= 'attack01' and movementName ~= 'attack02' then
 					if _LUAGameSceneView.mHeroPlayAttactAnimIndex == 1 then
-						print('attack1')
-						_LUAGameSceneView.mHeroAnim:getAnimation():play('attack1')
+						_LUAGameSceneView.mHeroAnim:getAnimation():play('attack01')
 						_LUAGameSceneView.mHeroPlayAttactAnimIndex = 2
 					elseif _LUAGameSceneView.mHeroPlayAttactAnimIndex == 2 then
-						print('attack2')
-						_LUAGameSceneView.mHeroAnim:getAnimation():play('attack2')
+						_LUAGameSceneView.mHeroAnim:getAnimation():play('attack02')
 						_LUAGameSceneView.mHeroPlayAttactAnimIndex = 1
 					end
 				end
@@ -77,9 +75,9 @@ end
 
 function LUAGameSceneViewAttackAnimEnded()
     if _LUAGameSceneView.mMoveSpeedScale < 0.001 then
-        _LUAGameSceneView.mHeroAnim:getAnimation():play('stand')
+        _LUAGameSceneView.mHeroAnim:getAnimation():play('stand01')
     else
-        _LUAGameSceneView.mHeroAnim:getAnimation():play('run')
+        _LUAGameSceneView.mHeroAnim:getAnimation():play('run01')
     end
 end
 -- touchs event
@@ -97,14 +95,14 @@ function LUAGameSceneViewTouchesBegan(touchID, x, y)
 	return false
 end
 function LUAGameSceneViewTouchesMoved(touchID, x, y)
-	if touchID == _LUAGameSceneView.mTouchIndex then
+	if touchID == _LUAGameSceneView.mTouchIndex or _LUAGameSceneView.mHeroHitWall == false then
 		local pos = cc.p(x, y)
 		local dist = pos.x - _LUAGameSceneView.mTouchMoveBeginPos.x
 		if math.abs(dist) > 20.0 then
 			local tmpMoveDir = 0
 			if _LUAGameSceneView.mMoveing == false then
-				if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "run" then
-					_LUAGameSceneView.mHeroAnim:getAnimation():play("run")
+				if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "run01" then
+					_LUAGameSceneView.mHeroAnim:getAnimation():play("run01")
 				end
 				_LUAGameSceneView.mMoveing = true
 			end
@@ -145,8 +143,8 @@ function LUAGameSceneViewTouchesMoved(touchID, x, y)
 				end
 			end
 		else
-			if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "stand" then
-				_LUAGameSceneView.mHeroAnim:getAnimation():play("stand")
+			if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "stand01" then
+				_LUAGameSceneView.mHeroAnim:getAnimation():play("stand01")
 			end
 			_LUAGameSceneView.mMoveing = false
 			_LUAGameSceneView.mMoveDirection = 0.0
@@ -175,8 +173,8 @@ function LUAGameSceneViewTouchesEnded(touchID, x, y)
 		_LUAGameSceneView.mMoveing = false
 		_LUAGameSceneView.mMoveDirection = 0.0
 		_LUAGameSceneView.mMoveSpeedScale = 0.0
-		if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "stand" then
-			_LUAGameSceneView.mHeroAnim:getAnimation():play("stand")
+		if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "stand01" then
+			_LUAGameSceneView.mHeroAnim:getAnimation():play("stand01")
 		end
 		_LUAGameSceneView.self:getPhysics():changeMoveDirection(0.0, 0.0)
 		_LUAGameSceneView.mMoveStickBG:setVisible(false)
@@ -188,17 +186,18 @@ function LUAGameSceneViewTouchesEnded(touchID, x, y)
 end
 
 function LUAGameScenePhysicsHeroHitWall()
-	_LUAGameSceneView.mTouchIndex = -1
-	_LUAGameSceneView.mMoveing = false
+	--_LUAGameSceneView.mTouchIndex = -1
+	--_LUAGameSceneView.mMoveing = false
+	_LUAGameSceneView.mHeroHitWall = true
 	_LUAGameSceneView.mMoveDirection = 0.0
 	_LUAGameSceneView.mMoveSpeedScale = 0.0
-	if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "stand" then
-		_LUAGameSceneView.mHeroAnim:getAnimation():play("stand")
+	if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "jumping01" then
+		_LUAGameSceneView.mHeroAnim:getAnimation():play("jumping01")
 	end
 	_LUAGameSceneView.self:getPhysics():changeMoveDirection(0.0, 0.0)
-	_LUAGameSceneView.mMoveStickBG:setVisible(false)
-	_LUAGameSceneView.mMoveStick:setPosition(cc.p(0, 0))
-	_LUAGameSceneView.mMoveStickShowing:setPosition(cc.p(0, 0))
+	--_LUAGameSceneView.mMoveStickBG:setVisible(false)
+	--_LUAGameSceneView.mMoveStick:setPosition(cc.p(0, 0))
+	--_LUAGameSceneView.mMoveStickShowing:setPosition(cc.p(0, 0))
 end
 
 function LUAGameSceneViewOnEnter()
@@ -222,14 +221,19 @@ function LUAGameSceneViewOnTick(dt)
 	_LUAGameSceneView.mHeroAnim:setPositionY(heroPos.y)
 
 	if nil == physics:getHeroBodyContactList() then
+		_LUAGameSceneView.mHeroHitWall = false
 		physics:setIsHeroDorping(true)
-		if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "stand" then
-			_LUAGameSceneView.mHeroAnim:getAnimation():play("stand")
+		if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "jumping01" then
+			_LUAGameSceneView.mHeroAnim:getAnimation():play("jumping01")
 		end
 	else
-		if physics:getIsHeroDorping() and math.abs(_LUAGameSceneView.mMoveDirection) > 0.001 then
-			if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "run" then
-				_LUAGameSceneView.mHeroAnim:getAnimation():play("run")
+		if physics:getIsHeroDorping() then
+			local animName = 'stand01'
+			if math.abs(_LUAGameSceneView.mMoveDirection) > 0.001 then
+				animName = 'run01'
+			end
+			if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= animName then
+				_LUAGameSceneView.mHeroAnim:getAnimation():play(animName)
 			end
 		end
 		physics:setIsHeroDorping(false)

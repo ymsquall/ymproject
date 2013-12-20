@@ -170,7 +170,7 @@ bool GameScenePhysics::getIsHeroDorping()
 }
 void GameScenePhysics::jump(float speed)
 {
-	if(mIsHeroDorping)
+	if(mIsHeroDorping || mIsJumping)
 		return;
 	b2Vec2 vel = mHeroBody->GetLinearVelocity();
 	vel.y = speed;
