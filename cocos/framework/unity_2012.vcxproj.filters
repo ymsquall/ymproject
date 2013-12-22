@@ -11,6 +11,7 @@
     <ClInclude Include="Classes\unity\reflection.h" />
     <ClInclude Include="Classes\unity\factory.h" />
     <ClInclude Include="Classes\unity\datablock.h" />
+    <ClInclude Include="Classes\unity\interface.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Classes\unity\object.cpp" />

@@ -102,7 +102,7 @@ void ViewModelManager::selectModel(ModelType type)
 		it != mModelList.end(); ++ it)
 	{
 		mvvm::IModel* pModle = *it;
-		if(pModle->getRTTIType() == (uint16)type)
+		if(pModle->rtti() == (uint16)type)
 		{
 			ModelListV::iterator it = std::find(mEnabledModelList.begin(), mEnabledModelList.end(), pModle);
 			if(mEnabledModelList.end() == it)
@@ -126,7 +126,7 @@ bool ViewModelManager::luaPlayStruggle(unity::blockwrite* data, bool isLive)
 		it != mEnabledModelList.end(); ++ it)
 	{
 		mvvm::IModel* pModle = *it;
-		if(pModle->getRTTIType() == (uint16)ModelType::GameScene)
+		if(pModle->rtti() == (uint16)ModelType::GameScene)
 		{
 			pGameSceneModel = dynamic_cast<GameSceneModel*>(pModle);
 			break;
@@ -144,7 +144,7 @@ bool ViewModelManager::playStruggle(const char* data, uint32 length, bool isLive
 		it != mEnabledModelList.end(); ++ it)
 	{
 		mvvm::IModel* pModle = *it;
-		if(pModle->getRTTIType() == (uint16)ModelType::GameScene)
+		if(pModle->rtti() == (uint16)ModelType::GameScene)
 		{
 			pGameSceneModel = dynamic_cast<GameSceneModel*>(pModle);
 			break;

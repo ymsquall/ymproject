@@ -87,13 +87,13 @@
     <ClCompile Include="..\Classes\Physics_Box2dView.cpp">
       <Filter>Classes\Physics</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\ICreature.cpp">
-      <Filter>Classes\Creature</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\Monster.cpp">
       <Filter>Classes\Creature</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Player.cpp">
+      <Filter>Classes\Creature</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ICreature.cpp">
       <Filter>Classes\Creature</Filter>
     </ClCompile>
   </ItemGroup>

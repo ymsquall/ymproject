@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaExtern
-** Generated automatically by tolua++-1.0.92 on 12/04/13 23:01:53.
+** Generated automatically by tolua++-1.0.92 on 12/22/13 17:12:31.
 */
 
 /****************************************************************************
@@ -1671,9 +1671,9 @@ static int tolua_LuaExtern_framework_mvvm_INotifyPropertyChanged_RaisePropertyCh
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: getTypeName of class  framework::mvvm::IModel */
-#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_IModel_getTypeName00
-static int tolua_LuaExtern_framework_mvvm_IModel_getTypeName00(lua_State* tolua_S)
+/* method: tname of class  framework::mvvm::IModel */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_IModel_tname00
+static int tolua_LuaExtern_framework_mvvm_IModel_tname00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
  tolua_Error tolua_err;
@@ -1687,25 +1687,25 @@ static int tolua_LuaExtern_framework_mvvm_IModel_getTypeName00(lua_State* tolua_
  {
   const framework::mvvm::IModel* self = (const framework::mvvm::IModel*)  tolua_tousertype(tolua_S,1,0);
 #ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getTypeName'", NULL);
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'tname'", NULL);
 #endif
   {
-   std::string tolua_ret = (std::string)  self->getTypeName();
+   std::string tolua_ret = (std::string)  self->tname();
    tolua_pushcppstring(tolua_S,(const char*)tolua_ret);
   }
  }
  return 1;
 #ifndef TOLUA_RELEASE
  tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'getTypeName'.",&tolua_err);
+ tolua_error(tolua_S,"#ferror in function 'tname'.",&tolua_err);
  return 0;
 #endif
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: getRTTIType of class  framework::mvvm::IModel */
-#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_IModel_getRTTIType00
-static int tolua_LuaExtern_framework_mvvm_IModel_getRTTIType00(lua_State* tolua_S)
+/* method: rtti of class  framework::mvvm::IModel */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_IModel_rtti00
+static int tolua_LuaExtern_framework_mvvm_IModel_rtti00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
  tolua_Error tolua_err;
@@ -1719,10 +1719,10 @@ static int tolua_LuaExtern_framework_mvvm_IModel_getRTTIType00(lua_State* tolua_
  {
   const framework::mvvm::IModel* self = (const framework::mvvm::IModel*)  tolua_tousertype(tolua_S,1,0);
 #ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getRTTIType'", NULL);
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'rtti'", NULL);
 #endif
   {
-   uint32 tolua_ret = (uint32)  self->getRTTIType();
+   uint32 tolua_ret = (uint32)  self->rtti();
    {
 #ifdef __cplusplus
     void* tolua_obj = Mtolua_new((uint32)(tolua_ret));
@@ -1739,7 +1739,7 @@ static int tolua_LuaExtern_framework_mvvm_IModel_getRTTIType00(lua_State* tolua_
  return 1;
 #ifndef TOLUA_RELEASE
  tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'getRTTIType'.",&tolua_err);
+ tolua_error(tolua_S,"#ferror in function 'rtti'.",&tolua_err);
  return 0;
 #endif
 }
@@ -2922,8 +2922,8 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
     tolua_cclass(tolua_S,"IModel","framework::mvvm::IModel","framework::mvvm::INotifyPropertyChanged",NULL);
     #endif
     tolua_beginmodule(tolua_S,"IModel");
-     tolua_function(tolua_S,"getTypeName",tolua_LuaExtern_framework_mvvm_IModel_getTypeName00);
-     tolua_function(tolua_S,"getRTTIType",tolua_LuaExtern_framework_mvvm_IModel_getRTTIType00);
+     tolua_function(tolua_S,"tname",tolua_LuaExtern_framework_mvvm_IModel_tname00);
+     tolua_function(tolua_S,"rtti",tolua_LuaExtern_framework_mvvm_IModel_rtti00);
      tolua_function(tolua_S,"init",tolua_LuaExtern_framework_mvvm_IModel_init00);
      tolua_function(tolua_S,"finalize",tolua_LuaExtern_framework_mvvm_IModel_finalize00);
      tolua_function(tolua_S,"update",tolua_LuaExtern_framework_mvvm_IModel_update00);
