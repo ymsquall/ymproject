@@ -251,9 +251,9 @@ function LUAGameSceneViewOnTick(dt)
 	else
 		mapPos.x = mapPos.x - __LUADeviceHelfWinSize.width
 	end
-	if offset.y < 0 then
-		mapPos.y = (mapPos.y - (offset.y + 100.0)) - __LUADeviceHelfWinSize.height;
-	elseif offset.y > 200 then
+	if offset.y < -30 then
+		mapPos.y = (mapPos.y - (offset.y + 180.0)) - __LUADeviceHelfWinSize.height;
+	elseif offset.y > 100 then
 		mapPos.y = (mapPos.y - (offset.y - 100.0)) - __LUADeviceHelfWinSize.height;
 	else
 		mapPos.y = mapPos.y - __LUADeviceHelfWinSize.height
