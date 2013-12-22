@@ -238,6 +238,27 @@ function LUAGameSceneViewOnTick(dt)
 		end
 		physics:setIsHeroDorping(false)
 	end
+	-- auto scroll map
+	local animPos = cc.p(_LUAGameSceneView.mHeroAnim:getPositionX(), _LUAGameSceneView.mHeroAnim:getPositionY())
+	local mapPos = cc.p(_LUAGameSceneView.mTiledMap:getPositionX(), _LUAGameSceneView.mTiledMap:getPositionY())
+	local offset = cc.p(animPos.x + mapPos.x, animPos.y + mapPos.y)
+	offset.x = offset.x - __LUADeviceHelfWinSize.width
+	offset.y = offset.y - __LUADeviceHelfWinSize.height
+	if offset.x < -100 then
+		mapPos.x = (mapPos.x - (offset.x + 100.0)) - __LUADeviceHelfWinSize.width
+	elseif offset.x > 100 then
+		mapPos.x = (mapPos.x - (offset.x - 100.0)) - __LUADeviceHelfWinSize.width
+	else
+		mapPos.x = mapPos.x - __LUADeviceHelfWinSize.width
+	end
+	if offset.y < 0 then
+		mapPos.y = (mapPos.y - (offset.y + 100.0)) - __LUADeviceHelfWinSize.height;
+	elseif offset.y > 200 then
+		mapPos.y = (mapPos.y - (offset.y - 100.0)) - __LUADeviceHelfWinSize.height;
+	else
+		mapPos.y = mapPos.y - __LUADeviceHelfWinSize.height
+	end
+	_LUAGameSceneView.self:screenScrollTo(CCPoint(mapPos.x, mapPos.y));
 end
 
 print('game scene view loaded')

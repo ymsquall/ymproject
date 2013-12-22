@@ -29,6 +29,7 @@ function LUAGetDisplayOffPos()
 end
 
 __LUADeviceWinSize = cc.Director:sharedDirector():getWinSize()
+__LUADeviceHelfWinSize = CCSize(__LUADeviceWinSize.width/2.0, __LUADeviceWinSize.height/2.0)
 __LUADeviceVisibleSize = cc.Director:sharedDirector():getVisibleSize()
 __LUADeviceOriginPos = cc.Director:sharedDirector():getVisibleOrigin()
 __LUADeviceOffsetPos, __LUADeviceOffIndex = LUAGetDisplayOffPos()

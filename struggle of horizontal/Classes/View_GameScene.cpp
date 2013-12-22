@@ -336,7 +336,6 @@ void GameSceneView::update(float dt)
 			pPhysics->mHeroWeaponBody->SetLinearVelocity(b2Vec2(0,0));
 		}
 	}
-	*/
 	//
 	Point animPos = mHeroAnim->getPosition();
 	Point mapPos = mTiledMap->getPosition();
@@ -355,4 +354,5 @@ void GameSceneView::update(float dt)
 	else mapPos.y = mapPos.y - scrnHelfSize.height;
 	//CCLOG("screen [%.02f, %.02f]", mapPos.x, mapPos.y);
 	this->screenScrollTo(mapPos);
+	*/
 }
