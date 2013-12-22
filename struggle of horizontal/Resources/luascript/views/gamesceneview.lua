@@ -95,7 +95,7 @@ function LUAGameSceneViewTouchesBegan(touchID, x, y)
 	return false
 end
 function LUAGameSceneViewTouchesMoved(touchID, x, y)
-	if touchID == _LUAGameSceneView.mTouchIndex or _LUAGameSceneView.mHeroHitWall == false then
+	if touchID == _LUAGameSceneView.mTouchIndex--[[ or _LUAGameSceneView.mHeroHitWall == false--]] then
 		local pos = cc.p(x, y)
 		local dist = pos.x - _LUAGameSceneView.mTouchMoveBeginPos.x
 		if math.abs(dist) > 20.0 then
