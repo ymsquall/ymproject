@@ -22,7 +22,8 @@ void GameSceneModel::updateImpl(float dt)
 
 }
 
-void GameSceneModel::finalize()
+bool GameSceneModel::finalize()
 {
 	callLuaFuncNoResult("LUAGameSceneModelOnFinalize");
+	return true;
 }

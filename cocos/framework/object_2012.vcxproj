@@ -43,27 +43,23 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Classes\unity\datablock.h" />
-    <ClInclude Include="Classes\unity\delegate.h" />
-    <ClInclude Include="Classes\unity\event.h" />
-    <ClInclude Include="Classes\unity\factory.h" />
-    <ClInclude Include="Classes\unity\interface.h" />
-    <ClInclude Include="Classes\unity\object.h" />
-    <ClInclude Include="Classes\unity\platform.h" />
-    <ClInclude Include="Classes\unity\property.h" />
-    <ClInclude Include="Classes\unity\reflection.h" />
-    <ClInclude Include="Classes\unity\rtti.h" />
-    <ClInclude Include="Classes\unity\singleton.h" />
+    <ClCompile Include="Classes\object\IMovableObject.cpp" />
+    <ClCompile Include="Classes\object\IPhysicsMovableObject.cpp" />
+    <ClCompile Include="Classes\object\IPhysicsStaticObject.cpp" />
+    <ClCompile Include="Classes\object\IStaticObject.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Classes\unity\datablock.cpp" />
-    <ClCompile Include="Classes\unity\object.cpp" />
+    <ClInclude Include="Classes\object\IMovableObject.h" />
+    <ClInclude Include="Classes\object\IPhysicsMovableObject.h" />
+    <ClInclude Include="Classes\object\IPhysicsStaticObject.h" />
+    <ClInclude Include="Classes\object\ISceneObject.h" />
+    <ClInclude Include="Classes\object\IStaticObject.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{0434BCEB-591A-4B81-B220-328926D36745}</ProjectGuid>
+    <ProjectGuid>{BC98CC2D-5734-455F-91A1-8C43BB94756D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>unity</RootNamespace>
-    <ProjectName>unity_2012</ProjectName>
+    <RootNamespace>object</RootNamespace>
+    <ProjectName>object_2012</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -170,55 +166,55 @@
     <OutDir>..\..\$(Configuration).win32\</OutDir>
     <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <TargetName>ymlibUnity</TargetName>
+    <TargetName>ymlibObject</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_2|Win32'">
     <OutDir>..\..\$(Configuration).win32\</OutDir>
     <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <TargetName>ymlibUnity</TargetName>
+    <TargetName>ymlibObject</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_3|Win32'">
     <OutDir>..\..\$(Configuration).win32\</OutDir>
     <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <TargetName>ymlibUnity</TargetName>
+    <TargetName>ymlibObject</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">
     <OutDir>..\..\$(Configuration).win32\</OutDir>
     <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <TargetName>ymlibUnity</TargetName>
+    <TargetName>ymlibObject</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>..\..\$(Configuration).win32\</OutDir>
     <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
-    <TargetName>ymlibUnity</TargetName>
+    <TargetName>ymlibObject</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_2|Win32'">
     <OutDir>..\..\$(Configuration).win32\</OutDir>
     <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
-    <TargetName>ymlibUnity</TargetName>
+    <TargetName>ymlibObject</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_3|Win32'">
     <OutDir>..\..\$(Configuration).win32\</OutDir>
     <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
-    <TargetName>ymlibUnity</TargetName>
+    <TargetName>ymlibObject</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">
     <OutDir>..\..\$(Configuration).win32\</OutDir>
     <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
-    <TargetName>ymlibUnity</TargetName>
+    <TargetName>ymlibObject</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT_2|Win32'">
     <OutDir>..\..\$(Configuration).win32\</OutDir>
     <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
-    <TargetName>ymlibUnity</TargetName>
+    <TargetName>ymlibObject</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT_3|Win32'">
     <OutDir>..\..\$(Configuration).win32\</OutDir>
     <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
-    <TargetName>ymlibUnity</TargetName>
+    <TargetName>ymlibObject</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

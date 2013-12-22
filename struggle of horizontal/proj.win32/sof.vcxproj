@@ -439,7 +439,7 @@ echo f | xcopy "$(OutDir)$(TargetName).exe" "$(ProjectDir)..\Resources\$(TargetN
       <AdditionalIncludeDirectories>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\include;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>ymlibApplication.lib;ymlibMvvm.lib;ymlibUnity.lib;ymlibUIView.lib;ymlibLuaExtern.lib;ymlibMath.lib;libcocos2d.lib;libAudio.lib;libExtensions.lib;libCocosBuilder.lib;libCocosStudio.lib;libBox2D.lib;libchipmunk.lib;libGUI.lib;liblua.lib;libSpine.lib;libNetwork.lib;libLocalStorage.lib;lua51.lib;libcurl_imp.lib;websockets.lib;freetype250.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ymlibApplication.lib;ymlibMvvm.lib;ymlibUnity.lib;ymlibUIView.lib;ymlibLuaExtern.lib;ymlibMath.lib;ymlibObject.lib;libcocos2d.lib;libAudio.lib;libExtensions.lib;libCocosBuilder.lib;libCocosStudio.lib;libBox2D.lib;libchipmunk.lib;libGUI.lib;liblua.lib;libSpine.lib;libNetwork.lib;libLocalStorage.lib;lua51.lib;libcurl_imp.lib;websockets.lib;freetype250.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>

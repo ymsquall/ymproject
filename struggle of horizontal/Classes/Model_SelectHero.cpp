@@ -18,7 +18,7 @@ void SelectHeroModel::updateImpl(float dt)
 
 }
 
-void SelectHeroModel::finalize()
+bool SelectHeroModel::finalize()
 {
-
+	return true;
 }

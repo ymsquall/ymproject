@@ -18,7 +18,7 @@ void LoginModel::updateImpl(float dt)
 
 }
 
-void LoginModel::finalize()
+bool LoginModel::finalize()
 {
-
+	return true;
 }

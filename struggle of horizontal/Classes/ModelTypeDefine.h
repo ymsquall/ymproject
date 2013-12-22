@@ -41,7 +41,7 @@ public:
 		return this->initImpl();
 	}
 
-	virtual void update(float dt)
+	virtual void loop(float dt)
 	{
 		if(!mvvm::ModelBase<typeValue, rttiLength>::Enabled)
 			return;
@@ -71,7 +71,7 @@ protected:
 			} \
 			virtual bool initImpl(); \
 			virtual void updateImpl(float dt); \
-			virtual void finalize(); 
+			virtual bool finalize(); 
 
 #define MODEL_TYPECLASS_DEFINE_CONSTRUCTOR(name) const std::string name##Model::TypeName = #name; \
 		name##Model::name##Model() : name##Model::SuperT(name##Model::TypeName.c_str())

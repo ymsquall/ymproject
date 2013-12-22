@@ -4,6 +4,7 @@
 #include "unity/reflection.h"
 #include "unity/rtti.h"
 #include "unity/factory.h"
+#include "unity/interface.h"
 
 namespace framework
 {
@@ -11,7 +12,8 @@ namespace framework
 	{
 		class IView;
 		class IModel : public INotifyPropertyChanged,
-					   public unity::object
+					   public unity::object,
+					   public unity::IUpdateWithTypeAndInitAbstract
 		{
 		public:
 			IModel() : Enabled(this)
@@ -37,11 +39,11 @@ namespace framework
 			//PROPERTY_DEFINED_SETTER_DECLEAR(Enabled, bool, IModel, setEnabled);
 			PROPERTY_DEFINED_SETTER_DEFINED(Enabled, bool, IModel);
 
-			virtual std::string getTypeName() const = 0;
-			virtual uint32 getRTTIType() const = 0;
-			virtual bool init() = 0;
-			virtual void finalize() = 0;
-			virtual void update(float dt) = 0;
+			//virtual std::string getTypeName() const = 0;
+			//virtual uint32 getRTTIType() const = 0;
+			//virtual bool init() = 0;
+			//virtual void finalize() = 0;
+			//virtual void update(float dt) = 0;
 			virtual void setBindingTarget(IView* view)
 			{
 				mBindingTarget = view;
@@ -61,11 +63,11 @@ namespace framework
 				unity::IAsciiFixedRTTI<rttiLength>(ascType)
 			{
 			}
-			virtual std::string getTypeName() const
+			virtual const char* tname() const
 			{
 				return this->sType();
 			}
-			virtual uint32 getRTTIType() const
+			virtual uint32 rtti() const
 			{
 				return static_cast<uint32>(this->eType());
 			}
