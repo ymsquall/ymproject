@@ -38,13 +38,13 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 	_LUAGameSceneView.mMoveSpeedScale = _LUAGameSceneView.mMoveSpeedScale or 0.0
 	_LUAGameSceneView.mTouchIndex = -1
     _LUAGameSceneView.mJumpBtn:addTouchEventListener(function(sender, eventType)
-			if eventType == 0 then
+			if eventType == 2 then
 				local physics = _LUAGameSceneView.self:getPhysics()
 				physics:jump(25.0)
 			end
 		end)
     _LUAGameSceneView.mAttackBtn:addTouchEventListener(function(sender, eventType)
-			if eventType == 0 then
+			if eventType == 2 then
 				local movementName = _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID()
 				if movementName ~= 'attack01' and movementName ~= 'attack02' then
 					if _LUAGameSceneView.mHeroPlayAttactAnimIndex == 1 then
@@ -95,7 +95,7 @@ function LUAGameSceneViewTouchesBegan(touchID, x, y)
 	return false
 end
 function LUAGameSceneViewTouchesMoved(touchID, x, y)
-	if touchID == _LUAGameSceneView.mTouchIndex then
+	if touchID == _LUAGameSceneView.mTouchIndex or _LUAGameSceneView.mHeroHitWall == false then
 		local pos = cc.p(x, y)
 		local dist = pos.x - _LUAGameSceneView.mTouchMoveBeginPos.x
 		if math.abs(dist) > 20.0 then
