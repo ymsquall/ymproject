@@ -1,9 +1,8 @@
 {
-  "content_scale": 1.0,
   "armature_data": [
     {
-      "strVersion": "1.1.0.0",
-      "version": 1.1,
+      "strVersion": "1.0.2.0",
+      "version": 1.02,
       "name": "anim.major",
       "bone_data": [
         {
@@ -367,7 +366,7 @@
       "mov_data": [
         {
           "name": "stand01",
-          "dr": 16,
+          "dr": 15,
           "lp": true,
           "to": 0,
           "drTW": 0,
@@ -587,7 +586,7 @@
         },
         {
           "name": "attack01",
-          "dr": 10,
+          "dr": 15,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -636,6 +635,19 @@
                   "fi": 10,
                   "twE": 0,
                   "tweenFrame": true
+                },
+                {
+                  "dI": 20,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 15,
+                  "twE": 0,
+                  "tweenFrame": true
                 }
               ]
             }
@@ -643,7 +655,7 @@
         },
         {
           "name": "attack02",
-          "dr": 10,
+          "dr": 15,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -690,6 +702,19 @@
                   "kX": 0.0,
                   "kY": 0.0,
                   "fi": 10,
+                  "twE": 0,
+                  "tweenFrame": true
+                },
+                {
+                  "dI": 23,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 15,
                   "twE": 0,
                   "tweenFrame": true
                 }
