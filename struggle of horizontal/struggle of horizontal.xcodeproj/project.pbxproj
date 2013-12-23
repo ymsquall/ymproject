@@ -111,7 +111,7 @@
 
 /* Begin PBXFileReference section */
 		1A1197D71785363400D62A44 /* SOH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOH.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A6FB56B17854FE400CDF010 /* struggle of horizontal Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "struggle of horizontal Mac.app"; path = SOH_Mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A6FB56B17854FE400CDF010 /* SOH_Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOH_Mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9222552B1853234000D6C90F /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		9222552E185325A300D6C90F /* ICreature.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ICreature.cpp; sourceTree = "<group>"; };
 		9222552F185325A300D6C90F /* ICreature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICreature.h; sourceTree = "<group>"; };
@@ -272,7 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				1A1197D71785363400D62A44 /* SOH.app */,
-				1A6FB56B17854FE400CDF010 /* struggle of horizontal Mac.app */,
+				1A6FB56B17854FE400CDF010 /* SOH_Mac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -459,7 +459,7 @@
 			);
 			name = SOH_Mac;
 			productName = iphone;
-			productReference = 1A6FB56B17854FE400CDF010 /* struggle of horizontal Mac.app */;
+			productReference = 1A6FB56B17854FE400CDF010 /* SOH_Mac.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */

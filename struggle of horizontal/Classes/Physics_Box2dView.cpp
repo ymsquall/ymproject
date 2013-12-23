@@ -61,7 +61,8 @@ void Physics_Box2DView::tick(float dt)
 void Physics_Box2DView::draw()
 {
     Layer::draw();
-
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+#   ifdef _DEBUG
 	GL::enableVertexAttribs( cocos2d::GL::VERTEX_ATTRIB_FLAG_POSITION );
 
 	kmGLPushMatrix();
@@ -71,6 +72,8 @@ void Physics_Box2DView::draw()
 	kmGLPopMatrix();
 
 	CHECK_GL_ERROR_DEBUG();
+#   endif
+#endif
 }
 
 bool Physics_Box2DView::onTouchBegan(Touch* touch, Event* event)
