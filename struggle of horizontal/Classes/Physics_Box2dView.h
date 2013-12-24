@@ -1,6 +1,6 @@
 #pragma once
 #include "cocos2d.h"
-#include "physics/PhysicsBase.h"
+#include "physics/PhysicsWorld.h"
 
 using namespace cocos2d;
 using namespace engine;
@@ -27,6 +27,6 @@ public:
 
 private:
 	EventListenerTouchOneByOne* mTouchListener;
-	physics::Settings mPhysicsSettings;
-	physics::PhysicsBase* mPhysics;
+	physics::WorldSettings mPhysicsSettings;
+	physics::PhysicsWorld* mPhysics;
 };

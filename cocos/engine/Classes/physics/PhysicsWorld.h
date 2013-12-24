@@ -13,9 +13,9 @@ namespace engine
 		/// Random floating point number in range [lo, hi]
 		inline float32 RandomFloat(float32 lo, float32 hi);
 		/// Test settings. Some can be controlled in the GUI.
-		struct Settings
+		struct WorldSettings
 		{
-			Settings();
+			WorldSettings();
 			b2Vec2 viewCenter;
 			float32 hz;
 			int32 velocityIterations;
@@ -38,13 +38,13 @@ namespace engine
 			int32 singleStep;
 		};
 
-		class PhysicsBase;
+		class PhysicsWorld;
 		class DestructionListener : public b2DestructionListener
 		{
 		public:
 			void SayGoodbye(b2Fixture* fixture);
 			void SayGoodbye(b2Joint* joint);
-			PhysicsBase* test;
+			PhysicsWorld* test;
 		};
 		const int32 k_maxContactPoints = 2048;
 
@@ -57,17 +57,17 @@ namespace engine
 			b2PointState state;
 		};
 
-		class PhysicsBase : public b2ContactListener
+		class PhysicsWorld : public b2ContactListener
 		{
 		public:
 			friend class DestructionListener;
 			friend class BoundaryListener;
 			friend class ContactListener;
 
-			PhysicsBase();
-			virtual ~PhysicsBase();
+			PhysicsWorld();
+			virtual ~PhysicsWorld();
 
-			virtual void Step(Settings* settings);
+			virtual void Step(WorldSettings* settings);
 			// Let derived tests know that a joint was destroyed.
 			virtual void JointDestroyed(b2Joint* joint);
 			// Callbacks for derived classes.

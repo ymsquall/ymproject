@@ -185,7 +185,7 @@ b2ContactEdge* GameScenePhysics::getHeroBodyContactList()
 	return mHeroBody->GetContactList();
 }
 
-void GameScenePhysics::Step(physics::Settings* settings)
+void GameScenePhysics::Step(physics::WorldSettings* settings)
 {
 	b2Vec2 vel = mHeroBody->GetLinearVelocity();
 	//if(vel.y <= 0.001f && vel.y >= -0.001f)
@@ -211,12 +211,12 @@ void GameScenePhysics::Step(physics::Settings* settings)
 			mHeroBody->SetTransform(pos, 0.0f);
 		}
 	}
-	PhysicsBase::Step(settings);
+	PhysicsWorld::Step(settings);
 }
 
 void GameScenePhysics::PreSolve(b2Contact* contact, const b2Manifold* oldManifold)
 {
-	PhysicsBase::PreSolve(contact, oldManifold);
+	PhysicsWorld::PreSolve(contact, oldManifold);
 	const b2Manifold* manifold = contact->GetManifold();
 	if (manifold->pointCount <= 0)
 		return;

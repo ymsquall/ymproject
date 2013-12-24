@@ -43,11 +43,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Classes\physics\PhysicsBase.cpp" />
+    <ClCompile Include="Classes\physics\PhysicsObject.cpp" />
+    <ClCompile Include="Classes\physics\PhysicsWorld.cpp" />
     <ClCompile Include="Classes\physics\Physics_GLESDebugDraw.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Classes\physics\PhysicsBase.h" />
+    <ClInclude Include="Classes\physics\PhysicsObject.h" />
+    <ClInclude Include="Classes\physics\PhysicsWorld.h" />
     <ClInclude Include="Classes\physics\Physics_GLESDebugDraw.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

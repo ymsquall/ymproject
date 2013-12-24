@@ -1,4 +1,4 @@
-#include "PhysicsBase.h"
+#include "PhysicsWorld.h"
 #include <stdio.h>
 
 namespace engine
@@ -19,7 +19,7 @@ namespace engine
 			r = (hi - lo) * r + lo;
 			return r;
 		}
-		Settings::Settings() :
+		WorldSettings::WorldSettings() :
 			viewCenter(0.0f, 0.0f),
 			hz(60.0f),
 			velocityIterations(8),
@@ -58,7 +58,7 @@ namespace engine
 			}
 		}
 
-		PhysicsBase::PhysicsBase()
+		PhysicsWorld::PhysicsWorld()
 		{
 			b2Vec2 gravity;
 			gravity.Set(0.0f, -50.0f);
@@ -84,27 +84,27 @@ namespace engine
 			memset(&m_totalProfile, 0, sizeof(b2Profile));
 		}
 
-		PhysicsBase::~PhysicsBase()
+		PhysicsWorld::~PhysicsWorld()
 		{
 			// By deleting the world, we delete the bomb, mouse joint, etc.
 			delete mWorld;
 			mWorld = NULL;
 		}
 
-		void PhysicsBase::JointDestroyed(b2Joint* joint)
+		void PhysicsWorld::JointDestroyed(b2Joint* joint)
 		{
 			B2_NOT_USED(joint);
 		}
 		// Callbacks for derived classes.
-		void PhysicsBase::BeginContact(b2Contact* contact)
+		void PhysicsWorld::BeginContact(b2Contact* contact)
 		{
 			B2_NOT_USED(contact);
 		}
-		void PhysicsBase::EndContact(b2Contact* contact)
+		void PhysicsWorld::EndContact(b2Contact* contact)
 		{
 			B2_NOT_USED(contact);
 		}
-		void PhysicsBase::PreSolve(b2Contact* contact, const b2Manifold* oldManifold)
+		void PhysicsWorld::PreSolve(b2Contact* contact, const b2Manifold* oldManifold)
 		{
 			const b2Manifold* manifold = contact->GetManifold();
 
@@ -133,7 +133,7 @@ namespace engine
 				++m_pointCount;
 			}
 		}
-		void PhysicsBase::PostSolve(b2Contact* contact, const b2ContactImpulse* impulse)
+		void PhysicsWorld::PostSolve(b2Contact* contact, const b2ContactImpulse* impulse)
 		{
 			B2_NOT_USED(contact);
 			B2_NOT_USED(impulse);
@@ -170,7 +170,7 @@ namespace engine
 			b2Vec2 m_point;
 			b2Fixture* m_fixture;
 		};
-		void PhysicsBase::Step(Settings* settings)
+		void PhysicsWorld::Step(WorldSettings* settings)
 		{
 			float32 timeStep = settings->hz > 0.0f ? 1.0f / settings->hz : float32(0.0f);
 			if (settings->pause)
@@ -210,7 +210,7 @@ namespace engine
 		}
 
 
-		bool PhysicsBase::MouseDown(const b2Vec2& p)
+		bool PhysicsWorld::MouseDown(const b2Vec2& p)
 		{
 			m_mouseWorld = p;
 
@@ -245,13 +245,13 @@ namespace engine
 			return false;
 		}
 
-		void PhysicsBase::SpawnBomb(const b2Vec2& worldPt)
+		void PhysicsWorld::SpawnBomb(const b2Vec2& worldPt)
 		{
 			m_bombSpawnPoint = worldPt;
 			m_bombSpawning = true;
 		}
 
-		void PhysicsBase::CompleteBombSpawn(const b2Vec2& p)
+		void PhysicsWorld::CompleteBombSpawn(const b2Vec2& p)
 		{
 			if (m_bombSpawning == false)
 			{
@@ -265,7 +265,7 @@ namespace engine
 			m_bombSpawning = false;
 		}
 
-		void PhysicsBase::ShiftMouseDown(const b2Vec2& p)
+		void PhysicsWorld::ShiftMouseDown(const b2Vec2& p)
 		{
 			m_mouseWorld = p;
 
@@ -277,7 +277,7 @@ namespace engine
 			SpawnBomb(p);
 		}
 
-		void PhysicsBase::MouseUp(const b2Vec2& p)
+		void PhysicsWorld::MouseUp(const b2Vec2& p)
 		{
 			if (m_mouseJoint)
 			{
@@ -291,7 +291,7 @@ namespace engine
 			}
 		}
 
-		void PhysicsBase::MouseMove(const b2Vec2& p)
+		void PhysicsWorld::MouseMove(const b2Vec2& p)
 		{
 			m_mouseWorld = p;
 
@@ -301,14 +301,14 @@ namespace engine
 			}
 		}
 
-		void PhysicsBase::LaunchBomb()
+		void PhysicsWorld::LaunchBomb()
 		{
 			b2Vec2 p(RandomFloat(-15.0f, 15.0f), 30.0f);
 			b2Vec2 v = -5.0f * p;
 			LaunchBomb(p, v);
 		}
 
-		void PhysicsBase::LaunchBomb(const b2Vec2& position, const b2Vec2& velocity)
+		void PhysicsWorld::LaunchBomb(const b2Vec2& position, const b2Vec2& velocity)
 		{
 			if (m_bomb)
 			{
