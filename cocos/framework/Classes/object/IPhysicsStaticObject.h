@@ -2,11 +2,16 @@
 
 #include "IStaticObject.h"
 
-class IPhysicsStaticObject : public IStaticObject
+namespace framework
 {
-public:
-	IPhysicsStaticObject();
-	virtual ~IPhysicsStaticObject();
+	namespace object
+	{
+		class IPhysicsStaticObject : public IStaticObject
+		{
+		public:
+			virtual ~IPhysicsStaticObject(){}
 
-protected:
-};
+		protected:
+		};
+	}
+}

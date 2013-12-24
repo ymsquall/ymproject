@@ -185,7 +185,7 @@ b2ContactEdge* GameScenePhysics::getHeroBodyContactList()
 	return mHeroBody->GetContactList();
 }
 
-void GameScenePhysics::Step(Settings* settings)
+void GameScenePhysics::Step(physics::Settings* settings)
 {
 	b2Vec2 vel = mHeroBody->GetLinearVelocity();
 	//if(vel.y <= 0.001f && vel.y >= -0.001f)

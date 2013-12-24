@@ -58,7 +58,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{0174FF64-EE4F-4222-99B5-34414CF23075}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>luaext</RootNamespace>
+    <RootNamespace>engine.luaext</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

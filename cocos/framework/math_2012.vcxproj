@@ -79,7 +79,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{1EED7049-A7BF-42DE-8A93-8BAFC73120A3}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>math</RootNamespace>
+    <RootNamespace>framework.math</RootNamespace>
     <ProjectName>math_2012</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

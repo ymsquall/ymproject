@@ -1,10 +1,21 @@
 #include "ICreature.h"
 
-ICreature::ICreature()
+DynamicPhysicsCreature::DynamicPhysicsCreature()
 {
 
 }
-ICreature::~ICreature()
+DynamicPhysicsCreature::~DynamicPhysicsCreature()
+{
+
+}
+
+//////////////////////////////////////////////////////////////////////////
+
+StaticPhysicsCreature::StaticPhysicsCreature()
+{
+
+}
+StaticPhysicsCreature::~StaticPhysicsCreature()
 {
 
 }

@@ -2,11 +2,16 @@
 
 #include "ISceneObject.h"
 
-class IMovableObject : public ISceneObject
+namespace framework
 {
-public:
-	IMovableObject();
-	virtual ~IMovableObject();
+	namespace object
+	{
+		class IMovableObject : public ISceneObject
+		{
+		public:
+			virtual ~IMovableObject(){}
 
-protected:
-};
+		protected:
+		};
+	}
+}

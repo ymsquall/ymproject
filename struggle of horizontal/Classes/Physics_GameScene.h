@@ -1,5 +1,7 @@
 #pragma once
-#include "PhysicsBase.h"
+#include "physics/PhysicsBase.h"
+
+using namespace engine;
 
 namespace cocos2d
 {
@@ -17,12 +19,12 @@ enum class JumpState : int8
 };
 typedef std::vector<b2Body*> PhysicsBodyList;
 
-class GameScenePhysics : public PhysicsBase, public cocos2d::Object
+class GameScenePhysics : public physics::PhysicsBase, public cocos2d::Object
 {
 public:
 	GameScenePhysics();
 	~GameScenePhysics();
-    void Step(Settings* settings);
+    void Step(physics::Settings* settings);
 	
 	bool initBoxWithTiledMap(const cocos2d::TMXTiledMap* pTiledMap);
 

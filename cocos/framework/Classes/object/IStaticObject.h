@@ -2,11 +2,16 @@
 
 #include "ISceneObject.h"
 
-class IStaticObject : public ISceneObject
+namespace framework
 {
-public:
-	IStaticObject();
-	virtual ~IStaticObject();
+	namespace object
+	{
+		class IStaticObject : public ISceneObject
+		{
+		public:
+			virtual ~IStaticObject(){}
 
-protected:
-};
+		protected:
+		};
+	}
+}

@@ -57,7 +57,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FAE94545-7340-483C-9F28-F7DC9D4B0ED4}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>mvvm</RootNamespace>
+    <RootNamespace>framework.mvvm</RootNamespace>
     <ProjectName>mvvm_2012</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

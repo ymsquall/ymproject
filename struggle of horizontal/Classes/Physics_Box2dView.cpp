@@ -1,5 +1,5 @@
 #include "Physics_Box2dView.h"
-#include "Physics_GLESDebugDraw.h"
+#include "physics/Physics_GLESDebugDraw.h"
 #include "Physics_GameScene.h"
 
 Physics_Box2DView::Physics_Box2DView(void)

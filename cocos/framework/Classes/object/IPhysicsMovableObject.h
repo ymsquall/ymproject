@@ -2,11 +2,16 @@
 
 #include "IMovableObject.h"
 
-class IPhysicsMovableObject : public IMovableObject
+namespace framework
 {
-public:
-	IPhysicsMovableObject();
-	virtual ~IPhysicsMovableObject();
+	namespace object
+	{
+		class IPhysicsMovableObject : public IMovableObject
+		{
+		public:
+			virtual ~IPhysicsMovableObject(){}
 
-protected:
-};
+		protected:
+		};
+	}
+}

@@ -1,8 +1,9 @@
 #pragma once
 #include "cocos2d.h"
-#include "PhysicsBase.h"
+#include "physics/PhysicsBase.h"
 
 using namespace cocos2d;
+using namespace engine;
 
 class Physics_Box2DView : public Layer
 {
@@ -26,6 +27,6 @@ public:
 
 private:
 	EventListenerTouchOneByOne* mTouchListener;
-	Settings mPhysicsSettings;
-	PhysicsBase* mPhysics;
+	physics::Settings mPhysicsSettings;
+	physics::PhysicsBase* mPhysics;
 };

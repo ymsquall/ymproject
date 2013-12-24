@@ -62,7 +62,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{0434BCEB-591A-4B81-B220-328926D36745}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>unity</RootNamespace>
+    <RootNamespace>framework.unity</RootNamespace>
     <ProjectName>unity_2012</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

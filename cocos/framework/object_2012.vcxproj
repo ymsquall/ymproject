@@ -58,7 +58,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{BC98CC2D-5734-455F-91A1-8C43BB94756D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>object</RootNamespace>
+    <RootNamespace>framework.object</RootNamespace>
     <ProjectName>object_2012</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

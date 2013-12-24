@@ -75,12 +75,6 @@
     <ClCompile Include="..\Classes\LuaSOFExtern.cpp">
       <Filter>Classes\Tools</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Physics_GLESDebugDraw.cpp">
-      <Filter>Classes\Physics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\PhysicsBase.cpp">
-      <Filter>Classes\Physics</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\Physics_GameScene.cpp">
       <Filter>Classes\Physics</Filter>
     </ClCompile>
@@ -149,25 +143,19 @@
     <ClInclude Include="..\Classes\LuaSOFExtern.h">
       <Filter>Classes\Tools</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Physics_GLESDebugDraw.h">
-      <Filter>Classes\Physics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\PhysicsBase.h">
-      <Filter>Classes\Physics</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\Physics_GameScene.h">
       <Filter>Classes\Physics</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Physics_Box2dView.h">
       <Filter>Classes\Physics</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\ICreature.h">
-      <Filter>Classes\Creature</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\Monster.h">
       <Filter>Classes\Creature</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Player.h">
+      <Filter>Classes\Creature</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ICreature.h">
       <Filter>Classes\Creature</Filter>
     </ClInclude>
   </ItemGroup>

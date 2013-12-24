@@ -1,14 +1,26 @@
 #pragma once
 
-#include "unity/object.h"
+#include "object/IPhysicsMovableObject.h"
+#include "object/IPhysicsStaticObject.h"
 
 using namespace framework;
 
-class ICreature : public unity::object
+class DynamicPhysicsCreature : public object::IPhysicsMovableObject
 {
 public:
-	ICreature();
-	virtual ~ICreature();
+	DynamicPhysicsCreature();
+	virtual ~DynamicPhysicsCreature();
+
+protected:
+};
+
+//////////////////////////////////////////////////////////////////////////
+
+class StaticPhysicsCreature : public object::IPhysicsStaticObject
+{
+public:
+	StaticPhysicsCreature();
+	virtual ~StaticPhysicsCreature();
 
 protected:
 };
