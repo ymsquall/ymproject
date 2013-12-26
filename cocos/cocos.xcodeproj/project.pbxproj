@@ -724,6 +724,18 @@
 		924EAF961827330100B6782F /* TextBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAC001827330000B6782F /* TextBox.h */; };
 		924EAF971827330100B6782F /* TextBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAC001827330000B6782F /* TextBox.h */; };
 		924EAF981827330100B6782F /* TextBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAC001827330000B6782F /* TextBox.h */; };
+		929BF6F4186BC8A400457382 /* Physics_GLESDebugDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6EE186BC8A300457382 /* Physics_GLESDebugDraw.cpp */; };
+		929BF6F5186BC8A400457382 /* Physics_GLESDebugDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6EE186BC8A300457382 /* Physics_GLESDebugDraw.cpp */; };
+		929BF6F6186BC8A400457382 /* Physics_GLESDebugDraw.h in Headers */ = {isa = PBXBuildFile; fileRef = 929BF6EF186BC8A400457382 /* Physics_GLESDebugDraw.h */; };
+		929BF6F7186BC8A400457382 /* Physics_GLESDebugDraw.h in Headers */ = {isa = PBXBuildFile; fileRef = 929BF6EF186BC8A400457382 /* Physics_GLESDebugDraw.h */; };
+		929BF6F8186BC8A400457382 /* PhysicsObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6F0186BC8A400457382 /* PhysicsObject.cpp */; };
+		929BF6F9186BC8A400457382 /* PhysicsObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6F0186BC8A400457382 /* PhysicsObject.cpp */; };
+		929BF6FA186BC8A400457382 /* PhysicsObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 929BF6F1186BC8A400457382 /* PhysicsObject.h */; };
+		929BF6FB186BC8A400457382 /* PhysicsObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 929BF6F1186BC8A400457382 /* PhysicsObject.h */; };
+		929BF6FC186BC8A400457382 /* PhysicsWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6F2186BC8A400457382 /* PhysicsWorld.cpp */; };
+		929BF6FD186BC8A400457382 /* PhysicsWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6F2186BC8A400457382 /* PhysicsWorld.cpp */; };
+		929BF6FE186BC8A400457382 /* PhysicsWorld.h in Headers */ = {isa = PBXBuildFile; fileRef = 929BF6F3186BC8A400457382 /* PhysicsWorld.h */; };
+		929BF6FF186BC8A400457382 /* PhysicsWorld.h in Headers */ = {isa = PBXBuildFile; fileRef = 929BF6F3186BC8A400457382 /* PhysicsWorld.h */; };
 		92EF2C341853077700CB9EA4 /* CustomEGLView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92EF2C321853077700CB9EA4 /* CustomEGLView.cpp */; };
 		92EF2C351853077700CB9EA4 /* CustomEGLView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92EF2C321853077700CB9EA4 /* CustomEGLView.cpp */; };
 		92EF2C361853077700CB9EA4 /* CustomEGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = 92EF2C331853077700CB9EA4 /* CustomEGLView.h */; };
@@ -967,6 +979,12 @@
 		924EAC001827330000B6782F /* TextBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextBox.h; sourceTree = "<group>"; };
 		9276BCB0180D22F600B9FE55 /* libengine Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libengine Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9276BD4B180D256C00B9FE55 /* libengine iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libengine iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		929BF6EE186BC8A300457382 /* Physics_GLESDebugDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Physics_GLESDebugDraw.cpp; path = engine/Classes/physics/Physics_GLESDebugDraw.cpp; sourceTree = "<group>"; };
+		929BF6EF186BC8A400457382 /* Physics_GLESDebugDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Physics_GLESDebugDraw.h; path = engine/Classes/physics/Physics_GLESDebugDraw.h; sourceTree = "<group>"; };
+		929BF6F0186BC8A400457382 /* PhysicsObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PhysicsObject.cpp; path = engine/Classes/physics/PhysicsObject.cpp; sourceTree = "<group>"; };
+		929BF6F1186BC8A400457382 /* PhysicsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhysicsObject.h; path = engine/Classes/physics/PhysicsObject.h; sourceTree = "<group>"; };
+		929BF6F2186BC8A400457382 /* PhysicsWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PhysicsWorld.cpp; path = engine/Classes/physics/PhysicsWorld.cpp; sourceTree = "<group>"; };
+		929BF6F3186BC8A400457382 /* PhysicsWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhysicsWorld.h; path = engine/Classes/physics/PhysicsWorld.h; sourceTree = "<group>"; };
 		92EF2C321853077700CB9EA4 /* CustomEGLView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CustomEGLView.cpp; sourceTree = "<group>"; };
 		92EF2C331853077700CB9EA4 /* CustomEGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomEGLView.h; sourceTree = "<group>"; };
 		92EF2C381853079700CB9EA4 /* LuaExtern_Handler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaExtern_Handler.cpp; sourceTree = "<group>"; };
@@ -1076,6 +1094,7 @@
 		9233B7951811499A0095D07F /* engine */ = {
 			isa = PBXGroup;
 			children = (
+				929BF6ED186BC88100457382 /* physics */,
 				924EAAFB182732FF00B6782F /* application */,
 				924EAB6C182732FF00B6782F /* luaext */,
 				924EAB73182732FF00B6782F /* uiview */,
@@ -1362,6 +1381,19 @@
 			path = Text;
 			sourceTree = "<group>";
 		};
+		929BF6ED186BC88100457382 /* physics */ = {
+			isa = PBXGroup;
+			children = (
+				929BF6EE186BC8A300457382 /* Physics_GLESDebugDraw.cpp */,
+				929BF6EF186BC8A400457382 /* Physics_GLESDebugDraw.h */,
+				929BF6F0186BC8A400457382 /* PhysicsObject.cpp */,
+				929BF6F1186BC8A400457382 /* PhysicsObject.h */,
+				929BF6F2186BC8A400457382 /* PhysicsWorld.cpp */,
+				929BF6F3186BC8A400457382 /* PhysicsWorld.h */,
+			);
+			name = physics;
+			sourceTree = "<group>";
+		};
 		92FAA032180D36E4004A8D24 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1506,6 +1538,7 @@
 				924EAAC8182732F100B6782F /* model.h in Headers */,
 				924EAECE1827330000B6782F /* ItemsControl.h in Headers */,
 				921FDDBE18673E1000B25783 /* IStaticObject.h in Headers */,
+				929BF6FE186BC8A400457382 /* PhysicsWorld.h in Headers */,
 				924EADBE1827330000B6782F /* GridViewColumnHeader.h in Headers */,
 				924EAE361827330000B6782F /* Border.h in Headers */,
 				924EAADC182732F100B6782F /* factory.h in Headers */,
@@ -1514,6 +1547,7 @@
 				924EAE7E1827330000B6782F /* Expander.h in Headers */,
 				924EAAE8182732F100B6782F /* platform.h in Headers */,
 				924EAF1E1827330100B6782F /* Canvas.h in Headers */,
+				929BF6F6186BC8A400457382 /* Physics_GLESDebugDraw.h in Headers */,
 				924EAEE61827330100B6782F /* Menu.h in Headers */,
 				924EADB61827330000B6782F /* Frame.h in Headers */,
 				924EAF961827330100B6782F /* TextBox.h in Headers */,
@@ -1548,6 +1582,7 @@
 				924EADEE1827330000B6782F /* RadioButton.h in Headers */,
 				921FDDB618673E1000B25783 /* ISceneObject.h in Headers */,
 				924EAF061827330100B6782F /* TabControl.h in Headers */,
+				929BF6FA186BC8A400457382 /* PhysicsObject.h in Headers */,
 				924EADCE1827330000B6782F /* Label.h in Headers */,
 				924EAF0E1827330100B6782F /* TreeView.h in Headers */,
 				924EAF261827330100B6782F /* DockPanel.h in Headers */,
@@ -1608,6 +1643,7 @@
 				924EAACA182732F100B6782F /* model.h in Headers */,
 				924EAED01827330000B6782F /* ItemsControl.h in Headers */,
 				921FDDC018673E1000B25783 /* IStaticObject.h in Headers */,
+				929BF6FF186BC8A400457382 /* PhysicsWorld.h in Headers */,
 				924EADC01827330000B6782F /* GridViewColumnHeader.h in Headers */,
 				924EAE381827330000B6782F /* Border.h in Headers */,
 				924EAADE182732F100B6782F /* factory.h in Headers */,
@@ -1616,6 +1652,7 @@
 				924EAE801827330000B6782F /* Expander.h in Headers */,
 				924EAAEA182732F100B6782F /* platform.h in Headers */,
 				924EAF201827330100B6782F /* Canvas.h in Headers */,
+				929BF6F7186BC8A400457382 /* Physics_GLESDebugDraw.h in Headers */,
 				924EAEE81827330100B6782F /* Menu.h in Headers */,
 				924EADB81827330000B6782F /* Frame.h in Headers */,
 				924EAF981827330100B6782F /* TextBox.h in Headers */,
@@ -1650,6 +1687,7 @@
 				924EADF01827330000B6782F /* RadioButton.h in Headers */,
 				921FDDB818673E1000B25783 /* ISceneObject.h in Headers */,
 				924EAF081827330100B6782F /* TabControl.h in Headers */,
+				929BF6FB186BC8A400457382 /* PhysicsObject.h in Headers */,
 				924EADD01827330000B6782F /* Label.h in Headers */,
 				924EAF101827330100B6782F /* TreeView.h in Headers */,
 				924EAF281827330100B6782F /* DockPanel.h in Headers */,
@@ -2009,6 +2047,7 @@
 				924EADBA1827330000B6782F /* GridViewColumnHeader.cpp in Sources */,
 				924EAF721827330100B6782F /* WrapPanel.cpp in Sources */,
 				924EADAA1827330000B6782F /* ContentControl.cpp in Sources */,
+				929BF6FC186BC8A400457382 /* PhysicsWorld.cpp in Sources */,
 				924EADC21827330000B6782F /* GroupItem.cpp in Sources */,
 				924EAF4A1827330100B6782F /* ToolBarOverflowPanel.cpp in Sources */,
 				924EAEAA1827330000B6782F /* ToolBar.cpp in Sources */,
@@ -2051,9 +2090,11 @@
 				924EAE121827330000B6782F /* ToolTip.cpp in Sources */,
 				924EAD921827330000B6782F /* ButtonBase.cpp in Sources */,
 				924EAD9A1827330000B6782F /* CheckBox.cpp in Sources */,
+				929BF6F4186BC8A400457382 /* Physics_GLESDebugDraw.cpp in Sources */,
 				924EAE621827330000B6782F /* ListBoxChrome.cpp in Sources */,
 				924EAE5A1827330000B6782F /* InkPresenter.cpp in Sources */,
 				924EAEBA1827330000B6782F /* ComboBox.cpp in Sources */,
+				929BF6F8186BC8A400457382 /* PhysicsObject.cpp in Sources */,
 				924EAE321827330000B6782F /* Border.cpp in Sources */,
 				924EAF8A1827330100B6782F /* TextBlock.cpp in Sources */,
 				924EAE8A1827330000B6782F /* HeaderedContentControl.cpp in Sources */,
@@ -2095,6 +2136,7 @@
 				924EADBC1827330000B6782F /* GridViewColumnHeader.cpp in Sources */,
 				924EAF741827330100B6782F /* WrapPanel.cpp in Sources */,
 				924EADAC1827330000B6782F /* ContentControl.cpp in Sources */,
+				929BF6FD186BC8A400457382 /* PhysicsWorld.cpp in Sources */,
 				924EADC41827330000B6782F /* GroupItem.cpp in Sources */,
 				924EAF4C1827330100B6782F /* ToolBarOverflowPanel.cpp in Sources */,
 				924EAEAC1827330000B6782F /* ToolBar.cpp in Sources */,
@@ -2137,9 +2179,11 @@
 				924EAE141827330000B6782F /* ToolTip.cpp in Sources */,
 				924EAD941827330000B6782F /* ButtonBase.cpp in Sources */,
 				924EAD9C1827330000B6782F /* CheckBox.cpp in Sources */,
+				929BF6F5186BC8A400457382 /* Physics_GLESDebugDraw.cpp in Sources */,
 				924EAE641827330000B6782F /* ListBoxChrome.cpp in Sources */,
 				924EAE5C1827330000B6782F /* InkPresenter.cpp in Sources */,
 				924EAEBC1827330000B6782F /* ComboBox.cpp in Sources */,
+				929BF6F9186BC8A400457382 /* PhysicsObject.cpp in Sources */,
 				924EAE341827330000B6782F /* Border.cpp in Sources */,
 				924EAF8C1827330100B6782F /* TextBlock.cpp in Sources */,
 				924EAE8C1827330000B6782F /* HeaderedContentControl.cpp in Sources */,
