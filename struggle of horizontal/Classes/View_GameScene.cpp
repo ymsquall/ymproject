@@ -16,7 +16,8 @@ using namespace framework;
 GameSceneView::GameSceneView()
 {
 	mTiledMap = NULL;
-	mFGLayer = NULL;
+	mFGLayer_01 = NULL;
+	mFGLayer_02 = NULL;
 	mBGLayer = NULL;
 	mJumpBtn = NULL;
 	mAttackBtn = NULL;
@@ -42,7 +43,8 @@ bool GameSceneView::init()
 	if(userdata.type != LUA_TUSERDATA || NULL == userdata.value.pointer)
 		return false;
 	mTiledMap = (TMXTiledMap*)userdata.value.pointer;
-	mFGLayer = mTiledMap->getLayer("foreground");
+	mFGLayer_01 = mTiledMap->getLayer("foreground_01");
+	mFGLayer_02 = mTiledMap->getLayer("foreground_02");
 	mBGLayer = mTiledMap->getLayer("background");
 	mHeroAnim = dynamic_cast<Armature*>(mTiledMap->getChildByTag(101));
 
@@ -212,9 +214,11 @@ void GameSceneView::fixedBgImagePosition(float& posX, float& posY)
 {
 	static CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
 	static CCSize scrnHelfSize = CCSizeMake(screenSize.width/2.0f, screenSize.height/2.0f);
-	if((NULL != mBGLayer) && (NULL != mFGLayer))
+	if((NULL != mBGLayer) && (NULL != mFGLayer_01) && (NULL != mFGLayer_02))
 	{
-		CCSize fgSize = mFGLayer->getTileSet()->_imageSize;
+		CCSize fgSize1 = mFGLayer_01->getTileSet()->_imageSize;
+		CCSize fgSize2 = mFGLayer_02->getTileSet()->_imageSize;
+		CCSize fgSize(fgSize1.width + fgSize2.width, fgSize1.height > fgSize2.height ? fgSize1.height : fgSize2.height);
 		CCSize bgSize = mBGLayer->getTileSet()->_imageSize;
 		float scaleX = fabs(posX) / (fgSize.width - screenSize.width);
 		float scaleY = fabs(posY) / (fgSize.height - screenSize.height);
@@ -228,9 +232,11 @@ bool GameSceneView::fixedScreenPositionBound(float& posX, float& posY)
 	static CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
 	static CCSize scrnHelfSize = CCSizeMake(screenSize.width/2.0f, screenSize.height/2.0f);
 	bool ret = true;
-	if(NULL != mFGLayer)
+	if(NULL != mFGLayer_01 && NULL != mFGLayer_02)
 	{
-		CCSize fgSize = mFGLayer->getTileSet()->_imageSize;
+		CCSize fgSize1 = mFGLayer_01->getTileSet()->_imageSize;
+		CCSize fgSize2 = mFGLayer_02->getTileSet()->_imageSize;
+		CCSize fgSize(fgSize1.width + fgSize2.width, fgSize1.height > fgSize2.height ? fgSize1.height : fgSize2.height);
 		if(posX > 0)
 		{
 			posX = 0;

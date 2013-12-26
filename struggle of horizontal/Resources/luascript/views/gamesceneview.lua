@@ -202,9 +202,13 @@ end
 
 function LUAGameSceneViewOnEnter()
 	_LUAGameSceneView = _LUAGameSceneView or {}
-	local foreground = _LUAGameSceneView.mTiledMap:getLayer("foreground")
+	local fg1 = _LUAGameSceneView.mTiledMap:getLayer("foreground_01")
+	local fg2 = _LUAGameSceneView.mTiledMap:getLayer("foreground_02")
 	local background = _LUAGameSceneView.mTiledMap:getLayer("background")
-	local fgImageSize = LuaTiledHelper:getTMXLayerImageSize(foreground)
+	local fgSize1 = LuaTiledHelper:getTMXLayerImageSize(fg1)
+	local fgSize2 = LuaTiledHelper:getTMXLayerImageSize(fg2)
+	local fgImageSize = CCSize(fgSize1.width + fgSize2.width, fgSize1.height)
+	if fgSize1.height < fgSize2.height then fgImageSize.height = fgSize2.height end
 	_LUAGameSceneView.self:screenScrollTo(CCPoint(0, 0--[[fgImageSize.height/2.0--]]))
 	_LUAGameSceneView.mOnTickScriptHandlerID = CCDirector:getInstance():getScheduler():scheduleScriptFunc(LUAGameSceneViewOnTick, 0, false)
 end

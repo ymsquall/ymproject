@@ -54,7 +54,8 @@ private:
 
 public:
 	TMXTiledMap* mTiledMap;
-	TMXLayer* mFGLayer;
+	TMXLayer* mFGLayer_01;
+	TMXLayer* mFGLayer_02;
 	TMXLayer* mBGLayer;
 	cocostudio::Armature* mHeroAnim;
 	CCPoint mScrollEndPos;
