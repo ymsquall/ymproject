@@ -1,20 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Classes\object\IMovableObject.cpp">
-      <Filter>SceneObject</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\object\IPhysicsMovableObject.cpp">
-      <Filter>SceneObject</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\object\IPhysicsStaticObject.cpp">
-      <Filter>SceneObject</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes\object\IStaticObject.cpp">
-      <Filter>SceneObject</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Classes\object\IMovableObject.h">
       <Filter>SceneObject</Filter>
     </ClInclude>
@@ -35,5 +21,10 @@
     <Filter Include="SceneObject">
       <UniqueIdentifier>{f3e70694-1319-415a-87ce-e2fddd6839ac}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Classes\object\ISceneObject.cpp">
+      <Filter>SceneObject</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

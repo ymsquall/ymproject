@@ -2,7 +2,7 @@
 
 #include "ICreature.h"
 
-class Monster : public DynamicPhysicsCreature
+class Monster
 {
 public:
 	Monster();

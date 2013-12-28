@@ -11,7 +11,6 @@ Physics_Box2DView::~Physics_Box2DView()
 {
 	// Removes Touch Event Listener
 	_eventDispatcher->removeEventListener(mTouchListener);
-	delete mPhysics;
 }
 
 Physics_Box2DView* Physics_Box2DView::create(int physType)
@@ -33,7 +32,7 @@ bool Physics_Box2DView::initWithType(int physType)
 	{
 	case 1:
 		{
-			mPhysics = new GameScenePhysics();
+			mPhysics = GameScenePhysics::point();
 		}
 		break;
 	}

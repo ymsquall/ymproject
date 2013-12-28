@@ -1,25 +1,19 @@
 #pragma once
+#include "unity/singleton.h"
 #include "physics/PhysicsWorld.h"
+#include "physics/PhysicsObject.h"
 
+using namespace framework;
 using namespace engine;
+class LocalPlayer;
 
 namespace cocos2d
 {
 	class TMXTiledMap;
 }
 
-enum class JumpState : int8
-{
-	none,		// ÂäµØºóµÄ×´Ì¬
-	jumpup,		// Ë²Ê±×´Ì¬£¬ÆðÌø
-	jumping,	// ³ÖÐø×´Ì¬£¬ÉÏÉý
-	floated,	// Ë²Ê±×´Ì¬£¬Ðü¸¡
-	droping,	// Ë²Ê±×´Ì¬£¬ÏÂÂä
-	landdown,	// Ë²Ê±×´Ì¬£¬ÂäµØ
-};
-typedef std::vector<b2Body*> PhysicsBodyList;
-
 class GameScenePhysics : public physics::PhysicsWorld, public cocos2d::Object
+	, public unity::SingletonAutoT<GameScenePhysics>
 {
 public:
 	GameScenePhysics();
@@ -27,13 +21,9 @@ public:
     void Step(physics::WorldSettings* settings);
 	
 	bool initBoxWithTiledMap(const cocos2d::TMXTiledMap* pTiledMap);
-
-	const cocos2d::CCPoint& getHeroBodyPos();
-	void changeMoveDirection(float dir, float speed);
-	void setIsHeroDorping(bool b);
-	bool getIsHeroDorping();
-	void jump(float speed);
-	b2ContactEdge* getHeroBodyContactList();
+	void setLocalPlayerPhysics(LocalPlayer* player);
+	void addPlayerPhysics(physics::PhysicsObject* player);
+	void addMonsterPhysics(physics::PhysicsObject* monster);
 
 private:
 	b2Body* createGround(const b2Vec2& pos, const b2Vec2& p1, const b2Vec2& p2);
@@ -44,18 +34,10 @@ private:
 	virtual void EndContact(b2Contact* contact) override;
 
 public:
-	b2Body* mHeroBody;
-	b2Body* mHeroWeaponBody;
-	PhysicsBodyList mLandList;
-	PhysicsBodyList mWallList;
-
-	b2MouseJoint* mHeroMoveJoint;
-
-	float mHeroMoveDir;
-	float mHeroMoveSpeed;
-	bool mIsHeroDorping;
-	bool mIsOriJump;
-	bool mIsJumping;
-	JumpState mJumpState;
+	physics::PhysicsBodyList mLandList;
+	physics::PhysicsBodyList mWallList;
+	LocalPlayer* mLocalPlayerPhysics;
+	physics::PhysicsObjectList mPlayerPhysicsList;
+	physics::PhysicsObjectList mMonsterPhysicsList;
 };
 

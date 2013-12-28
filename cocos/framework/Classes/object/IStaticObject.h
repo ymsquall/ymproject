@@ -6,9 +6,11 @@ namespace framework
 {
 	namespace object
 	{
-		class IStaticObject : public ISceneObject
+		template<uint16 typeValue, size_t rttiLength>
+		class IStaticObject : public ISceneObject<typeValue, rttiLength>
 		{
 		public:
+			IStaticObject(const char* ascType) : ISceneObject<typeValue, rttiLength>(ascType){}
 			virtual ~IStaticObject(){}
 
 		protected:

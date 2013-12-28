@@ -1,0 +1,12 @@
+class LocalPlayer : public unity::object
+{
+	LocalPlayer(b2World* pWorld);
+	virtual ~LocalPlayer();
+	static LocalPlayer* instance();
+	virtual const CCPoint& getMovedBodyPos();
+	virtual void move(float dir, float speed);
+	void jump(float speed);
+	void setIsHeroDorping(bool b);
+	bool getIsHeroDorping();
+	b2ContactEdge* getHeroBodyContactList();
+};

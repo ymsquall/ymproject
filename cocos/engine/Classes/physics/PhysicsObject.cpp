@@ -7,7 +7,9 @@ namespace engine
 	{
 		ObjectSettings::ObjectSettings()
 		{
-
+		}
+		ObjectSettings::~ObjectSettings()
+		{
 		}
 
 		PhysicsObject::PhysicsObject()

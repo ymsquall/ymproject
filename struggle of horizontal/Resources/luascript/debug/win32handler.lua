@@ -8,7 +8,7 @@ function LUAOnWin32KeyDownMsgProc(key)
 	if VK_RIGHT == key then _LUAGameSceneView.self:screenScroll(CCPoint(10, 0)) end
 	if VK_1 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('stand01') end
 	if VK_2 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('run01') end
-	if VK_3 == key or VK_SPACE == key then _LUAGameSceneView.self:getPhysics():jump(25.0) end
+	if VK_3 == key or VK_SPACE == key then --[[_LUAGameSceneView.self:getPhysics():jump(25.0)--]] _LUAGameSceneView.mLocalPlayer:jump(25.0) end
 	if VK_4 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('attack01') end
 	if VK_5 == key then _LUAGameSceneView.mHeroAnim:getAnimation():play('attack02') end
 	if VK_W == key then end
@@ -19,7 +19,8 @@ function LUAOnWin32KeyDownMsgProc(key)
 			_LUAGameSceneView.mHeroAnim:getAnimation():play("run01")
 		end
 		_LUAGameSceneView.mMoveSpeedScale = 300
-		_LUAGameSceneView.self:getPhysics():changeMoveDirection(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
+		--_LUAGameSceneView.self:getPhysics():changeMoveDirection(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
+		_LUAGameSceneView.mLocalPlayer:move(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
 	end
 	if VK_F9 == key then
 		ViewModelManager:reloadLuaScript("luascript/debug/win32handler.lua")
@@ -40,7 +41,8 @@ function LUAOnWin32KeyUpMsgProc(key)
 	if VK_A == key or VK_D == key then
 		_LUAGameSceneView.mMoveDirection = 0
 		_LUAGameSceneView.mMoveSpeedScale = 0
-		_LUAGameSceneView.self:getPhysics():changeMoveDirection(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
+		--_LUAGameSceneView.self:getPhysics():changeMoveDirection(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
+		_LUAGameSceneView.mLocalPlayer:move(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
 		if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "stand01" then
 			_LUAGameSceneView.mHeroAnim:getAnimation():play("stand01")
 		end

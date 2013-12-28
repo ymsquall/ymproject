@@ -11,6 +11,7 @@ namespace engine
 		struct ObjectSettings
 		{
 			ObjectSettings();
+			virtual ~ObjectSettings();
 		};
 
 		class PhysicsObject : public b2ContactListener
@@ -25,6 +26,17 @@ namespace engine
 
 			virtual void Step(ObjectSettings* settings);
 		};
-
+		typedef std::vector<b2Body*> PhysicsBodyList;
+		typedef std::vector<PhysicsObject*> PhysicsObjectList;
 	}
 }
+
+#ifndef RAND_LIMIT
+#define	RAND_LIMIT		32767
+#endif
+#ifndef PTM_RATIO
+#define	PTM_RATIO		32.0f
+#endif
+#ifndef VIEW_SCALE_RATE
+#define	VIEW_SCALE_RATE	15.0f
+#endif

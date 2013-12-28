@@ -921,7 +921,8 @@ xcopy /Y /D /V "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\websockets\pr
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Classes\ICreature.cpp" />
+    <ClCompile Include="..\Classes\JumpDelegate.cpp" />
+    <ClCompile Include="..\Classes\LocalPlayer.cpp" />
     <ClCompile Include="..\Classes\Monster.cpp" />
     <ClCompile Include="..\Classes\Physics_Box2dView.cpp" />
     <ClCompile Include="..\Classes\Physics_GameScene.cpp" />
@@ -945,6 +946,8 @@ xcopy /Y /D /V "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\websockets\pr
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\ICreature.h" />
+    <ClInclude Include="..\Classes\JumpDelegate.h" />
+    <ClInclude Include="..\Classes\LocalPlayer.h" />
     <ClInclude Include="..\Classes\Monster.h" />
     <ClInclude Include="..\Classes\Physics_Box2dView.h" />
     <ClInclude Include="..\Classes\Physics_GameScene.h" />

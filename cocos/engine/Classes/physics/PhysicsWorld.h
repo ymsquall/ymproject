@@ -3,6 +3,7 @@
 #include <Box2D/Box2D.h>
 #include "Physics_GLESDebugDraw.h"
 #include <cstdlib>
+#include "PhysicsObject.h"
 
 namespace engine
 {
@@ -13,7 +14,7 @@ namespace engine
 		/// Random floating point number in range [lo, hi]
 		inline float32 RandomFloat(float32 lo, float32 hi);
 		/// Test settings. Some can be controlled in the GUI.
-		struct WorldSettings
+		struct WorldSettings : public ObjectSettings
 		{
 			WorldSettings();
 			b2Vec2 viewCenter;
@@ -109,6 +110,12 @@ namespace engine
 	}
 }
 
+#ifndef RAND_LIMIT
 #define	RAND_LIMIT		32767
+#endif
+#ifndef PTM_RATIO
 #define	PTM_RATIO		32.0f
+#endif
+#ifndef VIEW_SCALE_RATE
 #define	VIEW_SCALE_RATE	15.0f
+#endif

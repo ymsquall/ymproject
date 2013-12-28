@@ -5,6 +5,8 @@
 #include "Model_GameScene.h"
 #include "unity/datablock.h"
 #include "luaext/LuaHelper.h"
+#include "Physics_GameScene.h"
+#include "LocalPlayer.h"
 
 GameSceneViewModel::GameSceneViewModel()
 {
@@ -25,12 +27,12 @@ void GameSceneViewModel::onGameSceneModelPropertyChanged(mvvm::INotifyPropertyCh
 		{
 			if(NULL == mSceneView)
 			{
+				LocalPlayer* pLocalUser = LocalPlayer::create(GameScenePhysics::point()->mWorld);
+				GameScenePhysics::point()->setLocalPlayerPhysics(pLocalUser);
 				mSceneView = GameSceneView::createView();
 				mSceneView->setBindingSource(pModel);
 				pRootView->addChild(mSceneView);
 			}
-			//callLuaFuncNoResult("LUAGameSceneLoadDataWithMapName", pModel, "hlg");
-			//callLuaFuncNoResult("LUATestStartPlayStruggleRecord");
 		}
 		else
 		{

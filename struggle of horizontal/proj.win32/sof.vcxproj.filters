@@ -87,7 +87,10 @@
     <ClCompile Include="..\Classes\Player.cpp">
       <Filter>Classes\Creature</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\ICreature.cpp">
+    <ClCompile Include="..\Classes\LocalPlayer.cpp">
+      <Filter>Classes\Creature</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JumpDelegate.cpp">
       <Filter>Classes\Creature</Filter>
     </ClCompile>
   </ItemGroup>
@@ -156,6 +159,12 @@
       <Filter>Classes\Creature</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\ICreature.h">
+      <Filter>Classes\Creature</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LocalPlayer.h">
+      <Filter>Classes\Creature</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JumpDelegate.h">
       <Filter>Classes\Creature</Filter>
     </ClInclude>
   </ItemGroup>
