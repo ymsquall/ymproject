@@ -15,12 +15,15 @@ function LUAOnWin32KeyDownMsgProc(key)
 	if VK_S == key then end
 	if VK_A == key or VK_D == key then
 		if VK_A == key then _LUAGameSceneView.mMoveDirection = -1 _LUAGameSceneView.mHeroAnim:setRotationY(180) else _LUAGameSceneView.mMoveDirection = 1 _LUAGameSceneView.mHeroAnim:setRotationY(0) end
-		if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "run01" then
-			_LUAGameSceneView.mHeroAnim:getAnimation():play("run01")
+		if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "attack01" and
+			_LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "attack02" then
+			if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= 'run01' then
+				_LUAGameSceneView.mHeroAnim:getAnimation():play('run01')
+			end
+			_LUAGameSceneView.mMoveSpeedScale = 300
+			--_LUAGameSceneView.self:getPhysics():changeMoveDirection(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
+			_LUAGameSceneView.mLocalPlayer:move(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
 		end
-		_LUAGameSceneView.mMoveSpeedScale = 300
-		--_LUAGameSceneView.self:getPhysics():changeMoveDirection(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
-		_LUAGameSceneView.mLocalPlayer:move(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
 	end
 	if VK_F9 == key then
 		ViewModelManager:reloadLuaScript("luascript/debug/win32handler.lua")
@@ -34,6 +37,7 @@ function LUAOnWin32KeyDownMsgProc(key)
 		ViewModelManager:reloadLuaScript("luascript/views/selecthero.lua")
 		ViewModelManager:reloadLuaScript("luascript/views/gamesceneview.lua")
 		ViewModelManager:reloadLuaScript("luascript/views/gamesceneview_playing.lua")
+		ViewModelManager:reloadLuaScript("luascript/views/gamesceneview_monster.lua")
 	end
 end
 

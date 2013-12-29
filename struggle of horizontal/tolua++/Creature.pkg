@@ -10,3 +10,15 @@ class LocalPlayer : public unity::object
 	bool getIsHeroDorping();
 	b2ContactEdge* getHeroBodyContactList();
 };
+
+class Monster : public unity::object
+{
+	Monster(b2World* pWorld);
+	virtual ~Monster();
+	virtual const CCPoint& getMovedBodyPos();
+	virtual void move(float dir, float speed);
+	void jump(float speed);
+	void setIsHeroDorping(bool b);
+	bool getIsHeroDorping();
+	b2ContactEdge* getHeroBodyContactList();
+};

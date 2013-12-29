@@ -44,3 +44,10 @@ void GameSceneViewModel::onGameSceneModelPropertyChanged(mvvm::INotifyPropertyCh
 		}
 	}
 }
+
+TMXTiledMap* GameSceneViewModel::getTiledMap()
+{
+	if(NULL == mSceneView)
+		return NULL;
+	return mSceneView->getTiledMap();
+}

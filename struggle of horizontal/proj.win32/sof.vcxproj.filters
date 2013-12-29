@@ -93,6 +93,9 @@
     <ClCompile Include="..\Classes\JumpDelegate.cpp">
       <Filter>Classes\Creature</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\ICreature.cpp">
+      <Filter>Classes\Creature</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">

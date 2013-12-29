@@ -31,6 +31,7 @@ public:
 	bool movePlayer(const Point& offset);
 	bool movePlayerTo(const Point& toPos);
 	GameScenePhysics* getPhysics();
+	TMXTiledMap* getTiledMap();
 
 	void onTouchesBegan(const std::vector<Touch*>& touches, Event *unused_event);
 	void onTouchesMoved(const std::vector<Touch*>& touches, Event *unused_event);
@@ -49,15 +50,11 @@ private:
 
 	virtual void update(float dt);
 
-	void onFrameEvent(cocostudio::Bone *bone, const char *evt, int originFrameIndex, int currentFrameIndex);
-	void animationEvent(cocostudio::Armature *armature, cocostudio::MovementEventType movementType, const char *movementID);
-
 public:
 	TMXTiledMap* mTiledMap;
 	TMXLayer* mFGLayer_01;
 	TMXLayer* mFGLayer_02;
 	TMXLayer* mBGLayer;
-	cocostudio::Armature* mHeroAnim;
 	CCPoint mScrollEndPos;
 	CCPoint mBgFixedPos;
 	CCPoint mPlayerEndPos;

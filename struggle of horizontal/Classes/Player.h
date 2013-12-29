@@ -12,7 +12,7 @@ public:
 	virtual ~Player();
 
 	virtual void Step(physics::ObjectSettings* settings) override;
-	void PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, const physics::PhysicsBodyList& landList);
+	int PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, const physics::PhysicsBodyList& landList);
 
 protected:
 	virtual bool init() override;
@@ -20,5 +20,4 @@ protected:
 	virtual void loop(float dt) override;
 
 protected:
-	//b2Body* mHeroWeaponBody;
 };

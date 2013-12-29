@@ -4,6 +4,25 @@
 	<dict>
 		<key>frames</key>
 		<dict>
+			<key>empty_8x8.png</key>
+			<dict>
+				<key>width</key>
+				<integer>8</integer>
+				<key>height</key>
+				<integer>8</integer>
+				<key>originalWidth</key>
+				<integer>8</integer>
+				<key>originalHeight</key>
+				<integer>8</integer>
+				<key>x</key>
+				<integer>0</integer>
+				<key>y</key>
+				<integer>0</integer>
+				<key>offsetX</key>
+				<real>0</real>
+				<key>offsetY</key>
+				<real>0</real>
+			</dict>
 			<key>attack01_01.png</key>
 			<dict>
 				<key>width</key>
@@ -15,7 +34,7 @@
 				<key>originalHeight</key>
 				<integer>800</integer>
 				<key>x</key>
-				<integer>0</integer>
+				<integer>8</integer>
 				<key>y</key>
 				<integer>0</integer>
 				<key>offsetX</key>
@@ -34,7 +53,7 @@
 				<key>originalHeight</key>
 				<integer>800</integer>
 				<key>x</key>
-				<integer>284</integer>
+				<integer>292</integer>
 				<key>y</key>
 				<integer>0</integer>
 				<key>offsetX</key>
@@ -53,7 +72,7 @@
 				<key>originalHeight</key>
 				<integer>800</integer>
 				<key>x</key>
-				<integer>539</integer>
+				<integer>547</integer>
 				<key>y</key>
 				<integer>0</integer>
 				<key>offsetX</key>
@@ -72,7 +91,7 @@
 				<key>originalHeight</key>
 				<integer>800</integer>
 				<key>x</key>
-				<integer>724</integer>
+				<integer>732</integer>
 				<key>y</key>
 				<integer>0</integer>
 				<key>offsetX</key>

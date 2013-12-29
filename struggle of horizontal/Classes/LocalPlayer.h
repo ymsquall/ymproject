@@ -2,7 +2,10 @@
 
 #include "unity/singleton.h"
 #include "Player.h"
+#include "cocos2d.h"
+#include "CocoStudio/CocoStudio.h"
 
+using namespace cocos2d;
 using namespace framework;
 
 class LocalPlayer : public DynamicPhysicsCreature<object::ObjectType::RTTI_Player, object::ObjectType::TYPE_NAME_LENGTH>,
@@ -17,14 +20,21 @@ public:
 	static void destory();
 	static LocalPlayer* instance();
 
+	void setAnimView(cocostudio::Armature* anim);
+	void beAttacked(ICreatue* who);
+
 	virtual void Step(physics::ObjectSettings* settings) override;
-	void PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, const physics::PhysicsBodyList& landList);
+	int PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, const physics::PhysicsBodyList& landList);
 
 protected:
 	virtual bool init() override;
 	virtual bool finalize() override;
 	virtual void loop(float dt) override;
 
+	void onFrameEvent(cocostudio::Bone *bone, const char *evt, int originFrameIndex, int currentFrameIndex);
+	void animationEvent(cocostudio::Armature *armature, cocostudio::MovementEventType movementType, const char *movementID);
+
 protected:
 	static LocalPlayer* mInstance;
+	cocostudio::Armature* mAnimView;
 };

@@ -13,5 +13,6 @@ require "luascript/views/login"
 require "luascript/views/selecthero"
 require "luascript/views/gamesceneview"
 require "luascript/views/gamesceneview_playing"
+require "luascript/views/gamesceneview_monster"
 
 ----------------

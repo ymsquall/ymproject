@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaSOFExtern
-** Generated automatically by tolua++-1.0.92 on 12/29/13 02:14:19.
+** Generated automatically by tolua++-1.0.92 on 12/29/13 15:32:08.
 */
 
 /****************************************************************************
@@ -44,6 +44,7 @@ extern "C" {
 #include "LuaUserDataConversion.h"
 #include "Physics_GameScene.h"
 #include "LocalPlayer.h"
+#include "Monster.h"
 
 using namespace cocos2d;
 using namespace cocos2d::extension;
@@ -57,6 +58,13 @@ TOLUA_API int  tolua_LuaSOFExtern_open (lua_State* tolua_S);
 
 /* function to release collected object via destructor */
 #ifdef __cplusplus
+
+static int tolua_collect_Monster (lua_State* tolua_S)
+{
+ Monster* self = (Monster*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
 
 static int tolua_collect_GameSceneView (lua_State* tolua_S)
 {
@@ -110,6 +118,7 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"mvvm::IModelManager");
  tolua_usertype(tolua_S,"framework::unity::SingletonAutoT<ViewModelManager>");
  tolua_usertype(tolua_S,"LuaUserDataConversion");
+ tolua_usertype(tolua_S,"Monster");
  tolua_usertype(tolua_S,"CCNode");
  tolua_usertype(tolua_S,"engine::AppDelegate");
  tolua_usertype(tolua_S,"b2World");
@@ -118,6 +127,7 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"ViewModelManager");
  tolua_usertype(tolua_S,"LocalPlayer");
  tolua_usertype(tolua_S,"TMXTiledMap");
+ tolua_usertype(tolua_S,"Player");
  tolua_usertype(tolua_S,"GameScenePhysics");
  tolua_usertype(tolua_S,"GameSceneModel");
  tolua_usertype(tolua_S,"UILayer");
@@ -1180,6 +1190,68 @@ static int tolua_LuaSOFExtern_LuaUserDataConversion_toNode00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: toPlayer of class  LuaUserDataConversion */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_LuaUserDataConversion_toPlayer00
+static int tolua_LuaSOFExtern_LuaUserDataConversion_toPlayer00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"LuaUserDataConversion",0,&tolua_err) ||
+     !tolua_isuserdata(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  void* pointer = ((void*)  tolua_touserdata(tolua_S,2,0));
+  {
+   Player* tolua_ret = (Player*)  LuaUserDataConversion::toPlayer(pointer);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"Player");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'toPlayer'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: toMonster of class  LuaUserDataConversion */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_LuaUserDataConversion_toMonster00
+static int tolua_LuaSOFExtern_LuaUserDataConversion_toMonster00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"LuaUserDataConversion",0,&tolua_err) ||
+     !tolua_isuserdata(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  void* pointer = ((void*)  tolua_touserdata(tolua_S,2,0));
+  {
+   Monster* tolua_ret = (Monster*)  LuaUserDataConversion::toMonster(pointer);
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"Monster");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'toMonster'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: new of class  GameScenePhysics */
 #ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_GameScenePhysics_new00
 static int tolua_LuaSOFExtern_GameScenePhysics_new00(lua_State* tolua_S)
@@ -1625,6 +1697,297 @@ static int tolua_LuaSOFExtern_LocalPlayer_getHeroBodyContactList00(lua_State* to
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: new of class  Monster */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_Monster_new00
+static int tolua_LuaSOFExtern_Monster_new00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"Monster",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"b2World",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  b2World* pWorld = ((b2World*)  tolua_tousertype(tolua_S,2,0));
+  {
+   Monster* tolua_ret = (Monster*)  Mtolua_new((Monster)(pWorld));
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"Monster");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new_local of class  Monster */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_Monster_new00_local
+static int tolua_LuaSOFExtern_Monster_new00_local(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"Monster",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"b2World",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  b2World* pWorld = ((b2World*)  tolua_tousertype(tolua_S,2,0));
+  {
+   Monster* tolua_ret = (Monster*)  Mtolua_new((Monster)(pWorld));
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"Monster");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: delete of class  Monster */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_Monster_delete00
+static int tolua_LuaSOFExtern_Monster_delete00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Monster",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Monster* self = (Monster*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'delete'", NULL);
+#endif
+  Mtolua_delete(self);
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'delete'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getMovedBodyPos of class  Monster */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_Monster_getMovedBodyPos00
+static int tolua_LuaSOFExtern_Monster_getMovedBodyPos00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Monster",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Monster* self = (Monster*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getMovedBodyPos'", NULL);
+#endif
+  {
+   const CCPoint& tolua_ret = (const CCPoint&)  self->getMovedBodyPos();
+    tolua_pushusertype(tolua_S,(void*)&tolua_ret,"const CCPoint");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getMovedBodyPos'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: move of class  Monster */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_Monster_move00
+static int tolua_LuaSOFExtern_Monster_move00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Monster",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Monster* self = (Monster*)  tolua_tousertype(tolua_S,1,0);
+  float dir = ((float)  tolua_tonumber(tolua_S,2,0));
+  float speed = ((float)  tolua_tonumber(tolua_S,3,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'move'", NULL);
+#endif
+  {
+   self->move(dir,speed);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'move'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: jump of class  Monster */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_Monster_jump00
+static int tolua_LuaSOFExtern_Monster_jump00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Monster",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Monster* self = (Monster*)  tolua_tousertype(tolua_S,1,0);
+  float speed = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'jump'", NULL);
+#endif
+  {
+   self->jump(speed);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'jump'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setIsHeroDorping of class  Monster */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_Monster_setIsHeroDorping00
+static int tolua_LuaSOFExtern_Monster_setIsHeroDorping00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Monster",0,&tolua_err) ||
+     !tolua_isboolean(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Monster* self = (Monster*)  tolua_tousertype(tolua_S,1,0);
+  bool b = ((bool)  tolua_toboolean(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setIsHeroDorping'", NULL);
+#endif
+  {
+   self->setIsHeroDorping(b);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setIsHeroDorping'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getIsHeroDorping of class  Monster */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_Monster_getIsHeroDorping00
+static int tolua_LuaSOFExtern_Monster_getIsHeroDorping00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Monster",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Monster* self = (Monster*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getIsHeroDorping'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->getIsHeroDorping();
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getIsHeroDorping'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getHeroBodyContactList of class  Monster */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_Monster_getHeroBodyContactList00
+static int tolua_LuaSOFExtern_Monster_getHeroBodyContactList00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Monster",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Monster* self = (Monster*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getHeroBodyContactList'", NULL);
+#endif
+  {
+   b2ContactEdge* tolua_ret = (b2ContactEdge*)  self->getHeroBodyContactList();
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"b2ContactEdge");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getHeroBodyContactList'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* Open function */
 TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
 {
@@ -1705,6 +2068,8 @@ TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"toGameSceneView",tolua_LuaSOFExtern_LuaUserDataConversion_toGameSceneView00);
    tolua_function(tolua_S,"toArmature",tolua_LuaSOFExtern_LuaUserDataConversion_toArmature00);
    tolua_function(tolua_S,"toNode",tolua_LuaSOFExtern_LuaUserDataConversion_toNode00);
+   tolua_function(tolua_S,"toPlayer",tolua_LuaSOFExtern_LuaUserDataConversion_toPlayer00);
+   tolua_function(tolua_S,"toMonster",tolua_LuaSOFExtern_LuaUserDataConversion_toMonster00);
   tolua_endmodule(tolua_S);
   #ifdef __cplusplus
   tolua_cclass(tolua_S,"GameScenePhysics","GameScenePhysics","Object",tolua_collect_GameScenePhysics);
@@ -1735,6 +2100,23 @@ TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"setIsHeroDorping",tolua_LuaSOFExtern_LocalPlayer_setIsHeroDorping00);
    tolua_function(tolua_S,"getIsHeroDorping",tolua_LuaSOFExtern_LocalPlayer_getIsHeroDorping00);
    tolua_function(tolua_S,"getHeroBodyContactList",tolua_LuaSOFExtern_LocalPlayer_getHeroBodyContactList00);
+  tolua_endmodule(tolua_S);
+  #ifdef __cplusplus
+  tolua_cclass(tolua_S,"Monster","Monster","unity::object",tolua_collect_Monster);
+  #else
+  tolua_cclass(tolua_S,"Monster","Monster","unity::object",NULL);
+  #endif
+  tolua_beginmodule(tolua_S,"Monster");
+   tolua_function(tolua_S,"new",tolua_LuaSOFExtern_Monster_new00);
+   tolua_function(tolua_S,"new_local",tolua_LuaSOFExtern_Monster_new00_local);
+   tolua_function(tolua_S,".call",tolua_LuaSOFExtern_Monster_new00_local);
+   tolua_function(tolua_S,"delete",tolua_LuaSOFExtern_Monster_delete00);
+   tolua_function(tolua_S,"getMovedBodyPos",tolua_LuaSOFExtern_Monster_getMovedBodyPos00);
+   tolua_function(tolua_S,"move",tolua_LuaSOFExtern_Monster_move00);
+   tolua_function(tolua_S,"jump",tolua_LuaSOFExtern_Monster_jump00);
+   tolua_function(tolua_S,"setIsHeroDorping",tolua_LuaSOFExtern_Monster_setIsHeroDorping00);
+   tolua_function(tolua_S,"getIsHeroDorping",tolua_LuaSOFExtern_Monster_getIsHeroDorping00);
+   tolua_function(tolua_S,"getHeroBodyContactList",tolua_LuaSOFExtern_Monster_getHeroBodyContactList00);
   tolua_endmodule(tolua_S);
  tolua_endmodule(tolua_S);
  return 1;

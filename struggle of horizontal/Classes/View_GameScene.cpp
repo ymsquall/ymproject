@@ -6,6 +6,7 @@
 #include "Physics_GameScene.h"
 #include "math/Math.h"
 #include "gui/CocosGUI.h"
+#include "LocalPlayer.h"
 
 GameSceneView* gGameSceneView = NULL;
 
@@ -33,11 +34,7 @@ bool GameSceneView::init()
 {
 	if(!ViewSuperT::init())
 		return false;
-
-	ViewModelManager::reloadLuaScript("luascript/views/helper.lua");
-	ViewModelManager::reloadLuaScript("luascript/views/gamesceneview.lua");
-	ViewModelManager::reloadLuaScript("luascript/models/gamescenemodel.lua");
-	
+		
 	cocos2d::Size thisSize = this->getContentSize();
 	ScriptParamObject userdata = callLuaFuncWithUserdataResult("LUALoadGameSceneView", this, thisSize.width, thisSize.height);
 	if(userdata.type != LUA_TUSERDATA || NULL == userdata.value.pointer)
@@ -46,15 +43,13 @@ bool GameSceneView::init()
 	mFGLayer_01 = mTiledMap->getLayer("foreground_01");
 	mFGLayer_02 = mTiledMap->getLayer("foreground_02");
 	mBGLayer = mTiledMap->getLayer("background");
-	mHeroAnim = dynamic_cast<Armature*>(mTiledMap->getChildByTag(101));
-
+	cocostudio::Armature* pAnimView = dynamic_cast<Armature*>(mTiledMap->getChildByTag(101));
+	LocalPlayer::instance()->setAnimView(pAnimView);
 	gui::UILayer* pUILayer = dynamic_cast<gui::UILayer*>(this->getChildByTag(201));
 	gui::UIWidget* pWidget = dynamic_cast<gui::UIWidget*>(pUILayer->getWidgetByTag(202));
 	mJumpBtn = dynamic_cast<gui::UIButton*>(pWidget->getChildByName("mJumpBtn"));
 	mAttackBtn = dynamic_cast<gui::UIButton*>(pWidget->getChildByName("mAttackBtn"));
 
-	mHeroAnim->getAnimation()->setFrameEventCallFunc(this, frameEvent_selector(GameSceneView::onFrameEvent));
-	mHeroAnim->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(GameSceneView::animationEvent));
 	this->scheduleUpdate();
 
 	auto listener = EventListenerTouchAllAtOnce::create();
@@ -65,22 +60,6 @@ bool GameSceneView::init()
 	//_touchListener = listener;
 
 	return true;
-}
-
-void GameSceneView::onFrameEvent(cocostudio::Bone *bone, const char *evt, int originFrameIndex, int currentFrameIndex)
-{
-
-}
-
-void GameSceneView::animationEvent(cocostudio::Armature *armature, cocostudio::MovementEventType movementType, const char *movementID)
-{
-	static const std::string attack1 = "attack01";
-	static const std::string attack2 = "attack02";
-	if(movementType == cocostudio::COMPLETE && (attack1 == movementID || attack2 == movementID))
-	{
-        callLuaFuncNoResult("LUAGameSceneViewAttackAnimEnded");
-		//mHeroAnim->getAnimation()->play("stand");
-	}
 }
 
 bool GameSceneView::initForMvvm()
@@ -101,28 +80,6 @@ void GameSceneView::onEnterTransitionDidFinish()
 	if(NULL != pPhysics)
 	{
 		pPhysics->initBoxWithTiledMap(mTiledMap);
-		/*
-		// hero weapon box
-		CCBone* pBone = mHeroAnim->getBone("Layer17");
-		CCNode* boneNode = pBone->getDisplayRenderNode();
-		CCSize size = boneNode->getContentSize();
-		b2BodyDef bd;
-		bd.type = b2_dynamicBody;
-		bd.position.Set(0, 0);
-		pPhysics->mHeroWeaponBody = pPhysics->mWorld->CreateBody(&bd);
-		b2PolygonShape shape;
-		b2FixtureDef fd;
-		fd.shape = &shape;
-		fd.density = 0.0f;
-		fd.friction = 0.0f;
-		shape.SetAsBox(size.width/2/PTM_RATIO, size.height/2/PTM_RATIO/1.5f, b2Vec2(0, 0), 0);
-		pPhysics->mHeroWeaponBody->CreateFixture(&fd);
-		CCNode* pBindNode = CCNode::create();
-		pBindNode->setPosition(Point(0,size.height/4.0f));
-		pBindNode->setTag(111);
-		boneNode->addChild(pBindNode);
-		pPhysics->mHeroWeaponBody->SetUserData((void*)pBone);
-		*/
 	}
 	mTiledMap->addChild(mPhysicsView,1000);
 	mPhysicsView->setScale(PTM_RATIO);
@@ -278,6 +235,11 @@ GameScenePhysics* GameSceneView::getPhysics()
 	return mPhysicsView->physics<GameScenePhysics>();
 }
 
+TMXTiledMap* GameSceneView::getTiledMap()
+{
+	return mTiledMap;
+}
+
 void GameSceneView::update(float dt)
 {
 	static CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
@@ -296,7 +258,7 @@ void GameSceneView::update(float dt)
 	{
 		// hero weapon box
 		{
-			CCBone* pBone = (CCBone*)pPhysics->mHeroWeaponBody->GetUserData();
+			CCBone* pBone = (CCBone*)pPhysics->mWeaponBody->GetUserData();
 			CCNode* pBoneNode = pBone->getDisplayRenderNode();
 			CCNode* pBindNode = dynamic_cast<CCNode*>(pBoneNode->getChildByTag(111));
 			CCSize size = pBoneNode->getContentSize();
@@ -338,8 +300,8 @@ void GameSceneView::update(float dt)
 			//pos += offDir * (size.height);
 			//pos.x += size.width/1.5f;
 			//CCLOG("rota [%.02f, %.02f]", rotaA * (180 / math::Math::PI), rotaB * (180 / math::Math::PI));
-			pPhysics->mHeroWeaponBody->SetTransform(b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO), rota);
-			pPhysics->mHeroWeaponBody->SetLinearVelocity(b2Vec2(0,0));
+			pPhysics->mWeaponBody->SetTransform(b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO), rota);
+			pPhysics->mWeaponBody->SetLinearVelocity(b2Vec2(0,0));
 		}
 	}
 	//

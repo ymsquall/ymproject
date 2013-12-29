@@ -56,6 +56,9 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 						_LUAGameSceneView.mHeroAnim:getAnimation():play('attack02')
 						_LUAGameSceneView.mHeroPlayAttactAnimIndex = 1
 					end
+					_LUAGameSceneView.mMoveDirection = 0.0
+					_LUAGameSceneView.mMoveSpeedScale = 0.0
+					_LUAGameSceneView.mLocalPlayer:move(0.0, 0.0)
 				end
 			end
 		end)
@@ -75,7 +78,19 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 	return _LUAGameSceneView.mTiledMap
 end
 
+function LUAGameSceneViewBeAttacked()
+	if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= 'beattack01' then
+		_LUAGameSceneView.mHeroAnim:getAnimation():play('beattack01')
+	end
+end
 function LUAGameSceneViewAttackAnimEnded()
+    if _LUAGameSceneView.mMoveSpeedScale < 0.001 then
+        _LUAGameSceneView.mHeroAnim:getAnimation():play('stand01')
+    else
+        _LUAGameSceneView.mHeroAnim:getAnimation():play('run01')
+    end
+end
+function LUAGameSceneViewBeAttackAnimEnded()
     if _LUAGameSceneView.mMoveSpeedScale < 0.001 then
         _LUAGameSceneView.mHeroAnim:getAnimation():play('stand01')
     else
@@ -97,7 +112,9 @@ function LUAGameSceneViewTouchesBegan(touchID, x, y)
 	return false
 end
 function LUAGameSceneViewTouchesMoved(touchID, x, y)
-	if touchID == _LUAGameSceneView.mTouchIndex then
+	if touchID == _LUAGameSceneView.mTouchIndex and
+		_LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "attack01" and
+		_LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "attack02" then
 		local pos = cc.p(x, y)
 		local dist = pos.x - _LUAGameSceneView.mTouchMoveBeginPos.x
 		if math.abs(dist) > 20.0 then
@@ -172,7 +189,9 @@ function LUAGameSceneViewTouchesMoved(touchID, x, y)
 	return false
 end
 function LUAGameSceneViewTouchesEnded(touchID, x, y)
-	if touchID == _LUAGameSceneView.mTouchIndex then
+	if touchID == _LUAGameSceneView.mTouchIndex and
+		_LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "attack01" and
+		_LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "attack02" then
 		_LUAGameSceneView.mTouchIndex = -1
 		_LUAGameSceneView.mMoveing = false
 		_LUAGameSceneView.mMoveDirection = 0.0
@@ -267,13 +286,15 @@ function LUAGameSceneViewOnTick(dt)
 		mapPos.x = mapPos.x - __LUADeviceHelfWinSize.width
 	end
 	if offset.y < -30 then
-		mapPos.y = (mapPos.y - (offset.y + 180.0)) - __LUADeviceHelfWinSize.height;
+		mapPos.y = (mapPos.y - (offset.y + 180.0)) - __LUADeviceHelfWinSize.height
 	elseif offset.y > 100 then
-		mapPos.y = (mapPos.y - (offset.y - 100.0)) - __LUADeviceHelfWinSize.height;
+		mapPos.y = (mapPos.y - (offset.y - 100.0)) - __LUADeviceHelfWinSize.height
 	else
 		mapPos.y = mapPos.y - __LUADeviceHelfWinSize.height
 	end
-	_LUAGameSceneView.self:screenScrollTo(CCPoint(mapPos.x, mapPos.y));
+	_LUAGameSceneView.self:screenScrollTo(CCPoint(mapPos.x, mapPos.y))
+	-- monster tick
+	LUAGameSceneView_Monster_Tick(dt)
 end
 
 print('game scene view loaded')

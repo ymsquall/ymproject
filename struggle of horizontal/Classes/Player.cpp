@@ -22,15 +22,18 @@ bool Player::finalize()
 void Player::loop(float dt)
 {
 }
-void Player::PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, const physics::PhysicsBodyList& landList)
+int Player::PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, const physics::PhysicsBodyList& landList)
 {
+	int ret = 0;
 
+	return ret;
 }
 void Player::Step(physics::ObjectSettings* settings)
 {
-	static PlayerPhysicsSteeings playerSettings;
+	static CreaturePhysicsSteeings playerSettings;
 	playerSettings.mIsHeroDorping = mIsHeroDorping;
 	playerSettings.mIsOriJump = mIsOriJump;
+	playerSettings.mUsingVerticeCount = 0;
 	ICreatue::Step(&playerSettings);
 	if(mIsJumping)
 	{

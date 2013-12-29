@@ -8,93 +8,56 @@
 using namespace cocos2d;
 using namespace framework;
 
-struct PlayerPhysicsSteeings : public physics::ObjectSettings
+struct CreaturePhysicsSteeings : public physics::ObjectSettings
 {
-	PlayerPhysicsSteeings()
+	CreaturePhysicsSteeings()
 	{
 		mIsHeroDorping = false;
 		mIsOriJump = false;
+		mUsingVerticeCount = 0;
 	}
 	bool mIsHeroDorping;
 	bool mIsOriJump;
+	b2Vec2 mVertices[b2_maxPolygonVertices];
+	int8 mUsingVerticeCount;
 };
 
 class ICreatue
 {
 public:
-	ICreatue(b2World* pWorld)
+	static const int MoveBodyContactMask = 0x0002;
+	static const int WeaponBodyContactMask = 0x0004;
+	static const int BodyBodyContactMask = 0x0008;
+	static const int LandContactMask = 0x0010;
+	static const int WallContactMask = 0x0020;
+	ICreatue(b2World* pWorld);
+	virtual ~ICreatue();
+	template<class T>
+	static T* createWithBox(b2World* pWorld, const Point& pos, const Size& size)
 	{
-		mWorld = pWorld;
-		mHeroWeaponBody = NULL;
+		T* pRet = new T(pWorld);
+		if(NULL != pRet)
 		{
-			b2BodyDef bd;
-			bd.type = b2_dynamicBody;
-			bd.position.Set(25, 15);
-			mMoveBody = mWorld->CreateBody(&bd);
-			b2PolygonShape shape;
-			b2FixtureDef fd;
-			fd.shape = &shape;
-			fd.density = 10.0f;
-			fd.friction = 1.0f;
-			shape.SetAsBox(0.3f, 0.1f, b2Vec2(0, 0), 0.0);
-			mMoveBody->CreateFixture(&fd);
-			mMoveBody->SetFixedRotation(true); // 设置为固定角度（不旋转）
-		}
-		mMoveDir = 0;
-		mMoveSpeed = 0;
-	}
-	virtual ~ICreatue()
-	{
-
-	}
-
-	virtual const CCPoint& getMovedBodyPos()
-	{
-		static CCPoint finalPos;
-		b2Vec2 heroPos = mMoveBody->GetWorldCenter();
-		const b2Fixture* fixture = mMoveBody->GetFixtureList();
-		const b2AABB& aabb = fixture->GetAABB(0);
-		finalPos = CCPoint((heroPos.x - (aabb.upperBound.x - aabb.lowerBound.x)/2.0f) * PTM_RATIO, (heroPos.y - (aabb.upperBound.y - aabb.lowerBound.y)/2.0f) * PTM_RATIO);
-		return finalPos;
-	}
-	virtual void move(float dir, float speed)
-	{
-		mMoveDir = dir;
-		mMoveSpeed = speed;
-	}
-	virtual void Step(physics::ObjectSettings* settings)
-	{
-		if(NULL == settings)
-			return;
-		const PlayerPhysicsSteeings* pPlayerSettings = dynamic_cast<const PlayerPhysicsSteeings*>(settings);
-		if(NULL != pPlayerSettings)
-		{
-			b2Vec2 vel = mMoveBody->GetLinearVelocity();
-			//if(vel.y <= 0.001f && vel.y >= -0.001f)
-			//	vel.y = 1.0f; 
-			if(fabs(mMoveDir) > 0.001f)
+			if(!pRet->init() || !pRet->initWithBox(pos, size))
 			{
-				vel.x = mMoveDir * mMoveSpeed / PTM_RATIO + mMoveDir;
-				if(pPlayerSettings->mIsHeroDorping && pPlayerSettings->mIsOriJump)
-					vel.x /= 2.0f;
-				mMoveBody->SetLinearVelocity(vel);
+				delete pRet;
+				return NULL;
 			}
-			else
-			{
-				vel.x = 0.0f;
-				mMoveBody->SetLinearVelocity(vel);
-			}
+			return pRet;
 		}
+		return NULL;
 	}
-	b2ContactEdge* getHeroBodyContactList()
-	{
-		return mMoveBody->GetContactList();
-	}
+	virtual bool initWithBox(const Point& pos, const Size& size);
+	virtual const CCPoint& getMovedBodyPos();
+	virtual void move(float dir, float speed);
+	virtual void Step(physics::ObjectSettings* settings);
+	b2ContactEdge* getHeroBodyContactList();
 
 public:
 	b2World* mWorld;
 	b2Body* mMoveBody;
-	b2Body* mHeroWeaponBody;
+	b2Body* mWeaponBody;
+	b2Body* mBodyBody;
 	float mMoveDir;
 	float mMoveSpeed;
 };

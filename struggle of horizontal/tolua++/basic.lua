@@ -13,6 +13,7 @@ local CCObjectTypes = {
     "LuaUserDataConversion",
     "GameScenePhysics",
     "LocalPlayer",
+    "Monster",
 }
 
 -- register CCObject types
@@ -113,6 +114,7 @@ extern "C" {
 #include "LuaUserDataConversion.h"
 #include "Physics_GameScene.h"
 #include "LocalPlayer.h"
+#include "Monster.h"
 
 using namespace cocos2d;
 using namespace cocos2d::extension;

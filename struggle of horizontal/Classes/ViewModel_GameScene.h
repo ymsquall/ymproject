@@ -2,7 +2,9 @@
 
 #include "unity/singleton.h"
 #include "mvvm/viewmodel.h"
+#include "cocos2d.h"
 
+using namespace cocos2d;
 using namespace framework;
 
 class GameSceneView;
@@ -13,6 +15,7 @@ public:
 	~GameSceneViewModel();
 
 	void onGameSceneModelPropertyChanged(mvvm::INotifyPropertyChanged* sender, mvvm::NotifyPropertyChangedRoutedEventArgs* args);
+	TMXTiledMap* getTiledMap();
 
 private:
 	GameSceneView* mSceneView;

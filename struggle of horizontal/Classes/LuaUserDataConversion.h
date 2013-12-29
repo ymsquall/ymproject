@@ -19,6 +19,8 @@ namespace cocos2d
 }
 class GameSceneModel;
 class GameSceneView;
+class Player;
+class Monster;
 
 class LuaUserDataConversion
 {
@@ -28,6 +30,8 @@ public:
 	static GameSceneView* toGameSceneView(void* pointer);
 	static cocos2d::extension::Armature* toArmature(void* pointer);
 	static CCNode* toNode(void* pointer);
+	static Player* toPlayer(void* pointer);
+	static Monster* toMonster(void* pointer);
 	/*
 	struct LandTreeGrid;
 	struct SoldierTroopsUnitGrid;

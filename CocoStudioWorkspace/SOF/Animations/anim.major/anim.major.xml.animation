@@ -9,7 +9,6 @@
   <JsonList />
   <ResourceFileList>
     <string>anim0.plist</string>
-    <string>anim1.plist</string>
   </ResourceFileList>
   <CanvasSize>
     <Width>0</Width>
