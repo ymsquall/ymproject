@@ -71,6 +71,7 @@ void LocalPlayer::loop(float dt)
 }
 void LocalPlayer::comboTimer(float dt)
 {
+	this->updateTimer(dt);
 	mComboCountdownTimer -= dt;
 	if(mComboCountdownTimer <= 0)
 	{
@@ -309,7 +310,7 @@ void LocalPlayer::Step(physics::ObjectSettings* settings)
 			if(this != pObject)
 			{
 				Monster* pBeAttackedMonst = dynamic_cast<Monster*>(pObject);
-				if(NULL != pBeAttackedMonst && !pBeAttackedMonst->isBeAttacking())
+				if(NULL != pBeAttackedMonst && !pBeAttackedMonst->isBeAttacking() && !pBeAttackedMonst->isDeathing())
 				{
 					if(mNowComboCount == 2)
 					{

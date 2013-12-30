@@ -52,7 +52,12 @@ public:
 	virtual void move(float dir, float speed);
 	virtual void Step(physics::ObjectSettings* settings);
 	b2ContactEdge* getHeroBodyContactList();
+	bool isAttacking();
 	bool isBeAttacking();
+	bool isDeathing();
+	const Point& getPosition();
+
+	void updateTimer(float dt);
 
 public:
 	b2World* mWorld;
@@ -63,7 +68,12 @@ public:
 	float mMoveSpeed;
 
 protected:
+	bool mAttacking;
 	bool mBeAttacking;
+	bool mDeathing;
+	float mBeAttackTimeout;
+	int mMaxHP;
+	int mNowHP;
 };
 
 template<uint8 typeValue, size_t rttiLength>

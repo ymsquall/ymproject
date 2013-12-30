@@ -10,7 +10,12 @@ ICreatue::ICreatue(b2World* pWorld)
 	mBodyBody = NULL;
 	mMoveDir = 0;
 	mMoveSpeed = 0;
+	mAttacking = false;
 	mBeAttacking = false;
+	mDeathing = false;
+	mBeAttackTimeout = 0.0f;
+	mMaxHP = 8000;
+	mNowHP = mMaxHP;
 }
 ICreatue::~ICreatue()
 {
@@ -35,6 +40,20 @@ bool ICreatue::initWithBox(const Point& pos, const Size& size)
 		mMoveBody->SetFixedRotation(true); // 设置为固定角度（不旋转）
 	}
 	return true;
+}
+void ICreatue::updateTimer(float dt)
+{
+	if(this->isBeAttacking())
+	{
+		mBeAttackTimeout += dt;
+		if(mBeAttackTimeout >= 1.0f)
+		{
+			mBeAttacking = false;
+			mBeAttackTimeout = 0.0f;
+		}
+	}
+	else
+		mBeAttackTimeout = 0.0f;
 }
 const CCPoint& ICreatue::getMovedBodyPos()
 {
@@ -76,7 +95,15 @@ b2ContactEdge* ICreatue::getHeroBodyContactList()
 {
 	return mMoveBody->GetContactList();
 }
+bool ICreatue::isAttacking()
+{
+	return mAttacking;
+}
 bool ICreatue::isBeAttacking()
 {
 	return mBeAttacking;
+}
+bool ICreatue::isDeathing()
+{
+	return mDeathing;
 }

@@ -21,9 +21,17 @@ public:
 	void beAttacked(ICreatue* who, bool clobber = false);
 
 protected:
+	void simpleAITimer(float dt);
+	void recoverHPTimer(float dt);
+	void onDeathTimer(float dt);
 	void onFrameEvent(cocostudio::Bone *bone, const char *evt, int originFrameIndex, int currentFrameIndex);
 	void animationEvent(cocostudio::Armature *armature, cocostudio::MovementEventType movementType, const char *movementID);
+	void updateHPView();
+	void onDeath();
 
 protected:
 	cocostudio::Armature* mMonsterAnim;
+	float mActiveAttackTimer;
+	bool mAICanActiveAttacked;
+	float mDeathTimer;
 };

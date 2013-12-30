@@ -31,6 +31,15 @@ function LUAGameSceneView_MonsterBeAttacked(monster, clobber)
 	end
 end
 
+function LUAGameSceneView_MonsterActiveAttack(monster)
+	local pMonster = LuaUserDataConversion:toMonster(monster)
+	for i,v in pairs(_LUAGameSceneView_MonsterManager.MonsterList) do
+		if v.mMonster == pMonster then
+			v.mAnim:getAnimation():play('attack01')
+			break
+		end
+	end
+end
 function LUAGameSceneView_MonsterAttackAnimEnded(monster)
 	local pMonster = LuaUserDataConversion:toMonster(monster)
 	for i,v in pairs(_LUAGameSceneView_MonsterManager.MonsterList) do
@@ -50,7 +59,24 @@ function LUAGameSceneView_MonsterBeAttackAnimEnded(monster)
 		end
 	end
 end
-
+function LUAGameSceneView_MonsterDeath(monster)
+	local pMonster = LuaUserDataConversion:toMonster(monster)
+	for i,v in pairs(_LUAGameSceneView_MonsterManager.MonsterList) do
+		if v.mMonster == pMonster then
+			v.mAnim:getAnimation():play('death01')
+			break
+		end
+	end
+end
+function LUAGameSceneView_MonsterRelive(monster)
+	local pMonster = LuaUserDataConversion:toMonster(monster)
+	for i,v in pairs(_LUAGameSceneView_MonsterManager.MonsterList) do
+		if v.mMonster == pMonster then
+			v.mAnim:getAnimation():play('stand01')
+			break
+		end
+	end
+end
 function LUAGameSceneView_Monster_Tick(dt)
 	for i,v in pairs(_LUAGameSceneView_MonsterManager.MonsterList) do
 		local monsterPos = v.mMonster:getMovedBodyPos()

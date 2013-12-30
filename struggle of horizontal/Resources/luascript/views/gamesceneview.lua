@@ -48,7 +48,8 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
     _LUAGameSceneView.mAttackBtn:addTouchEventListener(function(sender, eventType)
 			if eventType == 0 then
 				local movementName = _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID()
-				if movementName ~= 'attack01' and movementName ~= 'attack02' then
+				if movementName ~= 'attack01' and movementName ~= 'attack02' and
+					movementName ~= 'beattack01' and movementName ~= 'clobber01' then
 					if _LUAGameSceneView.mHeroPlayAttactAnimIndex == 1 then
 						_LUAGameSceneView.mHeroAnim:getAnimation():play('attack01')
 						_LUAGameSceneView.mHeroPlayAttactAnimIndex = 2
@@ -117,7 +118,9 @@ end
 function LUAGameSceneViewTouchesMoved(touchID, x, y)
 	if touchID == _LUAGameSceneView.mTouchIndex and
 		_LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "attack01" and
-		_LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "attack02" then
+		_LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "attack02" and
+		_LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "beattack01" and
+		_LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "clobber01" then
 		local pos = cc.p(x, y)
 		local dist = pos.x - _LUAGameSceneView.mTouchMoveBeginPos.x
 		if math.abs(dist) > 20.0 then
