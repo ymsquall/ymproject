@@ -87,7 +87,7 @@ void Monster::Step(physics::ObjectSettings* settings)
 				else
 				{
 					LocalPlayer* pBeAttackPlayer = dynamic_cast<LocalPlayer*>(pObject);
-					if(NULL != pBeAttackPlayer)
+					if(NULL != pBeAttackPlayer && !pBeAttackPlayer->isBeAttacking())
 					{
 						pBeAttackPlayer->beAttacked(this);
 					}
@@ -184,7 +184,8 @@ void Monster::onFrameEvent(cocostudio::Bone *bone, const char *evt, int originFr
 }
 void Monster::animationEvent(cocostudio::Armature *armature, cocostudio::MovementEventType movementType, const char *movementID)
 {
-	static const std::string beattack = "beattack01";
+	static const std::string beattack1 = "beattack01";
+	static const std::string clobber1 = "clobber01";
 	static const std::string attack1 = "attack01";
 	static const std::string attack2 = "attack02";
 	if(movementType == cocostudio::COMPLETE)
@@ -198,15 +199,17 @@ void Monster::animationEvent(cocostudio::Armature *armature, cocostudio::Movemen
 			}
 			callLuaFuncNoResult("LUAGameSceneView_MonsterAttackAnimEnded", this);
 		}
-		else if(beattack == movementID)
+		else if(beattack1 == movementID || clobber1 == movementID)
 		{
 			callLuaFuncNoResult("LUAGameSceneView_MonsterBeAttackAnimEnded", this);
+			mBeAttacking = false;
 		}
 	}
 }
-void Monster::beAttacked(ICreatue* who)
+void Monster::beAttacked(ICreatue* who, bool clobber)
 {
-	callLuaFuncNoResult("LUAGameSceneView_MonsterBeAttacked", this);
+	mBeAttacking = true;
+	callLuaFuncNoResult("LUAGameSceneView_MonsterBeAttacked", this, clobber);
 	Point otherPos = who->getMovedBodyPos();
 	Point myPos = this->getMovedBodyPos();
 	if(otherPos.x < myPos.x)

@@ -18,7 +18,7 @@ public:
 	virtual bool finalize() override;
 	virtual void loop(float dt) override;
 
-	void beAttacked(ICreatue* who);
+	void beAttacked(ICreatue* who, bool clobber = false);
 
 protected:
 	void onFrameEvent(cocostudio::Bone *bone, const char *evt, int originFrameIndex, int currentFrameIndex);

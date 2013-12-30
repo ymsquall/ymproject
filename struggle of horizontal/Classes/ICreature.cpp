@@ -10,6 +10,7 @@ ICreatue::ICreatue(b2World* pWorld)
 	mBodyBody = NULL;
 	mMoveDir = 0;
 	mMoveSpeed = 0;
+	mBeAttacking = false;
 }
 ICreatue::~ICreatue()
 {
@@ -74,4 +75,8 @@ void ICreatue::Step(physics::ObjectSettings* settings)
 b2ContactEdge* ICreatue::getHeroBodyContactList()
 {
 	return mMoveBody->GetContactList();
+}
+bool ICreatue::isBeAttacking()
+{
+	return mBeAttacking;
 }

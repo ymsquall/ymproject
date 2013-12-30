@@ -13,6 +13,8 @@ LocalPlayer::LocalPlayer(b2World* pWorld) :
 {
 	mInstance = this;
 	mAnimView = NULL;
+	mComboCountdownTimer = 1000.0f;
+	mNowComboCount = 0;
 }
 LocalPlayer::~LocalPlayer()
 {
@@ -55,14 +57,25 @@ bool LocalPlayer::init()
 		mMoveBody->CreateFixture(&fd);
 		mMoveBody->SetFixedRotation(true); // 设置为固定角度（不旋转）
 	}
+	CCDirector::getInstance()->getScheduler()->scheduleSelector(schedule_selector(LocalPlayer::comboTimer), this, 0, false);
 	return true;
 }
 bool LocalPlayer::finalize()
 {
+	CCDirector::getInstance()->getScheduler()->unscheduleSelector(schedule_selector(LocalPlayer::comboTimer), this);
 	return true;
 }
 void LocalPlayer::loop(float dt)
 {
+
+}
+void LocalPlayer::comboTimer(float dt)
+{
+	mComboCountdownTimer -= dt;
+	if(mComboCountdownTimer <= 0)
+	{
+		mNowComboCount = 0;
+	}
 }
 void LocalPlayer::setAnimView(cocostudio::Armature* anim)
 {
@@ -70,9 +83,10 @@ void LocalPlayer::setAnimView(cocostudio::Armature* anim)
 	mAnimView->getAnimation()->setFrameEventCallFunc(this, frameEvent_selector(LocalPlayer::onFrameEvent));
 	mAnimView->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(LocalPlayer::animationEvent));
 }
-void LocalPlayer::beAttacked(ICreatue* who)
+void LocalPlayer::beAttacked(ICreatue* who, bool clobber)
 {
-	callLuaFuncNoResult("LUAGameSceneViewBeAttacked", this);
+	mBeAttacking = true;
+	callLuaFuncNoResult("LUAGameSceneViewBeAttacked", clobber);
 }
 void LocalPlayer::onFrameEvent(cocostudio::Bone *bone, const char *evt, int originFrameIndex, int currentFrameIndex)
 {
@@ -134,7 +148,8 @@ void LocalPlayer::onFrameEvent(cocostudio::Bone *bone, const char *evt, int orig
 }
 void LocalPlayer::animationEvent(cocostudio::Armature *armature, cocostudio::MovementEventType movementType, const char *movementID)
 {
-	static const std::string beattack = "beattack01";
+	static const std::string beattack1 = "beattack01";
+	static const std::string clobber1 = "clobber01";
 	static const std::string attack1 = "attack01";
 	static const std::string attack2 = "attack02";
 	if(movementType == cocostudio::COMPLETE)
@@ -148,9 +163,10 @@ void LocalPlayer::animationEvent(cocostudio::Armature *armature, cocostudio::Mov
 			}
 			callLuaFuncNoResult("LUAGameSceneViewAttackAnimEnded");
 		}
-		else if(beattack == movementID)
+		else if(beattack1 == movementID || clobber1 == movementID)
 		{
 			callLuaFuncNoResult("LUAGameSceneViewBeAttackAnimEnded");
+			mBeAttacking = false;
 		}
 	}
 }
@@ -293,17 +309,23 @@ void LocalPlayer::Step(physics::ObjectSettings* settings)
 			if(this != pObject)
 			{
 				Monster* pBeAttackedMonst = dynamic_cast<Monster*>(pObject);
-				if(NULL != pBeAttackedMonst)
+				if(NULL != pBeAttackedMonst && !pBeAttackedMonst->isBeAttacking())
 				{
-					pBeAttackedMonst->beAttacked(this);
+					if(mNowComboCount == 2)
+					{
+						pBeAttackedMonst->beAttacked(this, true);
+						mNowComboCount = 0;
+						mComboCountdownTimer = 1.0f + 1.0f;
+					}
+					else
+					{
+						pBeAttackedMonst->beAttacked(this);
+						mNowComboCount ++;
+						mComboCountdownTimer = 1.0f + 1.0f;
+					}
 				}
 				else
 				{
-					LocalPlayer* pBeAttackPlayer = dynamic_cast<LocalPlayer*>(pObject);
-					if(NULL != pBeAttackPlayer)
-					{
-						pBeAttackPlayer->beAttacked(this);
-					}
 				}
 			}
 		}

@@ -78,9 +78,12 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 	return _LUAGameSceneView.mTiledMap
 end
 
-function LUAGameSceneViewBeAttacked()
-	if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= 'beattack01' then
-		_LUAGameSceneView.mHeroAnim:getAnimation():play('beattack01')
+function LUAGameSceneViewBeAttacked(clobber)
+	clobber = clobber or false
+	local actionName = 'beattack01'
+	if clobber then actionName = 'clobber01' end
+	if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= actionName then
+		_LUAGameSceneView.mHeroAnim:getAnimation():play(actionName)
 	end
 end
 function LUAGameSceneViewAttackAnimEnded()

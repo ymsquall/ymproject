@@ -20,7 +20,7 @@ public:
 	static LocalPlayer* instance();
 
 	void setAnimView(cocostudio::Armature* anim);
-	void beAttacked(ICreatue* who);
+	void beAttacked(ICreatue* who, bool clobber = false);
 
 	virtual void Step(physics::ObjectSettings* settings) override;
 	int PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, const physics::PhysicsBodyList& landList);
@@ -30,10 +30,14 @@ protected:
 	virtual bool finalize() override;
 	virtual void loop(float dt) override;
 
+	void comboTimer(float dt);
+
 	void onFrameEvent(cocostudio::Bone *bone, const char *evt, int originFrameIndex, int currentFrameIndex);
 	void animationEvent(cocostudio::Armature *armature, cocostudio::MovementEventType movementType, const char *movementID);
 
 protected:
 	static LocalPlayer* mInstance;
 	cocostudio::Armature* mAnimView;
+	float mComboCountdownTimer;
+	int mNowComboCount;
 };

@@ -78,31 +78,19 @@
   </object>
  </objectgroup>
  <objectgroup name="monster" width="14" height="7">
-  <object name="001" x="1487" y="1360" width="184" height="171">
+  <object name="001" x="2955" y="1427" width="189" height="179">
    <ellipse/>
   </object>
-  <object name="002" x="2955" y="1427" width="189" height="179">
+  <object name="002" x="541" y="250" width="222" height="167">
    <ellipse/>
   </object>
-  <object name="003" x="541" y="250" width="222" height="167">
+  <object name="003" x="1073" y="1382" width="210" height="181">
    <ellipse/>
   </object>
-  <object name="004" x="754" y="1386" width="198" height="182">
+  <object name="004" x="1814" y="1026" width="229" height="184">
    <ellipse/>
   </object>
-  <object name="005" x="1073" y="1382" width="210" height="181">
-   <ellipse/>
-  </object>
-  <object name="006" x="1814" y="1026" width="229" height="184">
-   <ellipse/>
-  </object>
-  <object name="007" x="2393" y="1039" width="221" height="209">
-   <ellipse/>
-  </object>
-  <object name="008" x="2953" y="258" width="244" height="203">
-   <ellipse/>
-  </object>
-  <object name="009" x="1506" y="263" width="258" height="204">
+  <object name="005" x="2953" y="258" width="244" height="203">
    <ellipse/>
   </object>
  </objectgroup>
