@@ -135,7 +135,7 @@
               "colorR": 255,
               "flipX": false,
               "flipY": false,
-              "height": 133,
+              "height": 78,
               "ignoreSize": true,
               "opacity": 255,
               "rotation": 0,
@@ -145,7 +145,7 @@
               "touchAble": false,
               "useMergedTexture": false,
               "visible": true,
-              "width": 133,
+              "width": 78,
               "x": 0,
               "xProportion": 0,
               "y": 0,
@@ -156,13 +156,13 @@
               "capInsetsY": 0,
               "fileName": null,
               "fileNameData": {
-                "path": "attack_b.png",
+                "path": "attack_f.png",
                 "plistFile": null,
                 "resourceType": 0
               },
               "scale9Enable": false,
-              "scale9Height": 133,
-              "scale9Width": 133
+              "scale9Height": 78,
+              "scale9Width": 78
             }
           }
         ],
@@ -180,7 +180,7 @@
           "colorR": 255,
           "flipX": false,
           "flipY": false,
-          "height": 78,
+          "height": 133,
           "ignoreSize": true,
           "opacity": 255,
           "rotation": 0,
@@ -190,7 +190,7 @@
           "touchAble": false,
           "useMergedTexture": false,
           "visible": true,
-          "width": 78,
+          "width": 133,
           "x": 880,
           "xProportion": 0.9166667,
           "y": 66,
@@ -201,25 +201,25 @@
           "capInsetsY": 0,
           "disabled": null,
           "disabledData": {
-            "path": "attack_f.png",
+            "path": "attack_b.png",
             "plistFile": null,
             "resourceType": 0
           },
           "normal": null,
           "normalData": {
-            "path": "attack_f.png",
+            "path": "attack_b.png",
             "plistFile": null,
             "resourceType": 0
           },
           "pressed": null,
           "pressedData": {
-            "path": "attack_f.png",
+            "path": "attack_b.png",
             "plistFile": null,
             "resourceType": 0
           },
           "scale9Enable": false,
-          "scale9Height": 78,
-          "scale9Width": 78
+          "scale9Height": 133,
+          "scale9Width": 133
         }
       },
       {
@@ -292,7 +292,7 @@
               "colorR": 255,
               "flipX": false,
               "flipY": false,
-              "height": 133,
+              "height": 78,
               "ignoreSize": true,
               "opacity": 255,
               "rotation": 0,
@@ -302,7 +302,7 @@
               "touchAble": false,
               "useMergedTexture": false,
               "visible": true,
-              "width": 133,
+              "width": 78,
               "x": 0,
               "xProportion": 0,
               "y": 0,
@@ -313,13 +313,13 @@
               "capInsetsY": 0,
               "fileName": null,
               "fileNameData": {
-                "path": "attack_b.png",
+                "path": "attack_f.png",
                 "plistFile": null,
                 "resourceType": 0
               },
               "scale9Enable": false,
-              "scale9Height": 133,
-              "scale9Width": 133
+              "scale9Height": 78,
+              "scale9Width": 78
             }
           }
         ],
@@ -337,7 +337,7 @@
           "colorR": 255,
           "flipX": false,
           "flipY": false,
-          "height": 78,
+          "height": 133,
           "ignoreSize": true,
           "opacity": 255,
           "rotation": 0,
@@ -347,7 +347,7 @@
           "touchAble": false,
           "useMergedTexture": false,
           "visible": true,
-          "width": 78,
+          "width": 133,
           "x": 735,
           "xProportion": 0.765625,
           "y": 66,
@@ -358,25 +358,25 @@
           "capInsetsY": 0,
           "disabled": null,
           "disabledData": {
-            "path": "attack_f.png",
+            "path": "attack_b.png",
             "plistFile": null,
             "resourceType": 0
           },
           "normal": null,
           "normalData": {
-            "path": "attack_f.png",
+            "path": "attack_b.png",
             "plistFile": null,
             "resourceType": 0
           },
           "pressed": null,
           "pressedData": {
-            "path": "attack_f.png",
+            "path": "attack_b.png",
             "plistFile": null,
             "resourceType": 0
           },
           "scale9Enable": false,
-          "scale9Height": 78,
-          "scale9Width": 78
+          "scale9Height": 133,
+          "scale9Width": 133
         }
       },
       {

@@ -236,17 +236,17 @@ void LocalPlayer::Step(physics::ObjectSettings* settings)
 			mMoveBody->SetTransform(pos, 0.0f);
 		}
 	}
-	//if(NULL != mWeaponBody)
-	//{
-	//	b2ContactEdge* pContact = mWeaponBody->GetContactList();
-	//	if(NULL != pContact)
-	//	{
-	//		ICreatue* pCreature = static_cast<ICreatue*>(pContact->other->GetUserData());
-	//		Monster* pBeAttackedMonst = dynamic_cast<Monster*>(pCreature);
-	//		if(NULL != pBeAttackedMonst)
-	//		{
-	//			pBeAttackedMonst->beAttacked(this);
-	//		}
-	//	}
-	//}
+	if(NULL != mBodyBody)
+	{
+		b2ContactEdge* pContact = mBodyBody->GetContactList();
+		if(NULL != pContact)
+		{
+			ICreatue* pCreature = static_cast<ICreatue*>(pContact->other->GetUserData());
+			Monster* pBeAttackedMonst = dynamic_cast<Monster*>(pCreature);
+			if(NULL != pBeAttackedMonst)
+			{
+				pBeAttackedMonst->beAttacked(this);
+			}
+		}
+	}
 }

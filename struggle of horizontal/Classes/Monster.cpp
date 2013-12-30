@@ -1,6 +1,7 @@
 #include "Monster.h"
 #include "luaext/LuaHelper.h"
 #include "ViewModel_GameScene.h"
+#include "LocalPlayer.h"
 
 Monster::Monster(b2World* pWorld) :
 	SuperT(object::ObjectType::TN_Monster, pWorld),
@@ -35,6 +36,27 @@ void Monster::Step(physics::ObjectSettings* settings)
 		creatureSettings.mVertices[i] = b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO);
 	}
 	ICreatue::Step(&creatureSettings);
+	if(NULL != mWeaponBody)
+	{
+		b2ContactEdge* pContact = mWeaponBody->GetContactList();
+		if(NULL != pContact)
+		{
+			ICreatue* pCreature = static_cast<ICreatue*>(pContact->other->GetUserData());
+			Monster* pBeAttackedMonst = dynamic_cast<Monster*>(pCreature);
+			if(NULL != pBeAttackedMonst)
+			{
+				pBeAttackedMonst->beAttacked(this);
+			}
+			else
+			{
+				LocalPlayer* pBeAttackPlayer = dynamic_cast<LocalPlayer*>(pCreature);
+				if(NULL != pBeAttackPlayer)
+				{
+					pBeAttackPlayer->beAttacked(this);
+				}
+			}
+		}
+	}
 }
 int Monster::PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, const physics::PhysicsBodyList& landList)
 {
