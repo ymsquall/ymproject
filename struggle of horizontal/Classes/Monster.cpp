@@ -299,6 +299,7 @@ void Monster::onDeathTimer(float dt)
 		return;
 	if(mDeathTimer >= 7.5f)
 	{
+		mDeathTimer = 0.0f;
 		mDeathing = false;
 		mMonsterAnim->setOpacity(255);
 		this->recoverHPTimer(30.0f);
