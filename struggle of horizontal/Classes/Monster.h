@@ -4,8 +4,7 @@
 #include "ICreature.h"
 #include "JumpDelegate.h"
 
-class Monster : public DynamicPhysicsCreature<object::ObjectType::RTTI_Monster, object::ObjectType::TYPE_NAME_LENGTH>,
-	public JumpDelegate
+class Monster : public unity::object, public JumpDelegate, public DynamicPhysicsCreature<object::ObjectType::RTTI_Monster, object::ObjectType::TYPE_NAME_LENGTH>
 {
 public:
 	typedef DynamicPhysicsCreature<object::ObjectType::RTTI_Monster, object::ObjectType::TYPE_NAME_LENGTH> SuperT;

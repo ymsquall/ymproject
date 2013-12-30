@@ -33,7 +33,7 @@ namespace framework
 		};
 
 		template<uint8 typeValue, size_t rttiLength>
-		class ISceneObject : public unity::object, public unity::IUpdateWithTypeAndInitAbstract,
+		class ISceneObject : public unity::IUpdateWithTypeAndInitAbstract,
 			public MAKER_ENUM1BTRTTI_TYPE(typeValue),
 			public MAKER_ASCIIFIXEDRTTI_TYPE(rttiLength)
 		{

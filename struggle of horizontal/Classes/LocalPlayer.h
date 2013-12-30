@@ -8,8 +8,7 @@
 using namespace cocos2d;
 using namespace framework;
 
-class LocalPlayer : public DynamicPhysicsCreature<object::ObjectType::RTTI_Player, object::ObjectType::TYPE_NAME_LENGTH>,
-	public JumpDelegate
+class LocalPlayer : public unity::object, public JumpDelegate, public DynamicPhysicsCreature<object::ObjectType::RTTI_Player, object::ObjectType::TYPE_NAME_LENGTH>
 {
 public:
 	typedef DynamicPhysicsCreature<object::ObjectType::RTTI_Player, object::ObjectType::TYPE_NAME_LENGTH> SuperT;

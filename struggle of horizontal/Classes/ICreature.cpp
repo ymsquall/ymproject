@@ -56,38 +56,6 @@ void ICreatue::Step(physics::ObjectSettings* settings)
 	const CreaturePhysicsSteeings* pSettings = dynamic_cast<const CreaturePhysicsSteeings*>(settings);
 	if(NULL != pSettings)
 	{
-		// body box
-		if(NULL != mBodyBody)
-		{
-			mWorld->DestroyBody(mBodyBody);
-			mBodyBody = NULL;
-		}
-		if(pSettings->mUsingVerticeCount > 0)
-		{
-			b2BodyDef bd;
-			bd.type = b2_staticBody;
-			bd.position.Set(0, 0);
-			mBodyBody = mWorld->CreateBody(&bd);
-			for(int i = 0; i < pSettings->mUsingVerticeCount/2; ++ i)
-			{
-				b2PolygonShape shape;
-				shape.m_vertexCount = 3;
-				shape.m_vertices[0] = pSettings->mVertices[0+i*2];
-				shape.m_vertices[1] = pSettings->mVertices[1+i*2];
-				if(2+i*2 >= pSettings->mUsingVerticeCount)
-					shape.m_vertices[2] = pSettings->mVertices[0];
-				else
-					shape.m_vertices[2] = pSettings->mVertices[2+i*2];
-				b2FixtureDef fd;
-				fd.shape = &shape;
-				fd.density = 0.0f;
-				fd.friction = 0.0f;
-				fd.filter.categoryBits = BodyBodyContactMask;
-				fd.filter.maskBits = WeaponBodyContactMask;
-				mBodyBody->CreateFixture(&fd);
-				mBodyBody->SetUserData(this);
-			}
-		}
 		b2Vec2 vel = mMoveBody->GetLinearVelocity();
 		if(fabs(mMoveDir) > 0.001f)
 		{
@@ -100,29 +68,6 @@ void ICreatue::Step(physics::ObjectSettings* settings)
 		{
 			vel.x = 0.0f;
 			mMoveBody->SetLinearVelocity(vel);
-		}
-	}
-	if(NULL != mWeaponBody)
-		mWeaponBody->SetLinearVelocity(b2Vec2(0,1));
-	if(NULL != mWeaponBody)
-	{
-		b2ContactEdge* pContact = mWeaponBody->GetContactList();
-		if(NULL != pContact)
-		{
-			ICreatue* pCreature = static_cast<ICreatue*>(pContact->other->GetUserData());
-			Monster* pBeAttackedMonst = dynamic_cast<Monster*>(pCreature);
-			if(NULL != pBeAttackedMonst)
-			{
-				pBeAttackedMonst->beAttacked(this);
-			}
-			else
-			{
-				LocalPlayer* pBeAttackPlayer = dynamic_cast<LocalPlayer*>(pCreature);
-				if(NULL != pBeAttackPlayer)
-				{
-					pBeAttackPlayer->beAttacked(this);
-				}
-			}
 		}
 	}
 }

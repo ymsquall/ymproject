@@ -63,12 +63,12 @@ public:
 };
 
 template<uint8 typeValue, size_t rttiLength>
-class DynamicPhysicsCreature : public object::IPhysicsMovableObject<typeValue, rttiLength>, public ICreatue
+class DynamicPhysicsCreature : public ICreatue, public object::IPhysicsMovableObject<typeValue, rttiLength>
 {
 public:
 	DynamicPhysicsCreature(const char* ascType, b2World* pWorld) :
-		object::IPhysicsMovableObject<typeValue, rttiLength>(ascType),
-		ICreatue(pWorld)
+		ICreatue(pWorld),
+		object::IPhysicsMovableObject<typeValue, rttiLength>(ascType)
 	{
 	}
 	virtual ~DynamicPhysicsCreature(){}

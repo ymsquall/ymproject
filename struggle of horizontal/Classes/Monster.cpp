@@ -35,24 +35,62 @@ void Monster::Step(physics::ObjectSettings* settings)
 		pos.y -= titledMapPos.y;
 		creatureSettings.mVertices[i] = b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO);
 	}
+	// body box
+	if(NULL != mBodyBody)
+	{
+		mWorld->DestroyBody(mBodyBody);
+		mBodyBody = NULL;
+	}
+	CreaturePhysicsSteeings* pSettings = &creatureSettings;
+	if(pSettings->mUsingVerticeCount > 0)
+	{
+		b2BodyDef bd;
+		bd.type = b2_kinematicBody;
+		bd.position.Set(0, 0);
+		mBodyBody = mWorld->CreateBody(&bd);
+		for(int i = 0; i < pSettings->mUsingVerticeCount/2; ++ i)
+		{
+			b2PolygonShape shape;
+			shape.m_vertexCount = 3;
+			shape.m_vertices[0] = pSettings->mVertices[0+i*2];
+			shape.m_vertices[1] = pSettings->mVertices[1+i*2];
+			if(2+i*2 >= pSettings->mUsingVerticeCount)
+				shape.m_vertices[2] = pSettings->mVertices[0];
+			else
+				shape.m_vertices[2] = pSettings->mVertices[2+i*2];
+			b2FixtureDef fd;
+			fd.shape = &shape;
+			fd.density = 0.0f;
+			fd.friction = 0.0f;
+			fd.filter.categoryBits = BodyBodyContactMask;
+			fd.filter.maskBits = WeaponBodyContactMask;
+			mBodyBody->CreateFixture(&fd);
+			mBodyBody->SetUserData(this);
+		}
+	}
 	ICreatue::Step(&creatureSettings);
+	if(NULL != mWeaponBody)
+		mWeaponBody->SetLinearVelocity(b2Vec2(0,1));
 	if(NULL != mWeaponBody)
 	{
 		b2ContactEdge* pContact = mWeaponBody->GetContactList();
 		if(NULL != pContact)
 		{
-			ICreatue* pCreature = static_cast<ICreatue*>(pContact->other->GetUserData());
-			Monster* pBeAttackedMonst = dynamic_cast<Monster*>(pCreature);
-			if(NULL != pBeAttackedMonst)
+			unity::object* pObject = static_cast<unity::object*>(pContact->other->GetUserData());
+			if(this != pObject)
 			{
-				pBeAttackedMonst->beAttacked(this);
-			}
-			else
-			{
-				LocalPlayer* pBeAttackPlayer = dynamic_cast<LocalPlayer*>(pCreature);
-				if(NULL != pBeAttackPlayer)
+				Monster* pBeAttackedMonst = dynamic_cast<Monster*>(pObject);
+				if(NULL != pBeAttackedMonst)
 				{
-					pBeAttackPlayer->beAttacked(this);
+					pBeAttackedMonst->beAttacked(this);
+				}
+				else
+				{
+					LocalPlayer* pBeAttackPlayer = dynamic_cast<LocalPlayer*>(pObject);
+					if(NULL != pBeAttackPlayer)
+					{
+						pBeAttackPlayer->beAttacked(this);
+					}
 				}
 			}
 		}
@@ -141,6 +179,7 @@ void Monster::onFrameEvent(cocostudio::Bone *bone, const char *evt, int originFr
 		fd2.filter.maskBits = BodyBodyContactMask;
 		mWeaponBody->CreateFixture(&fd1);
 		mWeaponBody->CreateFixture(&fd2);
+		mWeaponBody->SetUserData(this);
 	}
 }
 void Monster::animationEvent(cocostudio::Armature *armature, cocostudio::MovementEventType movementType, const char *movementID)
