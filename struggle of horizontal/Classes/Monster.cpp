@@ -154,108 +154,6 @@ void Monster::animationEvent(cocostudio::Armature *armature, cocostudio::Movemen
 		}
 	}
 }
-void Monster::Step(physics::ObjectSettings* settings)
-{
-	if(this->isDeathing())
-		return;
-	if(mAICanActiveAttacked && !this->isBeAttacking())
-	{
-		Size mySize = mMonsterAnim->getContentSize();
-		Point myPos = this->getMovedBodyPos();
-		Point loaclPlayerPos = LocalPlayer::instance()->getMovedBodyPos();
-		Point direction = myPos-loaclPlayerPos;
-		if(fabs(direction.y) < mySize.height/2.0f && fabs(direction.x) < 200.0f)
-		{
-			if(loaclPlayerPos.x < myPos.x)
-				mMonsterAnim->setRotationY(180.0f);
-			else
-				mMonsterAnim->setRotationY(0.0f);
-			mAttacking = true;
-			callLuaFuncNoResult("LUAGameSceneView_MonsterActiveAttack", this);
-			mActiveAttackTimer = 3.0f + float(rand() % 3);
-			mAICanActiveAttacked = false;
-		}
-	}
-	static CreaturePhysicsSteeings creatureSettings;
-	creatureSettings.mIsHeroDorping = mIsHeroDorping;
-	creatureSettings.mIsOriJump = mIsOriJump;
-	creatureSettings.mUsingVerticeCount = 8;
-	for(int i = 0; i < 8; ++ i)
-	{
-		CCString* pBodyName = CCString::createWithFormat("body%d", i);
-		cocostudio::CCBone* pBone = mMonsterAnim->getBone(pBodyName->getCString());
-		if(NULL == pBone)
-			continue;
-		cocostudio::BaseData* pBoneData = pBone->getWorldInfo();
-		Point pos = mMonsterAnim->getParent()->convertToWorldSpaceAR(mMonsterAnim->getPosition());
-		pos.x += pBoneData->x;
-		pos.y += pBoneData->y;
-		Point titledMapPos = GameSceneViewModel::point()->getTiledMap()->getPosition();
-		pos.x -= titledMapPos.x;
-		pos.y -= titledMapPos.y;
-		creatureSettings.mVertices[i] = b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO);
-	}
-	// body box
-	if(NULL != mBodyBody)
-	{
-		mWorld->DestroyBody(mBodyBody);
-		mBodyBody = NULL;
-	}
-	CreaturePhysicsSteeings* pSettings = &creatureSettings;
-	if(pSettings->mUsingVerticeCount > 0)
-	{
-		b2BodyDef bd;
-		bd.type = b2_kinematicBody;
-		bd.position.Set(0, 0);
-		mBodyBody = mWorld->CreateBody(&bd);
-		for(int i = 0; i < pSettings->mUsingVerticeCount/2; ++ i)
-		{
-			b2PolygonShape shape;
-			shape.m_vertexCount = 3;
-			shape.m_vertices[0] = pSettings->mVertices[0+i*2];
-			shape.m_vertices[1] = pSettings->mVertices[1+i*2];
-			if(2+i*2 >= pSettings->mUsingVerticeCount)
-				shape.m_vertices[2] = pSettings->mVertices[0];
-			else
-				shape.m_vertices[2] = pSettings->mVertices[2+i*2];
-			b2FixtureDef fd;
-			fd.shape = &shape;
-			fd.density = 0.0f;
-			fd.friction = 0.0f;
-			fd.filter.categoryBits = BodyBodyContactMask;
-			fd.filter.maskBits = WeaponBodyContactMask;
-			mBodyBody->CreateFixture(&fd);
-			mBodyBody->SetUserData(this);
-		}
-	}
-	ICreatue::Step(&creatureSettings);
-	if(NULL != mWeaponBody)
-		mWeaponBody->SetLinearVelocity(b2Vec2(0,1));
-	if(NULL != mWeaponBody)
-	{
-		b2ContactEdge* pContact = mWeaponBody->GetContactList();
-		if(NULL != pContact)
-		{
-			unity::object* pObject = static_cast<unity::object*>(pContact->other->GetUserData());
-			if(this != pObject)
-			{
-				Monster* pBeAttackedMonst = dynamic_cast<Monster*>(pObject);
-				if(NULL != pBeAttackedMonst)
-				{
-					pBeAttackedMonst->beAttacked(this);
-				}
-				else
-				{
-					LocalPlayer* pBeAttackPlayer = dynamic_cast<LocalPlayer*>(pObject);
-					if(NULL != pBeAttackPlayer && !pBeAttackPlayer->isBeAttacking())
-					{
-						pBeAttackPlayer->beAttacked(this);
-					}
-				}
-			}
-		}
-	}
-}
 int Monster::PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, const physics::PhysicsBodyList& landList)
 {
 	int ret = 0;
@@ -327,5 +225,110 @@ void Monster::onDeathTimer(float dt)
 		if(opacity < 0) opacity = 0;
 		if(opacity > 255) opacity = 255;
 		mMonsterAnim->setOpacity(opacity);
+	}
+}
+void Monster::StepBefore(physics::ObjectSettings* settings)
+{
+	if(this->isDeathing())
+		return;
+	if(mAICanActiveAttacked && !this->isBeAttacking())
+	{
+		Size mySize = mMonsterAnim->getContentSize();
+		Point myPos = this->getMovedBodyPos();
+		Point loaclPlayerPos = LocalPlayer::instance()->getMovedBodyPos();
+		Point direction = myPos-loaclPlayerPos;
+		if(fabs(direction.y) < mySize.height/2.0f && fabs(direction.x) < 200.0f)
+		{
+			if(loaclPlayerPos.x < myPos.x)
+				mMonsterAnim->setRotationY(180.0f);
+			else
+				mMonsterAnim->setRotationY(0.0f);
+			mAttacking = true;
+			callLuaFuncNoResult("LUAGameSceneView_MonsterActiveAttack", this);
+			mActiveAttackTimer = 3.0f + float(rand() % 3);
+			mAICanActiveAttacked = false;
+		}
+	}
+	static CreaturePhysicsSteeings creatureSettings;
+	creatureSettings.mIsHeroDorping = mIsHeroDorping;
+	creatureSettings.mIsOriJump = mIsOriJump;
+	creatureSettings.mUsingVerticeCount = 8;
+	for(int i = 0; i < 8; ++ i)
+	{
+		CCString* pBodyName = CCString::createWithFormat("body%d", i);
+		cocostudio::CCBone* pBone = mMonsterAnim->getBone(pBodyName->getCString());
+		if(NULL == pBone)
+			continue;
+		cocostudio::BaseData* pBoneData = pBone->getWorldInfo();
+		Point pos = mMonsterAnim->getParent()->convertToWorldSpaceAR(mMonsterAnim->getPosition());
+		pos.x += pBoneData->x;
+		pos.y += pBoneData->y;
+		Point titledMapPos = GameSceneViewModel::point()->getTiledMap()->getPosition();
+		pos.x -= titledMapPos.x;
+		pos.y -= titledMapPos.y;
+		creatureSettings.mVertices[i] = b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO);
+	}
+	// body box
+	if(NULL != mBodyBody)
+	{
+		mWorld->DestroyBody(mBodyBody);
+		mBodyBody = NULL;
+	}
+	CreaturePhysicsSteeings* pSettings = &creatureSettings;
+	if(pSettings->mUsingVerticeCount > 0)
+	{
+		b2BodyDef bd;
+		bd.type = b2_staticBody;
+		bd.position.Set(0, 0);
+		mBodyBody = mWorld->CreateBody(&bd);
+		for(int i = 0; i < pSettings->mUsingVerticeCount/2; ++ i)
+		{
+			b2PolygonShape shape;
+			shape.m_vertexCount = 3;
+			shape.m_vertices[0] = pSettings->mVertices[0+i*2];
+			shape.m_vertices[1] = pSettings->mVertices[1+i*2];
+			if(2+i*2 >= pSettings->mUsingVerticeCount)
+				shape.m_vertices[2] = pSettings->mVertices[0];
+			else
+				shape.m_vertices[2] = pSettings->mVertices[2+i*2];
+			b2FixtureDef fd;
+			fd.shape = &shape;
+			fd.density = 0.0f;
+			fd.friction = 0.0f;
+			fd.filter.categoryBits = BodyBodyContactMask;
+			fd.filter.maskBits = WeaponBodyContactMask;
+			mBodyBody->CreateFixture(&fd);
+			mBodyBody->SetUserData(this);
+		}
+	}
+	if(NULL != mWeaponBody)
+		mWeaponBody->SetLinearVelocity(b2Vec2(0,1));
+	ICreatue::updateBody(&creatureSettings);
+}
+void Monster::StepAfter()
+{
+	if(NULL != mWeaponBody)
+	{
+		b2ContactEdge* pContact = mWeaponBody->GetContactList();
+		if(NULL != pContact)
+		{
+			unity::object* pObject = static_cast<unity::object*>(pContact->other->GetUserData());
+			if(this != pObject)
+			{
+				Monster* pBeAttackedMonst = dynamic_cast<Monster*>(pObject);
+				if(NULL != pBeAttackedMonst)
+				{
+					pBeAttackedMonst->beAttacked(this);
+				}
+				else
+				{
+					LocalPlayer* pBeAttackPlayer = dynamic_cast<LocalPlayer*>(pObject);
+					if(NULL != pBeAttackPlayer && !pBeAttackPlayer->isBeAttacking())
+					{
+						pBeAttackPlayer->beAttacked(this);
+					}
+				}
+			}
+		}
 	}
 }

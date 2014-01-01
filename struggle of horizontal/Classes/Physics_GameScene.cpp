@@ -164,26 +164,46 @@ b2Body* GameScenePhysics::createGround(const b2Vec2& pos, float width, float hei
 void GameScenePhysics::Step(physics::WorldSettings* settings)
 {
 	if(NULL != mLocalPlayerPhysics)
-		mLocalPlayerPhysics->Step(settings);
+		mLocalPlayerPhysics->StepBefore(settings);
 	for(PhysicsCreatureList::const_iterator it = mPlayerPhysicsList.begin();
 		it != mPlayerPhysicsList.end(); ++ it)
 	{
 		if(NULL != it->first)
-			it->first->Step(settings);
+			it->first->StepBefore(settings);
 	}
 	for(PhysicsCreatureList::const_iterator it = mMonsterPhysicsList.begin();
 		it != mMonsterPhysicsList.end(); ++ it)
 	{
 		if(NULL != it->first)
-			it->first->Step(settings);
+			it->first->StepBefore(settings);
 	}
 	for(PhysicsCreatureList::const_iterator it = mNPCPhysicsList.begin();
 		it != mNPCPhysicsList.end(); ++ it)
 	{
 		if(NULL != it->first)
-			it->first->Step(settings);
+			it->first->StepBefore(settings);
 	}
 	PhysicsWorld::Step(settings);
+	if(NULL != mLocalPlayerPhysics)
+		mLocalPlayerPhysics->StepAfter();
+	for(PhysicsCreatureList::const_iterator it = mPlayerPhysicsList.begin();
+		it != mPlayerPhysicsList.end(); ++ it)
+	{
+		if(NULL != it->first)
+			it->first->StepAfter();
+	}
+	for(PhysicsCreatureList::const_iterator it = mMonsterPhysicsList.begin();
+		it != mMonsterPhysicsList.end(); ++ it)
+	{
+		if(NULL != it->first)
+			it->first->StepAfter();
+	}
+	for(PhysicsCreatureList::const_iterator it = mNPCPhysicsList.begin();
+		it != mNPCPhysicsList.end(); ++ it)
+	{
+		if(NULL != it->first)
+			it->first->StepAfter();
+	}
 }
 
 void GameScenePhysics::PreSolve(b2Contact* contact, const b2Manifold* oldManifold)

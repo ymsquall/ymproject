@@ -28,13 +28,12 @@ int Player::PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, c
 
 	return ret;
 }
-void Player::Step(physics::ObjectSettings* settings)
+void Player::StepBefore(physics::ObjectSettings* settings)
 {
 	static CreaturePhysicsSteeings playerSettings;
 	playerSettings.mIsHeroDorping = mIsHeroDorping;
 	playerSettings.mIsOriJump = mIsOriJump;
 	playerSettings.mUsingVerticeCount = 0;
-	ICreatue::Step(&playerSettings);
 	if(mIsJumping)
 	{
 		mMoveBody->SetFixedRotation(true); // 起跳后设置为固定角度（不旋转），否则会产生多余的位移
@@ -44,4 +43,9 @@ void Player::Step(physics::ObjectSettings* settings)
 			mMoveBody->SetTransform(pos, 0.0f);
 		}
 	}
+	ICreatue::updateBody(&playerSettings);
+}
+void Player::StepAfter()
+{
+
 }

@@ -22,7 +22,8 @@ public:
 	void setAnimView(cocostudio::Armature* anim);
 	void beAttacked(ICreatue* who, bool clobber = false);
 
-	virtual void Step(physics::ObjectSettings* settings) override;
+	virtual void StepBefore(physics::ObjectSettings* settings) override;
+	virtual void StepAfter() override;
 	int PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, const physics::PhysicsBodyList& landList);
 
 protected:

@@ -50,7 +50,7 @@ public:
 	virtual bool initWithBox(const Point& pos, const Size& size);
 	virtual const CCPoint& getMovedBodyPos();
 	virtual void move(float dir, float speed);
-	virtual void Step(physics::ObjectSettings* settings);
+	virtual void updateBody(physics::ObjectSettings* settings);
 	b2ContactEdge* getHeroBodyContactList();
 	bool isAttacking();
 	bool isBeAttacking();

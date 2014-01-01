@@ -24,7 +24,8 @@ namespace engine
 			PhysicsObject();
 			virtual ~PhysicsObject();
 
-			virtual void Step(ObjectSettings* settings);
+			virtual void StepBefore(ObjectSettings* settings);
+			virtual void StepAfter();
 		};
 		typedef std::vector<b2Body*> PhysicsBodyList;
 		typedef std::vector<PhysicsObject*> PhysicsObjectList;

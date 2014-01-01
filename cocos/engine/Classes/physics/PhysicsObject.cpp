@@ -20,9 +20,11 @@ namespace engine
 		{
 
 		}
-		void PhysicsObject::Step(ObjectSettings* settings)
+		void PhysicsObject::StepBefore(ObjectSettings* settings)
 		{
-
+		}
+		void PhysicsObject::StepAfter()
+		{
 		}
 	}
 }

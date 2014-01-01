@@ -220,7 +220,7 @@ int LocalPlayer::PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifo
 	}
 	return ret;
 }
-void LocalPlayer::Step(physics::ObjectSettings* settings)
+void LocalPlayer::StepBefore(physics::ObjectSettings* settings)
 {
 	static CreaturePhysicsSteeings playerSettings;	
 	playerSettings.mIsHeroDorping = mIsHeroDorping;
@@ -245,62 +245,54 @@ void LocalPlayer::Step(physics::ObjectSettings* settings)
 		playerSettings.mVertices[i] = b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO);
 	}
 	// body box
+	if(NULL != mBodyBody)
+	{
+		mWorld->DestroyBody(mBodyBody);
+		mBodyBody = NULL;
+	}
 	CreaturePhysicsSteeings* pSettings = &playerSettings;
 	if(pSettings->mUsingVerticeCount > 0)
 	{
-		if(NULL != mBodyBody)
+		b2BodyDef bd;
+		bd.type = b2_staticBody;
+		bd.position.Set(0, 0);
+		mBodyBody = mWorld->CreateBody(&bd);
+		for(int i = 0; i < pSettings->mUsingVerticeCount/2; ++ i)
 		{
-			std::stack<b2Fixture*> fixtureStack;
-			b2Fixture* pFixture = mBodyBody->GetFixtureList();
-			while(pFixture != NULL)
-			{
-				fixtureStack.push(pFixture);
-				pFixture = pFixture->GetNext();
-			}
-			for(int i = 0; i < pSettings->mUsingVerticeCount/2; ++ i)
-			{
-				b2Fixture* pFixture = fixtureStack.top();
-				fixtureStack.pop();
-				b2PolygonShape* pShape = dynamic_cast<b2PolygonShape*>(pFixture->GetShape());
-				pShape->m_vertexCount = 3;
-				pShape->m_vertices[0] = pSettings->mVertices[0+i*2];
-				pShape->m_vertices[1] = pSettings->mVertices[1+i*2];
-				if(2+i*2 >= pSettings->mUsingVerticeCount)
-					pShape->m_vertices[2] = pSettings->mVertices[0];
-				else
-					pShape->m_vertices[2] = pSettings->mVertices[2+i*2];
-			}
-		}
-		else
-		{
-			b2BodyDef bd;
-			bd.type = b2_kinematicBody;
-			bd.position.Set(0, 0);
-			mBodyBody = mWorld->CreateBody(&bd);
-			for(int i = 0; i < pSettings->mUsingVerticeCount/2; ++ i)
-			{
-				b2PolygonShape shape;
-				shape.m_vertexCount = 3;
-				shape.m_vertices[0] = pSettings->mVertices[0+i*2];
-				shape.m_vertices[1] = pSettings->mVertices[1+i*2];
-				if(2+i*2 >= pSettings->mUsingVerticeCount)
-					shape.m_vertices[2] = pSettings->mVertices[0];
-				else
-					shape.m_vertices[2] = pSettings->mVertices[2+i*2];
-				b2FixtureDef fd;
-				fd.shape = &shape;
-				fd.density = 0.0f;
-				fd.friction = 0.0f;
-				fd.filter.categoryBits = BodyBodyContactMask;
-				fd.filter.maskBits = WeaponBodyContactMask;
-				mBodyBody->CreateFixture(&fd);
-				mBodyBody->SetUserData(this);
-			}
+			b2PolygonShape shape;
+			shape.m_vertexCount = 3;
+			shape.m_vertices[0] = pSettings->mVertices[0+i*2];
+			shape.m_vertices[1] = pSettings->mVertices[1+i*2];
+			if(2+i*2 >= pSettings->mUsingVerticeCount)
+				shape.m_vertices[2] = pSettings->mVertices[0];
+			else
+				shape.m_vertices[2] = pSettings->mVertices[2+i*2];
+			b2FixtureDef fd;
+			fd.shape = &shape;
+			fd.density = 0.0f;
+			fd.friction = 0.0f;
+			fd.filter.categoryBits = BodyBodyContactMask;
+			fd.filter.maskBits = WeaponBodyContactMask;
+			mBodyBody->CreateFixture(&fd);
+			mBodyBody->SetUserData(this);
 		}
 	}
-	ICreatue::Step(&playerSettings);
+	if(mIsJumping)
+	{
+		mMoveBody->SetFixedRotation(true); // 起跳后设置为固定角度（不旋转），否则会产生多余的位移
+		if(!mWorld->IsLocked())
+		{
+			b2Vec2 pos = mMoveBody->GetWorldCenter();
+			mMoveBody->SetTransform(pos, 0.0f);
+		}
+	}
 	if(NULL != mWeaponBody)
 		mWeaponBody->SetLinearVelocity(b2Vec2(0,1));
+	ICreatue::updateBody(&playerSettings);
+	
+}
+void LocalPlayer::StepAfter()
+{
 	if(NULL != mWeaponBody)
 	{
 		b2ContactEdge* pContact = mWeaponBody->GetContactList();
@@ -329,15 +321,6 @@ void LocalPlayer::Step(physics::ObjectSettings* settings)
 				{
 				}
 			}
-		}
-	}
-	if(mIsJumping)
-	{
-		mMoveBody->SetFixedRotation(true); // 起跳后设置为固定角度（不旋转），否则会产生多余的位移
-		if(!mWorld->IsLocked())
-		{
-			b2Vec2 pos = mMoveBody->GetWorldCenter();
-			mMoveBody->SetTransform(pos, 0.0f);
 		}
 	}
 }

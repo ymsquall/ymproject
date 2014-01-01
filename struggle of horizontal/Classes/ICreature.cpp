@@ -69,13 +69,44 @@ void ICreatue::move(float dir, float speed)
 	mMoveDir = dir;
 	mMoveSpeed = speed;
 }
-void ICreatue::Step(physics::ObjectSettings* settings)
+void ICreatue::updateBody(physics::ObjectSettings* settings)
 {
 	if(NULL == settings)
 		return;
 	const CreaturePhysicsSteeings* pSettings = dynamic_cast<const CreaturePhysicsSteeings*>(settings);
 	if(NULL != pSettings)
 	{
+		//if(NULL != mBodyBody)
+		//{
+		//	mWorld->DestroyBody(mBodyBody);
+		//	mBodyBody = NULL;
+		//}
+		//if(pSettings->mUsingVerticeCount > 0)
+		//{
+		//	b2BodyDef bd;
+		//	bd.type = b2_staticBody;
+		//	bd.position.Set(0, 0);
+		//	mBodyBody = mWorld->CreateBody(&bd);
+		//	for(int i = 0; i < pSettings->mUsingVerticeCount/2; ++ i)
+		//	{
+		//		b2PolygonShape shape;
+		//		shape.m_vertexCount = 3;
+		//		shape.m_vertices[0] = pSettings->mVertices[0+i*2];
+		//		shape.m_vertices[1] = pSettings->mVertices[1+i*2];
+		//		if(2+i*2 >= pSettings->mUsingVerticeCount)
+		//			shape.m_vertices[2] = pSettings->mVertices[0];
+		//		else
+		//			shape.m_vertices[2] = pSettings->mVertices[2+i*2];
+		//		b2FixtureDef fd;
+		//		fd.shape = &shape;
+		//		fd.density = 0.0f;
+		//		fd.friction = 0.0f;
+		//		fd.filter.categoryBits = BodyBodyContactMask;
+		//		fd.filter.maskBits = WeaponBodyContactMask;
+		//		mBodyBody->CreateFixture(&fd);
+		//		mBodyBody->SetUserData(this);
+		//	}
+		//}
 		b2Vec2 vel = mMoveBody->GetLinearVelocity();
 		if(fabs(mMoveDir) > 0.001f)
 		{

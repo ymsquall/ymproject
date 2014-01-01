@@ -26,7 +26,7 @@ struct CreaturePhysicsInfo
 	float x, y, w, h;
 };
 typedef std::vector<CreaturePhysicsInfo> CreaturePhysicsInfoList;
-typedef std::map<ICreatue*, CreaturePhysicsInfo*> PhysicsCreatureList;
+typedef std::map<physics::PhysicsObject*, CreaturePhysicsInfo*> PhysicsCreatureList;
 
 class GameScenePhysics : public physics::PhysicsWorld, public cocos2d::Object
 	, public unity::SingletonAutoT<GameScenePhysics>
