@@ -9,7 +9,7 @@ Monster::Monster(b2World* pWorld) :
 {
 	mMonsterAnim = NULL;
 	mActiveAttackTimer = 3.0f + float(rand() % 3);
-	mAICanActiveAttacked = false;
+	mAICanActiveAttacked = 0;
 	mDeathTimer = true;
 }
 Monster::~Monster()
@@ -52,7 +52,7 @@ void Monster::simpleAITimer(float dt)
 		mActiveAttackTimer -= dt;
 		if(mActiveAttackTimer <= 0)
 		{
-			mAICanActiveAttacked = true;
+			mAICanActiveAttacked = 3;
 			mActiveAttackTimer = 3.0f + float(rand() % 3);
 		}
 	}
@@ -164,7 +164,7 @@ void Monster::beAttacked(ICreatue* who, bool clobber)
 {
 	mBeAttacking = true;
 	mActiveAttackTimer = 3.0f + float(rand() % 3);
-	mAICanActiveAttacked = false;
+	mAICanActiveAttacked = 0;
 	int lostHP = 500 + (rand()%500);
 	mNowHP -= lostHP;
 	this->updateHPView();
@@ -231,7 +231,7 @@ void Monster::StepBefore(physics::ObjectSettings* settings)
 {
 	if(this->isDeathing())
 		return;
-	if(mAICanActiveAttacked && !this->isBeAttacking())
+	if((mAICanActiveAttacked > 0) && !this->isBeAttacking() && !this->isAttacking())
 	{
 		Size mySize = mMonsterAnim->getContentSize();
 		Point myPos = this->getMovedBodyPos();
@@ -244,10 +244,12 @@ void Monster::StepBefore(physics::ObjectSettings* settings)
 			else
 				mMonsterAnim->setRotationY(0.0f);
 			mAttacking = true;
-			callLuaFuncNoResult("LUAGameSceneView_MonsterActiveAttack", this);
+			callLuaFuncNoResult("LUAGameSceneView_MonsterActiveAttack", this, mAICanActiveAttacked);
 			mActiveAttackTimer = 3.0f + float(rand() % 3);
-			mAICanActiveAttacked = false;
+			mAICanActiveAttacked--;
 		}
+		else
+			mAICanActiveAttacked = 3;
 	}
 	static CreaturePhysicsSteeings creatureSettings;
 	creatureSettings.mIsHeroDorping = mIsHeroDorping;
@@ -325,7 +327,7 @@ void Monster::StepAfter()
 					LocalPlayer* pBeAttackPlayer = dynamic_cast<LocalPlayer*>(pObject);
 					if(NULL != pBeAttackPlayer && !pBeAttackPlayer->isBeAttacking())
 					{
-						pBeAttackPlayer->beAttacked(this);
+						pBeAttackPlayer->beAttacked(this, mAICanActiveAttacked==0);
 					}
 				}
 			}

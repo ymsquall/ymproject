@@ -31,11 +31,17 @@ function LUAGameSceneView_MonsterBeAttacked(monster, clobber)
 	end
 end
 
-function LUAGameSceneView_MonsterActiveAttack(monster)
+function LUAGameSceneView_MonsterActiveAttack(monster, id)
+	id = id or 0
 	local pMonster = LuaUserDataConversion:toMonster(monster)
 	for i,v in pairs(_LUAGameSceneView_MonsterManager.MonsterList) do
 		if v.mMonster == pMonster then
-			v.mAnim:getAnimation():play('attack01')
+			print('monster active attack')
+			if id > 1 then
+				v.mAnim:getAnimation():play('attack02')
+			else
+				v.mAnim:getAnimation():play('attack01')
+			end
 			break
 		end
 	end

@@ -33,6 +33,6 @@ protected:
 protected:
 	cocostudio::Armature* mMonsterAnim;
 	float mActiveAttackTimer;
-	bool mAICanActiveAttacked;
+	int mAICanActiveAttacked;
 	float mDeathTimer;
 };
