@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaExtern
-** Generated automatically by tolua++-1.0.92 on 12/22/13 17:12:31.
+** Generated automatically by tolua++-1.0.92 on 01/01/14 17:53:48.
 */
 
 /****************************************************************************
@@ -1808,39 +1808,6 @@ static int tolua_LuaExtern_framework_mvvm_IModel_finalize00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: update of class  framework::mvvm::IModel */
-#ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_IModel_update00
-static int tolua_LuaExtern_framework_mvvm_IModel_update00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"framework::mvvm::IModel",0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,3,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  framework::mvvm::IModel* self = (framework::mvvm::IModel*)  tolua_tousertype(tolua_S,1,0);
-  float dt = ((float)  tolua_tonumber(tolua_S,2,0));
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'update'", NULL);
-#endif
-  {
-   self->update(dt);
-  }
- }
- return 0;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'update'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
 /* method: setBindingTarget of class  framework::mvvm::IModel */
 #ifndef TOLUA_DISABLE_tolua_LuaExtern_framework_mvvm_IModel_setBindingTarget00
 static int tolua_LuaExtern_framework_mvvm_IModel_setBindingTarget00(lua_State* tolua_S)
@@ -2926,7 +2893,6 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
      tolua_function(tolua_S,"rtti",tolua_LuaExtern_framework_mvvm_IModel_rtti00);
      tolua_function(tolua_S,"init",tolua_LuaExtern_framework_mvvm_IModel_init00);
      tolua_function(tolua_S,"finalize",tolua_LuaExtern_framework_mvvm_IModel_finalize00);
-     tolua_function(tolua_S,"update",tolua_LuaExtern_framework_mvvm_IModel_update00);
      tolua_function(tolua_S,"setBindingTarget",tolua_LuaExtern_framework_mvvm_IModel_setBindingTarget00);
      tolua_variable(tolua_S,"__unity__object__",tolua_get_framework__mvvm__IModel___unity__object__,NULL);
     tolua_endmodule(tolua_S);

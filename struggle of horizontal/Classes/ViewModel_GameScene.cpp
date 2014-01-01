@@ -27,11 +27,13 @@ void GameSceneViewModel::onGameSceneModelPropertyChanged(mvvm::INotifyPropertyCh
 		{
 			if(NULL == mSceneView)
 			{
-				LocalPlayer* pLocalUser = LocalPlayer::create(GameScenePhysics::point()->mWorld);
-				GameScenePhysics::point()->setLocalPlayerPhysics(pLocalUser);
 				mSceneView = GameSceneView::createView();
 				mSceneView->setBindingSource(pModel);
 				pRootView->addChild(mSceneView);
+				LocalPlayer* pLocalUser = LocalPlayer::create(GameScenePhysics::point()->mWorld);
+				GameScenePhysics::point()->setLocalPlayerPhysics(pLocalUser);
+				cocostudio::Armature* pAnimView = dynamic_cast<Armature*>(mSceneView->getTiledMap()->getChildByTag(101));
+				LocalPlayer::instance()->setAnimView(pAnimView);
 			}
 		}
 		else

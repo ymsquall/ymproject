@@ -2,7 +2,9 @@
 #include "luaext/LuaHelper.h"
 #include "math/Math.h"
 #include "ViewModel_GameScene.h"
+#include "ViewModel_CreatureHeader.h"
 #include "Monster.h"
+#include "Model_CreatureHeader.h"
 
 using namespace framework;
 
@@ -15,6 +17,7 @@ LocalPlayer::LocalPlayer(b2World* pWorld) :
 	mAnimView = NULL;
 	mComboCountdownTimer = 1000.0f;
 	mNowComboCount = 0;
+	mDeathTimer = 0.0f;
 }
 LocalPlayer::~LocalPlayer()
 {
@@ -58,11 +61,19 @@ bool LocalPlayer::init()
 		mMoveBody->SetFixedRotation(true); // 设置为固定角度（不旋转）
 	}
 	CCDirector::getInstance()->getScheduler()->scheduleSelector(schedule_selector(LocalPlayer::comboTimer), this, 0, false);
+	CCDirector::getInstance()->getScheduler()->scheduleSelector(schedule_selector(LocalPlayer::recoverHPTimer), this, 30, false);
+	CCDirector::getInstance()->getScheduler()->scheduleSelector(schedule_selector(LocalPlayer::onDeathTimer), this, 0, false);
+	CreatureHeaderViewModel::point()->addCreatureHeader(this);
+
 	return true;
 }
 bool LocalPlayer::finalize()
 {
+	CreatureHeaderViewModel::point()->removeCreatureHeader(this);
 	CCDirector::getInstance()->getScheduler()->unscheduleSelector(schedule_selector(LocalPlayer::comboTimer), this);
+	CCDirector::getInstance()->getScheduler()->unscheduleSelector(schedule_selector(LocalPlayer::recoverHPTimer), this);
+	CCDirector::getInstance()->getScheduler()->unscheduleSelector(schedule_selector(LocalPlayer::onDeathTimer), this);
+
 	return true;
 }
 void LocalPlayer::loop(float dt)
@@ -78,6 +89,57 @@ void LocalPlayer::comboTimer(float dt)
 		mNowComboCount = 0;
 	}
 }
+void LocalPlayer::recoverHPTimer(float dt)
+{
+	if(NULL != mModel)
+	{
+		mModel->NowHP = mModel->MaxHP;
+		this->updateHPView();
+	}
+}
+void LocalPlayer::onDeathTimer(float dt)
+{
+	if(!mDeathing)
+		return;
+	if(mDeathTimer >= 7.5f)
+	{
+		mDeathTimer = 0.0f;
+		mDeathing = false;
+		mAnimView->setOpacity(255);
+		this->recoverHPTimer(30.0f);
+		callLuaFuncNoResult("LUAGameSceneViewLocalPlayerRelive");
+		if(NULL != mModel)
+			mModel->Visible = true;
+		return;
+	}
+	mDeathTimer += dt;
+	if(mDeathTimer >= 2.0f && mDeathTimer <= 2.5f)
+	{
+		float alpha = (mDeathTimer - 2.0f) * 2;
+		GLbyte opacity = GLbyte(255.0f * (1.0f-alpha));
+		if(opacity < 0) opacity = 0;
+		if(opacity > 255) opacity = 255;
+		mAnimView->setOpacity(opacity);
+	}
+	else if(mDeathTimer > 2.5f && mDeathTimer < 7.0f)
+	{
+		mAnimView->setOpacity(0);
+		mAnimView->setVisible(false);
+	}
+	else if(mDeathTimer >= 7.0f && mDeathTimer <= 7.5f)
+	{
+		mAnimView->setVisible(true);
+		float alpha = (mDeathTimer - 7.0f) * 2;
+		GLbyte opacity = GLbyte(255.0f * alpha);
+		if(opacity < 0) opacity = 0;
+		if(opacity > 255) opacity = 255;
+		mAnimView->setOpacity(opacity);
+	}
+}
+void LocalPlayer::updateHPView()
+{
+
+}
 void LocalPlayer::setAnimView(cocostudio::Armature* anim)
 {
 	mAnimView = anim;
@@ -87,7 +149,25 @@ void LocalPlayer::setAnimView(cocostudio::Armature* anim)
 void LocalPlayer::beAttacked(ICreatue* who, bool clobber)
 {
 	mBeAttacking = true;
+	if(NULL != mModel)
+	{
+		int lostHP = 500 + (rand()%500);
+		mModel->NowHP -= lostHP;
+		this->updateHPView();
+		if(mModel->NowHP <= 0)
+		{
+			this->onDeath();
+			return;
+		}
+	}
 	callLuaFuncNoResult("LUAGameSceneViewBeAttacked", clobber);
+}
+void LocalPlayer::onDeath()
+{
+	mDeathing = true;
+	callLuaFuncNoResult("LUAGameSceneViewLocalPlayerDeath");
+	if(NULL != mModel)
+		mModel->Visible = false;
 }
 void LocalPlayer::onFrameEvent(cocostudio::Bone *bone, const char *evt, int originFrameIndex, int currentFrameIndex)
 {
@@ -153,6 +233,7 @@ void LocalPlayer::animationEvent(cocostudio::Armature *armature, cocostudio::Mov
 	static const std::string clobber1 = "clobber01";
 	static const std::string attack1 = "attack01";
 	static const std::string attack2 = "attack02";
+	static const std::string death1 = "death01";
 	if(movementType == cocostudio::COMPLETE)
 	{
 		if(attack1 == movementID || attack2 == movementID)
@@ -168,6 +249,10 @@ void LocalPlayer::animationEvent(cocostudio::Armature *armature, cocostudio::Mov
 		{
 			callLuaFuncNoResult("LUAGameSceneViewBeAttackAnimEnded");
 			mBeAttacking = false;
+		}
+		else if(death1 == movementID)
+		{
+			mDeathTimer = 0.0f;
 		}
 	}
 }
@@ -222,6 +307,8 @@ int LocalPlayer::PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifo
 }
 void LocalPlayer::StepBefore(physics::ObjectSettings* settings)
 {
+	if(this->isDeathing())
+		return;
 	static CreaturePhysicsSteeings playerSettings;	
 	playerSettings.mIsHeroDorping = mIsHeroDorping;
 	playerSettings.mIsOriJump = mIsOriJump;
@@ -293,6 +380,8 @@ void LocalPlayer::StepBefore(physics::ObjectSettings* settings)
 }
 void LocalPlayer::StepAfter()
 {
+	if(this->isDeathing())
+		return;
 	if(NULL != mWeaponBody)
 	{
 		b2ContactEdge* pContact = mWeaponBody->GetContactList();

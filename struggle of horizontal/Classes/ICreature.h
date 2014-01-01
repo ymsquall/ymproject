@@ -8,6 +8,8 @@
 using namespace cocos2d;
 using namespace framework;
 
+class CreatureHeaderModel;
+
 struct CreaturePhysicsSteeings : public physics::ObjectSettings
 {
 	CreaturePhysicsSteeings()
@@ -59,6 +61,10 @@ public:
 
 	void updateTimer(float dt);
 
+	void setModel(CreatureHeaderModel* pModel);
+	CreatureHeaderModel* getModel() const;
+	void onCreaturePosChanged(const Point& pos);
+
 public:
 	b2World* mWorld;
 	b2Body* mMoveBody;
@@ -72,8 +78,7 @@ protected:
 	bool mBeAttacking;
 	bool mDeathing;
 	float mBeAttackTimeout;
-	int mMaxHP;
-	int mNowHP;
+	CreatureHeaderModel* mModel;
 };
 
 template<uint8 typeValue, size_t rttiLength>

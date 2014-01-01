@@ -14,12 +14,14 @@ enum class ModelType : uint16
 	Login		= 1,
 	SelectHero	= 2,
 	GameScene	= 3,
+	CreatureHeader = 4,
 	LIMIT	= 0xffff,		// unused
 };
 
 static const size_t ModelNameLength_Login		= 5;	// LoginModel
 static const size_t ModelNameLength_SelectHero	= 10;	// SelectHeroModel
 static const size_t ModelNameLength_GameScene	= 9;	// SceneSceneModel
+static const size_t ModelNameLength_CreatureHeader	= 14;	// SceneSceneModel
 
 // PropertyChanged NameString
 static const char* ModelPropertyChangedName_Enabled = "Enabled";

@@ -3,7 +3,9 @@
 #include "cocos-ext.h"
 #include "unity/datablock.h"
 #include "View_GameScene.h"
+#include "View_CreatureHeader.h"
 #include "Model_GameScene.h"
+#include "Model_CreatureHeader.h"
 #include "Player.h"
 #include "Monster.h"
 
@@ -34,6 +36,15 @@ Player* LuaUserDataConversion::toPlayer(void* pointer)
 Monster* LuaUserDataConversion::toMonster(void* pointer)
 {
 	return static_cast<Monster*>(pointer);
+}
+
+CreatureHeaderView* LuaUserDataConversion::toCreatureHeaderView(void* pointer)
+{
+	return static_cast<CreatureHeaderView*>(pointer);
+}
+CreatureHeaderModel* LuaUserDataConversion::toCreatureHeaderModel(void* pointer)
+{
+	return static_cast<CreatureHeaderModel*>(pointer);
 }
 /*
 LandTreeGrid* LuaUserDataConversion::toLandTreeGrid(void* pointer)

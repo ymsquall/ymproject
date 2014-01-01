@@ -21,6 +21,8 @@ class GameSceneModel;
 class GameSceneView;
 class Player;
 class Monster;
+class CreatureHeaderView;
+class CreatureHeaderModel;
 
 class LuaUserDataConversion
 {
@@ -32,6 +34,8 @@ public:
 	static CCNode* toNode(void* pointer);
 	static Player* toPlayer(void* pointer);
 	static Monster* toMonster(void* pointer);
+	static CreatureHeaderView* toCreatureHeaderView(void* pointer);
+	static CreatureHeaderModel* toCreatureHeaderModel(void* pointer);
 	/*
 	struct LandTreeGrid;
 	struct SoldierTroopsUnitGrid;

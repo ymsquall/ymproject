@@ -87,6 +87,7 @@ template<typename T> T* tolua_findUserDataBySegmentName(const ScriptParamObject*
 }
 const ScriptParamObject* tolua_findTableValueBySegmentName(const ScriptParamObject* node, const char* name);
 extern void* tolua_toUserObject(lua_State *L, int index);
+extern const std::string& tolua_getShowingMetaTextFromLuaFile(lua_State* L, const char* key);
 //////////////////////////////////////////////////////////////////////////
 void tolua_callLuaFunctionWithParam0NoResult(const char* funcName);
 void tolua_callLuaFunctionWithParam1NoResult(const char* funcName, const ScriptParamObject& p1);

@@ -244,6 +244,13 @@ void* tolua_toUserObject(lua_State *L, int index)
 	// 如果 object 已在 C 代码中销毁，*ud 为 NULL 。
 	return *ud;
 }
+const std::string& tolua_getShowingMetaTextFromLuaFile(lua_State* L, const char* key)
+{
+	static std::string ret;
+	if(!tolua_getLuaStringValue_ByTable(L, key, "_LUAShowing_MetaTextList", ret))
+		ret = "<error/>";
+	return ret;
+}
 //这个函数把 index 处的 userdata 转换为一个 C 对象。如果对象已经销毁，则返回 NULL 指针。 在给这个对象绑定 C 方法时，应注意在 toobject 调用后，全部对指针做检查，空指针应该被正确处理。
 //这个函数会解除 C 对象在 Lua 中的引用，后续在 Lua 中对这个对象的访问，都将得到 NULL 指针。
 //void tolua_deleteUserObject(lua_State *L, void *object)

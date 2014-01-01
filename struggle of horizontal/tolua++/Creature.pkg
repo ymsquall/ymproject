@@ -9,6 +9,7 @@ class LocalPlayer : public unity::object
 	void setIsHeroDorping(bool b);
 	bool getIsHeroDorping();
 	b2ContactEdge* getHeroBodyContactList();
+	void onCreaturePosChanged(const CCPoint& pos);
 };
 
 class Monster : public unity::object
@@ -21,4 +22,5 @@ class Monster : public unity::object
 	void setIsHeroDorping(bool b);
 	bool getIsHeroDorping();
 	b2ContactEdge* getHeroBodyContactList();
+	void onCreaturePosChanged(const CCPoint& pos);
 };

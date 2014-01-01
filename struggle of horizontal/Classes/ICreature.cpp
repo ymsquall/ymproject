@@ -1,6 +1,8 @@
 #include "ICreature.h"
 #include "Monster.h"
 #include "LocalPlayer.h"
+#include "Model_CreatureHeader.h"
+#include "ViewModel_CreatureHeader.h"
 
 ICreatue::ICreatue(b2World* pWorld)
 {
@@ -14,12 +16,10 @@ ICreatue::ICreatue(b2World* pWorld)
 	mBeAttacking = false;
 	mDeathing = false;
 	mBeAttackTimeout = 0.0f;
-	mMaxHP = 8000;
-	mNowHP = mMaxHP;
 }
 ICreatue::~ICreatue()
 {
-
+	CreatureHeaderViewModel::point()->removeCreatureHeader(this);
 }
 bool ICreatue::initWithBox(const Point& pos, const Size& size)
 {
@@ -39,6 +39,7 @@ bool ICreatue::initWithBox(const Point& pos, const Size& size)
 		mMoveBody->CreateFixture(&fd);
 		mMoveBody->SetFixedRotation(true); // 设置为固定角度（不旋转）
 	}
+	CreatureHeaderViewModel::point()->addCreatureHeader(this);
 	return true;
 }
 void ICreatue::updateTimer(float dt)
@@ -137,4 +138,18 @@ bool ICreatue::isBeAttacking()
 bool ICreatue::isDeathing()
 {
 	return mDeathing;
+}
+
+void ICreatue::setModel(CreatureHeaderModel* pModel)
+{
+	mModel = pModel;
+}
+CreatureHeaderModel* ICreatue::getModel() const
+{
+	return mModel;
+}
+void ICreatue::onCreaturePosChanged(const Point& pos)
+{
+	if(NULL != mModel)
+		mModel->Position = pos;
 }

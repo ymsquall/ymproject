@@ -924,6 +924,7 @@ xcopy /Y /D /V "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\websockets\pr
     <ClCompile Include="..\Classes\ICreature.cpp" />
     <ClCompile Include="..\Classes\JumpDelegate.cpp" />
     <ClCompile Include="..\Classes\LocalPlayer.cpp" />
+    <ClCompile Include="..\Classes\Model_CreatureHeader.cpp" />
     <ClCompile Include="..\Classes\Monster.cpp" />
     <ClCompile Include="..\Classes\Physics_Box2dView.cpp" />
     <ClCompile Include="..\Classes\Physics_GameScene.cpp" />
@@ -936,9 +937,11 @@ xcopy /Y /D /V "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\websockets\pr
     <ClCompile Include="..\Classes\Model_Login.cpp" />
     <ClCompile Include="..\Classes\RootSceneView.cpp" />
     <ClCompile Include="..\Classes\TopLevelView.cpp" />
+    <ClCompile Include="..\Classes\ViewModel_CreatureHeader.cpp" />
     <ClCompile Include="..\Classes\ViewModel_GameScene.cpp" />
     <ClCompile Include="..\Classes\ViewModel_Login.cpp" />
     <ClCompile Include="..\Classes\ViewModel_SelectHero.cpp" />
+    <ClCompile Include="..\Classes\View_CreatureHeader.cpp" />
     <ClCompile Include="..\Classes\View_GameScene.cpp" />
     <ClCompile Include="..\Classes\View_Login.cpp" />
     <ClCompile Include="..\Classes\View_SelectHero.cpp" />
@@ -949,6 +952,7 @@ xcopy /Y /D /V "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\websockets\pr
     <ClInclude Include="..\Classes\ICreature.h" />
     <ClInclude Include="..\Classes\JumpDelegate.h" />
     <ClInclude Include="..\Classes\LocalPlayer.h" />
+    <ClInclude Include="..\Classes\Model_CreatureHeader.h" />
     <ClInclude Include="..\Classes\Monster.h" />
     <ClInclude Include="..\Classes\Physics_Box2dView.h" />
     <ClInclude Include="..\Classes\Physics_GameScene.h" />
@@ -962,9 +966,11 @@ xcopy /Y /D /V "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\websockets\pr
     <ClInclude Include="..\Classes\Model_Login.h" />
     <ClInclude Include="..\Classes\RootSceneView.h" />
     <ClInclude Include="..\Classes\TopLevelView.h" />
+    <ClInclude Include="..\Classes\ViewModel_CreatureHeader.h" />
     <ClInclude Include="..\Classes\ViewModel_GameScene.h" />
     <ClInclude Include="..\Classes\ViewModel_Login.h" />
     <ClInclude Include="..\Classes\ViewModel_SelectHero.h" />
+    <ClInclude Include="..\Classes\View_CreatureHeader.h" />
     <ClInclude Include="..\Classes\View_GameScene.h" />
     <ClInclude Include="..\Classes\View_Login.h" />
     <ClInclude Include="..\Classes\View_SelectHero.h" />

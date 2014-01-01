@@ -2,6 +2,7 @@
 #include "ViewModelManager.h"
 #include "luaext/LuaHelper.h"
 #include "Model_GameScene.h"
+#include "Model_CreatureHeader.h"
 #include "Physics_Box2dView.h"
 #include "Physics_GameScene.h"
 #include "math/Math.h"
@@ -44,7 +45,6 @@ bool GameSceneView::init()
 	mFGLayer_02 = mTiledMap->getLayer("foreground_02");
 	mBGLayer = mTiledMap->getLayer("background");
 	cocostudio::Armature* pAnimView = dynamic_cast<Armature*>(mTiledMap->getChildByTag(101));
-	LocalPlayer::instance()->setAnimView(pAnimView);
 	gui::UILayer* pUILayer = dynamic_cast<gui::UILayer*>(this->getChildByTag(201));
 	gui::UIWidget* pWidget = dynamic_cast<gui::UIWidget*>(pUILayer->getWidgetByTag(202));
 	mJumpBtn = dynamic_cast<gui::UIButton*>(pWidget->getChildByName("mJumpBtn"));

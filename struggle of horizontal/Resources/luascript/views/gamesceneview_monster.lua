@@ -88,5 +88,6 @@ function LUAGameSceneView_Monster_Tick(dt)
 		local monsterPos = v.mMonster:getMovedBodyPos()
 		v.mAnim:setPositionX(monsterPos.x)
 		v.mAnim:setPositionY(monsterPos.y)
+		v.mMonster:onCreaturePosChanged(monsterPos)
 	end
 end

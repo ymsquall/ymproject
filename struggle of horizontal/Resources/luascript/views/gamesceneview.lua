@@ -2,7 +2,6 @@ _LUAGameSceneView = _LUAGameSceneView or {}
 _LUAHeroMoveSpeed = 3.0
 function LUALoadGameSceneView(self, viewWideh, viewHeight)
 	LUALoadGameSceneViewResources()
-	_LUAGameSceneView.mLocalPlayer = LocalPlayer:instance()
 	_LUAGameSceneView.self = LuaUserDataConversion:toGameSceneView(self)
 	_LUAGameSceneView.mTiledMap = CCTMXTiledMap:create("scene0001.tmx")
 	_LUAGameSceneView.self:addChild(_LUAGameSceneView.mTiledMap)
@@ -43,7 +42,7 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 			if eventType == 0 then
 				--local physics = _LUAGameSceneView.self:getPhysics()
 				--physics:jump(25.0)
-				_LUAGameSceneView.mLocalPlayer:jump(25.0)
+				LocalPlayer:instance():jump(25.0)
 			end
 		end)
     _LUAGameSceneView.mAttackBtn:addTouchEventListener(function(sender, eventType)
@@ -60,7 +59,7 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 					end
 					_LUAGameSceneView.mMoveDirection = 0.0
 					_LUAGameSceneView.mMoveSpeedScale = 0.0
-					_LUAGameSceneView.mLocalPlayer:move(0.0, 0.0)
+					LocalPlayer:instance():move(0.0, 0.0)
 				end
 			end
 		end)
@@ -90,7 +89,7 @@ function LUAGameSceneViewBeAttacked(clobber)
 	_LUAGameSceneView.mBeAttacking = true
 	_LUAGameSceneView.mMoveDirection = 0.0
 	_LUAGameSceneView.mMoveSpeedScale = 0.0
-	_LUAGameSceneView.mLocalPlayer:move(0.0, 0.0)
+	LocalPlayer:instance():move(0.0, 0.0)
 end
 function LUAGameSceneViewAttackAnimEnded()
     if _LUAGameSceneView.mMoveSpeedScale < 0.001 then
@@ -106,6 +105,16 @@ function LUAGameSceneViewBeAttackAnimEnded()
         _LUAGameSceneView.mHeroAnim:getAnimation():play('run01')
     end
 	_LUAGameSceneView.mBeAttacking = false
+end
+function LUAGameSceneViewLocalPlayerDeath()
+	_LUAGameSceneView.mHeroAnim:getAnimation():play('death01')
+end
+function LUAGameSceneViewLocalPlayerRelive()
+    if _LUAGameSceneView.mMoveSpeedScale < 0.001 then
+        _LUAGameSceneView.mHeroAnim:getAnimation():play('stand01')
+    else
+        _LUAGameSceneView.mHeroAnim:getAnimation():play('run01')
+    end
 end
 -- touchs event
 function LUAGameSceneViewTouchesBegan(touchID, x, y)
@@ -126,7 +135,8 @@ function LUAGameSceneViewTouchesMoved(touchID, x, y)
 		_LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "attack01" and
 		_LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "attack02" and
 		_LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "beattack01" and
-		_LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "clobber01" then
+		_LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "clobber01" and
+		_LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "death01" then
 		local pos = cc.p(x, y)
 		local dist = pos.x - _LUAGameSceneView.mTouchMoveBeginPos.x
 		if math.abs(dist) > 20.0 then
@@ -167,7 +177,7 @@ function LUAGameSceneViewTouchesMoved(touchID, x, y)
 				_LUAGameSceneView.mMoveDirection = tmpMoveDir
 				_LUAGameSceneView.mMoveSpeedScale = tmpSpeed
 				--_LUAGameSceneView.self:getPhysics():changeMoveDirection(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
-				_LUAGameSceneView.mLocalPlayer:move(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
+				LocalPlayer:instance():move(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
 				if _LUAGameSceneView.mMoveDirection > 0.0 then
 					_LUAGameSceneView.mHeroAnim:setRotationY(0)
 				elseif _LUAGameSceneView.mMoveDirection < 0.0 then
@@ -182,7 +192,7 @@ function LUAGameSceneViewTouchesMoved(touchID, x, y)
 			_LUAGameSceneView.mMoveDirection = 0.0
 			_LUAGameSceneView.mMoveSpeedScale = 0.0
 			--_LUAGameSceneView.self:getPhysics():changeMoveDirection(0.0, 0.0)
-			_LUAGameSceneView.mLocalPlayer:move(0.0, 0.0)
+			LocalPlayer:instance():move(0.0, 0.0)
 		end
 		local distY = pos.y - _LUAGameSceneView.mTouchMoveBeginPos.y
 		if distY > 100 then distY = 100 end
@@ -212,7 +222,7 @@ function LUAGameSceneViewTouchesEnded(touchID, x, y)
 			_LUAGameSceneView.mHeroAnim:getAnimation():play("stand01")
 		end
 		--_LUAGameSceneView.self:getPhysics():changeMoveDirection(0.0, 0.0)
-		_LUAGameSceneView.mLocalPlayer:move(0.0, 0.0)
+		LocalPlayer:instance():move(0.0, 0.0)
 		_LUAGameSceneView.mMoveStickBG:setVisible(false)
 		_LUAGameSceneView.mMoveStick:setPosition(cc.p(0, 0))
 		_LUAGameSceneView.mMoveStickShowing:setPosition(cc.p(0, 0))
@@ -231,7 +241,7 @@ function LUAGameScenePhysicsHeroHitWall()
 		_LUAGameSceneView.mHeroAnim:getAnimation():play("jumping01")
 	end
 	--_LUAGameSceneView.self:getPhysics():changeMoveDirection(0.0, 0.0)
-	_LUAGameSceneView.mLocalPlayer:move(0.0, 0.0)
+	LocalPlayer:instance():move(0.0, 0.0)
 	--_LUAGameSceneView.mMoveStickBG:setVisible(false)
 	--_LUAGameSceneView.mMoveStick:setPosition(cc.p(0, 0))
 	--_LUAGameSceneView.mMoveStickShowing:setPosition(cc.p(0, 0))
@@ -258,21 +268,23 @@ end
 function LUAGameSceneViewOnTick(dt)
 	--local physics = _LUAGameSceneView.self:getPhysics()
 	--local heroPos = physics:getHeroBodyPos()
-	local heroPos = _LUAGameSceneView.mLocalPlayer:getMovedBodyPos()
+	local localPlayer = LocalPlayer:instance()
+	local heroPos = localPlayer:getMovedBodyPos()
 	_LUAGameSceneView.mHeroAnim:setPositionX(heroPos.x)
 	_LUAGameSceneView.mHeroAnim:setPositionY(heroPos.y)
+	localPlayer:onCreaturePosChanged(heroPos)
 
 	--if nil == physics:getHeroBodyContactList() then
-	if nil == _LUAGameSceneView.mLocalPlayer:getHeroBodyContactList() then
+	if nil == LocalPlayer:instance():getHeroBodyContactList() then
 		_LUAGameSceneView.mHeroHitWall = false
 		--physics:setIsHeroDorping(true)
-		_LUAGameSceneView.mLocalPlayer:setIsHeroDorping(true)
+		LocalPlayer:instance():setIsHeroDorping(true)
 		if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "jumping01" then
 			_LUAGameSceneView.mHeroAnim:getAnimation():play("jumping01")
 		end
 	else
 		--if physics:getIsHeroDorping() then
-		if _LUAGameSceneView.mLocalPlayer:getIsHeroDorping() then
+		if LocalPlayer:instance():getIsHeroDorping() then
 			local animName = 'stand01'
 			if math.abs(_LUAGameSceneView.mMoveDirection) > 0.001 then
 				animName = 'run01'
@@ -282,7 +294,7 @@ function LUAGameSceneViewOnTick(dt)
 			end
 		end
 		--physics:setIsHeroDorping(false)
-		_LUAGameSceneView.mLocalPlayer:setIsHeroDorping(false)
+		LocalPlayer:instance():setIsHeroDorping(false)
 	end
 	-- auto scroll map
 	local animPos = cc.p(_LUAGameSceneView.mHeroAnim:getPositionX(), _LUAGameSceneView.mHeroAnim:getPositionY())

@@ -56,13 +56,44 @@ namespace framework
 			{
 				return mValue;
 			}
-
+			ThisT& operator -= ( const ValueT& oth )
+			{
+				ValueT oldValue = mValue;
+				mValue -= oth;
+				if(oldValue != mValue)
+					(mContainer->*mSetter)(mValue);
+				return *this;
+			}
+			ThisT& operator += ( const ValueT& oth )
+			{
+				ValueT oldValue = mValue;
+				mValue += oth;
+				if(oldValue != mValue)
+					(mContainer->*mSetter)(mValue);
+				return *this;
+			}
+			ThisT& operator *= ( const ValueT& oth )
+			{
+				ValueT oldValue = mValue;
+				mValue *= oth;
+				if(oldValue != mValue)
+					(mContainer->*mSetter)(mValue);
+				return *this;
+			}
+			ThisT& operator /= ( const ValueT& oth )
+			{
+				ValueT oldValue = mValue;
+				mValue /= oth;
+				if(oldValue != mValue)
+					(mContainer->*mSetter)(mValue);
+				return *this;
+			}
 			void operator = (const ValueT& value)
 			{
 				ValueT oldValue = mValue;
 				mValue = value;
 				if(oldValue != mValue)
-					(mContainer->*mSetter)(value);
+					(mContainer->*mSetter)(mValue);
 			}
 
 		private:

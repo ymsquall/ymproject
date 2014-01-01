@@ -7,4 +7,6 @@ class LuaUserDataConversion
 	static CCNode* toNode(void* pointer);
 	static Player* toPlayer(void* pointer);
 	static Monster* toMonster(void* pointer);
+	static CreatureHeaderView* toCreatureHeaderView(void* pointer);
+	static CreatureHeaderModel* toCreatureHeaderModel(void* pointer);
 };

@@ -96,6 +96,15 @@
     <ClCompile Include="..\Classes\ICreature.cpp">
       <Filter>Classes\Creature</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\View_CreatureHeader.cpp">
+      <Filter>Classes\View</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Model_CreatureHeader.cpp">
+      <Filter>Classes\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ViewModel_CreatureHeader.cpp">
+      <Filter>Classes\ViewModel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -169,6 +178,15 @@
     </ClInclude>
     <ClInclude Include="..\Classes\JumpDelegate.h">
       <Filter>Classes\Creature</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\View_CreatureHeader.h">
+      <Filter>Classes\View</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model_CreatureHeader.h">
+      <Filter>Classes\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ViewModel_CreatureHeader.h">
+      <Filter>Classes\ViewModel</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

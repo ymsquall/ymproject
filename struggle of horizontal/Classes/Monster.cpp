@@ -2,6 +2,7 @@
 #include "luaext/LuaHelper.h"
 #include "ViewModel_GameScene.h"
 #include "LocalPlayer.h"
+#include "Model_CreatureHeader.h"
 
 Monster::Monster(b2World* pWorld) :
 	SuperT(object::ObjectType::TN_Monster, pWorld),
@@ -10,7 +11,7 @@ Monster::Monster(b2World* pWorld) :
 	mMonsterAnim = NULL;
 	mActiveAttackTimer = 3.0f + float(rand() % 3);
 	mAICanActiveAttacked = 0;
-	mDeathTimer = true;
+	mDeathTimer = 0.0f;
 }
 Monster::~Monster()
 {
@@ -59,8 +60,11 @@ void Monster::simpleAITimer(float dt)
 }
 void Monster::recoverHPTimer(float dt)
 {
-	mNowHP = mMaxHP;
-	this->updateHPView();
+	if(NULL != mModel)
+	{
+		mModel->NowHP = mModel->MaxHP;
+		this->updateHPView();
+	}
 }
 void Monster::updateHPView()
 {
@@ -165,13 +169,16 @@ void Monster::beAttacked(ICreatue* who, bool clobber)
 	mBeAttacking = true;
 	mActiveAttackTimer = 3.0f + float(rand() % 3);
 	mAICanActiveAttacked = 0;
-	int lostHP = 500 + (rand()%500);
-	mNowHP -= lostHP;
-	this->updateHPView();
-	if(mNowHP <= 0)
+	if(NULL != mModel)
 	{
-		this->onDeath();
-		return;
+		int lostHP = 500 + (rand()%500);
+		mModel->NowHP -= lostHP;
+		this->updateHPView();
+		if(mModel->NowHP <= 0)
+		{
+			this->onDeath();
+			return;
+		}
 	}
 	callLuaFuncNoResult("LUAGameSceneView_MonsterBeAttacked", this, clobber);
 	Point otherPos = who->getMovedBodyPos();
@@ -190,6 +197,8 @@ void Monster::onDeath()
 {
 	mDeathing = true;
 	callLuaFuncNoResult("LUAGameSceneView_MonsterDeath", this);
+	if(NULL != mModel)
+		mModel->Visible = false;
 }
 void Monster::onDeathTimer(float dt)
 {
@@ -202,6 +211,8 @@ void Monster::onDeathTimer(float dt)
 		mMonsterAnim->setOpacity(255);
 		this->recoverHPTimer(30.0f);
 		callLuaFuncNoResult("LUAGameSceneView_MonsterRelive", this);
+		if(NULL != mModel)
+			mModel->Visible = true;
 		return;
 	}
 	mDeathTimer += dt;
@@ -215,6 +226,7 @@ void Monster::onDeathTimer(float dt)
 	}
 	else if(mDeathTimer > 2.5f && mDeathTimer < 7.0f)
 	{
+		mMonsterAnim->setOpacity(0);
 		mMonsterAnim->setVisible(false);
 	}
 	else if(mDeathTimer >= 7.0f && mDeathTimer <= 7.5f)
@@ -309,6 +321,8 @@ void Monster::StepBefore(physics::ObjectSettings* settings)
 }
 void Monster::StepAfter()
 {
+	if(this->isDeathing())
+		return;
 	if(NULL != mWeaponBody)
 	{
 		b2ContactEdge* pContact = mWeaponBody->GetContactList();

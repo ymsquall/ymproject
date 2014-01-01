@@ -105,7 +105,7 @@ namespace framework
 			typedef std::vector<IModel*> ModelListV;
 
 			template<class T>
-			T* addModel()
+			T* createModel()
 			{
 				mModelFactory->registerCreator(T::TypeName, (unity::__baseReflectFunc)T::TypeCreator);
 				unity::object* pObject = mModelFactory->create(T::TypeName);
@@ -117,7 +117,14 @@ namespace framework
 					return NULL;
 				}
 				pModel->Event_ModelDestory += ROUTEDEVENT_HANDLE_SCHEDULE(IModel*, this, IModelManager::onModelDestory);
-				mModelList.push_back(pModel);
+				return pModel;
+			}
+			template<class T>
+			T* addModel()
+			{
+				T* pModel = createModel<T>();
+				if(NULL != pModel)
+					mModelList.push_back(pModel);
 				return pModel;
 			}
 

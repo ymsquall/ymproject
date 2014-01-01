@@ -3,6 +3,7 @@ collectgarbage("setpause", 100)
 collectgarbage("setstepmul", 5000)
 require "luascript/luautility"
 require "luascript/toolkit"
+require "luascript/showing/metatext.lua"
 
 
 require "luascript/models/gamescenemodel"
@@ -14,5 +15,6 @@ require "luascript/views/selecthero"
 require "luascript/views/gamesceneview"
 require "luascript/views/gamesceneview_playing"
 require "luascript/views/gamesceneview_monster"
+require "luascript/views/creatureheaderview"
 
 ----------------
