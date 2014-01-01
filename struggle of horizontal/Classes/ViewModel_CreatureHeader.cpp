@@ -122,6 +122,7 @@ void CreatureHeaderViewModel::onCreatureHeaderModelPropertyChanged(mvvm::INotify
 		int maxHP = pModel->MaxHP;
 		CCString* pText = CCString::createWithFormat("%d/%d", nowHP, maxHP);
 		pModel->HPText = pText->getCString();
+		float percent = (float)nowHP / (float)maxHP;
 	}
 	else if("MaxHP" == args->PropertyName)
 	{
@@ -130,6 +131,7 @@ void CreatureHeaderViewModel::onCreatureHeaderModelPropertyChanged(mvvm::INotify
 		int maxHP = pModel->MaxHP;
 		CCString* pText = CCString::createWithFormat("%d/%d", nowHP, maxHP);
 		pModel->HPText = pText->getCString();
+		float percent = (float)nowHP / (float)maxHP;
 	}
 	else if("Visible" == args->PropertyName)
 		callLuaFuncNoResult("LUACreatureHeaderView_VisibleChanged", pView, pModel->Visible);

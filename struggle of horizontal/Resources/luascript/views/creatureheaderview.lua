@@ -21,18 +21,18 @@ function LUALoadCreatureHeaderView(viewWideh, viewHeight, self)
 
 	pView.mProgressBar:setScale9Enabled(true)
 	pView.mProgressBar:setCapInsets(cc.rect(7, 4, 116, 5))
-	pView.mProgressBar:setSize(cc.size(190, 12))
+	pView.mProgressBar:setSize(cc.size(140, 12))
 	pView.mProgressBar:setPercent(100)
 
 	pView.mProgressBG:setScale9Enabled(true)
-	pView.mProgressBG:setSize(cc.size(200, 20))
+	pView.mProgressBG:setSize(cc.size(150, 20))
 
 	--pView.mNameLabel:setText("DEMO")
 	--pView.mNameLabel:setFontName("AmericanTypewriter")
     pView.mNameLabel:setFontSize(30)
 	pView.mNameLabel:setColor(cc.c3b(0, 255, 0))
     pView.mHPShowLabel:setFontSize(14)
-	pView.mHPShowLabel:setColor(cc.c3b(255, 255, 255))
+	pView.mHPShowLabel:setColor(cc.c3b(255, 0, 0))
 
 	pView.mProgressBar:setPosition(cc.p(0,221))
 	pView.mProgressBG:setPosition(cc.p(0,220))

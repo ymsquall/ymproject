@@ -14,7 +14,7 @@ MODEL_TYPECLASS_DEFINE_CONSTRUCTOR(CreatureHeader)
 {
     mModelManager = ViewModelManager::point();
 	// 构造函数，代码写这里
-	HPTextColor = Color3B(255, 255, 255);
+	HPTextColor = Color3B(255, 0, 0);
 	NowHP = 0;
 	MaxHP = 0;
 	Visible = true;
