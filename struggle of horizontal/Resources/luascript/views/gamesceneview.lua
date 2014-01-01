@@ -38,6 +38,7 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 	_LUAGameSceneView.mMoveDirection = _LUAGameSceneView.mMoveDirection or 0.0
 	_LUAGameSceneView.mMoveSpeedScale = _LUAGameSceneView.mMoveSpeedScale or 0.0
 	_LUAGameSceneView.mTouchIndex = -1
+	_LUAGameSceneView.mBeAttacking = false
     _LUAGameSceneView.mJumpBtn:addTouchEventListener(function(sender, eventType)
 			if eventType == 0 then
 				--local physics = _LUAGameSceneView.self:getPhysics()
@@ -86,6 +87,10 @@ function LUAGameSceneViewBeAttacked(clobber)
 	if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= actionName then
 		_LUAGameSceneView.mHeroAnim:getAnimation():play(actionName)
 	end
+	_LUAGameSceneView.mBeAttacking = true
+	_LUAGameSceneView.mMoveDirection = 0.0
+	_LUAGameSceneView.mMoveSpeedScale = 0.0
+	_LUAGameSceneView.mLocalPlayer:move(0.0, 0.0)
 end
 function LUAGameSceneViewAttackAnimEnded()
     if _LUAGameSceneView.mMoveSpeedScale < 0.001 then
@@ -100,6 +105,7 @@ function LUAGameSceneViewBeAttackAnimEnded()
     else
         _LUAGameSceneView.mHeroAnim:getAnimation():play('run01')
     end
+	_LUAGameSceneView.mBeAttacking = false
 end
 -- touchs event
 function LUAGameSceneViewTouchesBegan(touchID, x, y)
