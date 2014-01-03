@@ -13,7 +13,7 @@ namespace framework
 		class IPhysicsStaticObject : public IStaticObject<typeValue, rttiLength>, public physics::PhysicsObject
 		{
 		public:
-			IPhysicsStaticObject(const char* ascType) : IStaticObject<typeValue, rttiLength>(ascType)
+			IPhysicsStaticObject(const char* ascType) : IStaticObject<typeValue, rttiLength>(ascType){}
 			virtual ~IPhysicsStaticObject(){}
 
 		protected:

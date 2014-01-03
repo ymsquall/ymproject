@@ -60,46 +60,58 @@
 		9233B8E218115B3B0095D07F /* libjsbindings iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9233B8D918115B3A0095D07F /* libjsbindings iOS.a */; };
 		9233B8E318115B3B0095D07F /* libluabindings iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9233B8DA18115B3B0095D07F /* libluabindings iOS.a */; };
 		925D9912182B60AA006BED71 /* libbox2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 925D9911182B60AA006BED71 /* libbox2d iOS.a */; };
-		929BF6C5186BC86900457382 /* ICreature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF69C186BC86900457382 /* ICreature.cpp */; };
-		929BF6C6186BC86900457382 /* ICreature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF69C186BC86900457382 /* ICreature.cpp */; };
-		929BF6C7186BC86900457382 /* LocalPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF69E186BC86900457382 /* LocalPlayer.cpp */; };
-		929BF6C8186BC86900457382 /* LocalPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF69E186BC86900457382 /* LocalPlayer.cpp */; };
-		929BF6C9186BC86900457382 /* LuaSOFExtern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6A0186BC86900457382 /* LuaSOFExtern.cpp */; };
-		929BF6CA186BC86900457382 /* LuaSOFExtern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6A0186BC86900457382 /* LuaSOFExtern.cpp */; };
-		929BF6CB186BC86900457382 /* LuaUserDataConversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6A2186BC86900457382 /* LuaUserDataConversion.cpp */; };
-		929BF6CC186BC86900457382 /* LuaUserDataConversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6A2186BC86900457382 /* LuaUserDataConversion.cpp */; };
-		929BF6CD186BC86900457382 /* Model_GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6A4186BC86900457382 /* Model_GameScene.cpp */; };
-		929BF6CE186BC86900457382 /* Model_GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6A4186BC86900457382 /* Model_GameScene.cpp */; };
-		929BF6CF186BC86900457382 /* Model_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6A6186BC86900457382 /* Model_Login.cpp */; };
-		929BF6D0186BC86900457382 /* Model_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6A6186BC86900457382 /* Model_Login.cpp */; };
-		929BF6D1186BC86900457382 /* Model_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6A8186BC86900457382 /* Model_SelectHero.cpp */; };
-		929BF6D2186BC86900457382 /* Model_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6A8186BC86900457382 /* Model_SelectHero.cpp */; };
-		929BF6D3186BC86900457382 /* Monster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6AB186BC86900457382 /* Monster.cpp */; };
-		929BF6D4186BC86900457382 /* Monster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6AB186BC86900457382 /* Monster.cpp */; };
-		929BF6D5186BC86900457382 /* Physics_Box2dView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6AD186BC86900457382 /* Physics_Box2dView.cpp */; };
-		929BF6D6186BC86900457382 /* Physics_Box2dView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6AD186BC86900457382 /* Physics_Box2dView.cpp */; };
-		929BF6D7186BC86900457382 /* Physics_GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6AF186BC86900457382 /* Physics_GameScene.cpp */; };
-		929BF6D8186BC86900457382 /* Physics_GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6AF186BC86900457382 /* Physics_GameScene.cpp */; };
-		929BF6D9186BC86900457382 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6B1186BC86900457382 /* Player.cpp */; };
-		929BF6DA186BC86900457382 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6B1186BC86900457382 /* Player.cpp */; };
-		929BF6DB186BC86900457382 /* RootSceneView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6B3186BC86900457382 /* RootSceneView.cpp */; };
-		929BF6DC186BC86900457382 /* RootSceneView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6B3186BC86900457382 /* RootSceneView.cpp */; };
-		929BF6DD186BC86900457382 /* TopLevelView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6B5186BC86900457382 /* TopLevelView.cpp */; };
-		929BF6DE186BC86900457382 /* TopLevelView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6B5186BC86900457382 /* TopLevelView.cpp */; };
-		929BF6DF186BC86900457382 /* View_GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6B7186BC86900457382 /* View_GameScene.cpp */; };
-		929BF6E0186BC86900457382 /* View_GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6B7186BC86900457382 /* View_GameScene.cpp */; };
-		929BF6E1186BC86900457382 /* View_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6B9186BC86900457382 /* View_Login.cpp */; };
-		929BF6E2186BC86900457382 /* View_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6B9186BC86900457382 /* View_Login.cpp */; };
-		929BF6E3186BC86900457382 /* View_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6BB186BC86900457382 /* View_SelectHero.cpp */; };
-		929BF6E4186BC86900457382 /* View_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6BB186BC86900457382 /* View_SelectHero.cpp */; };
-		929BF6E5186BC86900457382 /* ViewModel_GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6BD186BC86900457382 /* ViewModel_GameScene.cpp */; };
-		929BF6E6186BC86900457382 /* ViewModel_GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6BD186BC86900457382 /* ViewModel_GameScene.cpp */; };
-		929BF6E7186BC86900457382 /* ViewModel_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6BF186BC86900457382 /* ViewModel_Login.cpp */; };
-		929BF6E8186BC86900457382 /* ViewModel_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6BF186BC86900457382 /* ViewModel_Login.cpp */; };
-		929BF6E9186BC86900457382 /* ViewModel_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6C1186BC86900457382 /* ViewModel_SelectHero.cpp */; };
-		929BF6EA186BC86900457382 /* ViewModel_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6C1186BC86900457382 /* ViewModel_SelectHero.cpp */; };
-		929BF6EB186BC86900457382 /* ViewModelManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6C3186BC86900457382 /* ViewModelManager.cpp */; };
-		929BF6EC186BC86900457382 /* ViewModelManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929BF6C3186BC86900457382 /* ViewModelManager.cpp */; };
+		92D0296B187683DB00D02B72 /* image in Resources */ = {isa = PBXBuildFile; fileRef = 92D02969187683DB00D02B72 /* image */; };
+		92D0296C187683DB00D02B72 /* image in Resources */ = {isa = PBXBuildFile; fileRef = 92D02969187683DB00D02B72 /* image */; };
+		92D0296D187683DB00D02B72 /* plist in Resources */ = {isa = PBXBuildFile; fileRef = 92D0296A187683DB00D02B72 /* plist */; };
+		92D0296E187683DB00D02B72 /* plist in Resources */ = {isa = PBXBuildFile; fileRef = 92D0296A187683DB00D02B72 /* plist */; };
+		92D029A1187683F700D02B72 /* ICreature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02970187683F700D02B72 /* ICreature.cpp */; };
+		92D029A2187683F700D02B72 /* ICreature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02970187683F700D02B72 /* ICreature.cpp */; };
+		92D029A3187683F700D02B72 /* JumpDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02972187683F700D02B72 /* JumpDelegate.cpp */; };
+		92D029A4187683F700D02B72 /* JumpDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02972187683F700D02B72 /* JumpDelegate.cpp */; };
+		92D029A5187683F700D02B72 /* LocalPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02974187683F700D02B72 /* LocalPlayer.cpp */; };
+		92D029A6187683F700D02B72 /* LocalPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02974187683F700D02B72 /* LocalPlayer.cpp */; };
+		92D029A7187683F700D02B72 /* LuaSOFExtern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02976187683F700D02B72 /* LuaSOFExtern.cpp */; };
+		92D029A8187683F700D02B72 /* LuaSOFExtern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02976187683F700D02B72 /* LuaSOFExtern.cpp */; };
+		92D029A9187683F700D02B72 /* LuaUserDataConversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02978187683F700D02B72 /* LuaUserDataConversion.cpp */; };
+		92D029AA187683F700D02B72 /* LuaUserDataConversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02978187683F700D02B72 /* LuaUserDataConversion.cpp */; };
+		92D029AB187683F700D02B72 /* Model_CreatureHeader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D0297A187683F700D02B72 /* Model_CreatureHeader.cpp */; };
+		92D029AC187683F700D02B72 /* Model_CreatureHeader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D0297A187683F700D02B72 /* Model_CreatureHeader.cpp */; };
+		92D029AD187683F700D02B72 /* Model_GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D0297C187683F700D02B72 /* Model_GameScene.cpp */; };
+		92D029AE187683F700D02B72 /* Model_GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D0297C187683F700D02B72 /* Model_GameScene.cpp */; };
+		92D029AF187683F700D02B72 /* Model_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D0297E187683F700D02B72 /* Model_Login.cpp */; };
+		92D029B0187683F700D02B72 /* Model_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D0297E187683F700D02B72 /* Model_Login.cpp */; };
+		92D029B1187683F700D02B72 /* Model_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02980187683F700D02B72 /* Model_SelectHero.cpp */; };
+		92D029B2187683F700D02B72 /* Model_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02980187683F700D02B72 /* Model_SelectHero.cpp */; };
+		92D029B3187683F700D02B72 /* Monster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02983187683F700D02B72 /* Monster.cpp */; };
+		92D029B4187683F700D02B72 /* Monster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02983187683F700D02B72 /* Monster.cpp */; };
+		92D029B5187683F700D02B72 /* Physics_Box2dView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02985187683F700D02B72 /* Physics_Box2dView.cpp */; };
+		92D029B6187683F700D02B72 /* Physics_Box2dView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02985187683F700D02B72 /* Physics_Box2dView.cpp */; };
+		92D029B7187683F700D02B72 /* Physics_GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02987187683F700D02B72 /* Physics_GameScene.cpp */; };
+		92D029B8187683F700D02B72 /* Physics_GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02987187683F700D02B72 /* Physics_GameScene.cpp */; };
+		92D029B9187683F700D02B72 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02989187683F700D02B72 /* Player.cpp */; };
+		92D029BA187683F700D02B72 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02989187683F700D02B72 /* Player.cpp */; };
+		92D029BB187683F700D02B72 /* RootSceneView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D0298B187683F700D02B72 /* RootSceneView.cpp */; };
+		92D029BC187683F700D02B72 /* RootSceneView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D0298B187683F700D02B72 /* RootSceneView.cpp */; };
+		92D029BD187683F700D02B72 /* TopLevelView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D0298D187683F700D02B72 /* TopLevelView.cpp */; };
+		92D029BE187683F700D02B72 /* TopLevelView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D0298D187683F700D02B72 /* TopLevelView.cpp */; };
+		92D029BF187683F700D02B72 /* View_CreatureHeader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D0298F187683F700D02B72 /* View_CreatureHeader.cpp */; };
+		92D029C0187683F700D02B72 /* View_CreatureHeader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D0298F187683F700D02B72 /* View_CreatureHeader.cpp */; };
+		92D029C1187683F700D02B72 /* View_GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02991187683F700D02B72 /* View_GameScene.cpp */; };
+		92D029C2187683F700D02B72 /* View_GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02991187683F700D02B72 /* View_GameScene.cpp */; };
+		92D029C3187683F700D02B72 /* View_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02993187683F700D02B72 /* View_Login.cpp */; };
+		92D029C4187683F700D02B72 /* View_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02993187683F700D02B72 /* View_Login.cpp */; };
+		92D029C5187683F700D02B72 /* View_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02995187683F700D02B72 /* View_SelectHero.cpp */; };
+		92D029C6187683F700D02B72 /* View_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02995187683F700D02B72 /* View_SelectHero.cpp */; };
+		92D029C7187683F700D02B72 /* ViewModel_CreatureHeader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02997187683F700D02B72 /* ViewModel_CreatureHeader.cpp */; };
+		92D029C8187683F700D02B72 /* ViewModel_CreatureHeader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02997187683F700D02B72 /* ViewModel_CreatureHeader.cpp */; };
+		92D029C9187683F700D02B72 /* ViewModel_GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02999187683F700D02B72 /* ViewModel_GameScene.cpp */; };
+		92D029CA187683F700D02B72 /* ViewModel_GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D02999187683F700D02B72 /* ViewModel_GameScene.cpp */; };
+		92D029CB187683F700D02B72 /* ViewModel_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D0299B187683F700D02B72 /* ViewModel_Login.cpp */; };
+		92D029CC187683F700D02B72 /* ViewModel_Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D0299B187683F700D02B72 /* ViewModel_Login.cpp */; };
+		92D029CD187683F700D02B72 /* ViewModel_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D0299D187683F700D02B72 /* ViewModel_SelectHero.cpp */; };
+		92D029CE187683F700D02B72 /* ViewModel_SelectHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D0299D187683F700D02B72 /* ViewModel_SelectHero.cpp */; };
+		92D029CF187683F700D02B72 /* ViewModelManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D0299F187683F700D02B72 /* ViewModelManager.cpp */; };
+		92D029D0187683F700D02B72 /* ViewModelManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D0299F187683F700D02B72 /* ViewModelManager.cpp */; };
 		92EF2D1A1853105400CB9EA4 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92EF2D151853105400CB9EA4 /* AppController.mm */; };
 		92EF2D1B1853105400CB9EA4 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 92EF2D161853105400CB9EA4 /* en.lproj */; };
 		92EF2D1C1853105400CB9EA4 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 92EF2D171853105400CB9EA4 /* Icon.icns */; };
@@ -160,47 +172,57 @@
 		9233B8D918115B3A0095D07F /* libjsbindings iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libjsbindings iOS.a"; path = "../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libjsbindings iOS.a"; sourceTree = "<group>"; };
 		9233B8DA18115B3B0095D07F /* libluabindings iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libluabindings iOS.a"; path = "../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libluabindings iOS.a"; sourceTree = "<group>"; };
 		925D9911182B60AA006BED71 /* libbox2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libbox2d iOS.a"; path = "../cocos2d-x-3.0alpha0-pre/build/Release-iphoneos/libbox2d iOS.a"; sourceTree = "<group>"; };
-		929BF69C186BC86900457382 /* ICreature.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ICreature.cpp; sourceTree = "<group>"; };
-		929BF69D186BC86900457382 /* ICreature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICreature.h; sourceTree = "<group>"; };
-		929BF69E186BC86900457382 /* LocalPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LocalPlayer.cpp; sourceTree = "<group>"; };
-		929BF69F186BC86900457382 /* LocalPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalPlayer.h; sourceTree = "<group>"; };
-		929BF6A0186BC86900457382 /* LuaSOFExtern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaSOFExtern.cpp; sourceTree = "<group>"; };
-		929BF6A1186BC86900457382 /* LuaSOFExtern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaSOFExtern.h; sourceTree = "<group>"; };
-		929BF6A2186BC86900457382 /* LuaUserDataConversion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaUserDataConversion.cpp; sourceTree = "<group>"; };
-		929BF6A3186BC86900457382 /* LuaUserDataConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaUserDataConversion.h; sourceTree = "<group>"; };
-		929BF6A4186BC86900457382 /* Model_GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Model_GameScene.cpp; sourceTree = "<group>"; };
-		929BF6A5186BC86900457382 /* Model_GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model_GameScene.h; sourceTree = "<group>"; };
-		929BF6A6186BC86900457382 /* Model_Login.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Model_Login.cpp; sourceTree = "<group>"; };
-		929BF6A7186BC86900457382 /* Model_Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model_Login.h; sourceTree = "<group>"; };
-		929BF6A8186BC86900457382 /* Model_SelectHero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Model_SelectHero.cpp; sourceTree = "<group>"; };
-		929BF6A9186BC86900457382 /* Model_SelectHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model_SelectHero.h; sourceTree = "<group>"; };
-		929BF6AA186BC86900457382 /* ModelTypeDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelTypeDefine.h; sourceTree = "<group>"; };
-		929BF6AB186BC86900457382 /* Monster.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Monster.cpp; sourceTree = "<group>"; };
-		929BF6AC186BC86900457382 /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
-		929BF6AD186BC86900457382 /* Physics_Box2dView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Physics_Box2dView.cpp; sourceTree = "<group>"; };
-		929BF6AE186BC86900457382 /* Physics_Box2dView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Physics_Box2dView.h; sourceTree = "<group>"; };
-		929BF6AF186BC86900457382 /* Physics_GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Physics_GameScene.cpp; sourceTree = "<group>"; };
-		929BF6B0186BC86900457382 /* Physics_GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Physics_GameScene.h; sourceTree = "<group>"; };
-		929BF6B1186BC86900457382 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
-		929BF6B2186BC86900457382 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
-		929BF6B3186BC86900457382 /* RootSceneView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RootSceneView.cpp; sourceTree = "<group>"; };
-		929BF6B4186BC86900457382 /* RootSceneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootSceneView.h; sourceTree = "<group>"; };
-		929BF6B5186BC86900457382 /* TopLevelView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TopLevelView.cpp; sourceTree = "<group>"; };
-		929BF6B6186BC86900457382 /* TopLevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopLevelView.h; sourceTree = "<group>"; };
-		929BF6B7186BC86900457382 /* View_GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = View_GameScene.cpp; sourceTree = "<group>"; };
-		929BF6B8186BC86900457382 /* View_GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View_GameScene.h; sourceTree = "<group>"; };
-		929BF6B9186BC86900457382 /* View_Login.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = View_Login.cpp; sourceTree = "<group>"; };
-		929BF6BA186BC86900457382 /* View_Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View_Login.h; sourceTree = "<group>"; };
-		929BF6BB186BC86900457382 /* View_SelectHero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = View_SelectHero.cpp; sourceTree = "<group>"; };
-		929BF6BC186BC86900457382 /* View_SelectHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View_SelectHero.h; sourceTree = "<group>"; };
-		929BF6BD186BC86900457382 /* ViewModel_GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ViewModel_GameScene.cpp; sourceTree = "<group>"; };
-		929BF6BE186BC86900457382 /* ViewModel_GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModel_GameScene.h; sourceTree = "<group>"; };
-		929BF6BF186BC86900457382 /* ViewModel_Login.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ViewModel_Login.cpp; sourceTree = "<group>"; };
-		929BF6C0186BC86900457382 /* ViewModel_Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModel_Login.h; sourceTree = "<group>"; };
-		929BF6C1186BC86900457382 /* ViewModel_SelectHero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ViewModel_SelectHero.cpp; sourceTree = "<group>"; };
-		929BF6C2186BC86900457382 /* ViewModel_SelectHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModel_SelectHero.h; sourceTree = "<group>"; };
-		929BF6C3186BC86900457382 /* ViewModelManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ViewModelManager.cpp; sourceTree = "<group>"; };
-		929BF6C4186BC86900457382 /* ViewModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModelManager.h; sourceTree = "<group>"; };
+		92D02969187683DB00D02B72 /* image */ = {isa = PBXFileReference; lastKnownFileType = folder; path = image; sourceTree = "<group>"; };
+		92D0296A187683DB00D02B72 /* plist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = plist; sourceTree = "<group>"; };
+		92D02970187683F700D02B72 /* ICreature.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ICreature.cpp; sourceTree = "<group>"; };
+		92D02971187683F700D02B72 /* ICreature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICreature.h; sourceTree = "<group>"; };
+		92D02972187683F700D02B72 /* JumpDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JumpDelegate.cpp; sourceTree = "<group>"; };
+		92D02973187683F700D02B72 /* JumpDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JumpDelegate.h; sourceTree = "<group>"; };
+		92D02974187683F700D02B72 /* LocalPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LocalPlayer.cpp; sourceTree = "<group>"; };
+		92D02975187683F700D02B72 /* LocalPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalPlayer.h; sourceTree = "<group>"; };
+		92D02976187683F700D02B72 /* LuaSOFExtern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaSOFExtern.cpp; sourceTree = "<group>"; };
+		92D02977187683F700D02B72 /* LuaSOFExtern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaSOFExtern.h; sourceTree = "<group>"; };
+		92D02978187683F700D02B72 /* LuaUserDataConversion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaUserDataConversion.cpp; sourceTree = "<group>"; };
+		92D02979187683F700D02B72 /* LuaUserDataConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaUserDataConversion.h; sourceTree = "<group>"; };
+		92D0297A187683F700D02B72 /* Model_CreatureHeader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Model_CreatureHeader.cpp; sourceTree = "<group>"; };
+		92D0297B187683F700D02B72 /* Model_CreatureHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model_CreatureHeader.h; sourceTree = "<group>"; };
+		92D0297C187683F700D02B72 /* Model_GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Model_GameScene.cpp; sourceTree = "<group>"; };
+		92D0297D187683F700D02B72 /* Model_GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model_GameScene.h; sourceTree = "<group>"; };
+		92D0297E187683F700D02B72 /* Model_Login.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Model_Login.cpp; sourceTree = "<group>"; };
+		92D0297F187683F700D02B72 /* Model_Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model_Login.h; sourceTree = "<group>"; };
+		92D02980187683F700D02B72 /* Model_SelectHero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Model_SelectHero.cpp; sourceTree = "<group>"; };
+		92D02981187683F700D02B72 /* Model_SelectHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model_SelectHero.h; sourceTree = "<group>"; };
+		92D02982187683F700D02B72 /* ModelTypeDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelTypeDefine.h; sourceTree = "<group>"; };
+		92D02983187683F700D02B72 /* Monster.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Monster.cpp; sourceTree = "<group>"; };
+		92D02984187683F700D02B72 /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
+		92D02985187683F700D02B72 /* Physics_Box2dView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Physics_Box2dView.cpp; sourceTree = "<group>"; };
+		92D02986187683F700D02B72 /* Physics_Box2dView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Physics_Box2dView.h; sourceTree = "<group>"; };
+		92D02987187683F700D02B72 /* Physics_GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Physics_GameScene.cpp; sourceTree = "<group>"; };
+		92D02988187683F700D02B72 /* Physics_GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Physics_GameScene.h; sourceTree = "<group>"; };
+		92D02989187683F700D02B72 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		92D0298A187683F700D02B72 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		92D0298B187683F700D02B72 /* RootSceneView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RootSceneView.cpp; sourceTree = "<group>"; };
+		92D0298C187683F700D02B72 /* RootSceneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootSceneView.h; sourceTree = "<group>"; };
+		92D0298D187683F700D02B72 /* TopLevelView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TopLevelView.cpp; sourceTree = "<group>"; };
+		92D0298E187683F700D02B72 /* TopLevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopLevelView.h; sourceTree = "<group>"; };
+		92D0298F187683F700D02B72 /* View_CreatureHeader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = View_CreatureHeader.cpp; sourceTree = "<group>"; };
+		92D02990187683F700D02B72 /* View_CreatureHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View_CreatureHeader.h; sourceTree = "<group>"; };
+		92D02991187683F700D02B72 /* View_GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = View_GameScene.cpp; sourceTree = "<group>"; };
+		92D02992187683F700D02B72 /* View_GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View_GameScene.h; sourceTree = "<group>"; };
+		92D02993187683F700D02B72 /* View_Login.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = View_Login.cpp; sourceTree = "<group>"; };
+		92D02994187683F700D02B72 /* View_Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View_Login.h; sourceTree = "<group>"; };
+		92D02995187683F700D02B72 /* View_SelectHero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = View_SelectHero.cpp; sourceTree = "<group>"; };
+		92D02996187683F700D02B72 /* View_SelectHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View_SelectHero.h; sourceTree = "<group>"; };
+		92D02997187683F700D02B72 /* ViewModel_CreatureHeader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ViewModel_CreatureHeader.cpp; sourceTree = "<group>"; };
+		92D02998187683F700D02B72 /* ViewModel_CreatureHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModel_CreatureHeader.h; sourceTree = "<group>"; };
+		92D02999187683F700D02B72 /* ViewModel_GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ViewModel_GameScene.cpp; sourceTree = "<group>"; };
+		92D0299A187683F700D02B72 /* ViewModel_GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModel_GameScene.h; sourceTree = "<group>"; };
+		92D0299B187683F700D02B72 /* ViewModel_Login.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ViewModel_Login.cpp; sourceTree = "<group>"; };
+		92D0299C187683F700D02B72 /* ViewModel_Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModel_Login.h; sourceTree = "<group>"; };
+		92D0299D187683F700D02B72 /* ViewModel_SelectHero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ViewModel_SelectHero.cpp; sourceTree = "<group>"; };
+		92D0299E187683F700D02B72 /* ViewModel_SelectHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModel_SelectHero.h; sourceTree = "<group>"; };
+		92D0299F187683F700D02B72 /* ViewModelManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ViewModelManager.cpp; sourceTree = "<group>"; };
+		92D029A0187683F700D02B72 /* ViewModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModelManager.h; sourceTree = "<group>"; };
 		92EF2D141853105400CB9EA4 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = proj.mac/AppController.h; sourceTree = "<group>"; };
 		92EF2D151853105400CB9EA4 /* AppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppController.mm; path = proj.mac/AppController.mm; sourceTree = "<group>"; };
 		92EF2D161853105400CB9EA4 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = en.lproj; path = proj.mac/en.lproj; sourceTree = "<group>"; };
@@ -276,7 +298,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				929BF69B186BC86900457382 /* Classes */,
+				92D0296F187683F700D02B72 /* Classes */,
 				9222559F1853263400D6C90F /* Resources */,
 				92225586185325DB00D6C90F /* proj.ios */,
 				9233B88C181156950095D07F /* Frameworks */,
@@ -308,6 +330,8 @@
 		9222559F1853263400D6C90F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				92D02969187683DB00D02B72 /* image */,
+				92D0296A187683DB00D02B72 /* plist */,
 				922256271853265900D6C90F /* cocostudio */,
 				922256281853265900D6C90F /* luascript */,
 				922256291853265900D6C90F /* tiledmap */,
@@ -371,50 +395,58 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		929BF69B186BC86900457382 /* Classes */ = {
+		92D0296F187683F700D02B72 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				929BF69C186BC86900457382 /* ICreature.cpp */,
-				929BF69D186BC86900457382 /* ICreature.h */,
-				929BF69E186BC86900457382 /* LocalPlayer.cpp */,
-				929BF69F186BC86900457382 /* LocalPlayer.h */,
-				929BF6A0186BC86900457382 /* LuaSOFExtern.cpp */,
-				929BF6A1186BC86900457382 /* LuaSOFExtern.h */,
-				929BF6A2186BC86900457382 /* LuaUserDataConversion.cpp */,
-				929BF6A3186BC86900457382 /* LuaUserDataConversion.h */,
-				929BF6A4186BC86900457382 /* Model_GameScene.cpp */,
-				929BF6A5186BC86900457382 /* Model_GameScene.h */,
-				929BF6A6186BC86900457382 /* Model_Login.cpp */,
-				929BF6A7186BC86900457382 /* Model_Login.h */,
-				929BF6A8186BC86900457382 /* Model_SelectHero.cpp */,
-				929BF6A9186BC86900457382 /* Model_SelectHero.h */,
-				929BF6AA186BC86900457382 /* ModelTypeDefine.h */,
-				929BF6AB186BC86900457382 /* Monster.cpp */,
-				929BF6AC186BC86900457382 /* Monster.h */,
-				929BF6AD186BC86900457382 /* Physics_Box2dView.cpp */,
-				929BF6AE186BC86900457382 /* Physics_Box2dView.h */,
-				929BF6AF186BC86900457382 /* Physics_GameScene.cpp */,
-				929BF6B0186BC86900457382 /* Physics_GameScene.h */,
-				929BF6B1186BC86900457382 /* Player.cpp */,
-				929BF6B2186BC86900457382 /* Player.h */,
-				929BF6B3186BC86900457382 /* RootSceneView.cpp */,
-				929BF6B4186BC86900457382 /* RootSceneView.h */,
-				929BF6B5186BC86900457382 /* TopLevelView.cpp */,
-				929BF6B6186BC86900457382 /* TopLevelView.h */,
-				929BF6B7186BC86900457382 /* View_GameScene.cpp */,
-				929BF6B8186BC86900457382 /* View_GameScene.h */,
-				929BF6B9186BC86900457382 /* View_Login.cpp */,
-				929BF6BA186BC86900457382 /* View_Login.h */,
-				929BF6BB186BC86900457382 /* View_SelectHero.cpp */,
-				929BF6BC186BC86900457382 /* View_SelectHero.h */,
-				929BF6BD186BC86900457382 /* ViewModel_GameScene.cpp */,
-				929BF6BE186BC86900457382 /* ViewModel_GameScene.h */,
-				929BF6BF186BC86900457382 /* ViewModel_Login.cpp */,
-				929BF6C0186BC86900457382 /* ViewModel_Login.h */,
-				929BF6C1186BC86900457382 /* ViewModel_SelectHero.cpp */,
-				929BF6C2186BC86900457382 /* ViewModel_SelectHero.h */,
-				929BF6C3186BC86900457382 /* ViewModelManager.cpp */,
-				929BF6C4186BC86900457382 /* ViewModelManager.h */,
+				92D02970187683F700D02B72 /* ICreature.cpp */,
+				92D02971187683F700D02B72 /* ICreature.h */,
+				92D02972187683F700D02B72 /* JumpDelegate.cpp */,
+				92D02973187683F700D02B72 /* JumpDelegate.h */,
+				92D02974187683F700D02B72 /* LocalPlayer.cpp */,
+				92D02975187683F700D02B72 /* LocalPlayer.h */,
+				92D02976187683F700D02B72 /* LuaSOFExtern.cpp */,
+				92D02977187683F700D02B72 /* LuaSOFExtern.h */,
+				92D02978187683F700D02B72 /* LuaUserDataConversion.cpp */,
+				92D02979187683F700D02B72 /* LuaUserDataConversion.h */,
+				92D0297A187683F700D02B72 /* Model_CreatureHeader.cpp */,
+				92D0297B187683F700D02B72 /* Model_CreatureHeader.h */,
+				92D0297C187683F700D02B72 /* Model_GameScene.cpp */,
+				92D0297D187683F700D02B72 /* Model_GameScene.h */,
+				92D0297E187683F700D02B72 /* Model_Login.cpp */,
+				92D0297F187683F700D02B72 /* Model_Login.h */,
+				92D02980187683F700D02B72 /* Model_SelectHero.cpp */,
+				92D02981187683F700D02B72 /* Model_SelectHero.h */,
+				92D02982187683F700D02B72 /* ModelTypeDefine.h */,
+				92D02983187683F700D02B72 /* Monster.cpp */,
+				92D02984187683F700D02B72 /* Monster.h */,
+				92D02985187683F700D02B72 /* Physics_Box2dView.cpp */,
+				92D02986187683F700D02B72 /* Physics_Box2dView.h */,
+				92D02987187683F700D02B72 /* Physics_GameScene.cpp */,
+				92D02988187683F700D02B72 /* Physics_GameScene.h */,
+				92D02989187683F700D02B72 /* Player.cpp */,
+				92D0298A187683F700D02B72 /* Player.h */,
+				92D0298B187683F700D02B72 /* RootSceneView.cpp */,
+				92D0298C187683F700D02B72 /* RootSceneView.h */,
+				92D0298D187683F700D02B72 /* TopLevelView.cpp */,
+				92D0298E187683F700D02B72 /* TopLevelView.h */,
+				92D0298F187683F700D02B72 /* View_CreatureHeader.cpp */,
+				92D02990187683F700D02B72 /* View_CreatureHeader.h */,
+				92D02991187683F700D02B72 /* View_GameScene.cpp */,
+				92D02992187683F700D02B72 /* View_GameScene.h */,
+				92D02993187683F700D02B72 /* View_Login.cpp */,
+				92D02994187683F700D02B72 /* View_Login.h */,
+				92D02995187683F700D02B72 /* View_SelectHero.cpp */,
+				92D02996187683F700D02B72 /* View_SelectHero.h */,
+				92D02997187683F700D02B72 /* ViewModel_CreatureHeader.cpp */,
+				92D02998187683F700D02B72 /* ViewModel_CreatureHeader.h */,
+				92D02999187683F700D02B72 /* ViewModel_GameScene.cpp */,
+				92D0299A187683F700D02B72 /* ViewModel_GameScene.h */,
+				92D0299B187683F700D02B72 /* ViewModel_Login.cpp */,
+				92D0299C187683F700D02B72 /* ViewModel_Login.h */,
+				92D0299D187683F700D02B72 /* ViewModel_SelectHero.cpp */,
+				92D0299E187683F700D02B72 /* ViewModel_SelectHero.h */,
+				92D0299F187683F700D02B72 /* ViewModelManager.cpp */,
+				92D029A0187683F700D02B72 /* ViewModelManager.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -490,6 +522,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D0296C187683DB00D02B72 /* image in Resources */,
 				92225597185325DC00D6C90F /* Default@2x.png in Resources */,
 				92225596185325DC00D6C90F /* Default.png in Resources */,
 				9222562F1853265A00D6C90F /* tiledmap in Resources */,
@@ -498,6 +531,7 @@
 				9222562D1853265A00D6C90F /* luascript in Resources */,
 				9222559B185325DC00D6C90F /* Icon-72.png in Resources */,
 				92225599185325DC00D6C90F /* Icon-144.png in Resources */,
+				92D0296E187683DB00D02B72 /* plist in Resources */,
 				9222562B1853265A00D6C90F /* cocostudio in Resources */,
 				92225595185325DC00D6C90F /* Default-568h@2x.png in Resources */,
 			);
@@ -508,9 +542,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				92EF2D1B1853105400CB9EA4 /* en.lproj in Resources */,
+				92D0296D187683DB00D02B72 /* plist in Resources */,
 				92EF2D1D1853105400CB9EA4 /* Info.plist in Resources */,
 				9222562C1853265A00D6C90F /* luascript in Resources */,
 				9222562A1853265900D6C90F /* cocostudio in Resources */,
+				92D0296B187683DB00D02B72 /* image in Resources */,
 				9222562E1853265A00D6C90F /* tiledmap in Resources */,
 				92EF2D1C1853105400CB9EA4 /* Icon.icns in Resources */,
 			);
@@ -523,29 +559,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				929BF6D4186BC86900457382 /* Monster.cpp in Sources */,
-				929BF6DC186BC86900457382 /* RootSceneView.cpp in Sources */,
-				929BF6CC186BC86900457382 /* LuaUserDataConversion.cpp in Sources */,
-				929BF6D6186BC86900457382 /* Physics_Box2dView.cpp in Sources */,
-				929BF6D2186BC86900457382 /* Model_SelectHero.cpp in Sources */,
+				92D029A8187683F700D02B72 /* LuaSOFExtern.cpp in Sources */,
+				92D029BE187683F700D02B72 /* TopLevelView.cpp in Sources */,
+				92D029B8187683F700D02B72 /* Physics_GameScene.cpp in Sources */,
+				92D029CA187683F700D02B72 /* ViewModel_GameScene.cpp in Sources */,
+				92D029BC187683F700D02B72 /* RootSceneView.cpp in Sources */,
+				92D029C6187683F700D02B72 /* View_SelectHero.cpp in Sources */,
+				92D029CE187683F700D02B72 /* ViewModel_SelectHero.cpp in Sources */,
 				92225594185325DC00D6C90F /* AppController.mm in Sources */,
-				929BF6D8186BC86900457382 /* Physics_GameScene.cpp in Sources */,
-				929BF6DE186BC86900457382 /* TopLevelView.cpp in Sources */,
-				929BF6CA186BC86900457382 /* LuaSOFExtern.cpp in Sources */,
+				92D029B0187683F700D02B72 /* Model_Login.cpp in Sources */,
+				92D029C0187683F700D02B72 /* View_CreatureHeader.cpp in Sources */,
+				92D029B2187683F700D02B72 /* Model_SelectHero.cpp in Sources */,
+				92D029AE187683F700D02B72 /* Model_GameScene.cpp in Sources */,
+				92D029C2187683F700D02B72 /* View_GameScene.cpp in Sources */,
 				9222559D185325DC00D6C90F /* main.m in Sources */,
-				929BF6E2186BC86900457382 /* View_Login.cpp in Sources */,
-				929BF6E8186BC86900457382 /* ViewModel_Login.cpp in Sources */,
-				929BF6EA186BC86900457382 /* ViewModel_SelectHero.cpp in Sources */,
-				929BF6EC186BC86900457382 /* ViewModelManager.cpp in Sources */,
-				929BF6E0186BC86900457382 /* View_GameScene.cpp in Sources */,
-				929BF6DA186BC86900457382 /* Player.cpp in Sources */,
-				929BF6E4186BC86900457382 /* View_SelectHero.cpp in Sources */,
-				929BF6CE186BC86900457382 /* Model_GameScene.cpp in Sources */,
-				929BF6E6186BC86900457382 /* ViewModel_GameScene.cpp in Sources */,
-				929BF6D0186BC86900457382 /* Model_Login.cpp in Sources */,
-				929BF6C6186BC86900457382 /* ICreature.cpp in Sources */,
+				92D029AA187683F700D02B72 /* LuaUserDataConversion.cpp in Sources */,
+				92D029BA187683F700D02B72 /* Player.cpp in Sources */,
+				92D029A2187683F700D02B72 /* ICreature.cpp in Sources */,
+				92D029B6187683F700D02B72 /* Physics_Box2dView.cpp in Sources */,
+				92D029A4187683F700D02B72 /* JumpDelegate.cpp in Sources */,
+				92D029B4187683F700D02B72 /* Monster.cpp in Sources */,
+				92D029D0187683F700D02B72 /* ViewModelManager.cpp in Sources */,
+				92D029CC187683F700D02B72 /* ViewModel_Login.cpp in Sources */,
+				92D029A6187683F700D02B72 /* LocalPlayer.cpp in Sources */,
+				92D029C8187683F700D02B72 /* ViewModel_CreatureHeader.cpp in Sources */,
+				92D029AC187683F700D02B72 /* Model_CreatureHeader.cpp in Sources */,
+				92D029C4187683F700D02B72 /* View_Login.cpp in Sources */,
 				9222559E185325DC00D6C90F /* RootViewController.mm in Sources */,
-				929BF6C8186BC86900457382 /* LocalPlayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,28 +593,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				929BF6D5186BC86900457382 /* Physics_Box2dView.cpp in Sources */,
-				929BF6DD186BC86900457382 /* TopLevelView.cpp in Sources */,
-				929BF6C9186BC86900457382 /* LuaSOFExtern.cpp in Sources */,
-				929BF6CF186BC86900457382 /* Model_Login.cpp in Sources */,
-				929BF6E7186BC86900457382 /* ViewModel_Login.cpp in Sources */,
-				929BF6D3186BC86900457382 /* Monster.cpp in Sources */,
-				929BF6DF186BC86900457382 /* View_GameScene.cpp in Sources */,
-				929BF6D7186BC86900457382 /* Physics_GameScene.cpp in Sources */,
-				929BF6C7186BC86900457382 /* LocalPlayer.cpp in Sources */,
-				929BF6D1186BC86900457382 /* Model_SelectHero.cpp in Sources */,
+				92D029AD187683F700D02B72 /* Model_GameScene.cpp in Sources */,
+				92D029A9187683F700D02B72 /* LuaUserDataConversion.cpp in Sources */,
+				92D029BF187683F700D02B72 /* View_CreatureHeader.cpp in Sources */,
+				92D029A3187683F700D02B72 /* JumpDelegate.cpp in Sources */,
+				92D029C5187683F700D02B72 /* View_SelectHero.cpp in Sources */,
+				92D029B5187683F700D02B72 /* Physics_Box2dView.cpp in Sources */,
+				92D029C1187683F700D02B72 /* View_GameScene.cpp in Sources */,
+				92D029AF187683F700D02B72 /* Model_Login.cpp in Sources */,
+				92D029CB187683F700D02B72 /* ViewModel_Login.cpp in Sources */,
+				92D029B3187683F700D02B72 /* Monster.cpp in Sources */,
+				92D029A7187683F700D02B72 /* LuaSOFExtern.cpp in Sources */,
 				92EF2D1A1853105400CB9EA4 /* AppController.mm in Sources */,
-				929BF6E3186BC86900457382 /* View_SelectHero.cpp in Sources */,
-				929BF6E9186BC86900457382 /* ViewModel_SelectHero.cpp in Sources */,
-				929BF6D9186BC86900457382 /* Player.cpp in Sources */,
-				929BF6CB186BC86900457382 /* LuaUserDataConversion.cpp in Sources */,
-				929BF6C5186BC86900457382 /* ICreature.cpp in Sources */,
-				929BF6EB186BC86900457382 /* ViewModelManager.cpp in Sources */,
-				929BF6E5186BC86900457382 /* ViewModel_GameScene.cpp in Sources */,
-				929BF6CD186BC86900457382 /* Model_GameScene.cpp in Sources */,
+				92D029A1187683F700D02B72 /* ICreature.cpp in Sources */,
+				92D029C9187683F700D02B72 /* ViewModel_GameScene.cpp in Sources */,
+				92D029BD187683F700D02B72 /* TopLevelView.cpp in Sources */,
+				92D029AB187683F700D02B72 /* Model_CreatureHeader.cpp in Sources */,
+				92D029CF187683F700D02B72 /* ViewModelManager.cpp in Sources */,
+				92D029B7187683F700D02B72 /* Physics_GameScene.cpp in Sources */,
+				92D029C3187683F700D02B72 /* View_Login.cpp in Sources */,
+				92D029CD187683F700D02B72 /* ViewModel_SelectHero.cpp in Sources */,
+				92D029C7187683F700D02B72 /* ViewModel_CreatureHeader.cpp in Sources */,
 				92EF2D1E1853105400CB9EA4 /* main.m in Sources */,
-				929BF6E1186BC86900457382 /* View_Login.cpp in Sources */,
-				929BF6DB186BC86900457382 /* RootSceneView.cpp in Sources */,
+				92D029B1187683F700D02B72 /* Model_SelectHero.cpp in Sources */,
+				92D029A5187683F700D02B72 /* LocalPlayer.cpp in Sources */,
+				92D029B9187683F700D02B72 /* Player.cpp in Sources */,
+				92D029BB187683F700D02B72 /* RootSceneView.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
