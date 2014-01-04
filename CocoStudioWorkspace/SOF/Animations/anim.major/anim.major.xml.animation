@@ -8,7 +8,8 @@
   <JsonFolder>Y:\Work\ymproject\CocoStudioWorkspace\SOF\Animations\anim.major\Json</JsonFolder>
   <JsonList />
   <ResourceFileList>
-    <string>anim.major0.plist</string>
+    <string>anim0.plist</string>
+    <string>anim1.plist</string>
   </ResourceFileList>
   <CanvasSize>
     <Width>0</Width>
