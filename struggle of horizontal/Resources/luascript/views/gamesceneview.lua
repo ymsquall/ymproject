@@ -82,9 +82,8 @@ end
 function LUAGameSceneViewBeAttackedEffect(lostHP, hitPoint)
 	local pPlayer = LocalPlayer:instance()
 	local pos = pPlayer:getMovedBodyPos()
-	pos.x = pos.x - 20
-	pos.y = pos.y + 220
-	local pViwePanel = engine.uiview.StackPanel:createWithFrame(pos)
+	local posFlying = CCPoint(pos.x - 20, pos.y + 220)
+	local pViwePanel = engine.uiview.StackPanel:createWithFrame(posFlying)
 	local hpStr = tostring(lostHP)
 	local len = string.len(hpStr)
 	for i = 1,len,1 do
@@ -93,7 +92,7 @@ function LUAGameSceneViewBeAttackedEffect(lostHP, hitPoint)
 	end
 	local pLayer = LuaCocoStudioConversion:toUILayer(pViwePanel)
 	_LUAGameSceneView.mTiledMap:addChild(pLayer, 101)
-	local moveEndPos = cc.p(pos.x, pos.y + 100.0)
+	local moveEndPos = cc.p(posFlying.x, posFlying.y + 100.0)
 	local moveup = cc.MoveTo:create(2.0, moveEndPos)
 	local delay = cc.DelayTime:create(1.0)
 	local fadeout = cc.FadeTo:create(1.0, 0)
@@ -108,13 +107,12 @@ function LUAGameSceneViewBeAttackedEffect(lostHP, hitPoint)
 			pViwePanel:runFadeOutAction(1.0)
 		end)))
 	--blast effect
-	local pEffect = LUACreateAndPlayBlastEffect('effect.blast', 'beattack01.point01', hitPoint.x, hitPoint.y)
+	local pEffect = LUACreateAndPlayBlastEffect('effect.blast', 'beattack01.point01', posFlying.x, posFlying.y)--hitPoint.x, hitPoint.y)
 	_LUAGameSceneView.mTiledMap:addChild(pEffect, 101)
     pEffect:getAnimation():setMovementEventCallFunc(
 		function(armatureBack,movementType,movementID)
 			print('blast effect status:'..movementID..'-'..tostring(movementType))
 			if movementType == ccs.MovementEventType.COMPLETE then
-				print(pEffect)
 				_LUAGameSceneView.mTiledMap:removeChild(pEffect, true)
 			end
 		end
