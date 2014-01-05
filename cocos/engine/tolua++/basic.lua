@@ -12,6 +12,8 @@ local CCObjectTypes = {
     "framework::mvvm::INotifyPropertyChanged",
     "framework::mvvm::IModel",
     "framework::mvvm::ModelBase",
+    "engine::uiview::Panel",
+    "engine::uiview::StackPanel",
     "LuaCocoStudioConversion",
     "LuaTiledHelper",
 }
@@ -112,6 +114,7 @@ extern "C" {
 #include "mvvm/interface.h"
 #include "mvvm/model.h"
 #include "mvvm/view.h"
+#include "uiview/Panel/StackPanel.h"
 #include "CocoStudio.h"
 #include "LuaCocoStudioConversion.h"
 #include "LuaTiledHelper.h"

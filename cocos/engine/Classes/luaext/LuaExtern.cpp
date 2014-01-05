@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaExtern
-** Generated automatically by tolua++-1.0.92 on 01/01/14 17:53:48.
+** Generated automatically by tolua++-1.0.92 on 01/05/14 20:50:13.
 */
 
 /****************************************************************************
@@ -42,6 +42,7 @@ extern "C" {
 #include "mvvm/interface.h"
 #include "mvvm/model.h"
 #include "mvvm/view.h"
+#include "uiview/Panel/StackPanel.h"
 #include "CocoStudio.h"
 #include "LuaCocoStudioConversion.h"
 #include "LuaTiledHelper.h"
@@ -94,9 +95,23 @@ static int tolua_collect_framework__mvvm__FrameworkElement (lua_State* tolua_S)
     return 0;
 }
 
+static int tolua_collect_engine__uiview__StackPanel (lua_State* tolua_S)
+{
+ engine::uiview::StackPanel* self = (engine::uiview::StackPanel*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
+
 static int tolua_collect_framework__mvvm__DispatcherObject (lua_State* tolua_S)
 {
  framework::mvvm::DispatcherObject* self = (framework::mvvm::DispatcherObject*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
+
+static int tolua_collect_engine__uiview__Panel (lua_State* tolua_S)
+{
+ engine::uiview::Panel* self = (engine::uiview::Panel*) tolua_tousertype(tolua_S,1,0);
     Mtolua_delete(self);
     return 0;
 }
@@ -137,25 +152,31 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"framework::unity::blockwrite");
  tolua_usertype(tolua_S,"framework::mvvm::INotifyPropertyChanged");
  tolua_usertype(tolua_S,"uint32");
+ tolua_usertype(tolua_S,"IView");
  tolua_usertype(tolua_S,"framework::mvvm::FrameworkElement");
  tolua_usertype(tolua_S,"UILayer");
  tolua_usertype(tolua_S,"UIListView");
  tolua_usertype(tolua_S,"framework::unity::blockreader");
  tolua_usertype(tolua_S,"UISlider");
+ tolua_usertype(tolua_S,"CCPoint");
  tolua_usertype(tolua_S,"CCSize");
  tolua_usertype(tolua_S,"framework::mvvm::DispatcherObject");
+ tolua_usertype(tolua_S,"UIButton");
+ tolua_usertype(tolua_S,"engine::uiview::StackPanel");
  tolua_usertype(tolua_S,"UICheckBox");
  tolua_usertype(tolua_S,"framework::mvvm::UIElement");
  tolua_usertype(tolua_S,"UIImageView");
  tolua_usertype(tolua_S,"UIScrollView");
  tolua_usertype(tolua_S,"UIPageView");
+ tolua_usertype(tolua_S,"engine::uiview::Panel");
+ tolua_usertype(tolua_S,"CCLayer");
  tolua_usertype(tolua_S,"framework::mvvm::Visual");
  tolua_usertype(tolua_S,"UITextField");
  tolua_usertype(tolua_S,"UILabel");
  tolua_usertype(tolua_S,"framework::mvvm::IView");
  tolua_usertype(tolua_S,"UILabelBMFont");
  tolua_usertype(tolua_S,"object");
- tolua_usertype(tolua_S,"UIButton");
+ tolua_usertype(tolua_S,"engine:uiview:Panel");
  tolua_usertype(tolua_S,"framework::mvvm::ModelBase");
  tolua_usertype(tolua_S,"framework::mvvm::IModel");
  tolua_usertype(tolua_S,"LuaCocoStudioConversion");
@@ -2756,6 +2777,371 @@ static int tolua_LuaExtern_LuaTiledHelper_getTMXLayerImageSize00(lua_State* tolu
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: new of class  engine::uiview::Panel */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_engine_uiview_Panel_new00
+static int tolua_LuaExtern_engine_uiview_Panel_new00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"engine::uiview::Panel",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   engine::uiview::Panel* tolua_ret = (engine::uiview::Panel*)  Mtolua_new((engine::uiview::Panel)());
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"engine::uiview::Panel");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new_local of class  engine::uiview::Panel */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_engine_uiview_Panel_new00_local
+static int tolua_LuaExtern_engine_uiview_Panel_new00_local(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"engine::uiview::Panel",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   engine::uiview::Panel* tolua_ret = (engine::uiview::Panel*)  Mtolua_new((engine::uiview::Panel)());
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"engine::uiview::Panel");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: delete of class  engine::uiview::Panel */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_engine_uiview_Panel_delete00
+static int tolua_LuaExtern_engine_uiview_Panel_delete00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"engine::uiview::Panel",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  engine::uiview::Panel* self = (engine::uiview::Panel*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'delete'", NULL);
+#endif
+  Mtolua_delete(self);
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'delete'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* get function: __CCLayer__ of class  engine::uiview::Panel */
+#ifndef TOLUA_DISABLE_tolua_get_engine__uiview__Panel___CCLayer__
+static int tolua_get_engine__uiview__Panel___CCLayer__(lua_State* tolua_S)
+{
+  engine::uiview::Panel* self = (engine::uiview::Panel*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in accessing variable '__CCLayer__'",NULL);
+#endif
+#ifdef __cplusplus
+   tolua_pushusertype(tolua_S,(void*)static_cast<CCLayer*>(self), "CCLayer");
+#else
+   tolua_pushusertype(tolua_S,(void*)((CCLayer*)self), "CCLayer");
+#endif
+ return 1;
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new of class  engine::uiview::StackPanel */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_engine_uiview_StackPanel_new00
+static int tolua_LuaExtern_engine_uiview_StackPanel_new00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"engine::uiview::StackPanel",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   engine::uiview::StackPanel* tolua_ret = (engine::uiview::StackPanel*)  Mtolua_new((engine::uiview::StackPanel)());
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"engine::uiview::StackPanel");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new_local of class  engine::uiview::StackPanel */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_engine_uiview_StackPanel_new00_local
+static int tolua_LuaExtern_engine_uiview_StackPanel_new00_local(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"engine::uiview::StackPanel",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   engine::uiview::StackPanel* tolua_ret = (engine::uiview::StackPanel*)  Mtolua_new((engine::uiview::StackPanel)());
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"engine::uiview::StackPanel");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: delete of class  engine::uiview::StackPanel */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_engine_uiview_StackPanel_delete00
+static int tolua_LuaExtern_engine_uiview_StackPanel_delete00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"engine::uiview::StackPanel",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  engine::uiview::StackPanel* self = (engine::uiview::StackPanel*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'delete'", NULL);
+#endif
+  Mtolua_delete(self);
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'delete'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createWithFrame of class  engine::uiview::StackPanel */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_engine_uiview_StackPanel_createWithFrame00
+static int tolua_LuaExtern_engine_uiview_StackPanel_createWithFrame00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"engine::uiview::StackPanel",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const CCPoint",0,&tolua_err)) ||
+     !tolua_isnumber(tolua_S,3,1,&tolua_err) ||
+     !tolua_isboolean(tolua_S,4,1,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,5,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const CCPoint* pos = ((const CCPoint*)  tolua_tousertype(tolua_S,2,0));
+  float spaceOff = ((float)  tolua_tonumber(tolua_S,3,0.0f));
+  bool isHorizontal = ((bool)  tolua_toboolean(tolua_S,4,true));
+  {
+   engine::uiview::StackPanel* tolua_ret = (engine::uiview::StackPanel*)  engine::uiview::StackPanel::createWithFrame(*pos,spaceOff,isHorizontal);
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"engine::uiview::StackPanel");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'createWithFrame'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createWithFrame of class  engine::uiview::StackPanel */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_engine_uiview_StackPanel_createWithFrame01
+static int tolua_LuaExtern_engine_uiview_StackPanel_createWithFrame01(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"engine::uiview::StackPanel",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const CCPoint",0,&tolua_err)) ||
+     (tolua_isvaluenil(tolua_S,3,&tolua_err) || !tolua_isusertype(tolua_S,3,"const CCSize",0,&tolua_err)) ||
+     !tolua_isnumber(tolua_S,4,1,&tolua_err) ||
+     !tolua_isboolean(tolua_S,5,1,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,6,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  const CCPoint* pos = ((const CCPoint*)  tolua_tousertype(tolua_S,2,0));
+  const CCSize* size = ((const CCSize*)  tolua_tousertype(tolua_S,3,0));
+  float spaceOff = ((float)  tolua_tonumber(tolua_S,4,0.0f));
+  bool isHorizontal = ((bool)  tolua_toboolean(tolua_S,5,true));
+  {
+   engine::uiview::StackPanel* tolua_ret = (engine::uiview::StackPanel*)  engine::uiview::StackPanel::createWithFrame(*pos,*size,spaceOff,isHorizontal);
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"engine::uiview::StackPanel");
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_engine_uiview_StackPanel_createWithFrame00(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createSpriteWithLocal of class  engine::uiview::StackPanel */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_engine_uiview_StackPanel_createSpriteWithLocal00
+static int tolua_LuaExtern_engine_uiview_StackPanel_createSpriteWithLocal00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"engine::uiview::StackPanel",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  engine::uiview::StackPanel* self = (engine::uiview::StackPanel*)  tolua_tousertype(tolua_S,1,0);
+  const char* imageName = ((const char*)  tolua_tostring(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'createSpriteWithLocal'", NULL);
+#endif
+  {
+   self->createSpriteWithLocal(imageName);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'createSpriteWithLocal'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createSpriteWithPlist of class  engine::uiview::StackPanel */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_engine_uiview_StackPanel_createSpriteWithPlist00
+static int tolua_LuaExtern_engine_uiview_StackPanel_createSpriteWithPlist00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"engine::uiview::StackPanel",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  engine::uiview::StackPanel* self = (engine::uiview::StackPanel*)  tolua_tousertype(tolua_S,1,0);
+  const char* imageName = ((const char*)  tolua_tostring(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'createSpriteWithPlist'", NULL);
+#endif
+  {
+   self->createSpriteWithPlist(imageName);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'createSpriteWithPlist'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: runFadeOutAction of class  engine::uiview::StackPanel */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_engine_uiview_StackPanel_runFadeOutAction00
+static int tolua_LuaExtern_engine_uiview_StackPanel_runFadeOutAction00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"engine::uiview::StackPanel",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  engine::uiview::StackPanel* self = (engine::uiview::StackPanel*)  tolua_tousertype(tolua_S,1,0);
+  float time = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'runFadeOutAction'", NULL);
+#endif
+  {
+   self->runFadeOutAction(time);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'runFadeOutAction'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* Open function */
 TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
 {
@@ -3151,6 +3537,46 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
   tolua_constant(tolua_S,"WM_MOUSELAST",WM_MOUSELAST);
   tolua_constant(tolua_S,"WM_MOUSELAST",WM_MOUSELAST);
   tolua_constant(tolua_S,"WHEEL_DELTA",WHEEL_DELTA);
+  tolua_module(tolua_S,"engine",0);
+  tolua_beginmodule(tolua_S,"engine");
+   tolua_module(tolua_S,"uiview",0);
+   tolua_beginmodule(tolua_S,"uiview");
+    #ifdef __cplusplus
+    tolua_cclass(tolua_S,"Panel","engine::uiview::Panel","IView",tolua_collect_engine__uiview__Panel);
+    #else
+    tolua_cclass(tolua_S,"Panel","engine::uiview::Panel","IView",NULL);
+    #endif
+    tolua_beginmodule(tolua_S,"Panel");
+     tolua_function(tolua_S,"new",tolua_LuaExtern_engine_uiview_Panel_new00);
+     tolua_function(tolua_S,"new_local",tolua_LuaExtern_engine_uiview_Panel_new00_local);
+     tolua_function(tolua_S,".call",tolua_LuaExtern_engine_uiview_Panel_new00_local);
+     tolua_function(tolua_S,"delete",tolua_LuaExtern_engine_uiview_Panel_delete00);
+     tolua_variable(tolua_S,"__CCLayer__",tolua_get_engine__uiview__Panel___CCLayer__,NULL);
+    tolua_endmodule(tolua_S);
+   tolua_endmodule(tolua_S);
+  tolua_endmodule(tolua_S);
+  tolua_module(tolua_S,"engine",0);
+  tolua_beginmodule(tolua_S,"engine");
+   tolua_module(tolua_S,"uiview",0);
+   tolua_beginmodule(tolua_S,"uiview");
+    #ifdef __cplusplus
+    tolua_cclass(tolua_S,"StackPanel","engine::uiview::StackPanel","engine:uiview:Panel",tolua_collect_engine__uiview__StackPanel);
+    #else
+    tolua_cclass(tolua_S,"StackPanel","engine::uiview::StackPanel","engine:uiview:Panel",NULL);
+    #endif
+    tolua_beginmodule(tolua_S,"StackPanel");
+     tolua_function(tolua_S,"new",tolua_LuaExtern_engine_uiview_StackPanel_new00);
+     tolua_function(tolua_S,"new_local",tolua_LuaExtern_engine_uiview_StackPanel_new00_local);
+     tolua_function(tolua_S,".call",tolua_LuaExtern_engine_uiview_StackPanel_new00_local);
+     tolua_function(tolua_S,"delete",tolua_LuaExtern_engine_uiview_StackPanel_delete00);
+     tolua_function(tolua_S,"createWithFrame",tolua_LuaExtern_engine_uiview_StackPanel_createWithFrame00);
+     tolua_function(tolua_S,"createWithFrame",tolua_LuaExtern_engine_uiview_StackPanel_createWithFrame01);
+     tolua_function(tolua_S,"createSpriteWithLocal",tolua_LuaExtern_engine_uiview_StackPanel_createSpriteWithLocal00);
+     tolua_function(tolua_S,"createSpriteWithPlist",tolua_LuaExtern_engine_uiview_StackPanel_createSpriteWithPlist00);
+     tolua_function(tolua_S,"runFadeOutAction",tolua_LuaExtern_engine_uiview_StackPanel_runFadeOutAction00);
+    tolua_endmodule(tolua_S);
+   tolua_endmodule(tolua_S);
+  tolua_endmodule(tolua_S);
  tolua_endmodule(tolua_S);
  return 1;
 }

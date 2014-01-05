@@ -6,7 +6,7 @@ function LUALoadCreatureHeaderView(viewWideh, viewHeight, self)
 		mProgressBar = ccs.UILoadingBar:create(),
 		mProgressBG = ccs.UIImageView:create(),
 		mNameLabel = ccs.UILabel:create(),
-		mHPShowLabel = ccs.UILabel:create(),
+		--mHPShowLabel = ccs.UILabel:create(),
 		mMaxHP = 8000.0,
 		mNowHP = 8000.0,
 	}
@@ -14,7 +14,7 @@ function LUALoadCreatureHeaderView(viewWideh, viewHeight, self)
 	pView.mProgressBar:setName("ProgressBar")
 	pView.mProgressBG:setName("ProgressBG")
 	pView.mNameLabel:setName("NameLabel")
-	pView.mHPShowLabel:setName("HPShowLabel")
+	--pView.mHPShowLabel:setName("HPShowLabel")
 
     pView.mProgressBar:loadTexture("image/progress01_bar.png")
     pView.mProgressBG:loadTexture("image/progress01_bg.png")
@@ -27,22 +27,20 @@ function LUALoadCreatureHeaderView(viewWideh, viewHeight, self)
 	pView.mProgressBG:setScale9Enabled(true)
 	pView.mProgressBG:setSize(cc.size(150, 20))
 
-	--pView.mNameLabel:setText("DEMO")
-	--pView.mNameLabel:setFontName("AmericanTypewriter")
     pView.mNameLabel:setFontSize(30)
 	pView.mNameLabel:setColor(cc.c3b(0, 255, 0))
-    pView.mHPShowLabel:setFontSize(14)
-	pView.mHPShowLabel:setColor(cc.c3b(255, 0, 0))
+    --pView.mHPShowLabel:setFontSize(14)
+	--pView.mHPShowLabel:setColor(cc.c3b(255, 0, 0))
 
 	pView.mProgressBar:setPosition(cc.p(0,221))
 	pView.mProgressBG:setPosition(cc.p(0,220))
 	pView.mNameLabel:setPosition(cc.p(0,250))
-	pView.mHPShowLabel:setPosition(cc.p(0,220))
+	--pView.mHPShowLabel:setPosition(cc.p(0,220))
 
 	pView.mLayer:addWidget(pView.mProgressBG)
 	pView.mLayer:addWidget(pView.mProgressBar)
 	pView.mLayer:addWidget(pView.mNameLabel)
-	pView.mLayer:addWidget(pView.mHPShowLabel)
+	--pView.mLayer:addWidget(pView.mHPShowLabel)
 
 	return pView.mLayer
 end
@@ -66,6 +64,7 @@ function LUACreatureHeaderView_NameTextColorChanged(view,r,g,b)
 	pView.mNameLabel:setColor(cc.c3b(r,g,b))
 end
 function LUACreatureHeaderView_HPTextChanged(view, text)
+	--[[
 	local pCreatureHeaderView = LuaUserDataConversion:toCreatureHeaderView(view)
 	local pView = _LUACreatureHeaderViewList[pCreatureHeaderView]
 	if pView == nil then
@@ -73,8 +72,10 @@ function LUACreatureHeaderView_HPTextChanged(view, text)
 		return
 	end
 	pView.mHPShowLabel:setText(text)
+	--]]
 end
 function LUACreatureHeaderView_HPTextColorChanged(view,r,g,b)
+	--[[
 	local pCreatureHeaderView = LuaUserDataConversion:toCreatureHeaderView(view)
 	local pView = _LUACreatureHeaderViewList[pCreatureHeaderView]
 	if pView == nil then
@@ -82,6 +83,7 @@ function LUACreatureHeaderView_HPTextColorChanged(view,r,g,b)
 		return
 	end
 	pView.mHPShowLabel:setColor(cc.c3b(r,g,b))
+	--]]
 end
 
 function LUACreatureHeaderView_NowHPChanged(view, hp)
@@ -93,7 +95,7 @@ function LUACreatureHeaderView_NowHPChanged(view, hp)
 	end
 	pView.mNowHP = hp
 	local percent = pView.mNowHP / pView.mMaxHP
-	if percent < 0.02 then
+	if percent < 0.03 then
 		pView.mProgressBar:setVisible(false)
 	else
 		pView.mProgressBar:setVisible(true)

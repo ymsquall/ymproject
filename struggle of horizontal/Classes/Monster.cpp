@@ -164,6 +164,8 @@ int Monster::PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, 
 
 	return ret;
 }
+
+#include "uiview/Panel/StackPanel.h"
 void Monster::beAttacked(ICreatue* who, bool clobber)
 {
 	mBeAttacking = true;
@@ -174,6 +176,7 @@ void Monster::beAttacked(ICreatue* who, bool clobber)
 		int lostHP = 500 + (rand()%500);
 		mModel->NowHP -= lostHP;
 		this->updateHPView();
+		callLuaFuncNoResult("LUAGameSceneView_MonsterBeAttackedEffect", this, lostHP);
 		if(mModel->NowHP <= 0)
 		{
 			this->onDeath();

@@ -1,0 +1,11 @@
+namespace engine
+{
+	namespace uiview
+	{
+		class Panel : public IView, public CCLayer
+		{
+			Panel();
+			virtual ~Panel();
+		};
+	}	// namespace uiview
+}	// namespace engine

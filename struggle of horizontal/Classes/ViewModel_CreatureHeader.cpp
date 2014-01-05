@@ -38,8 +38,7 @@ CreatureHeaderModel* CreatureHeaderViewModel::addCreatureHeader(ICreatue* pCreat
 	}
 	mCreatureHeaderList.insert(CreatureHeaderList::value_type(pModel, pView));
 	pView->setPosition(pCreature->getMovedBodyPos());
-	pRootView->addChild(pView);
-	pRootView->reorderChild(pView, 1001);
+	pRootView->addChild(pView, 101);
 	pModel->MaxHP = 8000;
 	pModel->NowHP = 8000;
 	pModel->Visible = true;

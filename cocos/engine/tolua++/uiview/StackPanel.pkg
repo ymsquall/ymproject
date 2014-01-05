@@ -1,0 +1,17 @@
+namespace engine
+{
+	namespace uiview
+	{
+		class StackPanel : public engine:uiview:Panel
+		{
+			StackPanel();
+			virtual ~StackPanel();
+
+			static StackPanel* createWithFrame(const CCPoint& pos, float spaceOff = 0.0f, bool isHorizontal = true);
+			static StackPanel* createWithFrame(const CCPoint& pos, const CCSize& size, float spaceOff = 0.0f, bool isHorizontal = true);
+			void createSpriteWithLocal(const char* imageName);
+			void createSpriteWithPlist(const char* imageName);
+			void runFadeOutAction(float time);
+		};
+	}	// namespace uiview
+}	// namespace engine

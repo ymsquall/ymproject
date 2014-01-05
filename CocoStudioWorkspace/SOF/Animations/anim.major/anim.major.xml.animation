@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <AnimationProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <filePath>Y:\Work\ymproject\CocoStudioWorkspace\SOF\Animations\anim.major\anim.major.xml.animation</filePath>
   <Version>0.0.0.0</Version>
   <Name>anim.major</Name>
   <ProjectDir>Y:\Work\ymproject\CocoStudioWorkspace\SOF\Animations\anim.major</ProjectDir>
@@ -8,8 +9,7 @@
   <JsonFolder>Y:\Work\ymproject\CocoStudioWorkspace\SOF\Animations\anim.major\Json</JsonFolder>
   <JsonList />
   <ResourceFileList>
-    <string>anim0.plist</string>
-    <string>anim1.plist</string>
+    <string>anim.major0.plist</string>
   </ResourceFileList>
   <CanvasSize>
     <Width>0</Width>

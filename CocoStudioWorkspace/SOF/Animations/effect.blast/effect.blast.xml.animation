@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<AnimationProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <filePath>Y:\Work\ymproject\CocoStudioWorkspace\SOF\Animations\effect.blast\effect.blast.xml.animation</filePath>
+  <Version>0.0.0.0</Version>
+  <Name>effect.blast</Name>
+  <ProjectDir>Y:\Work\ymproject\CocoStudioWorkspace\SOF\Animations\effect.blast</ProjectDir>
+  <JsonFileName>effect.blast.json</JsonFileName>
+  <Resources>Y:\Work\ymproject\CocoStudioWorkspace\SOF\Animations\effect.blast\Resources</Resources>
+  <JsonFolder>Y:\Work\ymproject\CocoStudioWorkspace\SOF\Animations\effect.blast\Json</JsonFolder>
+  <JsonList />
+  <ResourceFileList>
+    <string>effect.blast0.plist</string>
+  </ResourceFileList>
+  <CanvasSize>
+    <Width>0</Width>
+    <Height>0</Height>
+  </CanvasSize>
+  <bBatchImage>true</bBatchImage>
+</AnimationProject>

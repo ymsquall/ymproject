@@ -154,6 +154,7 @@ void LocalPlayer::beAttacked(ICreatue* who, bool clobber)
 		int lostHP = 500 + (rand()%500);
 		mModel->NowHP -= lostHP;
 		this->updateHPView();
+		callLuaFuncNoResult("LUAGameSceneViewBeAttackedEffect", lostHP);
 		if(mModel->NowHP <= 0)
 		{
 			this->onDeath();
@@ -393,6 +394,8 @@ void LocalPlayer::StepAfter()
 				Monster* pBeAttackedMonst = dynamic_cast<Monster*>(pObject);
 				if(NULL != pBeAttackedMonst && !pBeAttackedMonst->isBeAttacking() && !pBeAttackedMonst->isDeathing())
 				{
+					b2WorldManifold worldManifold;
+					pContact->contact->GetWorldManifold(&worldManifold);
 					if(mNowComboCount == 2)
 					{
 						pBeAttackedMonst->beAttacked(this, true);

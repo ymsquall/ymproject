@@ -6,6 +6,7 @@
 #include "CocosGUI.h"
 
 using namespace gui;
+using namespace cocos2d;
 
 class LuaCocoStudioConversion
 {
