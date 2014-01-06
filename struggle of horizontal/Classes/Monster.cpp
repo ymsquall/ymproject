@@ -165,7 +165,6 @@ int Monster::PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, 
 	return ret;
 }
 
-#include "uiview/Panel/StackPanel.h"
 void Monster::beAttacked(ICreatue* who, bool clobber)
 {
 	mBeAttacking = true;
@@ -286,16 +285,38 @@ void Monster::StepBefore(physics::ObjectSettings* settings)
 		creatureSettings.mVertices[i] = b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO);
 	}
 	// body box
+	CreaturePhysicsSteeings* pSettings = &creatureSettings;
 	if(NULL != mBodyBody)
 	{
-		mWorld->DestroyBody(mBodyBody);
-		mBodyBody = NULL;
+		std::stack<b2Fixture*> fixtureStack;
+		b2Fixture* pFixture = mBodyBody->GetFixtureList();
+		while(pFixture != NULL)
+		{
+			fixtureStack.push(pFixture);
+			pFixture = pFixture->GetNext();
+		}
+		for(int i = 0; i < pSettings->mUsingVerticeCount/2; ++ i)
+		{
+			b2Fixture* pFixture = fixtureStack.top();
+			fixtureStack.pop();
+			b2PolygonShape* pShape = dynamic_cast<b2PolygonShape*>(pFixture->GetShape());
+			pShape->m_vertexCount = 3;
+			pShape->m_vertices[0] = pSettings->mVertices[0+i*2];
+			pShape->m_vertices[1] = pSettings->mVertices[1+i*2];
+			if(2+i*2 >= pSettings->mUsingVerticeCount)
+				pShape->m_vertices[2] = pSettings->mVertices[0];
+			else
+				pShape->m_vertices[2] = pSettings->mVertices[2+i*2];
+		}
+		//mBodyBody->SetLinearVelocity(b2Vec2(0,0));
+		b2Transform trans = mBodyBody->GetTransform();
+		mBodyBody->SetTransform(b2Vec2(0,0), 0);
+		mBodyBody->SetAwake(true);
 	}
-	CreaturePhysicsSteeings* pSettings = &creatureSettings;
-	if(pSettings->mUsingVerticeCount > 0)
+	else
 	{
 		b2BodyDef bd;
-		bd.type = b2_staticBody;
+		bd.type = b2_dynamicBody;
 		bd.position.Set(0, 0);
 		mBodyBody = mWorld->CreateBody(&bd);
 		for(int i = 0; i < pSettings->mUsingVerticeCount/2; ++ i)
@@ -310,14 +331,46 @@ void Monster::StepBefore(physics::ObjectSettings* settings)
 				shape.m_vertices[2] = pSettings->mVertices[2+i*2];
 			b2FixtureDef fd;
 			fd.shape = &shape;
-			fd.density = 0.0f;
-			fd.friction = 0.0f;
-			fd.filter.categoryBits = BodyBodyContactMask;
-			fd.filter.maskBits = WeaponBodyContactMask;
+			fd.density = 10.0f;
+			fd.friction = 1.0f;
+			//fd.filter.categoryBits = BodyBodyContactMask;
+			//fd.filter.maskBits = WeaponBodyContactMask;
 			mBodyBody->CreateFixture(&fd);
 			mBodyBody->SetUserData(this);
 		}
 	}
+	//if(NULL != mBodyBody)
+	//{
+	//	mWorld->DestroyBody(mBodyBody);
+	//	mBodyBody = NULL;
+	//}
+	//CreaturePhysicsSteeings* pSettings = &creatureSettings;
+	//if(pSettings->mUsingVerticeCount > 0)
+	//{
+	//	b2BodyDef bd;
+	//	bd.type = b2_dynamicBody;
+	//	bd.position.Set(0, 0);
+	//	mBodyBody = mWorld->CreateBody(&bd);
+	//	for(int i = 0; i < pSettings->mUsingVerticeCount/2; ++ i)
+	//	{
+	//		b2PolygonShape shape;
+	//		shape.m_vertexCount = 3;
+	//		shape.m_vertices[0] = pSettings->mVertices[0+i*2];
+	//		shape.m_vertices[1] = pSettings->mVertices[1+i*2];
+	//		if(2+i*2 >= pSettings->mUsingVerticeCount)
+	//			shape.m_vertices[2] = pSettings->mVertices[0];
+	//		else
+	//			shape.m_vertices[2] = pSettings->mVertices[2+i*2];
+	//		b2FixtureDef fd;
+	//		fd.shape = &shape;
+	//		fd.density = 0.0f;
+	//		fd.friction = 0.0f;
+	//		fd.filter.categoryBits = BodyBodyContactMask;
+	//		fd.filter.maskBits = WeaponBodyContactMask;
+	//		mBodyBody->CreateFixture(&fd);
+	//		mBodyBody->SetUserData(this);
+	//	}
+	//}
 	if(NULL != mWeaponBody)
 		mWeaponBody->SetLinearVelocity(b2Vec2(0,1));
 	ICreatue::updateBody(&creatureSettings);

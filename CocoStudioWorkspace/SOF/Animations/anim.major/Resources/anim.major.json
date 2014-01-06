@@ -2395,7 +2395,7 @@
         },
         {
           "name": "jumping01",
-          "dr": 1,
+          "dr": 0,
           "lp": true,
           "to": 0,
           "drTW": 0,
@@ -2583,7 +2583,7 @@
         },
         {
           "name": "attack01",
-          "dr": 13,
+          "dr": 14,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -3180,7 +3180,6 @@
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon3_0",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3200,7 +3199,6 @@
                   "fi": 3,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon3_1",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3220,7 +3218,6 @@
                   "fi": 6,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon3_2",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3240,7 +3237,6 @@
                   "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon3_3",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3285,7 +3281,6 @@
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon2_0",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3305,7 +3300,6 @@
                   "fi": 3,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon2_1",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3325,7 +3319,6 @@
                   "fi": 6,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon2_2",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3345,7 +3338,6 @@
                   "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon2_3",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3390,7 +3382,6 @@
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon1_0",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3410,7 +3401,6 @@
                   "fi": 3,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon1_1",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3430,7 +3420,6 @@
                   "fi": 6,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon1_2",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3450,7 +3439,6 @@
                   "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon1_3",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3495,7 +3483,6 @@
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon0_0",
                   "color": {
                     "a": 255,
                     "r": 255,
@@ -3515,7 +3502,6 @@
                   "fi": 3,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon0_1",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3535,7 +3521,6 @@
                   "fi": 6,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon0_2",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3555,7 +3540,6 @@
                   "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon0_3",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3600,7 +3584,6 @@
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon4_0",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3620,7 +3603,6 @@
                   "fi": 3,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon4_1",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3640,7 +3622,6 @@
                   "fi": 6,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon4_2",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3660,7 +3641,6 @@
                   "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon4_3",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3704,7 +3684,8 @@
                   "kY": 0.0,
                   "fi": 0,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_begining"
                 },
                 {
                   "dI": 0,
@@ -3756,7 +3737,8 @@
                   "kY": 0.0,
                   "fi": 13,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_ended"
                 }
               ]
             }
@@ -3764,7 +3746,7 @@
         },
         {
           "name": "attack02",
-          "dr": 14,
+          "dr": 15,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -4355,7 +4337,6 @@
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon3_0",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4375,7 +4356,6 @@
                   "fi": 3,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon3_1",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4395,7 +4375,6 @@
                   "fi": 6,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon3_2",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4415,7 +4394,6 @@
                   "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon3_3",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4460,7 +4438,6 @@
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon2_0",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4480,7 +4457,6 @@
                   "fi": 3,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon2_1",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4500,7 +4476,6 @@
                   "fi": 6,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon2_2",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4520,7 +4495,6 @@
                   "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon2_3",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4565,7 +4539,6 @@
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon1_0",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4585,7 +4558,6 @@
                   "fi": 3,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon1_1",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4605,7 +4577,6 @@
                   "fi": 6,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon1_2",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4625,7 +4596,6 @@
                   "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon1_3",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4670,7 +4640,6 @@
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon0_0",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4690,7 +4659,6 @@
                   "fi": 3,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon0_1",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4710,7 +4678,6 @@
                   "fi": 6,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon0_2",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4730,7 +4697,6 @@
                   "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon0_3",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4775,7 +4741,6 @@
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon4_0",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4795,7 +4760,6 @@
                   "fi": 3,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon4_1",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4815,7 +4779,6 @@
                   "fi": 6,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon4_2",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4835,7 +4798,6 @@
                   "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon4_3",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4879,7 +4841,8 @@
                   "kY": 0.0,
                   "fi": 0,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_begining"
                 },
                 {
                   "dI": 3,
@@ -4931,7 +4894,8 @@
                   "kY": 0.0,
                   "fi": 14,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_ended"
                 }
               ]
             }
@@ -6057,7 +6021,7 @@
         },
         {
           "name": "clobber01",
-          "dr": 61,
+          "dr": 60,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -6615,7 +6579,7 @@
         },
         {
           "name": "assault01",
-          "dr": 1,
+          "dr": 0,
           "lp": false,
           "to": 0,
           "drTW": 0,

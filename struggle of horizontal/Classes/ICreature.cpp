@@ -16,6 +16,8 @@ ICreatue::ICreatue(b2World* pWorld)
 	mBeAttacking = false;
 	mDeathing = false;
 	mBeAttackTimeout = 0.0f;
+
+	mAttackActBegining = false;
 }
 ICreatue::~ICreatue()
 {

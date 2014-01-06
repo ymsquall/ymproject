@@ -79,6 +79,8 @@ protected:
 	bool mDeathing;
 	float mBeAttackTimeout;
 	CreatureHeaderModel* mModel;
+
+	bool mAttackActBegining;
 };
 
 template<uint8 typeValue, size_t rttiLength>
