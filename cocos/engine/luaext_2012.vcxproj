@@ -45,6 +45,7 @@
   <ItemGroup>
     <ClCompile Include="Classes\luaext\LuaCocoStudioConversion.cpp" />
     <ClCompile Include="Classes\luaext\LuaExtern.cpp" />
+    <ClCompile Include="Classes\luaext\LuaExternConversion.cpp" />
     <ClCompile Include="Classes\luaext\LuaExtern_Handler.cpp" />
     <ClCompile Include="Classes\luaext\LuaHelper.cpp" />
     <ClCompile Include="Classes\luaext\LuaTiledHelper.cpp" />
@@ -52,6 +53,7 @@
   <ItemGroup>
     <ClInclude Include="Classes\luaext\LuaCocoStudioConversion.h" />
     <ClInclude Include="Classes\luaext\LuaExtern.h" />
+    <ClInclude Include="Classes\luaext\LuaExternConversion.h" />
     <ClInclude Include="Classes\luaext\LuaHelper.h" />
     <ClInclude Include="Classes\luaext\LuaTiledHelper.h" />
   </ItemGroup>

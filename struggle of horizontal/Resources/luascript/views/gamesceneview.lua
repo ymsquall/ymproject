@@ -75,7 +75,8 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 			return false
 		end,true)
 	--]]
-
+	-- load scene static physics body node
+	LUAGameSceneView_Physics_Init(_LUAGameSceneView.mTiledMap)
 	return _LUAGameSceneView.mTiledMap
 end
 

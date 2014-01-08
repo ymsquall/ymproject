@@ -50,6 +50,7 @@ void ViewModelManager::initWithAppStart(engine::AppDelegate* pApp)
 
 	Director* pDirector = Director::getInstance();
 	pDirector->setNotificationNode(TopLevelView::point());
+	RootSceneView::createWithPhysics();
 	pDirector->runWithScene(RootSceneView::point());
 	pApp->Event_AppInitOveredShowingBefore += ROUTEDEVENT_HANDLE_SCHEDULE(engine::AppDelegate*, this, ViewModelManager::onAppInitOveredShowingBefore);
 	pApp->Event_AppInitOveredShowingAfter += ROUTEDEVENT_HANDLE_SCHEDULE(engine::AppDelegate*, this, ViewModelManager::onAppInitOveredShowingAfter);

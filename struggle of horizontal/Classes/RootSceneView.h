@@ -7,7 +7,7 @@ using namespace framework;
 using namespace engine;
 
 class RootSceneView : public cocos2d::Scene
-	, public unity::SingletonAutoT<RootSceneView>
+	, public unity::SingletonT<RootSceneView>
 {
 public:
 	RootSceneView(void);
