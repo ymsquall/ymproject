@@ -1,0 +1,4 @@
+class LuaExternConversion
+{
+	static CCArray* toArray(void* pointer);
+};
