@@ -14,8 +14,8 @@ namespace gui
 	class UIButton;
 }
 
-class Physics_Box2DView;
-class GameScenePhysics;
+//class Physics_Box2DView;
+//class GameScenePhysics;
 class GameSceneView : public mvvm::ViewBase<GameSceneView, cocos2d::CCLayer>
 {
 public:
@@ -30,7 +30,7 @@ public:
 	bool screenScrollTo(const Point& toPos);
 	bool movePlayer(const Point& offset);
 	bool movePlayerTo(const Point& toPos);
-	GameScenePhysics* getPhysics();
+	//GameScenePhysics* getPhysics();
 	TMXTiledMap* getTiledMap();
 
 	void onTouchesBegan(const std::vector<Touch*>& touches, Event *unused_event);
@@ -59,7 +59,7 @@ public:
 	CCPoint mBgFixedPos;
 	CCPoint mPlayerEndPos;
 
-	Physics_Box2DView* mPhysicsView;
+	//Physics_Box2DView* mPhysicsView;
 	
 	gui::UIButton* mJumpBtn;
 	gui::UIButton* mAttackBtn;

@@ -926,8 +926,6 @@ xcopy /Y /D /V "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\websockets\pr
     <ClCompile Include="..\Classes\LocalPlayer.cpp" />
     <ClCompile Include="..\Classes\Model_CreatureHeader.cpp" />
     <ClCompile Include="..\Classes\Monster.cpp" />
-    <ClCompile Include="..\Classes\Physics_Box2dView.cpp" />
-    <ClCompile Include="..\Classes\Physics_GameScene.cpp" />
     <ClCompile Include="..\Classes\LuaSOFExtern.cpp" />
     <ClCompile Include="..\Classes\LuaUserDataConversion.cpp" />
     <ClCompile Include="..\Classes\Model_SelectHero.cpp" />
@@ -954,8 +952,6 @@ xcopy /Y /D /V "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\websockets\pr
     <ClInclude Include="..\Classes\LocalPlayer.h" />
     <ClInclude Include="..\Classes\Model_CreatureHeader.h" />
     <ClInclude Include="..\Classes\Monster.h" />
-    <ClInclude Include="..\Classes\Physics_Box2dView.h" />
-    <ClInclude Include="..\Classes\Physics_GameScene.h" />
     <ClInclude Include="..\Classes\LuaSOFExtern.h" />
     <ClInclude Include="..\Classes\LuaUserDataConversion.h" />
     <ClInclude Include="..\Classes\Model_SelectHero.h" />

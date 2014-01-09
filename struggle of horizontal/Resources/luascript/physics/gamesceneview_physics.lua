@@ -1,111 +1,73 @@
+_LUAGameSceneView_Physics = _LUAGameSceneView_Physics or {}
 function LUAGameSceneView_Physics_Init(pTiledMap)
+	_LUAGameSceneView_Physics.mLandList = {}
+	_LUAGameSceneView_Physics.mWallList = {}
+	_LUAGameSceneView_Physics.mMonsterList = {}
+	_LUAGameSceneView_Physics.mNpcList = {}
 	local groundGroup = pTiledMap:getObjectGroup('ground')
 	local groundObjects = groundGroup:getObjects()
 	local pGroundDict = nil
     local i = 0
     local len = table.getn(groundObjects)
     for i = 0, len-1, 1 do
-        pGroundDict = tolua.cast(groundObjects[i + 1], "Dictionary")
+        pGroundDict = tolua.cast(groundObjects[i + 1], 'Dictionary')
         if dict == nil then
 			error('load scene static physics body node failed!!!!!')
             break
         end
-        local x = (tolua.cast(pGroundDict:objectForKey('x'), "String")):intValue()--dynamic_cast<NSNumber*>(dict:objectForKey("x")):getNumber()
-        local y = (tolua.cast(pGroundDict:objectForKey('y'), "String")):intValue()--dynamic_cast<NSNumber*>(dict:objectForKey("y")):getNumber()
+        local x = (tolua.cast(pGroundDict:objectForKey('x'), 'String')):intValue()--dynamic_cast<NSNumber*>(dict:objectForKey("x")):getNumber()
+        local y = (tolua.cast(pGroundDict:objectForKey('y'), 'String')):intValue()--dynamic_cast<NSNumber*>(dict:objectForKey("y")):getNumber()
         local oType = (tolua.cast(pGroundDict:objectForKey('type'), "String")):getCString()
-        local pPointObj = (tolua.cast(pGroundDict:objectForKey('polylinePoints'), "Array"))
-	end
-	Dictionary* pGroundDict = NULL;
-	Object* pGuoundObj = NULL;
-	CCARRAY_FOREACH(gtoundObjects, pGuoundObj)
-	{
-		pGroundDict = static_cast<Dictionary*>(pGuoundObj);
-		int x = ((String*)pGroundDict->objectForKey("x"))->intValue();
-		int y = ((String*)pGroundDict->objectForKey("y"))->intValue();
-		std::string oType = ((String*)pGroundDict->objectForKey("type"))->getCString();
-		Object* pPointObj = pGroundDict->objectForKey("polylinePoints");// points
-		if(NULL != pPointObj)
-		{
-			Array* pPoints = static_cast<Array*>(pPointObj);
-			for(int i = 0; i < pPoints->count()-1; ++ i)
-			{
-				Dictionary* dPoint1 = static_cast<Dictionary*>(pPoints->objectAtIndex(i));
-				Dictionary* dPoint2 = static_cast<Dictionary*>(pPoints->objectAtIndex(i+1));
-				int pt1X = ((String*)dPoint1->objectForKey("x"))->intValue();
-				int pt1Y = ((String*)dPoint1->objectForKey("y"))->intValue();
-				int pt2X = ((String*)dPoint2->objectForKey("x"))->intValue();
-				int pt2Y = ((String*)dPoint2->objectForKey("y"))->intValue();
-				bool isWall = "wall" == oType;
-				b2Body* pBody = this->createGround(b2Vec2(x, y), b2Vec2(pt1X / PTM_RATIO, -pt1Y / PTM_RATIO), b2Vec2(pt2X / PTM_RATIO, -pt2Y / PTM_RATIO), isWall);
-				if(NULL != pBody)
-				{
-					if(!isWall)
-						mLandList.push_back(pBody);
-					else
-						mWallList.push_back(pBody);
-				}
-			}
-		}
-		else
-		{
-			int width = ((String*)pGroundDict->objectForKey("width"))->intValue();
-			int height = ((String*)pGroundDict->objectForKey("height"))->intValue();
-			bool isWall = "wall" == oType;
-			b2Body* pBody = this->createGround(b2Vec2(x, y), width, height, isWall);
-			if(NULL != pBody)
-			{
-				if(!isWall)
-					mLandList.push_back(pBody);
+		local isWall = ('wall' == oType)
+        local pPointObj = LuaExternConversion:toArray(pGroundDict:objectForKey('polylinePoints'))
+		if pPointObj ~= nil then
+			local j = 0
+			for j = 0, pPointObj:count()-1, 1 do
+				local cpInfo = {}
+				cpInfo.posX = tolua.cast(pPoints->objectAtIndex(j), 'Dictionary')
+				cpInfo.posY = tolua.cast(pPoints->objectAtIndex(j+1), 'Dictionary')
+				cpInfo.p1X = (tolua.cast(dPoint1:objectForKey('x'), 'String')):intValue()
+				cpInfo.p1Y = (tolua.cast(dPoint1:objectForKey('y'), 'String')):intValue()
+				cpInfo.p2X = (tolua.cast(dPoint2:objectForKey('x'), 'String')):intValue()
+				cpInfo.p2Y = (tolua.cast(dPoint2:objectForKey('y'), 'String')):intValue()
+				if isWall then
+					table.insert(_LUAGameSceneView_Physics.mWallList, cpInfo)
 				else
-					mWallList.push_back(pBody);
-			}
-		}
-	}
-	for(PhysicsCreatureList::iterator it = mMonsterPhysicsList.begin();
-		it != mMonsterPhysicsList.end(); ++ it)
-	{
-		delete it->first;
-	}
-	for(PhysicsCreatureList::iterator it = mNPCPhysicsList.begin();
-		it != mNPCPhysicsList.end(); ++ it)
-	{
-		delete it->first;
-	}
-	mMonsterPhysicsList.clear();
-	mMonsterPhysicsInfoList.clear();
-	mNPCPhysicsList.clear();
-	mNPCPhysicsInfoList.clear();
-	// monster
-	TMXObjectGroup* monsterGroup = pTiledMap->getObjectGroup("monster");
-	auto monsterObjects = monsterGroup->getObjects();
-	Dictionary* pMonsterDict = NULL;
-	Object* pMonsterObj = NULL;
-	CCARRAY_FOREACH(monsterObjects, pMonsterObj)
-	{
-		CreaturePhysicsInfo cpInfo;
-		pMonsterDict = static_cast<Dictionary*>(pMonsterObj);
-		cpInfo.x = ((String*)pMonsterDict->objectForKey("x"))->intValue();
-		cpInfo.y = ((String*)pMonsterDict->objectForKey("y"))->intValue();
-		cpInfo.w = ((String*)pMonsterDict->objectForKey("width"))->intValue();
-		cpInfo.h = ((String*)pMonsterDict->objectForKey("height"))->intValue();
-		mMonsterPhysicsInfoList.push_back(cpInfo);
-		Monster* pMonster = ICreatue::createWithBox<Monster>(mWorld, Point(cpInfo.x, cpInfo.y), Size(19.2f, 6.4f));
-		if(NULL != pMonster)
-			mMonsterPhysicsList[pMonster] = &cpInfo;
-	}
-	// npcs
-	TMXObjectGroup* pNpcGroup = pTiledMap->getObjectGroup("npcs");
-	auto pNpcObjects = pNpcGroup->getObjects();
-	Dictionary* pNpcDict = NULL;
-	Object* pNpcObj = NULL;
-	CCARRAY_FOREACH(pNpcObjects, pNpcObj)
-	{
-		CreaturePhysicsInfo cpInfo;
-		pNpcDict = static_cast<Dictionary*>(pNpcObj);
-		cpInfo.x = ((String*)pNpcDict->objectForKey("x"))->intValue();
-		cpInfo.y = ((String*)pNpcDict->objectForKey("y"))->intValue();
-		cpInfo.w = ((String*)pNpcDict->objectForKey("width"))->intValue();
-		cpInfo.h = ((String*)pNpcDict->objectForKey("height"))->intValue();
-		mNPCPhysicsInfoList.push_back(cpInfo);
-	}
+					table.insert(_LUAGameSceneView_Physics.mLandList, cpInfo)
+			end
+		else
+			if isWall then
+				error('find not polyline types wall object')
+			else
+				error('find not polyline types land object')
+		end
+	end
+	-- monster
+	local monsterGroup = pTiledMap:getObjectGroup("monster")
+	local monsterObjects = monsterGroup:getObjects()
+	local pMonsterDict = nil
+	local mi = 0
+    for mi = 0, table.getn(monsterObjects)-1, 1 do
+		local cpInfo = {}
+        pMonsterDict = tolua.cast(monsterObjects[i + 1], 'Dictionary')
+		cpInfo.x = (tolua.cast(dPoint1:objectForKey('x'), 'String')):intValue()
+		cpInfo.y = (tolua.cast(dPoint1:objectForKey('y'), 'String')):intValue()
+		cpInfo.w = (tolua.cast(pMonsterDict:objectForKey('width'), 'String')):intValue()
+		cpInfo.h = (tolua.cast(pMonsterDict:objectForKey('height'), 'String')):intValue()
+		table.insert(_LUAGameSceneView_Physics.mMonsterList, cpInfo)
+	end
+	-- npcs
+	local pNpcGroup = pTiledMap->getObjectGroup("npcs");
+	local pNpcObjects = pNpcGroup->getObjects();
+	local pNpcDict = nil
+	local ni = 0
+    for ni = 0, table.getn(pNpcObjects)-1, 1 do
+		local cpInfo = {}
+        pNpcDict = tolua.cast(pNpcObjects[i + 1], 'Dictionary')
+		cpInfo.x = (tolua.cast(dPoint1:objectForKey('x'), 'String')):intValue()
+		cpInfo.y = (tolua.cast(dPoint1:objectForKey('y'), 'String')):intValue()
+		cpInfo.w = (tolua.cast(pMonsterDict:objectForKey('width'), 'String')):intValue()
+		cpInfo.h = (tolua.cast(pMonsterDict:objectForKey('height'), 'String')):intValue()
+		table.insert(_LUAGameSceneView_Physics.mNpcList, cpInfo)
+	end
 end

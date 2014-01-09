@@ -12,6 +12,7 @@ class LocalPlayer : public unity::object, public JumpDelegate, public DynamicPhy
 {
 public:
 	typedef DynamicPhysicsCreature<object::ObjectType::RTTI_Player, object::ObjectType::TYPE_NAME_LENGTH> SuperT;
+	LocalPlayer();
 	LocalPlayer(b2World* pWorld);
 	virtual ~LocalPlayer();
 
@@ -22,9 +23,9 @@ public:
 	void setAnimView(cocostudio::Armature* anim);
 	void beAttacked(ICreatue* who, bool clobber = false);
 
-	virtual void StepBefore(physics::ObjectSettings* settings) override;
-	virtual void StepAfter() override;
-	int PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, const physics::PhysicsBodyList& landList);
+	//virtual void StepBefore(physics::ObjectSettings* settings) override;
+	//virtual void StepAfter() override;
+	//int PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, const physics::PhysicsBodyList& landList);
 
 protected:
 	virtual bool init() override;

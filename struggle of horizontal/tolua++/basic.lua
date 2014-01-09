@@ -11,7 +11,6 @@ local CCObjectTypes = {
     "GameSceneModel",
     "GameSceneView",
     "LuaUserDataConversion",
-    "GameScenePhysics",
     "LocalPlayer",
     "Monster",
 }
@@ -112,7 +111,6 @@ extern "C" {
 #include "Model_GameScene.h"
 #include "View_GameScene.h"
 #include "LuaUserDataConversion.h"
-#include "Physics_GameScene.h"
 #include "LocalPlayer.h"
 #include "Monster.h"
 

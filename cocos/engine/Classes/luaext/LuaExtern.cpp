@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaExtern
-** Generated automatically by tolua++-1.0.92 on 01/08/14 18:26:19.
+** Generated automatically by tolua++-1.0.92 on 01/09/14 20:39:35.
 */
 
 /****************************************************************************
@@ -95,6 +95,13 @@ static int tolua_collect_framework__mvvm__FrameworkElement (lua_State* tolua_S)
     return 0;
 }
 
+static int tolua_collect_CCArray (lua_State* tolua_S)
+{
+ CCArray* self = (CCArray*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
+
 static int tolua_collect_engine__uiview__StackPanel (lua_State* tolua_S)
 {
  engine::uiview::StackPanel* self = (engine::uiview::StackPanel*) tolua_tousertype(tolua_S,1,0);
@@ -160,8 +167,7 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"framework::unity::blockreader");
  tolua_usertype(tolua_S,"UISlider");
  tolua_usertype(tolua_S,"DataVisitor");
- tolua_usertype(tolua_S,"framework::mvvm::IModel");
- tolua_usertype(tolua_S,"CCClonable");
+ tolua_usertype(tolua_S,"Clonable");
  tolua_usertype(tolua_S,"CCArray");
  tolua_usertype(tolua_S,"CCPoint");
  tolua_usertype(tolua_S,"CCSize");
@@ -183,7 +189,7 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"object");
  tolua_usertype(tolua_S,"engine:uiview:Panel");
  tolua_usertype(tolua_S,"framework::mvvm::ModelBase");
- tolua_usertype(tolua_S,"Array");
+ tolua_usertype(tolua_S,"framework::mvvm::IModel");
  tolua_usertype(tolua_S,"LuaCocoStudioConversion");
  tolua_usertype(tolua_S,"unity::object");
 }
@@ -3162,8 +3168,8 @@ static int tolua_LuaExtern_CCArray_create00(lua_State* tolua_S)
 #endif
  {
   {
-   Array* tolua_ret = (Array*)  CCArray::create();
-    tolua_pushusertype(tolua_S,(void*)tolua_ret,"Array");
+   CCArray* tolua_ret = (CCArray*)  CCArray::create();
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCArray");
   }
  }
  return 1;
@@ -3192,8 +3198,8 @@ static int tolua_LuaExtern_CCArray_createWithObject00(lua_State* tolua_S)
  {
   CCObject* object = ((CCObject*)  tolua_tousertype(tolua_S,2,0));
   {
-   Array* tolua_ret = (Array*)  CCArray::createWithObject(object);
-    tolua_pushusertype(tolua_S,(void*)tolua_ret,"Array");
+   CCArray* tolua_ret = (CCArray*)  CCArray::createWithObject(object);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCArray");
   }
  }
  return 1;
@@ -3222,8 +3228,8 @@ static int tolua_LuaExtern_CCArray_createWithCapacity00(lua_State* tolua_S)
  {
   long capacity = ((long)  tolua_tonumber(tolua_S,2,0));
   {
-   Array* tolua_ret = (Array*)  CCArray::createWithCapacity(capacity);
-    tolua_pushusertype(tolua_S,(void*)tolua_ret,"Array");
+   CCArray* tolua_ret = (CCArray*)  CCArray::createWithCapacity(capacity);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCArray");
   }
  }
  return 1;
@@ -3252,8 +3258,8 @@ static int tolua_LuaExtern_CCArray_createWithArray00(lua_State* tolua_S)
  {
   CCArray* otherArray = ((CCArray*)  tolua_tousertype(tolua_S,2,0));
   {
-   Array* tolua_ret = (Array*)  CCArray::createWithArray(otherArray);
-    tolua_pushusertype(tolua_S,(void*)tolua_ret,"Array");
+   CCArray* tolua_ret = (CCArray*)  CCArray::createWithArray(otherArray);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCArray");
   }
  }
  return 1;
@@ -3282,8 +3288,8 @@ static int tolua_LuaExtern_CCArray_createWithContentsOfFile00(lua_State* tolua_S
  {
   const char* pFileName = ((const char*)  tolua_tostring(tolua_S,2,0));
   {
-   Array* tolua_ret = (Array*)  CCArray::createWithContentsOfFile(pFileName);
-    tolua_pushusertype(tolua_S,(void*)tolua_ret,"Array");
+   CCArray* tolua_ret = (CCArray*)  CCArray::createWithContentsOfFile(pFileName);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCArray");
   }
  }
  return 1;
@@ -3312,8 +3318,8 @@ static int tolua_LuaExtern_CCArray_createWithContentsOfFileThreadSafe00(lua_Stat
  {
   const char* pFileName = ((const char*)  tolua_tostring(tolua_S,2,0));
   {
-   Array* tolua_ret = (Array*)  CCArray::createWithContentsOfFileThreadSafe(pFileName);
-    tolua_pushusertype(tolua_S,(void*)tolua_ret,"Array");
+   CCArray* tolua_ret = (CCArray*)  CCArray::createWithContentsOfFileThreadSafe(pFileName);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCArray");
   }
  }
  return 1;
@@ -3325,40 +3331,66 @@ static int tolua_LuaExtern_CCArray_createWithContentsOfFileThreadSafe00(lua_Stat
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: Array of class  CCArray */
-#ifndef TOLUA_DISABLE_tolua_LuaExtern_CCArray_Array00
-static int tolua_LuaExtern_CCArray_Array00(lua_State* tolua_S)
+/* method: new of class  CCArray */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_CCArray_new00
+static int tolua_LuaExtern_CCArray_new00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
  tolua_Error tolua_err;
  if (
-     !tolua_isusertype(tolua_S,1,"CCArray",0,&tolua_err) ||
+     !tolua_isusertable(tolua_S,1,"CCArray",0,&tolua_err) ||
      !tolua_isnoobj(tolua_S,2,&tolua_err)
  )
   goto tolua_lerror;
  else
 #endif
  {
-  CCArray* self = (CCArray*)  tolua_tousertype(tolua_S,1,0);
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'Array'", NULL);
-#endif
   {
-   self->Array();
+   CCArray* tolua_ret = (CCArray*)  Mtolua_new((CCArray)());
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCArray");
   }
  }
- return 0;
+ return 1;
 #ifndef TOLUA_RELEASE
  tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'Array'.",&tolua_err);
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
  return 0;
 #endif
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: ~Array of class  CCArray */
-#ifndef TOLUA_DISABLE_tolua_LuaExtern_CCArray_~Array00
-static int tolua_LuaExtern_CCArray_~Array00(lua_State* tolua_S)
+/* method: new_local of class  CCArray */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_CCArray_new00_local
+static int tolua_LuaExtern_CCArray_new00_local(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"CCArray",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   CCArray* tolua_ret = (CCArray*)  Mtolua_new((CCArray)());
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCArray");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: delete of class  CCArray */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_CCArray_delete00
+static int tolua_LuaExtern_CCArray_delete00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
  tolua_Error tolua_err;
@@ -3372,16 +3404,14 @@ static int tolua_LuaExtern_CCArray_~Array00(lua_State* tolua_S)
  {
   CCArray* self = (CCArray*)  tolua_tousertype(tolua_S,1,0);
 #ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function '~Array'", NULL);
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'delete'", NULL);
 #endif
-  {
-   self->~Array();
-  }
+  Mtolua_delete(self);
  }
  return 0;
 #ifndef TOLUA_RELEASE
  tolua_lerror:
- tolua_error(tolua_S,"#ferror in function '~Array'.",&tolua_err);
+ tolua_error(tolua_S,"#ferror in function 'delete'.",&tolua_err);
  return 0;
 #endif
 }
@@ -4458,18 +4488,18 @@ static int tolua_LuaExtern_CCArray_clone00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* get function: __CCClonable__ of class  CCArray */
-#ifndef TOLUA_DISABLE_tolua_get_CCArray___CCClonable__
-static int tolua_get_CCArray___CCClonable__(lua_State* tolua_S)
+/* get function: __Clonable__ of class  CCArray */
+#ifndef TOLUA_DISABLE_tolua_get_CCArray___Clonable__
+static int tolua_get_CCArray___Clonable__(lua_State* tolua_S)
 {
   CCArray* self = (CCArray*)  tolua_tousertype(tolua_S,1,0);
 #ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in accessing variable '__CCClonable__'",NULL);
+  if (!self) tolua_error(tolua_S,"invalid 'self' in accessing variable '__Clonable__'",NULL);
 #endif
 #ifdef __cplusplus
-   tolua_pushusertype(tolua_S,(void*)static_cast<CCClonable*>(self), "CCClonable");
+   tolua_pushusertype(tolua_S,(void*)static_cast<Clonable*>(self), "Clonable");
 #else
-   tolua_pushusertype(tolua_S,(void*)((CCClonable*)self), "CCClonable");
+   tolua_pushusertype(tolua_S,(void*)((Clonable*)self), "Clonable");
 #endif
  return 1;
 }
@@ -4910,7 +4940,11 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
     tolua_endmodule(tolua_S);
    tolua_endmodule(tolua_S);
   tolua_endmodule(tolua_S);
+  #ifdef __cplusplus
+  tolua_cclass(tolua_S,"CCArray","CCArray","CCObject",tolua_collect_CCArray);
+  #else
   tolua_cclass(tolua_S,"CCArray","CCArray","CCObject",NULL);
+  #endif
   tolua_beginmodule(tolua_S,"CCArray");
    tolua_function(tolua_S,"create",tolua_LuaExtern_CCArray_create00);
    tolua_function(tolua_S,"createWithObject",tolua_LuaExtern_CCArray_createWithObject00);
@@ -4918,8 +4952,10 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"createWithArray",tolua_LuaExtern_CCArray_createWithArray00);
    tolua_function(tolua_S,"createWithContentsOfFile",tolua_LuaExtern_CCArray_createWithContentsOfFile00);
    tolua_function(tolua_S,"createWithContentsOfFileThreadSafe",tolua_LuaExtern_CCArray_createWithContentsOfFileThreadSafe00);
-   tolua_function(tolua_S,"Array",tolua_LuaExtern_CCArray_Array00);
-   tolua_function(tolua_S,"~Array",tolua_LuaExtern_CCArray_~Array00);
+   tolua_function(tolua_S,"new",tolua_LuaExtern_CCArray_new00);
+   tolua_function(tolua_S,"new_local",tolua_LuaExtern_CCArray_new00_local);
+   tolua_function(tolua_S,".call",tolua_LuaExtern_CCArray_new00_local);
+   tolua_function(tolua_S,"delete",tolua_LuaExtern_CCArray_delete00);
    tolua_function(tolua_S,"init",tolua_LuaExtern_CCArray_init00);
    tolua_function(tolua_S,"initWithObject",tolua_LuaExtern_CCArray_initWithObject00);
    tolua_function(tolua_S,"initWithCapacity",tolua_LuaExtern_CCArray_initWithCapacity00);
@@ -4952,7 +4988,7 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"reduceMemoryFootprint",tolua_LuaExtern_CCArray_reduceMemoryFootprint00);
    tolua_function(tolua_S,"acceptVisitor",tolua_LuaExtern_CCArray_acceptVisitor00);
    tolua_function(tolua_S,"clone",tolua_LuaExtern_CCArray_clone00);
-   tolua_variable(tolua_S,"__CCClonable__",tolua_get_CCArray___CCClonable__,NULL);
+   tolua_variable(tolua_S,"__Clonable__",tolua_get_CCArray___Clonable__,NULL);
   tolua_endmodule(tolua_S);
  tolua_endmodule(tolua_S);
  return 1;

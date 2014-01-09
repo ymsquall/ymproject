@@ -3,8 +3,8 @@
 #include "luaext/LuaHelper.h"
 #include "Model_GameScene.h"
 #include "Model_CreatureHeader.h"
-#include "Physics_Box2dView.h"
-#include "Physics_GameScene.h"
+//#include "Physics_Box2dView.h"
+//#include "Physics_GameScene.h"
 #include "math/Math.h"
 #include "gui/CocosGUI.h"
 #include "LocalPlayer.h"
@@ -49,7 +49,6 @@ bool GameSceneView::init()
 	gui::UIWidget* pWidget = dynamic_cast<gui::UIWidget*>(pUILayer->getWidgetByTag(202));
 	mJumpBtn = dynamic_cast<gui::UIButton*>(pWidget->getChildByName("mJumpBtn"));
 	mAttackBtn = dynamic_cast<gui::UIButton*>(pWidget->getChildByName("mAttackBtn"));
-
 	this->scheduleUpdate();
 
 	auto listener = EventListenerTouchAllAtOnce::create();
@@ -75,15 +74,15 @@ void GameSceneView::onEnterTransitionDidFinish()
 	auto director = Director::getInstance();
 	Point visibleOrigin = director->getVisibleOrigin();
 	Size visibleSize = director->getVisibleSize();
-	mPhysicsView = Physics_Box2DView::create(1);
-	GameScenePhysics* pPhysics = mPhysicsView->physics<GameScenePhysics>();
-	if(NULL != pPhysics)
-	{
-		pPhysics->initBoxWithTiledMap(mTiledMap);
-	}
-	mTiledMap->addChild(mPhysicsView,1000);
-	mPhysicsView->setScale(PTM_RATIO);
-	mPhysicsView->setAnchorPoint(Point(0,0));
+	//mPhysicsView = Physics_Box2DView::create(1);
+	//GameScenePhysics* pPhysics = mPhysicsView->physics<GameScenePhysics>();
+	//if(NULL != pPhysics)
+	//{
+	//	pPhysics->initBoxWithTiledMap(mTiledMap);
+	//}
+	//mTiledMap->addChild(mPhysicsView,1000);
+	//mPhysicsView->setScale(PTM_RATIO);
+	//mPhysicsView->setAnchorPoint(Point(0,0));
 }
 void GameSceneView::onExit()
 {
@@ -229,11 +228,11 @@ bool GameSceneView::movePlayerTo(const Point& toPos)
 
 	return true;
 }
-
-GameScenePhysics* GameSceneView::getPhysics()
-{
-	return mPhysicsView->physics<GameScenePhysics>();
-}
+//
+//GameScenePhysics* GameSceneView::getPhysics()
+//{
+//	return mPhysicsView->physics<GameScenePhysics>();
+//}
 
 TMXTiledMap* GameSceneView::getTiledMap()
 {

@@ -28,6 +28,15 @@ function LUAGetDisplayOffPos()
 	return offPos,index
 end
 
+__LUAEnvironmentVariable = {
+	mDebugMode,
+	mDeviceType,
+	setInfo = function(debugMode, deviceType)
+		mDebugMode = debugMode
+		mDeviceType = deviceType
+	end
+}
+
 __LUADeviceWinSize = cc.Director:sharedDirector():getWinSize()
 __LUADeviceHelfWinSize = CCSize(__LUADeviceWinSize.width/2.0, __LUADeviceWinSize.height/2.0)
 __LUADeviceVisibleSize = cc.Director:sharedDirector():getVisibleSize()

@@ -5,7 +5,7 @@
 #include "Model_GameScene.h"
 #include "unity/datablock.h"
 #include "luaext/LuaHelper.h"
-#include "Physics_GameScene.h"
+//#include "Physics_GameScene.h"
 #include "LocalPlayer.h"
 
 GameSceneViewModel::GameSceneViewModel()
@@ -30,8 +30,9 @@ void GameSceneViewModel::onGameSceneModelPropertyChanged(mvvm::INotifyPropertyCh
 				mSceneView = GameSceneView::createView();
 				mSceneView->setBindingSource(pModel);
 				pRootView->addChild(mSceneView);
-				LocalPlayer* pLocalUser = LocalPlayer::create(GameScenePhysics::point()->mWorld);
-				GameScenePhysics::point()->setLocalPlayerPhysics(pLocalUser);
+				//LocalPlayer* pLocalUser = LocalPlayer::create(GameScenePhysics::point()->mWorld);
+				LocalPlayer* pLocalUser = LocalPlayer::create(NULL);
+				//GameScenePhysics::point()->setLocalPlayerPhysics(pLocalUser);
 				cocostudio::Armature* pAnimView = dynamic_cast<Armature*>(mSceneView->getTiledMap()->getChildByTag(101));
 				LocalPlayer::instance()->setAnimView(pAnimView);
 			}

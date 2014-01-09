@@ -4,6 +4,7 @@
 #include "CCScriptSupport.h"
 #include "CCLuaEngine.h"
 #include "luaext/LuaExtern.h"
+#include "luaext/LuaHelper.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -62,7 +63,8 @@ namespace engine
 		path = FileUtils::getInstance()->fullPathForFilename("luascript/startup.lua");
 #endif
 		pEngine->executeScriptFile(path.c_str());
-        
+		callLuaFuncNoResult("setDeviceType", 1);
+
 		framework::unity::RoutedEventArgs eventArgs;
 		Event_AppInitOveredShowingBefore(this, &eventArgs);
         

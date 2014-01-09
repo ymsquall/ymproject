@@ -1,13 +1,13 @@
-class CCArray : public CCObject, public CCClonable
+class CCArray : public CCObject, public Clonable
 {
-    static Array* create();
-    static Array* createWithObject(CCObject* object);
-    static Array* createWithCapacity(long capacity);
-    static Array* createWithArray(CCArray* otherArray);
-    static Array* createWithContentsOfFile(const char* pFileName);
-    static Array* createWithContentsOfFileThreadSafe(const char* pFileName);
-    Array();
-    ~Array();
+    static CCArray* create();
+    static CCArray* createWithObject(CCObject* object);
+    static CCArray* createWithCapacity(long capacity);
+    static CCArray* createWithArray(CCArray* otherArray);
+    static CCArray* createWithContentsOfFile(const char* pFileName);
+    static CCArray* createWithContentsOfFileThreadSafe(const char* pFileName);
+    CCArray();
+    ~CCArray();
     bool init();
     bool initWithObject(CCObject* object);
     bool initWithCapacity(long capacity);

@@ -11,9 +11,9 @@ public:
 	Player(b2World* pWorld);
 	virtual ~Player();
 
-	virtual void StepBefore(physics::ObjectSettings* settings) override;
-	virtual void StepAfter() override;
-	int PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, const physics::PhysicsBodyList& landList);
+	//virtual void StepBefore(physics::ObjectSettings* settings) override;
+	//virtual void StepAfter() override;
+	//int PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, const physics::PhysicsBodyList& landList);
 
 protected:
 	virtual bool init() override;

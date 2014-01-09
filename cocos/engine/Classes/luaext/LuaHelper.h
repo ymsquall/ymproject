@@ -365,4 +365,21 @@ bool tolua_getLuaStringValue_ByTable(lua_State* L, const char* fieldName, const 
 void tolua_setLuaGlobalTableToNil(lua_State* L, const char* tableName);
 bool tolua_getLuaTableValue_ByTable(lua_State* L, const char* tableName, ScriptParamObject& retValue);
 //////////////////////////////////////////////////////////////////////////
-
+template<class T>
+bool lua_setLuaNumberValueToTable(lua_State* L, const char* tableName, const char* fieldName, T v)
+{
+	lua_getglobal(L, tableName);
+	if(!lua_istable(L, -1))
+	{
+		return false;
+	}
+	lua_pushlstring(L, fieldName, strlen(fieldName));
+	lua_gettable(L, -2);
+	if (!lua_istable(L, -1))
+	{
+		return false;
+	}
+	lua_pushnumber(L, (lua_Number)v);
+	int ret = lua_checkstack(L, lua_gettop(L));
+	return ret;
+}

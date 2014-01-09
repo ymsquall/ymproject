@@ -10,19 +10,19 @@ using namespace framework;
 
 class CreatureHeaderModel;
 
-struct CreaturePhysicsSteeings : public physics::ObjectSettings
-{
-	CreaturePhysicsSteeings()
-	{
-		mIsHeroDorping = false;
-		mIsOriJump = false;
-		mUsingVerticeCount = 0;
-	}
-	bool mIsHeroDorping;
-	bool mIsOriJump;
-	b2Vec2 mVertices[b2_maxPolygonVertices];
-	int8 mUsingVerticeCount;
-};
+//struct CreaturePhysicsSteeings : public physics::ObjectSettings
+//{
+//	CreaturePhysicsSteeings()
+//	{
+//		mIsHeroDorping = false;
+//		mIsOriJump = false;
+//		mUsingVerticeCount = 0;
+//	}
+//	bool mIsHeroDorping;
+//	bool mIsOriJump;
+//	b2Vec2 mVertices[b2_maxPolygonVertices];
+//	int8 mUsingVerticeCount;
+//};
 
 class ICreatue
 {
@@ -52,8 +52,8 @@ public:
 	virtual bool initWithBox(const Point& pos, const Size& size);
 	virtual const CCPoint& getMovedBodyPos();
 	virtual void move(float dir, float speed);
-	virtual void updateBody(physics::ObjectSettings* settings);
-	b2ContactEdge* getHeroBodyContactList();
+	//virtual void updateBody(physics::ObjectSettings* settings);
+	//b2ContactEdge* getHeroBodyContactList();
 	bool isAttacking();
 	bool isBeAttacking();
 	bool isDeathing();
@@ -66,10 +66,10 @@ public:
 	void onCreaturePosChanged(const Point& pos);
 
 public:
-	b2World* mWorld;
-	b2Body* mMoveBody;
-	b2Body* mWeaponBody;
-	b2Body* mBodyBody;
+	//b2World* mWorld;
+	//b2Body* mMoveBody;
+	//b2Body* mWeaponBody;
+	//b2Body* mBodyBody;
 	float mMoveDir;
 	float mMoveSpeed;
 

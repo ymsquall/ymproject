@@ -9,6 +9,16 @@
 using namespace framework;
 
 LocalPlayer* LocalPlayer::mInstance = NULL;
+LocalPlayer::LocalPlayer() :
+	SuperT(object::ObjectType::TN_LocalPlayer, NULL),
+	JumpDelegate(this)
+{
+	mInstance = this;
+	mAnimView = NULL;
+	mComboCountdownTimer = 1000.0f;
+	mNowComboCount = 0;
+	mDeathTimer = 0.0f;
+}
 LocalPlayer::LocalPlayer(b2World* pWorld) :
 	SuperT(object::ObjectType::TN_LocalPlayer, pWorld),
 	JumpDelegate(this)
@@ -44,22 +54,22 @@ LocalPlayer* LocalPlayer::instance()
 }
 bool LocalPlayer::init()
 {		
-	{
-		b2BodyDef bd;
-		bd.type = b2_dynamicBody;
-		bd.position.Set(25, 15);
-		mMoveBody = mWorld->CreateBody(&bd);
-		b2PolygonShape shape;
-		b2FixtureDef fd;
-		fd.shape = &shape;
-		fd.density = 10.0f;
-		fd.friction = 1.0f;
-		fd.filter.categoryBits = ICreatue::MoveBodyContactMask;
-		fd.filter.maskBits = ICreatue::LandContactMask | ICreatue::WallContactMask;
-		shape.SetAsBox(0.3f, 0.1f, b2Vec2(0, 0), 0.0);
-		mMoveBody->CreateFixture(&fd);
-		mMoveBody->SetFixedRotation(true); // 设置为固定角度（不旋转）
-	}
+	//{
+	//	b2BodyDef bd;
+	//	bd.type = b2_dynamicBody;
+	//	bd.position.Set(25, 15);
+	//	mMoveBody = mWorld->CreateBody(&bd);
+	//	b2PolygonShape shape;
+	//	b2FixtureDef fd;
+	//	fd.shape = &shape;
+	//	fd.density = 10.0f;
+	//	fd.friction = 1.0f;
+	//	fd.filter.categoryBits = ICreatue::MoveBodyContactMask;
+	//	fd.filter.maskBits = ICreatue::LandContactMask | ICreatue::WallContactMask;
+	//	shape.SetAsBox(0.3f, 0.1f, b2Vec2(0, 0), 0.0);
+	//	mMoveBody->CreateFixture(&fd);
+	//	mMoveBody->SetFixedRotation(true); // 设置为固定角度（不旋转）
+	//}
 	CCDirector::getInstance()->getScheduler()->scheduleSelector(schedule_selector(LocalPlayer::comboTimer), this, 0, false);
 	CCDirector::getInstance()->getScheduler()->scheduleSelector(schedule_selector(LocalPlayer::recoverHPTimer), this, 30, false);
 	CCDirector::getInstance()->getScheduler()->scheduleSelector(schedule_selector(LocalPlayer::onDeathTimer), this, 0, false);
@@ -172,76 +182,33 @@ void LocalPlayer::onDeath()
 }
 void LocalPlayer::onFrameEvent(cocostudio::Bone *bone, const char *evt, int originFrameIndex, int currentFrameIndex)
 {
-	// weapon box
-	std::string eventName = evt;
-	if(eventName == "attack_begining")
-	{
-		if(NULL != mWeaponBody)
-		{
-			mWorld->DestroyBody(mWeaponBody);
-			mWeaponBody = NULL;
-		}
-		b2Vec2 weaponVertices[5];
-		for(int i = 0; i < 5; ++ i)
-		{
-			CCString* pWeaponName = CCString::createWithFormat("weapon%d", i);
-			cocostudio::CCBone* pBone = mAnimView->getBone(pWeaponName->getCString());
-			if(NULL == pBone)
-				return;
-			cocostudio::BaseData* pBoneData = pBone->getWorldInfo();
-			Point pos = mAnimView->getParent()->convertToWorldSpaceAR(mAnimView->getPosition());
-			if(mAnimView->getRotationY() >= 179.0f)
-				pos.x -= pBoneData->x;
-			else
-				pos.x += pBoneData->x;
-			pos.y += pBoneData->y;
-			Point titledMapPos = GameSceneViewModel::point()->getTiledMap()->getPosition();
-			pos.x -= titledMapPos.x;
-			pos.y -= titledMapPos.y;
-			weaponVertices[i] = b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO);
-		}
-		b2BodyDef bd;
-		bd.type = b2_dynamicBody;
-		bd.position.Set(0, 0);
-		mWeaponBody = mWorld->CreateBody(&bd);
-		b2PolygonShape shape1;
-		b2PolygonShape shape2;
-		shape1.m_vertexCount = 3;
-		shape2.m_vertexCount = 3;
-		shape1.m_vertices[0] = weaponVertices[0];
-		shape1.m_vertices[1] = weaponVertices[1];
-		shape1.m_vertices[2] = weaponVertices[2];
-		shape2.m_vertices[0] = weaponVertices[0];
-		shape2.m_vertices[1] = weaponVertices[4];
-		shape2.m_vertices[2] = weaponVertices[3];
-		b2FixtureDef fd1, fd2;
-		fd1.shape = &shape1;
-		fd1.density = 0;
-		fd1.friction = 0;
-		fd2.shape = &shape2;
-		fd2.density = 0;
-		fd2.friction = 0;
-		//fd1.filter.categoryBits = WeaponBodyContactMask;
-		//fd1.filter.maskBits = BodyBodyContactMask;
-		//fd2.filter.categoryBits = WeaponBodyContactMask;
-		//fd2.filter.maskBits = BodyBodyContactMask;
-		mWeaponBody->CreateFixture(&fd1);
-		mWeaponBody->CreateFixture(&fd2);
-		mWeaponBody->SetUserData(this);
-	}
-	else if(eventName == "attack_ended")
-	{
-		if(NULL != mWeaponBody)
-		{
-			mWorld->DestroyBody(mWeaponBody);
-			mWeaponBody = NULL;
-		}
-	}
+	//// weapon box
+	//std::string eventName = evt;
+	//if(eventName == "attack_begining")
 	//{
 	//	if(NULL != mWeaponBody)
 	//	{
 	//		mWorld->DestroyBody(mWeaponBody);
 	//		mWeaponBody = NULL;
+	//	}
+	//	b2Vec2 weaponVertices[5];
+	//	for(int i = 0; i < 5; ++ i)
+	//	{
+	//		CCString* pWeaponName = CCString::createWithFormat("weapon%d", i);
+	//		cocostudio::CCBone* pBone = mAnimView->getBone(pWeaponName->getCString());
+	//		if(NULL == pBone)
+	//			return;
+	//		cocostudio::BaseData* pBoneData = pBone->getWorldInfo();
+	//		Point pos = mAnimView->getParent()->convertToWorldSpaceAR(mAnimView->getPosition());
+	//		if(mAnimView->getRotationY() >= 179.0f)
+	//			pos.x -= pBoneData->x;
+	//		else
+	//			pos.x += pBoneData->x;
+	//		pos.y += pBoneData->y;
+	//		Point titledMapPos = GameSceneViewModel::point()->getTiledMap()->getPosition();
+	//		pos.x -= titledMapPos.x;
+	//		pos.y -= titledMapPos.y;
+	//		weaponVertices[i] = b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO);
 	//	}
 	//	b2BodyDef bd;
 	//	bd.type = b2_dynamicBody;
@@ -259,19 +226,62 @@ void LocalPlayer::onFrameEvent(cocostudio::Bone *bone, const char *evt, int orig
 	//	shape2.m_vertices[2] = weaponVertices[3];
 	//	b2FixtureDef fd1, fd2;
 	//	fd1.shape = &shape1;
-	//	fd1.density = 0.0f;
-	//	fd1.friction = 0.0f;
+	//	fd1.density = 0;
+	//	fd1.friction = 0;
 	//	fd2.shape = &shape2;
-	//	fd2.density = 0.0f;
-	//	fd2.friction = 0.0f;
-	//	fd1.filter.categoryBits = WeaponBodyContactMask;
-	//	fd1.filter.maskBits = BodyBodyContactMask;
-	//	fd2.filter.categoryBits = WeaponBodyContactMask;
-	//	fd2.filter.maskBits = BodyBodyContactMask;
+	//	fd2.density = 0;
+	//	fd2.friction = 0;
+	//	//fd1.filter.categoryBits = WeaponBodyContactMask;
+	//	//fd1.filter.maskBits = BodyBodyContactMask;
+	//	//fd2.filter.categoryBits = WeaponBodyContactMask;
+	//	//fd2.filter.maskBits = BodyBodyContactMask;
 	//	mWeaponBody->CreateFixture(&fd1);
 	//	mWeaponBody->CreateFixture(&fd2);
 	//	mWeaponBody->SetUserData(this);
 	//}
+	//else if(eventName == "attack_ended")
+	//{
+	//	if(NULL != mWeaponBody)
+	//	{
+	//		mWorld->DestroyBody(mWeaponBody);
+	//		mWeaponBody = NULL;
+	//	}
+	//}
+	////{
+	////	if(NULL != mWeaponBody)
+	////	{
+	////		mWorld->DestroyBody(mWeaponBody);
+	////		mWeaponBody = NULL;
+	////	}
+	////	b2BodyDef bd;
+	////	bd.type = b2_dynamicBody;
+	////	bd.position.Set(0, 0);
+	////	mWeaponBody = mWorld->CreateBody(&bd);
+	////	b2PolygonShape shape1;
+	////	b2PolygonShape shape2;
+	////	shape1.m_vertexCount = 3;
+	////	shape2.m_vertexCount = 3;
+	////	shape1.m_vertices[0] = weaponVertices[0];
+	////	shape1.m_vertices[1] = weaponVertices[1];
+	////	shape1.m_vertices[2] = weaponVertices[2];
+	////	shape2.m_vertices[0] = weaponVertices[0];
+	////	shape2.m_vertices[1] = weaponVertices[4];
+	////	shape2.m_vertices[2] = weaponVertices[3];
+	////	b2FixtureDef fd1, fd2;
+	////	fd1.shape = &shape1;
+	////	fd1.density = 0.0f;
+	////	fd1.friction = 0.0f;
+	////	fd2.shape = &shape2;
+	////	fd2.density = 0.0f;
+	////	fd2.friction = 0.0f;
+	////	fd1.filter.categoryBits = WeaponBodyContactMask;
+	////	fd1.filter.maskBits = BodyBodyContactMask;
+	////	fd2.filter.categoryBits = WeaponBodyContactMask;
+	////	fd2.filter.maskBits = BodyBodyContactMask;
+	////	mWeaponBody->CreateFixture(&fd1);
+	////	mWeaponBody->CreateFixture(&fd2);
+	////	mWeaponBody->SetUserData(this);
+	////}
 }
 void LocalPlayer::animationEvent(cocostudio::Armature *armature, cocostudio::MovementEventType movementType, const char *movementID)
 {
@@ -284,11 +294,11 @@ void LocalPlayer::animationEvent(cocostudio::Armature *armature, cocostudio::Mov
 	{
 		if(attack1 == movementID || attack2 == movementID)
 		{
-			if(NULL != mWeaponBody)
-			{
-				mWorld->DestroyBody(mWeaponBody);
-				mWeaponBody = NULL;
-			}
+			//if(NULL != mWeaponBody)
+			//{
+			//	mWorld->DestroyBody(mWeaponBody);
+			//	mWeaponBody = NULL;
+			//}
 			callLuaFuncNoResult("LUAGameSceneViewAttackAnimEnded");
 		}
 		else if(beattack1 == movementID || clobber1 == movementID)
@@ -302,213 +312,213 @@ void LocalPlayer::animationEvent(cocostudio::Armature *armature, cocostudio::Mov
 		}
 	}
 }
-int LocalPlayer::PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, const physics::PhysicsBodyList& landList)
-{
-	int ret = 0;
-	b2Fixture* fixtureA = contact->GetFixtureA();
-	b2Fixture* fixtureB = contact->GetFixtureB();
-	if(NULL != fixtureA && NULL != fixtureB)
-	{
-		b2Body* body1 = fixtureA->GetBody();
-		b2Body* body2 = fixtureB->GetBody();
-		if(body1 == mMoveBody || body2 == mMoveBody)
-		{
-			ret = 1;
-			contact->SetEnabled(true);
-			bool isLand = false;
-			for(physics::PhysicsBodyList::const_iterator it = landList.begin();
-				it != landList.end(); ++ it)
-			{
-				isLand = (body1 == *it) || (body2 == *it);
-				if(isLand)
-					break;
-			}
-			if(isLand)
-			{
-				if(mIsJumping)
-				{
-					b2Vec2 vel = mMoveBody->GetLinearVelocity();
-					if(vel.y > 0)
-						contact->SetEnabled(false);
-					else
-					{
-						mIsJumping = false;
-						mMoveBody->SetFixedRotation(false); // 行走时设为旋转，否则根据body的形状会有不同频率的抖动
-					}
-				}
-			}
-			else
-			{
-				callLuaFuncNoResult("LUAGameScenePhysicsHeroHitWall");
-				mMoveBody->SetFixedRotation(true); // 起跳后设置为固定角度（不旋转），否则会产生多余的位移
-				if(!mWorld->IsLocked())
-				{
-					b2Vec2 pos = mMoveBody->GetWorldCenter();
-					mMoveBody->SetTransform(pos, 0.0f);
-				}
-			}
-		}
-	}
-	return ret;
-}
-void LocalPlayer::StepBefore(physics::ObjectSettings* settings)
-{
-	if(this->isDeathing())
-		return;
-	static CreaturePhysicsSteeings playerSettings;	
-	playerSettings.mIsHeroDorping = mIsHeroDorping;
-	playerSettings.mIsOriJump = mIsOriJump;
-	playerSettings.mUsingVerticeCount = 8;
-	for(int i = 0; i < 8; ++ i)
-	{
-		CCString* pBodyName = CCString::createWithFormat("body%d", i);
-		cocostudio::CCBone* pBone = mAnimView->getBone(pBodyName->getCString());
-		if(NULL == pBone)
-			continue;
-		cocostudio::BaseData* pBoneData = pBone->getWorldInfo();
-		Point pos = mAnimView->getParent()->convertToWorldSpaceAR(mAnimView->getPosition());
-		if(mAnimView->getRotationY() >= 179.0f)
-			pos.x -= pBoneData->x;
-		else
-			pos.x += pBoneData->x;
-		pos.y += pBoneData->y;
-		Point titledMapPos = GameSceneViewModel::point()->getTiledMap()->getPosition();
-		pos.x -= titledMapPos.x;
-		pos.y -= titledMapPos.y;
-		playerSettings.mVertices[i] = b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO);
-	}
-	// weapon box
-	if(NULL != mWeaponBody)
-	{
-		b2Vec2 weaponVertices[5];
-		for(int i = 0; i < 5; ++ i)
-		{
-			CCString* pWeaponName = CCString::createWithFormat("weapon%d", i);
-			cocostudio::CCBone* pBone = mAnimView->getBone(pWeaponName->getCString());
-			if(NULL == pBone)
-				return;
-			cocostudio::BaseData* pBoneData = pBone->getWorldInfo();
-			Point pos = mAnimView->getParent()->convertToWorldSpaceAR(mAnimView->getPosition());
-			if(mAnimView->getRotationY() >= 179.0f)
-				pos.x -= pBoneData->x;
-			else
-				pos.x += pBoneData->x;
-			pos.y += pBoneData->y;
-			Point titledMapPos = GameSceneViewModel::point()->getTiledMap()->getPosition();
-			pos.x -= titledMapPos.x;
-			pos.y -= titledMapPos.y;
-			weaponVertices[i] = b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO);
-		}
-		std::stack<b2Fixture*> fixtureStack;
-		b2Fixture* pFixture = mWeaponBody->GetFixtureList();
-		while(pFixture != NULL)
-		{
-			fixtureStack.push(pFixture);
-			pFixture = pFixture->GetNext();
-		}
-		b2Fixture* pFixture1 = fixtureStack.top();
-		fixtureStack.pop();
-		b2Fixture* pFixture2 = fixtureStack.top();
-		fixtureStack.pop();
-		b2PolygonShape* pShape1 = dynamic_cast<b2PolygonShape*>(pFixture1->GetShape());
-		b2PolygonShape* pShape2 = dynamic_cast<b2PolygonShape*>(pFixture2->GetShape());
-		pShape1->m_vertexCount = 3;
-		pShape2->m_vertexCount = 3;
-		pShape1->m_vertices[0] = weaponVertices[0];
-		pShape1->m_vertices[1] = weaponVertices[1];
-		pShape1->m_vertices[2] = weaponVertices[2];
-		pShape2->m_vertices[0] = weaponVertices[0];
-		pShape2->m_vertices[1] = weaponVertices[4];
-		pShape2->m_vertices[2] = weaponVertices[3];
-		//mWeaponBody->SetLinearVelocity(b2Vec2(0,0));
-		b2Transform trans = mWeaponBody->GetTransform();
-		mWeaponBody->SetTransform(b2Vec2(0,0), 0);
-		mWeaponBody->SetAwake(true);
-	}
-	// body box
-	if(NULL != mBodyBody)
-	{
-		mWorld->DestroyBody(mBodyBody);
-		mBodyBody = NULL;
-	}
-	CreaturePhysicsSteeings* pSettings = &playerSettings;
-	if(pSettings->mUsingVerticeCount > 0)
-	{
-		b2BodyDef bd;
-		bd.type = b2_staticBody;
-		bd.position.Set(0, 0);
-		mBodyBody = mWorld->CreateBody(&bd);
-		for(int i = 0; i < pSettings->mUsingVerticeCount/2; ++ i)
-		{
-			b2PolygonShape shape;
-			shape.m_vertexCount = 3;
-			shape.m_vertices[0] = pSettings->mVertices[0+i*2];
-			shape.m_vertices[1] = pSettings->mVertices[1+i*2];
-			if(2+i*2 >= pSettings->mUsingVerticeCount)
-				shape.m_vertices[2] = pSettings->mVertices[0];
-			else
-				shape.m_vertices[2] = pSettings->mVertices[2+i*2];
-			b2FixtureDef fd;
-			fd.shape = &shape;
-			fd.density = 0.0f;
-			fd.friction = 0.0f;
-			//fd.filter.categoryBits = BodyBodyContactMask;
-			//fd.filter.maskBits = WeaponBodyContactMask;
-			mBodyBody->CreateFixture(&fd);
-			mBodyBody->SetUserData(this);
-		}
-	}
-	if(mIsJumping)
-	{
-		mMoveBody->SetFixedRotation(true); // 起跳后设置为固定角度（不旋转），否则会产生多余的位移
-		if(!mWorld->IsLocked())
-		{
-			b2Vec2 pos = mMoveBody->GetWorldCenter();
-			mMoveBody->SetTransform(pos, 0.0f);
-		}
-	}
-	if(NULL != mBodyBody)
-	{
-		mBodyBody->SetLinearVelocity(b2Vec2(0,0));
-		b2Transform trans = mBodyBody->GetTransform();
-		mBodyBody->SetTransform(b2Vec2(0,0), 0);
-	}
-	ICreatue::updateBody(&playerSettings);
-}
-void LocalPlayer::StepAfter()
-{
-	if(this->isDeathing())
-		return;
-	if(NULL != mWeaponBody)
-	{
-		b2ContactEdge* pContact = mWeaponBody->GetContactList();
-		if(NULL != pContact)
-		{
-			unity::object* pObject = static_cast<unity::object*>(pContact->other->GetUserData());
-			if(this != pObject)
-			{
-				Monster* pBeAttackedMonst = dynamic_cast<Monster*>(pObject);
-				if(NULL != pBeAttackedMonst && !pBeAttackedMonst->isBeAttacking() && !pBeAttackedMonst->isDeathing())
-				{
-					b2WorldManifold worldManifold;
-					pContact->contact->GetWorldManifold(&worldManifold);
-					if(mNowComboCount == 2)
-					{
-						pBeAttackedMonst->beAttacked(this, true);
-						mNowComboCount = 0;
-						mComboCountdownTimer = 1.0f + 1.0f;
-					}
-					else
-					{
-						pBeAttackedMonst->beAttacked(this);
-						mNowComboCount ++;
-						mComboCountdownTimer = 1.0f + 1.0f;
-					}
-				}
-				else
-				{
-				}
-			}
-		}
-	}
-}
+//int LocalPlayer::PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, const physics::PhysicsBodyList& landList)
+//{
+//	int ret = 0;
+//	b2Fixture* fixtureA = contact->GetFixtureA();
+//	b2Fixture* fixtureB = contact->GetFixtureB();
+//	if(NULL != fixtureA && NULL != fixtureB)
+//	{
+//		b2Body* body1 = fixtureA->GetBody();
+//		b2Body* body2 = fixtureB->GetBody();
+//		if(body1 == mMoveBody || body2 == mMoveBody)
+//		{
+//			ret = 1;
+//			contact->SetEnabled(true);
+//			bool isLand = false;
+//			for(physics::PhysicsBodyList::const_iterator it = landList.begin();
+//				it != landList.end(); ++ it)
+//			{
+//				isLand = (body1 == *it) || (body2 == *it);
+//				if(isLand)
+//					break;
+//			}
+//			if(isLand)
+//			{
+//				if(mIsJumping)
+//				{
+//					b2Vec2 vel = mMoveBody->GetLinearVelocity();
+//					if(vel.y > 0)
+//						contact->SetEnabled(false);
+//					else
+//					{
+//						mIsJumping = false;
+//						mMoveBody->SetFixedRotation(false); // 行走时设为旋转，否则根据body的形状会有不同频率的抖动
+//					}
+//				}
+//			}
+//			else
+//			{
+//				callLuaFuncNoResult("LUAGameScenePhysicsHeroHitWall");
+//				mMoveBody->SetFixedRotation(true); // 起跳后设置为固定角度（不旋转），否则会产生多余的位移
+//				if(!mWorld->IsLocked())
+//				{
+//					b2Vec2 pos = mMoveBody->GetWorldCenter();
+//					mMoveBody->SetTransform(pos, 0.0f);
+//				}
+//			}
+//		}
+//	}
+//	return ret;
+//}
+//void LocalPlayer::StepBefore(physics::ObjectSettings* settings)
+//{
+//	if(this->isDeathing())
+//		return;
+//	static CreaturePhysicsSteeings playerSettings;	
+//	playerSettings.mIsHeroDorping = mIsHeroDorping;
+//	playerSettings.mIsOriJump = mIsOriJump;
+//	playerSettings.mUsingVerticeCount = 8;
+//	for(int i = 0; i < 8; ++ i)
+//	{
+//		CCString* pBodyName = CCString::createWithFormat("body%d", i);
+//		cocostudio::CCBone* pBone = mAnimView->getBone(pBodyName->getCString());
+//		if(NULL == pBone)
+//			continue;
+//		cocostudio::BaseData* pBoneData = pBone->getWorldInfo();
+//		Point pos = mAnimView->getParent()->convertToWorldSpaceAR(mAnimView->getPosition());
+//		if(mAnimView->getRotationY() >= 179.0f)
+//			pos.x -= pBoneData->x;
+//		else
+//			pos.x += pBoneData->x;
+//		pos.y += pBoneData->y;
+//		Point titledMapPos = GameSceneViewModel::point()->getTiledMap()->getPosition();
+//		pos.x -= titledMapPos.x;
+//		pos.y -= titledMapPos.y;
+//		playerSettings.mVertices[i] = b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO);
+//	}
+//	// weapon box
+//	if(NULL != mWeaponBody)
+//	{
+//		b2Vec2 weaponVertices[5];
+//		for(int i = 0; i < 5; ++ i)
+//		{
+//			CCString* pWeaponName = CCString::createWithFormat("weapon%d", i);
+//			cocostudio::CCBone* pBone = mAnimView->getBone(pWeaponName->getCString());
+//			if(NULL == pBone)
+//				return;
+//			cocostudio::BaseData* pBoneData = pBone->getWorldInfo();
+//			Point pos = mAnimView->getParent()->convertToWorldSpaceAR(mAnimView->getPosition());
+//			if(mAnimView->getRotationY() >= 179.0f)
+//				pos.x -= pBoneData->x;
+//			else
+//				pos.x += pBoneData->x;
+//			pos.y += pBoneData->y;
+//			Point titledMapPos = GameSceneViewModel::point()->getTiledMap()->getPosition();
+//			pos.x -= titledMapPos.x;
+//			pos.y -= titledMapPos.y;
+//			weaponVertices[i] = b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO);
+//		}
+//		std::stack<b2Fixture*> fixtureStack;
+//		b2Fixture* pFixture = mWeaponBody->GetFixtureList();
+//		while(pFixture != NULL)
+//		{
+//			fixtureStack.push(pFixture);
+//			pFixture = pFixture->GetNext();
+//		}
+//		b2Fixture* pFixture1 = fixtureStack.top();
+//		fixtureStack.pop();
+//		b2Fixture* pFixture2 = fixtureStack.top();
+//		fixtureStack.pop();
+//		b2PolygonShape* pShape1 = dynamic_cast<b2PolygonShape*>(pFixture1->GetShape());
+//		b2PolygonShape* pShape2 = dynamic_cast<b2PolygonShape*>(pFixture2->GetShape());
+//		pShape1->m_vertexCount = 3;
+//		pShape2->m_vertexCount = 3;
+//		pShape1->m_vertices[0] = weaponVertices[0];
+//		pShape1->m_vertices[1] = weaponVertices[1];
+//		pShape1->m_vertices[2] = weaponVertices[2];
+//		pShape2->m_vertices[0] = weaponVertices[0];
+//		pShape2->m_vertices[1] = weaponVertices[4];
+//		pShape2->m_vertices[2] = weaponVertices[3];
+//		//mWeaponBody->SetLinearVelocity(b2Vec2(0,0));
+//		b2Transform trans = mWeaponBody->GetTransform();
+//		mWeaponBody->SetTransform(b2Vec2(0,0), 0);
+//		mWeaponBody->SetAwake(true);
+//	}
+//	// body box
+//	if(NULL != mBodyBody)
+//	{
+//		mWorld->DestroyBody(mBodyBody);
+//		mBodyBody = NULL;
+//	}
+//	CreaturePhysicsSteeings* pSettings = &playerSettings;
+//	if(pSettings->mUsingVerticeCount > 0)
+//	{
+//		b2BodyDef bd;
+//		bd.type = b2_staticBody;
+//		bd.position.Set(0, 0);
+//		mBodyBody = mWorld->CreateBody(&bd);
+//		for(int i = 0; i < pSettings->mUsingVerticeCount/2; ++ i)
+//		{
+//			b2PolygonShape shape;
+//			shape.m_vertexCount = 3;
+//			shape.m_vertices[0] = pSettings->mVertices[0+i*2];
+//			shape.m_vertices[1] = pSettings->mVertices[1+i*2];
+//			if(2+i*2 >= pSettings->mUsingVerticeCount)
+//				shape.m_vertices[2] = pSettings->mVertices[0];
+//			else
+//				shape.m_vertices[2] = pSettings->mVertices[2+i*2];
+//			b2FixtureDef fd;
+//			fd.shape = &shape;
+//			fd.density = 0.0f;
+//			fd.friction = 0.0f;
+//			//fd.filter.categoryBits = BodyBodyContactMask;
+//			//fd.filter.maskBits = WeaponBodyContactMask;
+//			mBodyBody->CreateFixture(&fd);
+//			mBodyBody->SetUserData(this);
+//		}
+//	}
+//	if(mIsJumping)
+//	{
+//		mMoveBody->SetFixedRotation(true); // 起跳后设置为固定角度（不旋转），否则会产生多余的位移
+//		if(!mWorld->IsLocked())
+//		{
+//			b2Vec2 pos = mMoveBody->GetWorldCenter();
+//			mMoveBody->SetTransform(pos, 0.0f);
+//		}
+//	}
+//	if(NULL != mBodyBody)
+//	{
+//		mBodyBody->SetLinearVelocity(b2Vec2(0,0));
+//		b2Transform trans = mBodyBody->GetTransform();
+//		mBodyBody->SetTransform(b2Vec2(0,0), 0);
+//	}
+//	ICreatue::updateBody(&playerSettings);
+//}
+//void LocalPlayer::StepAfter()
+//{
+//	if(this->isDeathing())
+//		return;
+//	if(NULL != mWeaponBody)
+//	{
+//		b2ContactEdge* pContact = mWeaponBody->GetContactList();
+//		if(NULL != pContact)
+//		{
+//			unity::object* pObject = static_cast<unity::object*>(pContact->other->GetUserData());
+//			if(this != pObject)
+//			{
+//				Monster* pBeAttackedMonst = dynamic_cast<Monster*>(pObject);
+//				if(NULL != pBeAttackedMonst && !pBeAttackedMonst->isBeAttacking() && !pBeAttackedMonst->isDeathing())
+//				{
+//					b2WorldManifold worldManifold;
+//					pContact->contact->GetWorldManifold(&worldManifold);
+//					if(mNowComboCount == 2)
+//					{
+//						pBeAttackedMonst->beAttacked(this, true);
+//						mNowComboCount = 0;
+//						mComboCountdownTimer = 1.0f + 1.0f;
+//					}
+//					else
+//					{
+//						pBeAttackedMonst->beAttacked(this);
+//						mNowComboCount ++;
+//						mComboCountdownTimer = 1.0f + 1.0f;
+//					}
+//				}
+//				else
+//				{
+//				}
+//			}
+//		}
+//	}
+//}

@@ -1,10 +1,10 @@
 #pragma once
 #include <Box2D/Box2D.h>
 #include "unity/object.h"
-#include "physics/PhysicsObject.h"
+//#include "physics/PhysicsObject.h"
 
 using namespace framework;
-using namespace engine;
+//using namespace engine;
 class ICreatue;
 
 enum class JumpState : int8
