@@ -63,7 +63,21 @@ namespace engine
 		path = FileUtils::getInstance()->fullPathForFilename("luascript/startup.lua");
 #endif
 		pEngine->executeScriptFile(path.c_str());
-		callLuaFuncNoResult("setDeviceType", 1);
+
+		lua_State* L = pEngine->getLuaStack()->getLuaState();
+		int debugMode = 0;
+		int deviceType = 0;
+		tolua_getLuaNumberValue_ByTable(L, "mDebugMode", "__LUAEnvironmentVariable", debugMode);
+		tolua_getLuaNumberValue_ByTable(L, "mDeviceType", "__LUAEnvironmentVariable", deviceType);
+#if defined(_DEBUG) || defined(DEBUG)
+		lua_setLuaNumberValueToTable(L, "__LUAEnvironmentVariable", "mDebugMode", 1);
+		lua_setLuaNumberValueToTable(L, "__LUAEnvironmentVariable", "mDeviceType", CC_TARGET_PLATFORM);
+#elif defined(NODEBUG)
+		lua_setLuaNumberValueToTable(L, "__LUAEnvironmentVariable", "mDebugMode", 0);
+		lua_setLuaNumberValueToTable(L, "__LUAEnvironmentVariable", "mDeviceType", CC_TARGET_PLATFORM);
+#endif
+		tolua_getLuaNumberValue_ByTable(L, "mDebugMode", "__LUAEnvironmentVariable", debugMode);
+		tolua_getLuaNumberValue_ByTable(L, "mDeviceType", "__LUAEnvironmentVariable", deviceType);
 
 		framework::unity::RoutedEventArgs eventArgs;
 		Event_AppInitOveredShowingBefore(this, &eventArgs);

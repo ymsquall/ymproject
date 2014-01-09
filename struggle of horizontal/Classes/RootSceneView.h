@@ -13,6 +13,8 @@ public:
 	RootSceneView(void);
 	~RootSceneView(void);
 
+	static RootSceneView *createWithPhysics();
+
 private:
 	virtual void onEnter();
 	virtual void onEnterTransitionDidFinish();

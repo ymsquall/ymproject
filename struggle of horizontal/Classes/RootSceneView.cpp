@@ -10,6 +10,21 @@ RootSceneView::~RootSceneView(void)
 {
 }
 
+RootSceneView *RootSceneView::createWithPhysics()
+{
+	RootSceneView *pRet = new RootSceneView();
+	if (pRet && pRet->initWithPhysics())
+	{
+		pRet->autorelease();
+		return pRet;
+	}
+	else
+	{
+		CC_SAFE_DELETE(pRet);
+		return NULL;
+	}
+}
+
 void RootSceneView::onEnter()
 {
 	cocos2d::Scene::onEnter();

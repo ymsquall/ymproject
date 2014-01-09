@@ -375,7 +375,7 @@ bool lua_setLuaNumberValueToTable(lua_State* L, const char* tableName, const cha
 	}
 	lua_pushlstring(L, fieldName, strlen(fieldName));
 	lua_gettable(L, -2);
-	if (!lua_istable(L, -1))
+	if (!lua_isnumber(L, -1))
 	{
 		return false;
 	}
