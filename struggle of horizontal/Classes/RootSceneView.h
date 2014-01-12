@@ -7,11 +7,13 @@ using namespace framework;
 using namespace engine;
 
 class RootSceneView : public cocos2d::Scene
-	, public unity::SingletonAutoT<RootSceneView>
+	, public unity::SingletonT<RootSceneView>
 {
 public:
 	RootSceneView(void);
 	~RootSceneView(void);
+
+	static RootSceneView *createWithPhysics();
 
 private:
 	virtual void onEnter();
@@ -21,6 +23,18 @@ private:
 	virtual void onExitTransitionDidStart();
 
 private:
-	void update(float dt);
+	virtual void update(float delta) override;
+	virtual void visit() override;
+
+private:
+	// debug
+	void debugDrawPhysicsShape();
+	void debugDrawPhysicsJoint();
+	void debugDrawPhysicsContact();
+private:
+	cocos2d::DrawNode* mDrawNode;
+	float mRatio;
+	cocos2d::GLProgram* mShaderProgram;
+	GLint mColorLocation;
 };
 

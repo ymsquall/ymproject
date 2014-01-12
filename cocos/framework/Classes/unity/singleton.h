@@ -38,7 +38,7 @@ namespace framework
 					CCASSERT(false, "SingletonT can not repeat construction!");
 					mInstance->release();
 				}
-				mInstance = this;
+				mInstance = (T*)this;
 			}
 			virtual ~SingletonT()
 			{
