@@ -23,6 +23,18 @@ private:
 	virtual void onExitTransitionDidStart();
 
 private:
-	void update(float dt);
+	virtual void update(float delta) override;
+	virtual void visit() override;
+
+private:
+	// debug
+	void debugDrawPhysicsShape();
+	void debugDrawPhysicsJoint();
+	void debugDrawPhysicsContact();
+private:
+	cocos2d::DrawNode* mDrawNode;
+	float mRatio;
+	cocos2d::GLProgram* mShaderProgram;
+	GLint mColorLocation;
 };
 

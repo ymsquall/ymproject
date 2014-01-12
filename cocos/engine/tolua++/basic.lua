@@ -16,6 +16,7 @@ local CCObjectTypes = {
     "engine::uiview::StackPanel",
     "LuaCocoStudioConversion",
     "LuaTiledHelper",
+    "LuaDictHelper",
 }
 
 -- register CCObject types
@@ -117,7 +118,7 @@ extern "C" {
 #include "uiview/Panel/StackPanel.h"
 #include "CocoStudio.h"
 #include "LuaCocoStudioConversion.h"
-#include "LuaTiledHelper.h"
+#include "LuaExternHelper.h"
 
 using namespace cocos2d;
 using namespace cocos2d::extension;

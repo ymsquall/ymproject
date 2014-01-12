@@ -1,6 +1,0 @@
-class LuaTiledHelper
-{
-public:
-	static const CCSize& getTMXLayerImageSize(TMXLayer* layer);
-};
-

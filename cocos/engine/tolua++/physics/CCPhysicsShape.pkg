@@ -1,0 +1,137 @@
+typedef struct PhysicsMaterial
+{
+    float density;
+    float restitution;
+    float friction;
+    PhysicsMaterial();
+    PhysicsMaterial(float aDensity, float aRestitution, float aFriction);
+}PhysicsMaterial;
+
+//const PhysicsMaterial PHYSICSSHAPE_MATERIAL_DEFAULT(0.0, 0.5, 0.5);
+
+class PhysicsShape : public Object
+{
+	/*
+    struct Type
+    {
+		enum
+		{
+			UNKNOWN = 0,
+			CIRCLE	= 1,
+			BOX		= 2,
+			POLYGEN	= 3,
+			EDGESEGMENT = 4,
+			EDGEBOX	= 5,
+			EDGEPOLYGEN = 6,
+			EDGECHAIN = 7,
+		};
+    };
+	*/
+    inline PhysicsBody* getBody() const;
+    //inline Type getType() const;
+    inline float getArea() const;
+    inline float getMoment() const;
+    void setMoment(float moment);
+    inline void setTag(int tag);
+    inline int getTag() const;
+    inline float getMass() const;
+    void setMass(float mass);
+    inline float getDensity() const;
+    void setDensity(float density);
+    void setRestitution(float restitution);
+    void setFriction(float friction);
+    void setMaterial(const PhysicsMaterial& material);
+    virtual float calculateDefaultMoment();
+    virtual float calculateDefaultArea();
+    virtual Point getOffset();
+    virtual Point getCenter();
+    bool containsPoint(const Point& point) const;
+    static Point* recenterPoints(Point* points, int count, const Point& center = Point::ZERO);
+    static Point getPolyonCenter(const Point* points, int count);
+    inline void setCategoryBitmask(int bitmask);
+    inline int getCategoryBitmask() const;
+    inline void setContactTestBitmask(int bitmask);
+    inline int getContactTestBitmask() const;
+    inline void setCollisionBitmask(int bitmask);
+    inline int getCollisionBitmask() const;
+    void setGroup(int group);
+    inline int getGroup();
+};
+
+/*
+class PhysicsShapeCircle : public PhysicsShape
+{
+    PhysicsShapeCircle();
+    virtual ~PhysicsShapeCircle();
+    static PhysicsShapeCircle* create(float radius, const PhysicsMaterial& material = PHYSICSSHAPE_MATERIAL_DEFAULT, const Point& offset = Point(0, 0));
+    static float calculateArea(float radius);
+    static float calculateMoment(float mass, float radius, const Point& offset = Point::ZERO);
+    virtual float calculateDefaultArea();
+    virtual float calculateDefaultMoment();
+    float getRadius() const;
+    virtual Point getOffset();
+};
+class PhysicsShapeBox : public PhysicsShape
+{
+    PhysicsShapeBox();
+    virtual ~PhysicsShapeBox();
+    static PhysicsShapeBox* create(const Size& size, const PhysicsMaterial& material = PHYSICSSHAPE_MATERIAL_DEFAULT, const Point& offset = Point::ZERO);
+    static float calculateArea(const Size& size);
+    static float calculateMoment(float mass, const Size& size, const Point& offset = Point::ZERO);
+    virtual float calculateDefaultArea();
+    virtual float calculateDefaultMoment();
+    void getPoints(Point* outPoints) const;
+    Size getSize() const;
+    virtual Point getOffset();
+};
+class PhysicsShapePolygon : public PhysicsShape
+{
+    PhysicsShapePolygon();
+    virtual ~PhysicsShapePolygon();
+    static PhysicsShapePolygon* create(const Point* points, int count, const PhysicsMaterial& material = PHYSICSSHAPE_MATERIAL_DEFAULT, const Point& offset = Point::ZERO);
+    static float calculateArea(const Point* points, int count);
+    static float calculateMoment(float mass, const Point* points, int count, const Point& offset = Point::ZERO);
+    float calculateDefaultArea();
+    float calculateDefaultMoment();
+    Point getPoint(int i) const;
+    void getPoints(Point* outPoints) const;
+    long getPointsCount() const;
+    virtual Point getCenter();
+};
+class PhysicsShapeEdgeSegment : public PhysicsShape
+{
+    PhysicsShapeEdgeSegment();
+    virtual ~PhysicsShapeEdgeSegment();
+    static PhysicsShapeEdgeSegment* create(const Point& a, const Point& b, const PhysicsMaterial& material = PHYSICSSHAPE_MATERIAL_DEFAULT, float border = 1);
+    Point getPointA() const;
+    Point getPointB() const;
+    virtual Point getCenter();
+};
+class PhysicsShapeEdgeBox : public PhysicsShape
+{
+    PhysicsShapeEdgeBox();
+    virtual ~PhysicsShapeEdgeBox();
+    static PhysicsShapeEdgeBox* create(const Size& size, const PhysicsMaterial& material = PHYSICSSHAPE_MATERIAL_DEFAULT, float border = 0, const Point& offset = Point::ZERO);
+    virtual Point getOffset();
+    void getPoints(const Point* outPoints) const;
+    long getPointsCount() const;
+};
+class PhysicsShapeEdgePolygon : public PhysicsShape
+{
+    PhysicsShapeEdgePolygon();
+    virtual ~PhysicsShapeEdgePolygon();
+    static PhysicsShapeEdgePolygon* create(const Point* points, int count, const PhysicsMaterial& material = PHYSICSSHAPE_MATERIAL_DEFAULT, float border = 1);
+    virtual Point getCenter();
+    void getPoints(Point* outPoints) const;
+    long getPointsCount() const;
+};
+class PhysicsShapeEdgeChain : public PhysicsShape
+{
+    PhysicsShapeEdgeChain();
+    virtual ~PhysicsShapeEdgeChain();
+    static PhysicsShapeEdgeChain* create(const Point* points, int count, const PhysicsMaterial& material = PHYSICSSHAPE_MATERIAL_DEFAULT, float border = 1);
+    virtual Point getCenter();
+    void getPoints(Point* outPoints) const;
+    long getPointsCount() const;
+};
+*/

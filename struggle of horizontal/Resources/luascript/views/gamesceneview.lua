@@ -3,13 +3,17 @@ _LUAHeroMoveSpeed = 3.0
 function LUALoadGameSceneView(self, viewWideh, viewHeight)
 	LUALoadGameSceneViewResources()
 	_LUAGameSceneView.self = LuaUserDataConversion:toGameSceneView(self)
-	_LUAGameSceneView.mTiledMap = CCTMXTiledMap:create("scene0001.tmx")
+	--_LUAGameSceneView.mTiledMap = CCTMXTiledMap:create("scene0001.tmx")
+	_LUAGameSceneView.mTiledMap = cc.TMXTiledMap:create("scene0001.tmx")
 	_LUAGameSceneView.self:addChild(_LUAGameSceneView.mTiledMap)
 	_LUAGameSceneView.mHeroAnim = LUACreateAndPlayArmature("anim.major")
-	_LUAGameSceneView.mHeroAnim:getAnimation():setSpeedScale(0.1)
-	_LUAGameSceneView.mHeroAnim:setTag(101)
-	_LUAGameSceneView.mTiledMap:addChild(_LUAGameSceneView.mHeroAnim)
-	_LUAGameSceneView.mTiledMap:reorderChild(_LUAGameSceneView.mHeroAnim, 101)
+	_LUAGameSceneView.mHeroAnim:getAnimation():setSpeedScale(0.5)
+	local body = LUAHelper_CreateBoxPhysicsBody(cc.p(0,20), cc.size(100,100), PhysicsMaterial(100000,0,1))
+	body:setDynamic(true)
+	body:setRotationEnable(false)
+	_LUAGameSceneView.mHeroAnim:setPhysicsBody(body)
+	_LUAGameSceneView.mHeroAnim:setPosition(400, 400)
+	_LUAGameSceneView.mTiledMap:addChild(_LUAGameSceneView.mHeroAnim, 10001, 10001)
 
     _LUAGameSceneView.mUILayer = ccs.UILayer:create()
 	_LUAGameSceneView.mUILayer:setTag(201)
@@ -216,7 +220,6 @@ function LUAGameSceneViewTouchesMoved(touchID, x, y)
 				-- set move dist to box2d herobody
 				_LUAGameSceneView.mMoveDirection = tmpMoveDir
 				_LUAGameSceneView.mMoveSpeedScale = tmpSpeed
-				--_LUAGameSceneView.self:getPhysics():changeMoveDirection(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
 				LocalPlayer:instance():move(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
 				if _LUAGameSceneView.mMoveDirection > 0.0 then
 					_LUAGameSceneView.mHeroAnim:setRotationY(0)
@@ -231,7 +234,6 @@ function LUAGameSceneViewTouchesMoved(touchID, x, y)
 			_LUAGameSceneView.mMoveing = false
 			_LUAGameSceneView.mMoveDirection = 0.0
 			_LUAGameSceneView.mMoveSpeedScale = 0.0
-			--_LUAGameSceneView.self:getPhysics():changeMoveDirection(0.0, 0.0)
 			LocalPlayer:instance():move(0.0, 0.0)
 		end
 		local distY = pos.y - _LUAGameSceneView.mTouchMoveBeginPos.y
@@ -306,6 +308,20 @@ function LUAGameSceneViewOnExit()
 end
 
 function LUAGameSceneViewOnTick(dt)
+	local body = _LUAGameSceneView.mHeroAnim:getPhysicsBody()
+	local vel = body:getVelocity()
+	if _LUAGameSceneView.mMoveDirection ~= 0.0 then
+		vel.x = _LUAGameSceneView.mMoveDirection * _LUAGameSceneView.mMoveSpeedScale + _LUAGameSceneView.mMoveDirection
+		--vel.y = -50
+		--if pSettings->mIsHeroDorping and pSettings->mIsOriJump then
+		--	vel.x /= 2.0f
+		--end
+		body:setVelocity(vel)
+	else
+		vel.x = 0.0
+		body:setVelocity(vel)
+	end
+	--[[
 	--local physics = _LUAGameSceneView.self:getPhysics()
 	--local heroPos = physics:getHeroBodyPos()
 	local localPlayer = LocalPlayer:instance()
@@ -336,6 +352,7 @@ function LUAGameSceneViewOnTick(dt)
 		--physics:setIsHeroDorping(false)
 		LocalPlayer:instance():setIsHeroDorping(false)
 	end
+	--]]
 	-- auto scroll map
 	local animPos = cc.p(_LUAGameSceneView.mHeroAnim:getPositionX(), _LUAGameSceneView.mHeroAnim:getPositionY())
 	local mapPos = cc.p(_LUAGameSceneView.mTiledMap:getPositionX(), _LUAGameSceneView.mTiledMap:getPositionY())

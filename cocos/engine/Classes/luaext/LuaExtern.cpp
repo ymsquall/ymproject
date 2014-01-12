@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaExtern
-** Generated automatically by tolua++-1.0.92 on 01/09/14 20:39:35.
+** Generated automatically by tolua++-1.0.92 on 01/11/14 17:52:47.
 */
 
 /****************************************************************************
@@ -45,7 +45,7 @@ extern "C" {
 #include "uiview/Panel/StackPanel.h"
 #include "CocoStudio.h"
 #include "LuaCocoStudioConversion.h"
-#include "LuaTiledHelper.h"
+#include "LuaExternHelper.h"
 
 using namespace cocos2d;
 using namespace cocos2d::extension;
@@ -81,6 +81,20 @@ static int tolua_collect_framework__unity__blockreader (lua_State* tolua_S)
     return 0;
 }
 
+static int tolua_collect_uint32 (lua_State* tolua_S)
+{
+ uint32* self = (uint32*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
+
+static int tolua_collect_Point (lua_State* tolua_S)
+{
+ Point* self = (Point*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
+
 static int tolua_collect_framework__mvvm__DependencyObject (lua_State* tolua_S)
 {
  framework::mvvm::DependencyObject* self = (framework::mvvm::DependencyObject*) tolua_tousertype(tolua_S,1,0);
@@ -91,6 +105,13 @@ static int tolua_collect_framework__mvvm__DependencyObject (lua_State* tolua_S)
 static int tolua_collect_framework__mvvm__FrameworkElement (lua_State* tolua_S)
 {
  framework::mvvm::FrameworkElement* self = (framework::mvvm::FrameworkElement*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
+
+static int tolua_collect_CCPoint (lua_State* tolua_S)
+{
+ CCPoint* self = (CCPoint*) tolua_tousertype(tolua_S,1,0);
     Mtolua_delete(self);
     return 0;
 }
@@ -130,9 +151,9 @@ static int tolua_collect_framework__mvvm__IModel (lua_State* tolua_S)
     return 0;
 }
 
-static int tolua_collect_uint32 (lua_State* tolua_S)
+static int tolua_collect_PhysicsMaterial (lua_State* tolua_S)
 {
- uint32* self = (uint32*) tolua_tousertype(tolua_S,1,0);
+ PhysicsMaterial* self = (PhysicsMaterial*) tolua_tousertype(tolua_S,1,0);
     Mtolua_delete(self);
     return 0;
 }
@@ -152,44 +173,58 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"TMXLayer");
  tolua_usertype(tolua_S,"UILayout");
  tolua_usertype(tolua_S,"LuaTiledHelper");
+ tolua_usertype(tolua_S,"TMXTiledMap");
  tolua_usertype(tolua_S,"UIWidget");
  tolua_usertype(tolua_S,"framework::mvvm::DependencyObject");
  tolua_usertype(tolua_S,"UILabelAtlas");
  tolua_usertype(tolua_S,"UILoadingBar");
+ tolua_usertype(tolua_S,"CCDictionary");
  tolua_usertype(tolua_S,"framework::unity::blockwrite");
  tolua_usertype(tolua_S,"framework::mvvm::INotifyPropertyChanged");
  tolua_usertype(tolua_S,"uint32");
  tolua_usertype(tolua_S,"IView");
+ tolua_usertype(tolua_S,"DataVisitor");
+ tolua_usertype(tolua_S,"PhysicsMaterial");
+ tolua_usertype(tolua_S,"Node");
  tolua_usertype(tolua_S,"framework::mvvm::FrameworkElement");
  tolua_usertype(tolua_S,"UILayer");
+ tolua_usertype(tolua_S,"UILabel");
+ tolua_usertype(tolua_S,"Object");
  tolua_usertype(tolua_S,"UIListView");
+ tolua_usertype(tolua_S,"PhysicsWorld");
  tolua_usertype(tolua_S,"CCObject");
+ tolua_usertype(tolua_S,"PhysicsShape");
+ tolua_usertype(tolua_S,"framework::mvvm::IModel");
+ tolua_usertype(tolua_S,"Size");
+ tolua_usertype(tolua_S,"Point");
+ tolua_usertype(tolua_S,"PhysicsBody");
  tolua_usertype(tolua_S,"framework::unity::blockreader");
  tolua_usertype(tolua_S,"UISlider");
- tolua_usertype(tolua_S,"DataVisitor");
+ tolua_usertype(tolua_S,"Vect");
  tolua_usertype(tolua_S,"Clonable");
  tolua_usertype(tolua_S,"CCArray");
  tolua_usertype(tolua_S,"CCPoint");
+ tolua_usertype(tolua_S,"UIButton");
  tolua_usertype(tolua_S,"CCSize");
  tolua_usertype(tolua_S,"framework::mvvm::DispatcherObject");
- tolua_usertype(tolua_S,"UIButton");
  tolua_usertype(tolua_S,"engine::uiview::StackPanel");
+ tolua_usertype(tolua_S,"CCLayer");
  tolua_usertype(tolua_S,"UICheckBox");
  tolua_usertype(tolua_S,"framework::mvvm::UIElement");
  tolua_usertype(tolua_S,"UIImageView");
  tolua_usertype(tolua_S,"UIScrollView");
  tolua_usertype(tolua_S,"UIPageView");
  tolua_usertype(tolua_S,"engine::uiview::Panel");
- tolua_usertype(tolua_S,"CCLayer");
+ tolua_usertype(tolua_S,"LuaDictHelper");
  tolua_usertype(tolua_S,"framework::mvvm::Visual");
  tolua_usertype(tolua_S,"UITextField");
- tolua_usertype(tolua_S,"UILabel");
+ tolua_usertype(tolua_S,"std::vector<PhysicsJoint*>");
  tolua_usertype(tolua_S,"framework::mvvm::IView");
  tolua_usertype(tolua_S,"UILabelBMFont");
  tolua_usertype(tolua_S,"object");
  tolua_usertype(tolua_S,"engine:uiview:Panel");
  tolua_usertype(tolua_S,"framework::mvvm::ModelBase");
- tolua_usertype(tolua_S,"framework::mvvm::IModel");
+ tolua_usertype(tolua_S,"Array");
  tolua_usertype(tolua_S,"LuaCocoStudioConversion");
  tolua_usertype(tolua_S,"unity::object");
 }
@@ -2788,6 +2823,198 @@ static int tolua_LuaExtern_LuaTiledHelper_getTMXLayerImageSize00(lua_State* tolu
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: getGroupObjects of class  LuaTiledHelper */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_LuaTiledHelper_getGroupObjects00
+static int tolua_LuaExtern_LuaTiledHelper_getGroupObjects00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"LuaTiledHelper",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"TMXTiledMap",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  TMXTiledMap* pMap = ((TMXTiledMap*)  tolua_tousertype(tolua_S,2,0));
+  const char* groupName = ((const char*)  tolua_tostring(tolua_S,3,0));
+  {
+   CCArray* tolua_ret = (CCArray*)  LuaTiledHelper::getGroupObjects(pMap,groupName);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCArray");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getGroupObjects'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getDictAtIndexWithGroup of class  LuaTiledHelper */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_LuaTiledHelper_getDictAtIndexWithGroup00
+static int tolua_LuaExtern_LuaTiledHelper_getDictAtIndexWithGroup00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"LuaTiledHelper",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"CCArray",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  CCArray* group = ((CCArray*)  tolua_tousertype(tolua_S,2,0));
+  int i = ((int)  tolua_tonumber(tolua_S,3,0));
+  {
+   CCDictionary* tolua_ret = (CCDictionary*)  LuaTiledHelper::getDictAtIndexWithGroup(group,i);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCDictionary");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getDictAtIndexWithGroup'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getIntValue of class  LuaDictHelper */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_LuaDictHelper_getIntValue00
+static int tolua_LuaExtern_LuaDictHelper_getIntValue00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"LuaDictHelper",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"CCDictionary",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  CCDictionary* pDict = ((CCDictionary*)  tolua_tousertype(tolua_S,2,0));
+  const char* key = ((const char*)  tolua_tostring(tolua_S,3,0));
+  {
+   int tolua_ret = (int)  LuaDictHelper::getIntValue(pDict,key);
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getIntValue'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getStringValue of class  LuaDictHelper */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_LuaDictHelper_getStringValue00
+static int tolua_LuaExtern_LuaDictHelper_getStringValue00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"LuaDictHelper",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"CCDictionary",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  CCDictionary* pDict = ((CCDictionary*)  tolua_tousertype(tolua_S,2,0));
+  const char* key = ((const char*)  tolua_tostring(tolua_S,3,0));
+  {
+   std::string tolua_ret = (std::string)  LuaDictHelper::getStringValue(pDict,key);
+   tolua_pushcppstring(tolua_S,(const char*)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getStringValue'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getArrayValue of class  LuaDictHelper */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_LuaDictHelper_getArrayValue00
+static int tolua_LuaExtern_LuaDictHelper_getArrayValue00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"LuaDictHelper",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"CCDictionary",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  CCDictionary* pDict = ((CCDictionary*)  tolua_tousertype(tolua_S,2,0));
+  const char* key = ((const char*)  tolua_tostring(tolua_S,3,0));
+  {
+   CCArray* tolua_ret = (CCArray*)  LuaDictHelper::getArrayValue(pDict,key);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCArray");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getArrayValue'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getDictValueAtIndexWithArray of class  LuaDictHelper */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_LuaDictHelper_getDictValueAtIndexWithArray00
+static int tolua_LuaExtern_LuaDictHelper_getDictValueAtIndexWithArray00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"LuaDictHelper",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"CCArray",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  CCArray* pArray = ((CCArray*)  tolua_tousertype(tolua_S,2,0));
+  int i = ((int)  tolua_tonumber(tolua_S,3,0));
+  {
+   CCDictionary* tolua_ret = (CCDictionary*)  LuaDictHelper::getDictValueAtIndexWithArray(pArray,i);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCDictionary");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getDictValueAtIndexWithArray'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: new of class  engine::uiview::Panel */
 #ifndef TOLUA_DISABLE_tolua_LuaExtern_engine_uiview_Panel_new00
 static int tolua_LuaExtern_engine_uiview_Panel_new00(lua_State* tolua_S)
@@ -4505,6 +4732,3753 @@ static int tolua_get_CCArray___Clonable__(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: create of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_create00
+static int tolua_LuaExtern_PhysicsBody_create00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   PhysicsBody* tolua_ret = (PhysicsBody*)  PhysicsBody::create();
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsBody");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'create'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: create of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_create01
+static int tolua_LuaExtern_PhysicsBody_create01(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  float mass = ((float)  tolua_tonumber(tolua_S,2,0));
+  {
+   PhysicsBody* tolua_ret = (PhysicsBody*)  PhysicsBody::create(mass);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsBody");
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_PhysicsBody_create00(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: create of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_create02
+static int tolua_LuaExtern_PhysicsBody_create02(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  float mass = ((float)  tolua_tonumber(tolua_S,2,0));
+  float moment = ((float)  tolua_tonumber(tolua_S,3,0));
+  {
+   PhysicsBody* tolua_ret = (PhysicsBody*)  PhysicsBody::create(mass,moment);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsBody");
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_PhysicsBody_create01(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createCircle of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_createCircle00
+static int tolua_LuaExtern_PhysicsBody_createCircle00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  float radius = ((float)  tolua_tonumber(tolua_S,2,0));
+  {
+   PhysicsBody* tolua_ret = (PhysicsBody*)  PhysicsBody::createCircle(radius);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsBody");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'createCircle'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createCircle of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_createCircle01
+static int tolua_LuaExtern_PhysicsBody_createCircle01(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,3,&tolua_err) || !tolua_isusertype(tolua_S,3,"const PhysicsMaterial",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  float radius = ((float)  tolua_tonumber(tolua_S,2,0));
+  const PhysicsMaterial* material = ((const PhysicsMaterial*)  tolua_tousertype(tolua_S,3,0));
+  {
+   PhysicsBody* tolua_ret = (PhysicsBody*)  PhysicsBody::createCircle(radius,*material);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsBody");
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_PhysicsBody_createCircle00(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createCircle of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_createCircle02
+static int tolua_LuaExtern_PhysicsBody_createCircle02(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,3,&tolua_err) || !tolua_isusertype(tolua_S,3,"const PhysicsMaterial",0,&tolua_err)) ||
+     (tolua_isvaluenil(tolua_S,4,&tolua_err) || !tolua_isusertype(tolua_S,4,"const Point",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,5,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  float radius = ((float)  tolua_tonumber(tolua_S,2,0));
+  const PhysicsMaterial* material = ((const PhysicsMaterial*)  tolua_tousertype(tolua_S,3,0));
+  const Point* offset = ((const Point*)  tolua_tousertype(tolua_S,4,0));
+  {
+   PhysicsBody* tolua_ret = (PhysicsBody*)  PhysicsBody::createCircle(radius,*material,*offset);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsBody");
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_PhysicsBody_createCircle01(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createBox of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_createBox00
+static int tolua_LuaExtern_PhysicsBody_createBox00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const CCSize",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const CCSize* size = ((const CCSize*)  tolua_tousertype(tolua_S,2,0));
+  {
+   PhysicsBody* tolua_ret = (PhysicsBody*)  PhysicsBody::createBox(*size);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsBody");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'createBox'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createBox of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_createBox01
+static int tolua_LuaExtern_PhysicsBody_createBox01(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const CCSize",0,&tolua_err)) ||
+     (tolua_isvaluenil(tolua_S,3,&tolua_err) || !tolua_isusertype(tolua_S,3,"const PhysicsMaterial",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  const CCSize* size = ((const CCSize*)  tolua_tousertype(tolua_S,2,0));
+  const PhysicsMaterial* material = ((const PhysicsMaterial*)  tolua_tousertype(tolua_S,3,0));
+  {
+   PhysicsBody* tolua_ret = (PhysicsBody*)  PhysicsBody::createBox(*size,*material);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsBody");
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_PhysicsBody_createBox00(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createBox of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_createBox02
+static int tolua_LuaExtern_PhysicsBody_createBox02(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const CCSize",0,&tolua_err)) ||
+     (tolua_isvaluenil(tolua_S,3,&tolua_err) || !tolua_isusertype(tolua_S,3,"const PhysicsMaterial",0,&tolua_err)) ||
+     (tolua_isvaluenil(tolua_S,4,&tolua_err) || !tolua_isusertype(tolua_S,4,"const CCPoint",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,5,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  const CCSize* size = ((const CCSize*)  tolua_tousertype(tolua_S,2,0));
+  const PhysicsMaterial* material = ((const PhysicsMaterial*)  tolua_tousertype(tolua_S,3,0));
+  const CCPoint* offset = ((const CCPoint*)  tolua_tousertype(tolua_S,4,0));
+  {
+   PhysicsBody* tolua_ret = (PhysicsBody*)  PhysicsBody::createBox(*size,*material,*offset);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsBody");
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_PhysicsBody_createBox01(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createPolygon of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_createPolygon00
+static int tolua_LuaExtern_PhysicsBody_createPolygon00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"const Point",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const Point* points = ((const Point*)  tolua_tousertype(tolua_S,2,0));
+  int count = ((int)  tolua_tonumber(tolua_S,3,0));
+  {
+   PhysicsBody* tolua_ret = (PhysicsBody*)  PhysicsBody::createPolygon(points,count);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsBody");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'createPolygon'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createPolygon of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_createPolygon01
+static int tolua_LuaExtern_PhysicsBody_createPolygon01(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"const Point",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,4,&tolua_err) || !tolua_isusertype(tolua_S,4,"const PhysicsMaterial",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,5,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  const Point* points = ((const Point*)  tolua_tousertype(tolua_S,2,0));
+  int count = ((int)  tolua_tonumber(tolua_S,3,0));
+  const PhysicsMaterial* material = ((const PhysicsMaterial*)  tolua_tousertype(tolua_S,4,0));
+  {
+   PhysicsBody* tolua_ret = (PhysicsBody*)  PhysicsBody::createPolygon(points,count,*material);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsBody");
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_PhysicsBody_createPolygon00(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createPolygon of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_createPolygon02
+static int tolua_LuaExtern_PhysicsBody_createPolygon02(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"const Point",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,4,&tolua_err) || !tolua_isusertype(tolua_S,4,"const PhysicsMaterial",0,&tolua_err)) ||
+     (tolua_isvaluenil(tolua_S,5,&tolua_err) || !tolua_isusertype(tolua_S,5,"const Point",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,6,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  const Point* points = ((const Point*)  tolua_tousertype(tolua_S,2,0));
+  int count = ((int)  tolua_tonumber(tolua_S,3,0));
+  const PhysicsMaterial* material = ((const PhysicsMaterial*)  tolua_tousertype(tolua_S,4,0));
+  const Point* offset = ((const Point*)  tolua_tousertype(tolua_S,5,0));
+  {
+   PhysicsBody* tolua_ret = (PhysicsBody*)  PhysicsBody::createPolygon(points,count,*material,*offset);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsBody");
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_PhysicsBody_createPolygon01(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createEdgeSegment of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_createEdgeSegment00
+static int tolua_LuaExtern_PhysicsBody_createEdgeSegment00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const CCPoint",0,&tolua_err)) ||
+     (tolua_isvaluenil(tolua_S,3,&tolua_err) || !tolua_isusertype(tolua_S,3,"const CCPoint",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const CCPoint* a = ((const CCPoint*)  tolua_tousertype(tolua_S,2,0));
+  const CCPoint* b = ((const CCPoint*)  tolua_tousertype(tolua_S,3,0));
+  {
+   PhysicsBody* tolua_ret = (PhysicsBody*)  PhysicsBody::createEdgeSegment(*a,*b);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsBody");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'createEdgeSegment'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createEdgeSegment of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_createEdgeSegment01
+static int tolua_LuaExtern_PhysicsBody_createEdgeSegment01(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const CCPoint",0,&tolua_err)) ||
+     (tolua_isvaluenil(tolua_S,3,&tolua_err) || !tolua_isusertype(tolua_S,3,"const CCPoint",0,&tolua_err)) ||
+     (tolua_isvaluenil(tolua_S,4,&tolua_err) || !tolua_isusertype(tolua_S,4,"const PhysicsMaterial",0,&tolua_err)) ||
+     !tolua_isnumber(tolua_S,5,1,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,6,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  const CCPoint* a = ((const CCPoint*)  tolua_tousertype(tolua_S,2,0));
+  const CCPoint* b = ((const CCPoint*)  tolua_tousertype(tolua_S,3,0));
+  const PhysicsMaterial* material = ((const PhysicsMaterial*)  tolua_tousertype(tolua_S,4,0));
+  float border = ((float)  tolua_tonumber(tolua_S,5,1));
+  {
+   PhysicsBody* tolua_ret = (PhysicsBody*)  PhysicsBody::createEdgeSegment(*a,*b,*material,border);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsBody");
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_PhysicsBody_createEdgeSegment00(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createEdgeBox of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_createEdgeBox00
+static int tolua_LuaExtern_PhysicsBody_createEdgeBox00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const Size",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const Size* size = ((const Size*)  tolua_tousertype(tolua_S,2,0));
+  {
+   PhysicsBody* tolua_ret = (PhysicsBody*)  PhysicsBody::createEdgeBox(*size);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsBody");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'createEdgeBox'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createEdgeBox of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_createEdgeBox01
+static int tolua_LuaExtern_PhysicsBody_createEdgeBox01(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const Size",0,&tolua_err)) ||
+     (tolua_isvaluenil(tolua_S,3,&tolua_err) || !tolua_isusertype(tolua_S,3,"const PhysicsMaterial",0,&tolua_err)) ||
+     !tolua_isnumber(tolua_S,4,1,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,5,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  const Size* size = ((const Size*)  tolua_tousertype(tolua_S,2,0));
+  const PhysicsMaterial* material = ((const PhysicsMaterial*)  tolua_tousertype(tolua_S,3,0));
+  float border = ((float)  tolua_tonumber(tolua_S,4,1));
+  {
+   PhysicsBody* tolua_ret = (PhysicsBody*)  PhysicsBody::createEdgeBox(*size,*material,border);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsBody");
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_PhysicsBody_createEdgeBox00(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createEdgeBox of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_createEdgeBox02
+static int tolua_LuaExtern_PhysicsBody_createEdgeBox02(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const Size",0,&tolua_err)) ||
+     (tolua_isvaluenil(tolua_S,3,&tolua_err) || !tolua_isusertype(tolua_S,3,"const PhysicsMaterial",0,&tolua_err)) ||
+     !tolua_isnumber(tolua_S,4,0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,5,&tolua_err) || !tolua_isusertype(tolua_S,5,"const Point",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,6,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  const Size* size = ((const Size*)  tolua_tousertype(tolua_S,2,0));
+  const PhysicsMaterial* material = ((const PhysicsMaterial*)  tolua_tousertype(tolua_S,3,0));
+  float border = ((float)  tolua_tonumber(tolua_S,4,0));
+  const Point* offset = ((const Point*)  tolua_tousertype(tolua_S,5,0));
+  {
+   PhysicsBody* tolua_ret = (PhysicsBody*)  PhysicsBody::createEdgeBox(*size,*material,border,*offset);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsBody");
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_PhysicsBody_createEdgeBox01(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createEdgePolygon of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_createEdgePolygon00
+static int tolua_LuaExtern_PhysicsBody_createEdgePolygon00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"const Point",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const Point* points = ((const Point*)  tolua_tousertype(tolua_S,2,0));
+  int count = ((int)  tolua_tonumber(tolua_S,3,0));
+  {
+   PhysicsBody* tolua_ret = (PhysicsBody*)  PhysicsBody::createEdgePolygon(points,count);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsBody");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'createEdgePolygon'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createEdgePolygon of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_createEdgePolygon01
+static int tolua_LuaExtern_PhysicsBody_createEdgePolygon01(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"const Point",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,4,&tolua_err) || !tolua_isusertype(tolua_S,4,"const PhysicsMaterial",0,&tolua_err)) ||
+     !tolua_isnumber(tolua_S,5,1,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,6,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  const Point* points = ((const Point*)  tolua_tousertype(tolua_S,2,0));
+  int count = ((int)  tolua_tonumber(tolua_S,3,0));
+  const PhysicsMaterial* material = ((const PhysicsMaterial*)  tolua_tousertype(tolua_S,4,0));
+  float border = ((float)  tolua_tonumber(tolua_S,5,1));
+  {
+   PhysicsBody* tolua_ret = (PhysicsBody*)  PhysicsBody::createEdgePolygon(points,count,*material,border);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsBody");
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_PhysicsBody_createEdgePolygon00(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createEdgeChain of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_createEdgeChain00
+static int tolua_LuaExtern_PhysicsBody_createEdgeChain00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"const Point",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const Point* points = ((const Point*)  tolua_tousertype(tolua_S,2,0));
+  int count = ((int)  tolua_tonumber(tolua_S,3,0));
+  {
+   PhysicsBody* tolua_ret = (PhysicsBody*)  PhysicsBody::createEdgeChain(points,count);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsBody");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'createEdgeChain'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createEdgeChain of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_createEdgeChain01
+static int tolua_LuaExtern_PhysicsBody_createEdgeChain01(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"const Point",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,4,&tolua_err) || !tolua_isusertype(tolua_S,4,"const PhysicsMaterial",0,&tolua_err)) ||
+     !tolua_isnumber(tolua_S,5,1,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,6,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  const Point* points = ((const Point*)  tolua_tousertype(tolua_S,2,0));
+  int count = ((int)  tolua_tonumber(tolua_S,3,0));
+  const PhysicsMaterial* material = ((const PhysicsMaterial*)  tolua_tousertype(tolua_S,4,0));
+  float border = ((float)  tolua_tonumber(tolua_S,5,1));
+  {
+   PhysicsBody* tolua_ret = (PhysicsBody*)  PhysicsBody::createEdgeChain(points,count,*material,border);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsBody");
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_PhysicsBody_createEdgeChain00(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: addShape of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_addShape00
+static int tolua_LuaExtern_PhysicsBody_addShape00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"PhysicsShape",0,&tolua_err) ||
+     !tolua_isboolean(tolua_S,3,1,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  PhysicsShape* shape = ((PhysicsShape*)  tolua_tousertype(tolua_S,2,0));
+  bool addMassAndMoment = ((bool)  tolua_toboolean(tolua_S,3,true));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'addShape'", NULL);
+#endif
+  {
+   PhysicsShape* tolua_ret = (PhysicsShape*)  self->addShape(shape,addMassAndMoment);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsShape");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'addShape'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: removeShape of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_removeShape00
+static int tolua_LuaExtern_PhysicsBody_removeShape00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"PhysicsShape",0,&tolua_err) ||
+     !tolua_isboolean(tolua_S,3,1,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  PhysicsShape* shape = ((PhysicsShape*)  tolua_tousertype(tolua_S,2,0));
+  bool reduceMassAndMoment = ((bool)  tolua_toboolean(tolua_S,3,true));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'removeShape'", NULL);
+#endif
+  {
+   self->removeShape(shape,reduceMassAndMoment);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'removeShape'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: removeShape of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_removeShape01
+static int tolua_LuaExtern_PhysicsBody_removeShape01(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isboolean(tolua_S,3,1,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  int tag = ((int)  tolua_tonumber(tolua_S,2,0));
+  bool reduceMassAndMoment = ((bool)  tolua_toboolean(tolua_S,3,true));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'removeShape'", NULL);
+#endif
+  {
+   self->removeShape(tag,reduceMassAndMoment);
+  }
+ }
+ return 0;
+tolua_lerror:
+ return tolua_LuaExtern_PhysicsBody_removeShape00(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: removeAllShapes of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_removeAllShapes00
+static int tolua_LuaExtern_PhysicsBody_removeAllShapes00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isboolean(tolua_S,2,1,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  bool reduceMassAndMoment = ((bool)  tolua_toboolean(tolua_S,2,true));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'removeAllShapes'", NULL);
+#endif
+  {
+   self->removeAllShapes(reduceMassAndMoment);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'removeAllShapes'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getShapes of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_getShapes00
+static int tolua_LuaExtern_PhysicsBody_getShapes00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsBody* self = (const PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getShapes'", NULL);
+#endif
+  {
+   Array* tolua_ret = (Array*)  self->getShapes();
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"Array");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getShapes'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getFirstShape of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_getFirstShape00
+static int tolua_LuaExtern_PhysicsBody_getFirstShape00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsBody* self = (const PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getFirstShape'", NULL);
+#endif
+  {
+   PhysicsShape* tolua_ret = (PhysicsShape*)  self->getFirstShape();
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsShape");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getFirstShape'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getShape of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_getShape00
+static int tolua_LuaExtern_PhysicsBody_getShape00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsBody* self = (const PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  int tag = ((int)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getShape'", NULL);
+#endif
+  {
+   PhysicsShape* tolua_ret = (PhysicsShape*)  self->getShape(tag);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsShape");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getShape'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: applyForce of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_applyForce00
+static int tolua_LuaExtern_PhysicsBody_applyForce00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const Vect",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  const Vect* force = ((const Vect*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'applyForce'", NULL);
+#endif
+  {
+   self->applyForce(*force);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'applyForce'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: applyForce of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_applyForce01
+static int tolua_LuaExtern_PhysicsBody_applyForce01(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const Vect",0,&tolua_err)) ||
+     (tolua_isvaluenil(tolua_S,3,&tolua_err) || !tolua_isusertype(tolua_S,3,"const Point",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  const Vect* force = ((const Vect*)  tolua_tousertype(tolua_S,2,0));
+  const Point* offset = ((const Point*)  tolua_tousertype(tolua_S,3,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'applyForce'", NULL);
+#endif
+  {
+   self->applyForce(*force,*offset);
+  }
+ }
+ return 0;
+tolua_lerror:
+ return tolua_LuaExtern_PhysicsBody_applyForce00(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: resetForces of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_resetForces00
+static int tolua_LuaExtern_PhysicsBody_resetForces00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'resetForces'", NULL);
+#endif
+  {
+   self->resetForces();
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'resetForces'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: applyImpulse of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_applyImpulse00
+static int tolua_LuaExtern_PhysicsBody_applyImpulse00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const Vect",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  const Vect* impulse = ((const Vect*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'applyImpulse'", NULL);
+#endif
+  {
+   self->applyImpulse(*impulse);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'applyImpulse'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: applyImpulse of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_applyImpulse01
+static int tolua_LuaExtern_PhysicsBody_applyImpulse01(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const Vect",0,&tolua_err)) ||
+     (tolua_isvaluenil(tolua_S,3,&tolua_err) || !tolua_isusertype(tolua_S,3,"const Point",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  const Vect* impulse = ((const Vect*)  tolua_tousertype(tolua_S,2,0));
+  const Point* offset = ((const Point*)  tolua_tousertype(tolua_S,3,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'applyImpulse'", NULL);
+#endif
+  {
+   self->applyImpulse(*impulse,*offset);
+  }
+ }
+ return 0;
+tolua_lerror:
+ return tolua_LuaExtern_PhysicsBody_applyImpulse00(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: applyTorque of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_applyTorque00
+static int tolua_LuaExtern_PhysicsBody_applyTorque00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  float torque = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'applyTorque'", NULL);
+#endif
+  {
+   self->applyTorque(torque);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'applyTorque'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setVelocity of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_setVelocity00
+static int tolua_LuaExtern_PhysicsBody_setVelocity00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const CCPoint",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  const CCPoint* velocity = ((const CCPoint*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setVelocity'", NULL);
+#endif
+  {
+   self->setVelocity(*velocity);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setVelocity'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getVelocity of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_getVelocity00
+static int tolua_LuaExtern_PhysicsBody_getVelocity00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getVelocity'", NULL);
+#endif
+  {
+   CCPoint tolua_ret = (CCPoint)  self->getVelocity();
+   {
+#ifdef __cplusplus
+    void* tolua_obj = Mtolua_new((CCPoint)(tolua_ret));
+     tolua_pushusertype(tolua_S,tolua_obj,"CCPoint");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#else
+    void* tolua_obj = tolua_copy(tolua_S,(void*)&tolua_ret,sizeof(CCPoint));
+     tolua_pushusertype(tolua_S,tolua_obj,"CCPoint");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#endif
+   }
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getVelocity'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setAngularVelocity of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_setAngularVelocity00
+static int tolua_LuaExtern_PhysicsBody_setAngularVelocity00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  float velocity = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setAngularVelocity'", NULL);
+#endif
+  {
+   self->setAngularVelocity(velocity);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setAngularVelocity'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getVelocityAtLocalPoint of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_getVelocityAtLocalPoint00
+static int tolua_LuaExtern_PhysicsBody_getVelocityAtLocalPoint00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const Point",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  const Point* point = ((const Point*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getVelocityAtLocalPoint'", NULL);
+#endif
+  {
+   Point tolua_ret = (Point)  self->getVelocityAtLocalPoint(*point);
+   {
+#ifdef __cplusplus
+    void* tolua_obj = Mtolua_new((Point)(tolua_ret));
+     tolua_pushusertype(tolua_S,tolua_obj,"Point");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#else
+    void* tolua_obj = tolua_copy(tolua_S,(void*)&tolua_ret,sizeof(Point));
+     tolua_pushusertype(tolua_S,tolua_obj,"Point");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#endif
+   }
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getVelocityAtLocalPoint'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getVelocityAtWorldPoint of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_getVelocityAtWorldPoint00
+static int tolua_LuaExtern_PhysicsBody_getVelocityAtWorldPoint00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const Point",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  const Point* point = ((const Point*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getVelocityAtWorldPoint'", NULL);
+#endif
+  {
+   Point tolua_ret = (Point)  self->getVelocityAtWorldPoint(*point);
+   {
+#ifdef __cplusplus
+    void* tolua_obj = Mtolua_new((Point)(tolua_ret));
+     tolua_pushusertype(tolua_S,tolua_obj,"Point");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#else
+    void* tolua_obj = tolua_copy(tolua_S,(void*)&tolua_ret,sizeof(Point));
+     tolua_pushusertype(tolua_S,tolua_obj,"Point");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#endif
+   }
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getVelocityAtWorldPoint'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getAngularVelocity of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_getAngularVelocity00
+static int tolua_LuaExtern_PhysicsBody_getAngularVelocity00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getAngularVelocity'", NULL);
+#endif
+  {
+   float tolua_ret = (float)  self->getAngularVelocity();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getAngularVelocity'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setVelocityLimit of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_setVelocityLimit00
+static int tolua_LuaExtern_PhysicsBody_setVelocityLimit00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  float limit = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setVelocityLimit'", NULL);
+#endif
+  {
+   self->setVelocityLimit(limit);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setVelocityLimit'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getVelocityLimit of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_getVelocityLimit00
+static int tolua_LuaExtern_PhysicsBody_getVelocityLimit00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getVelocityLimit'", NULL);
+#endif
+  {
+   float tolua_ret = (float)  self->getVelocityLimit();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getVelocityLimit'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setAngularVelocityLimit of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_setAngularVelocityLimit00
+static int tolua_LuaExtern_PhysicsBody_setAngularVelocityLimit00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  float limit = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setAngularVelocityLimit'", NULL);
+#endif
+  {
+   self->setAngularVelocityLimit(limit);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setAngularVelocityLimit'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getAngularVelocityLimit of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_getAngularVelocityLimit00
+static int tolua_LuaExtern_PhysicsBody_getAngularVelocityLimit00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getAngularVelocityLimit'", NULL);
+#endif
+  {
+   float tolua_ret = (float)  self->getAngularVelocityLimit();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getAngularVelocityLimit'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: removeFromWorld of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_removeFromWorld00
+static int tolua_LuaExtern_PhysicsBody_removeFromWorld00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'removeFromWorld'", NULL);
+#endif
+  {
+   self->removeFromWorld();
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'removeFromWorld'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getWorld of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_getWorld00
+static int tolua_LuaExtern_PhysicsBody_getWorld00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsBody* self = (const PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getWorld'", NULL);
+#endif
+  {
+   PhysicsWorld* tolua_ret = (PhysicsWorld*)  self->getWorld();
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsWorld");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getWorld'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getJoints of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_getJoints00
+static int tolua_LuaExtern_PhysicsBody_getJoints00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsBody* self = (const PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getJoints'", NULL);
+#endif
+  {
+   const std::vector<PhysicsJoint*>& tolua_ret = (const std::vector<PhysicsJoint*>&)  self->getJoints();
+    tolua_pushusertype(tolua_S,(void*)&tolua_ret,"const std::vector<PhysicsJoint*>");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getJoints'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getNode of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_getNode00
+static int tolua_LuaExtern_PhysicsBody_getNode00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsBody* self = (const PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getNode'", NULL);
+#endif
+  {
+   Node* tolua_ret = (Node*)  self->getNode();
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"Node");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getNode'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setCategoryBitmask of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_setCategoryBitmask00
+static int tolua_LuaExtern_PhysicsBody_setCategoryBitmask00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  int bitmask = ((int)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setCategoryBitmask'", NULL);
+#endif
+  {
+   self->setCategoryBitmask(bitmask);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setCategoryBitmask'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setContactTestBitmask of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_setContactTestBitmask00
+static int tolua_LuaExtern_PhysicsBody_setContactTestBitmask00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  int bitmask = ((int)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setContactTestBitmask'", NULL);
+#endif
+  {
+   self->setContactTestBitmask(bitmask);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setContactTestBitmask'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setCollisionBitmask of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_setCollisionBitmask00
+static int tolua_LuaExtern_PhysicsBody_setCollisionBitmask00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  int bitmask = ((int)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setCollisionBitmask'", NULL);
+#endif
+  {
+   self->setCollisionBitmask(bitmask);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setCollisionBitmask'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getCategoryBitmask of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_getCategoryBitmask00
+static int tolua_LuaExtern_PhysicsBody_getCategoryBitmask00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsBody* self = (const PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getCategoryBitmask'", NULL);
+#endif
+  {
+   int tolua_ret = (int)  self->getCategoryBitmask();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getCategoryBitmask'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getContactTestBitmask of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_getContactTestBitmask00
+static int tolua_LuaExtern_PhysicsBody_getContactTestBitmask00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsBody* self = (const PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getContactTestBitmask'", NULL);
+#endif
+  {
+   int tolua_ret = (int)  self->getContactTestBitmask();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getContactTestBitmask'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getCollisionBitmask of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_getCollisionBitmask00
+static int tolua_LuaExtern_PhysicsBody_getCollisionBitmask00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsBody* self = (const PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getCollisionBitmask'", NULL);
+#endif
+  {
+   int tolua_ret = (int)  self->getCollisionBitmask();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getCollisionBitmask'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setGroup of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_setGroup00
+static int tolua_LuaExtern_PhysicsBody_setGroup00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  int group = ((int)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setGroup'", NULL);
+#endif
+  {
+   self->setGroup(group);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setGroup'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getGroup of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_getGroup00
+static int tolua_LuaExtern_PhysicsBody_getGroup00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsBody* self = (const PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getGroup'", NULL);
+#endif
+  {
+   int tolua_ret = (int)  self->getGroup();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getGroup'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getPosition of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_getPosition00
+static int tolua_LuaExtern_PhysicsBody_getPosition00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsBody* self = (const PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getPosition'", NULL);
+#endif
+  {
+   Point tolua_ret = (Point)  self->getPosition();
+   {
+#ifdef __cplusplus
+    void* tolua_obj = Mtolua_new((Point)(tolua_ret));
+     tolua_pushusertype(tolua_S,tolua_obj,"Point");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#else
+    void* tolua_obj = tolua_copy(tolua_S,(void*)&tolua_ret,sizeof(Point));
+     tolua_pushusertype(tolua_S,tolua_obj,"Point");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#endif
+   }
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getPosition'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getRotation of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_getRotation00
+static int tolua_LuaExtern_PhysicsBody_getRotation00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsBody* self = (const PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getRotation'", NULL);
+#endif
+  {
+   float tolua_ret = (float)  self->getRotation();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getRotation'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: isDynamic of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_isDynamic00
+static int tolua_LuaExtern_PhysicsBody_isDynamic00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsBody* self = (const PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'isDynamic'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->isDynamic();
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'isDynamic'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setDynamic of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_setDynamic00
+static int tolua_LuaExtern_PhysicsBody_setDynamic00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isboolean(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  bool dynamic = ((bool)  tolua_toboolean(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setDynamic'", NULL);
+#endif
+  {
+   self->setDynamic(dynamic);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setDynamic'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setMass of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_setMass00
+static int tolua_LuaExtern_PhysicsBody_setMass00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  float mass = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setMass'", NULL);
+#endif
+  {
+   self->setMass(mass);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setMass'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getMass of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_getMass00
+static int tolua_LuaExtern_PhysicsBody_getMass00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsBody* self = (const PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getMass'", NULL);
+#endif
+  {
+   float tolua_ret = (float)  self->getMass();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getMass'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: addMass of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_addMass00
+static int tolua_LuaExtern_PhysicsBody_addMass00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  float mass = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'addMass'", NULL);
+#endif
+  {
+   self->addMass(mass);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'addMass'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setMoment of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_setMoment00
+static int tolua_LuaExtern_PhysicsBody_setMoment00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  float moment = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setMoment'", NULL);
+#endif
+  {
+   self->setMoment(moment);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setMoment'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getMoment of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_getMoment00
+static int tolua_LuaExtern_PhysicsBody_getMoment00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsBody* self = (const PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  float moment = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getMoment'", NULL);
+#endif
+  {
+   float tolua_ret = (float)  self->getMoment(moment);
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getMoment'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: addMoment of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_addMoment00
+static int tolua_LuaExtern_PhysicsBody_addMoment00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  float moment = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'addMoment'", NULL);
+#endif
+  {
+   self->addMoment(moment);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'addMoment'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getLinearDamping of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_getLinearDamping00
+static int tolua_LuaExtern_PhysicsBody_getLinearDamping00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsBody* self = (const PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getLinearDamping'", NULL);
+#endif
+  {
+   float tolua_ret = (float)  self->getLinearDamping();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getLinearDamping'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setLinearDamping of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_setLinearDamping00
+static int tolua_LuaExtern_PhysicsBody_setLinearDamping00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  float damping = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setLinearDamping'", NULL);
+#endif
+  {
+   self->setLinearDamping(damping);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setLinearDamping'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setAngularDamping of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_setAngularDamping00
+static int tolua_LuaExtern_PhysicsBody_setAngularDamping00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  float damping = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setAngularDamping'", NULL);
+#endif
+  {
+   self->setAngularDamping(damping);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setAngularDamping'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: isEnabled of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_isEnabled00
+static int tolua_LuaExtern_PhysicsBody_isEnabled00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsBody* self = (const PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'isEnabled'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->isEnabled();
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'isEnabled'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setEnable of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_setEnable00
+static int tolua_LuaExtern_PhysicsBody_setEnable00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isboolean(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  bool enable = ((bool)  tolua_toboolean(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setEnable'", NULL);
+#endif
+  {
+   self->setEnable(enable);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setEnable'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: isRotationEnabled of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_isRotationEnabled00
+static int tolua_LuaExtern_PhysicsBody_isRotationEnabled00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsBody* self = (const PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'isRotationEnabled'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->isRotationEnabled();
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'isRotationEnabled'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setRotationEnable of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_setRotationEnable00
+static int tolua_LuaExtern_PhysicsBody_setRotationEnable00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isboolean(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  bool enable = ((bool)  tolua_toboolean(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setRotationEnable'", NULL);
+#endif
+  {
+   self->setRotationEnable(enable);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setRotationEnable'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: isGravityEnabled of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_isGravityEnabled00
+static int tolua_LuaExtern_PhysicsBody_isGravityEnabled00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsBody* self = (const PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'isGravityEnabled'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->isGravityEnabled();
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'isGravityEnabled'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setGravityEnable of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_setGravityEnable00
+static int tolua_LuaExtern_PhysicsBody_setGravityEnable00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isboolean(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  bool enable = ((bool)  tolua_toboolean(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setGravityEnable'", NULL);
+#endif
+  {
+   self->setGravityEnable(enable);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setGravityEnable'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getTag of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_getTag00
+static int tolua_LuaExtern_PhysicsBody_getTag00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsBody",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsBody* self = (const PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getTag'", NULL);
+#endif
+  {
+   int tolua_ret = (int)  self->getTag();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getTag'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setTag of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_setTag00
+static int tolua_LuaExtern_PhysicsBody_setTag00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  int tag = ((int)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setTag'", NULL);
+#endif
+  {
+   self->setTag(tag);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setTag'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: world2Local of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_world2Local00
+static int tolua_LuaExtern_PhysicsBody_world2Local00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const Point",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  const Point* point = ((const Point*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'world2Local'", NULL);
+#endif
+  {
+   Point tolua_ret = (Point)  self->world2Local(*point);
+   {
+#ifdef __cplusplus
+    void* tolua_obj = Mtolua_new((Point)(tolua_ret));
+     tolua_pushusertype(tolua_S,tolua_obj,"Point");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#else
+    void* tolua_obj = tolua_copy(tolua_S,(void*)&tolua_ret,sizeof(Point));
+     tolua_pushusertype(tolua_S,tolua_obj,"Point");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#endif
+   }
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'world2Local'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: local2World of class  PhysicsBody */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsBody_local2World00
+static int tolua_LuaExtern_PhysicsBody_local2World00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsBody",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const Point",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsBody* self = (PhysicsBody*)  tolua_tousertype(tolua_S,1,0);
+  const Point* point = ((const Point*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'local2World'", NULL);
+#endif
+  {
+   Point tolua_ret = (Point)  self->local2World(*point);
+   {
+#ifdef __cplusplus
+    void* tolua_obj = Mtolua_new((Point)(tolua_ret));
+     tolua_pushusertype(tolua_S,tolua_obj,"Point");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#else
+    void* tolua_obj = tolua_copy(tolua_S,(void*)&tolua_ret,sizeof(Point));
+     tolua_pushusertype(tolua_S,tolua_obj,"Point");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#endif
+   }
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'local2World'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* get function: density of class  PhysicsMaterial */
+#ifndef TOLUA_DISABLE_tolua_get_PhysicsMaterial_density
+static int tolua_get_PhysicsMaterial_density(lua_State* tolua_S)
+{
+  PhysicsMaterial* self = (PhysicsMaterial*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in accessing variable 'density'",NULL);
+#endif
+  tolua_pushnumber(tolua_S,(lua_Number)self->density);
+ return 1;
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* set function: density of class  PhysicsMaterial */
+#ifndef TOLUA_DISABLE_tolua_set_PhysicsMaterial_density
+static int tolua_set_PhysicsMaterial_density(lua_State* tolua_S)
+{
+  PhysicsMaterial* self = (PhysicsMaterial*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  tolua_Error tolua_err;
+  if (!self) tolua_error(tolua_S,"invalid 'self' in accessing variable 'density'",NULL);
+  if (!tolua_isnumber(tolua_S,2,0,&tolua_err))
+   tolua_error(tolua_S,"#vinvalid type in variable assignment.",&tolua_err);
+#endif
+  self->density = ((float)  tolua_tonumber(tolua_S,2,0))
+;
+ return 0;
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* get function: restitution of class  PhysicsMaterial */
+#ifndef TOLUA_DISABLE_tolua_get_PhysicsMaterial_restitution
+static int tolua_get_PhysicsMaterial_restitution(lua_State* tolua_S)
+{
+  PhysicsMaterial* self = (PhysicsMaterial*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in accessing variable 'restitution'",NULL);
+#endif
+  tolua_pushnumber(tolua_S,(lua_Number)self->restitution);
+ return 1;
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* set function: restitution of class  PhysicsMaterial */
+#ifndef TOLUA_DISABLE_tolua_set_PhysicsMaterial_restitution
+static int tolua_set_PhysicsMaterial_restitution(lua_State* tolua_S)
+{
+  PhysicsMaterial* self = (PhysicsMaterial*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  tolua_Error tolua_err;
+  if (!self) tolua_error(tolua_S,"invalid 'self' in accessing variable 'restitution'",NULL);
+  if (!tolua_isnumber(tolua_S,2,0,&tolua_err))
+   tolua_error(tolua_S,"#vinvalid type in variable assignment.",&tolua_err);
+#endif
+  self->restitution = ((float)  tolua_tonumber(tolua_S,2,0))
+;
+ return 0;
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* get function: friction of class  PhysicsMaterial */
+#ifndef TOLUA_DISABLE_tolua_get_PhysicsMaterial_friction
+static int tolua_get_PhysicsMaterial_friction(lua_State* tolua_S)
+{
+  PhysicsMaterial* self = (PhysicsMaterial*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in accessing variable 'friction'",NULL);
+#endif
+  tolua_pushnumber(tolua_S,(lua_Number)self->friction);
+ return 1;
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* set function: friction of class  PhysicsMaterial */
+#ifndef TOLUA_DISABLE_tolua_set_PhysicsMaterial_friction
+static int tolua_set_PhysicsMaterial_friction(lua_State* tolua_S)
+{
+  PhysicsMaterial* self = (PhysicsMaterial*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  tolua_Error tolua_err;
+  if (!self) tolua_error(tolua_S,"invalid 'self' in accessing variable 'friction'",NULL);
+  if (!tolua_isnumber(tolua_S,2,0,&tolua_err))
+   tolua_error(tolua_S,"#vinvalid type in variable assignment.",&tolua_err);
+#endif
+  self->friction = ((float)  tolua_tonumber(tolua_S,2,0))
+;
+ return 0;
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new of class  PhysicsMaterial */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsMaterial_new00
+static int tolua_LuaExtern_PhysicsMaterial_new00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsMaterial",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   PhysicsMaterial* tolua_ret = (PhysicsMaterial*)  Mtolua_new((PhysicsMaterial)());
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsMaterial");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new_local of class  PhysicsMaterial */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsMaterial_new00_local
+static int tolua_LuaExtern_PhysicsMaterial_new00_local(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsMaterial",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   PhysicsMaterial* tolua_ret = (PhysicsMaterial*)  Mtolua_new((PhysicsMaterial)());
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsMaterial");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new of class  PhysicsMaterial */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsMaterial_new01
+static int tolua_LuaExtern_PhysicsMaterial_new01(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsMaterial",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,4,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,5,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  float aDensity = ((float)  tolua_tonumber(tolua_S,2,0));
+  float aRestitution = ((float)  tolua_tonumber(tolua_S,3,0));
+  float aFriction = ((float)  tolua_tonumber(tolua_S,4,0));
+  {
+   PhysicsMaterial* tolua_ret = (PhysicsMaterial*)  Mtolua_new((PhysicsMaterial)(aDensity,aRestitution,aFriction));
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsMaterial");
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_PhysicsMaterial_new00(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new_local of class  PhysicsMaterial */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsMaterial_new01_local
+static int tolua_LuaExtern_PhysicsMaterial_new01_local(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsMaterial",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,4,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,5,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  float aDensity = ((float)  tolua_tonumber(tolua_S,2,0));
+  float aRestitution = ((float)  tolua_tonumber(tolua_S,3,0));
+  float aFriction = ((float)  tolua_tonumber(tolua_S,4,0));
+  {
+   PhysicsMaterial* tolua_ret = (PhysicsMaterial*)  Mtolua_new((PhysicsMaterial)(aDensity,aRestitution,aFriction));
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsMaterial");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_PhysicsMaterial_new00_local(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getBody of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_getBody00
+static int tolua_LuaExtern_PhysicsShape_getBody00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsShape",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsShape* self = (const PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getBody'", NULL);
+#endif
+  {
+   PhysicsBody* tolua_ret = (PhysicsBody*)  self->getBody();
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"PhysicsBody");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getBody'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getArea of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_getArea00
+static int tolua_LuaExtern_PhysicsShape_getArea00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsShape",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsShape* self = (const PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getArea'", NULL);
+#endif
+  {
+   float tolua_ret = (float)  self->getArea();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getArea'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getMoment of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_getMoment00
+static int tolua_LuaExtern_PhysicsShape_getMoment00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsShape",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsShape* self = (const PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getMoment'", NULL);
+#endif
+  {
+   float tolua_ret = (float)  self->getMoment();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getMoment'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setMoment of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_setMoment00
+static int tolua_LuaExtern_PhysicsShape_setMoment00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsShape",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsShape* self = (PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+  float moment = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setMoment'", NULL);
+#endif
+  {
+   self->setMoment(moment);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setMoment'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setTag of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_setTag00
+static int tolua_LuaExtern_PhysicsShape_setTag00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsShape",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsShape* self = (PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+  int tag = ((int)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setTag'", NULL);
+#endif
+  {
+   self->setTag(tag);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setTag'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getTag of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_getTag00
+static int tolua_LuaExtern_PhysicsShape_getTag00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsShape",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsShape* self = (const PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getTag'", NULL);
+#endif
+  {
+   int tolua_ret = (int)  self->getTag();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getTag'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getMass of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_getMass00
+static int tolua_LuaExtern_PhysicsShape_getMass00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsShape",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsShape* self = (const PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getMass'", NULL);
+#endif
+  {
+   float tolua_ret = (float)  self->getMass();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getMass'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setMass of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_setMass00
+static int tolua_LuaExtern_PhysicsShape_setMass00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsShape",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsShape* self = (PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+  float mass = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setMass'", NULL);
+#endif
+  {
+   self->setMass(mass);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setMass'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getDensity of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_getDensity00
+static int tolua_LuaExtern_PhysicsShape_getDensity00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsShape",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsShape* self = (const PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getDensity'", NULL);
+#endif
+  {
+   float tolua_ret = (float)  self->getDensity();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getDensity'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setDensity of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_setDensity00
+static int tolua_LuaExtern_PhysicsShape_setDensity00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsShape",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsShape* self = (PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+  float density = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setDensity'", NULL);
+#endif
+  {
+   self->setDensity(density);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setDensity'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setRestitution of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_setRestitution00
+static int tolua_LuaExtern_PhysicsShape_setRestitution00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsShape",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsShape* self = (PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+  float restitution = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setRestitution'", NULL);
+#endif
+  {
+   self->setRestitution(restitution);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setRestitution'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setFriction of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_setFriction00
+static int tolua_LuaExtern_PhysicsShape_setFriction00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsShape",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsShape* self = (PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+  float friction = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setFriction'", NULL);
+#endif
+  {
+   self->setFriction(friction);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setFriction'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setMaterial of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_setMaterial00
+static int tolua_LuaExtern_PhysicsShape_setMaterial00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsShape",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const PhysicsMaterial",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsShape* self = (PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+  const PhysicsMaterial* material = ((const PhysicsMaterial*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setMaterial'", NULL);
+#endif
+  {
+   self->setMaterial(*material);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setMaterial'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: calculateDefaultMoment of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_calculateDefaultMoment00
+static int tolua_LuaExtern_PhysicsShape_calculateDefaultMoment00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsShape",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsShape* self = (PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'calculateDefaultMoment'", NULL);
+#endif
+  {
+   float tolua_ret = (float)  self->calculateDefaultMoment();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'calculateDefaultMoment'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: calculateDefaultArea of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_calculateDefaultArea00
+static int tolua_LuaExtern_PhysicsShape_calculateDefaultArea00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsShape",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsShape* self = (PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'calculateDefaultArea'", NULL);
+#endif
+  {
+   float tolua_ret = (float)  self->calculateDefaultArea();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'calculateDefaultArea'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getOffset of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_getOffset00
+static int tolua_LuaExtern_PhysicsShape_getOffset00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsShape",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsShape* self = (PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getOffset'", NULL);
+#endif
+  {
+   Point tolua_ret = (Point)  self->getOffset();
+   {
+#ifdef __cplusplus
+    void* tolua_obj = Mtolua_new((Point)(tolua_ret));
+     tolua_pushusertype(tolua_S,tolua_obj,"Point");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#else
+    void* tolua_obj = tolua_copy(tolua_S,(void*)&tolua_ret,sizeof(Point));
+     tolua_pushusertype(tolua_S,tolua_obj,"Point");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#endif
+   }
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getOffset'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getCenter of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_getCenter00
+static int tolua_LuaExtern_PhysicsShape_getCenter00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsShape",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsShape* self = (PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getCenter'", NULL);
+#endif
+  {
+   Point tolua_ret = (Point)  self->getCenter();
+   {
+#ifdef __cplusplus
+    void* tolua_obj = Mtolua_new((Point)(tolua_ret));
+     tolua_pushusertype(tolua_S,tolua_obj,"Point");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#else
+    void* tolua_obj = tolua_copy(tolua_S,(void*)&tolua_ret,sizeof(Point));
+     tolua_pushusertype(tolua_S,tolua_obj,"Point");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#endif
+   }
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getCenter'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: containsPoint of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_containsPoint00
+static int tolua_LuaExtern_PhysicsShape_containsPoint00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsShape",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const Point",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsShape* self = (const PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+  const Point* point = ((const Point*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'containsPoint'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->containsPoint(*point);
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'containsPoint'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: recenterPoints of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_recenterPoints00
+static int tolua_LuaExtern_PhysicsShape_recenterPoints00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsShape",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"Point",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Point* points = ((Point*)  tolua_tousertype(tolua_S,2,0));
+  int count = ((int)  tolua_tonumber(tolua_S,3,0));
+  {
+   Point* tolua_ret = (Point*)  PhysicsShape::recenterPoints(points,count);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"Point");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'recenterPoints'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: recenterPoints of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_recenterPoints01
+static int tolua_LuaExtern_PhysicsShape_recenterPoints01(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsShape",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"Point",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,4,&tolua_err) || !tolua_isusertype(tolua_S,4,"const Point",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,5,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  Point* points = ((Point*)  tolua_tousertype(tolua_S,2,0));
+  int count = ((int)  tolua_tonumber(tolua_S,3,0));
+  const Point* center = ((const Point*)  tolua_tousertype(tolua_S,4,0));
+  {
+   Point* tolua_ret = (Point*)  PhysicsShape::recenterPoints(points,count,*center);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"Point");
+  }
+ }
+ return 1;
+tolua_lerror:
+ return tolua_LuaExtern_PhysicsShape_recenterPoints00(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getPolyonCenter of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_getPolyonCenter00
+static int tolua_LuaExtern_PhysicsShape_getPolyonCenter00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"PhysicsShape",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"const Point",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const Point* points = ((const Point*)  tolua_tousertype(tolua_S,2,0));
+  int count = ((int)  tolua_tonumber(tolua_S,3,0));
+  {
+   Point tolua_ret = (Point)  PhysicsShape::getPolyonCenter(points,count);
+   {
+#ifdef __cplusplus
+    void* tolua_obj = Mtolua_new((Point)(tolua_ret));
+     tolua_pushusertype(tolua_S,tolua_obj,"Point");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#else
+    void* tolua_obj = tolua_copy(tolua_S,(void*)&tolua_ret,sizeof(Point));
+     tolua_pushusertype(tolua_S,tolua_obj,"Point");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+#endif
+   }
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getPolyonCenter'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setCategoryBitmask of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_setCategoryBitmask00
+static int tolua_LuaExtern_PhysicsShape_setCategoryBitmask00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsShape",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsShape* self = (PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+  int bitmask = ((int)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setCategoryBitmask'", NULL);
+#endif
+  {
+   self->setCategoryBitmask(bitmask);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setCategoryBitmask'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getCategoryBitmask of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_getCategoryBitmask00
+static int tolua_LuaExtern_PhysicsShape_getCategoryBitmask00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsShape",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsShape* self = (const PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getCategoryBitmask'", NULL);
+#endif
+  {
+   int tolua_ret = (int)  self->getCategoryBitmask();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getCategoryBitmask'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setContactTestBitmask of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_setContactTestBitmask00
+static int tolua_LuaExtern_PhysicsShape_setContactTestBitmask00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsShape",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsShape* self = (PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+  int bitmask = ((int)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setContactTestBitmask'", NULL);
+#endif
+  {
+   self->setContactTestBitmask(bitmask);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setContactTestBitmask'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getContactTestBitmask of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_getContactTestBitmask00
+static int tolua_LuaExtern_PhysicsShape_getContactTestBitmask00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsShape",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsShape* self = (const PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getContactTestBitmask'", NULL);
+#endif
+  {
+   int tolua_ret = (int)  self->getContactTestBitmask();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getContactTestBitmask'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setCollisionBitmask of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_setCollisionBitmask00
+static int tolua_LuaExtern_PhysicsShape_setCollisionBitmask00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsShape",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsShape* self = (PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+  int bitmask = ((int)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setCollisionBitmask'", NULL);
+#endif
+  {
+   self->setCollisionBitmask(bitmask);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setCollisionBitmask'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getCollisionBitmask of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_getCollisionBitmask00
+static int tolua_LuaExtern_PhysicsShape_getCollisionBitmask00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const PhysicsShape",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const PhysicsShape* self = (const PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getCollisionBitmask'", NULL);
+#endif
+  {
+   int tolua_ret = (int)  self->getCollisionBitmask();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getCollisionBitmask'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setGroup of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_setGroup00
+static int tolua_LuaExtern_PhysicsShape_setGroup00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsShape",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsShape* self = (PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+  int group = ((int)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setGroup'", NULL);
+#endif
+  {
+   self->setGroup(group);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setGroup'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getGroup of class  PhysicsShape */
+#ifndef TOLUA_DISABLE_tolua_LuaExtern_PhysicsShape_getGroup00
+static int tolua_LuaExtern_PhysicsShape_getGroup00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"PhysicsShape",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  PhysicsShape* self = (PhysicsShape*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getGroup'", NULL);
+#endif
+  {
+   int tolua_ret = (int)  self->getGroup();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getGroup'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* Open function */
 TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
 {
@@ -4684,6 +8658,15 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
   tolua_cclass(tolua_S,"LuaTiledHelper","LuaTiledHelper","",NULL);
   tolua_beginmodule(tolua_S,"LuaTiledHelper");
    tolua_function(tolua_S,"getTMXLayerImageSize",tolua_LuaExtern_LuaTiledHelper_getTMXLayerImageSize00);
+   tolua_function(tolua_S,"getGroupObjects",tolua_LuaExtern_LuaTiledHelper_getGroupObjects00);
+   tolua_function(tolua_S,"getDictAtIndexWithGroup",tolua_LuaExtern_LuaTiledHelper_getDictAtIndexWithGroup00);
+  tolua_endmodule(tolua_S);
+  tolua_cclass(tolua_S,"LuaDictHelper","LuaDictHelper","",NULL);
+  tolua_beginmodule(tolua_S,"LuaDictHelper");
+   tolua_function(tolua_S,"getIntValue",tolua_LuaExtern_LuaDictHelper_getIntValue00);
+   tolua_function(tolua_S,"getStringValue",tolua_LuaExtern_LuaDictHelper_getStringValue00);
+   tolua_function(tolua_S,"getArrayValue",tolua_LuaExtern_LuaDictHelper_getArrayValue00);
+   tolua_function(tolua_S,"getDictValueAtIndexWithArray",tolua_LuaExtern_LuaDictHelper_getDictValueAtIndexWithArray00);
   tolua_endmodule(tolua_S);
   tolua_constant(tolua_S,"VK_LBUTTON",VK_LBUTTON);
   tolua_constant(tolua_S,"VK_RBUTTON",VK_RBUTTON);
@@ -4989,6 +8972,136 @@ TOLUA_API int tolua_LuaExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"acceptVisitor",tolua_LuaExtern_CCArray_acceptVisitor00);
    tolua_function(tolua_S,"clone",tolua_LuaExtern_CCArray_clone00);
    tolua_variable(tolua_S,"__Clonable__",tolua_get_CCArray___Clonable__,NULL);
+  tolua_endmodule(tolua_S);
+  tolua_cclass(tolua_S,"PhysicsBody","PhysicsBody","Object",NULL);
+  tolua_beginmodule(tolua_S,"PhysicsBody");
+   tolua_function(tolua_S,"create",tolua_LuaExtern_PhysicsBody_create00);
+   tolua_function(tolua_S,"create",tolua_LuaExtern_PhysicsBody_create01);
+   tolua_function(tolua_S,"create",tolua_LuaExtern_PhysicsBody_create02);
+   tolua_function(tolua_S,"createCircle",tolua_LuaExtern_PhysicsBody_createCircle00);
+   tolua_function(tolua_S,"createCircle",tolua_LuaExtern_PhysicsBody_createCircle01);
+   tolua_function(tolua_S,"createCircle",tolua_LuaExtern_PhysicsBody_createCircle02);
+   tolua_function(tolua_S,"createBox",tolua_LuaExtern_PhysicsBody_createBox00);
+   tolua_function(tolua_S,"createBox",tolua_LuaExtern_PhysicsBody_createBox01);
+   tolua_function(tolua_S,"createBox",tolua_LuaExtern_PhysicsBody_createBox02);
+   tolua_function(tolua_S,"createPolygon",tolua_LuaExtern_PhysicsBody_createPolygon00);
+   tolua_function(tolua_S,"createPolygon",tolua_LuaExtern_PhysicsBody_createPolygon01);
+   tolua_function(tolua_S,"createPolygon",tolua_LuaExtern_PhysicsBody_createPolygon02);
+   tolua_function(tolua_S,"createEdgeSegment",tolua_LuaExtern_PhysicsBody_createEdgeSegment00);
+   tolua_function(tolua_S,"createEdgeSegment",tolua_LuaExtern_PhysicsBody_createEdgeSegment01);
+   tolua_function(tolua_S,"createEdgeBox",tolua_LuaExtern_PhysicsBody_createEdgeBox00);
+   tolua_function(tolua_S,"createEdgeBox",tolua_LuaExtern_PhysicsBody_createEdgeBox01);
+   tolua_function(tolua_S,"createEdgeBox",tolua_LuaExtern_PhysicsBody_createEdgeBox02);
+   tolua_function(tolua_S,"createEdgePolygon",tolua_LuaExtern_PhysicsBody_createEdgePolygon00);
+   tolua_function(tolua_S,"createEdgePolygon",tolua_LuaExtern_PhysicsBody_createEdgePolygon01);
+   tolua_function(tolua_S,"createEdgeChain",tolua_LuaExtern_PhysicsBody_createEdgeChain00);
+   tolua_function(tolua_S,"createEdgeChain",tolua_LuaExtern_PhysicsBody_createEdgeChain01);
+   tolua_function(tolua_S,"addShape",tolua_LuaExtern_PhysicsBody_addShape00);
+   tolua_function(tolua_S,"removeShape",tolua_LuaExtern_PhysicsBody_removeShape00);
+   tolua_function(tolua_S,"removeShape",tolua_LuaExtern_PhysicsBody_removeShape01);
+   tolua_function(tolua_S,"removeAllShapes",tolua_LuaExtern_PhysicsBody_removeAllShapes00);
+   tolua_function(tolua_S,"getShapes",tolua_LuaExtern_PhysicsBody_getShapes00);
+   tolua_function(tolua_S,"getFirstShape",tolua_LuaExtern_PhysicsBody_getFirstShape00);
+   tolua_function(tolua_S,"getShape",tolua_LuaExtern_PhysicsBody_getShape00);
+   tolua_function(tolua_S,"applyForce",tolua_LuaExtern_PhysicsBody_applyForce00);
+   tolua_function(tolua_S,"applyForce",tolua_LuaExtern_PhysicsBody_applyForce01);
+   tolua_function(tolua_S,"resetForces",tolua_LuaExtern_PhysicsBody_resetForces00);
+   tolua_function(tolua_S,"applyImpulse",tolua_LuaExtern_PhysicsBody_applyImpulse00);
+   tolua_function(tolua_S,"applyImpulse",tolua_LuaExtern_PhysicsBody_applyImpulse01);
+   tolua_function(tolua_S,"applyTorque",tolua_LuaExtern_PhysicsBody_applyTorque00);
+   tolua_function(tolua_S,"setVelocity",tolua_LuaExtern_PhysicsBody_setVelocity00);
+   tolua_function(tolua_S,"getVelocity",tolua_LuaExtern_PhysicsBody_getVelocity00);
+   tolua_function(tolua_S,"setAngularVelocity",tolua_LuaExtern_PhysicsBody_setAngularVelocity00);
+   tolua_function(tolua_S,"getVelocityAtLocalPoint",tolua_LuaExtern_PhysicsBody_getVelocityAtLocalPoint00);
+   tolua_function(tolua_S,"getVelocityAtWorldPoint",tolua_LuaExtern_PhysicsBody_getVelocityAtWorldPoint00);
+   tolua_function(tolua_S,"getAngularVelocity",tolua_LuaExtern_PhysicsBody_getAngularVelocity00);
+   tolua_function(tolua_S,"setVelocityLimit",tolua_LuaExtern_PhysicsBody_setVelocityLimit00);
+   tolua_function(tolua_S,"getVelocityLimit",tolua_LuaExtern_PhysicsBody_getVelocityLimit00);
+   tolua_function(tolua_S,"setAngularVelocityLimit",tolua_LuaExtern_PhysicsBody_setAngularVelocityLimit00);
+   tolua_function(tolua_S,"getAngularVelocityLimit",tolua_LuaExtern_PhysicsBody_getAngularVelocityLimit00);
+   tolua_function(tolua_S,"removeFromWorld",tolua_LuaExtern_PhysicsBody_removeFromWorld00);
+   tolua_function(tolua_S,"getWorld",tolua_LuaExtern_PhysicsBody_getWorld00);
+   tolua_function(tolua_S,"getJoints",tolua_LuaExtern_PhysicsBody_getJoints00);
+   tolua_function(tolua_S,"getNode",tolua_LuaExtern_PhysicsBody_getNode00);
+   tolua_function(tolua_S,"setCategoryBitmask",tolua_LuaExtern_PhysicsBody_setCategoryBitmask00);
+   tolua_function(tolua_S,"setContactTestBitmask",tolua_LuaExtern_PhysicsBody_setContactTestBitmask00);
+   tolua_function(tolua_S,"setCollisionBitmask",tolua_LuaExtern_PhysicsBody_setCollisionBitmask00);
+   tolua_function(tolua_S,"getCategoryBitmask",tolua_LuaExtern_PhysicsBody_getCategoryBitmask00);
+   tolua_function(tolua_S,"getContactTestBitmask",tolua_LuaExtern_PhysicsBody_getContactTestBitmask00);
+   tolua_function(tolua_S,"getCollisionBitmask",tolua_LuaExtern_PhysicsBody_getCollisionBitmask00);
+   tolua_function(tolua_S,"setGroup",tolua_LuaExtern_PhysicsBody_setGroup00);
+   tolua_function(tolua_S,"getGroup",tolua_LuaExtern_PhysicsBody_getGroup00);
+   tolua_function(tolua_S,"getPosition",tolua_LuaExtern_PhysicsBody_getPosition00);
+   tolua_function(tolua_S,"getRotation",tolua_LuaExtern_PhysicsBody_getRotation00);
+   tolua_function(tolua_S,"isDynamic",tolua_LuaExtern_PhysicsBody_isDynamic00);
+   tolua_function(tolua_S,"setDynamic",tolua_LuaExtern_PhysicsBody_setDynamic00);
+   tolua_function(tolua_S,"setMass",tolua_LuaExtern_PhysicsBody_setMass00);
+   tolua_function(tolua_S,"getMass",tolua_LuaExtern_PhysicsBody_getMass00);
+   tolua_function(tolua_S,"addMass",tolua_LuaExtern_PhysicsBody_addMass00);
+   tolua_function(tolua_S,"setMoment",tolua_LuaExtern_PhysicsBody_setMoment00);
+   tolua_function(tolua_S,"getMoment",tolua_LuaExtern_PhysicsBody_getMoment00);
+   tolua_function(tolua_S,"addMoment",tolua_LuaExtern_PhysicsBody_addMoment00);
+   tolua_function(tolua_S,"getLinearDamping",tolua_LuaExtern_PhysicsBody_getLinearDamping00);
+   tolua_function(tolua_S,"setLinearDamping",tolua_LuaExtern_PhysicsBody_setLinearDamping00);
+   tolua_function(tolua_S,"setAngularDamping",tolua_LuaExtern_PhysicsBody_setAngularDamping00);
+   tolua_function(tolua_S,"isEnabled",tolua_LuaExtern_PhysicsBody_isEnabled00);
+   tolua_function(tolua_S,"setEnable",tolua_LuaExtern_PhysicsBody_setEnable00);
+   tolua_function(tolua_S,"isRotationEnabled",tolua_LuaExtern_PhysicsBody_isRotationEnabled00);
+   tolua_function(tolua_S,"setRotationEnable",tolua_LuaExtern_PhysicsBody_setRotationEnable00);
+   tolua_function(tolua_S,"isGravityEnabled",tolua_LuaExtern_PhysicsBody_isGravityEnabled00);
+   tolua_function(tolua_S,"setGravityEnable",tolua_LuaExtern_PhysicsBody_setGravityEnable00);
+   tolua_function(tolua_S,"getTag",tolua_LuaExtern_PhysicsBody_getTag00);
+   tolua_function(tolua_S,"setTag",tolua_LuaExtern_PhysicsBody_setTag00);
+   tolua_function(tolua_S,"world2Local",tolua_LuaExtern_PhysicsBody_world2Local00);
+   tolua_function(tolua_S,"local2World",tolua_LuaExtern_PhysicsBody_local2World00);
+  tolua_endmodule(tolua_S);
+  #ifdef __cplusplus
+  tolua_cclass(tolua_S,"PhysicsMaterial","PhysicsMaterial","",tolua_collect_PhysicsMaterial);
+  #else
+  tolua_cclass(tolua_S,"PhysicsMaterial","PhysicsMaterial","",NULL);
+  #endif
+  tolua_beginmodule(tolua_S,"PhysicsMaterial");
+   tolua_variable(tolua_S,"density",tolua_get_PhysicsMaterial_density,tolua_set_PhysicsMaterial_density);
+   tolua_variable(tolua_S,"restitution",tolua_get_PhysicsMaterial_restitution,tolua_set_PhysicsMaterial_restitution);
+   tolua_variable(tolua_S,"friction",tolua_get_PhysicsMaterial_friction,tolua_set_PhysicsMaterial_friction);
+   tolua_function(tolua_S,"new",tolua_LuaExtern_PhysicsMaterial_new00);
+   tolua_function(tolua_S,"new_local",tolua_LuaExtern_PhysicsMaterial_new00_local);
+   tolua_function(tolua_S,".call",tolua_LuaExtern_PhysicsMaterial_new00_local);
+   tolua_function(tolua_S,"new",tolua_LuaExtern_PhysicsMaterial_new01);
+   tolua_function(tolua_S,"new_local",tolua_LuaExtern_PhysicsMaterial_new01_local);
+   tolua_function(tolua_S,".call",tolua_LuaExtern_PhysicsMaterial_new01_local);
+  tolua_endmodule(tolua_S);
+  tolua_cclass(tolua_S,"PhysicsShape","PhysicsShape","Object",NULL);
+  tolua_beginmodule(tolua_S,"PhysicsShape");
+   tolua_function(tolua_S,"getBody",tolua_LuaExtern_PhysicsShape_getBody00);
+   tolua_function(tolua_S,"getArea",tolua_LuaExtern_PhysicsShape_getArea00);
+   tolua_function(tolua_S,"getMoment",tolua_LuaExtern_PhysicsShape_getMoment00);
+   tolua_function(tolua_S,"setMoment",tolua_LuaExtern_PhysicsShape_setMoment00);
+   tolua_function(tolua_S,"setTag",tolua_LuaExtern_PhysicsShape_setTag00);
+   tolua_function(tolua_S,"getTag",tolua_LuaExtern_PhysicsShape_getTag00);
+   tolua_function(tolua_S,"getMass",tolua_LuaExtern_PhysicsShape_getMass00);
+   tolua_function(tolua_S,"setMass",tolua_LuaExtern_PhysicsShape_setMass00);
+   tolua_function(tolua_S,"getDensity",tolua_LuaExtern_PhysicsShape_getDensity00);
+   tolua_function(tolua_S,"setDensity",tolua_LuaExtern_PhysicsShape_setDensity00);
+   tolua_function(tolua_S,"setRestitution",tolua_LuaExtern_PhysicsShape_setRestitution00);
+   tolua_function(tolua_S,"setFriction",tolua_LuaExtern_PhysicsShape_setFriction00);
+   tolua_function(tolua_S,"setMaterial",tolua_LuaExtern_PhysicsShape_setMaterial00);
+   tolua_function(tolua_S,"calculateDefaultMoment",tolua_LuaExtern_PhysicsShape_calculateDefaultMoment00);
+   tolua_function(tolua_S,"calculateDefaultArea",tolua_LuaExtern_PhysicsShape_calculateDefaultArea00);
+   tolua_function(tolua_S,"getOffset",tolua_LuaExtern_PhysicsShape_getOffset00);
+   tolua_function(tolua_S,"getCenter",tolua_LuaExtern_PhysicsShape_getCenter00);
+   tolua_function(tolua_S,"containsPoint",tolua_LuaExtern_PhysicsShape_containsPoint00);
+   tolua_function(tolua_S,"recenterPoints",tolua_LuaExtern_PhysicsShape_recenterPoints00);
+   tolua_function(tolua_S,"recenterPoints",tolua_LuaExtern_PhysicsShape_recenterPoints01);
+   tolua_function(tolua_S,"getPolyonCenter",tolua_LuaExtern_PhysicsShape_getPolyonCenter00);
+   tolua_function(tolua_S,"setCategoryBitmask",tolua_LuaExtern_PhysicsShape_setCategoryBitmask00);
+   tolua_function(tolua_S,"getCategoryBitmask",tolua_LuaExtern_PhysicsShape_getCategoryBitmask00);
+   tolua_function(tolua_S,"setContactTestBitmask",tolua_LuaExtern_PhysicsShape_setContactTestBitmask00);
+   tolua_function(tolua_S,"getContactTestBitmask",tolua_LuaExtern_PhysicsShape_getContactTestBitmask00);
+   tolua_function(tolua_S,"setCollisionBitmask",tolua_LuaExtern_PhysicsShape_setCollisionBitmask00);
+   tolua_function(tolua_S,"getCollisionBitmask",tolua_LuaExtern_PhysicsShape_getCollisionBitmask00);
+   tolua_function(tolua_S,"setGroup",tolua_LuaExtern_PhysicsShape_setGroup00);
+   tolua_function(tolua_S,"getGroup",tolua_LuaExtern_PhysicsShape_getGroup00);
   tolua_endmodule(tolua_S);
  tolua_endmodule(tolua_S);
  return 1;

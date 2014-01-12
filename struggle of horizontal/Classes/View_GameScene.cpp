@@ -44,7 +44,7 @@ bool GameSceneView::init()
 	mFGLayer_01 = mTiledMap->getLayer("foreground_01");
 	mFGLayer_02 = mTiledMap->getLayer("foreground_02");
 	mBGLayer = mTiledMap->getLayer("background");
-	cocostudio::Armature* pAnimView = dynamic_cast<Armature*>(mTiledMap->getChildByTag(101));
+	cocostudio::Armature* pAnimView = dynamic_cast<Armature*>(mTiledMap->getChildByTag(10001));
 	gui::UILayer* pUILayer = dynamic_cast<gui::UILayer*>(this->getChildByTag(201));
 	gui::UIWidget* pWidget = dynamic_cast<gui::UIWidget*>(pUILayer->getWidgetByTag(202));
 	mJumpBtn = dynamic_cast<gui::UIButton*>(pWidget->getChildByName("mJumpBtn"));
@@ -56,7 +56,6 @@ bool GameSceneView::init()
 	listener->onTouchesMoved = CC_CALLBACK_2(GameSceneView::onTouchesMoved, this);
 	listener->onTouchesEnded = CC_CALLBACK_2(GameSceneView::onTouchesEnded, this);
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
-	//_touchListener = listener;
 
 	return true;
 }
@@ -83,11 +82,131 @@ void GameSceneView::onEnterTransitionDidFinish()
 	//mTiledMap->addChild(mPhysicsView,1000);
 	//mPhysicsView->setScale(PTM_RATIO);
 	//mPhysicsView->setAnchorPoint(Point(0,0));
+	PhysicsBody* pAnimBody = mTiledMap->getChildByTag(10001)->getPhysicsBody();
+	if(NULL != pAnimBody)
+	{
+		int wallIndex = 20001;
+		int landIndex = 30001;
+		while(true)
+		{
+			CCNode* pNode = mTiledMap->getChildByTag(wallIndex++);
+			if(NULL != pNode)
+			{
+				PhysicsBody* pBody = pNode->getPhysicsBody();
+				if(NULL != pBody)
+				{
+					auto contactListener = EventListenerPhysicsContactWithBodies::create(pAnimBody, pBody);
+					contactListener->onContactBegin = CC_CALLBACK_2(GameSceneView::onCreatureContactWallBegin, this);
+					contactListener->onContactSeperate = CC_CALLBACK_2(GameSceneView::onCreatureContactWallEnded, this);
+					_eventDispatcher->addEventListenerWithSceneGraphPriority(contactListener, this);
+				}
+				continue;
+			}
+			pNode = mTiledMap->getChildByTag(landIndex++);
+			if(NULL != pNode)
+			{
+				PhysicsBody* pBody = pNode->getPhysicsBody();
+				if(NULL != pBody)
+				{
+					auto contactListener = EventListenerPhysicsContactWithBodies::create(pAnimBody, pBody);
+					contactListener->onContactBegin = CC_CALLBACK_2(GameSceneView::onCreatureContactLandBegin, this);
+					contactListener->onContactSeperate = CC_CALLBACK_2(GameSceneView::onCreatureContactLandEnded, this);
+					_eventDispatcher->addEventListenerWithSceneGraphPriority(contactListener, this);
+				}
+				continue;
+			}
+			else
+				break;
+		}
+	}
 }
 void GameSceneView::onExit()
 {
 	callLuaFuncNoResult("LUAGameSceneViewOnExit");
 	ViewSuperT::onExit();
+}
+
+bool GameSceneView::onCreatureContactWallBegin(EventCustom* event, const PhysicsContact& contact)
+{
+	PhysicsShape* pShapeA = contact.getShapeA();
+	PhysicsShape* pShapeB = contact.getShapeB();
+	const PhysicsContactData* pData = contact.getContactData();
+	if(pData->count == 1)
+	{
+		CCLog("onCreatureContactWallBegin[px=%.02f, py=%.02f\tnx=%.02f,ny=%.02f]", pData->points[0].x, pData->points[0].y, pData->normal.x, pData->normal.y);
+	}
+	else
+	{
+		CCLog("onCreatureContactWallBegin[nx=%.02f,ny=%.02f]:", pData->normal.x, pData->normal.y);
+		for(int i = 0; i < pData->count; ++ i)
+		{
+			CCLog("\t%d:[px=%.02f, py=%.02f]", i, pData->points[i].x, pData->points[i].y);
+		}
+	}
+	return true;
+}
+void GameSceneView::onCreatureContactWallEnded(EventCustom* event, const PhysicsContact& contact)
+{
+	PhysicsShape* pShapeA = contact.getShapeA();
+	PhysicsShape* pShapeB = contact.getShapeB();
+	const PhysicsContactData* pData = contact.getContactData();
+	if(pData->count == 1)
+	{
+		CCLog("onCreatureContactWallEnded[px=%.02f, py=%.02f\tnx=%.02f,ny=%.02f]", pData->points[0].x, pData->points[0].y, pData->normal.x, pData->normal.y);
+	}
+	else
+	{
+		CCLog("onCreatureContactWallEnded[nx=%.02f,ny=%.02f]:", pData->normal.x, pData->normal.y);
+		for(int i = 0; i < pData->count; ++ i)
+		{
+			CCLog("\t%d:[px=%.02f, py=%.02f]", i, pData->points[i].x, pData->points[i].y);
+		}
+	}
+}
+bool GameSceneView::onCreatureContactLandBegin(EventCustom* event, const PhysicsContact& contact)
+{
+	PhysicsShape* pShapeA = contact.getShapeA();
+	PhysicsShape* pShapeB = contact.getShapeB();
+	const PhysicsContactData* pData = contact.getContactData();
+	if(pData->count == 1)
+	{
+		CCLog("onCreatureContactLandBegin[px=%.02f, py=%.02f\tnx=%.02f,ny=%.02f]", pData->points[0].x, pData->points[0].y, pData->normal.x, pData->normal.y);
+	}
+	else
+	{
+		CCLog("onCreatureContactLandBegin[nx=%.02f,ny=%.02f]:", pData->normal.x, pData->normal.y);
+		for(int i = 0; i < pData->count; ++ i)
+		{
+			CCLog("\t%d:[px=%.02f, py=%.02f]", i, pData->points[i].x, pData->points[i].y);
+		}
+	}
+	return true;
+}
+void GameSceneView::onCreatureContactLandEnded(EventCustom* event, const PhysicsContact& contact)
+{
+	PhysicsShape* pShapeA = contact.getShapeA();
+	PhysicsShape* pShapeB = contact.getShapeB();
+	const PhysicsContactData* pData = contact.getContactData();
+	if(pData->count == 1)
+	{
+		CCLog("onCreatureContactLandEnded[px=%.02f, py=%.02f\tnx=%.02f,ny=%.02f]", pData->points[0].x, pData->points[0].y, pData->normal.x, pData->normal.y);
+	}
+	else
+	{
+		CCLog("onCreatureContactLandEnded[nx=%.02f,ny=%.02f]:", pData->normal.x, pData->normal.y);
+		for(int i = 0; i < pData->count; ++ i)
+		{
+			CCLog("\t%d:[px=%.02f, py=%.02f]", i, pData->points[i].x, pData->points[i].y);
+		}
+	}
+	PhysicsBody* pAnimBody = mTiledMap->getChildByTag(10001)->getPhysicsBody();
+	Point vel = pAnimBody->getVelocity();
+	CCLog("onCreatureContactLandEnded[velx=%.02f,vely=%.02f]:", vel.x, vel.y);
+	//if(vel.y > 0)
+	//	vel.y = 0;
+	//else if(vel.y == 0)
+	//	vel.y = -100.0f;
+	pAnimBody->setVelocity(vel);
 }
 
 void GameSceneView::onTouchesBegan(const std::vector<Touch*>& touches, Event *unused_event)

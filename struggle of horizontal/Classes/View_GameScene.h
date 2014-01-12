@@ -44,6 +44,11 @@ public:
 private:
 	virtual void onEnterTransitionDidFinish();
 	virtual void onExit();
+	bool onCreatureContactWallBegin(EventCustom* event, const PhysicsContact& contact);
+	void onCreatureContactWallEnded(EventCustom* event, const PhysicsContact& contact);
+	bool onCreatureContactLandBegin(EventCustom* event, const PhysicsContact& contact);
+	void onCreatureContactLandEnded(EventCustom* event, const PhysicsContact& contact);
+
 
 	bool fixedScreenPositionBound(float& posX, float& posY);
 	void fixedBgImagePosition(float& posX, float& posY);

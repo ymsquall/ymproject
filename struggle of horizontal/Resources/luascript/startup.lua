@@ -17,5 +17,6 @@ require "luascript/views/gamesceneview_playing"
 require "luascript/views/gamesceneview_monster"
 require "luascript/views/creatureheaderview"
 require "luascript/physics/gamesceneview_physics"
+require "luascript/physics/physics_helper"
 
 ----------------
