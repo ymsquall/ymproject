@@ -394,17 +394,39 @@ void LocalPlayer::StepAfter()
 				Monster* pBeAttackedMonst = dynamic_cast<Monster*>(pObject);
 				if(NULL != pBeAttackedMonst && !pBeAttackedMonst->isBeAttacking() && !pBeAttackedMonst->isDeathing())
 				{
-					b2WorldManifold worldManifold;
-					pContact->contact->GetWorldManifold(&worldManifold);
+					Point hitPos(0,0);
+					b2Shape* pShapeA = pContact->contact->GetFixtureA()->GetShape();
+					b2Shape* pShapeB = pContact->contact->GetFixtureB()->GetShape();
+					if(pShapeA->GetType() == b2Shape::e_polygon && pShapeB->GetType() == b2Shape::e_polygon)
+					{
+						b2PolygonShape* pPolShapeA = static_cast<b2PolygonShape*>(pShapeA);
+						b2PolygonShape* pPolShapeB = static_cast<b2PolygonShape*>(pShapeB);
+						if(pContact->contact->GetFixtureA()->GetBody() == mWeaponBody)
+						{
+							if(pPolShapeB->GetVertexCount() == 3)
+							{
+								b2Vec2* vertexs = pPolShapeB->m_vertices;
+								hitPos = Point(vertexs[0].x * PTM_RATIO, vertexs[0].y * PTM_RATIO);
+							}
+						}
+						else if(pContact->contact->GetFixtureB()->GetBody() == mWeaponBody)
+						{
+							if(pPolShapeA->GetVertexCount() == 3)
+							{
+								b2Vec2* vertexs = pPolShapeA->m_vertices;
+								hitPos = Point(vertexs[0].x * PTM_RATIO, vertexs[0].y * PTM_RATIO);
+							}
+						}
+					}
 					if(mNowComboCount == 2)
 					{
-						pBeAttackedMonst->beAttacked(this, true);
+						pBeAttackedMonst->beAttacked(this, hitPos, true);
 						mNowComboCount = 0;
 						mComboCountdownTimer = 1.0f + 1.0f;
 					}
 					else
 					{
-						pBeAttackedMonst->beAttacked(this);
+						pBeAttackedMonst->beAttacked(this, hitPos);
 						mNowComboCount ++;
 						mComboCountdownTimer = 1.0f + 1.0f;
 					}

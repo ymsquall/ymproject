@@ -19,7 +19,7 @@ public:
 	virtual bool finalize() override;
 	virtual void loop(float dt) override;
 
-	void beAttacked(ICreatue* who, bool clobber = false);
+	void beAttacked(ICreatue* who, const Point& hitPos, bool clobber = false);
 
 protected:
 	void simpleAITimer(float dt);
