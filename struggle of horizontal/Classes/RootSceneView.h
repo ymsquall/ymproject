@@ -15,7 +15,12 @@ public:
 
 	static RootSceneView *createWithPhysics();
 
+	virtual void addChild(Node* child) override;
+	virtual void addChild(Node* child, int zOrder) override;
+	virtual void addChild(Node* child, int zOrder, int tag) override;
+
 private:
+
 	virtual void onEnter();
 	virtual void onEnterTransitionDidFinish();
 

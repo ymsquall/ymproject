@@ -3,6 +3,7 @@
 #include "luaext/LuaHelper.h"
 #include "LocalPlayer.h"
 #include "Monster.h"
+#include "ViewModel_GameScene.h"
 
 using namespace cocos2d;
 
@@ -94,7 +95,7 @@ bool GameScenePhysics::initBoxWithTiledMap(const TMXTiledMap* pTiledMap)
 		cpInfo.w = ((String*)pMonsterDict->objectForKey("width"))->intValue();
 		cpInfo.h = ((String*)pMonsterDict->objectForKey("height"))->intValue();
 		mMonsterPhysicsInfoList.push_back(cpInfo);
-		Monster* pMonster = ICreatue::createWithBox<Monster>(mWorld, Point(cpInfo.x, cpInfo.y), Size(19.2f, 6.4f));
+		Monster* pMonster = GameSceneViewModel::point()->createMonster(mWorld, Point(cpInfo.x, cpInfo.y), Size(19.2f, 6.4f));
 		if(NULL != pMonster)
 			mMonsterPhysicsList[pMonster] = &cpInfo;
 	}

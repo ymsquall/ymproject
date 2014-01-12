@@ -27,6 +27,7 @@ struct CreaturePhysicsSteeings : public physics::ObjectSettings
 class ICreatue
 {
 public:
+	static const int AttackPhysicsNodeTagBegin = 301;
 	static const int MoveBodyContactMask = 0x0002;
 	static const int WeaponBodyContactMask = 0x0004;
 	static const int BodyBodyContactMask = 0x0008;

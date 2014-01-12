@@ -3,11 +3,13 @@
 #include "luaext/LuaHelper.h"
 #include "Model_GameScene.h"
 #include "Model_CreatureHeader.h"
+#include "ViewModel_GameScene.h"
 #include "Physics_Box2dView.h"
 #include "Physics_GameScene.h"
 #include "math/Math.h"
 #include "gui/CocosGUI.h"
 #include "LocalPlayer.h"
+#include "Monster.h"
 
 GameSceneView* gGameSceneView = NULL;
 
@@ -40,6 +42,8 @@ bool GameSceneView::init()
 	ScriptParamObject userdata = callLuaFuncWithUserdataResult("LUALoadGameSceneView", this, thisSize.width, thisSize.height);
 	if(userdata.type != LUA_TUSERDATA || NULL == userdata.value.pointer)
 		return false;
+	this->scheduleUpdate();
+	GameSceneViewModel::point()->setSceneView(this);
 	mTiledMap = (TMXTiledMap*)userdata.value.pointer;
 	mFGLayer_01 = mTiledMap->getLayer("foreground_01");
 	mFGLayer_02 = mTiledMap->getLayer("foreground_02");
@@ -50,7 +54,22 @@ bool GameSceneView::init()
 	mJumpBtn = dynamic_cast<gui::UIButton*>(pWidget->getChildByName("mJumpBtn"));
 	mAttackBtn = dynamic_cast<gui::UIButton*>(pWidget->getChildByName("mAttackBtn"));
 
-	this->scheduleUpdate();
+	auto director = Director::getInstance();
+	Point visibleOrigin = director->getVisibleOrigin();
+	Size visibleSize = director->getVisibleSize();
+	mPhysicsView = Physics_Box2DView::create(1);
+
+	LocalPlayer* pLocalUser = LocalPlayer::create(GameScenePhysics::point()->mWorld);
+	LocalPlayer::instance()->setAnimView(pAnimView);
+
+	GameScenePhysics* pPhysics = mPhysicsView->physics<GameScenePhysics>();
+	if(NULL != pPhysics)
+	{
+		pPhysics->initBoxWithTiledMap(mTiledMap);
+	}
+	mTiledMap->addChild(mPhysicsView,1000);
+	mPhysicsView->setScale(PTM_RATIO);
+	mPhysicsView->setAnchorPoint(Point(0,0));
 
 	auto listener = EventListenerTouchAllAtOnce::create();
 	listener->onTouchesBegan = CC_CALLBACK_2(GameSceneView::onTouchesBegan, this);
@@ -71,19 +90,6 @@ void GameSceneView::onEnterTransitionDidFinish()
 {
 	ViewSuperT::onEnterTransitionDidFinish();
 	callLuaFuncNoResult("LUAGameSceneViewOnEnter");
-
-	auto director = Director::getInstance();
-	Point visibleOrigin = director->getVisibleOrigin();
-	Size visibleSize = director->getVisibleSize();
-	mPhysicsView = Physics_Box2DView::create(1);
-	GameScenePhysics* pPhysics = mPhysicsView->physics<GameScenePhysics>();
-	if(NULL != pPhysics)
-	{
-		pPhysics->initBoxWithTiledMap(mTiledMap);
-	}
-	mTiledMap->addChild(mPhysicsView,1000);
-	mPhysicsView->setScale(PTM_RATIO);
-	mPhysicsView->setAnchorPoint(Point(0,0));
 }
 void GameSceneView::onExit()
 {
@@ -323,4 +329,50 @@ void GameSceneView::update(float dt)
 	//CCLOG("screen [%.02f, %.02f]", mapPos.x, mapPos.y);
 	this->screenScrollTo(mapPos);
 	*/
+}
+
+bool GameSceneView::onAttackContactBegin(EventCustom* event, const PhysicsContact& contact)
+{
+	PhysicsShape* pShapeA = contact.getShapeA();
+	PhysicsShape* pShapeB = contact.getShapeB();
+	if(pShapeA->getBody()->getNode()->getParent() == pShapeB->getBody()->getNode()->getParent())
+		return false;
+	const PhysicsContactData* pData = contact.getContactData();
+	if(pData->count == 1)
+	{
+		CCLog("onAttackContactBegin(%d-%d)[px=%.02f, py=%.02f\tnx=%.02f,ny=%.02f]", pShapeA->getBody()->getNode()->getTag(), pShapeB->getBody()->getNode()->getTag(),
+			pData->points[0].x, pData->points[0].y, pData->normal.x, pData->normal.y);
+	}
+	else
+	{
+		CCLog("onCreatureContactWallBegin(%d-%d)[nx=%.02f,ny=%.02f]:", pShapeA->getBody()->getNode()->getTag(), pShapeB->getBody()->getNode()->getTag(),
+			pData->normal.x, pData->normal.y);
+		for(int i = 0; i < pData->count; ++ i)
+		{
+			CCLog("\t%d:[px=%.02f, py=%.02f]", i, pData->points[i].x, pData->points[i].y);
+		}
+	}
+	return true;
+}
+void GameSceneView::onAttackContactEnded(EventCustom* event, const PhysicsContact& contact)
+{
+	PhysicsShape* pShapeA = contact.getShapeA();
+	PhysicsShape* pShapeB = contact.getShapeB();
+	if(pShapeA->getBody()->getNode()->getParent() == pShapeB->getBody()->getNode()->getParent())
+		return;
+	const PhysicsContactData* pData = contact.getContactData();
+	if(pData->count == 1)
+	{
+		CCLog("onAttackContactEnded(%d-%d)[px=%.02f, py=%.02f\tnx=%.02f,ny=%.02f]", pShapeA->getBody()->getNode()->getTag(), pShapeB->getBody()->getNode()->getTag(),
+			pData->points[0].x, pData->points[0].y, pData->normal.x, pData->normal.y);
+	}
+	else
+	{
+		CCLog("onCreatureContactWallEnded(%d-%d)[nx=%.02f,ny=%.02f]:", pShapeA->getBody()->getNode()->getTag(), pShapeB->getBody()->getNode()->getTag(),
+			pData->normal.x, pData->normal.y);
+		for(int i = 0; i < pData->count; ++ i)
+		{
+			CCLog("\t%d:[px=%.02f, py=%.02f]", i, pData->points[i].x, pData->points[i].y);
+		}
+	}
 }

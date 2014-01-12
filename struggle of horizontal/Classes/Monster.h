@@ -11,6 +11,7 @@ public:
 	Monster(b2World* pWorld);
 	virtual ~Monster();
 
+	cocostudio::Armature* getAnimView();
 	virtual void StepBefore(physics::ObjectSettings* settings) override;
 	virtual void StepAfter() override;
 	int PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, const physics::PhysicsBodyList& landList);
@@ -20,6 +21,7 @@ public:
 	virtual void loop(float dt) override;
 
 	void beAttacked(ICreatue* who, bool clobber = false);
+
 
 protected:
 	void simpleAITimer(float dt);

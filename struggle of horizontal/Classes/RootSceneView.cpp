@@ -2,6 +2,10 @@
 #include "ViewModelManager.h"
 #include "luaext/LuaHelper.h"
 #include "ViewModel_GameScene.h"
+#include "CocoStudio/CocoStudio.h"
+#include "LocalPlayer.h"
+#include "Monster.h"
+#include "Physics_GameScene.h"
 
 RootSceneView::RootSceneView(void)
 {
@@ -211,4 +215,48 @@ void RootSceneView::debugDrawPhysicsJoint()
 void RootSceneView::debugDrawPhysicsContact()
 {
 
+}
+
+void RootSceneView::addChild(Node* child)
+{
+	Node::addChild(child);
+}
+void RootSceneView::addChild(Node* child, int zOrder)
+{
+	Node::addChild(child, zOrder);
+}
+void RootSceneView::addChild(Node* child, int zOrder, int tag)
+{
+	Node::addChild(child, zOrder, tag);
+	addChildToPhysicsWorld(child);
+
+	//const char* nodeNames[] = {
+	//	"weapon_r", "head", "body", "arm_l", "arm_r", "leg_l", "leg_r"
+	//};
+
+	//cocostudio::Armature* pLocalAnim = GameSceneViewModel::point()->getLocalPlayerAnimView();
+	//for(int i = 0; i < 7; ++ i)
+	//{
+	//	cocostudio::CCBone* pBone = pLocalAnim->getBone(nodeNames[i]);
+	//	if(NULL != pBone)
+	//	{
+	//		Node* pNode = pBone->getDisplayRenderNode();
+	//		addChildToPhysicsWorld(pNode);
+	//	}
+	//}
+	//const PhysicsCreatureList& monsters = GameScenePhysics::point()->getMonsters();
+	//for(PhysicsCreatureList::const_iterator it = monsters.begin();
+	//	it != monsters.end(); ++ it)
+	//{
+	//	Monster* pMonster = static_cast<Monster*>(it->first);
+	//	for(int i = 0; i < 7; ++ i)
+	//	{
+	//		cocostudio::CCBone* pBone = pMonster->getAnimView()->getBone(nodeNames[i]);
+	//		if(NULL != pBone)
+	//		{
+	//			Node* pNode = pBone->getDisplayRenderNode();
+	//			addChildToPhysicsWorld(pNode);
+	//		}
+	//	}
+	//}
 }

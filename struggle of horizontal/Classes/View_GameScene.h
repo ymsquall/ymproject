@@ -41,6 +41,9 @@ public:
 	void onTouchMoved(const Point& pos);
 	void onTouchEnded(const Point& pos);
 
+	bool onAttackContactBegin(EventCustom* event, const PhysicsContact& contact);
+	void onAttackContactEnded(EventCustom* event, const PhysicsContact& contact);
+
 private:
 	virtual void onEnterTransitionDidFinish();
 	virtual void onExit();

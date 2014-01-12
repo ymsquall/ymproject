@@ -7,6 +7,8 @@
 #include "luaext/LuaHelper.h"
 #include "Physics_GameScene.h"
 #include "LocalPlayer.h"
+#include "ICreature.h"
+#include "Monster.h"
 
 GameSceneViewModel::GameSceneViewModel()
 {
@@ -29,11 +31,8 @@ void GameSceneViewModel::onGameSceneModelPropertyChanged(mvvm::INotifyPropertyCh
 			{
 				mSceneView = GameSceneView::createView();
 				mSceneView->setBindingSource(pModel);
+				GameScenePhysics::point()->setLocalPlayerPhysics(LocalPlayer::instance());
 				pRootView->addChild(mSceneView);
-				LocalPlayer* pLocalUser = LocalPlayer::create(GameScenePhysics::point()->mWorld);
-				GameScenePhysics::point()->setLocalPlayerPhysics(pLocalUser);
-				cocostudio::Armature* pAnimView = dynamic_cast<Armature*>(mSceneView->getTiledMap()->getChildByTag(101));
-				LocalPlayer::instance()->setAnimView(pAnimView);
 			}
 		}
 		else
@@ -47,9 +46,34 @@ void GameSceneViewModel::onGameSceneModelPropertyChanged(mvvm::INotifyPropertyCh
 	}
 }
 
+void GameSceneViewModel::setSceneView(GameSceneView* pView)
+{
+	mSceneView = pView;
+}
+GameSceneView* GameSceneViewModel::getSceneView()
+{
+	return mSceneView;
+}
 TMXTiledMap* GameSceneViewModel::getTiledMap()
 {
 	if(NULL == mSceneView)
 		return NULL;
 	return mSceneView->getTiledMap();
+}
+cocostudio::Armature* GameSceneViewModel::getLocalPlayerAnimView()
+{
+	TMXTiledMap* pMap = this->getTiledMap();
+	if(NULL != pMap)
+	{
+		return dynamic_cast<cocostudio::Armature*>(pMap->getChildByTag(101));
+	}
+	return NULL;
+}
+
+Monster* GameSceneViewModel::createMonster(b2World* pWorld, const Point& pos, const Size& size)
+{
+	Monster* pMonster = ICreatue::createWithBox<Monster>(pWorld, pos, size);
+	if(NULL != pMonster)
+		mMonsterList.push_back(pMonster);
+	return pMonster;
 }

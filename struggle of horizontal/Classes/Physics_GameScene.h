@@ -39,6 +39,8 @@ public:
 	bool initBoxWithTiledMap(const cocos2d::TMXTiledMap* pTiledMap);
 	void setLocalPlayerPhysics(LocalPlayer* player);
 
+	const PhysicsCreatureList& getMonsters(){ return mMonsterPhysicsList; }
+
 private:
 	b2Body* createGround(const b2Vec2& pos, const b2Vec2& p1, const b2Vec2& p2, bool isWall);
 	b2Body* createGround(const b2Vec2& pos, float width, float height, bool isWall);

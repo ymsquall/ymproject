@@ -5,6 +5,7 @@
 #include "ViewModel_CreatureHeader.h"
 #include "Monster.h"
 #include "Model_CreatureHeader.h"
+#include "RootSceneView.h"
 
 using namespace framework;
 
@@ -88,6 +89,26 @@ void LocalPlayer::comboTimer(float dt)
 	{
 		mNowComboCount = 0;
 	}
+	const char* nodeNames[] = {
+		"weapon_r", "body"
+	};
+	for(int i = 0; i < 2; ++ i)
+	{
+		cocostudio::CCBone* pBone = mAnimView->getBone(nodeNames[i]);
+		if(NULL != pBone)
+		{
+			CCNode* pNode = static_cast<CCNode*>(mAnimView->getChildByTag(ICreatue::AttackPhysicsNodeTagBegin+i));
+			cocostudio::FrameData* pData = pBone->getTweenData();
+			const AffineTransform& pTransform = pBone->getNodeToWorldTransform();
+			cocostudio::BaseData* pWorldInfo = pBone->getWorldInfo();
+			pNode->setPosition(Point(pWorldInfo->x, pWorldInfo->y));
+			float rotaX = pWorldInfo->skewX / math::Math::PI * 180.0f;
+			float rotaY = pWorldInfo->skewY / math::Math::PI * 180.0f;
+			pNode->setRotation(rotaX);
+			pNode->setScaleX(pWorldInfo->scaleX);
+			pNode->setScaleY(pWorldInfo->scaleY);
+		}
+	}	
 }
 void LocalPlayer::recoverHPTimer(float dt)
 {
@@ -143,6 +164,46 @@ void LocalPlayer::updateHPView()
 void LocalPlayer::setAnimView(cocostudio::Armature* anim)
 {
 	mAnimView = anim;
+	// physics body box
+	const char* nodeNames[] = {
+		"weapon_r", "head", "body", "arm_l", "arm_r", "leg_l", "leg_r"
+	};
+	for(int i = 0; i < 2; ++ i)
+	{
+		cocostudio::CCBone* pBone = mAnimView->getBone(nodeNames[i]);
+		if(NULL != pBone)
+		{
+			CCNode* pNode = NULL;
+			Size size(0, 0);
+#ifdef _DEBUG
+			std::string imageName = "image/square_magenta.png";
+			CCSprite* pSprite = CCSprite::create(imageName.c_str());
+			//size = pSprite->getContentSize();
+			pNode = pSprite;
+#else 
+			pNode = CCNode::create();
+#endif
+			if(i == 0)
+				size = Size(25.0f, 120.0f);
+			else
+				size = Size(50.0f, 100.0f);
+			PhysicsBody* pBody = PhysicsBody::createBox(size);
+			pBody->setDynamic(true);
+			pNode->setUserData(this);
+			if(i == 0)
+			{
+				pBody->setCategoryBitmask(ICreatue::WeaponBodyContactMask);
+				pBody->setCollisionBitmask(ICreatue::BodyBodyContactMask);
+			}
+			else
+			{
+				pBody->setCategoryBitmask(ICreatue::BodyBodyContactMask);
+				pBody->setCategoryBitmask(ICreatue::WeaponBodyContactMask);
+			}
+			pNode->setPhysicsBody(pBody);
+			mAnimView->addChild(pNode, ICreatue::AttackPhysicsNodeTagBegin, ICreatue::AttackPhysicsNodeTagBegin+i);
+		}
+	}
 	mAnimView->getAnimation()->setFrameEventCallFunc(this, frameEvent_selector(LocalPlayer::onFrameEvent));
 	mAnimView->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(LocalPlayer::animationEvent));
 }
@@ -313,7 +374,7 @@ void LocalPlayer::StepBefore(physics::ObjectSettings* settings)
 	static CreaturePhysicsSteeings playerSettings;	
 	playerSettings.mIsHeroDorping = mIsHeroDorping;
 	playerSettings.mIsOriJump = mIsOriJump;
-	playerSettings.mUsingVerticeCount = 8;
+	playerSettings.mUsingVerticeCount = 0;
 	for(int i = 0; i < 8; ++ i)
 	{
 		CCString* pBodyName = CCString::createWithFormat("body%d", i);
@@ -331,6 +392,7 @@ void LocalPlayer::StepBefore(physics::ObjectSettings* settings)
 		pos.x -= titledMapPos.x;
 		pos.y -= titledMapPos.y;
 		playerSettings.mVertices[i] = b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO);
+		playerSettings.mUsingVerticeCount++;
 	}
 	// body box
 	if(NULL != mBodyBody)

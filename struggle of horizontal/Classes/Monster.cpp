@@ -1,9 +1,12 @@
 #include "Monster.h"
+#include "math/math.h"
 #include "luaext/LuaHelper.h"
 #include "ViewModel_GameScene.h"
+#include "View_GameScene.h"
 #include "LocalPlayer.h"
 #include "Model_CreatureHeader.h"
 
+using namespace framework;
 Monster::Monster(b2World* pWorld) :
 	SuperT(object::ObjectType::TN_Monster, pWorld),
 	JumpDelegate(this)
@@ -25,6 +28,63 @@ bool Monster::init()
 	mMonsterAnim = (cocostudio::Armature*)userdata.value.pointer;
 	if(NULL != mMonsterAnim)
 	{
+		cocostudio::Armature* pLocalPlayerAnim = GameSceneViewModel::point()->getLocalPlayerAnimView();
+		if(NULL == pLocalPlayerAnim)
+			return false;
+		// physics body box
+		const char* nodeNames[] = {
+			"weapon_r", "body"
+		};
+		Node* pLocalPlayerWeaponNode = pLocalPlayerAnim->getChildByTag(ICreatue::AttackPhysicsNodeTagBegin);
+		if(NULL == pLocalPlayerWeaponNode)
+			return false;
+		PhysicsBody* pLocalPlayerWeaponBody = pLocalPlayerWeaponNode->getPhysicsBody();
+		if(NULL == pLocalPlayerWeaponBody)
+			return false;
+		GameSceneView* pView = GameSceneViewModel::point()->getSceneView();
+		if(NULL == pView)
+			return false;
+		for(int i = 0; i < 2; ++ i)
+		{
+			cocostudio::CCBone* pBone = mMonsterAnim->getBone(nodeNames[i]);
+			if(NULL != pBone)
+			{
+				CCNode* pNode = NULL;
+				Size size(0, 0);
+#ifdef _DEBUG
+				std::string imageName = "image/square_magenta.png";
+				CCSprite* pSprite = CCSprite::create(imageName.c_str());
+				//size = pSprite->getContentSize();
+				pNode = pSprite;
+#endif
+				if(i == 0)
+					size = Size(25.0f, 120.0f);
+				else
+					size = Size(50.0f, 100.0f);
+				PhysicsBody* pBody = PhysicsBody::createBox(size);
+				pBody->setDynamic(true);
+				pNode->setUserData(this);
+				if(i == 0)
+				{
+					pBody->setCategoryBitmask(ICreatue::WeaponBodyContactMask);
+					pBody->setCollisionBitmask(ICreatue::BodyBodyContactMask);
+				}
+				else
+				{
+					pBody->setCategoryBitmask(ICreatue::BodyBodyContactMask);
+					pBody->setCategoryBitmask(ICreatue::WeaponBodyContactMask);
+				}
+				pNode->setPhysicsBody(pBody);
+				mMonsterAnim->addChild(pNode, ICreatue::AttackPhysicsNodeTagBegin, ICreatue::AttackPhysicsNodeTagBegin+i);
+				if(i > 0)
+				{
+					auto contactListener = EventListenerPhysicsContactWithBodies::create(pLocalPlayerWeaponBody, pBody);
+					contactListener->onContactBegin = CC_CALLBACK_2(GameSceneView::onAttackContactBegin, GameSceneViewModel::point()->getSceneView());
+					contactListener->onContactSeperate = CC_CALLBACK_2(GameSceneView::onAttackContactEnded, GameSceneViewModel::point()->getSceneView());
+					pView->getEventDispatcher()->addEventListenerWithSceneGraphPriority(contactListener, GameSceneViewModel::point()->getSceneView());
+				}
+			}
+		}
 		mMonsterAnim->getAnimation()->setFrameEventCallFunc(this, frameEvent_selector(Monster::onFrameEvent));
 		mMonsterAnim->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(Monster::animationEvent));
 		CCDirector::getInstance()->getScheduler()->scheduleSelector(schedule_selector(Monster::simpleAITimer), this, 0, false);
@@ -45,6 +105,10 @@ void Monster::loop(float dt)
 {
 
 }
+cocostudio::Armature* Monster::getAnimView()
+{
+	return mMonsterAnim;
+}
 void Monster::simpleAITimer(float dt)
 {
 	this->updateTimer(dt);
@@ -57,6 +121,26 @@ void Monster::simpleAITimer(float dt)
 			mActiveAttackTimer = 3.0f + float(rand() % 3);
 		}
 	}
+	const char* nodeNames[] = {
+		"weapon_r", "body"
+	};
+	for(int i = 0; i < 2; ++ i)
+	{
+		cocostudio::CCBone* pBone = mMonsterAnim->getBone(nodeNames[i]);
+		if(NULL != pBone)
+		{
+			CCNode* pNode = static_cast<CCNode*>(mMonsterAnim->getChildByTag(ICreatue::AttackPhysicsNodeTagBegin+i));
+			cocostudio::FrameData* pData = pBone->getTweenData();
+			const AffineTransform& pTransform = pBone->getNodeToWorldTransform();
+			cocostudio::BaseData* pWorldInfo = pBone->getWorldInfo();
+			pNode->setPosition(Point(pWorldInfo->x, pWorldInfo->y));
+			float rotaX = pWorldInfo->skewX / math::Math::PI * 180.0f;
+			float rotaY = pWorldInfo->skewY / math::Math::PI * 180.0f;
+			pNode->setRotation(rotaX);
+			pNode->setScaleX(pWorldInfo->scaleX);
+			pNode->setScaleY(pWorldInfo->scaleY);
+		}
+	}	
 }
 void Monster::recoverHPTimer(float dt)
 {
@@ -269,7 +353,7 @@ void Monster::StepBefore(physics::ObjectSettings* settings)
 	static CreaturePhysicsSteeings creatureSettings;
 	creatureSettings.mIsHeroDorping = mIsHeroDorping;
 	creatureSettings.mIsOriJump = mIsOriJump;
-	creatureSettings.mUsingVerticeCount = 8;
+	creatureSettings.mUsingVerticeCount = 0;
 	for(int i = 0; i < 8; ++ i)
 	{
 		CCString* pBodyName = CCString::createWithFormat("body%d", i);
@@ -284,6 +368,7 @@ void Monster::StepBefore(physics::ObjectSettings* settings)
 		pos.x -= titledMapPos.x;
 		pos.y -= titledMapPos.y;
 		creatureSettings.mVertices[i] = b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO);
+		creatureSettings.mUsingVerticeCount ++;
 	}
 	// body box
 	if(NULL != mBodyBody)
