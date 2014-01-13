@@ -13,7 +13,7 @@ namespace framework
 		一个轴对齐的盒子可以由两个点来构造：最小的点，最大的点。
 		一般的，可以用这个类来表述AABB,以便供八叉树等数据结构进行对象剔除使用。
 		*/
-		class MATH_API AxisAlignedBox
+		class AxisAlignedBox
 		{
 		public:
 			enum Extent
@@ -316,7 +316,7 @@ namespace framework
 				}
 			}
 
-			MATH_API friend std::ostream& operator<<( std::ostream& o, const AxisAlignedBox aab )
+			friend std::ostream& operator<<( std::ostream& o, const AxisAlignedBox aab )
 			{
 				switch (aab.mExtent)
 				{

@@ -7,7 +7,7 @@ namespace framework
 {
 	namespace math
 	{
-		class MATH_API ShortPoint2
+		class ShortPoint2
 		{
 		public:
 

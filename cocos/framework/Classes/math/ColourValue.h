@@ -22,7 +22,7 @@ namespace framework
 				transparency. In this case, Real_Zero is completely transparent and 1.0 is
 				fully opaque.
 		*/
-		class MATH_API ColourValue
+		class ColourValue
 		{
 		public:
 			static const ColourValue ZERO;
@@ -330,7 +330,7 @@ namespace framework
 
 			/** Function for writing to a stream.
 			*/
-			inline MATH_API friend std::ostream& operator <<
+			inline friend std::ostream& operator <<
 				( std::ostream& o, const ColourValue& c )
 			{
 				o << "ColourValue(" << c.r << ", " << c.g << ", " << c.b << ", " << c.a << ")";

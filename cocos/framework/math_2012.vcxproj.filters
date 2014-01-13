@@ -1,37 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="Classes\math\asm_math.h" />
-    <ClInclude Include="Classes\math\AxisAlignedBox.h" />
-    <ClInclude Include="Classes\math\ColourValue.h" />
-    <ClInclude Include="Classes\math\int64_for_lua.h" />
     <ClInclude Include="Classes\math\Math.h" />
-    <ClInclude Include="Classes\math\Matrix3.h" />
-    <ClInclude Include="Classes\math\Matrix4.h" />
-    <ClInclude Include="Classes\math\Plane.h" />
-    <ClInclude Include="Classes\math\PlaneBoundedVolume.h" />
-    <ClInclude Include="Classes\math\Quaternion.h" />
-    <ClInclude Include="Classes\math\Ray.h" />
-    <ClInclude Include="Classes\math\Rectangle.h" />
-    <ClInclude Include="Classes\math\ShortPoint2.h" />
-    <ClInclude Include="Classes\math\Sphere.h" />
     <ClInclude Include="Classes\math\Vector2.h" />
-    <ClInclude Include="Classes\math\Vector3.h" />
-    <ClInclude Include="Classes\math\Vector4.h" />
     <ClInclude Include="Classes\math\Math_Common.h" />
+    <ClInclude Include="Classes\math\Degree.h" />
+    <ClInclude Include="Classes\math\Radian.h" />
+    <ClInclude Include="Classes\math\Angle.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Classes\math\AxisAlignedBox.cpp" />
-    <ClCompile Include="Classes\math\ColourValue.cpp" />
-    <ClCompile Include="Classes\math\int64_for_Lua.cpp" />
     <ClCompile Include="Classes\math\Math.cpp" />
-    <ClCompile Include="Classes\math\Matrix3.cpp" />
-    <ClCompile Include="Classes\math\Matrix4.cpp" />
-    <ClCompile Include="Classes\math\Plane.cpp" />
-    <ClCompile Include="Classes\math\Quaternion.cpp" />
-    <ClCompile Include="Classes\math\ShortPoint2.cpp" />
     <ClCompile Include="Classes\math\Vector2.cpp" />
-    <ClCompile Include="Classes\math\Vector3.cpp" />
-    <ClCompile Include="Classes\math\Vector4.cpp" />
+    <ClCompile Include="Classes\math\Degree.cpp" />
+    <ClCompile Include="Classes\math\Radian.cpp" />
+    <ClCompile Include="Classes\math\Angle.cpp" />
   </ItemGroup>
 </Project>

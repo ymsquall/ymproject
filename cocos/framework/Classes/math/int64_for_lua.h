@@ -6,7 +6,7 @@ namespace framework
 {
 	namespace math
 	{
-		class MATH_API int64_for_lua
+		class int64_for_lua
 		{
 		public:
 			int64_for_lua(void){value=0;}
@@ -124,7 +124,7 @@ namespace framework
 
 			/** Function for writing to a stream.
 			*/
-			inline MATH_API friend std::ostream& operator <<
+			inline friend std::ostream& operator <<
 				( std::ostream& o, const int64_for_lua& c )
 			{
 				o << c.value;

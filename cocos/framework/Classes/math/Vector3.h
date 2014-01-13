@@ -15,7 +15,7 @@ namespace framework
 				scaling factors can be represented by a vector, depending on how
 				you interpret the values.
 		*/
-		class MATH_API Vector3
+		class Vector3
 		{
 		public:
 			Real x, y, z;
@@ -778,7 +778,7 @@ namespace framework
 
 			/** Function for writing to a stream.
 			*/
-			inline MATH_API friend std::ostream& operator <<
+			inline friend std::ostream& operator <<
 				( std::ostream& o, const Vector3& v )
 			{
 				o << "Vector3(" << v.x << ", " << v.y << ", " << v.z << ")";

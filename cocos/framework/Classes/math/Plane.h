@@ -17,7 +17,7 @@ namespace framework
 				respectively), and a constant (D) which is the distance along
 				the normal you have to go to move the plane back to the origin.
 		 */
-		class MATH_API Plane
+		class Plane
 		{
 		public:
 			/** Default constructor - sets everything to 0.
@@ -113,7 +113,7 @@ namespace framework
 				return (rhs.d != d && rhs.normal != normal);
 			}
 
-			MATH_API friend std::ostream& operator<< (std::ostream& o, const Plane& p);
+			friend std::ostream& operator<< (std::ostream& o, const Plane& p);
 		};
 		typedef std::vector<Plane> PlaneList;
 	}	// namespace math

@@ -11,7 +11,7 @@ namespace framework
 	{
 		/** 射线， 一个端点和一个方向
 		*/
-		class MATH_API Ray
+		class Ray
 		{
 		protected:
 			Vector3 mOrigin;

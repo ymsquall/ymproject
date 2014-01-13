@@ -22,7 +22,7 @@ namespace framework
 	{
 		/** 四元数，描述基于一个轴的旋转
 		*/
-		class MATH_API Quaternion
+		class Quaternion
 		{
 		public:
 
@@ -173,7 +173,7 @@ namespace framework
 			Quaternion operator- (const Quaternion& rkQ) const;
 			Quaternion operator* (const Quaternion& rkQ) const;
 			Quaternion operator* (Real fScalar) const;
-			MATH_API friend Quaternion operator* (Real fScalar,
+			friend Quaternion operator* (Real fScalar,
 				const Quaternion& rkQ);
 			Quaternion operator- () const;
 			inline bool operator== (const Quaternion& rhs) const
@@ -262,7 +262,7 @@ namespace framework
 			/** Function for writing to a stream. Outputs "Quaternion(w, x, y, z)" with w,x,y,z
 				being the member values of the quaternion.
 			*/
-			inline MATH_API friend std::ostream& operator <<
+			inline friend std::ostream& operator <<
 				( std::ostream& o, const Quaternion& q )
 			{
 				o << "Quaternion(" << q.w << ", " << q.x << ", " << q.y << ", " << q.z << ")";

@@ -9,7 +9,7 @@ namespace framework
 	{
 		/** 4Œ¨œÚ¡ø
 		*/
-		class MATH_API Vector4
+		class Vector4
 		{
 		public:
 			Real x, y, z, w;
@@ -399,7 +399,7 @@ namespace framework
 			}
 			/** Function for writing to a stream.
 			*/
-			inline MATH_API friend std::ostream& operator <<
+			inline friend std::ostream& operator <<
 				( std::ostream& o, const Vector4& v )
 			{
 				o << "Vector4(" << v.x << ", " << v.y << ", " << v.z << ", " << v.w << ")";
