@@ -48,6 +48,66 @@
 		9204B2FB180E2535002DD158 /* libCocosDenshion Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9204B2ED180E2529002DD158 /* libCocosDenshion Mac.a */; };
 		9204B2FC180E2535002DD158 /* libjsbindings Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9204B2EE180E2529002DD158 /* libjsbindings Mac.a */; };
 		9204B2FD180E2535002DD158 /* libluabindings Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9204B2EF180E2529002DD158 /* libluabindings Mac.a */; };
+		9205A57218841FFE0080D382 /* asm_math.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A55418841FFE0080D382 /* asm_math.h */; };
+		9205A57318841FFE0080D382 /* asm_math.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A55418841FFE0080D382 /* asm_math.h */; };
+		9205A57418841FFE0080D382 /* AxisAlignedBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A55518841FFE0080D382 /* AxisAlignedBox.cpp */; };
+		9205A57518841FFE0080D382 /* AxisAlignedBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A55518841FFE0080D382 /* AxisAlignedBox.cpp */; };
+		9205A57618841FFE0080D382 /* AxisAlignedBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A55618841FFE0080D382 /* AxisAlignedBox.h */; };
+		9205A57718841FFE0080D382 /* AxisAlignedBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A55618841FFE0080D382 /* AxisAlignedBox.h */; };
+		9205A57818841FFE0080D382 /* cmMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A55718841FFE0080D382 /* cmMath.cpp */; };
+		9205A57918841FFE0080D382 /* cmMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A55718841FFE0080D382 /* cmMath.cpp */; };
+		9205A57A18841FFE0080D382 /* cmMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A55818841FFE0080D382 /* cmMath.h */; };
+		9205A57B18841FFE0080D382 /* cmMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A55818841FFE0080D382 /* cmMath.h */; };
+		9205A57C18841FFE0080D382 /* ColourValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A55918841FFE0080D382 /* ColourValue.cpp */; };
+		9205A57D18841FFE0080D382 /* ColourValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A55918841FFE0080D382 /* ColourValue.cpp */; };
+		9205A57E18841FFE0080D382 /* ColourValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A55A18841FFE0080D382 /* ColourValue.h */; };
+		9205A57F18841FFE0080D382 /* ColourValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A55A18841FFE0080D382 /* ColourValue.h */; };
+		9205A58018841FFE0080D382 /* int64_for_Lua.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A55B18841FFE0080D382 /* int64_for_Lua.cpp */; };
+		9205A58118841FFE0080D382 /* int64_for_Lua.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A55B18841FFE0080D382 /* int64_for_Lua.cpp */; };
+		9205A58218841FFE0080D382 /* int64_for_lua.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A55C18841FFE0080D382 /* int64_for_lua.h */; };
+		9205A58318841FFE0080D382 /* int64_for_lua.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A55C18841FFE0080D382 /* int64_for_lua.h */; };
+		9205A58418841FFE0080D382 /* Math_Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A55D18841FFE0080D382 /* Math_Common.h */; };
+		9205A58518841FFE0080D382 /* Math_Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A55D18841FFE0080D382 /* Math_Common.h */; };
+		9205A58618841FFE0080D382 /* Matrix3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A55E18841FFE0080D382 /* Matrix3.cpp */; };
+		9205A58718841FFE0080D382 /* Matrix3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A55E18841FFE0080D382 /* Matrix3.cpp */; };
+		9205A58818841FFE0080D382 /* Matrix3.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A55F18841FFE0080D382 /* Matrix3.h */; };
+		9205A58918841FFE0080D382 /* Matrix3.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A55F18841FFE0080D382 /* Matrix3.h */; };
+		9205A58A18841FFE0080D382 /* Matrix4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A56018841FFE0080D382 /* Matrix4.cpp */; };
+		9205A58B18841FFE0080D382 /* Matrix4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A56018841FFE0080D382 /* Matrix4.cpp */; };
+		9205A58C18841FFE0080D382 /* Matrix4.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A56118841FFE0080D382 /* Matrix4.h */; };
+		9205A58D18841FFE0080D382 /* Matrix4.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A56118841FFE0080D382 /* Matrix4.h */; };
+		9205A58E18841FFE0080D382 /* Plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A56218841FFE0080D382 /* Plane.cpp */; };
+		9205A58F18841FFE0080D382 /* Plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A56218841FFE0080D382 /* Plane.cpp */; };
+		9205A59018841FFE0080D382 /* Plane.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A56318841FFE0080D382 /* Plane.h */; };
+		9205A59118841FFE0080D382 /* Plane.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A56318841FFE0080D382 /* Plane.h */; };
+		9205A59218841FFE0080D382 /* PlaneBoundedVolume.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A56418841FFE0080D382 /* PlaneBoundedVolume.h */; };
+		9205A59318841FFE0080D382 /* PlaneBoundedVolume.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A56418841FFE0080D382 /* PlaneBoundedVolume.h */; };
+		9205A59418841FFE0080D382 /* Quaternion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A56518841FFE0080D382 /* Quaternion.cpp */; };
+		9205A59518841FFE0080D382 /* Quaternion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A56518841FFE0080D382 /* Quaternion.cpp */; };
+		9205A59618841FFE0080D382 /* Quaternion.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A56618841FFE0080D382 /* Quaternion.h */; };
+		9205A59718841FFE0080D382 /* Quaternion.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A56618841FFE0080D382 /* Quaternion.h */; };
+		9205A59818841FFE0080D382 /* Ray.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A56718841FFE0080D382 /* Ray.h */; };
+		9205A59918841FFE0080D382 /* Ray.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A56718841FFE0080D382 /* Ray.h */; };
+		9205A59A18841FFE0080D382 /* Rectangle.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A56818841FFE0080D382 /* Rectangle.h */; };
+		9205A59B18841FFE0080D382 /* Rectangle.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A56818841FFE0080D382 /* Rectangle.h */; };
+		9205A59C18841FFE0080D382 /* ShortPoint2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A56918841FFE0080D382 /* ShortPoint2.cpp */; };
+		9205A59D18841FFE0080D382 /* ShortPoint2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A56918841FFE0080D382 /* ShortPoint2.cpp */; };
+		9205A59E18841FFE0080D382 /* ShortPoint2.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A56A18841FFE0080D382 /* ShortPoint2.h */; };
+		9205A59F18841FFE0080D382 /* ShortPoint2.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A56A18841FFE0080D382 /* ShortPoint2.h */; };
+		9205A5A018841FFE0080D382 /* Sphere.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A56B18841FFE0080D382 /* Sphere.h */; };
+		9205A5A118841FFE0080D382 /* Sphere.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A56B18841FFE0080D382 /* Sphere.h */; };
+		9205A5A218841FFE0080D382 /* Vector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A56C18841FFE0080D382 /* Vector2.cpp */; };
+		9205A5A318841FFE0080D382 /* Vector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A56C18841FFE0080D382 /* Vector2.cpp */; };
+		9205A5A418841FFE0080D382 /* Vector2.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A56D18841FFE0080D382 /* Vector2.h */; };
+		9205A5A518841FFE0080D382 /* Vector2.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A56D18841FFE0080D382 /* Vector2.h */; };
+		9205A5A618841FFE0080D382 /* Vector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A56E18841FFE0080D382 /* Vector3.cpp */; };
+		9205A5A718841FFE0080D382 /* Vector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A56E18841FFE0080D382 /* Vector3.cpp */; };
+		9205A5A818841FFE0080D382 /* Vector3.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A56F18841FFE0080D382 /* Vector3.h */; };
+		9205A5A918841FFE0080D382 /* Vector3.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A56F18841FFE0080D382 /* Vector3.h */; };
+		9205A5AA18841FFE0080D382 /* Vector4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A57018841FFE0080D382 /* Vector4.cpp */; };
+		9205A5AB18841FFE0080D382 /* Vector4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9205A57018841FFE0080D382 /* Vector4.cpp */; };
+		9205A5AC18841FFE0080D382 /* Vector4.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A57118841FFE0080D382 /* Vector4.h */; };
+		9205A5AD18841FFE0080D382 /* Vector4.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A57118841FFE0080D382 /* Vector4.h */; };
 		921FDDC218673E2400B25783 /* interface.h in Headers */ = {isa = PBXBuildFile; fileRef = 921FDDC118673E2400B25783 /* interface.h */; };
 		921FDDC318673E2400B25783 /* interface.h in Headers */ = {isa = PBXBuildFile; fileRef = 921FDDC118673E2400B25783 /* interface.h */; };
 		921FDDC418673E2400B25783 /* interface.h in Headers */ = {isa = PBXBuildFile; fileRef = 921FDDC118673E2400B25783 /* interface.h */; };
@@ -784,6 +844,36 @@
 		9204B310180E254A002DD158 /* libCocosDenshion iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libCocosDenshion iOS.a"; path = "../../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libCocosDenshion iOS.a"; sourceTree = "<group>"; };
 		9204B311180E254A002DD158 /* libjsbindings iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libjsbindings iOS.a"; path = "../../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libjsbindings iOS.a"; sourceTree = "<group>"; };
 		9204B312180E254A002DD158 /* libluabindings iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libluabindings iOS.a"; path = "../../cocos2d-x-3.0alpha0-pre/build/Debug-iphoneos/libluabindings iOS.a"; sourceTree = "<group>"; };
+		9205A55418841FFE0080D382 /* asm_math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = asm_math.h; path = framework/Classes/math/asm_math.h; sourceTree = "<group>"; };
+		9205A55518841FFE0080D382 /* AxisAlignedBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AxisAlignedBox.cpp; path = framework/Classes/math/AxisAlignedBox.cpp; sourceTree = "<group>"; };
+		9205A55618841FFE0080D382 /* AxisAlignedBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AxisAlignedBox.h; path = framework/Classes/math/AxisAlignedBox.h; sourceTree = "<group>"; };
+		9205A55718841FFE0080D382 /* cmMath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cmMath.cpp; path = framework/Classes/math/cmMath.cpp; sourceTree = "<group>"; };
+		9205A55818841FFE0080D382 /* cmMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cmMath.h; path = framework/Classes/math/cmMath.h; sourceTree = "<group>"; };
+		9205A55918841FFE0080D382 /* ColourValue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ColourValue.cpp; path = framework/Classes/math/ColourValue.cpp; sourceTree = "<group>"; };
+		9205A55A18841FFE0080D382 /* ColourValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColourValue.h; path = framework/Classes/math/ColourValue.h; sourceTree = "<group>"; };
+		9205A55B18841FFE0080D382 /* int64_for_Lua.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = int64_for_Lua.cpp; path = framework/Classes/math/int64_for_Lua.cpp; sourceTree = "<group>"; };
+		9205A55C18841FFE0080D382 /* int64_for_lua.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = int64_for_lua.h; path = framework/Classes/math/int64_for_lua.h; sourceTree = "<group>"; };
+		9205A55D18841FFE0080D382 /* Math_Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Math_Common.h; path = framework/Classes/math/Math_Common.h; sourceTree = "<group>"; };
+		9205A55E18841FFE0080D382 /* Matrix3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Matrix3.cpp; path = framework/Classes/math/Matrix3.cpp; sourceTree = "<group>"; };
+		9205A55F18841FFE0080D382 /* Matrix3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Matrix3.h; path = framework/Classes/math/Matrix3.h; sourceTree = "<group>"; };
+		9205A56018841FFE0080D382 /* Matrix4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Matrix4.cpp; path = framework/Classes/math/Matrix4.cpp; sourceTree = "<group>"; };
+		9205A56118841FFE0080D382 /* Matrix4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Matrix4.h; path = framework/Classes/math/Matrix4.h; sourceTree = "<group>"; };
+		9205A56218841FFE0080D382 /* Plane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Plane.cpp; path = framework/Classes/math/Plane.cpp; sourceTree = "<group>"; };
+		9205A56318841FFE0080D382 /* Plane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Plane.h; path = framework/Classes/math/Plane.h; sourceTree = "<group>"; };
+		9205A56418841FFE0080D382 /* PlaneBoundedVolume.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlaneBoundedVolume.h; path = framework/Classes/math/PlaneBoundedVolume.h; sourceTree = "<group>"; };
+		9205A56518841FFE0080D382 /* Quaternion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Quaternion.cpp; path = framework/Classes/math/Quaternion.cpp; sourceTree = "<group>"; };
+		9205A56618841FFE0080D382 /* Quaternion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Quaternion.h; path = framework/Classes/math/Quaternion.h; sourceTree = "<group>"; };
+		9205A56718841FFE0080D382 /* Ray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ray.h; path = framework/Classes/math/Ray.h; sourceTree = "<group>"; };
+		9205A56818841FFE0080D382 /* Rectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Rectangle.h; path = framework/Classes/math/Rectangle.h; sourceTree = "<group>"; };
+		9205A56918841FFE0080D382 /* ShortPoint2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShortPoint2.cpp; path = framework/Classes/math/ShortPoint2.cpp; sourceTree = "<group>"; };
+		9205A56A18841FFE0080D382 /* ShortPoint2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShortPoint2.h; path = framework/Classes/math/ShortPoint2.h; sourceTree = "<group>"; };
+		9205A56B18841FFE0080D382 /* Sphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sphere.h; path = framework/Classes/math/Sphere.h; sourceTree = "<group>"; };
+		9205A56C18841FFE0080D382 /* Vector2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vector2.cpp; path = framework/Classes/math/Vector2.cpp; sourceTree = "<group>"; };
+		9205A56D18841FFE0080D382 /* Vector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vector2.h; path = framework/Classes/math/Vector2.h; sourceTree = "<group>"; };
+		9205A56E18841FFE0080D382 /* Vector3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vector3.cpp; path = framework/Classes/math/Vector3.cpp; sourceTree = "<group>"; };
+		9205A56F18841FFE0080D382 /* Vector3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vector3.h; path = framework/Classes/math/Vector3.h; sourceTree = "<group>"; };
+		9205A57018841FFE0080D382 /* Vector4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vector4.cpp; path = framework/Classes/math/Vector4.cpp; sourceTree = "<group>"; };
+		9205A57118841FFE0080D382 /* Vector4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vector4.h; path = framework/Classes/math/Vector4.h; sourceTree = "<group>"; };
 		921FDDC118673E2400B25783 /* interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interface.h; sourceTree = "<group>"; };
 		924EAA23182732F100B6782F /* binding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = binding.h; sourceTree = "<group>"; };
 		924EAA24182732F100B6782F /* DataContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataContext.h; sourceTree = "<group>"; };
@@ -1038,6 +1128,43 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9205A55318841FED0080D382 /* math */ = {
+			isa = PBXGroup;
+			children = (
+				9205A55418841FFE0080D382 /* asm_math.h */,
+				9205A55518841FFE0080D382 /* AxisAlignedBox.cpp */,
+				9205A55618841FFE0080D382 /* AxisAlignedBox.h */,
+				9205A55718841FFE0080D382 /* cmMath.cpp */,
+				9205A55818841FFE0080D382 /* cmMath.h */,
+				9205A55918841FFE0080D382 /* ColourValue.cpp */,
+				9205A55A18841FFE0080D382 /* ColourValue.h */,
+				9205A55B18841FFE0080D382 /* int64_for_Lua.cpp */,
+				9205A55C18841FFE0080D382 /* int64_for_lua.h */,
+				9205A55D18841FFE0080D382 /* Math_Common.h */,
+				9205A55E18841FFE0080D382 /* Matrix3.cpp */,
+				9205A55F18841FFE0080D382 /* Matrix3.h */,
+				9205A56018841FFE0080D382 /* Matrix4.cpp */,
+				9205A56118841FFE0080D382 /* Matrix4.h */,
+				9205A56218841FFE0080D382 /* Plane.cpp */,
+				9205A56318841FFE0080D382 /* Plane.h */,
+				9205A56418841FFE0080D382 /* PlaneBoundedVolume.h */,
+				9205A56518841FFE0080D382 /* Quaternion.cpp */,
+				9205A56618841FFE0080D382 /* Quaternion.h */,
+				9205A56718841FFE0080D382 /* Ray.h */,
+				9205A56818841FFE0080D382 /* Rectangle.h */,
+				9205A56918841FFE0080D382 /* ShortPoint2.cpp */,
+				9205A56A18841FFE0080D382 /* ShortPoint2.h */,
+				9205A56B18841FFE0080D382 /* Sphere.h */,
+				9205A56C18841FFE0080D382 /* Vector2.cpp */,
+				9205A56D18841FFE0080D382 /* Vector2.h */,
+				9205A56E18841FFE0080D382 /* Vector3.cpp */,
+				9205A56F18841FFE0080D382 /* Vector3.h */,
+				9205A57018841FFE0080D382 /* Vector4.cpp */,
+				9205A57118841FFE0080D382 /* Vector4.h */,
+			);
+			name = math;
+			sourceTree = "<group>";
+		};
 		921FDD9318673DE400B25783 /* object */ = {
 			isa = PBXGroup;
 			children = (
@@ -1054,6 +1181,7 @@
 		9233B794181149970095D07F /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				9205A55318841FED0080D382 /* math */,
 				921FDD9318673DE400B25783 /* object */,
 				924EAA22182732F100B6782F /* mvvm */,
 				924EAA2C182732F100B6782F /* unity */,
@@ -1409,6 +1537,7 @@
 				924EAD9D1827330000B6782F /* CheckBox.h in Headers */,
 				924EAE7D1827330000B6782F /* Expander.h in Headers */,
 				924EAF1D1827330100B6782F /* Canvas.h in Headers */,
+				9205A5A018841FFE0080D382 /* Sphere.h in Headers */,
 				924EAEE51827330100B6782F /* Menu.h in Headers */,
 				924EADB51827330000B6782F /* Frame.h in Headers */,
 				924EAF951827330100B6782F /* TextBox.h in Headers */,
@@ -1418,13 +1547,18 @@
 				92EF2C45185307B200CB9EA4 /* datablock.h in Headers */,
 				924EAE551827330000B6782F /* Decorator.h in Headers */,
 				924EAEC51827330000B6782F /* ContextMenu.h in Headers */,
+				9205A58218841FFE0080D382 /* int64_for_lua.h in Headers */,
 				924EAF651827330100B6782F /* VirtualizingPanel.h in Headers */,
 				924EAF751827330100B6782F /* WrapPanel.h in Headers */,
+				9205A5AC18841FFE0080D382 /* Vector4.h in Headers */,
+				9205A57E18841FFE0080D382 /* ColourValue.h in Headers */,
 				924EAEB51827330000B6782F /* TreeViewItem.h in Headers */,
+				9205A59618841FFE0080D382 /* Quaternion.h in Headers */,
 				924EAAB3182732F100B6782F /* DataContext.h in Headers */,
 				924EADFD1827330000B6782F /* ScrollViewer.h in Headers */,
 				924EADF51827330000B6782F /* RepeatButton.h in Headers */,
 				924EAAE3182732F100B6782F /* object.h in Headers */,
+				9205A59218841FFE0080D382 /* PlaneBoundedVolume.h in Headers */,
 				921FDDC218673E2400B25783 /* interface.h in Headers */,
 				924EAF4D1827330100B6782F /* ToolBarOverflowPanel.h in Headers */,
 				924EAEED1827330100B6782F /* MenuBase.h in Headers */,
@@ -1432,9 +1566,11 @@
 				924EAF2D1827330100B6782F /* Grid.h in Headers */,
 				924EAABB182732F100B6782F /* framework.h in Headers */,
 				924EAADB182732F100B6782F /* factory.h in Headers */,
+				9205A57A18841FFE0080D382 /* cmMath.h in Headers */,
 				924EAF351827330100B6782F /* Panel.h in Headers */,
 				924EAEFD1827330100B6782F /* StatusBar.h in Headers */,
 				924EAAC7182732F100B6782F /* model.h in Headers */,
+				9205A57218841FFE0080D382 /* asm_math.h in Headers */,
 				924EAE051827330000B6782F /* StatusBarItem.h in Headers */,
 				924EAE5D1827330000B6782F /* InkPresenter.h in Headers */,
 				924EAED51827330100B6782F /* ListBox.h in Headers */,
@@ -1451,10 +1587,14 @@
 				924EADCD1827330000B6782F /* Label.h in Headers */,
 				924EAF0D1827330100B6782F /* TreeView.h in Headers */,
 				924EAF251827330100B6782F /* DockPanel.h in Headers */,
+				9205A59A18841FFE0080D382 /* Rectangle.h in Headers */,
 				924EAEA51827330000B6782F /* MenuItem.h in Headers */,
 				924EAD951827330000B6782F /* ButtonBase.h in Headers */,
 				924EAE751827330000B6782F /* Viewbox.h in Headers */,
+				9205A5A418841FFE0080D382 /* Vector2.h in Headers */,
 				924EAE4D1827330000B6782F /* ClassicBorderDecorator.h in Headers */,
+				9205A59018841FFE0080D382 /* Plane.h in Headers */,
+				9205A59E18841FFE0080D382 /* ShortPoint2.h in Headers */,
 				924EAEF51827330100B6782F /* Selector.h in Headers */,
 				924EAD751827330000B6782F /* LuaCocoStudioConversion.h in Headers */,
 				924EADDD1827330000B6782F /* ListViewItem.h in Headers */,
@@ -1465,12 +1605,14 @@
 				924EAE151827330000B6782F /* ToolTip.h in Headers */,
 				924EAE0D1827330000B6782F /* ToggleButton.h in Headers */,
 				924EAAF7182732F100B6782F /* singleton.h in Headers */,
+				9205A58418841FFE0080D382 /* Math_Common.h in Headers */,
 				924EAAB7182732F100B6782F /* dependency.h in Headers */,
 				924EADA51827330000B6782F /* ComboBoxItem.h in Headers */,
 				924EADC51827330000B6782F /* GroupItem.h in Headers */,
 				924EAF451827330100B6782F /* TabPanel.h in Headers */,
 				924EAE451827330000B6782F /* ButtonChrome.h in Headers */,
 				92D029EB187684B500D02B72 /* IPhysicsMovableObject.h in Headers */,
+				9205A58C18841FFE0080D382 /* Matrix4.h in Headers */,
 				924EAE1D1827330000B6782F /* UserControl.h in Headers */,
 				924EAAD7182732F100B6782F /* event.h in Headers */,
 				924EAE951827330000B6782F /* TabItem.h in Headers */,
@@ -1479,14 +1621,18 @@
 				924EAE2D1827330000B6782F /* AdornerDecorator.h in Headers */,
 				924EAF851827330100B6782F /* FlowText.h in Headers */,
 				924EADAD1827330000B6782F /* ContentControl.h in Headers */,
+				9205A5A818841FFE0080D382 /* Vector3.h in Headers */,
 				924EAF8D1827330100B6782F /* TextBlock.h in Headers */,
 				924EAAD3182732F100B6782F /* delegate.h in Headers */,
 				924EAACF182732F100B6782F /* viewmodel.h in Headers */,
 				924EAE3D1827330000B6782F /* BulletDecorator.h in Headers */,
+				9205A58818841FFE0080D382 /* Matrix3.h in Headers */,
 				924EAD851827330000B6782F /* LuaHelper.h in Headers */,
 				924EAE651827330000B6782F /* ListBoxChrome.h in Headers */,
+				9205A59818841FFE0080D382 /* Ray.h in Headers */,
 				924EAE9D1827330000B6782F /* HeaderedItemsControl.h in Headers */,
 				924EADE51827330000B6782F /* NavigationWindow.h in Headers */,
+				9205A57618841FFE0080D382 /* AxisAlignedBox.h in Headers */,
 				92D029E9187684B500D02B72 /* IMovableObject.h in Headers */,
 				924EAAE7182732F100B6782F /* platform.h in Headers */,
 				924EAE6D1827330000B6782F /* SystemDropShadowChrome.h in Headers */,
@@ -1710,6 +1856,7 @@
 				924EAD9F1827330000B6782F /* CheckBox.h in Headers */,
 				924EAE7F1827330000B6782F /* Expander.h in Headers */,
 				924EAF1F1827330100B6782F /* Canvas.h in Headers */,
+				9205A5A118841FFE0080D382 /* Sphere.h in Headers */,
 				924EAEE71827330100B6782F /* Menu.h in Headers */,
 				924EADB71827330000B6782F /* Frame.h in Headers */,
 				924EAF971827330100B6782F /* TextBox.h in Headers */,
@@ -1719,13 +1866,18 @@
 				92EF2C46185307B200CB9EA4 /* datablock.h in Headers */,
 				924EAE571827330000B6782F /* Decorator.h in Headers */,
 				924EAEC71827330000B6782F /* ContextMenu.h in Headers */,
+				9205A58318841FFE0080D382 /* int64_for_lua.h in Headers */,
 				924EAF671827330100B6782F /* VirtualizingPanel.h in Headers */,
 				924EAF771827330100B6782F /* WrapPanel.h in Headers */,
+				9205A5AD18841FFE0080D382 /* Vector4.h in Headers */,
+				9205A57F18841FFE0080D382 /* ColourValue.h in Headers */,
 				924EAEB71827330000B6782F /* TreeViewItem.h in Headers */,
+				9205A59718841FFE0080D382 /* Quaternion.h in Headers */,
 				924EAAB5182732F100B6782F /* DataContext.h in Headers */,
 				924EADFF1827330000B6782F /* ScrollViewer.h in Headers */,
 				924EADF71827330000B6782F /* RepeatButton.h in Headers */,
 				924EAAE5182732F100B6782F /* object.h in Headers */,
+				9205A59318841FFE0080D382 /* PlaneBoundedVolume.h in Headers */,
 				921FDDC418673E2400B25783 /* interface.h in Headers */,
 				924EAF4F1827330100B6782F /* ToolBarOverflowPanel.h in Headers */,
 				924EAEEF1827330100B6782F /* MenuBase.h in Headers */,
@@ -1733,9 +1885,11 @@
 				924EAF2F1827330100B6782F /* Grid.h in Headers */,
 				924EAABD182732F100B6782F /* framework.h in Headers */,
 				924EAADD182732F100B6782F /* factory.h in Headers */,
+				9205A57B18841FFE0080D382 /* cmMath.h in Headers */,
 				924EAF371827330100B6782F /* Panel.h in Headers */,
 				924EAEFF1827330100B6782F /* StatusBar.h in Headers */,
 				924EAAC9182732F100B6782F /* model.h in Headers */,
+				9205A57318841FFE0080D382 /* asm_math.h in Headers */,
 				924EAE071827330000B6782F /* StatusBarItem.h in Headers */,
 				924EAE5F1827330000B6782F /* InkPresenter.h in Headers */,
 				924EAED71827330100B6782F /* ListBox.h in Headers */,
@@ -1752,10 +1906,14 @@
 				924EADCF1827330000B6782F /* Label.h in Headers */,
 				924EAF0F1827330100B6782F /* TreeView.h in Headers */,
 				924EAF271827330100B6782F /* DockPanel.h in Headers */,
+				9205A59B18841FFE0080D382 /* Rectangle.h in Headers */,
 				924EAEA71827330000B6782F /* MenuItem.h in Headers */,
 				924EAD971827330000B6782F /* ButtonBase.h in Headers */,
 				924EAE771827330000B6782F /* Viewbox.h in Headers */,
+				9205A5A518841FFE0080D382 /* Vector2.h in Headers */,
 				924EAE4F1827330000B6782F /* ClassicBorderDecorator.h in Headers */,
+				9205A59118841FFE0080D382 /* Plane.h in Headers */,
+				9205A59F18841FFE0080D382 /* ShortPoint2.h in Headers */,
 				924EAEF71827330100B6782F /* Selector.h in Headers */,
 				924EAD771827330000B6782F /* LuaCocoStudioConversion.h in Headers */,
 				924EADDF1827330000B6782F /* ListViewItem.h in Headers */,
@@ -1766,12 +1924,14 @@
 				924EAE171827330000B6782F /* ToolTip.h in Headers */,
 				924EAE0F1827330000B6782F /* ToggleButton.h in Headers */,
 				924EAAF9182732F100B6782F /* singleton.h in Headers */,
+				9205A58518841FFE0080D382 /* Math_Common.h in Headers */,
 				924EAAB9182732F100B6782F /* dependency.h in Headers */,
 				924EADA71827330000B6782F /* ComboBoxItem.h in Headers */,
 				924EADC71827330000B6782F /* GroupItem.h in Headers */,
 				924EAF471827330100B6782F /* TabPanel.h in Headers */,
 				924EAE471827330000B6782F /* ButtonChrome.h in Headers */,
 				92D029EC187684B500D02B72 /* IPhysicsMovableObject.h in Headers */,
+				9205A58D18841FFE0080D382 /* Matrix4.h in Headers */,
 				924EAE1F1827330000B6782F /* UserControl.h in Headers */,
 				924EAAD9182732F100B6782F /* event.h in Headers */,
 				924EAE971827330000B6782F /* TabItem.h in Headers */,
@@ -1780,14 +1940,18 @@
 				924EAE2F1827330000B6782F /* AdornerDecorator.h in Headers */,
 				924EAF871827330100B6782F /* FlowText.h in Headers */,
 				924EADAF1827330000B6782F /* ContentControl.h in Headers */,
+				9205A5A918841FFE0080D382 /* Vector3.h in Headers */,
 				924EAF8F1827330100B6782F /* TextBlock.h in Headers */,
 				924EAAD5182732F100B6782F /* delegate.h in Headers */,
 				924EAAD1182732F100B6782F /* viewmodel.h in Headers */,
 				924EAE3F1827330000B6782F /* BulletDecorator.h in Headers */,
+				9205A58918841FFE0080D382 /* Matrix3.h in Headers */,
 				924EAD871827330000B6782F /* LuaHelper.h in Headers */,
 				924EAE671827330000B6782F /* ListBoxChrome.h in Headers */,
+				9205A59918841FFE0080D382 /* Ray.h in Headers */,
 				924EAE9F1827330000B6782F /* HeaderedItemsControl.h in Headers */,
 				924EADE71827330000B6782F /* NavigationWindow.h in Headers */,
+				9205A57718841FFE0080D382 /* AxisAlignedBox.h in Headers */,
 				92D029EA187684B500D02B72 /* IMovableObject.h in Headers */,
 				924EAAE9182732F100B6782F /* platform.h in Headers */,
 				924EAE6F1827330000B6782F /* SystemDropShadowChrome.h in Headers */,
@@ -1906,23 +2070,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				924EADF91827330000B6782F /* ScrollViewer.cpp in Sources */,
+				9205A5A218841FFE0080D382 /* Vector2.cpp in Sources */,
 				924EAED11827330100B6782F /* ListBox.cpp in Sources */,
 				924EAF111827330100B6782F /* Adorner.cpp in Sources */,
+				9205A57C18841FFE0080D382 /* ColourValue.cpp in Sources */,
 				924EAF311827330100B6782F /* Panel.cpp in Sources */,
+				9205A5A618841FFE0080D382 /* Vector3.cpp in Sources */,
 				924EAE811827330000B6782F /* GroupBox.cpp in Sources */,
 				92EF2C43185307B100CB9EA4 /* datablock.cpp in Sources */,
 				924EADE91827330000B6782F /* RadioButton.cpp in Sources */,
 				924EAC011827330000B6782F /* AppDelegate.cpp in Sources */,
+				9205A59C18841FFE0080D382 /* ShortPoint2.cpp in Sources */,
 				924EAF211827330100B6782F /* DockPanel.cpp in Sources */,
 				924EAD811827330000B6782F /* LuaHelper.cpp in Sources */,
 				924EAE791827330000B6782F /* Expander.cpp in Sources */,
+				9205A57418841FFE0080D382 /* AxisAlignedBox.cpp in Sources */,
 				924EAABF182732F100B6782F /* interface.cpp in Sources */,
 				924EAE411827330000B6782F /* ButtonChrome.cpp in Sources */,
+				9205A59418841FFE0080D382 /* Quaternion.cpp in Sources */,
 				924EAE011827330000B6782F /* StatusBarItem.cpp in Sources */,
 				924EAF811827330100B6782F /* FlowText.cpp in Sources */,
 				924EAF391827330100B6782F /* StackPanel.cpp in Sources */,
 				924EADB91827330000B6782F /* GridViewColumnHeader.cpp in Sources */,
 				924EAF711827330100B6782F /* WrapPanel.cpp in Sources */,
+				9205A58018841FFE0080D382 /* int64_for_Lua.cpp in Sources */,
 				924EADA91827330000B6782F /* ContentControl.cpp in Sources */,
 				924EADC11827330000B6782F /* GroupItem.cpp in Sources */,
 				924EAF491827330100B6782F /* ToolBarOverflowPanel.cpp in Sources */,
@@ -1933,15 +2104,18 @@
 				924EAE211827330000B6782F /* Window.cpp in Sources */,
 				924EAF791827330100B6782F /* Shape.cpp in Sources */,
 				924EAD891827330000B6782F /* Button.cpp in Sources */,
+				9205A5AA18841FFE0080D382 /* Vector4.cpp in Sources */,
 				924EAEF11827330100B6782F /* Selector.cpp in Sources */,
 				924EAF691827330100B6782F /* VirtualizingStackPanel.cpp in Sources */,
 				924EADF11827330000B6782F /* RepeatButton.cpp in Sources */,
 				924EADE11827330000B6782F /* NavigationWindow.cpp in Sources */,
+				9205A57818841FFE0080D382 /* cmMath.cpp in Sources */,
 				924EAE091827330000B6782F /* ToggleButton.cpp in Sources */,
 				924EAF191827330100B6782F /* Canvas.cpp in Sources */,
 				924EAED91827330100B6782F /* ListView.cpp in Sources */,
 				924EAE991827330000B6782F /* HeaderedItemsControl.cpp in Sources */,
 				924EAEE11827330100B6782F /* Menu.cpp in Sources */,
+				9205A58618841FFE0080D382 /* Matrix3.cpp in Sources */,
 				924EAE691827330000B6782F /* SystemDropShadowChrome.cpp in Sources */,
 				924EAF511827330100B6782F /* ToolBarPanel.cpp in Sources */,
 				924EAD711827330000B6782F /* LuaCocoStudioConversion.cpp in Sources */,
@@ -1966,9 +2140,11 @@
 				924EAE311827330000B6782F /* Border.cpp in Sources */,
 				924EAF891827330100B6782F /* TextBlock.cpp in Sources */,
 				924EAE891827330000B6782F /* HeaderedContentControl.cpp in Sources */,
+				9205A58E18841FFE0080D382 /* Plane.cpp in Sources */,
 				924EAF611827330100B6782F /* VirtualizingPanel.cpp in Sources */,
 				924EAE711827330000B6782F /* Viewbox.cpp in Sources */,
 				924EAE511827330000B6782F /* Decorator.cpp in Sources */,
+				9205A58A18841FFE0080D382 /* Matrix4.cpp in Sources */,
 				924EAF591827330100B6782F /* UniformGrid.cpp in Sources */,
 				924EADD91827330000B6782F /* ListViewItem.cpp in Sources */,
 				924EAE911827330000B6782F /* TabItem.cpp in Sources */,
@@ -2157,23 +2333,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				924EADFB1827330000B6782F /* ScrollViewer.cpp in Sources */,
+				9205A5A318841FFE0080D382 /* Vector2.cpp in Sources */,
 				924EAED31827330100B6782F /* ListBox.cpp in Sources */,
 				924EAF131827330100B6782F /* Adorner.cpp in Sources */,
+				9205A57D18841FFE0080D382 /* ColourValue.cpp in Sources */,
 				924EAF331827330100B6782F /* Panel.cpp in Sources */,
+				9205A5A718841FFE0080D382 /* Vector3.cpp in Sources */,
 				924EAE831827330000B6782F /* GroupBox.cpp in Sources */,
 				92EF2C44185307B200CB9EA4 /* datablock.cpp in Sources */,
 				924EADEB1827330000B6782F /* RadioButton.cpp in Sources */,
 				924EAC031827330000B6782F /* AppDelegate.cpp in Sources */,
+				9205A59D18841FFE0080D382 /* ShortPoint2.cpp in Sources */,
 				924EAF231827330100B6782F /* DockPanel.cpp in Sources */,
 				924EAD831827330000B6782F /* LuaHelper.cpp in Sources */,
 				924EAE7B1827330000B6782F /* Expander.cpp in Sources */,
+				9205A57518841FFE0080D382 /* AxisAlignedBox.cpp in Sources */,
 				924EAAC1182732F100B6782F /* interface.cpp in Sources */,
 				924EAE431827330000B6782F /* ButtonChrome.cpp in Sources */,
+				9205A59518841FFE0080D382 /* Quaternion.cpp in Sources */,
 				924EAE031827330000B6782F /* StatusBarItem.cpp in Sources */,
 				924EAF831827330100B6782F /* FlowText.cpp in Sources */,
 				924EAF3B1827330100B6782F /* StackPanel.cpp in Sources */,
 				924EADBB1827330000B6782F /* GridViewColumnHeader.cpp in Sources */,
 				924EAF731827330100B6782F /* WrapPanel.cpp in Sources */,
+				9205A58118841FFE0080D382 /* int64_for_Lua.cpp in Sources */,
 				924EADAB1827330000B6782F /* ContentControl.cpp in Sources */,
 				924EADC31827330000B6782F /* GroupItem.cpp in Sources */,
 				924EAF4B1827330100B6782F /* ToolBarOverflowPanel.cpp in Sources */,
@@ -2184,15 +2367,18 @@
 				924EAE231827330000B6782F /* Window.cpp in Sources */,
 				924EAF7B1827330100B6782F /* Shape.cpp in Sources */,
 				924EAD8B1827330000B6782F /* Button.cpp in Sources */,
+				9205A5AB18841FFE0080D382 /* Vector4.cpp in Sources */,
 				924EAEF31827330100B6782F /* Selector.cpp in Sources */,
 				924EAF6B1827330100B6782F /* VirtualizingStackPanel.cpp in Sources */,
 				924EADF31827330000B6782F /* RepeatButton.cpp in Sources */,
 				924EADE31827330000B6782F /* NavigationWindow.cpp in Sources */,
+				9205A57918841FFE0080D382 /* cmMath.cpp in Sources */,
 				924EAE0B1827330000B6782F /* ToggleButton.cpp in Sources */,
 				924EAF1B1827330100B6782F /* Canvas.cpp in Sources */,
 				924EAEDB1827330100B6782F /* ListView.cpp in Sources */,
 				924EAE9B1827330000B6782F /* HeaderedItemsControl.cpp in Sources */,
 				924EAEE31827330100B6782F /* Menu.cpp in Sources */,
+				9205A58718841FFE0080D382 /* Matrix3.cpp in Sources */,
 				924EAE6B1827330000B6782F /* SystemDropShadowChrome.cpp in Sources */,
 				924EAF531827330100B6782F /* ToolBarPanel.cpp in Sources */,
 				924EAD731827330000B6782F /* LuaCocoStudioConversion.cpp in Sources */,
@@ -2217,9 +2403,11 @@
 				924EAE331827330000B6782F /* Border.cpp in Sources */,
 				924EAF8B1827330100B6782F /* TextBlock.cpp in Sources */,
 				924EAE8B1827330000B6782F /* HeaderedContentControl.cpp in Sources */,
+				9205A58F18841FFE0080D382 /* Plane.cpp in Sources */,
 				924EAF631827330100B6782F /* VirtualizingPanel.cpp in Sources */,
 				924EAE731827330000B6782F /* Viewbox.cpp in Sources */,
 				924EAE531827330000B6782F /* Decorator.cpp in Sources */,
+				9205A58B18841FFE0080D382 /* Matrix4.cpp in Sources */,
 				924EAF5B1827330100B6782F /* UniformGrid.cpp in Sources */,
 				924EADDB1827330000B6782F /* ListViewItem.cpp in Sources */,
 				924EAE931827330000B6782F /* TabItem.cpp in Sources */,

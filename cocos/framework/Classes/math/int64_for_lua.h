@@ -13,9 +13,9 @@ namespace framework
 			~int64_for_lua(void){}
 
 
-			int64_for_lua(__int64 v):value(v){}
+			int64_for_lua(int64 v):value(v){}
 
-			int64_for_lua(unsigned __int64 v);
+			int64_for_lua(uint64 v);
 
 			int64_for_lua(char v):value(v){}
 			int64_for_lua(unsigned char v):value(v){}
@@ -30,7 +30,7 @@ namespace framework
 			int64_for_lua(const int64_for_lua &source):value(source.value){};
 
 
-			__int64 getValue()const
+			int64 getValue()const
 			{
 				return value;
 			}
@@ -105,19 +105,19 @@ namespace framework
 
 			int64_for_lua operator + (const double& source) const
 			{
-				return value+(__int64)source;
+				return value+(int64)source;
 			}
 			int64_for_lua operator - (const double& source) const
 			{
-				return value-(__int64)source;
+				return value-(int64)source;
 			}
 			int64_for_lua operator * (const double& source) const
 			{
-				return value*(__int64)source;
+				return value*(int64)source;
 			}
 			int64_for_lua operator / (const double& source) const
 			{
-				return value/(__int64)source;
+				return value/(int64)source;
 			}
 
 
@@ -132,7 +132,7 @@ namespace framework
 			}
 
 		private:
-			__int64 value;
+			int64 value;
 		};
 	}	// namespace math
 }	// namespace framework
