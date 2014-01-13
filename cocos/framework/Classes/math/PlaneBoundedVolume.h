@@ -16,7 +16,7 @@ namespace framework
 	{
 		/** Represents a convex volume bounded by planes.
 		*/
-		class PlaneBoundedVolume
+		class MATH_API PlaneBoundedVolume
 		{
 		public:
 			typedef std::vector<Plane> PlaneList;

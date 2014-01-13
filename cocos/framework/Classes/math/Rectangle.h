@@ -6,7 +6,7 @@ namespace framework
 {
 	namespace math
 	{
-		class Rectangle
+		class MATH_API Rectangle
 		{
 		public:
 			Real left;

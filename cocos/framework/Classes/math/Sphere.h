@@ -11,7 +11,7 @@ namespace framework
 		@remarks
 			Sphere存储了球的中心和半径
 		*/
-		class Sphere
+		class MATH_API Sphere
 		{
 		protected:
 			Real mRadius;

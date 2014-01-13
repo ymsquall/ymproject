@@ -3,7 +3,6 @@
 
 #include "cocos2d.h"
 
-/*
 #define COMPILER_MSVC 1
 #define COMPILER_GNUC 2
 #define COMPILER_BORL 3
@@ -16,7 +15,8 @@
 #define ARCHITECTURE_32 1
 #define ARCHITECTURE_64 2
 
-// Finds the compiler type and version.
+/* Finds the compiler type and version.
+*/
 #if defined( __GCCE__ )
 #   define COMPILER COMPILER_GCCE
 #   define COMP_VER _MSC_VER
@@ -40,7 +40,7 @@
 #   pragma error "No known compiler!"
 #endif
 
-// See if we can use __forceinline or if we need to use __inline instead
+/* See if we can use __forceinline or if we need to use __inline instead */
 #if COMPILER == COMPILER_MSVC
 #   if COMP_VER >= 1200
 #       define FORCEINLINE __forceinline
@@ -52,7 +52,7 @@
 #else
 #   define FORCEINLINE __inline
 #endif
-   // Find the arch type
+   /* Find the arch type */
 #if defined(__x86_64__) || defined(_M_X64) || defined(__powerpc64__) || defined(__alpha__) || defined(__ia64__) || defined(__s390__) || defined(__s390x__)
 #   define ARCH_TYPE ARCHITECTURE_64
 #else
@@ -73,11 +73,11 @@
 #else
 #    define ENDIAN ENDIAN_LITTLE_VALUE
 #endif
-*/
+
 // Integer formats of fixed bit width
 
 // define uint64 type
-#if CC_TARGET_PLATFORM == CC_PLATFORM_WIN32
+#if COMPILER == COMPILER_MSVC
 	typedef unsigned __int32	uint32;
 	typedef __int32				int32;
 	typedef unsigned __int16	uint16;
@@ -96,5 +96,14 @@
 	typedef unsigned long long	uint64;
 	typedef long long			int64;
 #endif
+
+typedef float Real;
+static const Real Real_One=1.0f;
+static const Real Real_Two=2.0f;
+static const Real Real_Zero=0.0f;
+static const Real Real_Half=0.5f;
+static const Real Real_Epsilon=1e-06f;
+
+#include <vector>
 
 #endif	// _UNITY_PLATFORM_H_

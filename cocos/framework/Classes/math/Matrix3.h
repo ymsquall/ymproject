@@ -32,7 +32,7 @@ namespace framework
         @par
             The coordinate system is assumed to be <b>right-handed</b>.
 		*/
-		class Matrix3
+		class MATH_API Matrix3
 		{
 		public:
 			/** Default constructor.
@@ -113,14 +113,14 @@ namespace framework
 			Vector3 operator* (const Vector3& rkVector) const;
 
 			// vector * matrix [1x3 * 3x3 = 1x3]
-			friend Vector3 operator* (const Vector3& rkVector,
+			MATH_API friend Vector3 operator* (const Vector3& rkVector,
 				const Matrix3& rkMatrix);
 
 			// matrix * scalar
 			Matrix3 operator* (Real fScalar) const;
 
 			// scalar * matrix
-			friend Matrix3 operator* (Real fScalar, const Matrix3& rkMatrix);
+			MATH_API friend Matrix3 operator* (Real fScalar, const Matrix3& rkMatrix);
 
 			// utilities
 			Matrix3 Transpose () const;
@@ -199,7 +199,7 @@ namespace framework
 
 			/** Function for writing to a stream.
 			*/
-			inline friend std::ostream& operator <<
+			inline MATH_API friend std::ostream& operator <<
 				( std::ostream& o, const Matrix3& m )
 			{
 				o << "Matrix3(" << m[0][0] << ", " << m[0][1] << ", " << m[0][2] << ", " 
