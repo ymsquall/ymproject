@@ -1,6 +1,6 @@
 #include "LocalPlayer.h"
 #include "luaext/LuaHelper.h"
-#include "math/Math.h"
+#include "math/cmMath.h"
 #include "ViewModel_GameScene.h"
 #include "ViewModel_CreatureHeader.h"
 #include "Monster.h"

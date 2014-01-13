@@ -5,7 +5,7 @@
 #include "Model_CreatureHeader.h"
 #include "Physics_Box2dView.h"
 #include "Physics_GameScene.h"
-#include "math/Math.h"
+#include "math/cmMath.h"
 #include "gui/CocosGUI.h"
 #include "LocalPlayer.h"
 

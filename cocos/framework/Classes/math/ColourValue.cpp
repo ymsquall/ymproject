@@ -1,5 +1,5 @@
 #include "ColourValue.h"
-#include "Math.h"
+#include "cmMath.h"
 
 namespace framework
 {

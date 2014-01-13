@@ -1,6 +1,6 @@
 #include "Quaternion.h"
 
-#include "Math.h"
+#include "cmMath.h"
 #include "Matrix3.h"
 #include "Vector3.h"
 

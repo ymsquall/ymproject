@@ -25,7 +25,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 -----------------------------------------------------------------------------
 */
-#include "Math.h"
+#include "cmMath.h"
 #include "asm_math.h"
 #include "Vector2.h"
 #include "Vector3.h"

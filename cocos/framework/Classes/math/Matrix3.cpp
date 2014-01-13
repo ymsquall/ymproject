@@ -1,5 +1,5 @@
 #include "Matrix3.h"
-#include "Math.h"
+#include "cmMath.h"
 
 // Adapted from Matrix math by Wild Magic http://www.geometrictools.com/
 namespace framework
