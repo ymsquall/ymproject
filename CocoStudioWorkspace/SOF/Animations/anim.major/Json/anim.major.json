@@ -2912,7 +2912,7 @@
         },
         {
           "name": "attack01",
-          "dr": 14,
+          "dr": 13,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -4078,7 +4078,7 @@
         },
         {
           "name": "attack02",
-          "dr": 15,
+          "dr": 14,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -6914,7 +6914,7 @@
         },
         {
           "name": "assault01",
-          "dr": 11,
+          "dr": 21,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -6947,7 +6947,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 1,
+                  "fi": 2,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -6960,7 +6960,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 2,
+                  "fi": 4,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -6973,20 +6973,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 3,
-                  "twE": 0,
-                  "tweenFrame": true
-                },
-                {
-                  "dI": 4,
-                  "x": 115.0,
-                  "y": 115.0,
-                  "z": 0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0,
-                  "fi": 4,
+                  "fi": 6,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -6999,7 +6986,20 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 5,
+                  "fi": 8,
+                  "twE": 0,
+                  "tweenFrame": true
+                },
+                {
+                  "dI": 4,
+                  "x": 115.0,
+                  "y": 115.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 10,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -7012,7 +7012,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 6,
+                  "fi": 12,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -7025,7 +7025,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 7,
+                  "fi": 14,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -7038,7 +7038,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 8,
+                  "fi": 16,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -7051,7 +7051,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 9,
+                  "fi": 18,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -7064,7 +7064,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 10,
+                  "fi": 20,
                   "twE": 0,
                   "tweenFrame": true
                 }
@@ -7096,7 +7096,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 10,
+                  "fi": 20,
                   "twE": 0,
                   "tweenFrame": true
                 }
@@ -7128,7 +7128,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 10,
+                  "fi": 20,
                   "twE": 0,
                   "tweenFrame": true
                 }
@@ -7160,7 +7160,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 10,
+                  "fi": 20,
                   "twE": 0,
                   "tweenFrame": true
                 }
@@ -7198,7 +7198,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 10,
+                  "fi": 20,
                   "twE": 0,
                   "tweenFrame": true,
                   "color": {
@@ -7236,7 +7236,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 10,
+                  "fi": 20,
                   "twE": 0,
                   "tweenFrame": true
                 }
@@ -7269,7 +7269,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 10,
+                  "fi": 20,
                   "twE": 0,
                   "tweenFrame": true,
                   "evt": "attack_ended"
@@ -7280,7 +7280,7 @@
         },
         {
           "name": "attack03",
-          "dr": 25,
+          "dr": 24,
           "lp": false,
           "to": 0,
           "drTW": 0,

@@ -54,3 +54,14 @@ function LUACreatureDoSkill(creature, skillID)
 	end
 	return skill.doSkill(skill,creature)
 end
+
+function LUACreatureHitWallPlayAction(creature)
+	local animView = tolua.cast(creature:getAnimView(), "Armature")
+	local nowAction = animView:getAnimation():getCurrentMovementID()
+	if nowAction == 'run01' then
+		return 'run01'
+	elseif nowAction == 'assault01' then
+		return 'assault01'
+	end
+	return 'jumping01'
+end

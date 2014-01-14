@@ -65,9 +65,9 @@
               "capInsetsY": 0,
               "disabled": null,
               "disabledData": {
-                "path": null,
+                "path": "icon_move_left_01_n.png",
                 "plistFile": null,
-                "resourceType": 0
+                "resourceType": 1
               },
               "fontName": "微软雅黑",
               "fontSize": 14,
@@ -137,9 +137,9 @@
               "capInsetsY": 0,
               "disabled": null,
               "disabledData": {
-                "path": null,
+                "path": "icon_move_right_01_n.png",
                 "plistFile": null,
-                "resourceType": 0
+                "resourceType": 1
               },
               "fontName": "微软雅黑",
               "fontSize": 14,
@@ -251,7 +251,7 @@
               "layoutParameter": null,
               "opacity": 255,
               "positionPercentX": 0.25,
-              "positionPercentY": 0.202531651,
+              "positionPercentY": 0.2,
               "positionType": 0,
               "rotation": 0,
               "scaleX": 1,
@@ -272,9 +272,9 @@
               "capInsetsY": 0,
               "disabled": null,
               "disabledData": {
-                "path": null,
+                "path": "icon_jump_01_n.png",
                 "plistFile": null,
-                "resourceType": 0
+                "resourceType": 1
               },
               "fontName": "微软雅黑",
               "fontSize": 14,
@@ -323,7 +323,7 @@
               "layoutParameter": null,
               "opacity": 255,
               "positionPercentX": 0.75,
-              "positionPercentY": 0.2362869,
+              "positionPercentY": 0.233333334,
               "positionType": 0,
               "rotation": 0,
               "scaleX": 1,
@@ -344,9 +344,9 @@
               "capInsetsY": 0,
               "disabled": null,
               "disabledData": {
-                "path": null,
+                "path": "icon_attack_01_n.png",
                 "plistFile": null,
-                "resourceType": 0
+                "resourceType": 1
               },
               "fontName": "微软雅黑",
               "fontSize": 14,
@@ -416,9 +416,9 @@
               "capInsetsY": 0,
               "disabled": null,
               "disabledData": {
-                "path": null,
+                "path": "icon_skill_01_n.png",
                 "plistFile": null,
-                "resourceType": 0
+                "resourceType": 1
               },
               "fontName": "微软雅黑",
               "fontSize": 14,
@@ -466,7 +466,7 @@
               "ignoreSize": true,
               "layoutParameter": null,
               "opacity": 255,
-              "positionPercentX": 0.800000131,
+              "positionPercentX": 0.8,
               "positionPercentY": 0.6666667,
               "positionType": 0,
               "rotation": 0,
@@ -488,9 +488,9 @@
               "capInsetsY": 0,
               "disabled": null,
               "disabledData": {
-                "path": null,
+                "path": "icon_skill_02_n.png",
                 "plistFile": null,
-                "resourceType": 0
+                "resourceType": 1
               },
               "fontName": "微软雅黑",
               "fontSize": 14,

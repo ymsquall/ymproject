@@ -180,12 +180,17 @@ int Monster::PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, 
 #include "uiview/Panel/StackPanel.h"
 void Monster::beAttacked(ICreatue* who, const Point& hitPos, bool clobber)
 {
+	static const std::string assault1 = "assault01";
 	mBeAttacking = true;
 	mActiveAttackTimer = 3.0f + float(rand() % 3);
 	mAICanActiveAttacked = 0;
 	if(NULL != mModel)
 	{
-		int lostHP = 500 + (rand()%500);
+		int lostHP = 0;
+		if(who->getAnimView()->getAnimation()->getCurrentMovementID() == assault1)
+			lostHP = 800 + (rand()%200);
+		else
+			lostHP = 500 + (rand()%500);
 		mModel->NowHP -= lostHP;
 		this->updateHPView();
 		callLuaFuncNoResult("LUAGameSceneView_MonsterBeAttackedEffect", this, lostHP, hitPos.x, hitPos.y);

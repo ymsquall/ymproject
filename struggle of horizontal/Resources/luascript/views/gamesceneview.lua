@@ -163,7 +163,7 @@ function LUAGameScenePhysicsHeroHitWall()
 	_LUAGameSceneView.mHeroHitWall = true
 	_LUAGameSceneView.mMoveDirection = 0.0
 	_LUAGameSceneView.mMoveSpeedScale = 0.0
-	localUser:changeAnimAction('jumping01')
+	localUser:changeAnimAction(LUACreatureHitWallPlayAction(localUser))
 	localUser:move(0.0, 0.0)
 end
 
