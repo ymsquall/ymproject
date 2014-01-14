@@ -4,6 +4,7 @@
 #include <Box2D/Box2D.h>
 #include "object/IPhysicsMovableObject.h"
 #include "object/IPhysicsStaticObject.h"
+#include "CocoStudio/CocoStudio.h"
 
 using namespace cocos2d;
 using namespace framework;
@@ -65,6 +66,13 @@ public:
 	CreatureHeaderModel* getModel() const;
 	void onCreaturePosChanged(const Point& pos);
 
+	void setFaceNormalX(float dirX);
+	void setFaceNormalY(float dirY);
+	void setFaceNormal(float dirX, float dirY);
+	float getFaceNormalX() const;
+	float getFaceNormalY() const;
+	const CCPoint& getFaceNormal() const;
+
 public:
 	b2World* mWorld;
 	b2Body* mMoveBody;
@@ -76,8 +84,11 @@ public:
 protected:
 	bool mAttacking;
 	bool mBeAttacking;
+	bool mSkilling;
 	bool mDeathing;
 	float mBeAttackTimeout;
+	Point mFaceNormal;
+	cocostudio::Armature* mAnimView;
 	CreatureHeaderModel* mModel;
 };
 

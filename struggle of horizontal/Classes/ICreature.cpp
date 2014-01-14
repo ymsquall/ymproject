@@ -15,7 +15,10 @@ ICreatue::ICreatue(b2World* pWorld)
 	mAttacking = false;
 	mBeAttacking = false;
 	mDeathing = false;
+	mSkilling = false;
 	mBeAttackTimeout = 0.0f;
+	mFaceNormal = Point::ZERO;
+	mAnimView = NULL;
 }
 ICreatue::~ICreatue()
 {
@@ -152,4 +155,34 @@ void ICreatue::onCreaturePosChanged(const Point& pos)
 {
 	if(NULL != mModel)
 		mModel->Position = pos;
+}
+
+void ICreatue::setFaceNormalX(float dirX)
+{
+	this->setFaceNormal(dirX, mFaceNormal.y);
+}
+void ICreatue::setFaceNormalY(float dirY)
+{
+	this->setFaceNormal(mFaceNormal.x, dirY);
+}
+void ICreatue::setFaceNormal(float dirX, float dirY)
+{
+	mFaceNormal.x = dirX;
+	mFaceNormal.y = dirY;
+	if(mFaceNormal.x >= 0.0f)
+		mAnimView->setRotationY(0.0f);
+	else if(mFaceNormal.x < 0.0f)
+		mAnimView->setRotationY(180.0f);
+}
+float ICreatue::getFaceNormalX() const
+{
+	return mFaceNormal.x;
+}
+float ICreatue::getFaceNormalY() const
+{
+	return mFaceNormal.y;
+}
+const CCPoint& ICreatue::getFaceNormal() const
+{
+	return mFaceNormal;
 }

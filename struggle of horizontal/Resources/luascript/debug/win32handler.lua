@@ -14,7 +14,13 @@ function LUAOnWin32KeyDownMsgProc(key)
 	if VK_W == key then end
 	if VK_S == key then end
 	if VK_A == key or VK_D == key then
-		if VK_A == key then _LUAGameSceneView.mMoveDirection = -1 _LUAGameSceneView.mHeroAnim:setRotationY(180) else _LUAGameSceneView.mMoveDirection = 1 _LUAGameSceneView.mHeroAnim:setRotationY(0) end
+		if VK_A == key then
+			_LUAGameSceneView.mMoveDirection = -1
+			LocalPlayer:instance():setFaceNormalX(-1.0)
+		else
+			_LUAGameSceneView.mMoveDirection = 1
+			LocalPlayer:instance():setFaceNormalX(1.0)
+			end
 		if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "attack01" and
 			_LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "attack02" then
 			if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= 'run01' then

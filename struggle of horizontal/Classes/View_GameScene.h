@@ -63,4 +63,6 @@ public:
 	
 	gui::UIButton* mJumpBtn;
 	gui::UIButton* mAttackBtn;
+	gui::UIButton* mSkill1Btn;
+	gui::UIButton* mSkill2Btn;
 };

@@ -31,7 +31,6 @@ protected:
 	void onDeath();
 
 protected:
-	cocostudio::Armature* mMonsterAnim;
 	float mActiveAttackTimer;
 	int mAICanActiveAttacked;
 	float mDeathTimer;

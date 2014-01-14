@@ -8,7 +8,6 @@ Monster::Monster(b2World* pWorld) :
 	SuperT(object::ObjectType::TN_Monster, pWorld),
 	JumpDelegate(this)
 {
-	mMonsterAnim = NULL;
 	mActiveAttackTimer = 3.0f + float(rand() % 3);
 	mAICanActiveAttacked = 0;
 	mDeathTimer = 0.0f;
@@ -22,11 +21,11 @@ bool Monster::init()
 	ScriptParamObject userdata = callLuaFuncWithUserdataResult("LUAGameSceneView_Monster_init", this);
 	if(userdata.type != LUA_TUSERDATA || NULL == userdata.value.pointer)
 		return false;
-	mMonsterAnim = (cocostudio::Armature*)userdata.value.pointer;
-	if(NULL != mMonsterAnim)
+	mAnimView = (cocostudio::Armature*)userdata.value.pointer;
+	if(NULL != mAnimView)
 	{
-		mMonsterAnim->getAnimation()->setFrameEventCallFunc(this, frameEvent_selector(Monster::onFrameEvent));
-		mMonsterAnim->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(Monster::animationEvent));
+		mAnimView->getAnimation()->setFrameEventCallFunc(this, frameEvent_selector(Monster::onFrameEvent));
+		mAnimView->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(Monster::animationEvent));
 		CCDirector::getInstance()->getScheduler()->scheduleSelector(schedule_selector(Monster::simpleAITimer), this, 0, false);
 		CCDirector::getInstance()->getScheduler()->scheduleSelector(schedule_selector(Monster::recoverHPTimer), this, 30, false);
 		CCDirector::getInstance()->getScheduler()->scheduleSelector(schedule_selector(Monster::onDeathTimer), this, 0, false);
@@ -77,12 +76,12 @@ void Monster::onFrameEvent(cocostudio::Bone *bone, const char *evt, int originFr
 	for(int i = 0; i < 5; ++ i)
 	{
 		CCString* pWeaponName = CCString::createWithFormat("weapon%d", i);
-		cocostudio::CCBone* pBone = mMonsterAnim->getBone(pWeaponName->getCString());
+		cocostudio::CCBone* pBone = mAnimView->getBone(pWeaponName->getCString());
 		if(NULL == pBone)
 			return;
 		cocostudio::BaseData* pBoneData = pBone->getWorldInfo();
-		Point pos = mMonsterAnim->getParent()->convertToWorldSpaceAR(mMonsterAnim->getPosition());
-		if(mMonsterAnim->getRotationY() >= 179.0f)
+		Point pos = mAnimView->getParent()->convertToWorldSpaceAR(mAnimView->getPosition());
+		if(this->getFaceNormalX() < 0.0f)
 			pos.x -= pBoneData->x;
 		else
 			pos.x += pBoneData->x;
@@ -130,14 +129,22 @@ void Monster::onFrameEvent(cocostudio::Bone *bone, const char *evt, int originFr
 }
 void Monster::animationEvent(cocostudio::Armature *armature, cocostudio::MovementEventType movementType, const char *movementID)
 {
-	static const std::string beattack1 = "beattack01";
-	static const std::string clobber1 = "clobber01";
+	static const std::string stand1 = "stand01";
+	static const std::string run1 = "run01";
+	static const std::string jumping1 = "jumping01";
+	static const std::string jumpup1 = "jumpup01";
+	static const std::string landdown1 = "landdown01";
 	static const std::string attack1 = "attack01";
 	static const std::string attack2 = "attack02";
+	static const std::string attack3 = "attack03";
 	static const std::string death1 = "death01";
+	static const std::string beattack1 = "beattack01";
+	static const std::string clobber1 = "clobber01";
+	static const std::string assault1 = "assault01";
+	static const std::string jumpattack1 = "jumpattack01";
 	if(movementType == cocostudio::COMPLETE)
 	{
-		if(attack1 == movementID || attack2 == movementID)
+		if(attack1 == movementID || attack2 == movementID || attack3 == movementID)
 		{
 			if(NULL != mWeaponBody)
 			{
@@ -151,6 +158,11 @@ void Monster::animationEvent(cocostudio::Armature *armature, cocostudio::Movemen
 		{
 			callLuaFuncNoResult("LUAGameSceneView_MonsterBeAttackAnimEnded", this);
 			mBeAttacking = false;
+		}
+		else if(assault1 == movementID)
+		{
+			this->move(0,0);
+			mSkilling = false;
 		}
 		else if(death1 == movementID)
 		{
@@ -188,11 +200,11 @@ void Monster::beAttacked(ICreatue* who, const Point& hitPos, bool clobber)
 	Point myPos = this->getMovedBodyPos();
 	if(otherPos.x < myPos.x)
 	{
-		mMonsterAnim->setRotationY(180.0f);
+		this->setFaceNormalX(-1.0f);
 	}
 	else
 	{
-		mMonsterAnim->setRotationY(0.0f);
+		this->setFaceNormalX(1.0f);
 	}
 }
 
@@ -211,7 +223,7 @@ void Monster::onDeathTimer(float dt)
 	{
 		mDeathTimer = 0.0f;
 		mDeathing = false;
-		mMonsterAnim->setOpacity(255);
+		mAnimView->setOpacity(255);
 		this->recoverHPTimer(30.0f);
 		callLuaFuncNoResult("LUAGameSceneView_MonsterRelive", this);
 		if(NULL != mModel)
@@ -225,21 +237,21 @@ void Monster::onDeathTimer(float dt)
 		GLbyte opacity = GLbyte(255.0f * (1.0f-alpha));
 		if(opacity < 0) opacity = 0;
 		if(opacity > 255) opacity = 255;
-		mMonsterAnim->setOpacity(opacity);
+		mAnimView->setOpacity(opacity);
 	}
 	else if(mDeathTimer > 2.5f && mDeathTimer < 7.0f)
 	{
-		mMonsterAnim->setOpacity(0);
-		mMonsterAnim->setVisible(false);
+		mAnimView->setOpacity(0);
+		mAnimView->setVisible(false);
 	}
 	else if(mDeathTimer >= 7.0f && mDeathTimer <= 7.5f)
 	{
-		mMonsterAnim->setVisible(true);
+		mAnimView->setVisible(true);
 		float alpha = (mDeathTimer - 7.0f) * 2;
 		GLbyte opacity = GLbyte(255.0f * alpha);
 		if(opacity < 0) opacity = 0;
 		if(opacity > 255) opacity = 255;
-		mMonsterAnim->setOpacity(opacity);
+		mAnimView->setOpacity(opacity);
 	}
 }
 void Monster::StepBefore(physics::ObjectSettings* settings)
@@ -248,16 +260,16 @@ void Monster::StepBefore(physics::ObjectSettings* settings)
 		return;
 	if((mAICanActiveAttacked > 0) && !this->isBeAttacking() && !this->isAttacking())
 	{
-		Size mySize = mMonsterAnim->getContentSize();
+		Size mySize = mAnimView->getContentSize();
 		Point myPos = this->getMovedBodyPos();
 		Point loaclPlayerPos = LocalPlayer::instance()->getMovedBodyPos();
 		Point direction = myPos-loaclPlayerPos;
 		if(fabs(direction.y) < mySize.height/2.0f && fabs(direction.x) < 200.0f)
 		{
 			if(loaclPlayerPos.x < myPos.x)
-				mMonsterAnim->setRotationY(180.0f);
+				this->setFaceNormalX(-1.0f);
 			else
-				mMonsterAnim->setRotationY(0.0f);
+				this->setFaceNormalX(1.0f);
 			mAttacking = true;
 			callLuaFuncNoResult("LUAGameSceneView_MonsterActiveAttack", this, mAICanActiveAttacked);
 			mActiveAttackTimer = 3.0f + float(rand() % 3);
@@ -273,11 +285,11 @@ void Monster::StepBefore(physics::ObjectSettings* settings)
 	for(int i = 0; i < 8; ++ i)
 	{
 		CCString* pBodyName = CCString::createWithFormat("body%d", i);
-		cocostudio::CCBone* pBone = mMonsterAnim->getBone(pBodyName->getCString());
+		cocostudio::CCBone* pBone = mAnimView->getBone(pBodyName->getCString());
 		if(NULL == pBone)
 			continue;
 		cocostudio::BaseData* pBoneData = pBone->getWorldInfo();
-		Point pos = mMonsterAnim->getParent()->convertToWorldSpaceAR(mMonsterAnim->getPosition());
+		Point pos = mAnimView->getParent()->convertToWorldSpaceAR(mAnimView->getPosition());
 		pos.x += pBoneData->x;
 		pos.y += pBoneData->y;
 		Point titledMapPos = GameSceneViewModel::point()->getTiledMap()->getPosition();

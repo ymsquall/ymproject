@@ -15,6 +15,7 @@ require "luascript/views/selecthero"
 require "luascript/views/gamesceneview"
 require "luascript/views/gamesceneview_playing"
 require "luascript/views/gamesceneview_monster"
+require "luascript/views/gamesceneview_player"
 require "luascript/views/creatureheaderview"
 
 ----------------

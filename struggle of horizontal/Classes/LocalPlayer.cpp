@@ -107,7 +107,7 @@ void LocalPlayer::onDeathTimer(float dt)
 		mDeathing = false;
 		mAnimView->setOpacity(255);
 		this->recoverHPTimer(30.0f);
-		callLuaFuncNoResult("LUAGameSceneViewLocalPlayerRelive");
+		callLuaFuncNoResult("LUAGameSceneView_LocalPlayerRelive");
 		if(NULL != mModel)
 			mModel->Visible = true;
 		return;
@@ -154,19 +154,19 @@ void LocalPlayer::beAttacked(ICreatue* who, bool clobber)
 		int lostHP = 500 + (rand()%500);
 		mModel->NowHP -= lostHP;
 		this->updateHPView();
-		callLuaFuncNoResult("LUAGameSceneViewBeAttackedEffect", lostHP);
+		callLuaFuncNoResult("LUAGameSceneView_LocalPlayerBeAttackedEffect", lostHP);
 		if(mModel->NowHP <= 0)
 		{
 			this->onDeath();
 			return;
 		}
 	}
-	callLuaFuncNoResult("LUAGameSceneViewBeAttacked", clobber);
+	callLuaFuncNoResult("LUAGameSceneView_LocalPlayerBeAttacked", clobber);
 }
 void LocalPlayer::onDeath()
 {
 	mDeathing = true;
-	callLuaFuncNoResult("LUAGameSceneViewLocalPlayerDeath");
+	callLuaFuncNoResult("LUAGameSceneView_LocalPlayerDeath");
 	if(NULL != mModel)
 		mModel->Visible = false;
 }
@@ -182,7 +182,7 @@ void LocalPlayer::onFrameEvent(cocostudio::Bone *bone, const char *evt, int orig
 			return;
 		cocostudio::BaseData* pBoneData = pBone->getWorldInfo();
 		Point pos = mAnimView->getParent()->convertToWorldSpaceAR(mAnimView->getPosition());
-		if(mAnimView->getRotationY() >= 179.0f)
+		if(this->getFaceNormalX() < 0.0f)
 			pos.x -= pBoneData->x;
 		else
 			pos.x += pBoneData->x;
@@ -230,26 +230,39 @@ void LocalPlayer::onFrameEvent(cocostudio::Bone *bone, const char *evt, int orig
 }
 void LocalPlayer::animationEvent(cocostudio::Armature *armature, cocostudio::MovementEventType movementType, const char *movementID)
 {
-	static const std::string beattack1 = "beattack01";
-	static const std::string clobber1 = "clobber01";
+	static const std::string stand1 = "stand01";
+	static const std::string run1 = "run01";
+	static const std::string jumping1 = "jumping01";
+	static const std::string jumpup1 = "jumpup01";
+	static const std::string landdown1 = "landdown01";
 	static const std::string attack1 = "attack01";
 	static const std::string attack2 = "attack02";
+	static const std::string attack3 = "attack03";
 	static const std::string death1 = "death01";
+	static const std::string beattack1 = "beattack01";
+	static const std::string clobber1 = "clobber01";
+	static const std::string assault1 = "assault01";
+	static const std::string jumpattack1 = "jumpattack01";
 	if(movementType == cocostudio::COMPLETE)
 	{
-		if(attack1 == movementID || attack2 == movementID)
+		if(attack1 == movementID || attack2 == movementID || attack3 == movementID)
 		{
 			if(NULL != mWeaponBody)
 			{
 				mWorld->DestroyBody(mWeaponBody);
 				mWeaponBody = NULL;
 			}
-			callLuaFuncNoResult("LUAGameSceneViewAttackAnimEnded");
+			callLuaFuncNoResult("LUAGameSceneView_LocalPlayerAttackAnimEnded");
 		}
 		else if(beattack1 == movementID || clobber1 == movementID)
 		{
-			callLuaFuncNoResult("LUAGameSceneViewBeAttackAnimEnded");
+			callLuaFuncNoResult("LUAGameSceneView_LocalPlayerBeAttackAnimEnded");
 			mBeAttacking = false;
+		}
+		else if(assault1 == movementID)
+		{
+			callLuaFuncNoResult("LUAGameSceneView_LocalPlayerAssaultSkillEnded");
+			mSkilling = false;
 		}
 		else if(death1 == movementID)
 		{
@@ -322,7 +335,7 @@ void LocalPlayer::StepBefore(physics::ObjectSettings* settings)
 			continue;
 		cocostudio::BaseData* pBoneData = pBone->getWorldInfo();
 		Point pos = mAnimView->getParent()->convertToWorldSpaceAR(mAnimView->getPosition());
-		if(mAnimView->getRotationY() >= 179.0f)
+		if(this->getFaceNormalX() < 0.0f)
 			pos.x -= pBoneData->x;
 		else
 			pos.x += pBoneData->x;

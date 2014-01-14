@@ -23,6 +23,8 @@ GameSceneView::GameSceneView()
 	mBGLayer = NULL;
 	mJumpBtn = NULL;
 	mAttackBtn = NULL;
+	mSkill1Btn = NULL;
+	mSkill2Btn = NULL;
 	gGameSceneView = this;
 }
 
@@ -49,6 +51,8 @@ bool GameSceneView::init()
 	gui::UIWidget* pWidget = dynamic_cast<gui::UIWidget*>(pUILayer->getWidgetByTag(202));
 	mJumpBtn = dynamic_cast<gui::UIButton*>(pWidget->getChildByName("mJumpBtn"));
 	mAttackBtn = dynamic_cast<gui::UIButton*>(pWidget->getChildByName("mAttackBtn"));
+	mSkill1Btn = dynamic_cast<gui::UIButton*>(pWidget->getChildByName("mSkill1Btn"));
+	mSkill2Btn = dynamic_cast<gui::UIButton*>(pWidget->getChildByName("mSkill2Btn"));
 
 	this->scheduleUpdate();
 
@@ -130,17 +134,31 @@ void GameSceneView::onTouchBegan(const Point& pos)
      {
          mAttackBtn->onTouchBegan(pos);
          return;
-     }
+	 }
+	 if(mSkill1Btn->hitTest(pos))
+	 {
+		 mSkill1Btn->onTouchBegan(pos);
+		 return;
+	 }
+	 if(mSkill2Btn->hitTest(pos))
+	 {
+		 mSkill2Btn->onTouchBegan(pos);
+		 return;
+	 }
 }
 void GameSceneView::onTouchMoved(const Point& pos)
 {
      mJumpBtn->onTouchMoved(pos);
-     mAttackBtn->onTouchMoved(pos);
+	 mAttackBtn->onTouchMoved(pos);
+	 mSkill1Btn->onTouchMoved(pos);
+	 mSkill2Btn->onTouchMoved(pos);
 }
 void GameSceneView::onTouchEnded(const Point& pos)
 {
      mJumpBtn->onTouchEnded(pos);
-     mAttackBtn->onTouchEnded(pos);
+	 mAttackBtn->onTouchEnded(pos);
+	 mSkill1Btn->onTouchEnded(pos);
+	 mSkill2Btn->onTouchEnded(pos);
 }
 
 bool GameSceneView::screenScroll(const Point& offset)

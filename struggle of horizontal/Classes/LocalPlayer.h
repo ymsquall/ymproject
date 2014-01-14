@@ -42,7 +42,6 @@ protected:
 
 protected:
 	static LocalPlayer* mInstance;
-	cocostudio::Armature* mAnimView;
 	float mComboCountdownTimer;
 	int mNowComboCount;
 	float mDeathTimer;

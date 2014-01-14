@@ -10,6 +10,12 @@ class LocalPlayer : public unity::object
 	bool getIsHeroDorping();
 	b2ContactEdge* getHeroBodyContactList();
 	void onCreaturePosChanged(const CCPoint& pos);
+	void setFaceNormalX(float dirX);
+	void setFaceNormalY(float dirY);
+	void setFaceNormal(float dirX, float dirY);
+	float getFaceNormalX() const;
+	float getFaceNormalY() const;
+	const CCPoint& getFaceNormal() const;
 };
 
 class Monster : public unity::object
@@ -23,4 +29,10 @@ class Monster : public unity::object
 	bool getIsHeroDorping();
 	b2ContactEdge* getHeroBodyContactList();
 	void onCreaturePosChanged(const CCPoint& pos);
+	void setFaceNormalX(float dirX);
+	void setFaceNormalY(float dirY);
+	void setFaceNormal(float dirX, float dirY);
+	float getFaceNormalX() const;
+	float getFaceNormalY() const;
+	const CCPoint& getFaceNormal() const;
 };
