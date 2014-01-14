@@ -7,6 +7,176 @@
       "name": "anim.major",
       "bone_data": [
         {
+          "name": "effect.assault01",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 15,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "name": "effect.assault01_01.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "effect.assault01_02.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "effect.assault01_03.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "effect.assault01_04.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "effect.assault01_05.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "effect.assault01_06.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "effect.assault01_07.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "effect.assault01_08.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "effect.assault01_09.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "effect.assault01_10.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "effect.assault01_11.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "body6",
           "parent": "",
           "x": 16.0,
@@ -1002,6 +1172,25 @@
           "twE": 0,
           "sc": 1.0,
           "mov_bone_data": [
+            {
+              "name": "effect.assault01",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
             {
               "name": "body6",
               "dl": 0.0,
@@ -2723,7 +2912,7 @@
         },
         {
           "name": "attack01",
-          "dr": 13,
+          "dr": 14,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -3320,7 +3509,6 @@
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon3_0",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3340,7 +3528,6 @@
                   "fi": 3,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon3_1",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3360,7 +3547,6 @@
                   "fi": 6,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon3_2",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3380,7 +3566,6 @@
                   "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon3_3",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3425,7 +3610,6 @@
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon2_0",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3445,7 +3629,6 @@
                   "fi": 3,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon2_1",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3465,7 +3648,6 @@
                   "fi": 6,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon2_2",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3485,7 +3667,6 @@
                   "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon2_3",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3530,7 +3711,6 @@
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon1_0",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3550,7 +3730,6 @@
                   "fi": 3,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon1_1",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3570,7 +3749,6 @@
                   "fi": 6,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon1_2",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3590,7 +3768,6 @@
                   "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon1_3",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3635,7 +3812,6 @@
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon0_0",
                   "color": {
                     "a": 255,
                     "r": 255,
@@ -3655,7 +3831,6 @@
                   "fi": 3,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon0_1",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3675,7 +3850,6 @@
                   "fi": 6,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon0_2",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3695,7 +3869,6 @@
                   "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon0_3",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3740,7 +3913,6 @@
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon4_0",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3760,7 +3932,6 @@
                   "fi": 3,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon4_1",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3780,7 +3951,6 @@
                   "fi": 6,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon4_2",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3800,7 +3970,6 @@
                   "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "1_weapon4_3",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -3844,7 +4013,8 @@
                   "kY": 0.0,
                   "fi": 0,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_begin"
                 },
                 {
                   "dI": 0,
@@ -3857,7 +4027,8 @@
                   "kY": 0.0,
                   "fi": 3,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_frame"
                 },
                 {
                   "dI": 1,
@@ -3870,7 +4041,8 @@
                   "kY": 0.0,
                   "fi": 6,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_frame"
                 },
                 {
                   "dI": 2,
@@ -3883,7 +4055,8 @@
                   "kY": 0.0,
                   "fi": 9,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_frame"
                 },
                 {
                   "dI": 2,
@@ -3896,7 +4069,8 @@
                   "kY": 0.0,
                   "fi": 13,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_end"
                 }
               ]
             }
@@ -3904,7 +4078,7 @@
         },
         {
           "name": "attack02",
-          "dr": 14,
+          "dr": 15,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -4495,7 +4669,6 @@
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon3_0",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4515,7 +4688,6 @@
                   "fi": 3,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon3_1",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4535,7 +4707,6 @@
                   "fi": 6,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon3_2",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4555,7 +4726,6 @@
                   "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon3_3",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4600,7 +4770,6 @@
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon2_0",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4620,7 +4789,6 @@
                   "fi": 3,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon2_1",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4640,7 +4808,6 @@
                   "fi": 6,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon2_2",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4660,7 +4827,6 @@
                   "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon2_3",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4705,7 +4871,6 @@
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon1_0",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4725,7 +4890,6 @@
                   "fi": 3,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon1_1",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4745,7 +4909,6 @@
                   "fi": 6,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon1_2",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4765,7 +4928,6 @@
                   "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon1_3",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4810,7 +4972,6 @@
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon0_0",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4830,7 +4991,6 @@
                   "fi": 3,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon0_1",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4850,7 +5010,6 @@
                   "fi": 6,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon0_2",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4870,7 +5029,6 @@
                   "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon0_3",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4915,7 +5073,6 @@
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon4_0",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4935,7 +5092,6 @@
                   "fi": 3,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon4_1",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4955,7 +5111,6 @@
                   "fi": 6,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon4_2",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -4975,7 +5130,6 @@
                   "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "2_weapon4_3",
                   "color": {
                     "a": 0,
                     "r": 255,
@@ -5019,7 +5173,8 @@
                   "kY": 0.0,
                   "fi": 0,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_begin"
                 },
                 {
                   "dI": 3,
@@ -5032,7 +5187,8 @@
                   "kY": 0.0,
                   "fi": 3,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_frame"
                 },
                 {
                   "dI": 4,
@@ -5045,7 +5201,8 @@
                   "kY": 0.0,
                   "fi": 6,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_frame"
                 },
                 {
                   "dI": 5,
@@ -5058,7 +5215,8 @@
                   "kY": 0.0,
                   "fi": 9,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_frame"
                 },
                 {
                   "dI": 5,
@@ -5071,7 +5229,8 @@
                   "kY": 0.0,
                   "fi": 14,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_ended"
                 }
               ]
             }
@@ -6763,6 +6922,155 @@
           "sc": 1.0,
           "mov_bone_data": [
             {
+              "name": "effect.assault01",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 115.0,
+                  "y": 115.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                },
+                {
+                  "dI": 1,
+                  "x": 115.0,
+                  "y": 115.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 1,
+                  "twE": 0,
+                  "tweenFrame": true
+                },
+                {
+                  "dI": 2,
+                  "x": 115.0,
+                  "y": 115.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 2,
+                  "twE": 0,
+                  "tweenFrame": true
+                },
+                {
+                  "dI": 3,
+                  "x": 115.0,
+                  "y": 115.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 3,
+                  "twE": 0,
+                  "tweenFrame": true
+                },
+                {
+                  "dI": 4,
+                  "x": 115.0,
+                  "y": 115.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 4,
+                  "twE": 0,
+                  "tweenFrame": true
+                },
+                {
+                  "dI": 5,
+                  "x": 115.0,
+                  "y": 115.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 5,
+                  "twE": 0,
+                  "tweenFrame": true
+                },
+                {
+                  "dI": 6,
+                  "x": 115.0,
+                  "y": 115.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 6,
+                  "twE": 0,
+                  "tweenFrame": true
+                },
+                {
+                  "dI": 7,
+                  "x": 115.0,
+                  "y": 115.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 7,
+                  "twE": 0,
+                  "tweenFrame": true
+                },
+                {
+                  "dI": 8,
+                  "x": 115.0,
+                  "y": 115.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 8,
+                  "twE": 0,
+                  "tweenFrame": true
+                },
+                {
+                  "dI": 9,
+                  "x": 115.0,
+                  "y": 115.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 9,
+                  "twE": 0,
+                  "tweenFrame": true
+                },
+                {
+                  "dI": 10,
+                  "x": 115.0,
+                  "y": 115.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 10,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
               "name": "weapon3",
               "dl": 0.0,
               "frame_data": [
@@ -6949,7 +7257,8 @@
                   "kY": 0.0,
                   "fi": 0,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_begin"
                 },
                 {
                   "dI": 30,
@@ -6962,7 +7271,8 @@
                   "kY": 0.0,
                   "fi": 10,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_ended"
                 }
               ]
             }
@@ -6970,7 +7280,7 @@
         },
         {
           "name": "attack03",
-          "dr": 24,
+          "dr": 25,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -8569,7 +8879,8 @@
                   "kY": 0.0,
                   "fi": 0,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_begin"
                 },
                 {
                   "dI": 31,
@@ -8582,7 +8893,8 @@
                   "kY": 0.0,
                   "fi": 3,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_frame"
                 },
                 {
                   "dI": 32,
@@ -8595,7 +8907,8 @@
                   "kY": 0.0,
                   "fi": 6,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_frame"
                 },
                 {
                   "dI": 33,
@@ -8608,7 +8921,8 @@
                   "kY": 0.0,
                   "fi": 9,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_frame"
                 },
                 {
                   "dI": 34,
@@ -8621,7 +8935,8 @@
                   "kY": 0.0,
                   "fi": 12,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_frame"
                 },
                 {
                   "dI": 35,
@@ -8634,7 +8949,8 @@
                   "kY": 0.0,
                   "fi": 15,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_frame"
                 },
                 {
                   "dI": 36,
@@ -8647,7 +8963,8 @@
                   "kY": 0.0,
                   "fi": 18,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_frame"
                 },
                 {
                   "dI": 37,
@@ -8660,7 +8977,8 @@
                   "kY": 0.0,
                   "fi": 21,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_frame"
                 },
                 {
                   "dI": 37,
@@ -8673,7 +8991,8 @@
                   "kY": 0.0,
                   "fi": 24,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "evt": "attack_ended"
                 }
               ]
             }
@@ -10202,6 +10521,94 @@
     },
     {
       "name": "jumpattack01_03",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "effect.assault01_01",
+      "width": 342.0,
+      "height": 131.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "effect.assault01_02",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "effect.assault01_03",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "effect.assault01_04",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "effect.assault01_05",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "effect.assault01_06",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "effect.assault01_07",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "effect.assault01_08",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "effect.assault01_09",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "effect.assault01_10",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "effect.assault01_11",
       "width": 0.0,
       "height": 0.0,
       "pX": 0.5,

@@ -57,13 +57,12 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 		end)
     _LUAGameSceneView.mSkill1Btn:addTouchEventListener(function(sender, eventType)
 			if eventType == 0 then
-				local localPlayer = LocalPlayer:instance()
-				if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= 'assault01' then
-					_LUAGameSceneView.mHeroAnim:getAnimation():play('assault01')
-				end
 				_LUAGameSceneView.mMoveDirection = 0.0
 				_LUAGameSceneView.mMoveSpeedScale = 0.0
-				localPlayer:move(localPlayer:getFaceNormalX(), 1500.0)
+				local localPlayer = LocalPlayer:instance()
+				if LUACreatureDoSkill(localPlayer, 1001) == false then
+					return
+				end
 			end
 		end)
     _LUAGameSceneView.mSkill2Btn:addTouchEventListener(function(sender, eventType)

@@ -80,12 +80,3 @@ function LUAGameSceneView_LocalPlayerRelive()
     end
 end
 
-function LUAGameSceneView_LocalPlayerAssaultSkillEnded()
-    if _LUAGameSceneView.mMoveSpeedScale < 0.001 then
-        _LUAGameSceneView.mHeroAnim:getAnimation():play('stand01')
-		LocalPlayer:instance():move(0.0, 0.0)
-    else
-        _LUAGameSceneView.mHeroAnim:getAnimation():play('run01')
-		LocalPlayer:instance():move(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
-    end
-end

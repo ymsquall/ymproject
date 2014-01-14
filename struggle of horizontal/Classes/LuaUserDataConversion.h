@@ -2,6 +2,7 @@
 
 #include "View_GameScene.h"
 #include "Model_GameScene.h"
+#include "CocoStudio/CocoStudio.h"
 
 namespace framework
 {
@@ -10,13 +11,7 @@ namespace framework
 		class blockwrite;
 	}
 }
-namespace cocos2d
-{
-	namespace extension
-	{
-		class Armature;
-	}
-}
+
 class GameSceneModel;
 class GameSceneView;
 class Player;
@@ -30,7 +25,7 @@ public:
 	static framework::unity::blockwrite* toBlockWrite(void* pointer);
 	static GameSceneModel* toGameSceneModle(void* pointer);
 	static GameSceneView* toGameSceneView(void* pointer);
-	static cocos2d::extension::Armature* toArmature(void* pointer);
+	static Armature* toArmature(void* pointer);
 	static CCNode* toNode(void* pointer);
 	static Player* toPlayer(void* pointer);
 	static Monster* toMonster(void* pointer);

@@ -73,6 +73,8 @@ public:
 	float getFaceNormalY() const;
 	const CCPoint& getFaceNormal() const;
 
+	cocostudio::Armature* getAnimView() const;
+
 public:
 	b2World* mWorld;
 	b2Body* mMoveBody;

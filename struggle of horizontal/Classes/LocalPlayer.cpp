@@ -259,11 +259,6 @@ void LocalPlayer::animationEvent(cocostudio::Armature *armature, cocostudio::Mov
 			callLuaFuncNoResult("LUAGameSceneView_LocalPlayerBeAttackAnimEnded");
 			mBeAttacking = false;
 		}
-		else if(assault1 == movementID)
-		{
-			callLuaFuncNoResult("LUAGameSceneView_LocalPlayerAssaultSkillEnded");
-			mSkilling = false;
-		}
 		else if(death1 == movementID)
 		{
 			mDeathTimer = 0.0f;

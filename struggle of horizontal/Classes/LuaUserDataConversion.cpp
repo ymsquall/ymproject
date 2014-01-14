@@ -21,9 +21,9 @@ GameSceneView* LuaUserDataConversion::toGameSceneView(void* pointer)
 {
 	return static_cast<GameSceneView*>(pointer);
 }
-cocos2d::extension::Armature* LuaUserDataConversion::toArmature(void* pointer)
+Armature* LuaUserDataConversion::toArmature(void* pointer)
 {
-	return static_cast<cocos2d::extension::Armature*>(pointer);
+	return static_cast<Armature*>(pointer);
 }
 CCNode* LuaUserDataConversion::toNode(void* pointer)
 {

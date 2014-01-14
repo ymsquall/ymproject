@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaSOFExtern
-** Generated automatically by tolua++-1.0.92 on 01/14/14 13:52:01.
+** Generated automatically by tolua++-1.0.92 on 01/14/14 15:41:57.
 */
 
 /****************************************************************************
@@ -138,7 +138,7 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"unity::SingletonAutoT<ViewModelManager>");
  tolua_usertype(tolua_S,"ModelImpl");
  tolua_usertype(tolua_S,"ModelType");
- tolua_usertype(tolua_S,"cocos2d::extension::Armature");
+ tolua_usertype(tolua_S,"CCArmature");
  tolua_usertype(tolua_S,"unity::object");
 }
 
@@ -1149,8 +1149,8 @@ static int tolua_LuaSOFExtern_LuaUserDataConversion_toArmature00(lua_State* tolu
  {
   void* pointer = ((void*)  tolua_touserdata(tolua_S,2,0));
   {
-   cocos2d::extension::Armature* tolua_ret = (cocos2d::extension::Armature*)  LuaUserDataConversion::toArmature(pointer);
-    tolua_pushusertype(tolua_S,(void*)tolua_ret,"cocos2d::extension::Armature");
+   CCArmature* tolua_ret = (CCArmature*)  LuaUserDataConversion::toArmature(pointer);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCArmature");
   }
  }
  return 1;
@@ -1989,6 +1989,38 @@ static int tolua_LuaSOFExtern_LocalPlayer_getFaceNormal00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: getAnimView of class  LocalPlayer */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_LocalPlayer_getAnimView00
+static int tolua_LuaSOFExtern_LocalPlayer_getAnimView00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const LocalPlayer",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const LocalPlayer* self = (const LocalPlayer*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getAnimView'", NULL);
+#endif
+  {
+   CCArmature* tolua_ret = (CCArmature*)  self->getAnimView();
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCArmature");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getAnimView'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: new of class  Monster */
 #ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_Monster_new00
 static int tolua_LuaSOFExtern_Monster_new00(lua_State* tolua_S)
@@ -2510,6 +2542,38 @@ static int tolua_LuaSOFExtern_Monster_getFaceNormal00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: getAnimView of class  Monster */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_Monster_getAnimView00
+static int tolua_LuaSOFExtern_Monster_getAnimView00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const Monster",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const Monster* self = (const Monster*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getAnimView'", NULL);
+#endif
+  {
+   CCArmature* tolua_ret = (CCArmature*)  self->getAnimView();
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCArmature");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getAnimView'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* Open function */
 TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
 {
@@ -2631,6 +2695,7 @@ TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"getFaceNormalX",tolua_LuaSOFExtern_LocalPlayer_getFaceNormalX00);
    tolua_function(tolua_S,"getFaceNormalY",tolua_LuaSOFExtern_LocalPlayer_getFaceNormalY00);
    tolua_function(tolua_S,"getFaceNormal",tolua_LuaSOFExtern_LocalPlayer_getFaceNormal00);
+   tolua_function(tolua_S,"getAnimView",tolua_LuaSOFExtern_LocalPlayer_getAnimView00);
   tolua_endmodule(tolua_S);
   #ifdef __cplusplus
   tolua_cclass(tolua_S,"Monster","Monster","unity::object",tolua_collect_Monster);
@@ -2655,6 +2720,7 @@ TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"getFaceNormalX",tolua_LuaSOFExtern_Monster_getFaceNormalX00);
    tolua_function(tolua_S,"getFaceNormalY",tolua_LuaSOFExtern_Monster_getFaceNormalY00);
    tolua_function(tolua_S,"getFaceNormal",tolua_LuaSOFExtern_Monster_getFaceNormal00);
+   tolua_function(tolua_S,"getAnimView",tolua_LuaSOFExtern_Monster_getAnimView00);
   tolua_endmodule(tolua_S);
  tolua_endmodule(tolua_S);
  return 1;

@@ -186,3 +186,8 @@ const CCPoint& ICreatue::getFaceNormal() const
 {
 	return mFaceNormal;
 }
+
+cocostudio::Armature* ICreatue::getAnimView() const
+{
+	return mAnimView;
+}
