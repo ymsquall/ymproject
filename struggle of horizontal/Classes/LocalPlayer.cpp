@@ -15,8 +15,6 @@ LocalPlayer::LocalPlayer(b2World* pWorld) :
 {
 	mInstance = this;
 	mAnimView = NULL;
-	mComboCountdownTimer = 1000.0f;
-	mNowComboCount = 0;
 	mDeathTimer = 0.0f;
 }
 LocalPlayer::~LocalPlayer()
@@ -146,7 +144,7 @@ void LocalPlayer::setAnimView(cocostudio::Armature* anim)
 	mAnimView->getAnimation()->setFrameEventCallFunc(this, frameEvent_selector(LocalPlayer::onFrameEvent));
 	mAnimView->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(LocalPlayer::animationEvent));
 }
-void LocalPlayer::beAttacked(ICreatue* who, bool clobber)
+void LocalPlayer::beAttacked(ICreatue* who, const Point& hitPos, bool clobber)
 {
 	mBeAttacking = true;
 	if(NULL != mModel)
@@ -154,7 +152,7 @@ void LocalPlayer::beAttacked(ICreatue* who, bool clobber)
 		int lostHP = 500 + (rand()%500);
 		mModel->NowHP -= lostHP;
 		this->updateHPView();
-		callLuaFuncNoResult("LUAGameSceneView_LocalPlayerBeAttackedEffect", lostHP);
+		callLuaFuncNoResult("LUAGameSceneView_LocalPlayerBeAttackedEffect", lostHP, hitPos.x, hitPos.y);
 		if(mModel->NowHP <= 0)
 		{
 			this->onDeath();
@@ -172,26 +170,7 @@ void LocalPlayer::onDeath()
 }
 void LocalPlayer::onFrameEvent(cocostudio::Bone *bone, const char *evt, int originFrameIndex, int currentFrameIndex)
 {
-	// weapon box
-	b2Vec2 weaponVertices[5];
-	for(int i = 0; i < 5; ++ i)
-	{
-		CCString* pWeaponName = CCString::createWithFormat("weapon%d", i);
-		cocostudio::CCBone* pBone = mAnimView->getBone(pWeaponName->getCString());
-		if(NULL == pBone)
-			return;
-		cocostudio::BaseData* pBoneData = pBone->getWorldInfo();
-		Point pos = mAnimView->getParent()->convertToWorldSpaceAR(mAnimView->getPosition());
-		if(this->getFaceNormalX() < 0.0f)
-			pos.x -= pBoneData->x;
-		else
-			pos.x += pBoneData->x;
-		pos.y += pBoneData->y;
-		Point titledMapPos = GameSceneViewModel::point()->getTiledMap()->getPosition();
-		pos.x -= titledMapPos.x;
-		pos.y -= titledMapPos.y;
-		weaponVertices[i] = b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO);
-	}
+	if(std::string(evt) == "attack_begin")
 	{
 		if(NULL != mWeaponBody)
 		{
@@ -202,31 +181,73 @@ void LocalPlayer::onFrameEvent(cocostudio::Bone *bone, const char *evt, int orig
 		bd.type = b2_dynamicBody;
 		bd.position.Set(0, 0);
 		mWeaponBody = mWorld->CreateBody(&bd);
-		b2PolygonShape shape1;
-		b2PolygonShape shape2;
-		shape1.m_vertexCount = 3;
-		shape2.m_vertexCount = 3;
-		shape1.m_vertices[0] = weaponVertices[0];
-		shape1.m_vertices[1] = weaponVertices[1];
-		shape1.m_vertices[2] = weaponVertices[2];
-		shape2.m_vertices[0] = weaponVertices[0];
-		shape2.m_vertices[1] = weaponVertices[4];
-		shape2.m_vertices[2] = weaponVertices[3];
-		b2FixtureDef fd1, fd2;
-		fd1.shape = &shape1;
-		fd1.density = 0.0f;
-		fd1.friction = 0.0f;
-		fd2.shape = &shape2;
-		fd2.density = 0.0f;
-		fd2.friction = 0.0f;
-		fd1.filter.categoryBits = WeaponBodyContactMask;
-		fd1.filter.maskBits = BodyBodyContactMask;
-		fd2.filter.categoryBits = WeaponBodyContactMask;
-		fd2.filter.maskBits = BodyBodyContactMask;
-		mWeaponBody->CreateFixture(&fd1);
-		mWeaponBody->CreateFixture(&fd2);
 		mWeaponBody->SetUserData(this);
+		return;
 	}
+	else if(std::string(evt) == "attack_ended")
+	{
+		if(NULL != mWeaponBody)
+		{
+			mWorld->DestroyBody(mWeaponBody);
+			mWeaponBody = NULL;
+		}
+		return;
+	}
+	//// weapon box
+	//b2Vec2 weaponVertices[5];
+	//for(int i = 0; i < 5; ++ i)
+	//{
+	//	CCString* pWeaponName = CCString::createWithFormat("weapon%d", i);
+	//	cocostudio::CCBone* pBone = mAnimView->getBone(pWeaponName->getCString());
+	//	if(NULL == pBone)
+	//		return;
+	//	cocostudio::BaseData* pBoneData = pBone->getWorldInfo();
+	//	Point pos = mAnimView->getParent()->convertToWorldSpaceAR(mAnimView->getPosition());
+	//	if(this->getFaceNormalX() < 0.0f)
+	//		pos.x -= pBoneData->x;
+	//	else
+	//		pos.x += pBoneData->x;
+	//	pos.y += pBoneData->y;
+	//	Point titledMapPos = GameSceneViewModel::point()->getTiledMap()->getPosition();
+	//	pos.x -= titledMapPos.x;
+	//	pos.y -= titledMapPos.y;
+	//	weaponVertices[i] = b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO);
+	//}
+	//{
+	//	if(NULL != mWeaponBody)
+	//	{
+	//		mWorld->DestroyBody(mWeaponBody);
+	//		mWeaponBody = NULL;
+	//	}
+	//	b2BodyDef bd;
+	//	bd.type = b2_dynamicBody;
+	//	bd.position.Set(0, 0);
+	//	mWeaponBody = mWorld->CreateBody(&bd);
+	//	b2PolygonShape shape1;
+	//	b2PolygonShape shape2;
+	//	shape1.m_vertexCount = 3;
+	//	shape2.m_vertexCount = 3;
+	//	shape1.m_vertices[0] = weaponVertices[0];
+	//	shape1.m_vertices[1] = weaponVertices[1];
+	//	shape1.m_vertices[2] = weaponVertices[2];
+	//	shape2.m_vertices[0] = weaponVertices[0];
+	//	shape2.m_vertices[1] = weaponVertices[4];
+	//	shape2.m_vertices[2] = weaponVertices[3];
+	//	b2FixtureDef fd1, fd2;
+	//	fd1.shape = &shape1;
+	//	fd1.density = 0.0f;
+	//	fd1.friction = 0.0f;
+	//	fd2.shape = &shape2;
+	//	fd2.density = 0.0f;
+	//	fd2.friction = 0.0f;
+	//	fd1.filter.categoryBits = WeaponBodyContactMask;
+	//	fd1.filter.maskBits = BodyBodyContactMask;
+	//	fd2.filter.categoryBits = WeaponBodyContactMask;
+	//	fd2.filter.maskBits = BodyBodyContactMask;
+	//	mWeaponBody->CreateFixture(&fd1);
+	//	mWeaponBody->CreateFixture(&fd2);
+	//	mWeaponBody->SetUserData(this);
+	//}
 }
 void LocalPlayer::animationEvent(cocostudio::Armature *armature, cocostudio::MovementEventType movementType, const char *movementID)
 {
@@ -253,11 +274,20 @@ void LocalPlayer::animationEvent(cocostudio::Armature *armature, cocostudio::Mov
 				mWeaponBody = NULL;
 			}
 			callLuaFuncNoResult("LUAGameSceneView_LocalPlayerAttackAnimEnded");
+			mAttacking = false;
 		}
 		else if(beattack1 == movementID || clobber1 == movementID)
 		{
 			callLuaFuncNoResult("LUAGameSceneView_LocalPlayerBeAttackAnimEnded");
 			mBeAttacking = false;
+		}
+		else if(assault1 == movementID)
+		{
+			if(NULL != mWeaponBody)
+			{
+				mWorld->DestroyBody(mWeaponBody);
+				mWeaponBody = NULL;
+			}
 		}
 		else if(death1 == movementID)
 		{
@@ -373,6 +403,61 @@ void LocalPlayer::StepBefore(physics::ObjectSettings* settings)
 			mBodyBody->SetUserData(this);
 		}
 	}
+	if(NULL != mWeaponBody)
+	{
+		// weapon box
+		b2Vec2 weaponVertices[5];
+		for(int i = 0; i < 5; ++ i)
+		{
+			CCString* pWeaponName = CCString::createWithFormat("weapon%d", i);
+			cocostudio::CCBone* pBone = mAnimView->getBone(pWeaponName->getCString());
+			if(NULL == pBone)
+				return;
+			cocostudio::BaseData* pBoneData = pBone->getWorldInfo();
+			Point pos = mAnimView->getParent()->convertToWorldSpaceAR(mAnimView->getPosition());
+			if(this->getFaceNormalX() < 0.0f)
+				pos.x -= pBoneData->x;
+			else
+				pos.x += pBoneData->x;
+			pos.y += pBoneData->y;
+			Point titledMapPos = GameSceneViewModel::point()->getTiledMap()->getPosition();
+			pos.x -= titledMapPos.x;
+			pos.y -= titledMapPos.y;
+			weaponVertices[i] = b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO);
+		}
+		{
+			b2Fixture* fixture = mWeaponBody->GetFixtureList();
+			while(NULL != fixture)
+			{
+				b2Fixture* destroyFixture = fixture;
+				fixture = fixture->GetNext();
+				mWeaponBody->DestroyFixture(destroyFixture);
+			}
+			b2PolygonShape shape1;
+			b2PolygonShape shape2;
+			shape1.m_vertexCount = 3;
+			shape2.m_vertexCount = 3;
+			shape1.m_vertices[0] = weaponVertices[0];
+			shape1.m_vertices[1] = weaponVertices[1];
+			shape1.m_vertices[2] = weaponVertices[2];
+			shape2.m_vertices[0] = weaponVertices[0];
+			shape2.m_vertices[1] = weaponVertices[4];
+			shape2.m_vertices[2] = weaponVertices[3];
+			b2FixtureDef fd1, fd2;
+			fd1.shape = &shape1;
+			fd1.density = 0.0f;
+			fd1.friction = 0.0f;
+			fd2.shape = &shape2;
+			fd2.density = 0.0f;
+			fd2.friction = 0.0f;
+			fd1.filter.categoryBits = WeaponBodyContactMask;
+			fd1.filter.maskBits = BodyBodyContactMask;
+			fd2.filter.categoryBits = WeaponBodyContactMask;
+			fd2.filter.maskBits = BodyBodyContactMask;
+			mWeaponBody->CreateFixture(&fd1);
+			mWeaponBody->CreateFixture(&fd2);
+		}
+	}
 	if(mIsJumping)
 	{
 		mMoveBody->SetFixedRotation(true); // 起跳后设置为固定角度（不旋转），否则会产生多余的位移
@@ -426,17 +511,17 @@ void LocalPlayer::StepAfter()
 							}
 						}
 					}
-					if(mNowComboCount == 2)
+					if(mNowComboCount >= 2)
 					{
 						pBeAttackedMonst->beAttacked(this, hitPos, true);
 						mNowComboCount = 0;
-						mComboCountdownTimer = 1.0f + 1.0f;
+						mComboCountdownTimer = 1.0f + 0.5f;
 					}
 					else
 					{
 						pBeAttackedMonst->beAttacked(this, hitPos);
 						mNowComboCount ++;
-						mComboCountdownTimer = 1.0f + 1.0f;
+						mComboCountdownTimer = 1.0f + 0.5f;
 					}
 				}
 				else

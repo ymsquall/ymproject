@@ -72,8 +72,8 @@ public:
 	float getFaceNormalX() const;
 	float getFaceNormalY() const;
 	const CCPoint& getFaceNormal() const;
-
 	cocostudio::Armature* getAnimView() const;
+	void changeAnimAction(const std::string& actionName);
 
 public:
 	b2World* mWorld;
@@ -90,6 +90,8 @@ protected:
 	bool mDeathing;
 	float mBeAttackTimeout;
 	Point mFaceNormal;
+	float mComboCountdownTimer;
+	int mNowComboCount;
 	cocostudio::Armature* mAnimView;
 	CreatureHeaderModel* mModel;
 };

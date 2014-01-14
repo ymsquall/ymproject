@@ -16,8 +16,8 @@ function LUALoadCreatureHeaderView(viewWideh, viewHeight, self)
 	pView.mNameLabel:setName("NameLabel")
 	--pView.mHPShowLabel:setName("HPShowLabel")
 
-    pView.mProgressBar:loadTexture("image/progress01_bar.png")
-    pView.mProgressBG:loadTexture("image/progress01_bg.png")
+    pView.mProgressBar:loadTexture("image/creature_health_01_bar.png")
+    pView.mProgressBG:loadTexture("image/creature_health_01_bg.png")
 
 	pView.mProgressBar:setScale9Enabled(true)
 	pView.mProgressBar:setCapInsets(cc.rect(7, 4, 116, 5))

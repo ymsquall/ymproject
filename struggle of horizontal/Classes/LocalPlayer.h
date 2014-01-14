@@ -20,7 +20,7 @@ public:
 	static LocalPlayer* instance();
 
 	void setAnimView(cocostudio::Armature* anim);
-	void beAttacked(ICreatue* who, bool clobber = false);
+	void beAttacked(ICreatue* who, const Point& hitPos, bool clobber = false);
 
 	virtual void StepBefore(physics::ObjectSettings* settings) override;
 	virtual void StepAfter() override;
@@ -42,7 +42,5 @@ protected:
 
 protected:
 	static LocalPlayer* mInstance;
-	float mComboCountdownTimer;
-	int mNowComboCount;
 	float mDeathTimer;
 };

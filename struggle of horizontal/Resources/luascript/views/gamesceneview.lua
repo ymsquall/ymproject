@@ -39,19 +39,12 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 		end)
     _LUAGameSceneView.mAttackBtn:addTouchEventListener(function(sender, eventType)
 			if eventType == 0 then
-				local movementName = _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID()
-				if movementName ~= 'attack01' and movementName ~= 'attack02' and
-					movementName ~= 'beattack01' and movementName ~= 'clobber01' then
-					if _LUAGameSceneView.mHeroPlayAttactAnimIndex == 1 then
-						_LUAGameSceneView.mHeroAnim:getAnimation():play('attack01')
-						_LUAGameSceneView.mHeroPlayAttactAnimIndex = 2
-					elseif _LUAGameSceneView.mHeroPlayAttactAnimIndex == 2 then
-						_LUAGameSceneView.mHeroAnim:getAnimation():play('attack02')
-						_LUAGameSceneView.mHeroPlayAttactAnimIndex = 1
-					end
+				if LUACreatureCanBeAttack(LocalPlayer:instance()) then
+					local localUser = LocalPlayer:instance()
+					localUser:changeAnimAction('attack')
 					_LUAGameSceneView.mMoveDirection = 0.0
 					_LUAGameSceneView.mMoveSpeedScale = 0.0
-					LocalPlayer:instance():move(0.0, 0.0)
+					localUser:move(0.0, 0.0)
 				end
 			end
 		end)

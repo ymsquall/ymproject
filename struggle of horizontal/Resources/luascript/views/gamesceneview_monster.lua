@@ -73,13 +73,15 @@ function LUAGameSceneView_MonsterActiveAttack(monster, id)
 	id = id or 0
 	local pMonster = LuaUserDataConversion:toMonster(monster)
 	for i,v in pairs(_LUAGameSceneView_MonsterManager.MonsterList) do
-		if v.mMonster == pMonster then
-			print('monster active attack')
+		if v.mMonster == pMonster and LUACreatureCanBeAttack(pMonster) then
+			pMonster:changeAnimAction('attack')
+			--[[
 			if id > 1 then
 				v.mAnim:getAnimation():play('attack02')
 			else
 				v.mAnim:getAnimation():play('attack01')
 			end
+			--]]
 			break
 		end
 	end

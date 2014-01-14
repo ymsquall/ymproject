@@ -1,8 +1,13 @@
 _LUACreatureActionInfo = _LUACreatureActionInfo or {}
 
-function LUACreatureCanBeMove(creature)
+function LUACreatureCanBeMoveOrStand(creature)
 	local canbe = false
-
+	local animView = tolua.cast(creature:getAnimView(), "Armature")
+	local nowAction = animView:getAnimation():getCurrentMovementID()
+	if nowAction == 'stand01' or nowAction == 'run01' or nowAction == 'jumpattack01' or
+		nowAction == 'jumping01' or nowAction == 'jumpup01' or nowAction == 'landdown01'then
+		canbe = true
+	end
 	return canbe
 end
 
@@ -14,7 +19,12 @@ end
 
 function LUACreatureCanBeAttack(creature)
 	local canbe = false
-
+	local animView = tolua.cast(creature:getAnimView(), "Armature")
+	local nowAction = animView:getAnimation():getCurrentMovementID()
+	if nowAction == 'stand01' or nowAction == 'run01' or nowAction == 'jumpattack01' or
+		nowAction == 'jumping01' or nowAction == 'jumpup01' or nowAction == 'landdown01' then
+		canbe = true
+	end
 	return canbe
 end
 

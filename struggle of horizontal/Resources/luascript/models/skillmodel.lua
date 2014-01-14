@@ -14,24 +14,24 @@ _LUASkillMetaData[1001] = {
 	end,
 	doSkill = function(self, creature)
 		_LUACreatureActionInfo[creature] = _LUACreatureActionInfo[creature] or {}
-		local animView = tolua.cast(creature:getAnimView(), "Armature")
-		if animView:getAnimation():getCurrentMovementID() ~= 'assault01' then
-			animView:getAnimation():play('assault01')
-		end
+		--local animView = tolua.cast(creature:getAnimView(), "Armature")
+		creature:changeAnimAction('assault01')
+		--if animView:getAnimation():getCurrentMovementID() ~= 'assault01' then
+		--	animView:getAnimation():play('assault01')
+		--end
 		creature:move(creature:getFaceNormalX(), 1000.0)
 		_LUACreatureActionInfo[creature].skillScheduler = scheduler:scheduleScriptFunc(function(dt)
 				if _LUAGameSceneView.mMoveSpeedScale < 0.001 then
-					animView:getAnimation():play('stand01')
-					LocalPlayer:instance():move(0.0, 0.0)
+					--animView:getAnimation():play('stand01')
+					creature:changeAnimAction('stand01')
+					creature:move(0.0, 0.0)
 				else
-					animView:getAnimation():play('run01')
-					LocalPlayer:instance():move(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
+					--animView:getAnimation():play('run01')
+					creature:changeAnimAction('run01')
+					creature:move(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
 				end
 				scheduler:unscheduleScriptEntry(_LUACreatureActionInfo[creature].skillScheduler)
 				_LUACreatureActionInfo[creature].skillScheduler = nil
-
-				animView:removeChild(_LUACreatureActionInfo[creature].skillAnim, true)
-				_LUACreatureActionInfo[creature].skillAnim = nil
 			end, 0.3, false)
 		-- cd
 		_LUACreatureActionInfo[creature].nowTimer = self.cdTimer

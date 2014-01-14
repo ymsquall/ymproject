@@ -1,4 +1,4 @@
-function LUAGameSceneView_LocalPlayerBeAttackedEffect(lostHP, hitPoint)
+function LUAGameSceneView_LocalPlayerBeAttackedEffect(lostHP, hitPosX, hitPosY)
 	local pPlayer = LocalPlayer:instance()
 	local pos = pPlayer:getMovedBodyPos()
 	local posFlying = CCPoint(pos.x - 20, pos.y + 220)
@@ -26,7 +26,7 @@ function LUAGameSceneView_LocalPlayerBeAttackedEffect(lostHP, hitPoint)
 			pViwePanel:runFadeOutAction(1.0)
 		end)))
 	--blast effect
-	local pEffect = LUACreateAndPlayBlastEffect('effect.blast', 'beattack02.point01', hitPoint.x, hitPoint.y)
+	local pEffect = LUACreateAndPlayBlastEffect('effect.blast', 'beattack02.point01', hitPosX, hitPosY)
 	_LUAGameSceneView.mTiledMap:addChild(pEffect, 101)
     pEffect:getAnimation():setMovementEventCallFunc(
 		function(armatureBack,movementType,movementID)

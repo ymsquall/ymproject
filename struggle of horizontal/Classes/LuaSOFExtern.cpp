@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaSOFExtern
-** Generated automatically by tolua++-1.0.92 on 01/14/14 15:41:57.
+** Generated automatically by tolua++-1.0.92 on 01/14/14 17:20:51.
 */
 
 /****************************************************************************
@@ -2021,6 +2021,40 @@ static int tolua_LuaSOFExtern_LocalPlayer_getAnimView00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: changeAnimAction of class  LocalPlayer */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_LocalPlayer_changeAnimAction00
+static int tolua_LuaSOFExtern_LocalPlayer_changeAnimAction00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"LocalPlayer",0,&tolua_err) ||
+     !tolua_iscppstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  LocalPlayer* self = (LocalPlayer*)  tolua_tousertype(tolua_S,1,0);
+  const std::string actionName = ((const std::string)  tolua_tocppstring(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'changeAnimAction'", NULL);
+#endif
+  {
+   self->changeAnimAction(actionName);
+   tolua_pushcppstring(tolua_S,(const char*)actionName);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'changeAnimAction'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: new of class  Monster */
 #ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_Monster_new00
 static int tolua_LuaSOFExtern_Monster_new00(lua_State* tolua_S)
@@ -2574,6 +2608,40 @@ static int tolua_LuaSOFExtern_Monster_getAnimView00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: changeAnimAction of class  Monster */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_Monster_changeAnimAction00
+static int tolua_LuaSOFExtern_Monster_changeAnimAction00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Monster",0,&tolua_err) ||
+     !tolua_iscppstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Monster* self = (Monster*)  tolua_tousertype(tolua_S,1,0);
+  const std::string actionName = ((const std::string)  tolua_tocppstring(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'changeAnimAction'", NULL);
+#endif
+  {
+   self->changeAnimAction(actionName);
+   tolua_pushcppstring(tolua_S,(const char*)actionName);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'changeAnimAction'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* Open function */
 TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
 {
@@ -2696,6 +2764,7 @@ TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"getFaceNormalY",tolua_LuaSOFExtern_LocalPlayer_getFaceNormalY00);
    tolua_function(tolua_S,"getFaceNormal",tolua_LuaSOFExtern_LocalPlayer_getFaceNormal00);
    tolua_function(tolua_S,"getAnimView",tolua_LuaSOFExtern_LocalPlayer_getAnimView00);
+   tolua_function(tolua_S,"changeAnimAction",tolua_LuaSOFExtern_LocalPlayer_changeAnimAction00);
   tolua_endmodule(tolua_S);
   #ifdef __cplusplus
   tolua_cclass(tolua_S,"Monster","Monster","unity::object",tolua_collect_Monster);
@@ -2721,6 +2790,7 @@ TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"getFaceNormalY",tolua_LuaSOFExtern_Monster_getFaceNormalY00);
    tolua_function(tolua_S,"getFaceNormal",tolua_LuaSOFExtern_Monster_getFaceNormal00);
    tolua_function(tolua_S,"getAnimView",tolua_LuaSOFExtern_Monster_getAnimView00);
+   tolua_function(tolua_S,"changeAnimAction",tolua_LuaSOFExtern_Monster_changeAnimAction00);
   tolua_endmodule(tolua_S);
  tolua_endmodule(tolua_S);
  return 1;

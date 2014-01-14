@@ -17,6 +17,7 @@ class LocalPlayer : public unity::object
 	float getFaceNormalY() const;
 	const CCPoint& getFaceNormal() const;
 	CCArmature* getAnimView() const;
+	void changeAnimAction(const std::string& actionName);
 };
 
 class Monster : public unity::object
@@ -37,4 +38,5 @@ class Monster : public unity::object
 	float getFaceNormalY() const;
 	const CCPoint& getFaceNormal() const;
 	CCArmature* getAnimView() const;
+	void changeAnimAction(const std::string& actionName);
 };

@@ -271,6 +271,9 @@ void Monster::StepBefore(physics::ObjectSettings* settings)
 			else
 				this->setFaceNormalX(1.0f);
 			mAttacking = true;
+			mNowComboCount = 3-mAICanActiveAttacked;
+			if(mNowComboCount > 2)
+				mNowComboCount = 2;
 			callLuaFuncNoResult("LUAGameSceneView_MonsterActiveAttack", this, mAICanActiveAttacked);
 			mActiveAttackTimer = 3.0f + float(rand() % 3);
 			mAICanActiveAttacked--;
@@ -354,9 +357,33 @@ void Monster::StepAfter()
 				else
 				{
 					LocalPlayer* pBeAttackPlayer = dynamic_cast<LocalPlayer*>(pObject);
-					if(NULL != pBeAttackPlayer && !pBeAttackPlayer->isBeAttacking())
+					if(NULL != pBeAttackPlayer && !pBeAttackPlayer->isBeAttacking() && !pBeAttackPlayer->isDeathing())
 					{
-						pBeAttackPlayer->beAttacked(this, mAICanActiveAttacked==0);
+						Point hitPos(0,0);
+						b2Shape* pShapeA = pContact->contact->GetFixtureA()->GetShape();
+						b2Shape* pShapeB = pContact->contact->GetFixtureB()->GetShape();
+						if(pShapeA->GetType() == b2Shape::e_polygon && pShapeB->GetType() == b2Shape::e_polygon)
+						{
+							b2PolygonShape* pPolShapeA = static_cast<b2PolygonShape*>(pShapeA);
+							b2PolygonShape* pPolShapeB = static_cast<b2PolygonShape*>(pShapeB);
+							if(pContact->contact->GetFixtureA()->GetBody() == mWeaponBody)
+							{
+								if(pPolShapeB->GetVertexCount() == 3)
+								{
+									b2Vec2* vertexs = pPolShapeB->m_vertices;
+									hitPos = Point(vertexs[0].x * PTM_RATIO, vertexs[0].y * PTM_RATIO);
+								}
+							}
+							else if(pContact->contact->GetFixtureB()->GetBody() == mWeaponBody)
+							{
+								if(pPolShapeA->GetVertexCount() == 3)
+								{
+									b2Vec2* vertexs = pPolShapeA->m_vertices;
+									hitPos = Point(vertexs[0].x * PTM_RATIO, vertexs[0].y * PTM_RATIO);
+								}
+							}
+						}
+						pBeAttackPlayer->beAttacked(this, hitPos, mAICanActiveAttacked==0);
 					}
 				}
 			}

@@ -17,6 +17,8 @@ ICreatue::ICreatue(b2World* pWorld)
 	mDeathing = false;
 	mSkilling = false;
 	mBeAttackTimeout = 0.0f;
+	mComboCountdownTimer = 1000.0f;
+	mNowComboCount = 0;
 	mFaceNormal = Point::ZERO;
 	mAnimView = NULL;
 }
@@ -190,4 +192,47 @@ const CCPoint& ICreatue::getFaceNormal() const
 cocostudio::Armature* ICreatue::getAnimView() const
 {
 	return mAnimView;
+}
+
+void ICreatue::changeAnimAction(const std::string& actionName)
+{
+	static const std::string stand1 = "stand01";
+	static const std::string run1 = "run01";
+	static const std::string jumping1 = "jumping01";
+	static const std::string jumpup1 = "jumpup01";
+	static const std::string landdown1 = "landdown01";
+	static const std::string attack1 = "attack01";
+	static const std::string attack2 = "attack02";
+	static const std::string attack3 = "attack03";
+	static const std::string death1 = "death01";
+	static const std::string beattack1 = "beattack01";
+	static const std::string clobber1 = "clobber01";
+	static const std::string assault1 = "assault01";
+	static const std::string jumpattack1 = "jumpattack01";
+	cocostudio::ArmatureAnimation* pAnim = mAnimView->getAnimation();
+	const std::string& nowActionName = pAnim->getCurrentMovementID();
+	if(nowActionName == actionName)
+		return;
+	std::string playActName = actionName;
+	if(actionName == "attack")
+	{
+		if(0 == mNowComboCount)
+			playActName = attack1;
+		else if(1 == mNowComboCount)
+			playActName = attack2;
+		else if(2 == mNowComboCount)
+			playActName = attack3;
+	}
+	if(nowActionName == attack1 || nowActionName == attack2 || nowActionName == attack3 ||
+		nowActionName == assault1 || nowActionName == jumpattack1)
+	{
+		if(NULL != mWeaponBody)
+		{
+			mWorld->DestroyBody(mWeaponBody);
+			mWeaponBody = NULL;
+		}
+	}
+	if(nowActionName == playActName)
+		return;
+	pAnim->play(playActName.c_str());
 }
