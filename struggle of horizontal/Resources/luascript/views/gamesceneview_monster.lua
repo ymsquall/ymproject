@@ -61,9 +61,7 @@ function LUAGameSceneView_MonsterBeAttacked(monster, clobber)
 	local pMonster = LuaUserDataConversion:toMonster(monster)
 	for i,v in pairs(_LUAGameSceneView_MonsterManager.MonsterList) do
 		if v.mMonster == pMonster then
-			if v.mAnim:getAnimation():getCurrentMovementID() ~= actionName then
-				v.mAnim:getAnimation():play(actionName)
-			end
+			pMonster:changeAnimAction(actionName)
 			break
 		end
 	end
@@ -75,13 +73,6 @@ function LUAGameSceneView_MonsterActiveAttack(monster, id)
 	for i,v in pairs(_LUAGameSceneView_MonsterManager.MonsterList) do
 		if v.mMonster == pMonster and LUACreatureCanBeAttack(pMonster) then
 			pMonster:changeAnimAction('attack')
-			--[[
-			if id > 1 then
-				v.mAnim:getAnimation():play('attack02')
-			else
-				v.mAnim:getAnimation():play('attack01')
-			end
-			--]]
 			break
 		end
 	end
@@ -90,7 +81,7 @@ function LUAGameSceneView_MonsterAttackAnimEnded(monster)
 	local pMonster = LuaUserDataConversion:toMonster(monster)
 	for i,v in pairs(_LUAGameSceneView_MonsterManager.MonsterList) do
 		if v.mMonster == pMonster then
-			v.mAnim:getAnimation():play('stand01')
+			pMonster:changeAnimAction('stand01')
 			break
 		end
 	end
@@ -99,8 +90,7 @@ function LUAGameSceneView_MonsterBeAttackAnimEnded(monster)
 	local pMonster = LuaUserDataConversion:toMonster(monster)
 	for i,v in pairs(_LUAGameSceneView_MonsterManager.MonsterList) do
 		if v.mMonster == pMonster then
-			--v.mAnim:getAnimation():play('attack01')
-			v.mAnim:getAnimation():play('stand01')
+			pMonster:changeAnimAction('stand01')
 			break
 		end
 	end
@@ -109,7 +99,7 @@ function LUAGameSceneView_MonsterDeath(monster)
 	local pMonster = LuaUserDataConversion:toMonster(monster)
 	for i,v in pairs(_LUAGameSceneView_MonsterManager.MonsterList) do
 		if v.mMonster == pMonster then
-			v.mAnim:getAnimation():play('death01')
+			pMonster:changeAnimAction('death01')
 			break
 		end
 	end
@@ -118,7 +108,7 @@ function LUAGameSceneView_MonsterRelive(monster)
 	local pMonster = LuaUserDataConversion:toMonster(monster)
 	for i,v in pairs(_LUAGameSceneView_MonsterManager.MonsterList) do
 		if v.mMonster == pMonster then
-			v.mAnim:getAnimation():play('stand01')
+			pMonster:changeAnimAction('stand01')
 			break
 		end
 	end

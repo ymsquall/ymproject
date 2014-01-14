@@ -16,8 +16,8 @@ function LUAOnWin32KeyDownMsgProc(key)
 		else
 			_LUAGameSceneView.mMoveDirection = 1
 			LocalPlayer:instance():setFaceNormalX(1.0)
-			end
-		if LUACreatureCanBeMoveOrStand(LocalPlayer:instance()) then
+		end
+		if LUACreatureCanBeDropInLand(LocalPlayer:instance()) then
 			LocalPlayer:instance():changeAnimAction('run01')
 			_LUAGameSceneView.mMoveSpeedScale = 300
 			LocalPlayer:instance():move(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
@@ -46,9 +46,6 @@ function LUAOnWin32KeyUpMsgProc(key)
 		LocalPlayer:instance():move(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
 		if LUACreatureCanBeMoveOrStand(LocalPlayer:instance()) then
 			LocalPlayer:instance():changeAnimAction('stand01')
-			--if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "stand01" then
-			--	_LUAGameSceneView.mHeroAnim:getAnimation():play("stand01")
-			--end
 		end
 	end
 end

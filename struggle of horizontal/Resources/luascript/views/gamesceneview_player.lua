@@ -42,9 +42,7 @@ function LUAGameSceneView_LocalPlayerBeAttacked(clobber)
 	clobber = clobber or false
 	local actionName = 'beattack01'
 	if clobber then actionName = 'clobber01' end
-	if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= actionName then
-		_LUAGameSceneView.mHeroAnim:getAnimation():play(actionName)
-	end
+	LocalPlayer:instance():changeAnimAction(actionName)
 	_LUAGameSceneView.mBeAttacking = true
 	_LUAGameSceneView.mMoveDirection = 0.0
 	_LUAGameSceneView.mMoveSpeedScale = 0.0
@@ -53,30 +51,30 @@ end
 
 function LUAGameSceneView_LocalPlayerAttackAnimEnded()
     if _LUAGameSceneView.mMoveSpeedScale < 0.001 then
-        _LUAGameSceneView.mHeroAnim:getAnimation():play('stand01')
+		LocalPlayer:instance():changeAnimAction('stand01')
     else
-        _LUAGameSceneView.mHeroAnim:getAnimation():play('run01')
+		LocalPlayer:instance():changeAnimAction('run01')
     end
 end
 
 function LUAGameSceneView_LocalPlayerBeAttackAnimEnded()
     if _LUAGameSceneView.mMoveSpeedScale < 0.001 then
-        _LUAGameSceneView.mHeroAnim:getAnimation():play('stand01')
+		LocalPlayer:instance():changeAnimAction('stand01')
     else
-        _LUAGameSceneView.mHeroAnim:getAnimation():play('run01')
+		LocalPlayer:instance():changeAnimAction('run01')
     end
 	_LUAGameSceneView.mBeAttacking = false
 end
 
 function LUAGameSceneView_LocalPlayerDeath()
-	_LUAGameSceneView.mHeroAnim:getAnimation():play('death01')
+	LocalPlayer:instance():changeAnimAction('death01')
 end
 
 function LUAGameSceneView_LocalPlayerRelive()
     if _LUAGameSceneView.mMoveSpeedScale < 0.001 then
-        _LUAGameSceneView.mHeroAnim:getAnimation():play('stand01')
+		LocalPlayer:instance():changeAnimAction('stand01')
     else
-        _LUAGameSceneView.mHeroAnim:getAnimation():play('run01')
+		LocalPlayer:instance():changeAnimAction('run01')
     end
 end
 
