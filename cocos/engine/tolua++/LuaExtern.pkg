@@ -2,7 +2,7 @@ $#include "LuaExtern.h"
 
 $pfile "datablock.pkg"
 $pfile "mvvm.pkg"
-$pfile "LuaCocoStudioConversion.pkg"
+$pfile "LuaCocoStudioHelper.pkg"
 $pfile "LuaTiledHelper.pkg"
 $pfile "win32handler.pkg"
 $pfile "uiview/Panel.pkg"

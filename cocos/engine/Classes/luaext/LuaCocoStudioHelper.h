@@ -8,7 +8,7 @@
 using namespace gui;
 using namespace cocos2d;
 
-class LuaCocoStudioConversion
+class LuaCocoStudioHelper
 {
 public:
 	static UILayout* getChildLayoutByName(const char* name, UIWidget* pParent);
@@ -40,5 +40,8 @@ public:
 	static UIScrollView* toUIScrollView(void* pointer);
 	static UIListView* toUIListView(void* pointer);
 	static UIPageView* toUIPageView(void* pointer);
+
+	static void setButtonPressState(UIButton* pBtn);
+	static void setButtonNormalState(UIButton* pBtn);
 };
 

@@ -4,6 +4,7 @@
 #include "CCScriptSupport.h"
 #include "CCLuaEngine.h"
 #include "luaext/LuaExtern.h"
+#include "luaext/LuaHelper.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -29,27 +30,6 @@ namespace engine
 
 	bool AppDelegate::applicationDidFinishLaunching()
 	{
-		// initialize director
-		Director *pDirector = Director::getInstance();
-		pDirector->setProjection(Director::Projection::_2D);
-		pDirector->setOpenGLView(EGLView::getInstance());
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
-		EGLView::getInstance()->setDesignResolutionSize(mEGLViewWidth, mEGLViewHeight, ResolutionPolicy::EXACT_FIT);
-#elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-		CCSize screenSize = pDirector->getWinSize();
-		if (screenSize.width == 2048 && screenSize.height == 1536)
-		{
-			EGLView::getInstance()->setDesignResolutionSize(1024.0f, 768.0f, ResolutionPolicy::EXACT_FIT);
-		}
-#endif
-		// turn on display FPS
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
-		pDirector->setDisplayStats(true);
-#else
-		pDirector->setDisplayStats(false);
-#endif
-		// set FPS. the default value is 1.0/60 if you don't call this
-		pDirector->setAnimationInterval(1.0 / 60);
 		// register lua engine
 		LuaEngine* pEngine = LuaEngine::getInstance();
 		tolua_LuaExtern_open(pEngine->getLuaStack()->getLuaState());
@@ -57,12 +37,43 @@ namespace engine
 		ScriptEngineManager::getInstance()->setScriptEngine(pEngine);
 		std::string path;
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
-		path = FileUtils::getInstance()->fullPathForFilename("luascript/startup.lua");
-#elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-		path = FileUtils::getInstance()->fullPathForFilename("luascript/startup.lua");
-#endif
+		path = FileUtils::getInstance()->fullPathForFilename("luascript/environment.lua");
 		pEngine->executeScriptFile(path.c_str());
-        
+		// load view size
+		Size viewSize(0,0);
+		if(tolua_getLuaNumberValue_ByTable(pEngine->getLuaStack()->getLuaState(), "view_width", "__LUAEnvironmentVariable", viewSize.width) &&
+			tolua_getLuaNumberValue_ByTable(pEngine->getLuaStack()->getLuaState(), "view_height", "__LUAEnvironmentVariable", viewSize.height))
+		{
+			mEGLViewWidth = (int)viewSize.width;
+			mEGLViewHeight = (int)viewSize.height;
+		}
+		std::string title;
+		if(tolua_getLuaStringValue_ByTable(pEngine->getLuaStack()->getLuaState(), "win_title", "__LUAEnvironmentVariable", title))
+			mWinTitle = title;
+		mCustomEGLView.init(mWinTitle.c_str(), mEGLViewWidth, mEGLViewHeight);
+#endif
+		// initialize director
+		Director* pDirector = Director::getInstance();
+		pDirector->setProjection(Director::Projection::_2D);
+		pDirector->setOpenGLView(EGLView::getInstance());
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+		EGLView::getInstance()->setDesignResolutionSize(mEGLViewWidth, mEGLViewHeight, ResolutionPolicy::EXACT_FIT);
+		// turn on display FPS
+		pDirector->setDisplayStats(true);
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+		CCSize screenSize = pDirector->getWinSize();
+		if (screenSize.width == 2048 && screenSize.height == 1536)
+		{
+			EGLView::getInstance()->setDesignResolutionSize(1024.0f, 768.0f, ResolutionPolicy::EXACT_FIT);
+		}
+		pDirector->setDisplayStats(false);
+#endif
+		// set FPS. the default value is 1.0/60 if you don't call this
+		pDirector->setAnimationInterval(1.0 / 60);
+
+		path = FileUtils::getInstance()->fullPathForFilename("luascript/startup.lua");
+		pEngine->executeScriptFile(path.c_str());
+
 		framework::unity::RoutedEventArgs eventArgs;
 		Event_AppInitOveredShowingBefore(this, &eventArgs);
         
@@ -127,7 +138,7 @@ namespace engine
 	{
 		mEGLViewWidth = width;
 		mEGLViewHeight = height;
-		mCustomEGLView.init(title, mEGLViewWidth, mEGLViewHeight);
+		mWinTitle = title;
 		// init main message environment
 		PVRFrameEnableControlWindow(false);
 

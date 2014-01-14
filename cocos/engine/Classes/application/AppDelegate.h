@@ -56,6 +56,7 @@ namespace engine
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 		int mEGLViewWidth;
 		int mEGLViewHeight;
+		std::string mWinTitle;
 		MSG mLastGotMessage;
 		LARGE_INTEGER mMessageFreq;
 		LARGE_INTEGER mMessageLast;

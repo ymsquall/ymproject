@@ -3,8 +3,8 @@ function LUALoadLoginView(viewWideh, viewHeight)
 	local layoutSize = pLayout:getContentSize()
 	pLayout:setPosition(cc.p((viewWideh-layoutSize.width)/2.0, (viewHeight-layoutSize.height)/2.0))
 
-	local mTopBar = LuaCocoStudioConversion:getChildUIImageViewByName("mTopBar", pLayout)
-	local mBottonBar = LuaCocoStudioConversion:getChildUIImageViewByName("mBottonBar", pLayout)
+	local mTopBar = LuaCocoStudioHelper:getChildUIImageViewByName("mTopBar", pLayout)
+	local mBottonBar = LuaCocoStudioHelper:getChildUIImageViewByName("mBottonBar", pLayout)
 
 	local pos = mTopBar:getPosition()
 	pos.y = pos.y + __LUADeviceOffsetPos.y

@@ -3,9 +3,9 @@ function LUALoadSelectHeroView(viewWideh, viewHeight)
 	local layoutSize = pLayout:getContentSize()
 	pLayout:setPosition(cc.p((viewWideh-layoutSize.width)/2.0, (viewHeight-layoutSize.height)/2.0));
 
-	local mHeroHeadScrollView = LuaCocoStudioConversion:getChildUIScrollViewByName("mHeroHeadScrollView", pLayout)
-	local mTitleTextBar = LuaCocoStudioConversion:getChildUIImageViewByName("mTitleTextBar", pLayout)
-	local mBottomBar = LuaCocoStudioConversion:getChildUIImageViewByName("mBottomBar", pLayout)
+	local mHeroHeadScrollView = LuaCocoStudioHelper:getChildUIScrollViewByName("mHeroHeadScrollView", pLayout)
+	local mTitleTextBar = LuaCocoStudioHelper:getChildUIImageViewByName("mTitleTextBar", pLayout)
+	local mBottomBar = LuaCocoStudioHelper:getChildUIImageViewByName("mBottomBar", pLayout)
 
 	local pos = mTitleTextBar:getPosition()
 	pos.x = pos.x - __LUADeviceOffsetPos.x

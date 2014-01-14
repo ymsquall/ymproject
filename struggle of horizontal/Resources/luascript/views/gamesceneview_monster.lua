@@ -27,7 +27,7 @@ function LUAGameSceneView_MonsterBeAttackedEffect(monster, lostHP, hitPosX, hitP
 		local imageName ='number01_0'..string.sub(hpStr,i,i)..'.png'
 		pViwePanel:createSpriteWithPlist(imageName)
 	end
-	local pLayer = LuaCocoStudioConversion:toUILayer(pViwePanel)
+	local pLayer = LuaCocoStudioHelper:toUILayer(pViwePanel)
 	_LUAGameSceneView.mTiledMap:addChild(pLayer, 101)
 	local moveEndPos = cc.p(posFlying.x, posFlying.y + 100.0)
 	local moveup = cc.MoveTo:create(2.0, moveEndPos)

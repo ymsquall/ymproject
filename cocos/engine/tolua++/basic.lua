@@ -14,7 +14,7 @@ local CCObjectTypes = {
     "framework::mvvm::ModelBase",
     "engine::uiview::Panel",
     "engine::uiview::StackPanel",
-    "LuaCocoStudioConversion",
+    "LuaCocoStudioHelper",
     "LuaTiledHelper",
 }
 
@@ -116,7 +116,7 @@ extern "C" {
 #include "mvvm/view.h"
 #include "uiview/Panel/StackPanel.h"
 #include "CocoStudio.h"
-#include "LuaCocoStudioConversion.h"
+#include "LuaCocoStudioHelper.h"
 #include "LuaTiledHelper.h"
 
 using namespace cocos2d;

@@ -1,4 +1,4 @@
-class LuaCocoStudioConversion
+class LuaCocoStudioHelper
 {
 	static UILayout* getChildLayoutByName(const char* name, UIWidget* pParent);
 	static UILayer* getChildUILayerByName(const char* name, UIWidget* pParent);
@@ -29,4 +29,7 @@ class LuaCocoStudioConversion
 	static UIScrollView* toUIScrollView(void* pointer);
 	static UIListView* toUIListView(void* pointer);
 	static UIPageView* toUIPageView(void* pointer);
+
+	static void setButtonPressState(UIButton* pBtn);
+	static void setButtonNormalState(UIButton* pBtn);
 };

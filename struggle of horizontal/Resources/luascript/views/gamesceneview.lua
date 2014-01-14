@@ -15,24 +15,28 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 	_LUAGameSceneView.mUILayer:setTag(201)
     _LUAGameSceneView.self:addChild(_LUAGameSceneView.mUILayer)
 	_LUAGameSceneView.mUILayer:setTouchEnabled(true)
-	_LUAGameSceneView.mUILayout = ccs.GUIReader:getInstance():widgetFromJsonFile('Operations/Operations.json')
+	_LUAGameSceneView.mUILayout = ccs.GUIReader:getInstance():widgetFromJsonFile('GameSceneUI.json')
 	local layoutSize = _LUAGameSceneView.mUILayout:getContentSize()
-	_LUAGameSceneView.mUILayout:setPosition(cc.p((viewWideh-layoutSize.width)/2.0, (viewHeight-layoutSize.height)/2.0))
-	_LUAGameSceneView.mMoveStickBG = LuaCocoStudioConversion:getChildUIImageViewByName("mMoveStickBG", _LUAGameSceneView.mUILayout)
-	_LUAGameSceneView.mMoveStick = LuaCocoStudioConversion:getChildUIImageViewByName("mMoveStick", _LUAGameSceneView.mUILayout)
-	_LUAGameSceneView.mMoveStickBGShowing = LuaCocoStudioConversion:getChildUIImageViewByName("mMoveStickBGShowing", _LUAGameSceneView.mUILayout)
-	_LUAGameSceneView.mMoveStickShowing = LuaCocoStudioConversion:getChildUIImageViewByName("mMoveStickShowing", _LUAGameSceneView.mUILayout)
-	_LUAGameSceneView.mJumpBtn = LuaCocoStudioConversion:getChildUIButtonByName("mJumpBtn", _LUAGameSceneView.mUILayout)
-	_LUAGameSceneView.mAttackBtn = LuaCocoStudioConversion:getChildUIButtonByName("mAttackBtn", _LUAGameSceneView.mUILayout)
+	_LUAGameSceneView.mUILayout:setSize(cc.size(viewWideh, viewHeight))
+	_LUAGameSceneView.mRightBottomPanel = LuaCocoStudioHelper:getChildLayoutByName("mRightBottomPanel", _LUAGameSceneView.mUILayout)
+	_LUAGameSceneView.mRightBottomPanel:setPosition(cc.p(viewWideh-_LUAGameSceneView.mRightBottomPanel:getContentSize().width, _LUAGameSceneView.mRightBottomPanel:getPosition().y))
+	_LUAGameSceneView.mStickLeftBtn = LuaCocoStudioHelper:getChildUIButtonByName("mStickLeftBtn", _LUAGameSceneView.mUILayout)
+	_LUAGameSceneView.mStickRightBtn = LuaCocoStudioHelper:getChildUIButtonByName("mStickRightBtn", _LUAGameSceneView.mUILayout)
+	_LUAGameSceneView.mJumpBtn = LuaCocoStudioHelper:getChildUIButtonByName("mJumpBtn", _LUAGameSceneView.mUILayout)
+	_LUAGameSceneView.mAttackBtn = LuaCocoStudioHelper:getChildUIButtonByName("mAttackBtn", _LUAGameSceneView.mUILayout)
+	_LUAGameSceneView.mSkill1Btn = LuaCocoStudioHelper:getChildUIButtonByName("mSkill1Btn", _LUAGameSceneView.mUILayout)
+	_LUAGameSceneView.mSkill2Btn = LuaCocoStudioHelper:getChildUIButtonByName("mSkill2Btn", _LUAGameSceneView.mUILayout)
+	--[[
 	local oBtntnPos = _LUAGameSceneView.mJumpBtn:getPosition()
 	_LUAGameSceneView.mJumpBtn:setPosition(cc.p(oBtntnPos.x + __LUADeviceOffsetPos.x, oBtntnPos.y - __LUADeviceOffsetPos.y))
 	oBtntnPos = _LUAGameSceneView.mAttackBtn:getPosition()
 	_LUAGameSceneView.mAttackBtn:setPosition(cc.p(oBtntnPos.x + __LUADeviceOffsetPos.x, oBtntnPos.y - __LUADeviceOffsetPos.y))
 	oBtntnPos = _LUAGameSceneView.mMoveStickBGShowing:getPosition()
 	_LUAGameSceneView.mMoveStickBGShowing:setPosition(cc.p(oBtntnPos.x - __LUADeviceOffsetPos.x, oBtntnPos.y - __LUADeviceOffsetPos.y))
+	--]]
 	_LUAGameSceneView.mUILayout:setTag(202)
 	_LUAGameSceneView.mUILayer:addWidget(_LUAGameSceneView.mUILayout)
-	_LUAGameSceneView.mMoveStickBG:setVisible(false)
+	--_LUAGameSceneView.mMoveStickBG:setVisible(false)
 	_LUAGameSceneView.mHeroPlayAttactAnimIndex = 1
 	_LUAGameSceneView.mMoveDirection = _LUAGameSceneView.mMoveDirection or 0.0
 	_LUAGameSceneView.mMoveSpeedScale = _LUAGameSceneView.mMoveSpeedScale or 0.0
@@ -90,7 +94,7 @@ function LUAGameSceneViewBeAttackedEffect(lostHP, hitPoint)
 		local imageName ='number01_0'..string.sub(hpStr,i,i)..'.png'
 		pViwePanel:createSpriteWithPlist(imageName)
 	end
-	local pLayer = LuaCocoStudioConversion:toUILayer(pViwePanel)
+	local pLayer = LuaCocoStudioHelper:toUILayer(pViwePanel)
 	_LUAGameSceneView.mTiledMap:addChild(pLayer, 101)
 	local moveEndPos = cc.p(posFlying.x, posFlying.y + 100.0)
 	local moveup = cc.MoveTo:create(2.0, moveEndPos)
@@ -163,8 +167,8 @@ function LUAGameSceneViewTouchesBegan(touchID, x, y)
 		_LUAGameSceneView.mTouchMoveBeginPos = pos
 		_LUAGameSceneView.mTouchIndex = touchID
 		_LUAGameSceneView.mMoveing = false
-		_LUAGameSceneView.mMoveStickBG:setPosition(cc.p(pos.x - 30, pos.y - 65))
-		_LUAGameSceneView.mMoveStickBG:setVisible(true)
+		--_LUAGameSceneView.mMoveStickBG:setPosition(cc.p(pos.x - 30, pos.y - 65))
+		--_LUAGameSceneView.mMoveStickBG:setVisible(true)
 		return true
 	end
 	return false
@@ -188,8 +192,12 @@ function LUAGameSceneViewTouchesMoved(touchID, x, y)
 			end
 			if dist > 0 then
 				tmpMoveDir = 1.0
+				LuaCocoStudioHelper:setButtonPressState(_LUAGameSceneView.mStickRightBtn)
+				LuaCocoStudioHelper:setButtonNormalState(_LUAGameSceneView.mStickLeftBtn)
 			else
 				tmpMoveDir = -1.0
+				LuaCocoStudioHelper:setButtonPressState(_LUAGameSceneView.mStickLeftBtn)
+				LuaCocoStudioHelper:setButtonNormalState(_LUAGameSceneView.mStickRightBtn)
 			end
 			--[[
 			local tmpSpeed = 0.0
@@ -224,6 +232,8 @@ function LUAGameSceneViewTouchesMoved(touchID, x, y)
 				end
 			end
 		else
+			LuaCocoStudioHelper:setButtonNormalState(_LUAGameSceneView.mStickLeftBtn)
+			LuaCocoStudioHelper:setButtonNormalState(_LUAGameSceneView.mStickRightBtn)
 			if _LUAGameSceneView.mHeroAnim:getAnimation():getCurrentMovementID() ~= "stand01" then
 				_LUAGameSceneView.mHeroAnim:getAnimation():play("stand01")
 			end
@@ -233,11 +243,13 @@ function LUAGameSceneViewTouchesMoved(touchID, x, y)
 			--_LUAGameSceneView.self:getPhysics():changeMoveDirection(0.0, 0.0)
 			LocalPlayer:instance():move(0.0, 0.0)
 		end
+		--[[
 		local distY = pos.y - _LUAGameSceneView.mTouchMoveBeginPos.y
 		if distY > 100 then distY = 100 end
 		if distY < -100 then distY = -100 end
 		_LUAGameSceneView.mMoveStick:setPosition(cc.p(dist, distY))
 		_LUAGameSceneView.mMoveStickShowing:setPosition(cc.p(dist, distY))
+		--]]
 		return true
     --[[
 	else
@@ -262,9 +274,13 @@ function LUAGameSceneViewTouchesEnded(touchID, x, y)
 		end
 		--_LUAGameSceneView.self:getPhysics():changeMoveDirection(0.0, 0.0)
 		LocalPlayer:instance():move(0.0, 0.0)
+		--[[
 		_LUAGameSceneView.mMoveStickBG:setVisible(false)
 		_LUAGameSceneView.mMoveStick:setPosition(cc.p(0, 0))
 		_LUAGameSceneView.mMoveStickShowing:setPosition(cc.p(0, 0))
+		--]]
+		LuaCocoStudioHelper:setButtonNormalState(_LUAGameSceneView.mStickLeftBtn)
+		LuaCocoStudioHelper:setButtonNormalState(_LUAGameSceneView.mStickRightBtn)
 		return true
 	end
 	return false

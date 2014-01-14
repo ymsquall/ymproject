@@ -132,6 +132,6 @@ function LUACreatureHeaderView_PositionChanged(view, posX, posY)
 		error('creature header view position changeing, can not find creature header view!')
 		return
 	end
-	local uiLayer = LuaCocoStudioConversion:toUILayer(view)
+	local uiLayer = LuaCocoStudioHelper:toUILayer(view)
 	uiLayer:setPosition(cc.p(posX, posY))
 end
