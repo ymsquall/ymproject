@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <AnimationProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <filePath>Y:\Work\ymproject\CocoStudioWorkspace\SOF\Animations\effect.blast\effect.blast.xml.animation</filePath>
-  <Version>0.0.0.0</Version>
+  <filePath>Y:\Work\ymproject_box2d\CocoStudioWorkspace\SOF\Animations\effect.blast\effect.blast.xml.animation</filePath>
+  <Version>1.2.0.0</Version>
   <Name>effect.blast</Name>
-  <ProjectDir>Y:\Work\ymproject\CocoStudioWorkspace\SOF\Animations\effect.blast</ProjectDir>
+  <ProjectDir>Y:\Work\ymproject_box2d\CocoStudioWorkspace\SOF\Animations\effect.blast</ProjectDir>
   <JsonFileName>effect.blast.json</JsonFileName>
-  <Resources>Y:\Work\ymproject\CocoStudioWorkspace\SOF\Animations\effect.blast\Resources</Resources>
-  <JsonFolder>Y:\Work\ymproject\CocoStudioWorkspace\SOF\Animations\effect.blast\Json</JsonFolder>
+  <Resources>Y:\Work\ymproject_box2d\CocoStudioWorkspace\SOF\Animations\effect.blast\Resources</Resources>
+  <JsonFolder>Y:\Work\ymproject_box2d\CocoStudioWorkspace\SOF\Animations\effect.blast\Json</JsonFolder>
   <JsonList />
   <ResourceFileList>
     <string>effect.blast0.plist</string>

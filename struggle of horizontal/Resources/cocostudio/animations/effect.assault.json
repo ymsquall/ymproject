@@ -4,7 +4,7 @@
     {
       "strVersion": "1.2.0.0",
       "version": 1.2,
-      "name": "effect.blast",
+      "name": "effect.assault",
       "bone_data": [
         {
           "name": "Layer1",
@@ -21,7 +21,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "beattack01_point01_03.png",
+              "name": "assault01_01.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -35,7 +35,7 @@
               ]
             },
             {
-              "name": "beattack01_point01_01.png",
+              "name": "assault01_02.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -49,7 +49,7 @@
               ]
             },
             {
-              "name": "beattack01_point01_02.png",
+              "name": "assault01_03.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -63,7 +63,7 @@
               ]
             },
             {
-              "name": "beattack02_point01_01.png",
+              "name": "assault01_04.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -77,7 +77,7 @@
               ]
             },
             {
-              "name": "beattack02_point01_02.png",
+              "name": "assault01_05.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -91,7 +91,7 @@
               ]
             },
             {
-              "name": "beattack02_point01_03.png",
+              "name": "assault01_06.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -105,7 +105,7 @@
               ]
             },
             {
-              "name": "beattack02_point01_04.png",
+              "name": "assault01_07.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -119,7 +119,7 @@
               ]
             },
             {
-              "name": "beattack02_point01_05.png",
+              "name": "assault01_08.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -133,7 +133,7 @@
               ]
             },
             {
-              "name": "beattack02_point01_06.png",
+              "name": "assault01_09.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -147,7 +147,7 @@
               ]
             },
             {
-              "name": "beattack03_point01_01.png",
+              "name": "assault01_10.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -161,63 +161,7 @@
               ]
             },
             {
-              "name": "beattack03_point01_02.png",
-              "displayType": 0,
-              "skin_data": [
-                {
-                  "x": 0.0,
-                  "y": 0.0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0
-                }
-              ]
-            },
-            {
-              "name": "beattack03_point01_03.png",
-              "displayType": 0,
-              "skin_data": [
-                {
-                  "x": 0.0,
-                  "y": 0.0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0
-                }
-              ]
-            },
-            {
-              "name": "beattack03_point01_04.png",
-              "displayType": 0,
-              "skin_data": [
-                {
-                  "x": 0.0,
-                  "y": 0.0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0
-                }
-              ]
-            },
-            {
-              "name": "beattack03_point01_05.png",
-              "displayType": 0,
-              "skin_data": [
-                {
-                  "x": 0.0,
-                  "y": 0.0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0
-                }
-              ]
-            },
-            {
-              "name": "beattack03_point01_06.png",
+              "name": "assault01_11.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -237,11 +181,11 @@
   ],
   "animation_data": [
     {
-      "name": "effect.blast",
+      "name": "effect.assault",
       "mov_data": [
         {
-          "name": "beattack01.point01",
-          "dr": 11,
+          "name": "assault01",
+          "dr": 51,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -253,7 +197,7 @@
               "dl": 0.0,
               "frame_data": [
                 {
-                  "dI": 1,
+                  "dI": 0,
                   "x": 0.0,
                   "y": 0.0,
                   "z": 0,
@@ -262,6 +206,19 @@
                   "kX": 0.0,
                   "kY": 0.0,
                   "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                },
+                {
+                  "dI": 1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 5,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -274,40 +231,10 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 5,
-                  "twE": 0,
-                  "tweenFrame": true
-                },
-                {
-                  "dI": 0,
-                  "x": 0.0,
-                  "y": 0.0,
-                  "z": 0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0,
                   "fi": 10,
                   "twE": 0,
                   "tweenFrame": true
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "beattack02.point01",
-          "dr": 26,
-          "lp": false,
-          "to": 0,
-          "drTW": 0,
-          "twE": 0,
-          "sc": 1.0,
-          "mov_bone_data": [
-            {
-              "name": "Layer1",
-              "dl": 0.0,
-              "frame_data": [
+                },
                 {
                   "dI": 3,
                   "x": 0.0,
@@ -317,7 +244,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 0,
+                  "fi": 15,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -330,7 +257,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 5,
+                  "fi": 20,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -343,7 +270,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 10,
+                  "fi": 25,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -356,7 +283,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 15,
+                  "fi": 30,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -369,7 +296,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 20,
+                  "fi": 35,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -382,27 +309,10 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 25,
+                  "fi": 40,
                   "twE": 0,
                   "tweenFrame": true
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "beattack03.point01",
-          "dr": 26,
-          "lp": false,
-          "to": 0,
-          "drTW": 0,
-          "twE": 0,
-          "sc": 1.0,
-          "mov_bone_data": [
-            {
-              "name": "Layer1",
-              "dl": 0.0,
-              "frame_data": [
+                },
                 {
                   "dI": 9,
                   "x": 0.0,
@@ -412,7 +322,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 0,
+                  "fi": 45,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -425,59 +335,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 5,
-                  "twE": 0,
-                  "tweenFrame": true
-                },
-                {
-                  "dI": 11,
-                  "x": 0.0,
-                  "y": 0.0,
-                  "z": 0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0,
-                  "fi": 10,
-                  "twE": 0,
-                  "tweenFrame": true
-                },
-                {
-                  "dI": 12,
-                  "x": 0.0,
-                  "y": 0.0,
-                  "z": 0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0,
-                  "fi": 15,
-                  "twE": 0,
-                  "tweenFrame": true
-                },
-                {
-                  "dI": 13,
-                  "x": 0.0,
-                  "y": 0.0,
-                  "z": 0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0,
-                  "fi": 20,
-                  "twE": 0,
-                  "tweenFrame": true
-                },
-                {
-                  "dI": 14,
-                  "x": 0.0,
-                  "y": 0.0,
-                  "z": 0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0,
-                  "fi": 25,
+                  "fi": 50,
                   "twE": 0,
                   "tweenFrame": true
                 }
@@ -490,7 +348,15 @@
   ],
   "texture_data": [
     {
-      "name": "beattack01_point01_03",
+      "name": "assault01_01",
+      "width": 342.0,
+      "height": 131.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "assault01_02",
       "width": 0.0,
       "height": 0.0,
       "pX": 0.5,
@@ -498,15 +364,7 @@
       "plistFile": ""
     },
     {
-      "name": "beattack01_point01_01",
-      "width": 65.0,
-      "height": 65.0,
-      "pX": 0.5,
-      "pY": 0.5,
-      "plistFile": ""
-    },
-    {
-      "name": "beattack01_point01_02",
+      "name": "assault01_03",
       "width": 0.0,
       "height": 0.0,
       "pX": 0.5,
@@ -514,7 +372,7 @@
       "plistFile": ""
     },
     {
-      "name": "beattack02_point01_01",
+      "name": "assault01_04",
       "width": 0.0,
       "height": 0.0,
       "pX": 0.5,
@@ -522,7 +380,7 @@
       "plistFile": ""
     },
     {
-      "name": "beattack02_point01_02",
+      "name": "assault01_05",
       "width": 0.0,
       "height": 0.0,
       "pX": 0.5,
@@ -530,7 +388,7 @@
       "plistFile": ""
     },
     {
-      "name": "beattack02_point01_03",
+      "name": "assault01_06",
       "width": 0.0,
       "height": 0.0,
       "pX": 0.5,
@@ -538,7 +396,7 @@
       "plistFile": ""
     },
     {
-      "name": "beattack02_point01_04",
+      "name": "assault01_07",
       "width": 0.0,
       "height": 0.0,
       "pX": 0.5,
@@ -546,7 +404,7 @@
       "plistFile": ""
     },
     {
-      "name": "beattack02_point01_05",
+      "name": "assault01_08",
       "width": 0.0,
       "height": 0.0,
       "pX": 0.5,
@@ -554,7 +412,7 @@
       "plistFile": ""
     },
     {
-      "name": "beattack02_point01_06",
+      "name": "assault01_09",
       "width": 0.0,
       "height": 0.0,
       "pX": 0.5,
@@ -562,7 +420,7 @@
       "plistFile": ""
     },
     {
-      "name": "beattack03_point01_01",
+      "name": "assault01_10",
       "width": 0.0,
       "height": 0.0,
       "pX": 0.5,
@@ -570,47 +428,15 @@
       "plistFile": ""
     },
     {
-      "name": "beattack03_point01_02",
-      "width": 0.0,
-      "height": 0.0,
-      "pX": 0.5,
-      "pY": 0.5,
-      "plistFile": ""
-    },
-    {
-      "name": "beattack03_point01_03",
-      "width": 0.0,
-      "height": 0.0,
-      "pX": 0.5,
-      "pY": 0.5,
-      "plistFile": ""
-    },
-    {
-      "name": "beattack03_point01_04",
-      "width": 0.0,
-      "height": 0.0,
-      "pX": 0.5,
-      "pY": 0.5,
-      "plistFile": ""
-    },
-    {
-      "name": "beattack03_point01_05",
-      "width": 0.0,
-      "height": 0.0,
-      "pX": 0.5,
-      "pY": 0.5,
-      "plistFile": ""
-    },
-    {
-      "name": "beattack03_point01_06",
-      "width": 0.0,
-      "height": 0.0,
+      "name": "assault01_11",
+      "width": 342.0,
+      "height": 131.0,
       "pX": 0.5,
       "pY": 0.5,
       "plistFile": ""
     }
   ],
   "config_file_path": [
-    "effect.blast0.plist"
+    "effect.assault0.plist"
   ]
 }

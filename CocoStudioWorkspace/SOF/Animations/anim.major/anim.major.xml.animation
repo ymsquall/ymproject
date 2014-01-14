@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <AnimationProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <filePath>Y:\Work\ymproject\CocoStudioWorkspace\SOF\Animations\anim.major\anim.major.xml.animation</filePath>
-  <Version>0.0.0.0</Version>
+  <filePath>Y:\Work\ymproject_box2d\CocoStudioWorkspace\SOF\Animations\anim.major\anim.major.xml.animation</filePath>
+  <Version>1.2.0.0</Version>
   <Name>anim.major</Name>
-  <ProjectDir>Y:\Work\ymproject\CocoStudioWorkspace\SOF\Animations\anim.major</ProjectDir>
+  <ProjectDir>Y:\Work\ymproject_box2d\CocoStudioWorkspace\SOF\Animations\anim.major</ProjectDir>
   <JsonFileName>anim.major.json</JsonFileName>
-  <Resources>Y:\Work\ymproject\CocoStudioWorkspace\SOF\Animations\anim.major\Resources</Resources>
-  <JsonFolder>Y:\Work\ymproject\CocoStudioWorkspace\SOF\Animations\anim.major\Json</JsonFolder>
+  <Resources>Y:\Work\ymproject_box2d\CocoStudioWorkspace\SOF\Animations\anim.major\Resources</Resources>
+  <JsonFolder>Y:\Work\ymproject_box2d\CocoStudioWorkspace\SOF\Animations\anim.major\Json</JsonFolder>
   <JsonList />
   <ResourceFileList>
     <string>anim.major0.plist</string>
