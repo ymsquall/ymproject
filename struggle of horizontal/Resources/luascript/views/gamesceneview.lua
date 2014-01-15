@@ -50,9 +50,9 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 		end)
     _LUAGameSceneView.mSkill1Btn:addTouchEventListener(function(sender, eventType)
 			if eventType == 0 then
+				local localPlayer = LocalPlayer:instance()
 				_LUAGameSceneView.mMoveDirection = 0.0
 				_LUAGameSceneView.mMoveSpeedScale = 0.0
-				local localPlayer = LocalPlayer:instance()
 				if LUACreatureDoSkill(localPlayer, 1001) == false then
 					return
 				end
@@ -60,9 +60,9 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 		end)
     _LUAGameSceneView.mSkill2Btn:addTouchEventListener(function(sender, eventType)
 			if eventType == 0 then
+				local localPlayer = LocalPlayer:instance()
 				_LUAGameSceneView.mMoveDirection = 0.0
 				_LUAGameSceneView.mMoveSpeedScale = 0.0
-				local localPlayer = LocalPlayer:instance()
 				if LUACreatureDoSkill(localPlayer, 1002) == false then
 					return
 				end

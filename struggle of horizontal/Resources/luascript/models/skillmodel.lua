@@ -44,9 +44,9 @@ _LUASkillMetaData[1001] = {
 			--_LUAGameSceneView.mSkill1Btn:setEnabled(false)
 			local cdNumber = ccs.UIImageView:create()
 			cdNumber:setName('cdNumber')
-			cdNumber:loadTexture('number01_0'..self.cdTimer..'.png', 1)
+			cdNumber:loadTexture('number02_0'..self.cdTimer..'.png', 1)
 			local size = cdNumber:getSize()
-			cdNumber:setPosition(cc.p(size.width/4.0, -size.height/4.0))
+			cdNumber:setPosition(cc.p(0, 0))
 			_LUAGameSceneView.mSkill1Btn:addChild(cdNumber)
 		end
 		local scheduler = cc.Director:getInstance():getScheduler()
@@ -70,7 +70,7 @@ _LUASkillMetaData[1001] = {
 				if creature == LocalPlayer:instance() then
 					local cdNumber = tolua.cast(_LUAGameSceneView.mSkill1Btn:getChildByName('cdNumber'), 'UIImageView')
 					if nil ~= cdNumber then
-						cdNumber:loadTexture('number01_0'..cooldownInfo.nowTimer..'.png', 1)
+						cdNumber:loadTexture('number02_0'..cooldownInfo.nowTimer..'.png', 1)
 					end
 				end
 				print(self.name..' skill cooldown timer ['..cooldownInfo.nowTimer..']!')
@@ -126,7 +126,7 @@ _LUASkillMetaData[1002] = {
 			if creature == LocalPlayer:instance() then
 				local cdNumber = tolua.cast(_LUAGameSceneView.mSkill2Btn:getChildByName('cdNumber'), 'UIImageView')
 				if nil ~= cdNumber then
-					cdNumber:loadTexture('number01_0'.._LUACreatureActionInfo[creature][self.id].nowTimer..'.png', 1)
+					cdNumber:loadTexture('number02_0'.._LUACreatureActionInfo[creature][self.id].nowTimer..'.png', 1)
 				end
 			end
 			print(self.name..' skill cooldown timer ['.._LUACreatureActionInfo[creature][self.id].nowTimer..']!')
@@ -135,12 +135,13 @@ _LUASkillMetaData[1002] = {
 			-- flying
 			print('flying')
 			local skillPos = creature:getMovedBodyPos()
-			local skillObject = SkillObject:create(creature:getFaceNormal(), CCPoint(skillPos.x, skillPos.y + 50.0), self.speed, "effect.cutmoon")
+			local skillObject = SkillObject:create(creature:getFaceNormal(), CCPoint(skillPos.x, skillPos.y + 100.0), self.speed, "effect.cutmoon")
 		end
 		-- action
 		creature:changeAnimAction('cutmoon01')
+		creature:move(0,0)
 		local animView = tolua.cast(creature:getAnimView(), "Armature")
-		local delayTime = cc.DelayTime:create(0.5)
+		local delayTime = cc.DelayTime:create(0.3)
 		local seqAct = cc.Sequence:create(delayTime, cc.CallFunc:create(waitActionEnded))
 		animView:runAction(seqAct)
 		-- cd
@@ -150,9 +151,9 @@ _LUASkillMetaData[1002] = {
 			--_LUAGameSceneView.mSkill2Btn:setEnabled(false)
 			local cdNumber = ccs.UIImageView:create()
 			cdNumber:setName('cdNumber')
-			cdNumber:loadTexture('number01_0'..self.cdTimer..'.png', 1)
+			cdNumber:loadTexture('number02_0'..self.cdTimer..'.png', 1)
 			local size = cdNumber:getSize()
-			cdNumber:setPosition(cc.p(size.width/4.0, -size.height/4.0))
+			cdNumber:setPosition(cc.p(0, 0))
 			_LUAGameSceneView.mSkill2Btn:addChild(cdNumber)
 		end
 		local scheduler = cc.Director:getInstance():getScheduler()

@@ -13,5 +13,6 @@ function LUALoadGameSceneViewResources()
 	pArmatureDataMgr:addArmatureFileInfo("effect.cutmoon0.png", "effect.cutmoon0.plist", "effect.cutmoon.json")
 	--pArmatureDataMgr:addArmatureFileInfo("effect.assault0.png", "effect.assault0.plist", "effect.assault.json")
 	cc.SpriteFrameCache:getInstance():addSpriteFrames("plist/number01.plist")
+	cc.SpriteFrameCache:getInstance():addSpriteFrames("plist/number02.plist")
 end
 
