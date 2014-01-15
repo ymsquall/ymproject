@@ -196,14 +196,6 @@
 		924EAC061827330000B6782F /* AppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAAFD182732FF00B6782F /* AppDelegate.h */; };
 		924EAC071827330000B6782F /* AppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAAFD182732FF00B6782F /* AppDelegate.h */; };
 		924EAC081827330000B6782F /* AppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAAFD182732FF00B6782F /* AppDelegate.h */; };
-		924EAD711827330000B6782F /* LuaCocoStudioConversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB6D182732FF00B6782F /* LuaCocoStudioConversion.cpp */; };
-		924EAD721827330000B6782F /* LuaCocoStudioConversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB6D182732FF00B6782F /* LuaCocoStudioConversion.cpp */; };
-		924EAD731827330000B6782F /* LuaCocoStudioConversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB6D182732FF00B6782F /* LuaCocoStudioConversion.cpp */; };
-		924EAD741827330000B6782F /* LuaCocoStudioConversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB6D182732FF00B6782F /* LuaCocoStudioConversion.cpp */; };
-		924EAD751827330000B6782F /* LuaCocoStudioConversion.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB6E182732FF00B6782F /* LuaCocoStudioConversion.h */; };
-		924EAD761827330000B6782F /* LuaCocoStudioConversion.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB6E182732FF00B6782F /* LuaCocoStudioConversion.h */; };
-		924EAD771827330000B6782F /* LuaCocoStudioConversion.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB6E182732FF00B6782F /* LuaCocoStudioConversion.h */; };
-		924EAD781827330000B6782F /* LuaCocoStudioConversion.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAB6E182732FF00B6782F /* LuaCocoStudioConversion.h */; };
 		924EAD791827330000B6782F /* LuaExtern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB6F182732FF00B6782F /* LuaExtern.cpp */; };
 		924EAD7A1827330000B6782F /* LuaExtern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB6F182732FF00B6782F /* LuaExtern.cpp */; };
 		924EAD7B1827330000B6782F /* LuaExtern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924EAB6F182732FF00B6782F /* LuaExtern.cpp */; };
@@ -748,6 +740,10 @@
 		924EAF961827330100B6782F /* TextBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAC001827330000B6782F /* TextBox.h */; };
 		924EAF971827330100B6782F /* TextBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAC001827330000B6782F /* TextBox.h */; };
 		924EAF981827330100B6782F /* TextBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 924EAC001827330000B6782F /* TextBox.h */; };
+		925633531886EE7E005973D3 /* LuaCocoStudioHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925633511886EE7E005973D3 /* LuaCocoStudioHelper.cpp */; };
+		925633541886EE7E005973D3 /* LuaCocoStudioHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925633511886EE7E005973D3 /* LuaCocoStudioHelper.cpp */; };
+		925633551886EE7E005973D3 /* LuaCocoStudioHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 925633521886EE7E005973D3 /* LuaCocoStudioHelper.h */; };
+		925633561886EE7E005973D3 /* LuaCocoStudioHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 925633521886EE7E005973D3 /* LuaCocoStudioHelper.h */; };
 		92D029D71876848200D02B72 /* Physics_GLESDebugDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D029D11876848200D02B72 /* Physics_GLESDebugDraw.cpp */; };
 		92D029D81876848200D02B72 /* Physics_GLESDebugDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D029D11876848200D02B72 /* Physics_GLESDebugDraw.cpp */; };
 		92D029D91876848200D02B72 /* Physics_GLESDebugDraw.h in Headers */ = {isa = PBXBuildFile; fileRef = 92D029D21876848200D02B72 /* Physics_GLESDebugDraw.h */; };
@@ -896,8 +892,6 @@
 		924EAA36182732F100B6782F /* singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = singleton.h; sourceTree = "<group>"; };
 		924EAAFC182732FF00B6782F /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		924EAAFD182732FF00B6782F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		924EAB6D182732FF00B6782F /* LuaCocoStudioConversion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaCocoStudioConversion.cpp; sourceTree = "<group>"; };
-		924EAB6E182732FF00B6782F /* LuaCocoStudioConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaCocoStudioConversion.h; sourceTree = "<group>"; };
 		924EAB6F182732FF00B6782F /* LuaExtern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaExtern.cpp; sourceTree = "<group>"; };
 		924EAB70182732FF00B6782F /* LuaExtern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaExtern.h; sourceTree = "<group>"; };
 		924EAB71182732FF00B6782F /* LuaHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaHelper.cpp; sourceTree = "<group>"; };
@@ -1034,6 +1028,8 @@
 		924EABFE1827330000B6782F /* TextBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextBlock.h; sourceTree = "<group>"; };
 		924EABFF1827330000B6782F /* TextBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextBox.cpp; sourceTree = "<group>"; };
 		924EAC001827330000B6782F /* TextBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextBox.h; sourceTree = "<group>"; };
+		925633511886EE7E005973D3 /* LuaCocoStudioHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaCocoStudioHelper.cpp; sourceTree = "<group>"; };
+		925633521886EE7E005973D3 /* LuaCocoStudioHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaCocoStudioHelper.h; sourceTree = "<group>"; };
 		9276BCB0180D22F600B9FE55 /* libengine Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libengine Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9276BD4B180D256C00B9FE55 /* libengine iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libengine iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D029D11876848200D02B72 /* Physics_GLESDebugDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Physics_GLESDebugDraw.cpp; path = engine/Classes/physics/Physics_GLESDebugDraw.cpp; sourceTree = "<group>"; };
@@ -1253,11 +1249,11 @@
 		924EAB6C182732FF00B6782F /* luaext */ = {
 			isa = PBXGroup;
 			children = (
+				925633511886EE7E005973D3 /* LuaCocoStudioHelper.cpp */,
+				925633521886EE7E005973D3 /* LuaCocoStudioHelper.h */,
 				92EF2C381853079700CB9EA4 /* LuaExtern_Handler.cpp */,
 				92EF2C391853079700CB9EA4 /* LuaTiledHelper.cpp */,
 				92EF2C3A1853079700CB9EA4 /* LuaTiledHelper.h */,
-				924EAB6D182732FF00B6782F /* LuaCocoStudioConversion.cpp */,
-				924EAB6E182732FF00B6782F /* LuaCocoStudioConversion.h */,
 				924EAB6F182732FF00B6782F /* LuaExtern.cpp */,
 				924EAB70182732FF00B6782F /* LuaExtern.h */,
 				924EAB71182732FF00B6782F /* LuaHelper.cpp */,
@@ -1596,7 +1592,6 @@
 				9205A59018841FFE0080D382 /* Plane.h in Headers */,
 				9205A59E18841FFE0080D382 /* ShortPoint2.h in Headers */,
 				924EAEF51827330100B6782F /* Selector.h in Headers */,
-				924EAD751827330000B6782F /* LuaCocoStudioConversion.h in Headers */,
 				924EADDD1827330000B6782F /* ListViewItem.h in Headers */,
 				924EAEAD1827330000B6782F /* ToolBar.h in Headers */,
 				924EAAF3182732F100B6782F /* rtti.h in Headers */,
@@ -1707,7 +1702,6 @@
 				924EAAB4182732F100B6782F /* DataContext.h in Headers */,
 				924EAE4E1827330000B6782F /* ClassicBorderDecorator.h in Headers */,
 				924EAEF61827330100B6782F /* Selector.h in Headers */,
-				924EAD761827330000B6782F /* LuaCocoStudioConversion.h in Headers */,
 				924EADDE1827330000B6782F /* ListViewItem.h in Headers */,
 				924EAEAE1827330000B6782F /* ToolBar.h in Headers */,
 				92EF2C361853077700CB9EA4 /* CustomEGLView.h in Headers */,
@@ -1725,6 +1719,7 @@
 				924EAE1E1827330000B6782F /* UserControl.h in Headers */,
 				924EAAB0182732F100B6782F /* binding.h in Headers */,
 				924EAE961827330000B6782F /* TabItem.h in Headers */,
+				925633551886EE7E005973D3 /* LuaCocoStudioHelper.h in Headers */,
 				924EAE261827330000B6782F /* Window.h in Headers */,
 				924EAF561827330100B6782F /* ToolBarPanel.h in Headers */,
 				924EAE2E1827330000B6782F /* AdornerDecorator.h in Headers */,
@@ -1807,7 +1802,6 @@
 				924EAAB6182732F100B6782F /* DataContext.h in Headers */,
 				924EAE501827330000B6782F /* ClassicBorderDecorator.h in Headers */,
 				924EAEF81827330100B6782F /* Selector.h in Headers */,
-				924EAD781827330000B6782F /* LuaCocoStudioConversion.h in Headers */,
 				924EADE01827330000B6782F /* ListViewItem.h in Headers */,
 				924EAEB01827330000B6782F /* ToolBar.h in Headers */,
 				92EF2C371853077700CB9EA4 /* CustomEGLView.h in Headers */,
@@ -1825,6 +1819,7 @@
 				924EAE201827330000B6782F /* UserControl.h in Headers */,
 				924EAAB2182732F100B6782F /* binding.h in Headers */,
 				924EAE981827330000B6782F /* TabItem.h in Headers */,
+				925633561886EE7E005973D3 /* LuaCocoStudioHelper.h in Headers */,
 				924EAE281827330000B6782F /* Window.h in Headers */,
 				924EAF581827330100B6782F /* ToolBarPanel.h in Headers */,
 				924EAE301827330000B6782F /* AdornerDecorator.h in Headers */,
@@ -1915,7 +1910,6 @@
 				9205A59118841FFE0080D382 /* Plane.h in Headers */,
 				9205A59F18841FFE0080D382 /* ShortPoint2.h in Headers */,
 				924EAEF71827330100B6782F /* Selector.h in Headers */,
-				924EAD771827330000B6782F /* LuaCocoStudioConversion.h in Headers */,
 				924EADDF1827330000B6782F /* ListViewItem.h in Headers */,
 				924EAEAF1827330000B6782F /* ToolBar.h in Headers */,
 				924EAAF5182732F100B6782F /* rtti.h in Headers */,
@@ -2118,7 +2112,6 @@
 				9205A58618841FFE0080D382 /* Matrix3.cpp in Sources */,
 				924EAE691827330000B6782F /* SystemDropShadowChrome.cpp in Sources */,
 				924EAF511827330100B6782F /* ToolBarPanel.cpp in Sources */,
-				924EAD711827330000B6782F /* LuaCocoStudioConversion.cpp in Sources */,
 				924EAEF91827330100B6782F /* StatusBar.cpp in Sources */,
 				924EADD11827330000B6782F /* ListBoxItem.cpp in Sources */,
 				924EADB11827330000B6782F /* Frame.cpp in Sources */,
@@ -2202,7 +2195,6 @@
 				924EAEE21827330100B6782F /* Menu.cpp in Sources */,
 				924EAE6A1827330000B6782F /* SystemDropShadowChrome.cpp in Sources */,
 				924EAF521827330100B6782F /* ToolBarPanel.cpp in Sources */,
-				924EAD721827330000B6782F /* LuaCocoStudioConversion.cpp in Sources */,
 				924EAEFA1827330100B6782F /* StatusBar.cpp in Sources */,
 				924EADD21827330000B6782F /* ListBoxItem.cpp in Sources */,
 				924EADB21827330000B6782F /* Frame.cpp in Sources */,
@@ -2219,6 +2211,7 @@
 				924EAECA1827330000B6782F /* ItemsControl.cpp in Sources */,
 				924EAE121827330000B6782F /* ToolTip.cpp in Sources */,
 				924EAD921827330000B6782F /* ButtonBase.cpp in Sources */,
+				925633531886EE7E005973D3 /* LuaCocoStudioHelper.cpp in Sources */,
 				924EAD9A1827330000B6782F /* CheckBox.cpp in Sources */,
 				92D029D71876848200D02B72 /* Physics_GLESDebugDraw.cpp in Sources */,
 				924EAE621827330000B6782F /* ListBoxChrome.cpp in Sources */,
@@ -2287,7 +2280,6 @@
 				924EAEE41827330100B6782F /* Menu.cpp in Sources */,
 				924EAE6C1827330000B6782F /* SystemDropShadowChrome.cpp in Sources */,
 				924EAF541827330100B6782F /* ToolBarPanel.cpp in Sources */,
-				924EAD741827330000B6782F /* LuaCocoStudioConversion.cpp in Sources */,
 				924EAEFC1827330100B6782F /* StatusBar.cpp in Sources */,
 				924EADD41827330000B6782F /* ListBoxItem.cpp in Sources */,
 				924EADB41827330000B6782F /* Frame.cpp in Sources */,
@@ -2304,6 +2296,7 @@
 				924EAECC1827330000B6782F /* ItemsControl.cpp in Sources */,
 				924EAE141827330000B6782F /* ToolTip.cpp in Sources */,
 				924EAD941827330000B6782F /* ButtonBase.cpp in Sources */,
+				925633541886EE7E005973D3 /* LuaCocoStudioHelper.cpp in Sources */,
 				924EAD9C1827330000B6782F /* CheckBox.cpp in Sources */,
 				92D029D81876848200D02B72 /* Physics_GLESDebugDraw.cpp in Sources */,
 				924EAE641827330000B6782F /* ListBoxChrome.cpp in Sources */,
@@ -2381,7 +2374,6 @@
 				9205A58718841FFE0080D382 /* Matrix3.cpp in Sources */,
 				924EAE6B1827330000B6782F /* SystemDropShadowChrome.cpp in Sources */,
 				924EAF531827330100B6782F /* ToolBarPanel.cpp in Sources */,
-				924EAD731827330000B6782F /* LuaCocoStudioConversion.cpp in Sources */,
 				924EAEFB1827330100B6782F /* StatusBar.cpp in Sources */,
 				924EADD31827330000B6782F /* ListBoxItem.cpp in Sources */,
 				924EADB31827330000B6782F /* Frame.cpp in Sources */,
