@@ -256,5 +256,7 @@ bool SkillObject::isHitTarget()
 
 void SkillObject::onSkillOvered(Node* node)
 {
-	this->playBlastEffect();
+	//this->playBlastEffect();
+	mHitTarget = true;
+	callLuaFuncNoResult("LUAGameSceneView_Skill_Destoryed", this);
 }

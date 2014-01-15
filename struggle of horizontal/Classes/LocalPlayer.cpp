@@ -159,6 +159,19 @@ void LocalPlayer::beAttacked(ICreatue* who, const Point& hitPos, bool clobber)
 			return;
 		}
 	}
+	if(clobber)
+	{
+		Point otherPos = who->getMovedBodyPos();
+		Point myPos = this->getMovedBodyPos();
+		if(otherPos.x < myPos.x)
+		{
+			this->setFaceNormalX(-1.0f);
+		}
+		else
+		{
+			this->setFaceNormalX(1.0f);
+		}
+	}
 	callLuaFuncNoResult("LUAGameSceneView_LocalPlayerBeAttacked", clobber);
 }
 void LocalPlayer::onDeath()
@@ -462,27 +475,16 @@ void LocalPlayer::StepAfter()
 							}
 						}
 					}
-					if(NULL != mWeaponBody)
-					{
-						mWorld->DestroyBody(mWeaponBody);
-						mWeaponBody = NULL;
-					}
+					//if(NULL != mWeaponBody)
+					//{
+					//	mWorld->DestroyBody(mWeaponBody);
+					//	mWeaponBody = NULL;
+					//}
 					static const std::string attack3 = "attack03";
+					static const std::string assault1 = "assault01";
 					cocostudio::ArmatureAnimation* pAnim = mAnimView->getAnimation();
 					const std::string& nowActionName = pAnim->getCurrentMovementID();
-					pBeAttackedMonst->beAttacked(this, hitPos, nowActionName == attack3);
-					/*if(mNowComboCount >= 2)
-					{
-					pBeAttackedMonst->beAttacked(this, hitPos, true);
-					mNowComboCount = 0;
-					mComboCountdownTimer = 1.0f + 0.5f;
-					}
-					else
-					{
-					pBeAttackedMonst->beAttacked(this, hitPos);
-					mNowComboCount ++;
-					mComboCountdownTimer = 1.0f + 0.5f;
-					}*/
+					pBeAttackedMonst->beAttacked(this, hitPos, (nowActionName == attack3) || (nowActionName == assault1));
 				}
 				else
 				{

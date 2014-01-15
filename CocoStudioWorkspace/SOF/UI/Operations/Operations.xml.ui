@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <UIProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <filePath>Y:\Work\ymproject_box2d\CocoStudioWorkspace\SOF\UI\Operations\Operations.xml.ui</filePath>
-  <Version>1.0.2.0</Version>
+  <Version>1.2.0.0</Version>
   <Name>Operations</Name>
   <ProjectDir>Y:\Work\ymproject_box2d\CocoStudioWorkspace\SOF\UI\Operations</ProjectDir>
   <JsonFileName>Operations.json</JsonFileName>
@@ -14,7 +14,7 @@
     <string>Operations0.plist</string>
   </imageFileList>
   <JsonSuffix>.json</JsonSuffix>
-  <CurrentUIJson />
+  <CurrentUIJson>Operations.json</CurrentUIJson>
   <CanvasSize>
     <Width>960</Width>
     <Height>640</Height>

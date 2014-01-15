@@ -280,18 +280,21 @@ void Monster::beAttacked(ICreatue* who, const Point& hitPos, bool clobber)
 			this->onDeath();
 			return;
 		}
+	}	
+	if(clobber)
+	{
+		Point otherPos = who->getMovedBodyPos();
+		Point myPos = this->getMovedBodyPos();
+		if(otherPos.x < myPos.x)
+		{
+			this->setFaceNormalX(-1.0f);
+		}
+		else
+		{
+			this->setFaceNormalX(1.0f);
+		}
 	}
 	callLuaFuncNoResult("LUAGameSceneView_MonsterBeAttacked", this, clobber, actionName.c_str());
-	Point otherPos = who->getMovedBodyPos();
-	Point myPos = this->getMovedBodyPos();
-	if(otherPos.x < myPos.x)
-	{
-		this->setFaceNormalX(-1.0f);
-	}
-	else
-	{
-		this->setFaceNormalX(1.0f);
-	}
 }
 
 void Monster::onDeath()
@@ -524,16 +527,16 @@ void Monster::StepAfter()
 								}
 							}
 						}
-						if(NULL != mWeaponBody)
-						{
-							mWorld->DestroyBody(mWeaponBody);
-							mWeaponBody = NULL;
-						}
+						//if(NULL != mWeaponBody)
+						//{
+						//	mWorld->DestroyBody(mWeaponBody);
+						//	mWeaponBody = NULL;
+						//}
 						static const std::string attack3 = "attack03";
+						static const std::string assault1 = "assault01";
 						cocostudio::ArmatureAnimation* pAnim = mAnimView->getAnimation();
 						const std::string& nowActionName = pAnim->getCurrentMovementID();
-						pBeAttackPlayer->beAttacked(this, hitPos, nowActionName == attack3);
-						//pBeAttackPlayer->beAttacked(this, hitPos, mAICanActiveAttacked==0);
+						pBeAttackPlayer->beAttacked(this, hitPos, (nowActionName == attack3) || (nowActionName == assault1));
 					}
 				}
 			}
