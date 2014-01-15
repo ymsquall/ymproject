@@ -148,21 +148,17 @@ void GameSceneView::onTouchBegan(const Point& pos)
 }
 void GameSceneView::onTouchMoved(const Point& pos)
 {
-     mJumpBtn->onTouchMoved(pos);
-	 mAttackBtn->onTouchMoved(pos);
-	 if(mSkill1Btn->getOpacity() == 255)
-		mSkill1Btn->onTouchMoved(pos);
-	 if(mSkill2Btn->getOpacity() == 255)
-		 mSkill2Btn->onTouchMoved(pos);
+	mJumpBtn->onTouchMoved(pos);
+	mAttackBtn->onTouchMoved(pos);
+	mSkill1Btn->onTouchMoved(pos);
+	mSkill2Btn->onTouchMoved(pos);
 }
 void GameSceneView::onTouchEnded(const Point& pos)
 {
-     mJumpBtn->onTouchEnded(pos);
-	 mAttackBtn->onTouchEnded(pos);
-	 if(mSkill1Btn->getOpacity() == 255)
-		 mSkill1Btn->onTouchEnded(pos);
-	 if(mSkill2Btn->getOpacity() == 255)
-		mSkill2Btn->onTouchEnded(pos);
+	mJumpBtn->onTouchEnded(pos);
+	mAttackBtn->onTouchEnded(pos);
+	mSkill1Btn->onTouchEnded(pos);
+	mSkill2Btn->onTouchEnded(pos);
 }
 
 bool GameSceneView::screenScroll(const Point& offset)

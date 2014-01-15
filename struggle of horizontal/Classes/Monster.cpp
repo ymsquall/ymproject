@@ -524,7 +524,16 @@ void Monster::StepAfter()
 								}
 							}
 						}
-						pBeAttackPlayer->beAttacked(this, hitPos, mAICanActiveAttacked==0);
+						if(NULL != mWeaponBody)
+						{
+							mWorld->DestroyBody(mWeaponBody);
+							mWeaponBody = NULL;
+						}
+						static const std::string attack3 = "attack03";
+						cocostudio::ArmatureAnimation* pAnim = mAnimView->getAnimation();
+						const std::string& nowActionName = pAnim->getCurrentMovementID();
+						pBeAttackPlayer->beAttacked(this, hitPos, nowActionName == attack3);
+						//pBeAttackPlayer->beAttacked(this, hitPos, mAICanActiveAttacked==0);
 					}
 				}
 			}

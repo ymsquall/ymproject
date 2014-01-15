@@ -62,6 +62,7 @@ function LUACreatureDoSkill(creature, skillID)
 	if LUACreatureCanBeSkillByID(creature, skill) == false then
 		return false
 	end
+	print(skillID..'doSkill')
 	return skill.doSkill(skill,creature)
 end
 

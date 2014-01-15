@@ -86,28 +86,33 @@ _LUASkillMetaData[1002] = {
 
 	canBeSkill = function(self,creature)
 		if nil == _LUACreatureActionInfo[creature] then
+			print('1002 canBeSkill')
 			return true
 		end
 		local cooldownInfo = _LUACreatureActionInfo[creature][self.id]
 		if nil == cooldownInfo or nil == cooldownInfo.nowTimer then
 			return true
 		end
+			print('1002 canBeSkill '..cooldownInfo.nowTimer)
 		return cooldownInfo.nowTimer <= 0
 	end,
 
 	doSkill = function(self,creature)
 		_LUACreatureActionInfo[creature] = _LUACreatureActionInfo[creature] or {}
+		if nil ~= _LUACreatureActionInfo[creature][self.id] then
+			local scheduler = cc.Director:getInstance():getScheduler()
+			scheduler:unscheduleScriptEntry(_LUACreatureActionInfo[creature][self.id].cdScheduler)
+		end
 		_LUACreatureActionInfo[creature][self.id] = {
 			cdScheduler = -1,
 			nowTimer = 0,
 		}
 		local function doCooldown(dt)
-			local cooldownInfo = _LUACreatureActionInfo[creature][self.id]
-			cooldownInfo.nowTimer = cooldownInfo.nowTimer - 1
-			if cooldownInfo.nowTimer <= 0 then
+			_LUACreatureActionInfo[creature][self.id].nowTimer = _LUACreatureActionInfo[creature][self.id].nowTimer - 1
+			if _LUACreatureActionInfo[creature][self.id].nowTimer <= 0 then
 				print(self.name..' skill cooldown overed!')
 				local scheduler = cc.Director:getInstance():getScheduler()
-				scheduler:unscheduleScriptEntry(cooldownInfo.cdScheduler)
+				scheduler:unscheduleScriptEntry(_LUACreatureActionInfo[creature][self.id].cdScheduler)
 				--cooldownInfo.cdScheduler = -1
 				if creature == LocalPlayer:instance() then
 					local cdNumber = _LUAGameSceneView.mSkill2Btn:getChildByName('cdNumber')
@@ -121,31 +126,16 @@ _LUASkillMetaData[1002] = {
 			if creature == LocalPlayer:instance() then
 				local cdNumber = tolua.cast(_LUAGameSceneView.mSkill2Btn:getChildByName('cdNumber'), 'UIImageView')
 				if nil ~= cdNumber then
-					cdNumber:loadTexture('number01_0'..cooldownInfo.nowTimer..'.png', 1)
+					cdNumber:loadTexture('number01_0'.._LUACreatureActionInfo[creature][self.id].nowTimer..'.png', 1)
 				end
 			end
-			print(self.name..' skill cooldown timer ['..cooldownInfo.nowTimer..']!')
+			print(self.name..' skill cooldown timer ['.._LUACreatureActionInfo[creature][self.id].nowTimer..']!')
 		end
 		local function waitActionEnded()
 			-- flying
 			print('flying')
 			local skillPos = creature:getMovedBodyPos()
 			local skillObject = SkillObject:create(creature:getFaceNormal(), CCPoint(skillPos.x, skillPos.y + 50.0), self.speed, "effect.cutmoon")
-			-- cd
-			_LUACreatureActionInfo[creature][self.id].nowTimer = self.cdTimer
-			local cooldownInfo = _LUACreatureActionInfo[creature][self.id]
-			if creature == LocalPlayer:instance() then
-				_LUAGameSceneView.mSkill2Btn:setOpacity(180)
-				--_LUAGameSceneView.mSkill2Btn:setEnabled(false)
-				local cdNumber = ccs.UIImageView:create()
-				cdNumber:setName('cdNumber')
-				cdNumber:loadTexture('number01_0'..self.cdTimer..'.png', 1)
-				local size = cdNumber:getSize()
-				cdNumber:setPosition(cc.p(size.width/4.0, -size.height/4.0))
-				_LUAGameSceneView.mSkill2Btn:addChild(cdNumber)
-			end
-			local scheduler = cc.Director:getInstance():getScheduler()
-			cooldownInfo.cdScheduler = scheduler:scheduleScriptFunc(doCooldown, 1.0, false)
 		end
 		-- action
 		creature:changeAnimAction('cutmoon01')
@@ -153,5 +143,19 @@ _LUASkillMetaData[1002] = {
 		local delayTime = cc.DelayTime:create(0.5)
 		local seqAct = cc.Sequence:create(delayTime, cc.CallFunc:create(waitActionEnded))
 		animView:runAction(seqAct)
+		-- cd
+		_LUACreatureActionInfo[creature][self.id].nowTimer = self.cdTimer
+		if creature == LocalPlayer:instance() then
+			_LUAGameSceneView.mSkill2Btn:setOpacity(180)
+			--_LUAGameSceneView.mSkill2Btn:setEnabled(false)
+			local cdNumber = ccs.UIImageView:create()
+			cdNumber:setName('cdNumber')
+			cdNumber:loadTexture('number01_0'..self.cdTimer..'.png', 1)
+			local size = cdNumber:getSize()
+			cdNumber:setPosition(cc.p(size.width/4.0, -size.height/4.0))
+			_LUAGameSceneView.mSkill2Btn:addChild(cdNumber)
+		end
+		local scheduler = cc.Director:getInstance():getScheduler()
+		_LUACreatureActionInfo[creature][self.id].cdScheduler = scheduler:scheduleScriptFunc(doCooldown, 1.0, false)
 	end,
 }

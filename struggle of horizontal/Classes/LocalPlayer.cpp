@@ -462,18 +462,27 @@ void LocalPlayer::StepAfter()
 							}
 						}
 					}
-					if(mNowComboCount >= 2)
+					if(NULL != mWeaponBody)
 					{
-						pBeAttackedMonst->beAttacked(this, hitPos, true);
-						mNowComboCount = 0;
-						mComboCountdownTimer = 1.0f + 0.5f;
+						mWorld->DestroyBody(mWeaponBody);
+						mWeaponBody = NULL;
+					}
+					static const std::string attack3 = "attack03";
+					cocostudio::ArmatureAnimation* pAnim = mAnimView->getAnimation();
+					const std::string& nowActionName = pAnim->getCurrentMovementID();
+					pBeAttackedMonst->beAttacked(this, hitPos, nowActionName == attack3);
+					/*if(mNowComboCount >= 2)
+					{
+					pBeAttackedMonst->beAttacked(this, hitPos, true);
+					mNowComboCount = 0;
+					mComboCountdownTimer = 1.0f + 0.5f;
 					}
 					else
 					{
-						pBeAttackedMonst->beAttacked(this, hitPos);
-						mNowComboCount ++;
-						mComboCountdownTimer = 1.0f + 0.5f;
-					}
+					pBeAttackedMonst->beAttacked(this, hitPos);
+					mNowComboCount ++;
+					mComboCountdownTimer = 1.0f + 0.5f;
+					}*/
 				}
 				else
 				{

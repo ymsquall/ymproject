@@ -235,9 +235,13 @@ void ICreatue::changeAnimAction(const std::string& actionName)
 	}
 	if(nowActionName == playActName)
 		return;
-	if(nowActionName == clobber1)
+	if(actionName == "attack")
 	{
-		int i = 0;
+		if(playActName == attack3)
+			mNowComboCount = 0;
+		else
+			mNowComboCount ++;
+		mComboCountdownTimer = 1.0f + 0.5f;
 	}
 	pAnim->play(playActName.c_str());
 }
