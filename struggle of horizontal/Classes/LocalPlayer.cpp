@@ -399,7 +399,7 @@ void LocalPlayer::StepBefore(physics::ObjectSettings* settings)
 			fd.density = 0.0f;
 			fd.friction = 0.0f;
 			fd.filter.categoryBits = BodyBodyContactMask;
-			fd.filter.maskBits = WeaponBodyContactMask;
+			fd.filter.maskBits = WeaponBodyContactMask | SkillBodyContactMask;
 			mBodyBody->CreateFixture(&fd);
 			mBodyBody->SetUserData(this);
 		}

@@ -69,6 +69,7 @@ namespace engine
 			m_pointCount = 0;
 
 			m_destructionListener.test = this;
+			//mWorld->SetAllowSleeping(false);
 			mWorld->SetDestructionListener(&m_destructionListener);
 			mWorld->SetContactListener(this);
 			mWorld->SetDebugDraw(&mDebugDraw);

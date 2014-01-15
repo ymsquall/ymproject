@@ -19,6 +19,7 @@ public:
 	virtual bool finalize() override { return true; }
 
 	static SkillObject* create(const CCPoint& faceNormal, const CCPoint& pos, float speed, const std::string& animName);
+	virtual bool initWithBox(const Point& pos, const Size& size, bool showTitle) override;
 	void destory();
 	virtual void StepBefore(physics::ObjectSettings* settings) override;
 	virtual void StepAfter() override;
@@ -37,6 +38,7 @@ protected:
 	void animationEvent(cocostudio::Armature *armature, cocostudio::MovementEventType movementType, const char *movementID);
 
 	void onSkillOvered(Node* node);
+	void playBlastEffect();
 
 protected:
 	std::string mAnimName;
@@ -45,4 +47,7 @@ protected:
 	float mSpeed;
 	bool mHitTarget;
 	cocostudio::ContourData* mPhysicsContourData;
+	cocostudio::Armature* mBlastEffect;
+	Point mStartBlastPos;
+	bool mHitWall;
 };

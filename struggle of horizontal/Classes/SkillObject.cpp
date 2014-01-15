@@ -13,6 +13,7 @@ SkillObject::SkillObject(b2World* pWorld) :
 	mAnimView = NULL;
 	mHitTarget = false;
 	mPhysicsContourData = NULL;
+	mBlastEffect = NULL;
 }
 SkillObject::~SkillObject()
 {
@@ -27,6 +28,26 @@ SkillObject* SkillObject::create(const CCPoint& faceNormal, const CCPoint& pos, 
 	}
 	return pRet;
 }
+bool SkillObject::initWithBox(const Point& pos, const Size& size, bool showTitle)
+{
+	{
+		b2BodyDef bd;
+		bd.type = b2_dynamicBody;
+		bd.position.Set(pos.x / PTM_RATIO, pos.y / PTM_RATIO);
+		mMoveBody = mWorld->CreateBody(&bd);
+		b2PolygonShape shape;
+		b2FixtureDef fd;
+		fd.shape = &shape;
+		fd.density = 10.0f;
+		fd.friction = 1.0f;
+		fd.filter.categoryBits = MoveBodyContactMask;
+		fd.filter.maskBits = LandContactMask;
+		shape.SetAsBox(size.width / 2.0f / PTM_RATIO, size.height / 2.0f / PTM_RATIO, b2Vec2(0, 0), 0.0);
+		mMoveBody->CreateFixture(&fd);
+		mMoveBody->SetFixedRotation(true); // 设置为固定角度（不旋转）
+	}
+	return true;
+}
 void SkillObject::destory()
 {
 	if(NULL != mAnimView)
@@ -35,6 +56,8 @@ void SkillObject::destory()
 		mWorld->DestroyBody(mMoveBody);
 	if(NULL != mWeaponBody)
 		mWorld->DestroyBody(mWeaponBody);
+	if(NULL != mBlastEffect)
+		GameSceneViewModel::point()->getTiledMap()->removeChild(mBlastEffect, true);
 	delete this;
 }
 bool SkillObject::initWithAnimName(const std::string& animName, const CCPoint& faceNormal, const CCPoint& pos, float speed)
@@ -74,13 +97,11 @@ bool SkillObject::initWithAnimName(const std::string& animName, const CCPoint& f
 			bodyFD.shape = &bodyShape;
 			bodyFD.density = 0.0f;
 			bodyFD.friction = 0.0f;
-			bodyFD.filter.categoryBits = WeaponBodyContactMask;
-			bodyFD.filter.maskBits = BodyBodyContactMask;
+			bodyFD.filter.categoryBits = SkillBodyContactMask;
+			bodyFD.filter.maskBits = BodyBodyContactMask | WallContactMask;
 			mWeaponBody->CreateFixture(&bodyFD);
 			mWeaponBody->SetUserData(this);
 		}
-		mAnimView->getAnimation()->setFrameEventCallFunc(this, frameEvent_selector(SkillObject::onFrameEvent));
-		mAnimView->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(SkillObject::animationEvent));
 		return true;
 	}
 	return false;
@@ -91,6 +112,11 @@ void SkillObject::onFrameEvent(cocostudio::Bone *bone, const char *evt, int orig
 }
 void SkillObject::animationEvent(cocostudio::Armature *armature, cocostudio::MovementEventType movementType, const char *movementID)
 {
+	if(movementType == cocostudio::COMPLETE)
+	{
+		mHitTarget = true;
+		callLuaFuncNoResult("LUAGameSceneView_Skill_Destoryed", this);
+	}
 }
 void SkillObject::StepBefore(physics::ObjectSettings* settings)
 {
@@ -132,41 +158,43 @@ void SkillObject::StepAfter()
 		b2ContactEdge* pContact = mWeaponBody->GetContactList();
 		if(NULL != pContact)
 		{
-			unity::object* pObject = static_cast<unity::object*>(pContact->other->GetUserData());
+			cocos2d::Object* pObject = static_cast<cocos2d::Object*>(pContact->other->GetUserData());
 			if(this != pObject)
 			{
+				Point hitPos(0,0);
+				b2Shape* pShapeA = pContact->contact->GetFixtureA()->GetShape();
+				b2Shape* pShapeB = pContact->contact->GetFixtureB()->GetShape();
+				if(pShapeA->GetType() == b2Shape::e_polygon && pShapeB->GetType() == b2Shape::e_polygon)
+				{
+					b2PolygonShape* pPolShapeA = static_cast<b2PolygonShape*>(pShapeA);
+					b2PolygonShape* pPolShapeB = static_cast<b2PolygonShape*>(pShapeB);
+					if(pContact->contact->GetFixtureA()->GetBody() == mWeaponBody)
+					{
+						if(pPolShapeB->GetVertexCount() == 3)
+						{
+							b2Vec2* vertexs = pPolShapeB->m_vertices;
+							hitPos = Point(vertexs[0].x * PTM_RATIO, vertexs[0].y * PTM_RATIO);
+						}
+					}
+					else if(pContact->contact->GetFixtureB()->GetBody() == mWeaponBody)
+					{
+						if(pPolShapeA->GetVertexCount() == 3)
+						{
+							b2Vec2* vertexs = pPolShapeA->m_vertices;
+							hitPos = Point(vertexs[0].x * PTM_RATIO, vertexs[0].y * PTM_RATIO);
+						}
+					}
+				}
 				Monster* pHitedMonst = dynamic_cast<Monster*>(pObject);
 				if(NULL != pHitedMonst && !pHitedMonst->isDeathing())
 				{
-					Point hitPos(0,0);
-					b2Shape* pShapeA = pContact->contact->GetFixtureA()->GetShape();
-					b2Shape* pShapeB = pContact->contact->GetFixtureB()->GetShape();
-					if(pShapeA->GetType() == b2Shape::e_polygon && pShapeB->GetType() == b2Shape::e_polygon)
-					{
-						b2PolygonShape* pPolShapeA = static_cast<b2PolygonShape*>(pShapeA);
-						b2PolygonShape* pPolShapeB = static_cast<b2PolygonShape*>(pShapeB);
-						if(pContact->contact->GetFixtureA()->GetBody() == mWeaponBody)
-						{
-							if(pPolShapeB->GetVertexCount() == 3)
-							{
-								b2Vec2* vertexs = pPolShapeB->m_vertices;
-								hitPos = Point(vertexs[0].x * PTM_RATIO, vertexs[0].y * PTM_RATIO);
-							}
-						}
-						else if(pContact->contact->GetFixtureB()->GetBody() == mWeaponBody)
-						{
-							if(pPolShapeA->GetVertexCount() == 3)
-							{
-								b2Vec2* vertexs = pPolShapeA->m_vertices;
-								hitPos = Point(vertexs[0].x * PTM_RATIO, vertexs[0].y * PTM_RATIO);
-							}
-						}
-					}
 					if(NULL != mWeaponBody)
 					{
 						mWorld->DestroyBody(mWeaponBody);
 						mWeaponBody = NULL;
 					}
+					mHitWall = false;
+					mStartBlastPos = pHitedMonst->getMovedBodyPos();
 					pHitedMonst->beAttacked(this, hitPos, true);
 					mSpeed *= 2.0f;
 					CCSequence* pAct = Sequence::create(ScaleTo::create(0.1f, 0.0f), 
@@ -175,10 +203,50 @@ void SkillObject::StepAfter()
 				}
 				else
 				{
+					CCString* pString = dynamic_cast<CCString*>(pObject);
+					if(NULL != pString)
+					{
+						std::string bodyType = pString->getCString();
+						if(bodyType == "wall")
+						{
+							if(NULL != mWeaponBody)
+							{
+								mWorld->DestroyBody(mWeaponBody);
+								mWeaponBody = NULL;
+							}
+							mHitWall = true;
+							mStartBlastPos = mAnimView->getPosition();
+							mSpeed *= 2.0f;
+							CCSequence* pAct = Sequence::create(ScaleTo::create(0.1f, 0.0f), 
+								CallFuncN::create(CC_CALLBACK_1(SkillObject::onSkillOvered, this)), NULL);
+							mAnimView->runAction(pAct);
+						}
+					}
 				}
 			}
 		}
 	}
+}
+
+void SkillObject::playBlastEffect()
+{
+	ScriptParamObject userdata = callLuaFuncWithUserdataResult("LUACreateAndPlayBlastEffect", "effect.blast", "beattack04.point01");
+	if(userdata.type != LUA_TUSERDATA || NULL == userdata.value.pointer)
+		return;
+	mBlastEffect = (cocostudio::Armature*)userdata.value.pointer;
+	if(mFaceNormal.x < 0.0f)
+	{
+		mBlastEffect->setRotationY(180.0f);
+		if(mHitWall)
+			mStartBlastPos.x -= 250.0f;
+	}
+	else if(mHitWall)
+		mStartBlastPos.x += 200.0f;
+	mStartBlastPos.y += 50.0f;
+	mBlastEffect->setPosition(mStartBlastPos);
+	GameSceneViewModel::point()->getTiledMap()->addChild(mBlastEffect, 102);
+	mBlastEffect->getAnimation()->setFrameEventCallFunc(this, frameEvent_selector(SkillObject::onFrameEvent));
+	mBlastEffect->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(SkillObject::animationEvent));
 }
 
 bool SkillObject::isHitTarget()
@@ -188,5 +256,5 @@ bool SkillObject::isHitTarget()
 
 void SkillObject::onSkillOvered(Node* node)
 {
-	mHitTarget = true;
+	this->playBlastEffect();
 }

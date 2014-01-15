@@ -132,10 +132,16 @@ b2Body* GameScenePhysics::createGround(const b2Vec2& pos, const b2Vec2& p1, cons
 	fd.density = 0.0f;
 	fd.friction = 1.0f;
 	if(isWall)
+	{
 		fd.filter.categoryBits = ICreatue::WallContactMask;
+		pBody->SetUserData(new CCString("wall"));
+	}
 	else
+	{
 		fd.filter.categoryBits = ICreatue::LandContactMask;
-	fd.filter.maskBits = ICreatue::MoveBodyContactMask;
+		pBody->SetUserData(new CCString("land"));
+	}
+	fd.filter.maskBits = ICreatue::MoveBodyContactMask | ICreatue::SkillBodyContactMask;
 	shape.Set(p1, p2);
 	pBody->CreateFixture(&fd);
 	return pBody;
@@ -152,10 +158,16 @@ b2Body* GameScenePhysics::createGround(const b2Vec2& pos, float width, float hei
 	fd.density = 0.0f;
 	fd.friction = 1.0f;
 	if(isWall)
+	{
 		fd.filter.categoryBits = ICreatue::WallContactMask;
+		pBody->SetUserData(new CCString("wall"));
+	}
 	else
+	{
 		fd.filter.categoryBits = ICreatue::LandContactMask;
-	fd.filter.maskBits = ICreatue::MoveBodyContactMask;
+		pBody->SetUserData(new CCString("land"));
+	}
+	fd.filter.maskBits = ICreatue::MoveBodyContactMask | ICreatue::SkillBodyContactMask;
 	shape.SetAsBox(width / 2 / PTM_RATIO, height / 2 / PTM_RATIO, b2Vec2(0, 0), 0.0);
 	pBody->CreateFixture(&fd);
 	return pBody;

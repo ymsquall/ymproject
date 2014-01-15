@@ -16,12 +16,24 @@ function LUAGameSceneView_Skill_init(skill, animName)
 	return animView
 end
 
-function LUAGameSceneView_Skill_Destoryed(skill)
+function LUAGameSceneView_Skill_GetAnimView(skill)
 	local i = 0
 	for i,v in pairs(_LUAGameSceneView_SkillManager.SkillList) do
 		if skill == v.mSkillObject then
+			return v.mAnimView
+		end
+	end
+	return nil
+end
+
+function LUAGameSceneView_Skill_Destoryed(skill)
+	local skillObj = tolua.cast(skill, 'SkillObject')
+	local i = 0
+	for i,v in pairs(_LUAGameSceneView_SkillManager.SkillList) do
+		if skillObj == v.mSkillObject then
 			_LUAGameSceneView_SkillManager.SkillList[v.mIndex] = nil
-			skill:destory()
+			print(v.mIndex..'skill object destoryed!')
+			skillObj:destory()
 			break
 		end
 	end

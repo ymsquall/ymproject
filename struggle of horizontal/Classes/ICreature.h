@@ -33,6 +33,7 @@ public:
 	static const int BodyBodyContactMask = 0x0008;
 	static const int LandContactMask = 0x0010;
 	static const int WallContactMask = 0x0020;
+	static const int SkillBodyContactMask = 0x0040;
 	ICreatue(b2World* pWorld);
 	virtual ~ICreatue();
 	template<class T>

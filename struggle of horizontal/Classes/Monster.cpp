@@ -191,7 +191,7 @@ void Monster::beAttacked(ICreatue* who, const Point& hitPos, bool clobber)
 		int lostHP = 0;
 		if(actionName == assault1)
 			lostHP = 800 + (rand()%200);
-		else if(actionName == assault1)
+		else if(actionName == cutmoon_helf1)
 			lostHP = 300 + (rand()%400);
 		else
 			lostHP = 500 + (rand()%500);
@@ -337,7 +337,7 @@ void Monster::StepBefore(physics::ObjectSettings* settings)
 			fd.density = 0.0f;
 			fd.friction = 0.0f;
 			fd.filter.categoryBits = BodyBodyContactMask;
-			fd.filter.maskBits = WeaponBodyContactMask;
+			fd.filter.maskBits = WeaponBodyContactMask | SkillBodyContactMask;
 			mBodyBody->CreateFixture(&fd);
 			mBodyBody->SetUserData(this);
 		}
