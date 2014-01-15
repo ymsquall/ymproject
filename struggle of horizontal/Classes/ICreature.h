@@ -36,12 +36,12 @@ public:
 	ICreatue(b2World* pWorld);
 	virtual ~ICreatue();
 	template<class T>
-	static T* createWithBox(b2World* pWorld, const Point& pos, const Size& size)
+	static T* createWithBox(b2World* pWorld, const Point& pos, const Size& size, bool showTitle = true)
 	{
 		T* pRet = new T(pWorld);
 		if(NULL != pRet)
 		{
-			if(!pRet->init() || !pRet->initWithBox(pos, size))
+			if(!pRet->init() || !pRet->initWithBox(pos, size, showTitle))
 			{
 				delete pRet;
 				return NULL;
@@ -50,7 +50,7 @@ public:
 		}
 		return NULL;
 	}
-	virtual bool initWithBox(const Point& pos, const Size& size);
+	virtual bool initWithBox(const Point& pos, const Size& size, bool showTitle);
 	virtual const CCPoint& getMovedBodyPos();
 	virtual void move(float dir, float speed);
 	virtual void updateBody(physics::ObjectSettings* settings);

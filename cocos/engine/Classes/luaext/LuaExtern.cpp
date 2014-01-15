@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaExtern
-** Generated automatically by tolua++-1.0.92 on 01/14/14 09:11:12.
+** Generated automatically by tolua++-1.0.92 on 01/15/14 15:54:48.
 */
 
 /****************************************************************************
@@ -46,6 +46,7 @@ extern "C" {
 #include "CocoStudio.h"
 #include "LuaCocoStudioHelper.h"
 #include "LuaTiledHelper.h"
+#include "physics/PhysicsObject.h"
 
 using namespace cocos2d;
 using namespace cocos2d::extension;

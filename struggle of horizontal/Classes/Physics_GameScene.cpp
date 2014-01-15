@@ -183,6 +183,7 @@ void GameScenePhysics::Step(physics::WorldSettings* settings)
 		if(NULL != it->first)
 			it->first->StepBefore(settings);
 	}
+	callLuaFuncNoResult("LuaGameScenePhysicsStepBefore", settings);
 	PhysicsWorld::Step(settings);
 	if(NULL != mLocalPlayerPhysics)
 		mLocalPlayerPhysics->StepAfter();
@@ -204,6 +205,7 @@ void GameScenePhysics::Step(physics::WorldSettings* settings)
 		if(NULL != it->first)
 			it->first->StepAfter();
 	}
+	callLuaFuncNoResult("LuaGameScenePhysicsStepAfter", settings);
 }
 
 void GameScenePhysics::PreSolve(b2Contact* contact, const b2Manifold* oldManifold)

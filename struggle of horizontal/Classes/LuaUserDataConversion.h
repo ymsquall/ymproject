@@ -16,6 +16,7 @@ class GameSceneModel;
 class GameSceneView;
 class Player;
 class Monster;
+class SkillObject;
 class CreatureHeaderView;
 class CreatureHeaderModel;
 
@@ -29,6 +30,7 @@ public:
 	static CCNode* toNode(void* pointer);
 	static Player* toPlayer(void* pointer);
 	static Monster* toMonster(void* pointer);
+	static SkillObject* toSkillObject(void* pointer);
 	static CreatureHeaderView* toCreatureHeaderView(void* pointer);
 	static CreatureHeaderModel* toCreatureHeaderModel(void* pointer);
 	/*

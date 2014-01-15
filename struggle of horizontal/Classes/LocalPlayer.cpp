@@ -264,9 +264,10 @@ void LocalPlayer::animationEvent(cocostudio::Armature *armature, cocostudio::Mov
 	static const std::string clobber1 = "clobber01";
 	static const std::string assault1 = "assault01";
 	static const std::string jumpattack1 = "jumpattack01";
+	static const std::string cutmoon1 = "cutmoon01";
 	if(movementType == cocostudio::COMPLETE)
 	{
-		if(attack1 == movementID || attack2 == movementID || attack3 == movementID)
+		if(attack1 == movementID || attack2 == movementID || attack3 == movementID || cutmoon1 == movementID)
 		{
 			if(NULL != mWeaponBody)
 			{
@@ -531,3 +532,13 @@ void LocalPlayer::StepAfter()
 		}
 	}
 }
+//
+//void LocalPlayer::doSkillWithAnimView(cocostudio::Armature* animView)
+//{
+//	Node* pParentNode = mAnimView->getParent();
+//	Point pos = mAnimView->getPosition();
+//	animView->setPosition(pos);
+//	pParentNode->addChild(animView, 102, 102);
+//	if(mFaceNormal.x < 0)
+//		animView->setRotationY(180.0f);
+//}

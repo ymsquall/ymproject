@@ -14,6 +14,7 @@ local CCObjectTypes = {
     "GameScenePhysics",
     "LocalPlayer",
     "Monster",
+    "SkillObject",
 }
 
 -- register CCObject types
@@ -115,6 +116,7 @@ extern "C" {
 #include "Physics_GameScene.h"
 #include "LocalPlayer.h"
 #include "Monster.h"
+#include "SkillObject.h"
 
 using namespace cocos2d;
 using namespace cocos2d::extension;

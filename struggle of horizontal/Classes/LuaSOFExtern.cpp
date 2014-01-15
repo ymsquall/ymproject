@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaSOFExtern
-** Generated automatically by tolua++-1.0.92 on 01/14/14 17:20:51.
+** Generated automatically by tolua++-1.0.92 on 01/15/14 16:29:59.
 */
 
 /****************************************************************************
@@ -45,6 +45,7 @@ extern "C" {
 #include "Physics_GameScene.h"
 #include "LocalPlayer.h"
 #include "Monster.h"
+#include "SkillObject.h"
 
 using namespace cocos2d;
 using namespace cocos2d::extension;
@@ -80,6 +81,13 @@ static int tolua_collect_ViewModelManager (lua_State* tolua_S)
     return 0;
 }
 
+static int tolua_collect_LocalPlayer (lua_State* tolua_S)
+{
+ LocalPlayer* self = (LocalPlayer*) tolua_tousertype(tolua_S,1,0);
+    Mtolua_delete(self);
+    return 0;
+}
+
 static int tolua_collect_GameScenePhysics (lua_State* tolua_S)
 {
  GameScenePhysics* self = (GameScenePhysics*) tolua_tousertype(tolua_S,1,0);
@@ -94,9 +102,9 @@ static int tolua_collect_framework__unity__SingletonAutoT_ViewModelManager_ (lua
     return 0;
 }
 
-static int tolua_collect_LocalPlayer (lua_State* tolua_S)
+static int tolua_collect_SkillObject (lua_State* tolua_S)
 {
- LocalPlayer* self = (LocalPlayer*) tolua_tousertype(tolua_S,1,0);
+ SkillObject* self = (SkillObject*) tolua_tousertype(tolua_S,1,0);
     Mtolua_delete(self);
     return 0;
 }
@@ -118,6 +126,8 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"mvvm::IModelManager");
  tolua_usertype(tolua_S,"framework::unity::SingletonAutoT<ViewModelManager>");
  tolua_usertype(tolua_S,"LuaUserDataConversion");
+ tolua_usertype(tolua_S,"engine::physics::ObjectSettings");
+ tolua_usertype(tolua_S,"SkillObject");
  tolua_usertype(tolua_S,"Monster");
  tolua_usertype(tolua_S,"CreatureHeaderModel");
  tolua_usertype(tolua_S,"b2ContactEdge");
@@ -1249,6 +1259,38 @@ static int tolua_LuaSOFExtern_LuaUserDataConversion_toMonster00(lua_State* tolua
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'toMonster'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: toSkillObject of class  LuaUserDataConversion */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_LuaUserDataConversion_toSkillObject00
+static int tolua_LuaSOFExtern_LuaUserDataConversion_toSkillObject00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"LuaUserDataConversion",0,&tolua_err) ||
+     !tolua_isuserdata(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  void* pointer = ((void*)  tolua_touserdata(tolua_S,2,0));
+  {
+   SkillObject* tolua_ret = (SkillObject*)  LuaUserDataConversion::toSkillObject(pointer);
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"SkillObject");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'toSkillObject'.",&tolua_err);
  return 0;
 #endif
 }
@@ -2642,6 +2684,365 @@ static int tolua_LuaSOFExtern_Monster_changeAnimAction00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: new of class  SkillObject */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_SkillObject_new00
+static int tolua_LuaSOFExtern_SkillObject_new00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"SkillObject",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"b2World",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  b2World* pWorld = ((b2World*)  tolua_tousertype(tolua_S,2,0));
+  {
+   SkillObject* tolua_ret = (SkillObject*)  Mtolua_new((SkillObject)(pWorld));
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"SkillObject");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new_local of class  SkillObject */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_SkillObject_new00_local
+static int tolua_LuaSOFExtern_SkillObject_new00_local(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"SkillObject",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"b2World",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  b2World* pWorld = ((b2World*)  tolua_tousertype(tolua_S,2,0));
+  {
+   SkillObject* tolua_ret = (SkillObject*)  Mtolua_new((SkillObject)(pWorld));
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"SkillObject");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: delete of class  SkillObject */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_SkillObject_delete00
+static int tolua_LuaSOFExtern_SkillObject_delete00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"SkillObject",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  SkillObject* self = (SkillObject*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'delete'", NULL);
+#endif
+  Mtolua_delete(self);
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'delete'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: create of class  SkillObject */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_SkillObject_create00
+static int tolua_LuaSOFExtern_SkillObject_create00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"SkillObject",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const CCPoint",0,&tolua_err)) ||
+     (tolua_isvaluenil(tolua_S,3,&tolua_err) || !tolua_isusertype(tolua_S,3,"const CCPoint",0,&tolua_err)) ||
+     !tolua_isnumber(tolua_S,4,0,&tolua_err) ||
+     !tolua_iscppstring(tolua_S,5,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,6,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const CCPoint* faceNormal = ((const CCPoint*)  tolua_tousertype(tolua_S,2,0));
+  const CCPoint* pos = ((const CCPoint*)  tolua_tousertype(tolua_S,3,0));
+  float speed = ((float)  tolua_tonumber(tolua_S,4,0));
+  const std::string animName = ((const std::string)  tolua_tocppstring(tolua_S,5,0));
+  {
+   SkillObject* tolua_ret = (SkillObject*)  SkillObject::create(*faceNormal,*pos,speed,animName);
+    int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"SkillObject");
+   tolua_pushcppstring(tolua_S,(const char*)animName);
+  }
+ }
+ return 2;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'create'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: destory of class  SkillObject */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_SkillObject_destory00
+static int tolua_LuaSOFExtern_SkillObject_destory00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"SkillObject",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  SkillObject* self = (SkillObject*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'destory'", NULL);
+#endif
+  {
+   self->destory();
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'destory'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getMovedBodyPos of class  SkillObject */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_SkillObject_getMovedBodyPos00
+static int tolua_LuaSOFExtern_SkillObject_getMovedBodyPos00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"SkillObject",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  SkillObject* self = (SkillObject*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getMovedBodyPos'", NULL);
+#endif
+  {
+   const CCPoint& tolua_ret = (const CCPoint&)  self->getMovedBodyPos();
+    tolua_pushusertype(tolua_S,(void*)&tolua_ret,"const CCPoint");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getMovedBodyPos'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: move of class  SkillObject */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_SkillObject_move00
+static int tolua_LuaSOFExtern_SkillObject_move00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"SkillObject",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  SkillObject* self = (SkillObject*)  tolua_tousertype(tolua_S,1,0);
+  float dir = ((float)  tolua_tonumber(tolua_S,2,0));
+  float speed = ((float)  tolua_tonumber(tolua_S,3,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'move'", NULL);
+#endif
+  {
+   self->move(dir,speed);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'move'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getAnimView of class  SkillObject */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_SkillObject_getAnimView00
+static int tolua_LuaSOFExtern_SkillObject_getAnimView00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const SkillObject",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const SkillObject* self = (const SkillObject*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getAnimView'", NULL);
+#endif
+  {
+   CCArmature* tolua_ret = (CCArmature*)  self->getAnimView();
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCArmature");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getAnimView'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: StepBefore of class  SkillObject */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_SkillObject_StepBefore00
+static int tolua_LuaSOFExtern_SkillObject_StepBefore00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"SkillObject",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"engine::physics::ObjectSettings",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  SkillObject* self = (SkillObject*)  tolua_tousertype(tolua_S,1,0);
+  engine::physics::ObjectSettings* settings = ((engine::physics::ObjectSettings*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'StepBefore'", NULL);
+#endif
+  {
+   self->StepBefore(settings);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'StepBefore'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: StepAfter of class  SkillObject */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_SkillObject_StepAfter00
+static int tolua_LuaSOFExtern_SkillObject_StepAfter00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"SkillObject",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  SkillObject* self = (SkillObject*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'StepAfter'", NULL);
+#endif
+  {
+   self->StepAfter();
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'StepAfter'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: isHitTarget of class  SkillObject */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_SkillObject_isHitTarget00
+static int tolua_LuaSOFExtern_SkillObject_isHitTarget00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"SkillObject",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  SkillObject* self = (SkillObject*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'isHitTarget'", NULL);
+#endif
+  {
+   bool tolua_ret = (bool)  self->isHitTarget();
+   tolua_pushboolean(tolua_S,(bool)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'isHitTarget'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* Open function */
 TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
 {
@@ -2724,6 +3125,7 @@ TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"toNode",tolua_LuaSOFExtern_LuaUserDataConversion_toNode00);
    tolua_function(tolua_S,"toPlayer",tolua_LuaSOFExtern_LuaUserDataConversion_toPlayer00);
    tolua_function(tolua_S,"toMonster",tolua_LuaSOFExtern_LuaUserDataConversion_toMonster00);
+   tolua_function(tolua_S,"toSkillObject",tolua_LuaSOFExtern_LuaUserDataConversion_toSkillObject00);
    tolua_function(tolua_S,"toCreatureHeaderView",tolua_LuaSOFExtern_LuaUserDataConversion_toCreatureHeaderView00);
    tolua_function(tolua_S,"toCreatureHeaderModel",tolua_LuaSOFExtern_LuaUserDataConversion_toCreatureHeaderModel00);
   tolua_endmodule(tolua_S);
@@ -2791,6 +3193,25 @@ TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"getFaceNormal",tolua_LuaSOFExtern_Monster_getFaceNormal00);
    tolua_function(tolua_S,"getAnimView",tolua_LuaSOFExtern_Monster_getAnimView00);
    tolua_function(tolua_S,"changeAnimAction",tolua_LuaSOFExtern_Monster_changeAnimAction00);
+  tolua_endmodule(tolua_S);
+  #ifdef __cplusplus
+  tolua_cclass(tolua_S,"SkillObject","SkillObject","unity::object",tolua_collect_SkillObject);
+  #else
+  tolua_cclass(tolua_S,"SkillObject","SkillObject","unity::object",NULL);
+  #endif
+  tolua_beginmodule(tolua_S,"SkillObject");
+   tolua_function(tolua_S,"new",tolua_LuaSOFExtern_SkillObject_new00);
+   tolua_function(tolua_S,"new_local",tolua_LuaSOFExtern_SkillObject_new00_local);
+   tolua_function(tolua_S,".call",tolua_LuaSOFExtern_SkillObject_new00_local);
+   tolua_function(tolua_S,"delete",tolua_LuaSOFExtern_SkillObject_delete00);
+   tolua_function(tolua_S,"create",tolua_LuaSOFExtern_SkillObject_create00);
+   tolua_function(tolua_S,"destory",tolua_LuaSOFExtern_SkillObject_destory00);
+   tolua_function(tolua_S,"getMovedBodyPos",tolua_LuaSOFExtern_SkillObject_getMovedBodyPos00);
+   tolua_function(tolua_S,"move",tolua_LuaSOFExtern_SkillObject_move00);
+   tolua_function(tolua_S,"getAnimView",tolua_LuaSOFExtern_SkillObject_getAnimView00);
+   tolua_function(tolua_S,"StepBefore",tolua_LuaSOFExtern_SkillObject_StepBefore00);
+   tolua_function(tolua_S,"StepAfter",tolua_LuaSOFExtern_SkillObject_StepAfter00);
+   tolua_function(tolua_S,"isHitTarget",tolua_LuaSOFExtern_SkillObject_isHitTarget00);
   tolua_endmodule(tolua_S);
  tolua_endmodule(tolua_S);
  return 1;

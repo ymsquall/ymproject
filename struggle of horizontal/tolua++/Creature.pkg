@@ -40,3 +40,18 @@ class Monster : public unity::object
 	CCArmature* getAnimView() const;
 	void changeAnimAction(const std::string& actionName);
 };
+
+class SkillObject : public unity::object
+{
+	SkillObject(b2World* pWorld);
+	virtual ~SkillObject();
+	static SkillObject* create(const CCPoint& faceNormal, const CCPoint& pos, float speed, const std::string& animName);
+	void destory();
+	virtual const CCPoint& getMovedBodyPos();
+	virtual void move(float dir, float speed);
+	CCArmature* getAnimView() const;
+
+	virtual void StepBefore(engine::physics::ObjectSettings* settings);
+	virtual void StepAfter();
+	bool isHitTarget();
+}

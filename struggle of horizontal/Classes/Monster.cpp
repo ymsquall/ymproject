@@ -181,26 +181,30 @@ int Monster::PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, 
 void Monster::beAttacked(ICreatue* who, const Point& hitPos, bool clobber)
 {
 	static const std::string assault1 = "assault01";
+	static const std::string cutmoon_helf1 = "cutmoon.helf01";
+	std::string actionName = who->getAnimView()->getAnimation()->getCurrentMovementID();
 	mBeAttacking = true;
 	mActiveAttackTimer = 3.0f + float(rand() % 3);
 	mAICanActiveAttacked = 0;
 	if(NULL != mModel)
 	{
 		int lostHP = 0;
-		if(who->getAnimView()->getAnimation()->getCurrentMovementID() == assault1)
+		if(actionName == assault1)
 			lostHP = 800 + (rand()%200);
+		else if(actionName == assault1)
+			lostHP = 300 + (rand()%400);
 		else
 			lostHP = 500 + (rand()%500);
 		mModel->NowHP -= lostHP;
 		this->updateHPView();
-		callLuaFuncNoResult("LUAGameSceneView_MonsterBeAttackedEffect", this, lostHP, hitPos.x, hitPos.y);
+		callLuaFuncNoResult("LUAGameSceneView_MonsterBeAttackedEffect", this, lostHP, hitPos.x, hitPos.y, actionName.c_str());
 		if(mModel->NowHP <= 0)
 		{
 			this->onDeath();
 			return;
 		}
 	}
-	callLuaFuncNoResult("LUAGameSceneView_MonsterBeAttacked", this, clobber);
+	callLuaFuncNoResult("LUAGameSceneView_MonsterBeAttacked", this, clobber, actionName.c_str());
 	Point otherPos = who->getMovedBodyPos();
 	Point myPos = this->getMovedBodyPos();
 	if(otherPos.x < myPos.x)

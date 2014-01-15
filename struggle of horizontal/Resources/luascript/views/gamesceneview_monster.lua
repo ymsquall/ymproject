@@ -16,7 +16,8 @@ function LUAGameSceneView_Monster_init(monster)
 	return monsterAnim
 end
 
-function LUAGameSceneView_MonsterBeAttackedEffect(monster, lostHP, hitPosX, hitPosY)
+function LUAGameSceneView_MonsterBeAttackedEffect(monster, lostHP, hitPosX, hitPosY, beActName)
+	beActName = beActName or ''
 	local pMonster = LuaUserDataConversion:toMonster(monster)
 	local pos = pMonster:getMovedBodyPos()
 	local posFlying = CCPoint(pos.x - 20, pos.y + 220)
@@ -54,7 +55,8 @@ function LUAGameSceneView_MonsterBeAttackedEffect(monster, lostHP, hitPosX, hitP
 		)
 end
 
-function LUAGameSceneView_MonsterBeAttacked(monster, clobber)
+function LUAGameSceneView_MonsterBeAttacked(monster, clobber, beActName)
+	beActName = beActName or ''
 	clobber = clobber or false
 	local actionName = 'beattack01'
 	if clobber then actionName = 'clobber01' end

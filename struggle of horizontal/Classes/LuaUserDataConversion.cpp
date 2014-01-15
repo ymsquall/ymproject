@@ -8,6 +8,7 @@
 #include "Model_CreatureHeader.h"
 #include "Player.h"
 #include "Monster.h"
+#include "SkillObject.h"
 
 framework::unity::blockwrite* LuaUserDataConversion::toBlockWrite(void* pointer)
 {
@@ -36,6 +37,10 @@ Player* LuaUserDataConversion::toPlayer(void* pointer)
 Monster* LuaUserDataConversion::toMonster(void* pointer)
 {
 	return static_cast<Monster*>(pointer);
+}
+SkillObject* LuaUserDataConversion::toSkillObject(void* pointer)
+{
+	return static_cast<SkillObject*>(pointer);
 }
 
 CreatureHeaderView* LuaUserDataConversion::toCreatureHeaderView(void* pointer)

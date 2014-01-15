@@ -8,8 +8,8 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 	_LUAGameSceneView.mHeroAnim = LUACreateAndPlayArmature("anim.major")
 	_LUAGameSceneView.mHeroAnim:getAnimation():setSpeedScale(0.5)
 	_LUAGameSceneView.mHeroAnim:setTag(101)
-	_LUAGameSceneView.mTiledMap:addChild(_LUAGameSceneView.mHeroAnim)
-	_LUAGameSceneView.mTiledMap:reorderChild(_LUAGameSceneView.mHeroAnim, 101)
+	_LUAGameSceneView.mTiledMap:addChild(_LUAGameSceneView.mHeroAnim, 101, 101)
+	--_LUAGameSceneView.mTiledMap:reorderChild(_LUAGameSceneView.mHeroAnim, 101)
     _LUAGameSceneView.mUILayer = ccs.UILayer:create()
 	_LUAGameSceneView.mUILayer:setTag(201)
     _LUAGameSceneView.self:addChild(_LUAGameSceneView.mUILayer)
@@ -60,7 +60,12 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 		end)
     _LUAGameSceneView.mSkill2Btn:addTouchEventListener(function(sender, eventType)
 			if eventType == 0 then
-				LocalPlayer:instance():jump(25.0)
+				_LUAGameSceneView.mMoveDirection = 0.0
+				_LUAGameSceneView.mMoveSpeedScale = 0.0
+				local localPlayer = LocalPlayer:instance()
+				if LUACreatureDoSkill(localPlayer, 1002) == false then
+					return
+				end
 			end
 		end)
 	return _LUAGameSceneView.mTiledMap
@@ -228,6 +233,16 @@ function LUAGameSceneViewOnTick(dt)
 	_LUAGameSceneView.self:screenScrollTo(CCPoint(mapPos.x, mapPos.y))
 	-- monster tick
 	LUAGameSceneView_Monster_Tick(dt)
+	-- skill object tick
+	LUAGameSceneView_Skill_Tick(dt)
+end
+
+function LuaGameScenePhysicsStepBefore(settings)
+	LUAGameSceneView_SkillPhysicsStepBefore(settings)
+end
+
+function LuaGameScenePhysicsStepAfter(settings)
+	LUAGameSceneView_SkillPhysicsStepAfter(settings)
 end
 
 print('game scene view loaded')

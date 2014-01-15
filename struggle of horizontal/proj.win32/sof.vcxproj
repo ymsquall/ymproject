@@ -932,6 +932,7 @@ xcopy /Y /D /V "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\websockets\pr
     <ClCompile Include="..\Classes\LuaUserDataConversion.cpp" />
     <ClCompile Include="..\Classes\Model_SelectHero.cpp" />
     <ClCompile Include="..\Classes\Player.cpp" />
+    <ClCompile Include="..\Classes\SkillObject.cpp" />
     <ClCompile Include="..\Classes\ViewModelManager.cpp" />
     <ClCompile Include="..\Classes\Model_GameScene.cpp" />
     <ClCompile Include="..\Classes\Model_Login.cpp" />
@@ -960,6 +961,7 @@ xcopy /Y /D /V "$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\websockets\pr
     <ClInclude Include="..\Classes\LuaUserDataConversion.h" />
     <ClInclude Include="..\Classes\Model_SelectHero.h" />
     <ClInclude Include="..\Classes\Player.h" />
+    <ClInclude Include="..\Classes\SkillObject.h" />
     <ClInclude Include="..\Classes\ViewModelManager.h" />
     <ClInclude Include="..\Classes\ModelTypeDefine.h" />
     <ClInclude Include="..\Classes\Model_GameScene.h" />

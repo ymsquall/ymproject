@@ -16,6 +16,8 @@ local CCObjectTypes = {
     "engine::uiview::StackPanel",
     "LuaCocoStudioHelper",
     "LuaTiledHelper",
+	"engine::physics::ObjectSettings",
+	"engine::physics::PhysicsObject",
 }
 
 -- register CCObject types
@@ -118,6 +120,7 @@ extern "C" {
 #include "CocoStudio.h"
 #include "LuaCocoStudioHelper.h"
 #include "LuaTiledHelper.h"
+#include "physics/PhysicsObject.h"
 
 using namespace cocos2d;
 using namespace cocos2d::extension;

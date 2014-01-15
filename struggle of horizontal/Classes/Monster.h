@@ -20,6 +20,7 @@ public:
 	virtual void loop(float dt) override;
 
 	void beAttacked(ICreatue* who, const Point& hitPos, bool clobber = false);
+	void beSkillAttacked(ICreatue* who, const Point& hitPos);
 
 protected:
 	void simpleAITimer(float dt);

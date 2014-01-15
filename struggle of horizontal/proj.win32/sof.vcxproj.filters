@@ -105,6 +105,9 @@
     <ClCompile Include="..\Classes\ViewModel_CreatureHeader.cpp">
       <Filter>Classes\ViewModel</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\SkillObject.cpp">
+      <Filter>Classes\Creature</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -187,6 +190,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\ViewModel_CreatureHeader.h">
       <Filter>Classes\ViewModel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SkillObject.h">
+      <Filter>Classes\Creature</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

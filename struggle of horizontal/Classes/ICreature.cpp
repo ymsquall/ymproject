@@ -26,7 +26,7 @@ ICreatue::~ICreatue()
 {
 	CreatureHeaderViewModel::point()->removeCreatureHeader(this);
 }
-bool ICreatue::initWithBox(const Point& pos, const Size& size)
+bool ICreatue::initWithBox(const Point& pos, const Size& size, bool showTitle)
 {
 	{
 		b2BodyDef bd;
@@ -44,7 +44,8 @@ bool ICreatue::initWithBox(const Point& pos, const Size& size)
 		mMoveBody->CreateFixture(&fd);
 		mMoveBody->SetFixedRotation(true); // 设置为固定角度（不旋转）
 	}
-	CreatureHeaderViewModel::point()->addCreatureHeader(this);
+	if(showTitle)
+		CreatureHeaderViewModel::point()->addCreatureHeader(this);
 	return true;
 }
 void ICreatue::updateTimer(float dt)
