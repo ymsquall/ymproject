@@ -193,61 +193,11 @@ void LocalPlayer::onFrameEvent(cocostudio::Bone *bone, const char *evt, int orig
 		}
 		return;
 	}
-	//// weapon box
-	//b2Vec2 weaponVertices[5];
-	//for(int i = 0; i < 5; ++ i)
-	//{
-	//	CCString* pWeaponName = CCString::createWithFormat("weapon%d", i);
-	//	cocostudio::CCBone* pBone = mAnimView->getBone(pWeaponName->getCString());
-	//	if(NULL == pBone)
-	//		return;
-	//	cocostudio::BaseData* pBoneData = pBone->getWorldInfo();
-	//	Point pos = mAnimView->getParent()->convertToWorldSpaceAR(mAnimView->getPosition());
-	//	if(this->getFaceNormalX() < 0.0f)
-	//		pos.x -= pBoneData->x;
-	//	else
-	//		pos.x += pBoneData->x;
-	//	pos.y += pBoneData->y;
-	//	Point titledMapPos = GameSceneViewModel::point()->getTiledMap()->getPosition();
-	//	pos.x -= titledMapPos.x;
-	//	pos.y -= titledMapPos.y;
-	//	weaponVertices[i] = b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO);
-	//}
-	//{
-	//	if(NULL != mWeaponBody)
-	//	{
-	//		mWorld->DestroyBody(mWeaponBody);
-	//		mWeaponBody = NULL;
-	//	}
-	//	b2BodyDef bd;
-	//	bd.type = b2_dynamicBody;
-	//	bd.position.Set(0, 0);
-	//	mWeaponBody = mWorld->CreateBody(&bd);
-	//	b2PolygonShape shape1;
-	//	b2PolygonShape shape2;
-	//	shape1.m_vertexCount = 3;
-	//	shape2.m_vertexCount = 3;
-	//	shape1.m_vertices[0] = weaponVertices[0];
-	//	shape1.m_vertices[1] = weaponVertices[1];
-	//	shape1.m_vertices[2] = weaponVertices[2];
-	//	shape2.m_vertices[0] = weaponVertices[0];
-	//	shape2.m_vertices[1] = weaponVertices[4];
-	//	shape2.m_vertices[2] = weaponVertices[3];
-	//	b2FixtureDef fd1, fd2;
-	//	fd1.shape = &shape1;
-	//	fd1.density = 0.0f;
-	//	fd1.friction = 0.0f;
-	//	fd2.shape = &shape2;
-	//	fd2.density = 0.0f;
-	//	fd2.friction = 0.0f;
-	//	fd1.filter.categoryBits = WeaponBodyContactMask;
-	//	fd1.filter.maskBits = BodyBodyContactMask;
-	//	fd2.filter.categoryBits = WeaponBodyContactMask;
-	//	fd2.filter.maskBits = BodyBodyContactMask;
-	//	mWeaponBody->CreateFixture(&fd1);
-	//	mWeaponBody->CreateFixture(&fd2);
-	//	mWeaponBody->SetUserData(this);
-	//}
+	else if(std::string(evt) == "clobber_ended")
+	{
+		this->move(0.0, 0.0);
+		return;
+	}
 }
 void LocalPlayer::animationEvent(cocostudio::Armature *armature, cocostudio::MovementEventType movementType, const char *movementID)
 {
@@ -279,7 +229,7 @@ void LocalPlayer::animationEvent(cocostudio::Armature *armature, cocostudio::Mov
 		}
 		else if(beattack1 == movementID || clobber1 == movementID)
 		{
-			callLuaFuncNoResult("LUAGameSceneView_LocalPlayerBeAttackAnimEnded");
+			callLuaFuncNoResult("LUAGameSceneView_LocalPlayerBeAttackAnimEnded", clobber1 == movementID);
 			mBeAttacking = false;
 		}
 		else if(assault1 == movementID)

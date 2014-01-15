@@ -10,8 +10,6 @@ ICreatue::ICreatue(b2World* pWorld)
 	mMoveBody = NULL;
 	mWeaponBody = NULL;
 	mBodyBody = NULL;
-	mMoveDir = 0;
-	mMoveSpeed = 0;
 	mAttacking = false;
 	mBeAttacking = false;
 	mDeathing = false;
@@ -21,6 +19,7 @@ ICreatue::ICreatue(b2World* pWorld)
 	mNowComboCount = 0;
 	mFaceNormal = Point::ZERO;
 	mAnimView = NULL;
+	mFaceNormal.x = 1.0f;
 }
 ICreatue::~ICreatue()
 {
@@ -73,8 +72,8 @@ const CCPoint& ICreatue::getMovedBodyPos()
 }
 void ICreatue::move(float dir, float speed)
 {
-	mMoveDir = dir;
-	mMoveSpeed = speed;
+	mMoveDir.x = dir;
+	mMoveSpeed.x = speed;
 }
 void ICreatue::updateBody(physics::ObjectSettings* settings)
 {
@@ -115,9 +114,10 @@ void ICreatue::updateBody(physics::ObjectSettings* settings)
 		//	}
 		//}
 		b2Vec2 vel = mMoveBody->GetLinearVelocity();
-		if(fabs(mMoveDir) > 0.001f)
+		if(fabs(mMoveDir.x) > 0.001f)
 		{
-			vel.x = mMoveDir * mMoveSpeed / PTM_RATIO + mMoveDir;
+			vel.x = mMoveDir.x * mMoveSpeed.x / PTM_RATIO + mMoveDir.x;
+			//vel.y = mMoveDir.y * mMoveSpeed.y / PTM_RATIO + mMoveDir.y;
 			if(pSettings->mIsHeroDorping && pSettings->mIsOriJump)
 				vel.x /= 2.0f;
 			mMoveBody->SetLinearVelocity(vel);
@@ -235,5 +235,9 @@ void ICreatue::changeAnimAction(const std::string& actionName)
 	}
 	if(nowActionName == playActName)
 		return;
+	if(nowActionName == clobber1)
+	{
+		int i = 0;
+	}
 	pAnim->play(playActName.c_str());
 }

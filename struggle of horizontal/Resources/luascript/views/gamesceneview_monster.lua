@@ -58,12 +58,19 @@ end
 function LUAGameSceneView_MonsterBeAttacked(monster, clobber, beActName)
 	beActName = beActName or ''
 	clobber = clobber or false
-	local actionName = 'beattack01'
-	if clobber then actionName = 'clobber01' end
+	if beActName == 'assault01' then
+		clobber = true
+	end
 	local pMonster = LuaUserDataConversion:toMonster(monster)
 	for i,v in pairs(_LUAGameSceneView_MonsterManager.MonsterList) do
 		if v.mMonster == pMonster then
-			pMonster:changeAnimAction(actionName)
+			if clobber then
+				pMonster:changeAnimAction('clobber01')
+				pMonster:move(-pMonster:getFaceNormalX(), 100.0)
+				pMonster:jump(15.0)
+			else
+				pMonster:changeAnimAction('beattack01')
+			end
 			break
 		end
 	end
@@ -88,7 +95,7 @@ function LUAGameSceneView_MonsterAttackAnimEnded(monster)
 		end
 	end
 end
-function LUAGameSceneView_MonsterBeAttackAnimEnded(monster)
+function LUAGameSceneView_MonsterBeAttackAnimEnded(monster, isClobber)
 	local pMonster = LuaUserDataConversion:toMonster(monster)
 	for i,v in pairs(_LUAGameSceneView_MonsterManager.MonsterList) do
 		if v.mMonster == pMonster then

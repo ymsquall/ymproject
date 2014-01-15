@@ -71,26 +71,7 @@ void Monster::updateHPView()
 }
 void Monster::onFrameEvent(cocostudio::Bone *bone, const char *evt, int originFrameIndex, int currentFrameIndex)
 {
-	// weapon box
-	b2Vec2 weaponVertices[5];
-	for(int i = 0; i < 5; ++ i)
-	{
-		CCString* pWeaponName = CCString::createWithFormat("weapon%d", i);
-		cocostudio::CCBone* pBone = mAnimView->getBone(pWeaponName->getCString());
-		if(NULL == pBone)
-			return;
-		cocostudio::BaseData* pBoneData = pBone->getWorldInfo();
-		Point pos = mAnimView->getParent()->convertToWorldSpaceAR(mAnimView->getPosition());
-		if(this->getFaceNormalX() < 0.0f)
-			pos.x -= pBoneData->x;
-		else
-			pos.x += pBoneData->x;
-		pos.y += pBoneData->y;
-		Point titledMapPos = GameSceneViewModel::point()->getTiledMap()->getPosition();
-		pos.x -= titledMapPos.x;
-		pos.y -= titledMapPos.y;
-		weaponVertices[i] = b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO);
-	}
+	if(std::string(evt) == "attack_begin")
 	{
 		if(NULL != mWeaponBody)
 		{
@@ -101,31 +82,78 @@ void Monster::onFrameEvent(cocostudio::Bone *bone, const char *evt, int originFr
 		bd.type = b2_dynamicBody;
 		bd.position.Set(0, 0);
 		mWeaponBody = mWorld->CreateBody(&bd);
-		b2PolygonShape shape1;
-		b2PolygonShape shape2;
-		shape1.m_vertexCount = 3;
-		shape2.m_vertexCount = 3;
-		shape1.m_vertices[0] = weaponVertices[0];
-		shape1.m_vertices[1] = weaponVertices[1];
-		shape1.m_vertices[2] = weaponVertices[2];
-		shape2.m_vertices[0] = weaponVertices[0];
-		shape2.m_vertices[1] = weaponVertices[4];
-		shape2.m_vertices[2] = weaponVertices[3];
-		b2FixtureDef fd1, fd2;
-		fd1.shape = &shape1;
-		fd1.density = 0.0f;
-		fd1.friction = 0.0f;
-		fd2.shape = &shape2;
-		fd2.density = 0.0f;
-		fd2.friction = 0.0f;
-		fd1.filter.categoryBits = WeaponBodyContactMask;
-		fd1.filter.maskBits = BodyBodyContactMask;
-		fd2.filter.categoryBits = WeaponBodyContactMask;
-		fd2.filter.maskBits = BodyBodyContactMask;
-		mWeaponBody->CreateFixture(&fd1);
-		mWeaponBody->CreateFixture(&fd2);
 		mWeaponBody->SetUserData(this);
+		return;
 	}
+	else if(std::string(evt) == "attack_ended")
+	{
+		if(NULL != mWeaponBody)
+		{
+			mWorld->DestroyBody(mWeaponBody);
+			mWeaponBody = NULL;
+		}
+		return;
+	}
+	else if(std::string(evt) == "clobber_ended")
+	{
+		this->move(0.0, 0.0);
+		return;
+	}
+	//// weapon box
+	//b2Vec2 weaponVertices[5];
+	//for(int i = 0; i < 5; ++ i)
+	//{
+	//	CCString* pWeaponName = CCString::createWithFormat("weapon%d", i);
+	//	cocostudio::CCBone* pBone = mAnimView->getBone(pWeaponName->getCString());
+	//	if(NULL == pBone)
+	//		return;
+	//	cocostudio::BaseData* pBoneData = pBone->getWorldInfo();
+	//	Point pos = mAnimView->getParent()->convertToWorldSpaceAR(mAnimView->getPosition());
+	//	if(this->getFaceNormalX() < 0.0f)
+	//		pos.x -= pBoneData->x;
+	//	else
+	//		pos.x += pBoneData->x;
+	//	pos.y += pBoneData->y;
+	//	Point titledMapPos = GameSceneViewModel::point()->getTiledMap()->getPosition();
+	//	pos.x -= titledMapPos.x;
+	//	pos.y -= titledMapPos.y;
+	//	weaponVertices[i] = b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO);
+	//}
+	//{
+	//	if(NULL != mWeaponBody)
+	//	{
+	//		mWorld->DestroyBody(mWeaponBody);
+	//		mWeaponBody = NULL;
+	//	}
+	//	b2BodyDef bd;
+	//	bd.type = b2_dynamicBody;
+	//	bd.position.Set(0, 0);
+	//	mWeaponBody = mWorld->CreateBody(&bd);
+	//	b2PolygonShape shape1;
+	//	b2PolygonShape shape2;
+	//	shape1.m_vertexCount = 3;
+	//	shape2.m_vertexCount = 3;
+	//	shape1.m_vertices[0] = weaponVertices[0];
+	//	shape1.m_vertices[1] = weaponVertices[1];
+	//	shape1.m_vertices[2] = weaponVertices[2];
+	//	shape2.m_vertices[0] = weaponVertices[0];
+	//	shape2.m_vertices[1] = weaponVertices[4];
+	//	shape2.m_vertices[2] = weaponVertices[3];
+	//	b2FixtureDef fd1, fd2;
+	//	fd1.shape = &shape1;
+	//	fd1.density = 0.0f;
+	//	fd1.friction = 0.0f;
+	//	fd2.shape = &shape2;
+	//	fd2.density = 0.0f;
+	//	fd2.friction = 0.0f;
+	//	fd1.filter.categoryBits = WeaponBodyContactMask;
+	//	fd1.filter.maskBits = BodyBodyContactMask;
+	//	fd2.filter.categoryBits = WeaponBodyContactMask;
+	//	fd2.filter.maskBits = BodyBodyContactMask;
+	//	mWeaponBody->CreateFixture(&fd1);
+	//	mWeaponBody->CreateFixture(&fd2);
+	//	mWeaponBody->SetUserData(this);
+	//}
 }
 void Monster::animationEvent(cocostudio::Armature *armature, cocostudio::MovementEventType movementType, const char *movementID)
 {
@@ -142,9 +170,10 @@ void Monster::animationEvent(cocostudio::Armature *armature, cocostudio::Movemen
 	static const std::string clobber1 = "clobber01";
 	static const std::string assault1 = "assault01";
 	static const std::string jumpattack1 = "jumpattack01";
+	static const std::string cutmoon1 = "cutmoon01";
 	if(movementType == cocostudio::COMPLETE)
 	{
-		if(attack1 == movementID || attack2 == movementID || attack3 == movementID)
+		if(attack1 == movementID || attack2 == movementID || attack3 == movementID || cutmoon1 == movementID)
 		{
 			if(NULL != mWeaponBody)
 			{
@@ -156,13 +185,18 @@ void Monster::animationEvent(cocostudio::Armature *armature, cocostudio::Movemen
 		}
 		else if(beattack1 == movementID || clobber1 == movementID)
 		{
-			callLuaFuncNoResult("LUAGameSceneView_MonsterBeAttackAnimEnded", this);
+			callLuaFuncNoResult("LUAGameSceneView_MonsterBeAttackAnimEnded", this, clobber1 == movementID);
 			mBeAttacking = false;
 		}
 		else if(assault1 == movementID)
 		{
 			this->move(0,0);
 			mSkilling = false;
+			if(NULL != mWeaponBody)
+			{
+				mWorld->DestroyBody(mWeaponBody);
+				mWeaponBody = NULL;
+			}
 		}
 		else if(death1 == movementID)
 		{
@@ -173,7 +207,50 @@ void Monster::animationEvent(cocostudio::Armature *armature, cocostudio::Movemen
 int Monster::PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, const physics::PhysicsBodyList& landList)
 {
 	int ret = 0;
-
+	b2Fixture* fixtureA = contact->GetFixtureA();
+	b2Fixture* fixtureB = contact->GetFixtureB();
+	if(NULL != fixtureA && NULL != fixtureB)
+	{
+		b2Body* body1 = fixtureA->GetBody();
+		b2Body* body2 = fixtureB->GetBody();
+		if(body1 == mMoveBody || body2 == mMoveBody)
+		{
+			ret = 1;
+			contact->SetEnabled(true);
+			bool isLand = false;
+			for(physics::PhysicsBodyList::const_iterator it = landList.begin();
+				it != landList.end(); ++ it)
+			{
+				isLand = (body1 == *it) || (body2 == *it);
+				if(isLand)
+					break;
+			}
+			if(isLand)
+			{
+				if(mIsJumping)
+				{
+					b2Vec2 vel = mMoveBody->GetLinearVelocity();
+					if(vel.y > 0)
+						contact->SetEnabled(false);
+					else
+					{
+						mIsJumping = false;
+						mMoveBody->SetFixedRotation(false); // 行走时设为旋转，否则根据body的形状会有不同频率的抖动
+					}
+				}
+			}
+			else
+			{
+				callLuaFuncNoResult("LUAGameScene_MonsterPhysicsHeroHitWall");
+				mMoveBody->SetFixedRotation(true); // 起跳后设置为固定角度（不旋转），否则会产生多余的位移
+				if(!mWorld->IsLocked())
+				{
+					b2Vec2 pos = mMoveBody->GetWorldCenter();
+					mMoveBody->SetTransform(pos, 0.0f);
+				}
+			}
+		}
+	}
 	return ret;
 }
 
@@ -340,6 +417,61 @@ void Monster::StepBefore(physics::ObjectSettings* settings)
 			fd.filter.maskBits = WeaponBodyContactMask | SkillBodyContactMask;
 			mBodyBody->CreateFixture(&fd);
 			mBodyBody->SetUserData(this);
+		}
+	}
+	if(NULL != mWeaponBody)
+	{
+		// weapon box
+		b2Vec2 weaponVertices[5];
+		for(int i = 0; i < 5; ++ i)
+		{
+			CCString* pWeaponName = CCString::createWithFormat("weapon%d", i);
+			cocostudio::CCBone* pBone = mAnimView->getBone(pWeaponName->getCString());
+			if(NULL == pBone)
+				return;
+			cocostudio::BaseData* pBoneData = pBone->getWorldInfo();
+			Point pos = mAnimView->getParent()->convertToWorldSpaceAR(mAnimView->getPosition());
+			if(this->getFaceNormalX() < 0.0f)
+				pos.x -= pBoneData->x;
+			else
+				pos.x += pBoneData->x;
+			pos.y += pBoneData->y;
+			Point titledMapPos = GameSceneViewModel::point()->getTiledMap()->getPosition();
+			pos.x -= titledMapPos.x;
+			pos.y -= titledMapPos.y;
+			weaponVertices[i] = b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO);
+		}
+		{
+			b2Fixture* fixture = mWeaponBody->GetFixtureList();
+			while(NULL != fixture)
+			{
+				b2Fixture* destroyFixture = fixture;
+				fixture = fixture->GetNext();
+				mWeaponBody->DestroyFixture(destroyFixture);
+			}
+			b2PolygonShape shape1;
+			b2PolygonShape shape2;
+			shape1.m_vertexCount = 3;
+			shape2.m_vertexCount = 3;
+			shape1.m_vertices[0] = weaponVertices[0];
+			shape1.m_vertices[1] = weaponVertices[1];
+			shape1.m_vertices[2] = weaponVertices[2];
+			shape2.m_vertices[0] = weaponVertices[0];
+			shape2.m_vertices[1] = weaponVertices[4];
+			shape2.m_vertices[2] = weaponVertices[3];
+			b2FixtureDef fd1, fd2;
+			fd1.shape = &shape1;
+			fd1.density = 0.0f;
+			fd1.friction = 0.0f;
+			fd2.shape = &shape2;
+			fd2.density = 0.0f;
+			fd2.friction = 0.0f;
+			fd1.filter.categoryBits = WeaponBodyContactMask;
+			fd1.filter.maskBits = BodyBodyContactMask;
+			fd2.filter.categoryBits = WeaponBodyContactMask;
+			fd2.filter.maskBits = BodyBodyContactMask;
+			mWeaponBody->CreateFixture(&fd1);
+			mWeaponBody->CreateFixture(&fd2);
 		}
 	}
 	if(NULL != mWeaponBody)

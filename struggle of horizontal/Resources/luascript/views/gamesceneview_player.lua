@@ -38,15 +38,24 @@ function LUAGameSceneView_LocalPlayerBeAttackedEffect(lostHP, hitPosX, hitPosY)
 		)
 end
 
-function LUAGameSceneView_LocalPlayerBeAttacked(clobber)
+function LUAGameSceneView_LocalPlayerBeAttacked(clobber, beActName)
+	beActName = beActName or ''
 	clobber = clobber or false
-	local actionName = 'beattack01'
-	if clobber then actionName = 'clobber01' end
-	LocalPlayer:instance():changeAnimAction(actionName)
+	if beActName == 'assault01' then
+		clobber = true
+	end
+	local localPlayer = LocalPlayer:instance()
 	_LUAGameSceneView.mBeAttacking = true
 	_LUAGameSceneView.mMoveDirection = 0.0
 	_LUAGameSceneView.mMoveSpeedScale = 0.0
-	LocalPlayer:instance():move(0.0, 0.0)
+	localPlayer:move(0.0, 0.0)
+	if clobber then
+		localPlayer:changeAnimAction('clobber01')
+		localPlayer:move(-localPlayer:getFaceNormalX(), 100.0)
+		localPlayer:jump(15.0)
+	else
+		localPlayer:changeAnimAction('beattack01')
+	end
 end
 
 function LUAGameSceneView_LocalPlayerAttackAnimEnded()
@@ -57,7 +66,7 @@ function LUAGameSceneView_LocalPlayerAttackAnimEnded()
     end
 end
 
-function LUAGameSceneView_LocalPlayerBeAttackAnimEnded()
+function LUAGameSceneView_LocalPlayerBeAttackAnimEnded(isClobber)
     if _LUAGameSceneView.mMoveSpeedScale < 0.001 then
 		LocalPlayer:instance():changeAnimAction('stand01')
     else

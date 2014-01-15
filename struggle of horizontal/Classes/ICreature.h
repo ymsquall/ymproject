@@ -81,8 +81,8 @@ public:
 	b2Body* mMoveBody;
 	b2Body* mWeaponBody;
 	b2Body* mBodyBody;
-	float mMoveDir;
-	float mMoveSpeed;
+	Point mMoveDir;
+	Point mMoveSpeed;
 
 protected:
 	bool mAttacking;

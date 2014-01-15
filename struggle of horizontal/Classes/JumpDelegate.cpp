@@ -21,7 +21,7 @@ void JumpDelegate::jump(float speed)
 	b2Vec2 vel = mCreatureDelegate->mMoveBody->GetLinearVelocity();
 	vel.y = speed;
 	mCreatureDelegate->mMoveBody->SetLinearVelocity(vel);
-	if(fabs(mCreatureDelegate->mMoveDir) > 0.001f)
+	if(fabs(mCreatureDelegate->mMoveDir.x) > 0.001f)
 		mIsOriJump = false;
 	mIsJumping = true;
 }

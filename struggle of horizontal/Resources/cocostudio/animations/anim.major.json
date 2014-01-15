@@ -6356,7 +6356,7 @@
         },
         {
           "name": "clobber01",
-          "dr": 60,
+          "dr": 61,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -6894,6 +6894,20 @@
                   "fi": 15,
                   "twE": 0,
                   "tweenFrame": true
+                },
+                {
+                  "dI": 29,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 20,
+                  "twE": 0,
+                  "tweenFrame": true,
+                  "evt": "clobber_ended"
                 },
                 {
                   "dI": 29,
@@ -10181,7 +10195,7 @@
         },
         {
           "name": "cutmoon01",
-          "dr": 21,
+          "dr": 20,
           "lp": false,
           "to": 0,
           "drTW": 0,

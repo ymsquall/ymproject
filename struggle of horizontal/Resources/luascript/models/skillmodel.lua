@@ -108,7 +108,7 @@ _LUASkillMetaData[1002] = {
 				print(self.name..' skill cooldown overed!')
 				local scheduler = cc.Director:getInstance():getScheduler()
 				scheduler:unscheduleScriptEntry(cooldownInfo.cdScheduler)
-				cooldownInfo.cdScheduler = -1
+				--cooldownInfo.cdScheduler = -1
 				if creature == LocalPlayer:instance() then
 					local cdNumber = _LUAGameSceneView.mSkill2Btn:getChildByName('cdNumber')
 					if nil ~= cdNumber then

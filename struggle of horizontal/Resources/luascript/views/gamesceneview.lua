@@ -196,7 +196,7 @@ function LUAGameSceneViewOnTick(dt)
 	_LUAGameSceneView.mHeroAnim:setPositionX(heroPos.x)
 	_LUAGameSceneView.mHeroAnim:setPositionY(heroPos.y)
 	localUser:onCreaturePosChanged(heroPos)
-	if nil == localUser:getHeroBodyContactList() then
+	if nil == localUser:getHeroBodyContactList() and LUACreatureCanBePlayJumpAction(localUser) then
 		_LUAGameSceneView.mHeroHitWall = false
 		localUser:setIsHeroDorping(true)
 		localUser:changeAnimAction('jumping01')

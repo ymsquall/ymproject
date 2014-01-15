@@ -21,8 +21,18 @@ function LUACreatureCanBeInAirMove(creature)
 	return canbe
 end
 
+function LUACreatureCanBePlayJumpAction(creature)
+	local canbe = false
+	local animView = tolua.cast(creature:getAnimView(), "Armature")
+	local nowAction = animView:getAnimation():getCurrentMovementID()
+	if nowAction ~= 'clobber01' then
+		canbe = true
+	end
+	return canbe
+end
+
 function LUACreatureCanBeDropInLand(creature)
-	return LUACreatureCanBeMoveOrStand(creature) or LUACreatureCanBeInAirMove(creature)
+	return (LUACreatureCanBeMoveOrStand(creature) or LUACreatureCanBeInAirMove(creature)) and LUACreatureCanBePlayJumpAction(creature)
 end
 
 function LUACreatureCanBeJump(creature)
