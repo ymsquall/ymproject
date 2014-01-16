@@ -60,7 +60,9 @@ public:
 	CCPoint mPlayerEndPos;
 
 	Physics_Box2DView* mPhysicsView;
-	
+
+	gui::UIButton* mStickLeftBtn;
+	gui::UIButton* mStickRightBtn;
 	gui::UIButton* mJumpBtn;
 	gui::UIButton* mAttackBtn;
 	gui::UIButton* mSkill1Btn;

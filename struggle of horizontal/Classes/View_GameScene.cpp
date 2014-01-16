@@ -21,6 +21,8 @@ GameSceneView::GameSceneView()
 	mFGLayer_01 = NULL;
 	mFGLayer_02 = NULL;
 	mBGLayer = NULL;
+	mStickLeftBtn = NULL;
+	mStickRightBtn = NULL;
 	mJumpBtn = NULL;
 	mAttackBtn = NULL;
 	mSkill1Btn = NULL;
@@ -49,6 +51,8 @@ bool GameSceneView::init()
 	cocostudio::Armature* pAnimView = dynamic_cast<Armature*>(mTiledMap->getChildByTag(101));
 	gui::UILayer* pUILayer = dynamic_cast<gui::UILayer*>(this->getChildByTag(201));
 	gui::UIWidget* pWidget = dynamic_cast<gui::UIWidget*>(pUILayer->getWidgetByTag(202));
+	mStickLeftBtn = dynamic_cast<gui::UIButton*>(pWidget->getChildByName("mStickLeftBtn"));
+	mStickRightBtn = dynamic_cast<gui::UIButton*>(pWidget->getChildByName("mStickRightBtn"));
 	mJumpBtn = dynamic_cast<gui::UIButton*>(pWidget->getChildByName("mJumpBtn"));
 	mAttackBtn = dynamic_cast<gui::UIButton*>(pWidget->getChildByName("mAttackBtn"));
 	mSkill1Btn = dynamic_cast<gui::UIButton*>(pWidget->getChildByName("mSkill1Btn"));
@@ -99,27 +103,33 @@ void GameSceneView::onTouchesBegan(const std::vector<Touch*>& touches, Event *un
 {
     for(auto& touch: touches)
     {
-        auto location = touch->getLocation();
+		auto location = touch->getLocation();
         if(!callLuaFuncWithBoolResult("LUAGameSceneViewTouchesBegan", touch->getID(), location.x, location.y))
             this->onTouchBegan(location);
+		else if(mStickLeftBtn->hitTest(location) || mStickRightBtn->hitTest(location))
+			this->onTouchBegan(location);
     }
 }
 void GameSceneView::onTouchesMoved(const std::vector<Touch*>& touches, Event *unused_event)
 {
     for(auto& touch: touches)
     {
-        auto location = touch->getLocation();
+		auto location = touch->getLocation();
         if(!callLuaFuncWithBoolResult("LUAGameSceneViewTouchesMoved", touch->getID(), location.x, location.y))
-           this->onTouchBegan(location);
+			this->onTouchMoved(location);
+		else if(mStickLeftBtn->hitTest(location) || mStickRightBtn->hitTest(location))
+			this->onTouchMoved(location);
     }
 }
 void GameSceneView::onTouchesEnded(const std::vector<Touch*>& touches, Event *unused_event)
 {
     for(auto& touch: touches)
-    {
-        auto location = touch->getLocation();
+	{
+		auto location = touch->getLocation();
         if(!callLuaFuncWithBoolResult("LUAGameSceneViewTouchesEnded", touch->getID(), location.x, location.y))
-           this->onTouchEnded(location);
+			this->onTouchEnded(location);
+		else if(mStickLeftBtn->hitTest(location) || mStickRightBtn->hitTest(location))
+			this->onTouchEnded(location);
     }
 }
 
@@ -145,6 +155,16 @@ void GameSceneView::onTouchBegan(const Point& pos)
 		 mSkill2Btn->onTouchBegan(pos);
 		 return;
 	 }
+	 if(mStickLeftBtn->hitTest(pos))
+	 {
+		 mStickLeftBtn->onTouchBegan(pos);
+		 return;
+	 }
+	 if(mStickRightBtn->hitTest(pos))
+	 {
+		 mStickRightBtn->onTouchBegan(pos);
+		 return;
+	 }
 }
 void GameSceneView::onTouchMoved(const Point& pos)
 {
@@ -152,6 +172,8 @@ void GameSceneView::onTouchMoved(const Point& pos)
 	mAttackBtn->onTouchMoved(pos);
 	mSkill1Btn->onTouchMoved(pos);
 	mSkill2Btn->onTouchMoved(pos);
+	mStickLeftBtn->onTouchMoved(pos);
+	mStickRightBtn->onTouchMoved(pos);
 }
 void GameSceneView::onTouchEnded(const Point& pos)
 {
@@ -159,6 +181,8 @@ void GameSceneView::onTouchEnded(const Point& pos)
 	mAttackBtn->onTouchEnded(pos);
 	mSkill1Btn->onTouchEnded(pos);
 	mSkill2Btn->onTouchEnded(pos);
+	mStickLeftBtn->onTouchEnded(pos);
+	mStickRightBtn->onTouchEnded(pos);
 }
 
 bool GameSceneView::screenScroll(const Point& offset)

@@ -48,6 +48,15 @@ function LUAOnWin32KeyUpMsgProc(key)
 			LocalPlayer:instance():changeAnimAction('stand01')
 		end
 	end
+	if VK_1 == key then
+		if LUACreatureCanBeAttack(LocalPlayer:instance()) then
+			local localUser = LocalPlayer:instance()
+			localUser:changeAnimAction('attack')
+			_LUAGameSceneView.mMoveDirection = 0.0
+			_LUAGameSceneView.mMoveSpeedScale = 0.0
+			localUser:move(0.0, 0.0)
+		end
+	end
 end
 
 function LUAOnWin32CharMsgProc(char)

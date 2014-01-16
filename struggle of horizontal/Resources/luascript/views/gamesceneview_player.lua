@@ -76,7 +76,11 @@ function LUAGameSceneView_LocalPlayerBeAttackAnimEnded(isClobber)
 end
 
 function LUAGameSceneView_LocalPlayerDeath()
-	LocalPlayer:instance():changeAnimAction('death01')
+	local localUser = LocalPlayer:instance()
+	_LUAGameSceneView.mMoveDirection = 0.0
+	_LUAGameSceneView.mMoveSpeedScale = 0.0
+	localUser:move(0.0, 0.0)
+	localUser:changeAnimAction('death01')
 end
 
 function LUAGameSceneView_LocalPlayerRelive()
