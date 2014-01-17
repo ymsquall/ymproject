@@ -176,7 +176,9 @@ function LUAGameSceneViewOnTick(dt)
 		end
 		if math.abs(dist) > 20.0 then
 			local tmpMoveDir = 0
-			localUser:changeAnimAction('run01')
+			if LUACreatureCanBeMoveOrStand(localUser) then
+				localUser:changeAnimAction('run01')
+			end
 			if dist > 0 then
 				tmpMoveDir = 1.0
 				LuaCocoStudioHelper:setButtonPressState(_LUAGameSceneView.mStickRightBtn)

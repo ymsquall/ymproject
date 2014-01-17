@@ -141,7 +141,7 @@ _LUASkillMetaData[1002] = {
 		creature:changeAnimAction('cutmoon01')
 		creature:move(0,0)
 		local animView = tolua.cast(creature:getAnimView(), "Armature")
-		local delayTime = cc.DelayTime:create(0.3)
+		local delayTime = cc.DelayTime:create(0.2)
 		local seqAct = cc.Sequence:create(delayTime, cc.CallFunc:create(waitActionEnded))
 		animView:runAction(seqAct)
 		-- cd

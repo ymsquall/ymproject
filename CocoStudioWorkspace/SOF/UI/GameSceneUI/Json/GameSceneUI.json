@@ -10,7 +10,8 @@
   "designHeight": 640,
   "designWidth": 960,
   "textures": [
-    "GameSceneUI0.plist"
+    "GameSceneUI0.plist",
+    "GameSceneUI1.plist"
   ],
   "version": "1.2.0.0",
   "widgetTree": {
@@ -44,7 +45,7 @@
               "layoutParameter": null,
               "opacity": 255,
               "positionPercentX": 0.25,
-              "positionPercentY": 0.504065037,
+              "positionPercentY": 0.6504065,
               "positionType": 0,
               "rotation": 0,
               "scaleX": 1,
@@ -58,7 +59,7 @@
               "visible": true,
               "width": 123,
               "x": 70,
-              "y": 62,
+              "y": 80,
               "capInsetsHeight": 0,
               "capInsetsWidth": 0,
               "capInsetsX": 0,
@@ -116,7 +117,7 @@
               "layoutParameter": null,
               "opacity": 255,
               "positionPercentX": 0.75,
-              "positionPercentY": 0.504065037,
+              "positionPercentY": 0.6504065,
               "positionType": 0,
               "rotation": 0,
               "scaleX": 1,
@@ -130,7 +131,7 @@
               "visible": true,
               "width": 123,
               "x": 210,
-              "y": 62,
+              "y": 80,
               "capInsetsHeight": 0,
               "capInsetsWidth": 0,
               "capInsetsX": 0,

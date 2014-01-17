@@ -241,7 +241,7 @@ void ICreatue::changeAnimAction(const std::string& actionName)
 			mNowComboCount = 0;
 		else
 			mNowComboCount ++;
-		mComboCountdownTimer = 1.0f + 0.5f;
+		mComboCountdownTimer = 1.0f + 0.1f;
 	}
 	pAnim->play(playActName.c_str());
 }
