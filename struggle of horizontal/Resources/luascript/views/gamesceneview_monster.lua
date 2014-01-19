@@ -43,7 +43,7 @@ function LUAGameSceneView_MonsterBeAttackedEffect(monster, lostHP, hitPosX, hitP
 			pViwePanel:runFadeOutAction(1.0)
 		end)))
 	--blast effect
-	local pEffect = LUACreateAndPlayBlastEffect('effect.blast', 'beattack03.point01', hitPosX, hitPosY, 1.0, 0.4)--hitPoint.x, hitPoint.y)
+	local pEffect = LUACreateAndPlayBlastEffect('effect.blast', 'beattack04.point01', hitPosX, hitPosY, 1.0, 0.4)--hitPoint.x, hitPoint.y)
 	_LUAGameSceneView.mTiledMap:addChild(pEffect, 101)
     pEffect:getAnimation():setMovementEventCallFunc(
 		function(armatureBack,movementType,movementID)
