@@ -94,7 +94,7 @@ bool GameScenePhysics::initBoxWithTiledMap(const TMXTiledMap* pTiledMap)
 		cpInfo.w = ((String*)pMonsterDict->objectForKey("width"))->intValue();
 		cpInfo.h = ((String*)pMonsterDict->objectForKey("height"))->intValue();
 		mMonsterPhysicsInfoList.push_back(cpInfo);
-		Monster* pMonster = ICreatue::createWithBox<Monster>(mWorld, Point(cpInfo.x, cpInfo.y), Size(19.2f, 6.4f));
+		Monster* pMonster = ICreature::createWithBox<Monster>(mWorld, Point(cpInfo.x, cpInfo.y), Size(19.2f, 6.4f));
 		if(NULL != pMonster)
 			mMonsterPhysicsList[pMonster] = &cpInfo;
 	}
@@ -133,15 +133,15 @@ b2Body* GameScenePhysics::createGround(const b2Vec2& pos, const b2Vec2& p1, cons
 	fd.friction = 1.0f;
 	if(isWall)
 	{
-		fd.filter.categoryBits = ICreatue::WallContactMask;
+		fd.filter.categoryBits = ICreature::WallContactMask;
 		pBody->SetUserData(new CCString("wall"));
 	}
 	else
 	{
-		fd.filter.categoryBits = ICreatue::LandContactMask;
+		fd.filter.categoryBits = ICreature::LandContactMask;
 		pBody->SetUserData(new CCString("land"));
 	}
-	fd.filter.maskBits = ICreatue::MoveBodyContactMask | ICreatue::SkillBodyContactMask;
+	fd.filter.maskBits = ICreature::MoveBodyContactMask | ICreature::SkillBodyContactMask;
 	shape.Set(p1, p2);
 	pBody->CreateFixture(&fd);
 	return pBody;
@@ -159,15 +159,15 @@ b2Body* GameScenePhysics::createGround(const b2Vec2& pos, float width, float hei
 	fd.friction = 1.0f;
 	if(isWall)
 	{
-		fd.filter.categoryBits = ICreatue::WallContactMask;
+		fd.filter.categoryBits = ICreature::WallContactMask;
 		pBody->SetUserData(new CCString("wall"));
 	}
 	else
 	{
-		fd.filter.categoryBits = ICreatue::LandContactMask;
+		fd.filter.categoryBits = ICreature::LandContactMask;
 		pBody->SetUserData(new CCString("land"));
 	}
-	fd.filter.maskBits = ICreatue::MoveBodyContactMask | ICreatue::SkillBodyContactMask;
+	fd.filter.maskBits = ICreature::MoveBodyContactMask | ICreature::SkillBodyContactMask;
 	shape.SetAsBox(width / 2 / PTM_RATIO, height / 2 / PTM_RATIO, b2Vec2(0, 0), 0.0);
 	pBody->CreateFixture(&fd);
 	return pBody;

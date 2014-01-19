@@ -15,15 +15,15 @@ using namespace framework;
 
 class CreatureHeaderView;
 class CreatureHeaderModel;
-class ICreatue;
+class ICreature;
 class CreatureHeaderViewModel : public mvvm::IViewModel, public unity::SingletonAutoT<CreatureHeaderViewModel>
 {
 public:
 	CreatureHeaderViewModel();
 	~CreatureHeaderViewModel();
 
-	CreatureHeaderModel* addCreatureHeader(ICreatue* pCreature);
-	void removeCreatureHeader(ICreatue* pCreature);
+	CreatureHeaderModel* addCreatureHeader(ICreature* pCreature);
+	void removeCreatureHeader(ICreature* pCreature);
 	void onModelDestory(mvvm::IModel* sender, unity::RoutedEventArgs* args);
 	void onCreatureHeaderModelPropertyChanged(mvvm::INotifyPropertyChanged* sender, mvvm::NotifyPropertyChangedRoutedEventArgs* args);
 

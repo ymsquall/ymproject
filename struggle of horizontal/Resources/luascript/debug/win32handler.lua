@@ -8,7 +8,11 @@ function LUAOnWin32KeyDownMsgProc(key)
 	if VK_RIGHT == key then _LUAGameSceneView.self:screenScroll(CCPoint(10, 0)) end
 	if VK_W == key then end
 	if VK_S == key then end
-	if VK_SPACE == key then LocalPlayer:instance():jump(25.0) end
+	if VK_SPACE == key then
+		if LUACreatureCanBeJump(LocalPlayer:instance()) then
+			LocalPlayer:instance():jump(25.0)
+		end
+	end
 	if VK_A == key or VK_D == key then
 		if LUACreatureCanBeDropInLand(LocalPlayer:instance()) then
 			if VK_A == key then
@@ -18,7 +22,9 @@ function LUAOnWin32KeyDownMsgProc(key)
 				_LUAGameSceneView.mMoveDirection = 1
 				LocalPlayer:instance():setFaceNormalX(1.0)
 			end
-			LocalPlayer:instance():changeAnimAction('run01')
+			if LUACreatureCanBeMoveOrStand(LocalPlayer:instance()) then
+				LocalPlayer:instance():changeAnimAction('run01')
+			end
 			_LUAGameSceneView.mMoveSpeedScale = 300
 			LocalPlayer:instance():move(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
 		end

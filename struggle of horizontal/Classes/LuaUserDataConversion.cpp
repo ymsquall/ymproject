@@ -6,6 +6,8 @@
 #include "View_CreatureHeader.h"
 #include "Model_GameScene.h"
 #include "Model_CreatureHeader.h"
+#include "ICreature.h"
+#include "JumpDelegate.h"
 #include "Player.h"
 #include "Monster.h"
 #include "SkillObject.h"
@@ -50,6 +52,14 @@ CreatureHeaderView* LuaUserDataConversion::toCreatureHeaderView(void* pointer)
 CreatureHeaderModel* LuaUserDataConversion::toCreatureHeaderModel(void* pointer)
 {
 	return static_cast<CreatureHeaderModel*>(pointer);
+}
+ICreature* LuaUserDataConversion::toICreature(void* pointer)
+{
+	return static_cast<ICreature*>(pointer);
+}
+JumpDelegate* LuaUserDataConversion::toJumpDelegate(void* pointer)
+{
+	return static_cast<JumpDelegate*>(pointer);
 }
 /*
 LandTreeGrid* LuaUserDataConversion::toLandTreeGrid(void* pointer)

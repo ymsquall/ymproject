@@ -9,7 +9,7 @@
 using namespace cocos2d;
 using namespace framework;
 
-class SkillObject : public unity::object, public ICreatue, public physics::PhysicsObject, public unity::IInitAbstract
+class SkillObject : public unity::object, public ICreature, public physics::PhysicsObject, public unity::IInitAbstract
 {
 public:
 	SkillObject(b2World* pWorld);

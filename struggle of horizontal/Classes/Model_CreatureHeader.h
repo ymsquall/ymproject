@@ -3,7 +3,7 @@
 
 using namespace cocos2d;
 using namespace framework;
-class ICreatue;
+class ICreature;
 // class CreatureHeaderModel
 MODEL_TYPECLASS_DECLARE_HEADER(CreatureHeader)
 	// 添加相应代码
@@ -17,10 +17,10 @@ MODEL_TYPECLASS_DECLARE_HEADER(CreatureHeader)
 		PROPERTY_DEFINED_SETTER_DEFINED(Visible, bool, CreatureHeaderModel);
 		PROPERTY_DEFINED_SETTER_DEFINED(Position, Point, CreatureHeaderModel);
 
-		void setOwnerCreature(ICreatue* creature);
-		ICreatue* getOwnerCreature();
+		void setOwnerCreature(ICreature* creature);
+		ICreature* getOwnerCreature();
 
 	private:
 	private:
-		ICreatue* mOwnerCreature;
+		ICreature* mOwnerCreature;
 MODEL_TYPECLASS_DECLARE_END 

@@ -8,7 +8,7 @@
 using namespace framework;
 
 SkillObject::SkillObject(b2World* pWorld) :
-	ICreatue(pWorld)
+	ICreature(pWorld)
 {
 	mAnimView = NULL;
 	mHitTarget = false;
@@ -20,7 +20,7 @@ SkillObject::~SkillObject()
 }
 SkillObject* SkillObject::create(const CCPoint& faceNormal, const CCPoint& pos, float speed, const std::string& animName)
 {
-	SkillObject* pRet = ICreatue::createWithBox<SkillObject>(GameScenePhysics::point()->mWorld, pos, Size(19.2f, 6.4f), false);
+	SkillObject* pRet = ICreature::createWithBox<SkillObject>(GameScenePhysics::point()->mWorld, pos, Size(19.2f, 6.4f), false);
 	if(!pRet->initWithAnimName(animName, faceNormal, pos, speed))
 	{
 		delete pRet;

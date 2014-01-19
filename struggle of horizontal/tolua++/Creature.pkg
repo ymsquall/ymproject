@@ -1,13 +1,32 @@
-class LocalPlayer : public unity::object
+class ICreature
+{
+	virtual const CCPoint& getMovedBodyPos();
+	virtual void move(float dir, float speed);
+	b2ContactEdge* getHeroBodyContactList();
+	void onCreaturePosChanged(const CCPoint& pos);
+	void setFaceNormalX(float dirX);
+	void setFaceNormalY(float dirY);
+	void setFaceNormal(float dirX, float dirY);
+	float getFaceNormalX() const;
+	float getFaceNormalY() const;
+	const CCPoint& getFaceNormal() const;
+	CCArmature* getAnimView() const;
+	void changeAnimAction(const std::string& actionName);
+};
+
+class JumpDelegate
+{
+	void jump(float speed);
+	void setIsHeroDorping(bool b);
+};
+
+class LocalPlayer : public unity::object, public ICreature, public JumpDelegate
 {
 	LocalPlayer(b2World* pWorld);
 	virtual ~LocalPlayer();
 	static LocalPlayer* instance();
 	virtual const CCPoint& getMovedBodyPos();
 	virtual void move(float dir, float speed);
-	void jump(float speed);
-	void setIsHeroDorping(bool b);
-	bool getIsHeroDorping();
 	b2ContactEdge* getHeroBodyContactList();
 	void onCreaturePosChanged(const CCPoint& pos);
 	void setFaceNormalX(float dirX);
@@ -18,17 +37,16 @@ class LocalPlayer : public unity::object
 	const CCPoint& getFaceNormal() const;
 	CCArmature* getAnimView() const;
 	void changeAnimAction(const std::string& actionName);
+	void jump(float speed);
+	void setIsHeroDorping(bool b);
 };
 
-class Monster : public unity::object
+class Monster : public unity::object, public ICreature, public JumpDelegate
 {
 	Monster(b2World* pWorld);
 	virtual ~Monster();
 	virtual const CCPoint& getMovedBodyPos();
 	virtual void move(float dir, float speed);
-	void jump(float speed);
-	void setIsHeroDorping(bool b);
-	bool getIsHeroDorping();
 	b2ContactEdge* getHeroBodyContactList();
 	void onCreaturePosChanged(const CCPoint& pos);
 	void setFaceNormalX(float dirX);
@@ -39,17 +57,29 @@ class Monster : public unity::object
 	const CCPoint& getFaceNormal() const;
 	CCArmature* getAnimView() const;
 	void changeAnimAction(const std::string& actionName);
+	void jump(float speed);
+	void setIsHeroDorping(bool b);
 };
 
-class SkillObject : public unity::object
+class SkillObject : public ICreature, public unity::object
 {
 	SkillObject(b2World* pWorld);
 	virtual ~SkillObject();
 	static SkillObject* create(const CCPoint& faceNormal, const CCPoint& pos, float speed, const std::string& animName);
 	void destory();
+
 	virtual const CCPoint& getMovedBodyPos();
 	virtual void move(float dir, float speed);
+	b2ContactEdge* getHeroBodyContactList();
+	void onCreaturePosChanged(const CCPoint& pos);
+	void setFaceNormalX(float dirX);
+	void setFaceNormalY(float dirY);
+	void setFaceNormal(float dirX, float dirY);
+	float getFaceNormalX() const;
+	float getFaceNormalY() const;
+	const CCPoint& getFaceNormal() const;
 	CCArmature* getAnimView() const;
+	void changeAnimAction(const std::string& actionName);
 
 	virtual void StepBefore(engine::physics::ObjectSettings* settings);
 	virtual void StepAfter();

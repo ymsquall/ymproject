@@ -10,4 +10,6 @@ class LuaUserDataConversion
 	static SkillObject* toSkillObject(void* pointer);
 	static CreatureHeaderView* toCreatureHeaderView(void* pointer);
 	static CreatureHeaderModel* toCreatureHeaderModel(void* pointer);
+	static ICreature* toICreature(void* pointer);
+	static JumpDelegate* toJumpDelegate(void* pointer);
 };

@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaSOFExtern
-** Generated automatically by tolua++-1.0.92 on 01/15/14 16:29:59.
+** Generated automatically by tolua++-1.0.92 on 01/19/14 22:01:47.
 */
 
 /****************************************************************************
@@ -43,6 +43,7 @@ extern "C" {
 #include "View_GameScene.h"
 #include "LuaUserDataConversion.h"
 #include "Physics_GameScene.h"
+#include "ICreature.h"
 #include "LocalPlayer.h"
 #include "Monster.h"
 #include "SkillObject.h"
@@ -124,20 +125,22 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"CCPoint");
  tolua_usertype(tolua_S,"CreatureHeaderView");
  tolua_usertype(tolua_S,"mvvm::IModelManager");
+ tolua_usertype(tolua_S,"engine::physics::ObjectSettings");
  tolua_usertype(tolua_S,"framework::unity::SingletonAutoT<ViewModelManager>");
  tolua_usertype(tolua_S,"LuaUserDataConversion");
- tolua_usertype(tolua_S,"engine::physics::ObjectSettings");
  tolua_usertype(tolua_S,"SkillObject");
  tolua_usertype(tolua_S,"Monster");
- tolua_usertype(tolua_S,"CreatureHeaderModel");
  tolua_usertype(tolua_S,"b2ContactEdge");
+ tolua_usertype(tolua_S,"LocalPlayer");
+ tolua_usertype(tolua_S,"CreatureHeaderModel");
+ tolua_usertype(tolua_S,"ModelType");
  tolua_usertype(tolua_S,"CCNode");
  tolua_usertype(tolua_S,"engine::AppDelegate");
  tolua_usertype(tolua_S,"b2World");
  tolua_usertype(tolua_S,"framework::unity::blockwrite");
  tolua_usertype(tolua_S,"unity::RoutedEventArgs");
  tolua_usertype(tolua_S,"ViewModelManager");
- tolua_usertype(tolua_S,"LocalPlayer");
+ tolua_usertype(tolua_S,"ICreature");
  tolua_usertype(tolua_S,"TMXTiledMap");
  tolua_usertype(tolua_S,"Player");
  tolua_usertype(tolua_S,"GameScenePhysics");
@@ -147,7 +150,7 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"Object");
  tolua_usertype(tolua_S,"unity::SingletonAutoT<ViewModelManager>");
  tolua_usertype(tolua_S,"ModelImpl");
- tolua_usertype(tolua_S,"ModelType");
+ tolua_usertype(tolua_S,"JumpDelegate");
  tolua_usertype(tolua_S,"CCArmature");
  tolua_usertype(tolua_S,"unity::object");
 }
@@ -1356,6 +1359,66 @@ static int tolua_LuaSOFExtern_LuaUserDataConversion_toCreatureHeaderModel00(lua_
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: toICreature of class  LuaUserDataConversion */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_LuaUserDataConversion_toICreature00
+static int tolua_LuaSOFExtern_LuaUserDataConversion_toICreature00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"LuaUserDataConversion",0,&tolua_err) ||
+     !tolua_isuserdata(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  void* pointer = ((void*)  tolua_touserdata(tolua_S,2,0));
+  {
+   ICreature* tolua_ret = (ICreature*)  LuaUserDataConversion::toICreature(pointer);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"ICreature");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'toICreature'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: toJumpDelegate of class  LuaUserDataConversion */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_LuaUserDataConversion_toJumpDelegate00
+static int tolua_LuaSOFExtern_LuaUserDataConversion_toJumpDelegate00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"LuaUserDataConversion",0,&tolua_err) ||
+     !tolua_isuserdata(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  void* pointer = ((void*)  tolua_touserdata(tolua_S,2,0));
+  {
+   JumpDelegate* tolua_ret = (JumpDelegate*)  LuaUserDataConversion::toJumpDelegate(pointer);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"JumpDelegate");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'toJumpDelegate'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: new of class  GameScenePhysics */
 #ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_GameScenePhysics_new00
 static int tolua_LuaSOFExtern_GameScenePhysics_new00(lua_State* tolua_S)
@@ -1475,6 +1538,467 @@ static int tolua_LuaSOFExtern_GameScenePhysics_initBoxWithTiledMap00(lua_State* 
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'initBoxWithTiledMap'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getMovedBodyPos of class  ICreature */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_ICreature_getMovedBodyPos00
+static int tolua_LuaSOFExtern_ICreature_getMovedBodyPos00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"ICreature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  ICreature* self = (ICreature*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getMovedBodyPos'", NULL);
+#endif
+  {
+   const CCPoint& tolua_ret = (const CCPoint&)  self->getMovedBodyPos();
+    tolua_pushusertype(tolua_S,(void*)&tolua_ret,"const CCPoint");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getMovedBodyPos'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: move of class  ICreature */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_ICreature_move00
+static int tolua_LuaSOFExtern_ICreature_move00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"ICreature",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  ICreature* self = (ICreature*)  tolua_tousertype(tolua_S,1,0);
+  float dir = ((float)  tolua_tonumber(tolua_S,2,0));
+  float speed = ((float)  tolua_tonumber(tolua_S,3,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'move'", NULL);
+#endif
+  {
+   self->move(dir,speed);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'move'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getHeroBodyContactList of class  ICreature */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_ICreature_getHeroBodyContactList00
+static int tolua_LuaSOFExtern_ICreature_getHeroBodyContactList00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"ICreature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  ICreature* self = (ICreature*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getHeroBodyContactList'", NULL);
+#endif
+  {
+   b2ContactEdge* tolua_ret = (b2ContactEdge*)  self->getHeroBodyContactList();
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"b2ContactEdge");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getHeroBodyContactList'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: onCreaturePosChanged of class  ICreature */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_ICreature_onCreaturePosChanged00
+static int tolua_LuaSOFExtern_ICreature_onCreaturePosChanged00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"ICreature",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const CCPoint",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  ICreature* self = (ICreature*)  tolua_tousertype(tolua_S,1,0);
+  const CCPoint* pos = ((const CCPoint*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'onCreaturePosChanged'", NULL);
+#endif
+  {
+   self->onCreaturePosChanged(*pos);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'onCreaturePosChanged'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setFaceNormalX of class  ICreature */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_ICreature_setFaceNormalX00
+static int tolua_LuaSOFExtern_ICreature_setFaceNormalX00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"ICreature",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  ICreature* self = (ICreature*)  tolua_tousertype(tolua_S,1,0);
+  float dirX = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setFaceNormalX'", NULL);
+#endif
+  {
+   self->setFaceNormalX(dirX);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setFaceNormalX'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setFaceNormalY of class  ICreature */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_ICreature_setFaceNormalY00
+static int tolua_LuaSOFExtern_ICreature_setFaceNormalY00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"ICreature",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  ICreature* self = (ICreature*)  tolua_tousertype(tolua_S,1,0);
+  float dirY = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setFaceNormalY'", NULL);
+#endif
+  {
+   self->setFaceNormalY(dirY);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setFaceNormalY'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setFaceNormal of class  ICreature */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_ICreature_setFaceNormal00
+static int tolua_LuaSOFExtern_ICreature_setFaceNormal00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"ICreature",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  ICreature* self = (ICreature*)  tolua_tousertype(tolua_S,1,0);
+  float dirX = ((float)  tolua_tonumber(tolua_S,2,0));
+  float dirY = ((float)  tolua_tonumber(tolua_S,3,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setFaceNormal'", NULL);
+#endif
+  {
+   self->setFaceNormal(dirX,dirY);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setFaceNormal'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getFaceNormalX of class  ICreature */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_ICreature_getFaceNormalX00
+static int tolua_LuaSOFExtern_ICreature_getFaceNormalX00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const ICreature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const ICreature* self = (const ICreature*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getFaceNormalX'", NULL);
+#endif
+  {
+   float tolua_ret = (float)  self->getFaceNormalX();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getFaceNormalX'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getFaceNormalY of class  ICreature */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_ICreature_getFaceNormalY00
+static int tolua_LuaSOFExtern_ICreature_getFaceNormalY00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const ICreature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const ICreature* self = (const ICreature*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getFaceNormalY'", NULL);
+#endif
+  {
+   float tolua_ret = (float)  self->getFaceNormalY();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getFaceNormalY'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getFaceNormal of class  ICreature */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_ICreature_getFaceNormal00
+static int tolua_LuaSOFExtern_ICreature_getFaceNormal00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const ICreature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const ICreature* self = (const ICreature*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getFaceNormal'", NULL);
+#endif
+  {
+   const CCPoint& tolua_ret = (const CCPoint&)  self->getFaceNormal();
+    tolua_pushusertype(tolua_S,(void*)&tolua_ret,"const CCPoint");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getFaceNormal'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getAnimView of class  ICreature */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_ICreature_getAnimView00
+static int tolua_LuaSOFExtern_ICreature_getAnimView00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const ICreature",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const ICreature* self = (const ICreature*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getAnimView'", NULL);
+#endif
+  {
+   CCArmature* tolua_ret = (CCArmature*)  self->getAnimView();
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCArmature");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getAnimView'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: changeAnimAction of class  ICreature */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_ICreature_changeAnimAction00
+static int tolua_LuaSOFExtern_ICreature_changeAnimAction00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"ICreature",0,&tolua_err) ||
+     !tolua_iscppstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  ICreature* self = (ICreature*)  tolua_tousertype(tolua_S,1,0);
+  const std::string actionName = ((const std::string)  tolua_tocppstring(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'changeAnimAction'", NULL);
+#endif
+  {
+   self->changeAnimAction(actionName);
+   tolua_pushcppstring(tolua_S,(const char*)actionName);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'changeAnimAction'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: jump of class  JumpDelegate */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_JumpDelegate_jump00
+static int tolua_LuaSOFExtern_JumpDelegate_jump00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"JumpDelegate",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  JumpDelegate* self = (JumpDelegate*)  tolua_tousertype(tolua_S,1,0);
+  float speed = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'jump'", NULL);
+#endif
+  {
+   self->jump(speed);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'jump'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setIsHeroDorping of class  JumpDelegate */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_JumpDelegate_setIsHeroDorping00
+static int tolua_LuaSOFExtern_JumpDelegate_setIsHeroDorping00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"JumpDelegate",0,&tolua_err) ||
+     !tolua_isboolean(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  JumpDelegate* self = (JumpDelegate*)  tolua_tousertype(tolua_S,1,0);
+  bool b = ((bool)  tolua_toboolean(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setIsHeroDorping'", NULL);
+#endif
+  {
+   self->setIsHeroDorping(b);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setIsHeroDorping'.",&tolua_err);
  return 0;
 #endif
 }
@@ -1666,104 +2190,6 @@ static int tolua_LuaSOFExtern_LocalPlayer_move00(lua_State* tolua_S)
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'move'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: jump of class  LocalPlayer */
-#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_LocalPlayer_jump00
-static int tolua_LuaSOFExtern_LocalPlayer_jump00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"LocalPlayer",0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,3,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  LocalPlayer* self = (LocalPlayer*)  tolua_tousertype(tolua_S,1,0);
-  float speed = ((float)  tolua_tonumber(tolua_S,2,0));
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'jump'", NULL);
-#endif
-  {
-   self->jump(speed);
-  }
- }
- return 0;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'jump'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: setIsHeroDorping of class  LocalPlayer */
-#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_LocalPlayer_setIsHeroDorping00
-static int tolua_LuaSOFExtern_LocalPlayer_setIsHeroDorping00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"LocalPlayer",0,&tolua_err) ||
-     !tolua_isboolean(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,3,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  LocalPlayer* self = (LocalPlayer*)  tolua_tousertype(tolua_S,1,0);
-  bool b = ((bool)  tolua_toboolean(tolua_S,2,0));
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setIsHeroDorping'", NULL);
-#endif
-  {
-   self->setIsHeroDorping(b);
-  }
- }
- return 0;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'setIsHeroDorping'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: getIsHeroDorping of class  LocalPlayer */
-#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_LocalPlayer_getIsHeroDorping00
-static int tolua_LuaSOFExtern_LocalPlayer_getIsHeroDorping00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"LocalPlayer",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  LocalPlayer* self = (LocalPlayer*)  tolua_tousertype(tolua_S,1,0);
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getIsHeroDorping'", NULL);
-#endif
-  {
-   bool tolua_ret = (bool)  self->getIsHeroDorping();
-   tolua_pushboolean(tolua_S,(bool)tolua_ret);
-  }
- }
- return 1;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'getIsHeroDorping'.",&tolua_err);
  return 0;
 #endif
 }
@@ -2097,6 +2523,106 @@ static int tolua_LuaSOFExtern_LocalPlayer_changeAnimAction00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: jump of class  LocalPlayer */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_LocalPlayer_jump00
+static int tolua_LuaSOFExtern_LocalPlayer_jump00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"LocalPlayer",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  LocalPlayer* self = (LocalPlayer*)  tolua_tousertype(tolua_S,1,0);
+  float speed = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'jump'", NULL);
+#endif
+  {
+   self->jump(speed);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'jump'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setIsHeroDorping of class  LocalPlayer */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_LocalPlayer_setIsHeroDorping00
+static int tolua_LuaSOFExtern_LocalPlayer_setIsHeroDorping00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"LocalPlayer",0,&tolua_err) ||
+     !tolua_isboolean(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  LocalPlayer* self = (LocalPlayer*)  tolua_tousertype(tolua_S,1,0);
+  bool b = ((bool)  tolua_toboolean(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setIsHeroDorping'", NULL);
+#endif
+  {
+   self->setIsHeroDorping(b);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setIsHeroDorping'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* get function: __ICreature__ of class  LocalPlayer */
+#ifndef TOLUA_DISABLE_tolua_get_LocalPlayer___ICreature__
+static int tolua_get_LocalPlayer___ICreature__(lua_State* tolua_S)
+{
+  LocalPlayer* self = (LocalPlayer*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in accessing variable '__ICreature__'",NULL);
+#endif
+#ifdef __cplusplus
+   tolua_pushusertype(tolua_S,(void*)static_cast<ICreature*>(self), "ICreature");
+#else
+   tolua_pushusertype(tolua_S,(void*)((ICreature*)self), "ICreature");
+#endif
+ return 1;
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* get function: __JumpDelegate__ of class  LocalPlayer */
+#ifndef TOLUA_DISABLE_tolua_get_LocalPlayer___JumpDelegate__
+static int tolua_get_LocalPlayer___JumpDelegate__(lua_State* tolua_S)
+{
+  LocalPlayer* self = (LocalPlayer*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in accessing variable '__JumpDelegate__'",NULL);
+#endif
+#ifdef __cplusplus
+   tolua_pushusertype(tolua_S,(void*)static_cast<JumpDelegate*>(self), "JumpDelegate");
+#else
+   tolua_pushusertype(tolua_S,(void*)((JumpDelegate*)self), "JumpDelegate");
+#endif
+ return 1;
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: new of class  Monster */
 #ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_Monster_new00
 static int tolua_LuaSOFExtern_Monster_new00(lua_State* tolua_S)
@@ -2253,104 +2779,6 @@ static int tolua_LuaSOFExtern_Monster_move00(lua_State* tolua_S)
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'move'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: jump of class  Monster */
-#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_Monster_jump00
-static int tolua_LuaSOFExtern_Monster_jump00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"Monster",0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,3,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  Monster* self = (Monster*)  tolua_tousertype(tolua_S,1,0);
-  float speed = ((float)  tolua_tonumber(tolua_S,2,0));
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'jump'", NULL);
-#endif
-  {
-   self->jump(speed);
-  }
- }
- return 0;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'jump'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: setIsHeroDorping of class  Monster */
-#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_Monster_setIsHeroDorping00
-static int tolua_LuaSOFExtern_Monster_setIsHeroDorping00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"Monster",0,&tolua_err) ||
-     !tolua_isboolean(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,3,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  Monster* self = (Monster*)  tolua_tousertype(tolua_S,1,0);
-  bool b = ((bool)  tolua_toboolean(tolua_S,2,0));
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setIsHeroDorping'", NULL);
-#endif
-  {
-   self->setIsHeroDorping(b);
-  }
- }
- return 0;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'setIsHeroDorping'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: getIsHeroDorping of class  Monster */
-#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_Monster_getIsHeroDorping00
-static int tolua_LuaSOFExtern_Monster_getIsHeroDorping00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"Monster",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  Monster* self = (Monster*)  tolua_tousertype(tolua_S,1,0);
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getIsHeroDorping'", NULL);
-#endif
-  {
-   bool tolua_ret = (bool)  self->getIsHeroDorping();
-   tolua_pushboolean(tolua_S,(bool)tolua_ret);
-  }
- }
- return 1;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'getIsHeroDorping'.",&tolua_err);
  return 0;
 #endif
 }
@@ -2684,6 +3112,106 @@ static int tolua_LuaSOFExtern_Monster_changeAnimAction00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: jump of class  Monster */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_Monster_jump00
+static int tolua_LuaSOFExtern_Monster_jump00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Monster",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Monster* self = (Monster*)  tolua_tousertype(tolua_S,1,0);
+  float speed = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'jump'", NULL);
+#endif
+  {
+   self->jump(speed);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'jump'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setIsHeroDorping of class  Monster */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_Monster_setIsHeroDorping00
+static int tolua_LuaSOFExtern_Monster_setIsHeroDorping00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Monster",0,&tolua_err) ||
+     !tolua_isboolean(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  Monster* self = (Monster*)  tolua_tousertype(tolua_S,1,0);
+  bool b = ((bool)  tolua_toboolean(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setIsHeroDorping'", NULL);
+#endif
+  {
+   self->setIsHeroDorping(b);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setIsHeroDorping'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* get function: __ICreature__ of class  Monster */
+#ifndef TOLUA_DISABLE_tolua_get_Monster___ICreature__
+static int tolua_get_Monster___ICreature__(lua_State* tolua_S)
+{
+  Monster* self = (Monster*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in accessing variable '__ICreature__'",NULL);
+#endif
+#ifdef __cplusplus
+   tolua_pushusertype(tolua_S,(void*)static_cast<ICreature*>(self), "ICreature");
+#else
+   tolua_pushusertype(tolua_S,(void*)((ICreature*)self), "ICreature");
+#endif
+ return 1;
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* get function: __JumpDelegate__ of class  Monster */
+#ifndef TOLUA_DISABLE_tolua_get_Monster___JumpDelegate__
+static int tolua_get_Monster___JumpDelegate__(lua_State* tolua_S)
+{
+  Monster* self = (Monster*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in accessing variable '__JumpDelegate__'",NULL);
+#endif
+#ifdef __cplusplus
+   tolua_pushusertype(tolua_S,(void*)static_cast<JumpDelegate*>(self), "JumpDelegate");
+#else
+   tolua_pushusertype(tolua_S,(void*)((JumpDelegate*)self), "JumpDelegate");
+#endif
+ return 1;
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: new of class  SkillObject */
 #ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_SkillObject_new00
 static int tolua_LuaSOFExtern_SkillObject_new00(lua_State* tolua_S)
@@ -2915,6 +3443,268 @@ static int tolua_LuaSOFExtern_SkillObject_move00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: getHeroBodyContactList of class  SkillObject */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_SkillObject_getHeroBodyContactList00
+static int tolua_LuaSOFExtern_SkillObject_getHeroBodyContactList00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"SkillObject",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  SkillObject* self = (SkillObject*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getHeroBodyContactList'", NULL);
+#endif
+  {
+   b2ContactEdge* tolua_ret = (b2ContactEdge*)  self->getHeroBodyContactList();
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"b2ContactEdge");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getHeroBodyContactList'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: onCreaturePosChanged of class  SkillObject */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_SkillObject_onCreaturePosChanged00
+static int tolua_LuaSOFExtern_SkillObject_onCreaturePosChanged00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"SkillObject",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const CCPoint",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  SkillObject* self = (SkillObject*)  tolua_tousertype(tolua_S,1,0);
+  const CCPoint* pos = ((const CCPoint*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'onCreaturePosChanged'", NULL);
+#endif
+  {
+   self->onCreaturePosChanged(*pos);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'onCreaturePosChanged'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setFaceNormalX of class  SkillObject */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_SkillObject_setFaceNormalX00
+static int tolua_LuaSOFExtern_SkillObject_setFaceNormalX00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"SkillObject",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  SkillObject* self = (SkillObject*)  tolua_tousertype(tolua_S,1,0);
+  float dirX = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setFaceNormalX'", NULL);
+#endif
+  {
+   self->setFaceNormalX(dirX);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setFaceNormalX'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setFaceNormalY of class  SkillObject */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_SkillObject_setFaceNormalY00
+static int tolua_LuaSOFExtern_SkillObject_setFaceNormalY00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"SkillObject",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  SkillObject* self = (SkillObject*)  tolua_tousertype(tolua_S,1,0);
+  float dirY = ((float)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setFaceNormalY'", NULL);
+#endif
+  {
+   self->setFaceNormalY(dirY);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setFaceNormalY'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setFaceNormal of class  SkillObject */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_SkillObject_setFaceNormal00
+static int tolua_LuaSOFExtern_SkillObject_setFaceNormal00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"SkillObject",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  SkillObject* self = (SkillObject*)  tolua_tousertype(tolua_S,1,0);
+  float dirX = ((float)  tolua_tonumber(tolua_S,2,0));
+  float dirY = ((float)  tolua_tonumber(tolua_S,3,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setFaceNormal'", NULL);
+#endif
+  {
+   self->setFaceNormal(dirX,dirY);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setFaceNormal'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getFaceNormalX of class  SkillObject */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_SkillObject_getFaceNormalX00
+static int tolua_LuaSOFExtern_SkillObject_getFaceNormalX00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const SkillObject",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const SkillObject* self = (const SkillObject*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getFaceNormalX'", NULL);
+#endif
+  {
+   float tolua_ret = (float)  self->getFaceNormalX();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getFaceNormalX'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getFaceNormalY of class  SkillObject */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_SkillObject_getFaceNormalY00
+static int tolua_LuaSOFExtern_SkillObject_getFaceNormalY00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const SkillObject",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const SkillObject* self = (const SkillObject*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getFaceNormalY'", NULL);
+#endif
+  {
+   float tolua_ret = (float)  self->getFaceNormalY();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getFaceNormalY'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getFaceNormal of class  SkillObject */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_SkillObject_getFaceNormal00
+static int tolua_LuaSOFExtern_SkillObject_getFaceNormal00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const SkillObject",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const SkillObject* self = (const SkillObject*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getFaceNormal'", NULL);
+#endif
+  {
+   const CCPoint& tolua_ret = (const CCPoint&)  self->getFaceNormal();
+    tolua_pushusertype(tolua_S,(void*)&tolua_ret,"const CCPoint");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'getFaceNormal'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: getAnimView of class  SkillObject */
 #ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_SkillObject_getAnimView00
 static int tolua_LuaSOFExtern_SkillObject_getAnimView00(lua_State* tolua_S)
@@ -2942,6 +3732,40 @@ static int tolua_LuaSOFExtern_SkillObject_getAnimView00(lua_State* tolua_S)
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'getAnimView'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: changeAnimAction of class  SkillObject */
+#ifndef TOLUA_DISABLE_tolua_LuaSOFExtern_SkillObject_changeAnimAction00
+static int tolua_LuaSOFExtern_SkillObject_changeAnimAction00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"SkillObject",0,&tolua_err) ||
+     !tolua_iscppstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  SkillObject* self = (SkillObject*)  tolua_tousertype(tolua_S,1,0);
+  const std::string actionName = ((const std::string)  tolua_tocppstring(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'changeAnimAction'", NULL);
+#endif
+  {
+   self->changeAnimAction(actionName);
+   tolua_pushcppstring(tolua_S,(const char*)actionName);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'changeAnimAction'.",&tolua_err);
  return 0;
 #endif
 }
@@ -3043,6 +3867,23 @@ static int tolua_LuaSOFExtern_SkillObject_isHitTarget00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* get function: __unity of class  SkillObject */
+#ifndef TOLUA_DISABLE_tolua_get_SkillObject___unity__object__
+static int tolua_get_SkillObject___unity__object__(lua_State* tolua_S)
+{
+  SkillObject* self = (SkillObject*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in accessing variable '__unity'",NULL);
+#endif
+#ifdef __cplusplus
+   tolua_pushusertype(tolua_S,(void*)static_cast<unity::object*>(self), "unity::object");
+#else
+   tolua_pushusertype(tolua_S,(void*)((unity::object*)self), "unity::object");
+#endif
+ return 1;
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* Open function */
 TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
 {
@@ -3128,6 +3969,8 @@ TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"toSkillObject",tolua_LuaSOFExtern_LuaUserDataConversion_toSkillObject00);
    tolua_function(tolua_S,"toCreatureHeaderView",tolua_LuaSOFExtern_LuaUserDataConversion_toCreatureHeaderView00);
    tolua_function(tolua_S,"toCreatureHeaderModel",tolua_LuaSOFExtern_LuaUserDataConversion_toCreatureHeaderModel00);
+   tolua_function(tolua_S,"toICreature",tolua_LuaSOFExtern_LuaUserDataConversion_toICreature00);
+   tolua_function(tolua_S,"toJumpDelegate",tolua_LuaSOFExtern_LuaUserDataConversion_toJumpDelegate00);
   tolua_endmodule(tolua_S);
   #ifdef __cplusplus
   tolua_cclass(tolua_S,"GameScenePhysics","GameScenePhysics","Object",tolua_collect_GameScenePhysics);
@@ -3140,6 +3983,26 @@ TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,".call",tolua_LuaSOFExtern_GameScenePhysics_new00_local);
    tolua_function(tolua_S,"delete",tolua_LuaSOFExtern_GameScenePhysics_delete00);
    tolua_function(tolua_S,"initBoxWithTiledMap",tolua_LuaSOFExtern_GameScenePhysics_initBoxWithTiledMap00);
+  tolua_endmodule(tolua_S);
+  tolua_cclass(tolua_S,"ICreature","ICreature","",NULL);
+  tolua_beginmodule(tolua_S,"ICreature");
+   tolua_function(tolua_S,"getMovedBodyPos",tolua_LuaSOFExtern_ICreature_getMovedBodyPos00);
+   tolua_function(tolua_S,"move",tolua_LuaSOFExtern_ICreature_move00);
+   tolua_function(tolua_S,"getHeroBodyContactList",tolua_LuaSOFExtern_ICreature_getHeroBodyContactList00);
+   tolua_function(tolua_S,"onCreaturePosChanged",tolua_LuaSOFExtern_ICreature_onCreaturePosChanged00);
+   tolua_function(tolua_S,"setFaceNormalX",tolua_LuaSOFExtern_ICreature_setFaceNormalX00);
+   tolua_function(tolua_S,"setFaceNormalY",tolua_LuaSOFExtern_ICreature_setFaceNormalY00);
+   tolua_function(tolua_S,"setFaceNormal",tolua_LuaSOFExtern_ICreature_setFaceNormal00);
+   tolua_function(tolua_S,"getFaceNormalX",tolua_LuaSOFExtern_ICreature_getFaceNormalX00);
+   tolua_function(tolua_S,"getFaceNormalY",tolua_LuaSOFExtern_ICreature_getFaceNormalY00);
+   tolua_function(tolua_S,"getFaceNormal",tolua_LuaSOFExtern_ICreature_getFaceNormal00);
+   tolua_function(tolua_S,"getAnimView",tolua_LuaSOFExtern_ICreature_getAnimView00);
+   tolua_function(tolua_S,"changeAnimAction",tolua_LuaSOFExtern_ICreature_changeAnimAction00);
+  tolua_endmodule(tolua_S);
+  tolua_cclass(tolua_S,"JumpDelegate","JumpDelegate","",NULL);
+  tolua_beginmodule(tolua_S,"JumpDelegate");
+   tolua_function(tolua_S,"jump",tolua_LuaSOFExtern_JumpDelegate_jump00);
+   tolua_function(tolua_S,"setIsHeroDorping",tolua_LuaSOFExtern_JumpDelegate_setIsHeroDorping00);
   tolua_endmodule(tolua_S);
   #ifdef __cplusplus
   tolua_cclass(tolua_S,"LocalPlayer","LocalPlayer","unity::object",tolua_collect_LocalPlayer);
@@ -3154,9 +4017,6 @@ TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"instance",tolua_LuaSOFExtern_LocalPlayer_instance00);
    tolua_function(tolua_S,"getMovedBodyPos",tolua_LuaSOFExtern_LocalPlayer_getMovedBodyPos00);
    tolua_function(tolua_S,"move",tolua_LuaSOFExtern_LocalPlayer_move00);
-   tolua_function(tolua_S,"jump",tolua_LuaSOFExtern_LocalPlayer_jump00);
-   tolua_function(tolua_S,"setIsHeroDorping",tolua_LuaSOFExtern_LocalPlayer_setIsHeroDorping00);
-   tolua_function(tolua_S,"getIsHeroDorping",tolua_LuaSOFExtern_LocalPlayer_getIsHeroDorping00);
    tolua_function(tolua_S,"getHeroBodyContactList",tolua_LuaSOFExtern_LocalPlayer_getHeroBodyContactList00);
    tolua_function(tolua_S,"onCreaturePosChanged",tolua_LuaSOFExtern_LocalPlayer_onCreaturePosChanged00);
    tolua_function(tolua_S,"setFaceNormalX",tolua_LuaSOFExtern_LocalPlayer_setFaceNormalX00);
@@ -3167,6 +4027,10 @@ TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"getFaceNormal",tolua_LuaSOFExtern_LocalPlayer_getFaceNormal00);
    tolua_function(tolua_S,"getAnimView",tolua_LuaSOFExtern_LocalPlayer_getAnimView00);
    tolua_function(tolua_S,"changeAnimAction",tolua_LuaSOFExtern_LocalPlayer_changeAnimAction00);
+   tolua_function(tolua_S,"jump",tolua_LuaSOFExtern_LocalPlayer_jump00);
+   tolua_function(tolua_S,"setIsHeroDorping",tolua_LuaSOFExtern_LocalPlayer_setIsHeroDorping00);
+   tolua_variable(tolua_S,"__ICreature__",tolua_get_LocalPlayer___ICreature__,NULL);
+   tolua_variable(tolua_S,"__JumpDelegate__",tolua_get_LocalPlayer___JumpDelegate__,NULL);
   tolua_endmodule(tolua_S);
   #ifdef __cplusplus
   tolua_cclass(tolua_S,"Monster","Monster","unity::object",tolua_collect_Monster);
@@ -3180,9 +4044,6 @@ TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"delete",tolua_LuaSOFExtern_Monster_delete00);
    tolua_function(tolua_S,"getMovedBodyPos",tolua_LuaSOFExtern_Monster_getMovedBodyPos00);
    tolua_function(tolua_S,"move",tolua_LuaSOFExtern_Monster_move00);
-   tolua_function(tolua_S,"jump",tolua_LuaSOFExtern_Monster_jump00);
-   tolua_function(tolua_S,"setIsHeroDorping",tolua_LuaSOFExtern_Monster_setIsHeroDorping00);
-   tolua_function(tolua_S,"getIsHeroDorping",tolua_LuaSOFExtern_Monster_getIsHeroDorping00);
    tolua_function(tolua_S,"getHeroBodyContactList",tolua_LuaSOFExtern_Monster_getHeroBodyContactList00);
    tolua_function(tolua_S,"onCreaturePosChanged",tolua_LuaSOFExtern_Monster_onCreaturePosChanged00);
    tolua_function(tolua_S,"setFaceNormalX",tolua_LuaSOFExtern_Monster_setFaceNormalX00);
@@ -3193,11 +4054,15 @@ TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"getFaceNormal",tolua_LuaSOFExtern_Monster_getFaceNormal00);
    tolua_function(tolua_S,"getAnimView",tolua_LuaSOFExtern_Monster_getAnimView00);
    tolua_function(tolua_S,"changeAnimAction",tolua_LuaSOFExtern_Monster_changeAnimAction00);
+   tolua_function(tolua_S,"jump",tolua_LuaSOFExtern_Monster_jump00);
+   tolua_function(tolua_S,"setIsHeroDorping",tolua_LuaSOFExtern_Monster_setIsHeroDorping00);
+   tolua_variable(tolua_S,"__ICreature__",tolua_get_Monster___ICreature__,NULL);
+   tolua_variable(tolua_S,"__JumpDelegate__",tolua_get_Monster___JumpDelegate__,NULL);
   tolua_endmodule(tolua_S);
   #ifdef __cplusplus
-  tolua_cclass(tolua_S,"SkillObject","SkillObject","unity::object",tolua_collect_SkillObject);
+  tolua_cclass(tolua_S,"SkillObject","SkillObject","ICreature",tolua_collect_SkillObject);
   #else
-  tolua_cclass(tolua_S,"SkillObject","SkillObject","unity::object",NULL);
+  tolua_cclass(tolua_S,"SkillObject","SkillObject","ICreature",NULL);
   #endif
   tolua_beginmodule(tolua_S,"SkillObject");
    tolua_function(tolua_S,"new",tolua_LuaSOFExtern_SkillObject_new00);
@@ -3208,10 +4073,20 @@ TOLUA_API int tolua_LuaSOFExtern_open (lua_State* tolua_S)
    tolua_function(tolua_S,"destory",tolua_LuaSOFExtern_SkillObject_destory00);
    tolua_function(tolua_S,"getMovedBodyPos",tolua_LuaSOFExtern_SkillObject_getMovedBodyPos00);
    tolua_function(tolua_S,"move",tolua_LuaSOFExtern_SkillObject_move00);
+   tolua_function(tolua_S,"getHeroBodyContactList",tolua_LuaSOFExtern_SkillObject_getHeroBodyContactList00);
+   tolua_function(tolua_S,"onCreaturePosChanged",tolua_LuaSOFExtern_SkillObject_onCreaturePosChanged00);
+   tolua_function(tolua_S,"setFaceNormalX",tolua_LuaSOFExtern_SkillObject_setFaceNormalX00);
+   tolua_function(tolua_S,"setFaceNormalY",tolua_LuaSOFExtern_SkillObject_setFaceNormalY00);
+   tolua_function(tolua_S,"setFaceNormal",tolua_LuaSOFExtern_SkillObject_setFaceNormal00);
+   tolua_function(tolua_S,"getFaceNormalX",tolua_LuaSOFExtern_SkillObject_getFaceNormalX00);
+   tolua_function(tolua_S,"getFaceNormalY",tolua_LuaSOFExtern_SkillObject_getFaceNormalY00);
+   tolua_function(tolua_S,"getFaceNormal",tolua_LuaSOFExtern_SkillObject_getFaceNormal00);
    tolua_function(tolua_S,"getAnimView",tolua_LuaSOFExtern_SkillObject_getAnimView00);
+   tolua_function(tolua_S,"changeAnimAction",tolua_LuaSOFExtern_SkillObject_changeAnimAction00);
    tolua_function(tolua_S,"StepBefore",tolua_LuaSOFExtern_SkillObject_StepBefore00);
    tolua_function(tolua_S,"StepAfter",tolua_LuaSOFExtern_SkillObject_StepAfter00);
    tolua_function(tolua_S,"isHitTarget",tolua_LuaSOFExtern_SkillObject_isHitTarget00);
+   tolua_variable(tolua_S,"__unity__object__",tolua_get_SkillObject___unity__object__,NULL);
   tolua_endmodule(tolua_S);
  tolua_endmodule(tolua_S);
  return 1;

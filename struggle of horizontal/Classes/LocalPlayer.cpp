@@ -52,8 +52,8 @@ bool LocalPlayer::init()
 		fd.shape = &shape;
 		fd.density = 10.0f;
 		fd.friction = 1.0f;
-		fd.filter.categoryBits = ICreatue::MoveBodyContactMask;
-		fd.filter.maskBits = ICreatue::LandContactMask | ICreatue::WallContactMask;
+		fd.filter.categoryBits = ICreature::MoveBodyContactMask;
+		fd.filter.maskBits = ICreature::LandContactMask | ICreature::WallContactMask;
 		shape.SetAsBox(0.3f, 0.1f, b2Vec2(0, 0), 0.0);
 		mMoveBody->CreateFixture(&fd);
 		mMoveBody->SetFixedRotation(true); // 设置为固定角度（不旋转）
@@ -144,7 +144,7 @@ void LocalPlayer::setAnimView(cocostudio::Armature* anim)
 	mAnimView->getAnimation()->setFrameEventCallFunc(this, frameEvent_selector(LocalPlayer::onFrameEvent));
 	mAnimView->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(LocalPlayer::animationEvent));
 }
-void LocalPlayer::beAttacked(ICreatue* who, const Point& hitPos, bool clobber)
+void LocalPlayer::beAttacked(ICreature* who, const Point& hitPos, bool clobber)
 {
 	mBeAttacking = true;
 	if(NULL != mModel)
@@ -218,6 +218,7 @@ void LocalPlayer::animationEvent(cocostudio::Armature *armature, cocostudio::Mov
 	static const std::string run1 = "run01";
 	static const std::string jumping1 = "jumping01";
 	static const std::string jumpup1 = "jumpup01";
+	static const std::string droping1 = "droping01";
 	static const std::string landdown1 = "landdown01";
 	static const std::string attack1 = "attack01";
 	static const std::string attack2 = "attack02";
@@ -239,6 +240,15 @@ void LocalPlayer::animationEvent(cocostudio::Armature *armature, cocostudio::Mov
 			}
 			callLuaFuncNoResult("LUAGameSceneView_LocalPlayerAttackAnimEnded");
 			mAttacking = false;
+		}
+		else if(movementID == jumpup1)
+		{
+			this->changeJumpState(JumpState::jumping);
+		}
+		else if(movementID == landdown1)
+		{
+			ICreature* pCreature = LocalPlayer::instance();
+			callLuaFuncNoResult("LUACreatureDropInLandActionEnded", pCreature);
 		}
 		else if(beattack1 == movementID || clobber1 == movementID)
 		{
@@ -282,15 +292,16 @@ int LocalPlayer::PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifo
 			}
 			if(isLand)
 			{
-				if(mIsJumping)
+				if(mJumpState != JumpState::none)
 				{
 					b2Vec2 vel = mMoveBody->GetLinearVelocity();
 					if(vel.y > 0)
 						contact->SetEnabled(false);
 					else
 					{
-						mIsJumping = false;
 						mMoveBody->SetFixedRotation(false); // 行走时设为旋转，否则根据body的形状会有不同频率的抖动
+						this->changeJumpState(JumpState::landdown);
+						this->changeJumpState(JumpState::none);
 					}
 				}
 			}
@@ -313,7 +324,7 @@ void LocalPlayer::StepBefore(physics::ObjectSettings* settings)
 	if(this->isDeathing())
 		return;
 	static CreaturePhysicsSteeings playerSettings;	
-	playerSettings.mIsHeroDorping = mIsHeroDorping;
+	playerSettings.mIsHeroDorping = mJumpState != JumpState::none;
 	playerSettings.mIsOriJump = mIsOriJump;
 	playerSettings.mUsingVerticeCount = 8;
 	for(int i = 0; i < 8; ++ i)
@@ -422,7 +433,7 @@ void LocalPlayer::StepBefore(physics::ObjectSettings* settings)
 			mWeaponBody->CreateFixture(&fd2);
 		}
 	}
-	if(mIsJumping)
+	if(mJumpState != JumpState::none)
 	{
 		mMoveBody->SetFixedRotation(true); // 起跳后设置为固定角度（不旋转），否则会产生多余的位移
 		if(!mWorld->IsLocked())
@@ -433,8 +444,8 @@ void LocalPlayer::StepBefore(physics::ObjectSettings* settings)
 	}
 	if(NULL != mWeaponBody)
 		mWeaponBody->SetLinearVelocity(b2Vec2(0,1));
-	ICreatue::updateBody(&playerSettings);
-	
+	ICreature::updateBody(&playerSettings);
+	JumpDelegate::updateJumpState();
 }
 void LocalPlayer::StepAfter()
 {
@@ -449,7 +460,7 @@ void LocalPlayer::StepAfter()
 			if(this != pObject)
 			{
 				Monster* pBeAttackedMonst = dynamic_cast<Monster*>(pObject);
-				if(NULL != pBeAttackedMonst && !pBeAttackedMonst->isBeAttacking() && !pBeAttackedMonst->isDeathing())
+				if(NULL != pBeAttackedMonst && !pBeAttackedMonst->isBeAttacking() && !pBeAttackedMonst->isClobber() && !pBeAttackedMonst->isDeathing())
 				{
 					Point hitPos(0,0);
 					b2Shape* pShapeA = pContact->contact->GetFixtureA()->GetShape();

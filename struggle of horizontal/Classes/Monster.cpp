@@ -227,15 +227,16 @@ int Monster::PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, 
 			}
 			if(isLand)
 			{
-				if(mIsJumping)
+				if(mJumpState != JumpState::none)
 				{
 					b2Vec2 vel = mMoveBody->GetLinearVelocity();
 					if(vel.y > 0)
 						contact->SetEnabled(false);
 					else
 					{
-						mIsJumping = false;
 						mMoveBody->SetFixedRotation(false); // 行走时设为旋转，否则根据body的形状会有不同频率的抖动
+						this->changeJumpState(JumpState::landdown);
+						this->changeJumpState(JumpState::none);
 					}
 				}
 			}
@@ -255,7 +256,7 @@ int Monster::PhysicsPreSolve(b2Contact* contact, const b2Manifold* oldManifold, 
 }
 
 #include "uiview/Panel/StackPanel.h"
-void Monster::beAttacked(ICreatue* who, const Point& hitPos, bool clobber)
+void Monster::beAttacked(ICreature* who, const Point& hitPos, bool clobber)
 {
 	static const std::string assault1 = "assault01";
 	static const std::string cutmoon_helf1 = "cutmoon.helf01";
@@ -371,7 +372,7 @@ void Monster::StepBefore(physics::ObjectSettings* settings)
 			mAICanActiveAttacked = 3;
 	}
 	static CreaturePhysicsSteeings creatureSettings;
-	creatureSettings.mIsHeroDorping = mIsHeroDorping;
+	creatureSettings.mIsHeroDorping = mJumpState != JumpState::none;
 	creatureSettings.mIsOriJump = mIsOriJump;
 	creatureSettings.mUsingVerticeCount = 8;
 	for(int i = 0; i < 8; ++ i)
@@ -479,7 +480,7 @@ void Monster::StepBefore(physics::ObjectSettings* settings)
 	}
 	if(NULL != mWeaponBody)
 		mWeaponBody->SetLinearVelocity(b2Vec2(0,1));
-	ICreatue::updateBody(&creatureSettings);
+	ICreature::updateBody(&creatureSettings);
 }
 void Monster::StepAfter()
 {
@@ -501,7 +502,7 @@ void Monster::StepAfter()
 				else
 				{
 					LocalPlayer* pBeAttackPlayer = dynamic_cast<LocalPlayer*>(pObject);
-					if(NULL != pBeAttackPlayer && !pBeAttackPlayer->isBeAttacking() && !pBeAttackPlayer->isDeathing())
+					if(NULL != pBeAttackPlayer && !pBeAttackPlayer->isBeAttacking()  && !pBeAttackPlayer->isClobber() && !pBeAttackPlayer->isDeathing())
 					{
 						Point hitPos(0,0);
 						b2Shape* pShapeA = pContact->contact->GetFixtureA()->GetShape();

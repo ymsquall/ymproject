@@ -35,7 +35,10 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 	_LUAGameSceneView.mBeAttacking = false
     _LUAGameSceneView.mJumpBtn:addTouchEventListener(function(sender, eventType)
 			if eventType == 0 then
-				LocalPlayer:instance():jump(25.0)
+				local localUser = LocalPlayer:instance()
+				if LUACreatureCanBeJump(localUser) then
+					localUser:jump(25.0)
+				end
 			end
 		end)
     _LUAGameSceneView.mAttackBtn:addTouchEventListener(function(sender, eventType)
@@ -152,10 +155,12 @@ function LUAGameSceneViewOnTick(dt)
 	localUser:onCreaturePosChanged(heroPos)
 	if nil == localUser:getHeroBodyContactList() and LUACreatureCanBePlayJumpAction(localUser) then
 		_LUAGameSceneView.mHeroHitWall = false
-		localUser:setIsHeroDorping(true)
-		localUser:changeAnimAction('jumping01')
+		if LUACreatureCanBeMoveOrStand(localUser) then
+			localUser:setIsHeroDorping(true)
+			localUser:changeAnimAction('droping01')
+		end
 	else
-		if localUser:getIsHeroDorping() and LUACreatureCanBeDropInLand(localUser) then
+		if LUACreatureCanBeMoveOrStand(localUser) then
 			local animName = 'stand01'
 			if math.abs(_LUAGameSceneView.mMoveDirection) > 0.001 then
 				animName = 'run01'

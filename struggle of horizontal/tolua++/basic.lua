@@ -114,6 +114,7 @@ extern "C" {
 #include "View_GameScene.h"
 #include "LuaUserDataConversion.h"
 #include "Physics_GameScene.h"
+#include "ICreature.h"
 #include "LocalPlayer.h"
 #include "Monster.h"
 #include "SkillObject.h"

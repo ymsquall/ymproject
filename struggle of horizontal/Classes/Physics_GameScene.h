@@ -6,7 +6,7 @@
 using namespace framework;
 using namespace engine;
 class LocalPlayer;
-class ICreatue;
+class ICreature;
 
 namespace cocos2d
 {

@@ -25,7 +25,7 @@ struct CreaturePhysicsSteeings : public physics::ObjectSettings
 	int8 mUsingVerticeCount;
 };
 
-class ICreatue
+class ICreature
 {
 public:
 	static const int MoveBodyContactMask = 0x0002;
@@ -34,8 +34,8 @@ public:
 	static const int LandContactMask = 0x0010;
 	static const int WallContactMask = 0x0020;
 	static const int SkillBodyContactMask = 0x0040;
-	ICreatue(b2World* pWorld);
-	virtual ~ICreatue();
+	ICreature(b2World* pWorld);
+	virtual ~ICreature();
 	template<class T>
 	static T* createWithBox(b2World* pWorld, const Point& pos, const Size& size, bool showTitle = true)
 	{
@@ -58,6 +58,7 @@ public:
 	b2ContactEdge* getHeroBodyContactList();
 	bool isAttacking();
 	bool isBeAttacking();
+	bool isClobber();
 	bool isDeathing();
 	const Point& getPosition();
 
@@ -98,11 +99,11 @@ protected:
 };
 
 template<uint8 typeValue, size_t rttiLength>
-class DynamicPhysicsCreature : public ICreatue, public object::IPhysicsMovableObject<typeValue, rttiLength>
+class DynamicPhysicsCreature : public ICreature, public object::IPhysicsMovableObject<typeValue, rttiLength>
 {
 public:
 	DynamicPhysicsCreature(const char* ascType, b2World* pWorld) :
-		ICreatue(pWorld),
+		ICreature(pWorld),
 		object::IPhysicsMovableObject<typeValue, rttiLength>(ascType)
 	{
 	}

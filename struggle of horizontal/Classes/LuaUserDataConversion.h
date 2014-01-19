@@ -19,6 +19,8 @@ class Monster;
 class SkillObject;
 class CreatureHeaderView;
 class CreatureHeaderModel;
+class ICreature;
+class JumpDelegate;
 
 class LuaUserDataConversion
 {
@@ -33,6 +35,8 @@ public:
 	static SkillObject* toSkillObject(void* pointer);
 	static CreatureHeaderView* toCreatureHeaderView(void* pointer);
 	static CreatureHeaderModel* toCreatureHeaderModel(void* pointer);
+	static ICreature* toICreature(void* pointer);
+	static JumpDelegate* toJumpDelegate(void* pointer);
 	/*
 	struct LandTreeGrid;
 	struct SoldierTroopsUnitGrid;

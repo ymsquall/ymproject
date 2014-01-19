@@ -37,11 +37,11 @@ bool CreatureHeaderModel::finalize()
 	return true;
 }
 
-void CreatureHeaderModel::setOwnerCreature(ICreatue* creature)
+void CreatureHeaderModel::setOwnerCreature(ICreature* creature)
 {
 	mOwnerCreature = creature;
 }
-ICreatue* CreatureHeaderModel::getOwnerCreature()
+ICreature* CreatureHeaderModel::getOwnerCreature()
 {
 	return mOwnerCreature;
 }

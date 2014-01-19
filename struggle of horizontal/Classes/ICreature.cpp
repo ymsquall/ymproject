@@ -4,7 +4,7 @@
 #include "Model_CreatureHeader.h"
 #include "ViewModel_CreatureHeader.h"
 
-ICreatue::ICreatue(b2World* pWorld)
+ICreature::ICreature(b2World* pWorld)
 {
 	mWorld = pWorld;
 	mMoveBody = NULL;
@@ -21,11 +21,11 @@ ICreatue::ICreatue(b2World* pWorld)
 	mAnimView = NULL;
 	mFaceNormal.x = 1.0f;
 }
-ICreatue::~ICreatue()
+ICreature::~ICreature()
 {
 	CreatureHeaderViewModel::point()->removeCreatureHeader(this);
 }
-bool ICreatue::initWithBox(const Point& pos, const Size& size, bool showTitle)
+bool ICreature::initWithBox(const Point& pos, const Size& size, bool showTitle)
 {
 	{
 		b2BodyDef bd;
@@ -47,7 +47,7 @@ bool ICreatue::initWithBox(const Point& pos, const Size& size, bool showTitle)
 		CreatureHeaderViewModel::point()->addCreatureHeader(this);
 	return true;
 }
-void ICreatue::updateTimer(float dt)
+void ICreature::updateTimer(float dt)
 {
 	if(this->isBeAttacking())
 	{
@@ -61,7 +61,7 @@ void ICreatue::updateTimer(float dt)
 	else
 		mBeAttackTimeout = 0.0f;
 }
-const CCPoint& ICreatue::getMovedBodyPos()
+const CCPoint& ICreature::getMovedBodyPos()
 {
 	static CCPoint finalPos;
 	b2Vec2 heroPos = mMoveBody->GetWorldCenter();
@@ -70,12 +70,12 @@ const CCPoint& ICreatue::getMovedBodyPos()
 	finalPos = CCPoint((heroPos.x - (aabb.upperBound.x - aabb.lowerBound.x)/2.0f) * PTM_RATIO, (heroPos.y - (aabb.upperBound.y - aabb.lowerBound.y)/2.0f) * PTM_RATIO);
 	return finalPos;
 }
-void ICreatue::move(float dir, float speed)
+void ICreature::move(float dir, float speed)
 {
 	mMoveDir.x = dir;
 	mMoveSpeed.x = speed;
 }
-void ICreatue::updateBody(physics::ObjectSettings* settings)
+void ICreature::updateBody(physics::ObjectSettings* settings)
 {
 	if(NULL == settings)
 		return;
@@ -129,46 +129,52 @@ void ICreatue::updateBody(physics::ObjectSettings* settings)
 		}
 	}
 }
-b2ContactEdge* ICreatue::getHeroBodyContactList()
+b2ContactEdge* ICreature::getHeroBodyContactList()
 {
 	return mMoveBody->GetContactList();
 }
-bool ICreatue::isAttacking()
+bool ICreature::isAttacking()
 {
 	return mAttacking;
 }
-bool ICreatue::isBeAttacking()
+bool ICreature::isBeAttacking()
 {
 	return mBeAttacking;
 }
-bool ICreatue::isDeathing()
+bool ICreature::isClobber()
+{
+	static const std::string clobber1 = "clobber01";
+	std::string act = mAnimView->getAnimation()->getCurrentMovementID();
+	return act == clobber1;
+}
+bool ICreature::isDeathing()
 {
 	return mDeathing;
 }
 
-void ICreatue::setModel(CreatureHeaderModel* pModel)
+void ICreature::setModel(CreatureHeaderModel* pModel)
 {
 	mModel = pModel;
 }
-CreatureHeaderModel* ICreatue::getModel() const
+CreatureHeaderModel* ICreature::getModel() const
 {
 	return mModel;
 }
-void ICreatue::onCreaturePosChanged(const Point& pos)
+void ICreature::onCreaturePosChanged(const Point& pos)
 {
 	if(NULL != mModel)
 		mModel->Position = pos;
 }
 
-void ICreatue::setFaceNormalX(float dirX)
+void ICreature::setFaceNormalX(float dirX)
 {
 	this->setFaceNormal(dirX, mFaceNormal.y);
 }
-void ICreatue::setFaceNormalY(float dirY)
+void ICreature::setFaceNormalY(float dirY)
 {
 	this->setFaceNormal(mFaceNormal.x, dirY);
 }
-void ICreatue::setFaceNormal(float dirX, float dirY)
+void ICreature::setFaceNormal(float dirX, float dirY)
 {
 	mFaceNormal.x = dirX;
 	mFaceNormal.y = dirY;
@@ -177,25 +183,25 @@ void ICreatue::setFaceNormal(float dirX, float dirY)
 	else if(mFaceNormal.x < 0.0f)
 		mAnimView->setRotationY(180.0f);
 }
-float ICreatue::getFaceNormalX() const
+float ICreature::getFaceNormalX() const
 {
 	return mFaceNormal.x;
 }
-float ICreatue::getFaceNormalY() const
+float ICreature::getFaceNormalY() const
 {
 	return mFaceNormal.y;
 }
-const CCPoint& ICreatue::getFaceNormal() const
+const CCPoint& ICreature::getFaceNormal() const
 {
 	return mFaceNormal;
 }
 
-cocostudio::Armature* ICreatue::getAnimView() const
+cocostudio::Armature* ICreature::getAnimView() const
 {
 	return mAnimView;
 }
 
-void ICreatue::changeAnimAction(const std::string& actionName)
+void ICreature::changeAnimAction(const std::string& actionName)
 {
 	static const std::string stand1 = "stand01";
 	static const std::string run1 = "run01";

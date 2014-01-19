@@ -20,7 +20,7 @@ public:
 	static LocalPlayer* instance();
 
 	void setAnimView(cocostudio::Armature* anim);
-	void beAttacked(ICreatue* who, const Point& hitPos, bool clobber = false);
+	void beAttacked(ICreature* who, const Point& hitPos, bool clobber = false);
 
 	virtual void StepBefore(physics::ObjectSettings* settings) override;
 	virtual void StepAfter() override;

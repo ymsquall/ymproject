@@ -18,7 +18,7 @@ CreatureHeaderViewModel::~CreatureHeaderViewModel()
 {
 }
 
-CreatureHeaderModel* CreatureHeaderViewModel::addCreatureHeader(ICreatue* pCreature)
+CreatureHeaderModel* CreatureHeaderViewModel::addCreatureHeader(ICreature* pCreature)
 {
 	TMXTiledMap* pRootView = GameSceneViewModel::point()->getTiledMap();
 	if(NULL == pRootView)
@@ -61,7 +61,7 @@ CreatureHeaderModel* CreatureHeaderViewModel::addCreatureHeader(ICreatue* pCreat
 	return NULL;
 }
 
-void CreatureHeaderViewModel::removeCreatureHeader(ICreatue* pCreature)
+void CreatureHeaderViewModel::removeCreatureHeader(ICreature* pCreature)
 {
 	CreatureHeaderList::iterator it = mCreatureHeaderList.find(pCreature->getModel());
 	if(it != mCreatureHeaderList.end())
