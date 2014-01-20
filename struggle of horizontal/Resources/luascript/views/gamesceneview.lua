@@ -188,11 +188,16 @@ function LUAGameSceneViewOnTick(dt)
 			if LUACreatureCanBeMoveOrStand(localUser) then
 				localUser:changeAnimAction('run01')
 			end
-			if dist >= 0 or inRightStick then
+			if inRightStick then
+				dist = 100.0
+			elseif inLeftStick then
+				dist = -100.0
+			end
+			if dist >= 0 then
 				tmpMoveDir = 1.0
 				LuaCocoStudioHelper:setButtonPressState(_LUAGameSceneView.mStickRightBtn)
 				LuaCocoStudioHelper:setButtonNormalState(_LUAGameSceneView.mStickLeftBtn)
-			elseif dist < 0 or inLeftStick then
+			elseif dist < 0 then
 				tmpMoveDir = -1.0
 				LuaCocoStudioHelper:setButtonPressState(_LUAGameSceneView.mStickLeftBtn)
 				LuaCocoStudioHelper:setButtonNormalState(_LUAGameSceneView.mStickRightBtn)
