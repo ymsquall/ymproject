@@ -172,6 +172,7 @@ function LUAGameSceneViewOnTick(dt)
 	-- hero moving
 	if _LUAGameSceneView.mMoveingAreaDown and LUACreatureCanBeDropInLand(localUser) then
 		local dist = _LUAGameSceneView.mTouchMoveNowPos.x - _LUAGameSceneView.mTouchMoveBeginPos.x
+		--[[
 		if math.abs(dist) <= 20.0 then
 			if _LUAGameSceneView.mStickLeftBtn:isFocused() then
 				dist = -380
@@ -179,16 +180,19 @@ function LUAGameSceneViewOnTick(dt)
 				dist = 380
 			end
 		end
-		if math.abs(dist) > 20.0 then
+		--]]
+		local inLeftStick = _LUAGameSceneView.mStickLeftBtn:hitTest(_LUAGameSceneView.mTouchMoveNowPos)
+		local inRightStick = _LUAGameSceneView.mStickRightBtn:hitTest(_LUAGameSceneView.mTouchMoveNowPos)
+		if math.abs(dist) > 20.0 or inLeftStick or inRightStick then
 			local tmpMoveDir = 0
 			if LUACreatureCanBeMoveOrStand(localUser) then
 				localUser:changeAnimAction('run01')
 			end
-			if dist > 0 then
+			if dist >= 0 or inRightStick then
 				tmpMoveDir = 1.0
 				LuaCocoStudioHelper:setButtonPressState(_LUAGameSceneView.mStickRightBtn)
 				LuaCocoStudioHelper:setButtonNormalState(_LUAGameSceneView.mStickLeftBtn)
-			else
+			elseif dist < 0 or inLeftStick then
 				tmpMoveDir = -1.0
 				LuaCocoStudioHelper:setButtonPressState(_LUAGameSceneView.mStickLeftBtn)
 				LuaCocoStudioHelper:setButtonNormalState(_LUAGameSceneView.mStickRightBtn)

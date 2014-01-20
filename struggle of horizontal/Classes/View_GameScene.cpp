@@ -106,8 +106,6 @@ void GameSceneView::onTouchesBegan(const std::vector<Touch*>& touches, Event *un
 		auto location = touch->getLocation();
         if(!callLuaFuncWithBoolResult("LUAGameSceneViewTouchesBegan", touch->getID(), location.x, location.y))
             this->onTouchBegan(location);
-		else if(mStickLeftBtn->hitTest(location) || mStickRightBtn->hitTest(location))
-			this->onTouchBegan(location);
     }
 }
 void GameSceneView::onTouchesMoved(const std::vector<Touch*>& touches, Event *unused_event)
@@ -117,8 +115,6 @@ void GameSceneView::onTouchesMoved(const std::vector<Touch*>& touches, Event *un
 		auto location = touch->getLocation();
         if(!callLuaFuncWithBoolResult("LUAGameSceneViewTouchesMoved", touch->getID(), location.x, location.y))
 			this->onTouchMoved(location);
-		else if(mStickLeftBtn->hitTest(location) || mStickRightBtn->hitTest(location))
-			this->onTouchMoved(location);
     }
 }
 void GameSceneView::onTouchesEnded(const std::vector<Touch*>& touches, Event *unused_event)
@@ -127,8 +123,6 @@ void GameSceneView::onTouchesEnded(const std::vector<Touch*>& touches, Event *un
 	{
 		auto location = touch->getLocation();
         if(!callLuaFuncWithBoolResult("LUAGameSceneViewTouchesEnded", touch->getID(), location.x, location.y))
-			this->onTouchEnded(location);
-		else if(mStickLeftBtn->hitTest(location) || mStickRightBtn->hitTest(location))
 			this->onTouchEnded(location);
     }
 }
@@ -155,16 +149,6 @@ void GameSceneView::onTouchBegan(const Point& pos)
 		 mSkill2Btn->onTouchBegan(pos);
 		 return;
 	 }
-	 if(mStickLeftBtn->hitTest(pos))
-	 {
-		 mStickLeftBtn->onTouchBegan(pos);
-		 return;
-	 }
-	 if(mStickRightBtn->hitTest(pos))
-	 {
-		 mStickRightBtn->onTouchBegan(pos);
-		 return;
-	 }
 }
 void GameSceneView::onTouchMoved(const Point& pos)
 {
@@ -172,8 +156,6 @@ void GameSceneView::onTouchMoved(const Point& pos)
 	mAttackBtn->onTouchMoved(pos);
 	mSkill1Btn->onTouchMoved(pos);
 	mSkill2Btn->onTouchMoved(pos);
-	mStickLeftBtn->onTouchMoved(pos);
-	mStickRightBtn->onTouchMoved(pos);
 }
 void GameSceneView::onTouchEnded(const Point& pos)
 {
@@ -181,8 +163,6 @@ void GameSceneView::onTouchEnded(const Point& pos)
 	mAttackBtn->onTouchEnded(pos);
 	mSkill1Btn->onTouchEnded(pos);
 	mSkill2Btn->onTouchEnded(pos);
-	mStickLeftBtn->onTouchEnded(pos);
-	mStickRightBtn->onTouchEnded(pos);
 }
 
 bool GameSceneView::screenScroll(const Point& offset)
