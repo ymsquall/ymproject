@@ -710,9 +710,9 @@
 			<key>landdown01_01.png</key>
 			<dict>
 				<key>width</key>
-				<integer>228</integer>
+				<integer>255</integer>
 				<key>height</key>
-				<integer>203</integer>
+				<integer>192</integer>
 				<key>originalWidth</key>
 				<integer>800</integer>
 				<key>originalHeight</key>
@@ -722,9 +722,9 @@
 				<key>y</key>
 				<integer>900</integer>
 				<key>offsetX</key>
-				<real>-43</real>
+				<real>-66.5</real>
 				<key>offsetY</key>
-				<real>8.5</real>
+				<real>14</real>
 			</dict>
 			<key>clobber01_01.png</key>
 			<dict>
@@ -737,7 +737,7 @@
 				<key>originalHeight</key>
 				<integer>800</integer>
 				<key>x</key>
-				<integer>228</integer>
+				<integer>255</integer>
 				<key>y</key>
 				<integer>900</integer>
 				<key>offsetX</key>
@@ -756,7 +756,7 @@
 				<key>originalHeight</key>
 				<integer>800</integer>
 				<key>x</key>
-				<integer>436</integer>
+				<integer>463</integer>
 				<key>y</key>
 				<integer>900</integer>
 				<key>offsetX</key>
@@ -775,7 +775,7 @@
 				<key>originalHeight</key>
 				<integer>800</integer>
 				<key>x</key>
-				<integer>616</integer>
+				<integer>643</integer>
 				<key>y</key>
 				<integer>900</integer>
 				<key>offsetX</key>
@@ -794,7 +794,7 @@
 				<key>originalHeight</key>
 				<integer>800</integer>
 				<key>x</key>
-				<integer>821</integer>
+				<integer>848</integer>
 				<key>y</key>
 				<integer>900</integer>
 				<key>offsetX</key>
@@ -813,7 +813,7 @@
 				<key>originalHeight</key>
 				<integer>800</integer>
 				<key>x</key>
-				<integer>1055</integer>
+				<integer>1082</integer>
 				<key>y</key>
 				<integer>900</integer>
 				<key>offsetX</key>
@@ -832,7 +832,7 @@
 				<key>originalHeight</key>
 				<integer>800</integer>
 				<key>x</key>
-				<integer>1420</integer>
+				<integer>1447</integer>
 				<key>y</key>
 				<integer>900</integer>
 				<key>offsetX</key>
@@ -851,7 +851,7 @@
 				<key>originalHeight</key>
 				<integer>800</integer>
 				<key>x</key>
-				<integer>1618</integer>
+				<integer>1645</integer>
 				<key>y</key>
 				<integer>900</integer>
 				<key>offsetX</key>
