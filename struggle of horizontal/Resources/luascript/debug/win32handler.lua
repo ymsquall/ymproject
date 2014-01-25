@@ -25,7 +25,7 @@ function LUAOnWin32KeyDownMsgProc(key)
 			if LUACreatureCanBeMoveOrStand(LocalPlayer:instance()) then
 				LocalPlayer:instance():changeAnimAction('run01')
 			end
-			_LUAGameSceneView.mMoveSpeedScale = 300
+			_LUAGameSceneView.mMoveSpeedScale = 380
 			LocalPlayer:instance():move(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
 		end
 	end
