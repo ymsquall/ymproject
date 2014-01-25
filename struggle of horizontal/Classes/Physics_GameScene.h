@@ -29,10 +29,10 @@ typedef std::vector<CreaturePhysicsInfo> CreaturePhysicsInfoList;
 typedef std::map<physics::PhysicsObject*, CreaturePhysicsInfo*> PhysicsCreatureList;
 
 class GameScenePhysics : public physics::PhysicsWorld, public cocos2d::Object
-	, public unity::SingletonAutoT<GameScenePhysics>
+	, public unity::SingletonT<GameScenePhysics>
 {
 public:
-	GameScenePhysics();
+	GameScenePhysics(float gravity);
 	~GameScenePhysics();
     void Step(physics::WorldSettings* settings);
 	

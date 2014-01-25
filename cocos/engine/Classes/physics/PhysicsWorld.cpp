@@ -58,11 +58,11 @@ namespace engine
 			}
 		}
 
-		PhysicsWorld::PhysicsWorld()
+		PhysicsWorld::PhysicsWorld(float gravity)
 		{
-			b2Vec2 gravity;
-			gravity.Set(0.0f, -50.0f);
-			mWorld = new b2World(gravity);
+			b2Vec2 vGravity;
+			vGravity.Set(0.0f, gravity);
+			mWorld = new b2World(vGravity);
 			m_bomb = NULL;
 			m_textLine = 30;
 			m_mouseJoint = NULL;

@@ -6,7 +6,8 @@
 
 using namespace cocos2d;
 
-GameScenePhysics::GameScenePhysics()
+GameScenePhysics::GameScenePhysics(float gravity):
+	physics::PhysicsWorld(gravity)
 {
 	mLocalPlayerPhysics = NULL;
 }

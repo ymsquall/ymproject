@@ -39,7 +39,7 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 			if eventType == 0 then
 				local localUser = LocalPlayer:instance()
 				if LUACreatureCanBeJump(localUser) then
-					localUser:jump(25.0)
+					localUser:jump(__LUAEnvironmentVariable.jump_power)
 				end
 			end
 		end)
@@ -188,7 +188,6 @@ function LUAGameSceneViewOnTick(dt)
 		_LUAGameSceneView.mMoveStackBar:setPosition(cc.p(centerX, 0))
 		-- getDirAndSpeed
 		local tmpMoveDir = 0
-		local tmpSpeed = 380.0
 		local lAreaPos = _LUAGameSceneView.mMoveStickLeftArea:getPosition()
 		local lAreaSize = _LUAGameSceneView.mMoveStickLeftArea:getContentSize()
 		local rAreaPos = _LUAGameSceneView.mMoveStickRightArea:getPosition()
@@ -206,10 +205,10 @@ function LUAGameSceneViewOnTick(dt)
 				if LUACreatureCanBeMoveOrStand(localUser) then
 					localUser:changeAnimAction('run01')
 				end
-				if _LUAGameSceneView.mMoveSpeedScale ~= tmpSpeed or _LUAGameSceneView.mMoveDirection ~= tmpMoveDir then
+				if _LUAGameSceneView.mMoveSpeedScale ~= __LUAEnvironmentVariable.move_speed or _LUAGameSceneView.mMoveDirection ~= tmpMoveDir then
 					-- set move dist to box2d herobody
 					_LUAGameSceneView.mMoveDirection = tmpMoveDir
-					_LUAGameSceneView.mMoveSpeedScale = tmpSpeed
+					_LUAGameSceneView.mMoveSpeedScale = __LUAEnvironmentVariable.move_speed
 					localUser:move(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
 					if _LUAGameSceneView.mMoveDirection > 0.0 then
 						localUser:setFaceNormalX(1.0)
