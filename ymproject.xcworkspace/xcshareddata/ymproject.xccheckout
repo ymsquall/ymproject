@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E16C5704-0562-4A37-A30D-C31B1C1B4103</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ymproject</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>06924538-3DC2-426C-B8F7-EB52B5B1A2A4</key>
+		<string>https://github.com/ymsquall/ymproject.git</string>
+		<key>51394443-6561-4CEE-9918-82A27A57AA75</key>
+		<string>git://github.com/cocos2d/cocos2d-x.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ymproject.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>06924538-3DC2-426C-B8F7-EB52B5B1A2A4</key>
+		<string>..</string>
+		<key>51394443-6561-4CEE-9918-82A27A57AA75</key>
+		<string>../../cocos2d/cocos2d-x-3</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ymsquall/ymproject.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>06924538-3DC2-426C-B8F7-EB52B5B1A2A4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>51394443-6561-4CEE-9918-82A27A57AA75</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cocos2d-x-3</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>06924538-3DC2-426C-B8F7-EB52B5B1A2A4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ymproject</string>
+		</dict>
+	</array>
+</dict>
+</plist>
