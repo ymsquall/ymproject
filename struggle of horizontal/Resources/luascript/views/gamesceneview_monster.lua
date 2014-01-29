@@ -66,8 +66,8 @@ function LUAGameSceneView_MonsterBeAttacked(monster, clobber, beActName)
 		if v.mMonster == pMonster then
 			if clobber then
 				pMonster:changeAnimAction('clobber01')
-				pMonster:move(-pMonster:getFaceNormalX(), 100.0)
-				pMonster:jump(15.0)
+				pMonster:move(-pMonster:getFaceNormalX(), __LUAEnvironmentVariable.clobber_power.x)
+				pMonster:jump(__LUAEnvironmentVariable.clobber_power.y)
 			else
 				pMonster:changeAnimAction('beattack01')
 			end

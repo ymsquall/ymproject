@@ -3,6 +3,7 @@
 #include "luaext/LuaHelper.h"
 #include "View_GameScene.h"
 #include "unity/datablock.h"
+#include "Physics_GameScene.h"
 
 MODEL_TYPECLASS_DEFINE_CONSTRUCTOR(GameScene)
 {
@@ -14,6 +15,9 @@ MODEL_TYPECLASS_DEFINE_BEGINING
 
 bool GameSceneModel::initImpl()
 {
+	float gravity = 0.0f;
+	tolua_getLuaNumberValue_ByTable(LuaEngine::getInstance()->getLuaStack()->getLuaState(), "world_gravity", "__LUAEnvironmentVariable", gravity);
+	new GameScenePhysics(gravity);
 	return true;
 }
 

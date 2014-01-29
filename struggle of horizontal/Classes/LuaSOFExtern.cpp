@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaSOFExtern
-** Generated automatically by tolua++-1.0.92 on 01/19/14 22:01:47.
+** Generated automatically by tolua++-1.0.92 on 01/25/14 13:20:15.
 */
 
 /****************************************************************************
@@ -1427,14 +1427,16 @@ static int tolua_LuaSOFExtern_GameScenePhysics_new00(lua_State* tolua_S)
  tolua_Error tolua_err;
  if (
      !tolua_isusertable(tolua_S,1,"GameScenePhysics",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
  )
   goto tolua_lerror;
  else
 #endif
  {
+  float gravity = ((float)  tolua_tonumber(tolua_S,2,0));
   {
-   GameScenePhysics* tolua_ret = (GameScenePhysics*)  Mtolua_new((GameScenePhysics)());
+   GameScenePhysics* tolua_ret = (GameScenePhysics*)  Mtolua_new((GameScenePhysics)(gravity));
     int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
     int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
     toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"GameScenePhysics");
@@ -1457,14 +1459,16 @@ static int tolua_LuaSOFExtern_GameScenePhysics_new00_local(lua_State* tolua_S)
  tolua_Error tolua_err;
  if (
      !tolua_isusertable(tolua_S,1,"GameScenePhysics",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
  )
   goto tolua_lerror;
  else
 #endif
  {
+  float gravity = ((float)  tolua_tonumber(tolua_S,2,0));
   {
-   GameScenePhysics* tolua_ret = (GameScenePhysics*)  Mtolua_new((GameScenePhysics)());
+   GameScenePhysics* tolua_ret = (GameScenePhysics*)  Mtolua_new((GameScenePhysics)(gravity));
     int nID = (tolua_ret) ? (int)tolua_ret->_ID : -1;
     int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
     toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"GameScenePhysics");

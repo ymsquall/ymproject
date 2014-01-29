@@ -1,7 +1,7 @@
 class GameScenePhysics : public Object
 {
 public:
-	GameScenePhysics();
+	GameScenePhysics(float gravity);
 	~GameScenePhysics();
 
 	bool initBoxWithTiledMap(const TMXTiledMap* pTiledMap);

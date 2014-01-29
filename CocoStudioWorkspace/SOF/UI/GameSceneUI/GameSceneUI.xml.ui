@@ -12,7 +12,6 @@
   </JsonList>
   <imageFileList>
     <string>GameSceneUI0.plist</string>
-    <string>GameSceneUI1.plist</string>
   </imageFileList>
   <JsonSuffix>.json</JsonSuffix>
   <CurrentUIJson>GameSceneUI.json</CurrentUIJson>

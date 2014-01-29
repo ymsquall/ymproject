@@ -65,7 +65,7 @@ namespace engine
 			friend class BoundaryListener;
 			friend class ContactListener;
 
-			PhysicsWorld();
+			PhysicsWorld(float gravity);
 			virtual ~PhysicsWorld();
 
 			virtual void Step(WorldSettings* settings);

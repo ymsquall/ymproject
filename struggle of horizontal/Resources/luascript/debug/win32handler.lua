@@ -10,7 +10,7 @@ function LUAOnWin32KeyDownMsgProc(key)
 	if VK_S == key then end
 	if VK_SPACE == key then
 		if LUACreatureCanBeJump(LocalPlayer:instance()) then
-			LocalPlayer:instance():jump(25.0)
+			LocalPlayer:instance():jump(__LUAEnvironmentVariable.jump_power)
 		end
 	end
 	if VK_A == key or VK_D == key then
@@ -25,7 +25,7 @@ function LUAOnWin32KeyDownMsgProc(key)
 			if LUACreatureCanBeMoveOrStand(LocalPlayer:instance()) then
 				LocalPlayer:instance():changeAnimAction('run01')
 			end
-			_LUAGameSceneView.mMoveSpeedScale = 300
+			_LUAGameSceneView.mMoveSpeedScale = __LUAEnvironmentVariable.move_speed
 			LocalPlayer:instance():move(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
 		end
 	end

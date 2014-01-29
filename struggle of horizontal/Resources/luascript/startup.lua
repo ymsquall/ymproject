@@ -3,6 +3,7 @@ collectgarbage("setpause", 100)
 collectgarbage("setstepmul", 5000)
 require "luascript/luautility"
 require "luascript/toolkit"
+require "luascript/environment"
 require "luascript/showing/metatext.lua"
 
 

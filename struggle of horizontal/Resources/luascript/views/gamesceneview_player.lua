@@ -51,8 +51,8 @@ function LUAGameSceneView_LocalPlayerBeAttacked(clobber, beActName)
 	localPlayer:move(0.0, 0.0)
 	if clobber then
 		localPlayer:changeAnimAction('clobber01')
-		localPlayer:move(-localPlayer:getFaceNormalX(), 100.0)
-		localPlayer:jump(15.0)
+		localPlayer:move(-localPlayer:getFaceNormalX(), __LUAEnvironmentVariable.clobber_power.x)
+		localPlayer:jump(__LUAEnvironmentVariable.clobber_power.y)
 	else
 		localPlayer:changeAnimAction('beattack01')
 	end

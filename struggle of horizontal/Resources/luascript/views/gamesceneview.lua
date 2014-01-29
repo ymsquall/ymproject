@@ -9,7 +9,6 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 	_LUAGameSceneView.mHeroAnim:getAnimation():setSpeedScale(0.5)
 	_LUAGameSceneView.mHeroAnim:setTag(101)
 	_LUAGameSceneView.mTiledMap:addChild(_LUAGameSceneView.mHeroAnim, 101, 101)
-	--_LUAGameSceneView.mTiledMap:reorderChild(_LUAGameSceneView.mHeroAnim, 101)
     _LUAGameSceneView.mUILayer = ccs.UILayer:create()
 	_LUAGameSceneView.mUILayer:setTag(201)
     _LUAGameSceneView.self:addChild(_LUAGameSceneView.mUILayer)
@@ -19,8 +18,11 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 	_LUAGameSceneView.mUILayout:setSize(cc.size(viewWideh, viewHeight))
 	_LUAGameSceneView.mRightBottomPanel = LuaCocoStudioHelper:getChildLayoutByName("mRightBottomPanel", _LUAGameSceneView.mUILayout)
 	_LUAGameSceneView.mRightBottomPanel:setPosition(cc.p(viewWideh-_LUAGameSceneView.mRightBottomPanel:getContentSize().width, _LUAGameSceneView.mRightBottomPanel:getPosition().y))
-	_LUAGameSceneView.mStickLeftBtn = LuaCocoStudioHelper:getChildUIButtonByName("mStickLeftBtn", _LUAGameSceneView.mUILayout)
-	_LUAGameSceneView.mStickRightBtn = LuaCocoStudioHelper:getChildUIButtonByName("mStickRightBtn", _LUAGameSceneView.mUILayout)
+	_LUAGameSceneView.mMoveStackPanel = LuaCocoStudioHelper:getChildLayoutByName("mMoveStackPanel", _LUAGameSceneView.mUILayout)
+	_LUAGameSceneView.mMoveStackBG = LuaCocoStudioHelper:getChildUIImageViewByName("mMoveStackBG", _LUAGameSceneView.mUILayout)
+	_LUAGameSceneView.mMoveStackBar = LuaCocoStudioHelper:getChildUIImageViewByName("mMoveStackBar", _LUAGameSceneView.mUILayout)
+	_LUAGameSceneView.mMoveStickLeftArea = LuaCocoStudioHelper:getChildLayoutByName("mMoveStickLeftArea", _LUAGameSceneView.mUILayout)
+	_LUAGameSceneView.mMoveStickRightArea = LuaCocoStudioHelper:getChildLayoutByName("mMoveStickRightArea", _LUAGameSceneView.mUILayout)
 	_LUAGameSceneView.mJumpBtn = LuaCocoStudioHelper:getChildUIButtonByName("mJumpBtn", _LUAGameSceneView.mUILayout)
 	_LUAGameSceneView.mAttackBtn = LuaCocoStudioHelper:getChildUIButtonByName("mAttackBtn", _LUAGameSceneView.mUILayout)
 	_LUAGameSceneView.mSkill1Btn = LuaCocoStudioHelper:getChildUIButtonByName("mSkill1Btn", _LUAGameSceneView.mUILayout)
@@ -37,7 +39,7 @@ function LUALoadGameSceneView(self, viewWideh, viewHeight)
 			if eventType == 0 then
 				local localUser = LocalPlayer:instance()
 				if LUACreatureCanBeJump(localUser) then
-					localUser:jump(25.0)
+					localUser:jump(__LUAEnvironmentVariable.jump_power)
 				end
 			end
 		end)
@@ -78,10 +80,10 @@ end
 function LUAGameSceneViewTouchesBegan(touchID, x, y)
 	if _LUAGameSceneView.mTouchIndex ~= -1 then return false end
 	local pos = cc.p(x, y)
-	if pos.x < __LUADeviceCenterPos.x then
+	--if pos.x < __LUADeviceCenterPos.x then
+	if _LUAGameSceneView.mMoveStackBG:hitTest(pos) then
 		_LUAGameSceneView.mTouchMoveBeginPos = pos
 		_LUAGameSceneView.mTouchMoveNowPos = pos
-		--print('LUAGameSceneViewTouchesBegan x = '..x)
 		_LUAGameSceneView.mTouchIndex = touchID
 		_LUAGameSceneView.mMoveingAreaDown = true
 		_LUAGameSceneView.mMoveBtnDown = false
@@ -92,7 +94,6 @@ end
 function LUAGameSceneViewTouchesMoved(touchID, x, y)
 	if touchID == _LUAGameSceneView.mTouchIndex then
 		_LUAGameSceneView.mTouchMoveNowPos = cc.p(x, y)
-		--print('LUAGameSceneViewTouchesMoved x = '..x)
 		return true
 	end
 	return false
@@ -102,19 +103,18 @@ function LUAGameSceneViewTouchesEnded(touchID, x, y)
 		local localUser = LocalPlayer:instance()
 		_LUAGameSceneView.mTouchIndex = -1
 		_LUAGameSceneView.mMoveingAreaDown = false
-		--print('LUAGameSceneViewTouchesEnded x = '..x)
 		_LUAGameSceneView.mTouchMoveBeginPos = nil
 		_LUAGameSceneView.mTouchMoveNowPos = nil
 		_LUAGameSceneView.mMoveDirection = 0.0
 		_LUAGameSceneView.mMoveSpeedScale = 0.0
-		_LUAGameSceneView.mStickLeftBtn:setFocused(false)
-		_LUAGameSceneView.mStickRightBtn:setFocused(false)
+		--_LUAGameSceneView.mMoveStickLeftArea:setFocused(false)
+		--_LUAGameSceneView.mMoveStickRightArea:setFocused(false)
 		if LUACreatureCanBeDropInLand(localUser) then
 			localUser:changeAnimAction('stand01')
 			localUser:move(0.0, 0.0)
 		end
-		LuaCocoStudioHelper:setButtonNormalState(_LUAGameSceneView.mStickLeftBtn)
-		LuaCocoStudioHelper:setButtonNormalState(_LUAGameSceneView.mStickRightBtn)
+		--LuaCocoStudioHelper:setButtonNormalState(_LUAGameSceneView.mStickLeftBtn)
+		--LuaCocoStudioHelper:setButtonNormalState(_LUAGameSceneView.mStickRightBtn)
 		return true
 	end
 	return false
@@ -170,19 +170,67 @@ function LUAGameSceneViewOnTick(dt)
 		localUser:setIsHeroDorping(false)
 	end
 	-- hero moving
-	if _LUAGameSceneView.mMoveingAreaDown and LUACreatureCanBeDropInLand(localUser) then
-		local dist = _LUAGameSceneView.mTouchMoveNowPos.x - _LUAGameSceneView.mTouchMoveBeginPos.x
-		--[[
-		if math.abs(dist) <= 20.0 then
-			if _LUAGameSceneView.mStickLeftBtn:isFocused() then
-				dist = -380
-			elseif _LUAGameSceneView.mStickRightBtn:isFocused() then
-				dist = 380
+	if _LUAGameSceneView.mMoveingAreaDown then
+		--print('centerAxisX='.._LUAGameSceneView.mTouchMoveNowPos.x)
+		-- UpdateMoveStackBarPos
+		local panelPos = _LUAGameSceneView.mMoveStackPanel:getPosition()
+		local bgPos = _LUAGameSceneView.mMoveStackBG:getPosition()
+		local bgSize = _LUAGameSceneView.mMoveStackBG:getContentSize()
+		local barSize = _LUAGameSceneView.mMoveStackBar:getContentSize()
+		local centerX = _LUAGameSceneView.mTouchMoveNowPos.x - (bgPos.x + panelPos.x)
+		local boundLeft = -(bgSize.width-barSize.width) / 2.0
+		local boundRight = -boundLeft
+		if centerX < boundLeft then
+			centerX = boundLeft
+		elseif centerX > boundRight then
+			centerX = boundRight
+		end
+		_LUAGameSceneView.mMoveStackBar:setPosition(cc.p(centerX, 0))
+		-- getDirAndSpeed
+		local tmpMoveDir = 0
+		local lAreaPos = _LUAGameSceneView.mMoveStickLeftArea:getPosition()
+		local lAreaSize = _LUAGameSceneView.mMoveStickLeftArea:getContentSize()
+		local rAreaPos = _LUAGameSceneView.mMoveStickRightArea:getPosition()
+		local rAreaSize = _LUAGameSceneView.mMoveStickRightArea:getContentSize()
+		local barLeft = centerX - barSize.width / 2.0
+		local barRight = centerX + barSize.width / 2.0
+		if barLeft <= lAreaPos.x + lAreaSize.width then
+			tmpMoveDir = -1
+		elseif barRight >= rAreaPos.x then
+			tmpMoveDir = 1
+		end
+		if LUACreatureCanBeDropInLand(localUser) then
+			if tmpMoveDir ~= 0 then
+				-- doMoving
+				if LUACreatureCanBeMoveOrStand(localUser) then
+					localUser:changeAnimAction('run01')
+				end
+				if _LUAGameSceneView.mMoveSpeedScale ~= __LUAEnvironmentVariable.move_speed or _LUAGameSceneView.mMoveDirection ~= tmpMoveDir then
+					-- set move dist to box2d herobody
+					_LUAGameSceneView.mMoveDirection = tmpMoveDir
+					_LUAGameSceneView.mMoveSpeedScale = __LUAEnvironmentVariable.move_speed
+					localUser:move(_LUAGameSceneView.mMoveDirection, _LUAGameSceneView.mMoveSpeedScale)
+					if _LUAGameSceneView.mMoveDirection > 0.0 then
+						localUser:setFaceNormalX(1.0)
+					elseif _LUAGameSceneView.mMoveDirection < 0.0 then
+						localUser:setFaceNormalX(-1.0)
+					end
+				end
+			else
+				if LUACreatureCanBeMoveOrStand(localUser) then
+					localUser:changeAnimAction('stand01')
+				end
+				_LUAGameSceneView.mMoveDirection = 0.0
+				_LUAGameSceneView.mMoveSpeedScale = 0.0
+				localUser:move(0.0, 0.0)
 			end
 		end
-		--]]
-		local inLeftStick = _LUAGameSceneView.mStickLeftBtn:hitTest(_LUAGameSceneView.mTouchMoveNowPos)
-		local inRightStick = _LUAGameSceneView.mStickRightBtn:hitTest(_LUAGameSceneView.mTouchMoveNowPos)
+	else
+		_LUAGameSceneView.mMoveStackBar:setPosition(cc.p(0, 0))
+		--[[
+		local dist = _LUAGameSceneView.mTouchMoveNowPos.x - _LUAGameSceneView.mTouchMoveBeginPos.x
+		local inLeftStick = _LUAGameSceneView.mMoveStickLeftArea:hitTest(_LUAGameSceneView.mTouchMoveNowPos)
+		local inRightStick = _LUAGameSceneView.mMoveStickRightArea:hitTest(_LUAGameSceneView.mTouchMoveNowPos)
 		if math.abs(dist) > 20.0 or inLeftStick or inRightStick then
 			local tmpMoveDir = 0
 			if LUACreatureCanBeMoveOrStand(localUser) then
@@ -195,12 +243,12 @@ function LUAGameSceneViewOnTick(dt)
 			end
 			if dist >= 0 then
 				tmpMoveDir = 1.0
-				LuaCocoStudioHelper:setButtonPressState(_LUAGameSceneView.mStickRightBtn)
-				LuaCocoStudioHelper:setButtonNormalState(_LUAGameSceneView.mStickLeftBtn)
+				--LuaCocoStudioHelper:setButtonPressState(_LUAGameSceneView.mMoveStickRightArea)
+				--LuaCocoStudioHelper:setButtonNormalState(_LUAGameSceneView.mMoveStickLeftArea)
 			elseif dist < 0 then
 				tmpMoveDir = -1.0
-				LuaCocoStudioHelper:setButtonPressState(_LUAGameSceneView.mStickLeftBtn)
-				LuaCocoStudioHelper:setButtonNormalState(_LUAGameSceneView.mStickRightBtn)
+				--LuaCocoStudioHelper:setButtonPressState(_LUAGameSceneView.mMoveStickLeftArea)
+				--LuaCocoStudioHelper:setButtonNormalState(_LUAGameSceneView.mMoveStickRightArea)
 			end
 			--local tmpSpeed = 0.0
 			--if math.abs(dist) < 30.0 then
@@ -232,13 +280,14 @@ function LUAGameSceneViewOnTick(dt)
 				end
 			end
 		else
-			LuaCocoStudioHelper:setButtonNormalState(_LUAGameSceneView.mStickLeftBtn)
-			LuaCocoStudioHelper:setButtonNormalState(_LUAGameSceneView.mStickRightBtn)
+			--LuaCocoStudioHelper:setButtonNormalState(_LUAGameSceneView.mMoveStickLeftArea)
+			--LuaCocoStudioHelper:setButtonNormalState(_LUAGameSceneView.mMoveStickRightArea)
 			localUser:changeAnimAction('stand01')
 			_LUAGameSceneView.mMoveDirection = 0.0
 			_LUAGameSceneView.mMoveSpeedScale = 0.0
 			localUser:move(0.0, 0.0)
 		end
+		--]]
 	end
 	-- auto scroll map
 	local animPos = cc.p(_LUAGameSceneView.mHeroAnim:getPositionX(), _LUAGameSceneView.mHeroAnim:getPositionY())
