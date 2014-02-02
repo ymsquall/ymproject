@@ -201,3 +201,5 @@ DBG3.win32
 RMT3.win32
 sqlite3.dll
 
+DBG3_GIT.win32
+RMT3_GIT.win32
