@@ -279,8 +279,12 @@
             {
                 s_captured = true;
                 if (eglView->getViewPortRect().equals(Rect::ZERO) || eglView->getViewPortRect().containsPoint(Point(s_mouseX,s_mouseY)))
-                {
-                    long id = 0;
+				{
+#ifdef COCOS2DX_ENGINE_V30
+					long id = 0;
+#else COCOS2DX_ENGINE_GITHUB_V3
+					int id = 0;
+#endif
                     eglView->handleTouchesBegin(1, &id, &s_mouseX, &s_mouseY);
                 }
             }
@@ -288,8 +292,12 @@
             {
                 s_captured = false;
                 if (eglView->getViewPortRect().equals(Rect::ZERO) || eglView->getViewPortRect().containsPoint(Point(s_mouseX,s_mouseY)))
-                {
-                    long id = 0;
+				{
+#ifdef COCOS2DX_ENGINE_V30
+					long id = 0;
+#else COCOS2DX_ENGINE_GITHUB_V3
+					int id = 0;
+#endif
                     eglView->handleTouchesEnd(1, &id, &s_mouseX, &s_mouseY);
                 }
             }
@@ -324,8 +332,12 @@
         if(s_captured)
         {
             if (eglView->getViewPortRect().equals(Rect::ZERO) || eglView->getViewPortRect().containsPoint(Point(s_mouseX,eglView->getFrameSize().height - s_mouseY)))
-            {
-                long id = 0;
+			{
+#ifdef COCOS2DX_ENGINE_V30
+				long id = 0;
+#else COCOS2DX_ENGINE_GITHUB_V3
+				int id = 0;
+#endif
                 eglView->handleTouchesMove(1, &id, &s_mouseX, &s_mouseY);
             }
         }
@@ -388,8 +400,12 @@
         for (auto& item : g_keyCodeStructArray)
         {
             g_keyCodeMap.insert(std::make_pair(item.glfwKeyCode, item.keyCode));
-        }
-        strcpy(_viewName, "Cocos2dxWin32");
+		}
+#ifdef COCOS2DX_ENGINE_V30
+		strcpy(_viewName, "Cocos2dxWin32");
+#else COCOS2DX_ENGINE_GITHUB_V3
+		_viewName = "Cocos2dxWin32";
+#endif
         glfwSetErrorCallback(EGLViewEventHandler::OnGLFWError);
         glfwInit();
     }
@@ -408,8 +424,12 @@
         setFrameSize(width, height);
         setFrameZoomFactor(frameZoomFactor);
         
-        glfwWindowHint(GLFW_RESIZABLE,GL_FALSE);
-        _mainWindow = glfwCreateWindow(_screenSize.width * _frameZoomFactor, _screenSize.height * _frameZoomFactor, _viewName, nullptr, nullptr);
+		glfwWindowHint(GLFW_RESIZABLE,GL_FALSE);
+#ifdef COCOS2DX_ENGINE_V30
+		_mainWindow = glfwCreateWindow(_screenSize.width * _frameZoomFactor, _screenSize.height * _frameZoomFactor, _viewName, nullptr, nullptr);
+#else COCOS2DX_ENGINE_GITHUB_V3
+		_mainWindow = glfwCreateWindow(_screenSize.width * _frameZoomFactor, _screenSize.height * _frameZoomFactor, _viewName.c_str(), nullptr, nullptr);
+#endif
         glfwMakeContextCurrent(_mainWindow);
         
         glfwGetFramebufferSize(_mainWindow, &_frameBufferSize[0], &_frameBufferSize[1]);

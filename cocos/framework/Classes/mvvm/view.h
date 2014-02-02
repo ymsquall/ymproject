@@ -4,7 +4,6 @@
 #include "unity/reflection.h"
 #include "unity/rtti.h"
 #include "model.h"
-#include "gui/CocosGUI.h"
 
 namespace framework
 {

@@ -1,12 +1,11 @@
 #pragma once
+#include "unity/platform.h"
 
-#include "cocos2d.h"
-#include "cocos-ext.h"
-#include "CocoStudio.h"
-#include "CocosGUI.h"
-
+#ifdef COCOS2DX_ENGINE_V30
 using namespace gui;
-using namespace cocos2d;
+#elif COCOS2DX_ENGINE_GITHUB_V3
+using namespace cocos2d::gui;
+#endif
 
 class LuaCocoStudioHelper
 {

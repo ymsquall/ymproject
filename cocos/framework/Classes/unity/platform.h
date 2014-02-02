@@ -2,6 +2,9 @@
 #define _UNITY_PLATFORM_H_
 
 #include "cocos2d.h"
+#include "cocos-ext.h"
+#include "cocostudio/CocoStudio.h"
+#include "gui/CocosGUI.h"
 
 #define COMPILER_MSVC 1
 #define COMPILER_GNUC 2
@@ -103,6 +106,54 @@ static const Real Real_Two=2.0f;
 static const Real Real_Zero=0.0f;
 static const Real Real_Half=0.5f;
 static const Real Real_Epsilon=1e-06f;
+
+// DEPRECATED TYPE
+#pragma region DEPRECATED TYPE
+
+#	ifdef COCOS2DX_ENGINE_V30
+		namespace gui
+		{
+			typedef UILayer ccUILayer;
+			CC_DEPRECATED_ATTRIBUTE typedef UIWidget		Widget;
+			CC_DEPRECATED_ATTRIBUTE typedef UILayout		Layout;
+			CC_DEPRECATED_ATTRIBUTE typedef UIButton		Button;
+			CC_DEPRECATED_ATTRIBUTE typedef UICheckBox		CheckBox;
+			CC_DEPRECATED_ATTRIBUTE typedef UIImageView		ImageView;
+			CC_DEPRECATED_ATTRIBUTE typedef UILabel			Label;
+			CC_DEPRECATED_ATTRIBUTE typedef UILabelAtlas	LabelAtlas;
+			CC_DEPRECATED_ATTRIBUTE typedef UILabelBMFont	LabelBMFont;
+			CC_DEPRECATED_ATTRIBUTE typedef UILoadingBar	LoadingBar;
+			CC_DEPRECATED_ATTRIBUTE typedef UISlider		Slider;
+			CC_DEPRECATED_ATTRIBUTE typedef UITextField		TextField;
+			CC_DEPRECATED_ATTRIBUTE typedef UIScrollView	ScrollView;
+			CC_DEPRECATED_ATTRIBUTE typedef UIListView		ListView;
+			CC_DEPRECATED_ATTRIBUTE typedef UIPageView		PageView;
+		}
+#	else COCOS2DX_ENGINE_GITHUB_V3
+		namespace cocos2d
+		{
+			namespace gui
+			{
+				typedef Layer ccUILayer;
+				CC_DEPRECATED_ATTRIBUTE typedef Widget		UIWidget;
+				CC_DEPRECATED_ATTRIBUTE typedef Layout		UILayout;
+				CC_DEPRECATED_ATTRIBUTE typedef Button		UIButton;
+				CC_DEPRECATED_ATTRIBUTE typedef CheckBox	UICheckBox;
+				CC_DEPRECATED_ATTRIBUTE typedef ImageView	UIImageView;
+				CC_DEPRECATED_ATTRIBUTE typedef Label		UILabel;
+				CC_DEPRECATED_ATTRIBUTE typedef LabelAtlas	UILabelAtlas;
+				CC_DEPRECATED_ATTRIBUTE typedef LabelBMFont	UILabelBMFont;
+				CC_DEPRECATED_ATTRIBUTE typedef LoadingBar	UILoadingBar;
+				CC_DEPRECATED_ATTRIBUTE typedef Slider		UISlider;
+				CC_DEPRECATED_ATTRIBUTE typedef TextField	UITextField;
+				CC_DEPRECATED_ATTRIBUTE typedef ScrollView	UIScrollView;
+				CC_DEPRECATED_ATTRIBUTE typedef ListView	UIListView;
+				CC_DEPRECATED_ATTRIBUTE typedef PageView	UIPageView;
+			}
+		}
+#	endif
+
+#pragma endregion
 
 #include <vector>
 

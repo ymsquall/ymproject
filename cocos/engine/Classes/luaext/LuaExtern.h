@@ -1,4 +1,5 @@
 #pragma once
+#include "unity/platform.h"
 
 #ifdef __cplusplus
 extern "C" {
