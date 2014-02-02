@@ -197,3 +197,7 @@ sofD.map
 sof.exe
 sof.map
 proj.win32
+DBG3.win32
+RMT3.win32
+sqlite3.dll
+

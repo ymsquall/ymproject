@@ -10,4 +10,14 @@
     <LocalDebuggerWorkingDirectory>$(ProjectDir)..\Resources</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DBG3|Win32'">
+    <LocalDebuggerCommand>$(ProjectDir)..\Resources\$(TargetName)D$(TargetExt)</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>$(ProjectDir)..\Resources</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RMT3|Win32'">
+    <LocalDebuggerCommand>$(ProjectDir)..\Resources\$(TargetName)$(TargetExt)</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>$(ProjectDir)..\Resources\</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
 </Project>

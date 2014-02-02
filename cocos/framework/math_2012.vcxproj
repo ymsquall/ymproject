@@ -1,44 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="DebugMT|Win32">
-      <Configuration>DebugMT</Configuration>
+    <ProjectConfiguration Include="DBG3_GIT|Win32">
+      <Configuration>DBG3_GIT</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug_2|Win32">
-      <Configuration>Debug_2</Configuration>
+    <ProjectConfiguration Include="DBG3|Win32">
+      <Configuration>DBG3</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug_3|Win32">
-      <Configuration>Debug_3</Configuration>
+    <ProjectConfiguration Include="RMT3_GIT|Win32">
+      <Configuration>RMT3_GIT</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|Win32">
-      <Configuration>Debug</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="ReleaseMT_2|Win32">
-      <Configuration>ReleaseMT_2</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="ReleaseMT_3|Win32">
-      <Configuration>ReleaseMT_3</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="ReleaseMT|Win32">
-      <Configuration>ReleaseMT</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release_2|Win32">
-      <Configuration>Release_2</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release_3|Win32">
-      <Configuration>Release_3</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|Win32">
-      <Configuration>Release</Configuration>
+    <ProjectConfiguration Include="RMT3|Win32">
+      <Configuration>RMT3</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
@@ -83,66 +59,26 @@
     <ProjectName>math_2012</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DBG3|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_2|Win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DBG3_GIT|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_3|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
-    <WholeProgramOptimization>false</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_2|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
-    <WholeProgramOptimization>false</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_3|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
-    <WholeProgramOptimization>false</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RMT3|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT_2|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT_3|Win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RMT3_GIT|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
@@ -152,98 +88,48 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DBG3|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_2|Win32'" Label="PropertySheets">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DBG3_GIT|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_3|Win32'" Label="PropertySheets">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RMT3|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_2|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_3|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT_2|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT_3|Win32'" Label="PropertySheets">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RMT3_GIT|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DBG3|Win32'">
     <OutDir>..\..\$(Configuration).win32\</OutDir>
     <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <TargetName>ymlibMath</TargetName>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_2|Win32'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DBG3_GIT|Win32'">
     <OutDir>..\..\$(Configuration).win32\</OutDir>
     <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <TargetName>ymlibMath</TargetName>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_3|Win32'">
-    <OutDir>..\..\$(Configuration).win32\</OutDir>
-    <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <TargetName>ymlibMath</TargetName>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">
-    <OutDir>..\..\$(Configuration).win32\</OutDir>
-    <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <TargetName>ymlibMath</TargetName>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RMT3|Win32'">
     <OutDir>..\..\$(Configuration).win32\</OutDir>
     <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
     <TargetName>ymlibMath</TargetName>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_2|Win32'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RMT3_GIT|Win32'">
     <OutDir>..\..\$(Configuration).win32\</OutDir>
     <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
     <TargetName>ymlibMath</TargetName>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_3|Win32'">
-    <OutDir>..\..\$(Configuration).win32\</OutDir>
-    <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
-    <TargetName>ymlibMath</TargetName>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">
-    <OutDir>..\..\$(Configuration).win32\</OutDir>
-    <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
-    <TargetName>ymlibMath</TargetName>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT_2|Win32'">
-    <OutDir>..\..\$(Configuration).win32\</OutDir>
-    <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
-    <TargetName>ymlibMath</TargetName>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT_3|Win32'">
-    <OutDir>..\..\$(Configuration).win32\</OutDir>
-    <IntDir>..\..\BuildTemp\vs_$(TargetName).$(Configuration).win32\</IntDir>
-    <TargetName>ymlibMath</TargetName>
-  </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DBG3|Win32'">
     <ClCompile>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_DEBUG;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_DEBUG;COCOS2DX_ENGINE_V30;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(ProjectDir).\Classes;$(ProjectDir)..\framework\Classes;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\base;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\2d;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\2d\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\physics;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua\bindings;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua\script;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\math\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\audio\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\extensions;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\win32-specific\gles\include\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\glfw3\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -264,40 +150,13 @@
       <PreserveSbr>true</PreserveSbr>
     </Bscmake>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_2|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DBG3_GIT|Win32'">
     <ClCompile>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_DEBUG;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir).\Classes;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\cocos2dx_support;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\tolua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\src;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\CocosDenshion\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\extensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <DisableSpecificWarnings>4996;</DisableSpecificWarnings>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <BrowseInformation>true</BrowseInformation>
-    </ClCompile>
-    <Link>
-      <SubSystem>Windows</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-    </Link>
-    <Lib>
-      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <TargetMachine>
-      </TargetMachine>
-    </Lib>
-    <Bscmake>
-      <PreserveSbr>true</PreserveSbr>
-    </Bscmake>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_3|Win32'">
-    <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_DEBUG;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_DEBUG;COCOS2DX_ENGINE_GITHUB_V3;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(ProjectDir).\Classes;$(ProjectDir)..\framework\Classes;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\base;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\2d;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\2d\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\physics;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua\bindings;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua\script;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\math\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\audio\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\extensions;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\win32-specific\gles\include\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\glfw3\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -318,28 +177,7 @@
       <PreserveSbr>true</PreserveSbr>
     </Bscmake>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">
-    <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_DEBUG;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir).\Classes;$(ProjectDir)..\framework\Classes;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\base;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\2d;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\2d\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\physics;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua\bindings;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua\script;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\math\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\audio\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\extensions;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\win32-specific\gles\include\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\glfw3\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <DisableSpecificWarnings>4996;</DisableSpecificWarnings>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-    </ClCompile>
-    <Link>
-      <SubSystem>Windows</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-    </Link>
-    <Lib>
-      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-    </Lib>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RMT3|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PrecompiledHeader>
@@ -347,70 +185,7 @@
       <Optimization>Disabled</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;COCOS2D_DEBUG=0;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir).\Classes;$(ProjectDir)..\framework\Classes;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\base;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\2d;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\2d\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\physics;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua\bindings;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua\script;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\math\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\audio\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\extensions;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\win32-specific\gles\include\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\glfw3\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <DebugInformationFormat>OldStyle</DebugInformationFormat>
-    </ClCompile>
-    <Link>
-      <SubSystem>Windows</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_2|Win32'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <Optimization>Disabled</Optimization>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;COCOS2D_DEBUG=0;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir).\Classes;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\cocos2dx_support;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\tolua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\src;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\CocosDenshion\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\extensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <DebugInformationFormat>OldStyle</DebugInformationFormat>
-    </ClCompile>
-    <Link>
-      <SubSystem>Windows</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_3|Win32'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <Optimization>Disabled</Optimization>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;COCOS2D_DEBUG=0;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir).\Classes;$(ProjectDir)..\framework\Classes;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\base;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\2d;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\2d\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\physics;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua\bindings;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua\script;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\math\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\audio\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\extensions;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\win32-specific\gles\include\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\glfw3\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <DebugInformationFormat>OldStyle</DebugInformationFormat>
-    </ClCompile>
-    <Link>
-      <SubSystem>Windows</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <Optimization>Disabled</Optimization>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;COCOS2D_DEBUG=0;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;STRICT;COCOS2DX_ENGINE_V30;COCOS2D_DEBUG=0;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <AdditionalIncludeDirectories>$(ProjectDir).\Classes;$(ProjectDir)..\framework\Classes;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\base;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\2d;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\2d\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\physics;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua\bindings;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua\script;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\math\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\audio\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\extensions;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\win32-specific\gles\include\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\glfw3\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -426,7 +201,7 @@
       <TargetMachine>MachineX86</TargetMachine>
     </Lib>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT_2|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RMT3_GIT|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PrecompiledHeader>
@@ -434,31 +209,7 @@
       <Optimization>Disabled</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;COCOS2D_DEBUG=0;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir).\Classes;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\cocos2dx_support;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\tolua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\scripting\lua\src;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\CocosDenshion\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3.0alpha0-pre\cocos2d-x-3.0alpha0-pre\extensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <DebugInformationFormat>OldStyle</DebugInformationFormat>
-    </ClCompile>
-    <Link>
-      <SubSystem>Windows</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
-    </Link>
-    <Lib>
-      <TargetMachine>MachineX86</TargetMachine>
-    </Lib>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT_3|Win32'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <Optimization>Disabled</Optimization>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;COCOS2D_DEBUG=0;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;STRICT;COCOS2DX_ENGINE_GITHUB_V3;COCOS2D_DEBUG=0;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <AdditionalIncludeDirectories>$(ProjectDir).\Classes;$(ProjectDir)..\framework\Classes;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\base;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\2d;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\2d\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\physics;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua\bindings;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua\script;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\math\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\audio\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\extensions;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\win32-specific\gles\include\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\glfw3\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
