@@ -113,7 +113,7 @@ static const Real Real_Epsilon=1e-06f;
 #	ifdef COCOS2DX_ENGINE_V30
 		namespace gui
 		{
-			typedef UILayer ccUILayer;
+			//typedef UILayer ccUILayer;
 			CC_DEPRECATED_ATTRIBUTE typedef UIWidget		Widget;
 			CC_DEPRECATED_ATTRIBUTE typedef UILayout		Layout;
 			CC_DEPRECATED_ATTRIBUTE typedef UIButton		Button;
@@ -134,7 +134,7 @@ static const Real Real_Epsilon=1e-06f;
 		{
 			namespace gui
 			{
-				typedef Layer ccUILayer;
+				typedef Layer UILayer;
 				CC_DEPRECATED_ATTRIBUTE typedef Widget		UIWidget;
 				CC_DEPRECATED_ATTRIBUTE typedef Layout		UILayout;
 				CC_DEPRECATED_ATTRIBUTE typedef Button		UIButton;

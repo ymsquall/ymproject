@@ -5,6 +5,7 @@
 #include "mvvm/view.h"
 #include "gui/CocosGUI.h"
 
+using namespace cocos2d;
 using namespace framework;
 
 class SelectHeroView : public mvvm::ViewBase<SelectHeroView, gui::UILayer>

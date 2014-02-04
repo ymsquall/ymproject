@@ -9,10 +9,20 @@ using namespace cocos2d;
 using namespace framework;
 using namespace cocostudio;
 
-namespace gui
-{
-	class UIButton;
-}
+//#ifdef COCOS2DX_ENGINE_V30
+//	namespace gui
+//	{
+//		class UIButton;
+//	}
+//#else COCOS2DX_ENGINE_GITHUB_V3
+//	namespace cocos2d
+//	{
+//		namespace gui
+//		{
+//			class UIButton;
+//		}
+//	}
+//#endif
 
 class Physics_Box2DView;
 class GameScenePhysics;

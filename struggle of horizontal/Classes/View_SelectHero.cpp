@@ -34,7 +34,11 @@ bool SelectHeroView::init()
 		return false;
 	this->scheduleUpdate();
 	mLayout = (UILayout*)userdata.value.pointer;
+#ifdef COCOS2DX_ENGINE_V30
 	this->addWidget(mLayout);
+#else COCOS2DX_ENGINE_GITHUB_V3
+	this->addChild(mLayout);
+#endif
 
 	mTitleTextBar = dynamic_cast<UIImageView*>(mLayout->getChildByName("mTitleTextBar"));
 	mBottomBar = dynamic_cast<UIImageView*>(mLayout->getChildByName("mBottomBar"));

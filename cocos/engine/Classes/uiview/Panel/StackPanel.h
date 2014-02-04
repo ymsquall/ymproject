@@ -32,7 +32,11 @@ namespace engine
 				if(NULL != pChild)
 				{
 					mUIStack.push_back(pChild);
+#ifdef COCOS2DX_ENGINE_V30
 					this->addWidget(pChild);
+#else COCOS2DX_ENGINE_GITHUB_V3
+					this->addChild(pChild);
+#endif
 					mNeedUpdateStack = true;
 				}
 				return pChild;

@@ -71,7 +71,7 @@
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RMT3_GIT|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\cocos2d\cocos2d-x-3\cocos\2d\cocos2dx.props" />
+    <Import Project="..\..\..\cocos2d\cocos2d-x-3_git\cocos\2d\cocos2dx.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DBG3|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -79,7 +79,7 @@
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DBG3_GIT|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\cocos2d\cocos2d-x-3\cocos\2d\cocos2dx.props" />
+    <Import Project="..\..\..\cocos2d\cocos2d-x-3_git\cocos\2d\cocos2dx.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
@@ -323,7 +323,7 @@
       <ProxyFileName>testeditor_p.c</ProxyFileName>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir).\Classes;$(ProjectDir)..\framework\Classes;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\base;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\2d;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\2d\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\physics;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua\bindings;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\scripting\lua\script;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\math\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\cocos\audio\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\extensions;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\lua\tolua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\win32-specific\gles\include\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3\external\glfw3\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir).\Classes;$(ProjectDir)..\framework\Classes;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3_git\cocos\base;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3_git\cocos\2d;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3_git\cocos\2d\platform\win32;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3_git\cocos\physics;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3_git\cocos\scripting\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3_git\cocos\scripting\lua\bindings;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3_git\cocos\scripting\lua\script;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3_git\cocos\math\kazmath\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3_git\cocos\audio\include;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3_git\extensions;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3_git\external;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3_git\external\lua\lua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3_git\external\lua\tolua;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3_git\external\win32-specific\gles\include\OGLES;$(ProjectDir)..\..\..\cocos2d\cocos2d-x-3_git\external\glfw3\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;STRICT;COCOS2DX_ENGINE_GITHUB_V3;COCOS2D_DEBUG=0;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ExceptionHandling>
       </ExceptionHandling>
